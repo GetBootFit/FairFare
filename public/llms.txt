@@ -1,0 +1,62 @@
+# FairFare
+
+> Instant taxi fare checks and tipping guides for international travellers.
+
+FairFare is a travel utility that helps you know the fair price for taxis, avoid
+scams, and tip correctly — anywhere in the world. $0.99 per query, no account required.
+
+## Features
+
+- **Taxi Fare Check**: Enter a pickup and destination to get a fair price range,
+  local scam warnings, and a phrase to confirm the fare with your driver before
+  getting in.
+- **Tipping Guide**: Country-by-country tipping customs for restaurants, taxis,
+  hotel porters, bars, tour guides, and delivery services.
+
+## How it works
+
+1. Enter your pickup and destination addresses (or choose a country for tipping).
+2. A free route preview loads instantly (distance and duration).
+3. Pay $0.99 via Stripe — Apple Pay and Google Pay are supported.
+4. Get the full result: fare range, scam alerts, local driver phrase, and tipping norms.
+
+## Pricing
+
+- $0.99 USD per query
+- No subscription, no account, no data stored
+- Refunds available for technical failures (contact legal@fairfare.app)
+
+## Coverage
+
+- Taxi fare data: 120+ cities across all continents
+- Tipping guides: 50+ countries
+- AI content (scam warnings, etiquette, driver phrases): powered by Anthropic Claude
+- Routing: Google Maps Platform (Distance Matrix + Directions APIs)
+- Payments: Stripe Checkout
+
+## Privacy
+
+FairFare does not create user accounts or store personal data. Location inputs are
+sent to Google Maps to calculate routes. City and country name are sent to Anthropic
+to generate travel guidance. No IP addresses, device identifiers, or analytics
+cookies are collected. Full policy at https://fairfare.app/privacy.
+
+## Languages
+
+User interface available in English, Spanish (Español), French (Français), and
+German (Deutsch). AI-generated content is in English.
+
+## Links
+
+- Website: https://fairfare.app
+- Taxi Fare Check: https://fairfare.app/taxi
+- Tipping Guide: https://fairfare.app/tipping
+- About: https://fairfare.app/about
+- FAQ: https://fairfare.app/faq
+- Privacy Policy: https://fairfare.app/privacy
+- Terms of Service: https://fairfare.app/terms
+
+## Contact
+
+- Privacy enquiries: privacy@fairfare.app
+- Legal / refunds: legal@fairfare.app

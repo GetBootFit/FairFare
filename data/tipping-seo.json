@@ -1,0 +1,769 @@
+{
+  "argentina": {
+    "displayName": "Argentina",
+    "expected": "optional",
+    "expectedLabel": "Optional",
+    "summary": "Tipping is appreciated but not obligatory in Argentina. Service charges are almost never included automatically — what you leave is genuinely for the staff.",
+    "restaurant": "10% is the norm at sit-down restaurants. 15% for exceptional service. No tip expected at counter-service or fast food.",
+    "taxi": "Round up to the nearest peso. Taxi drivers appreciate it but will not expect it.",
+    "hotel": "100–200 ARS per bag for porters. 100–200 ARS per night for housekeeping if you wish.",
+    "spa": "10–15% for massages and personal treatments.",
+    "keyFact": "The word for tip is 'propina'. Check your bill — a service charge is rarely included automatically.",
+    "faqs": [
+      { "q": "Do you tip in Argentina?", "a": "Tipping is optional but genuinely appreciated. 10% at restaurants is standard. There is no obligation, but staff earn low wages and tips make a real difference." },
+      { "q": "Is service charge included in Argentina?", "a": "Rarely. Most restaurant bills in Argentina do not include a service charge. Check your receipt before tipping." },
+      { "q": "How much do you tip taxi drivers in Argentina?", "a": "Simply round up to the nearest convenient amount. Tipping taxi drivers is not expected but is a kind gesture." }
+    ]
+  },
+  "australia": {
+    "displayName": "Australia",
+    "expected": "optional",
+    "expectedLabel": "Optional",
+    "summary": "Australia has no strong tipping culture — workers earn a living wage and tipping is a genuine reward for outstanding service, not an obligation.",
+    "restaurant": "10% for good service at sit-down restaurants. Round up at cafes if you like. No tip expected at counter service.",
+    "taxi": "Round up or leave the change. Completely optional — most Australians don't tip taxi drivers.",
+    "hotel": "Not expected. A few dollars per night for housekeeping is a generous gesture at higher-end hotels.",
+    "spa": "Not expected, but 10% for outstanding service is appreciated.",
+    "keyFact": "Australians are often uncomfortable with aggressive tip prompts on card machines. Tip only if you genuinely want to.",
+    "faqs": [
+      { "q": "Do Australians tip at restaurants?", "a": "It's optional. Around 10% is considered generous for good service at a sit-down restaurant. Tipping is not culturally expected the way it is in the US." },
+      { "q": "Do you tip taxi drivers in Australia?", "a": "No obligation. Most Australians round up or don't tip at all. Taxi drivers do not rely on tips." },
+      { "q": "Is service charge included in Australian restaurants?", "a": "Usually no, though some restaurants add a Sunday or public holiday surcharge (typically 10–15%) which is disclosed on menus." }
+    ]
+  },
+  "austria": {
+    "displayName": "Austria",
+    "expected": "optional",
+    "expectedLabel": "Optional — round up",
+    "summary": "Tipping is customary in Austria but modest — rounding up the bill rather than calculating a percentage is the local way.",
+    "restaurant": "Round up or tip 5–10%. Austrians typically tell the server the total they want to pay ('stimmt so' means 'keep the change').",
+    "taxi": "Round up to the nearest euro. 5–10% for longer trips.",
+    "hotel": "€1–2 per bag for porters. €1–2 per night for housekeeping.",
+    "spa": "10% is appreciated.",
+    "keyFact": "Say 'stimmt so' (shtimmt zo) when paying to tell the server to keep the change.",
+    "faqs": [
+      { "q": "How much do you tip in Austria?", "a": "Rounding up or adding 5–10% is standard. The custom is to tell the server the amount you want to pay rather than leaving cash on the table." },
+      { "q": "Do you tip in Vienna?", "a": "Yes, tipping is expected in Vienna. 5–10% at restaurants and rounding up taxi fares is the norm." }
+    ]
+  },
+  "belgium": {
+    "displayName": "Belgium",
+    "expected": "optional",
+    "expectedLabel": "Optional",
+    "summary": "A service charge of 16% is legally included in Belgian restaurant bills, though the practice varies. Additional tipping is optional and given for exceptional service.",
+    "restaurant": "Service is often already included. Check your bill. An extra 5–10% is fine for very good service.",
+    "taxi": "Round up to the nearest euro. Not required.",
+    "hotel": "€1–2 per bag for porters. €1–2 per night for housekeeping.",
+    "spa": "10% is appreciated.",
+    "keyFact": "Belgian law requires service to be included in the listed price, but not all restaurants do this clearly — always check.",
+    "faqs": [
+      { "q": "Is service charge included in Belgian restaurants?", "a": "By law, the price you see should be all-inclusive. In practice, check your bill — some restaurants add it, others include it in menu prices." },
+      { "q": "Do you tip in Belgium?", "a": "An extra tip beyond any included service charge is entirely optional and given as genuine appreciation, not obligation." }
+    ]
+  },
+  "brazil": {
+    "displayName": "Brazil",
+    "expected": "optional",
+    "expectedLabel": "Often included (10%)",
+    "summary": "A 10% service charge ('taxa de serviço') is frequently added to restaurant bills in Brazil. If included, an additional tip is optional — if not, 10% is the norm.",
+    "restaurant": "Check for 'taxa de serviço' (10%) on your bill. If not included, 10% is standard. Paying the service charge is optional by Brazilian law, but customary.",
+    "taxi": "Round up. Tipping is not expected but appreciated, especially for help with luggage.",
+    "hotel": "R$5–10 per bag for porters. R$5–10 per night for housekeeping.",
+    "spa": "10–15% for personal services.",
+    "keyFact": "Brazilian law makes the 10% service charge technically voluntary, but refusing it is considered rude. Most people pay it.",
+    "faqs": [
+      { "q": "Do you tip in Brazil?", "a": "10% service charge is standard and often included in your bill. If not included, add 10% for restaurant service. Tipping beyond this is optional." },
+      { "q": "Is the 10% service charge mandatory in Brazil?", "a": "Legally, it's voluntary — but refusing it is considered impolite. Most visitors and locals pay it." }
+    ]
+  },
+  "canada": {
+    "displayName": "Canada",
+    "expected": "yes",
+    "expectedLabel": "Expected — 15–20%",
+    "summary": "Canada has a strong tipping culture similar to the US. Tipping at restaurants, bars, taxis, and hotels is widely expected — not tipping is considered rude.",
+    "restaurant": "15% is the minimum, 18–20% for good service. Most debit/credit machines suggest 15%, 18%, or 20%.",
+    "taxi": "15% is standard. Round up for short trips.",
+    "hotel": "C$2–5 per bag for porters. C$2–5 per night for housekeeping.",
+    "spa": "15–20% for personal treatments.",
+    "keyFact": "Unlike the US, Canadian tipping is calculated on the pre-tax total. Prices are shown before tax — your final bill will be higher.",
+    "faqs": [
+      { "q": "How much do you tip at restaurants in Canada?", "a": "15% is the standard minimum. 18–20% for good service. Most payment terminals offer preset options. Tipping is culturally expected." },
+      { "q": "Do you tip taxi drivers in Canada?", "a": "Yes, 15% is standard for taxis and rideshares like Uber. Round up for very short trips." },
+      { "q": "Is service included in Canadian restaurant bills?", "a": "No, service is not included in Canada. Tipping is separate and expected." }
+    ]
+  },
+  "chile": {
+    "displayName": "Chile",
+    "expected": "optional",
+    "expectedLabel": "10% is standard",
+    "summary": "A 10% tip is standard at Chilean restaurants and is appreciated, though not legally required. The practice is growing but less obligatory than in North America.",
+    "restaurant": "10% is the norm. Some bills include it automatically — check for 'servicio' on the receipt.",
+    "taxi": "Round up. Not obligatory but appreciated.",
+    "hotel": "1,000–2,000 CLP per bag for porters. 1,000 CLP per night for housekeeping.",
+    "spa": "10% is appreciated.",
+    "keyFact": "Always check if 'servicio' (service charge) is already on your bill before adding more.",
+    "faqs": [
+      { "q": "Do you tip in Chile?", "a": "10% is standard at sit-down restaurants. Check your bill for a service charge first. Taxi tipping is optional — just round up." }
+    ]
+  },
+  "china": {
+    "displayName": "China",
+    "expected": "no",
+    "expectedLabel": "Not expected",
+    "summary": "Tipping is not part of Chinese culture and is generally not expected or practiced. In traditional settings, attempting to tip can cause confusion or embarrassment.",
+    "restaurant": "Not expected and often declined. High-end hotels and international chains in major cities may be accustomed to tips from foreign guests.",
+    "taxi": "Not expected. Pay the metered fare and nothing more.",
+    "hotel": "Not expected at local hotels. Bellhops at 5-star international hotels may accept a small tip (¥10–20).",
+    "spa": "Not customary. Some tourist-oriented spas accept tips.",
+    "keyFact": "Offering a tip can sometimes be perceived as condescending. Simply thank your server — that is the customary way to show appreciation.",
+    "faqs": [
+      { "q": "Do you tip in China?", "a": "No. Tipping is not practiced in China. Restaurant staff, taxi drivers, and hotel workers do not expect tips. Attempting to tip may cause awkwardness." },
+      { "q": "Can I tip in China?", "a": "You can, but it's not expected and may be refused or cause confusion. The exception is tourist areas and high-end international hotels where staff are used to foreign customs." }
+    ]
+  },
+  "colombia": {
+    "displayName": "Colombia",
+    "expected": "optional",
+    "expectedLabel": "Optional — 10% sometimes included",
+    "summary": "Colombian restaurants often add a 10% voluntary service charge ('propina voluntaria') to the bill — you can choose whether to pay it. Tipping is appreciated but not mandatory.",
+    "restaurant": "Look for 'propina voluntaria' on your bill. If listed, it's optional to pay. Otherwise, 10% for good service is appreciated.",
+    "taxi": "Round up to the nearest thousand pesos. Not required.",
+    "hotel": "5,000–10,000 COP per bag for porters. 5,000 COP per night for housekeeping.",
+    "spa": "10% is appreciated.",
+    "keyFact": "The 'propina voluntaria' on Colombian bills is legally optional. The server may ask if you want to include it.",
+    "faqs": [
+      { "q": "Do you tip in Colombia?", "a": "10% is often listed on the bill as a voluntary service charge. You can choose whether to pay it. For exceptional service, 10–15% is a generous tip." }
+    ]
+  },
+  "croatia": {
+    "displayName": "Croatia",
+    "expected": "optional",
+    "expectedLabel": "Optional — 10%",
+    "summary": "Tipping is not obligatory in Croatia but has become common, especially in tourist areas. A 10% tip at restaurants is appreciated.",
+    "restaurant": "10% is standard for good service. Service charge is usually not included.",
+    "taxi": "Round up or add 5–10% for longer journeys.",
+    "hotel": "€1–2 per bag for porters. €1–2 per night for housekeeping.",
+    "spa": "10% is a kind gesture.",
+    "keyFact": "Pay tips in cash even if paying the bill by card — tips via card don't always reach the server directly.",
+    "faqs": [
+      { "q": "Do you tip in Croatia?", "a": "Yes, 10% at restaurants is the norm in tourist areas. It's not mandatory but widely appreciated. Tip in cash directly to the server." }
+    ]
+  },
+  "czech-republic": {
+    "displayName": "Czech Republic",
+    "expected": "optional",
+    "expectedLabel": "Round up — 10%",
+    "summary": "Tipping in the Czech Republic is common and expected, particularly in Prague's restaurants and bars. The custom is to tell the server the total you'd like to pay when they bring the bill.",
+    "restaurant": "10% is standard. Tell the server the amount you want to pay (e.g., say 350 if the bill is 320 and you want to tip 30 CZK).",
+    "taxi": "Round up or add 10%. Always use a metered or pre-booked taxi in Prague — street taxis are notorious for overcharging.",
+    "hotel": "50–100 CZK per bag for porters. 50 CZK per night for housekeeping.",
+    "spa": "10% is appreciated.",
+    "keyFact": "In Czech restaurants, you pay at the table and state the total you want to pay — change is given back. Do not leave money on the table and walk out.",
+    "faqs": [
+      { "q": "How much do you tip in Prague?", "a": "10% is standard at restaurants and bars. Tell the server the total amount you want to pay when settling the bill." },
+      { "q": "Do taxis in Prague have meters?", "a": "Yes, all legitimate taxis use meters. Use Bolt, Uber, or pre-booked taxis to avoid tourist price gouging." }
+    ]
+  },
+  "denmark": {
+    "displayName": "Denmark",
+    "expected": "no",
+    "expectedLabel": "Not expected — service included",
+    "summary": "Service charge is included in Danish prices by law, so tipping is not expected. Workers are paid a fair wage and do not rely on tips.",
+    "restaurant": "Service is included in the price. A small extra tip (rounding up) is a nice gesture for exceptional service but not expected.",
+    "taxi": "Not expected. Pay the metered amount.",
+    "hotel": "Not expected.",
+    "spa": "Not expected.",
+    "keyFact": "Prices in Denmark are all-inclusive — what you see on the menu is what you pay. No hidden service charges.",
+    "faqs": [
+      { "q": "Do you tip in Denmark?", "a": "No. Service is included in Danish prices. Rounding up is a kind gesture for exceptional service but there is no obligation or expectation." }
+    ]
+  },
+  "egypt": {
+    "displayName": "Egypt",
+    "expected": "yes",
+    "expectedLabel": "Expected — baksheesh culture",
+    "summary": "Tipping ('baksheesh') is deeply embedded in Egyptian culture and is expected in almost every service interaction. Staff wages are often very low and tips form a significant part of income.",
+    "restaurant": "10–15% is standard. Some upscale restaurants add a service charge — check the bill. Always tip in cash.",
+    "taxi": "Round up or agree a fare in advance. Tipping 10% on top of an agreed price is appreciated.",
+    "hotel": "EGP 20–50 per bag for porters. EGP 20–50 per night for housekeeping. Small tips for anyone who assists you.",
+    "spa": "15–20% is expected.",
+    "keyFact": "Always carry small Egyptian pound notes for tips. Baksheesh is expected from tour guides, restroom attendants, petrol station attendants, and anyone who provides a service.",
+    "faqs": [
+      { "q": "Do you tip in Egypt?", "a": "Yes, tipping (baksheesh) is expected throughout Egypt. 10–15% at restaurants, rounding up in taxis, and small tips (EGP 20–50) for porters, guides, and anyone helping you." },
+      { "q": "How much baksheesh should I give in Egypt?", "a": "EGP 20–100 depending on the service. For restaurant meals, 10–15%. For tour guides, EGP 100–200 per day per person is generous." }
+    ]
+  },
+  "finland": {
+    "displayName": "Finland",
+    "expected": "no",
+    "expectedLabel": "Not expected — service included",
+    "summary": "Finland has no tipping culture. Service charges are included in prices and workers earn a fair wage. Tipping is not expected and most Finns don't do it.",
+    "restaurant": "Not expected. Rounding up is perfectly fine as an optional gesture.",
+    "taxi": "Not expected. Pay the metered fare.",
+    "hotel": "Not expected.",
+    "spa": "Not expected.",
+    "keyFact": "Finns may feel slightly uncomfortable if you insist on tipping — it's genuinely not part of the culture.",
+    "faqs": [
+      { "q": "Do you tip in Finland?", "a": "No. Tipping is not part of Finnish culture. Service charges are included in prices. Rounding up is fine if you want to, but there is no expectation." }
+    ]
+  },
+  "france": {
+    "displayName": "France",
+    "expected": "optional",
+    "expectedLabel": "Service included by law",
+    "summary": "French law requires a 15% service charge ('service compris') to be included in all restaurant prices. An additional tip is entirely optional — leaving a few euros for excellent service is appreciated.",
+    "restaurant": "Service is already included in your bill. An extra €1–5 for a good meal is a thoughtful gesture, not an obligation.",
+    "taxi": "Round up or add €1–2. Not required.",
+    "hotel": "€1–2 per bag for porters. €1–2 per night for housekeeping at 4–5 star hotels.",
+    "spa": "10% for personal treatments is appreciated.",
+    "keyFact": "Look for 'service compris' on your bill — this confirms service is already included. 'Service non compris' means you should tip.",
+    "faqs": [
+      { "q": "Do you tip in France?", "a": "Service is legally included in French restaurant prices. An extra small tip (€1–5) for good service is appreciated but completely optional." },
+      { "q": "Is service charge included in French restaurants?", "a": "Yes, French law requires service to be included in menu prices. Look for 'service compris' on the bill. You don't need to tip unless you want to." }
+    ]
+  },
+  "germany": {
+    "displayName": "Germany",
+    "expected": "optional",
+    "expectedLabel": "Round up — 5–10%",
+    "summary": "Tipping in Germany is common but modest. The practice is to round up or add 5–10%, and you state the amount you want to pay to the server rather than leaving cash on the table.",
+    "restaurant": "Round up or tip 5–10%. Tell the server the total you'd like to pay when settling — they will give you correct change.",
+    "taxi": "Round up to the nearest euro. 5–10% for longer trips.",
+    "hotel": "€1–2 per bag for porters. €1–2 per night for housekeeping.",
+    "spa": "10% is appreciated.",
+    "keyFact": "Don't leave cash on the table and walk away — this can seem rude. State the amount you want to pay directly to the server.",
+    "faqs": [
+      { "q": "How much do you tip in Germany?", "a": "5–10% or rounding up is standard. Tell the server the total you want to pay — for example, 'mach es 28' (make it 28) if the bill is €25." },
+      { "q": "Is service charge included in German restaurants?", "a": "Service is generally included in menu prices in Germany. Tipping beyond the price is optional and given as genuine appreciation." }
+    ]
+  },
+  "greece": {
+    "displayName": "Greece",
+    "expected": "optional",
+    "expectedLabel": "Optional — 5–10%",
+    "summary": "Tipping in Greece is appreciated but not obligatory. Service charge may or may not be included — check your bill. Given the economic pressures on local wages, tips are genuinely meaningful.",
+    "restaurant": "5–10% is customary for good service. Leave cash on the table — tips via card may not reach the server.",
+    "taxi": "Round up to the nearest euro. Not required.",
+    "hotel": "€1–2 per bag for porters. €1–2 per night for housekeeping.",
+    "spa": "10% is a kind gesture.",
+    "keyFact": "Tipping in cash directly to the person is more common in Greece than adding it to a card payment.",
+    "faqs": [
+      { "q": "Do you tip in Greece?", "a": "Tipping is optional but appreciated. 5–10% at restaurants and rounding up taxi fares is common. Leave cash tips directly with the server." }
+    ]
+  },
+  "hong-kong": {
+    "displayName": "Hong Kong",
+    "expected": "optional",
+    "expectedLabel": "10% often added",
+    "summary": "Most Hong Kong restaurants add a 10% service charge to your bill. An additional tip is not expected, but rounding up or leaving change is a polite gesture.",
+    "restaurant": "10% service charge is usually added automatically. Check your bill. An extra 5% for outstanding service at fine dining is optional.",
+    "taxi": "Round up to the nearest HK$ or add HK$5–10. Not required.",
+    "hotel": "HK$10–20 per bag for porters. HK$10–20 per night for housekeeping.",
+    "spa": "10% if not included.",
+    "keyFact": "The 10% service charge on restaurant bills is standard. Staff keep only a portion — leaving a small cash tip goes directly to your server.",
+    "faqs": [
+      { "q": "Do you tip in Hong Kong?", "a": "A 10% service charge is usually included in restaurant bills. An extra tip is optional. Taxi tipping is not expected — just round up." }
+    ]
+  },
+  "hungary": {
+    "displayName": "Hungary",
+    "expected": "yes",
+    "expectedLabel": "Expected — 10–15%",
+    "summary": "Tipping is well established in Hungary, particularly in Budapest. 10–15% at restaurants is the norm and staff genuinely rely on tips as part of their income.",
+    "restaurant": "10–15% is expected. Tell the server the total you want to pay when settling the bill.",
+    "taxi": "10% is standard. Use metered or app-based taxis in Budapest.",
+    "hotel": "500–1,000 HUF per bag for porters. 500 HUF per night for housekeeping.",
+    "spa": "10–15% for personal treatments.",
+    "keyFact": "Like Germany and Austria, tell the server the total amount you want to pay — they give back the change. Don't leave money on the table.",
+    "faqs": [
+      { "q": "How much do you tip in Hungary?", "a": "10–15% at restaurants is expected. State the amount you want to pay to the server when settling. Taxi tipping of 10% is also standard." }
+    ]
+  },
+  "india": {
+    "displayName": "India",
+    "expected": "optional",
+    "expectedLabel": "Appreciated — varies widely",
+    "summary": "Tipping in India varies greatly by location and establishment. At tourist restaurants and hotels, a 10% tip is appreciated. At local dhabas and street food stalls, tipping is not expected.",
+    "restaurant": "10% at sit-down restaurants. Some upscale restaurants include a service charge — check the bill. Round up at casual places.",
+    "taxi": "Round up or add 10%. App-based services like Ola and Uber have in-app tipping.",
+    "hotel": "₹50–100 per bag for porters. ₹50–100 per night for housekeeping.",
+    "spa": "10–15% is appreciated.",
+    "keyFact": "Service charges at Indian restaurants are technically voluntary but widely considered obligatory. The Supreme Court has ruled they cannot be mandatory — you can ask for them to be removed.",
+    "faqs": [
+      { "q": "Do you tip in India?", "a": "Tipping is appreciated but varies by context. 10% at tourist restaurants, round up in taxis. At local street food stalls, tipping is unusual." },
+      { "q": "Is service charge included in Indian restaurants?", "a": "Some restaurants add a service charge (typically 10%). This is technically optional by law — you can request it be removed if you prefer." }
+    ]
+  },
+  "indonesia": {
+    "displayName": "Indonesia",
+    "expected": "optional",
+    "expectedLabel": "5–10% often included",
+    "summary": "Many restaurants in Indonesia's tourist areas (Bali, Jakarta) include a combined tax and service charge of 10–21%. Where it's not included, a 10% tip is appreciated.",
+    "restaurant": "Check for '++' or 'tax & service' on menus — this indicates charges will be added. A 10% service charge is common. Leave small cash tips for personal service.",
+    "taxi": "Round up. Use Blue Bird taxis or Grab/Gojek in cities.",
+    "hotel": "IDR 20,000–50,000 per bag for porters. IDR 20,000–30,000 per night for housekeeping.",
+    "spa": "IDR 20,000–50,000 is appreciated for massages, especially at local spas.",
+    "keyFact": "Bali spas often include service in their price — but leaving IDR 20,000–50,000 cash is always appreciated and goes directly to the therapist.",
+    "faqs": [
+      { "q": "Do you tip in Bali?", "a": "Tipping is appreciated in Bali. 10% service may be added automatically. For drivers, IDR 50,000–100,000 for a full day is generous. Leave cash tips at spas." },
+      { "q": "What does '++' mean on an Indonesian menu?", "a": "++ means tax and service charge will be added. Usually 11% VAT + 10% service = 21% on top of listed prices." }
+    ]
+  },
+  "ireland": {
+    "displayName": "Ireland",
+    "expected": "optional",
+    "expectedLabel": "Optional — 10–15%",
+    "summary": "Tipping in Ireland is appreciated but not as obligatory as in the US. 10–12.5% at restaurants for table service is the norm. Irish pub service at the bar is not tipped.",
+    "restaurant": "10–12.5% for table service. Check if service is already included. Ordering at the bar: no tip expected.",
+    "taxi": "Round up or add 10%. €1–2 for help with luggage.",
+    "hotel": "€1–2 per bag for porters. €1–2 per night for housekeeping.",
+    "spa": "10–15% for personal treatments.",
+    "keyFact": "Some Dublin restaurants add a discretionary service charge — you can ask for it to be removed if service was poor.",
+    "faqs": [
+      { "q": "Do you tip in Ireland?", "a": "10–12.5% for restaurant table service is appreciated. Pub bar service is not tipped. Taxi drivers appreciate rounding up or 10%." }
+    ]
+  },
+  "israel": {
+    "displayName": "Israel",
+    "expected": "yes",
+    "expectedLabel": "Expected — 12–15%",
+    "summary": "Tipping is expected in Israel across restaurants, taxis, hotels, and tour guides. Staff wages often anticipate tips as part of their income.",
+    "restaurant": "12–15% is expected and normal. Service is not usually included.",
+    "taxi": "Round up or add 10%. Use metered taxis or apps.",
+    "hotel": "₪10–20 per bag for porters. ₪10–20 per night for housekeeping.",
+    "spa": "15% is standard.",
+    "keyFact": "In Israel, not tipping at a restaurant is considered rude — it's seen as a statement about poor service rather than personal preference.",
+    "faqs": [
+      { "q": "How much do you tip in Israel?", "a": "12–15% at restaurants is expected. Taxi tipping of 10% is common. Tour guides typically receive ₪50–100 per person per day." }
+    ]
+  },
+  "italy": {
+    "displayName": "Italy",
+    "expected": "optional",
+    "expectedLabel": "Optional — small tip or round up",
+    "summary": "Tipping in Italy is modest. A 'coperto' (cover charge for bread and table setting) is standard. Tips beyond this are optional — Italians typically leave a euro or two at most.",
+    "restaurant": "Leave €1–3 per person for a good meal. No need to calculate a percentage. The coperto (€1–4 per person) is separate and mandatory.",
+    "taxi": "Round up to the nearest euro. €1–2 for help with luggage.",
+    "hotel": "€1–2 per bag for porters. €1–2 per night for housekeeping at upscale hotels.",
+    "spa": "10% is appreciated.",
+    "keyFact": "The 'coperto' (cover charge) on your bill is not a tip — it's a standard charge for bread, table linen, etc. It ranges from €1–4 per person.",
+    "faqs": [
+      { "q": "Do you tip in Italy?", "a": "Italian tipping is modest. €1–3 extra at a restaurant is generous. The coperto charge is separate and standard. Taxi drivers are happy with rounding up." },
+      { "q": "What is the coperto in Italy?", "a": "A coperto is a per-person cover charge (typically €1–4) for bread, table setting, and linen. It appears on all bills at sit-down restaurants and is not a tip." }
+    ]
+  },
+  "japan": {
+    "displayName": "Japan",
+    "expected": "no",
+    "expectedLabel": "Not expected — do not tip",
+    "summary": "Tipping is not practiced in Japan and can be considered rude or even offensive. Excellent service is a matter of professional pride — staff are paid to do their job well.",
+    "restaurant": "Never tip. Service is already priced into the bill. Attempting to leave money on the table can cause the server to chase you to return it.",
+    "taxi": "Do not tip. Taxi drivers take great pride in service and would be offended.",
+    "hotel": "Do not tip directly. If you want to thank hotel staff, a small gift (omiyage) is far more appropriate than cash.",
+    "spa": "Do not tip. Service is included in the price.",
+    "keyFact": "If you want to tip in Japan, it's sometimes acceptable to enclose cash in a small envelope and present it with two hands and a bow — never hand cash directly or leave it on a surface.",
+    "faqs": [
+      { "q": "Do you tip in Japan?", "a": "No. Tipping is not part of Japanese culture and can be considered rude or confusing. Staff may chase you to return money left on a table." },
+      { "q": "What happens if you try to tip in Japan?", "a": "Staff will usually try to return the money. They are trained to provide excellent service as part of their job, not for extra payment. It can cause embarrassment." },
+      { "q": "Do Japanese restaurants add a service charge?", "a": "Upscale restaurants and ryokan may add a service charge. Most do not. Prices are all-inclusive." }
+    ]
+  },
+  "jordan": {
+    "displayName": "Jordan",
+    "expected": "yes",
+    "expectedLabel": "Expected — 10%",
+    "summary": "Tipping is expected in Jordan across restaurants, taxis, and hotels. A small tip is also customary for any personal service — guides, drivers, and attendants.",
+    "restaurant": "10% is standard. Some restaurants add a service charge — check the bill.",
+    "taxi": "Round up or agree on a price before the trip. 10% is appreciated.",
+    "hotel": "JOD 1–2 per bag for porters. JOD 1–2 per night for housekeeping.",
+    "spa": "10–15% is expected.",
+    "keyFact": "Tour guide tipping: JOD 5–10 per person per day is appropriate. Driver tipping: JOD 3–5 per day.",
+    "faqs": [
+      { "q": "Do you tip in Jordan?", "a": "Yes. 10% at restaurants, rounding up for taxis, and JOD 1–2 for hotel staff per service. Tour guides expect JOD 5–10 per person per day." }
+    ]
+  },
+  "malaysia": {
+    "displayName": "Malaysia",
+    "expected": "optional",
+    "expectedLabel": "10% often included",
+    "summary": "Many Malaysian restaurants and hotels include a 10% service charge plus 6% tax. Where service is not included, tipping is appreciated but not obligatory.",
+    "restaurant": "Look for '++' on menus (tax + service). If included, no additional tip is needed. Otherwise, 10% is a kind gesture.",
+    "taxi": "Round up. Use Grab for reliable metered pricing.",
+    "hotel": "RM 5–10 per bag for porters. RM 5–10 per night for housekeeping.",
+    "spa": "RM 10–20 for massages — tip cash directly to the therapist.",
+    "keyFact": "'++' on Malaysian menus means 10% service and 6% tax will be added on top of listed prices.",
+    "faqs": [
+      { "q": "Do you tip in Malaysia?", "a": "Often not necessary if a service charge is included. Where service is not included, 10% is appreciated at restaurants. Spa tips of RM 10–20 go directly to staff." }
+    ]
+  },
+  "mexico": {
+    "displayName": "Mexico",
+    "expected": "yes",
+    "expectedLabel": "Expected — 10–15%",
+    "summary": "Tipping is an important part of Mexican service culture. Server wages are low and tips are essential income. 10–15% at restaurants is expected, and small tips for various service workers are common.",
+    "restaurant": "10–15% is expected and standard. Check that service isn't already included in tourist areas.",
+    "taxi": "Not required, but rounding up is appreciated. 10% for airport or longer trips.",
+    "hotel": "MXN 20–50 per bag for porters. MXN 20–50 per night for housekeeping.",
+    "spa": "10–15% for personal treatments.",
+    "keyFact": "Gas station attendants, parking attendants, grocery baggers (often elderly volunteers), and street musicians also appreciate small tips of MXN 10–20.",
+    "faqs": [
+      { "q": "How much do you tip in Mexico?", "a": "10–15% at restaurants is standard and expected. Hotel housekeeping: MXN 20–50 per night. Tour guides: MXN 100–200 per person per day." },
+      { "q": "Do you tip taxi drivers in Mexico?", "a": "Tipping taxi drivers is not obligatory but appreciated, especially for airport runs. 10% or rounding up is generous." }
+    ]
+  },
+  "morocco": {
+    "displayName": "Morocco",
+    "expected": "yes",
+    "expectedLabel": "Expected",
+    "summary": "Tipping is expected throughout Morocco. In a country with widespread low wages, tips form a significant part of income for restaurant staff, guides, drivers, and many others.",
+    "restaurant": "10–15% is expected at tourist restaurants. 5–10% at local restaurants.",
+    "taxi": "Round up or agree a price in advance (petite taxis should use meters). 10% on agreed fares is appreciated.",
+    "hotel": "MAD 10–20 per bag for porters. MAD 10–20 per night for housekeeping.",
+    "spa": "MAD 20–50 for hammam and massage treatments.",
+    "keyFact": "Always agree taxi fares in advance or insist on the meter. Tip guides MAD 50–100 per person per day for a half day, MAD 100–200 for a full day.",
+    "faqs": [
+      { "q": "Do you tip in Morocco?", "a": "Yes, tipping is expected. 10–15% at restaurants, rounding up for taxis, and MAD 10–20 for hotel staff per service. Always carry small dirham notes." }
+    ]
+  },
+  "netherlands": {
+    "displayName": "Netherlands",
+    "expected": "optional",
+    "expectedLabel": "Optional — round up",
+    "summary": "Tipping in the Netherlands is optional and modest. Workers earn a fair wage and tipping is a genuine expression of appreciation rather than expectation.",
+    "restaurant": "Round up or tip 5–10% for good service. Service is not usually included.",
+    "taxi": "Round up to the nearest euro. Not required.",
+    "hotel": "€1–2 per bag for porters. €1–2 per night for housekeeping.",
+    "spa": "10% is a kind gesture.",
+    "keyFact": "Dutch people value directness and authenticity — a heartfelt thank-you means as much as a tip.",
+    "faqs": [
+      { "q": "Do you tip in the Netherlands?", "a": "Tipping is optional. 5–10% for good restaurant service and rounding up for taxis is common. Dutch workers earn decent wages and don't rely on tips." }
+    ]
+  },
+  "new-zealand": {
+    "displayName": "New Zealand",
+    "expected": "optional",
+    "expectedLabel": "Optional — not expected",
+    "summary": "New Zealand has a similar culture to Australia — no strong tipping expectation. Workers are paid a minimum wage and tipping is genuine appreciation, not obligation.",
+    "restaurant": "Not expected but a 10% tip for excellent service is always warmly received.",
+    "taxi": "Not required. Rounding up is a nice gesture.",
+    "hotel": "Not expected.",
+    "spa": "10% for outstanding service is appreciated.",
+    "keyFact": "New Zealand's minimum wage law means service workers are paid fairly. Tipping is never required.",
+    "faqs": [
+      { "q": "Do you tip in New Zealand?", "a": "No obligation. A 10% tip at restaurants for great service is appreciated but not expected. New Zealand doesn't have the same tipping culture as North America." }
+    ]
+  },
+  "norway": {
+    "displayName": "Norway",
+    "expected": "no",
+    "expectedLabel": "Not expected — service included",
+    "summary": "Norway has one of the world's highest minimum wages and tipping is not expected. Prices include service and workers are paid well.",
+    "restaurant": "Not expected. Rounding up is fine if you enjoyed the meal.",
+    "taxi": "Not required.",
+    "hotel": "Not expected.",
+    "spa": "Not expected.",
+    "keyFact": "Norway is expensive by international standards. Prices already reflect the cost of good service.",
+    "faqs": [
+      { "q": "Do you tip in Norway?", "a": "No. Tipping is not part of Norwegian culture. Workers earn a living wage and prices include service." }
+    ]
+  },
+  "peru": {
+    "displayName": "Peru",
+    "expected": "optional",
+    "expectedLabel": "10% appreciated",
+    "summary": "Tipping is appreciated in Peru and becoming more common as tourism grows. Restaurant bills occasionally include a service charge — otherwise 10% is a good guideline.",
+    "restaurant": "10% if service is not included. Check for 'servicio incluido' on your bill.",
+    "taxi": "Round up. Agree on fares in advance — most Peruvian taxis are unmetered.",
+    "hotel": "S/5–10 per bag for porters. S/5–10 per night for housekeeping.",
+    "spa": "10% is appreciated.",
+    "keyFact": "Always negotiate and agree taxi fares before getting in — meters are rare. Tour guides appreciate S/20–50 per person for a half day.",
+    "faqs": [
+      { "q": "Do you tip in Peru?", "a": "10% at restaurants if service is not included. Taxi fares should be agreed in advance — no tip required but appreciated. Tour guides: S/20–50 per person per half day." }
+    ]
+  },
+  "philippines": {
+    "displayName": "Philippines",
+    "expected": "optional",
+    "expectedLabel": "10% often included",
+    "summary": "A 10% service charge is standard at many restaurants and hotels in the Philippines. When not included, 10% is appreciated. Filipino workers warmly accept tips.",
+    "restaurant": "10% is often included. If not, 10% is the norm. 'Pagod' (thank you + tip) is always appreciated.",
+    "taxi": "Round up or add PHP 20–50 for good service. Use Grab for metered pricing.",
+    "hotel": "PHP 50–100 per bag for porters. PHP 50–100 per night for housekeeping.",
+    "spa": "PHP 100–200 directly to the therapist is standard.",
+    "keyFact": "Whenever a service charge is not listed, tipping directly in cash ensures the person serving you receives it.",
+    "faqs": [
+      { "q": "Do you tip in the Philippines?", "a": "10% is the norm, often included. Cash tips for spa workers, hotel staff, and restaurant servers are warmly received and make a real difference." }
+    ]
+  },
+  "poland": {
+    "displayName": "Poland",
+    "expected": "optional",
+    "expectedLabel": "10–15% appreciated",
+    "summary": "Tipping has become common in Poland, especially in Warsaw and Kraków. 10–15% at restaurants is the norm and is genuinely appreciated as wages are modest.",
+    "restaurant": "10–15% for good service. Tell the server the total you want to pay.",
+    "taxi": "Round up or add 10%. Use Bolt or Uber for reliable pricing.",
+    "hotel": "PLN 5–10 per bag for porters. PLN 5–10 per night for housekeeping.",
+    "spa": "10% is standard.",
+    "keyFact": "When paying in Polish restaurants, state the total you want to pay to the server — change is given back. Do not leave money on the table.",
+    "faqs": [
+      { "q": "Do you tip in Poland?", "a": "Yes, 10–15% at restaurants is standard. Tell the server your desired total when paying. Taxi tipping of 10% is common." }
+    ]
+  },
+  "portugal": {
+    "displayName": "Portugal",
+    "expected": "optional",
+    "expectedLabel": "Optional — 5–10%",
+    "summary": "Tipping is appreciated in Portugal but not obligatory. Given the country's relatively modest wages, tips are genuinely meaningful for restaurant and hotel workers.",
+    "restaurant": "5–10% for good service. Round up at cafes and bars.",
+    "taxi": "Round up or add 5–10%. Not required.",
+    "hotel": "€1–2 per bag for porters. €1–2 per night for housekeeping.",
+    "spa": "10% is a kind gesture.",
+    "keyFact": "Portuguese service can feel slow by some standards — this is a reflection of a relaxed culture rather than poor service. Patience is appreciated.",
+    "faqs": [
+      { "q": "Do you tip in Portugal?", "a": "5–10% at restaurants is appreciated but not obligatory. Round up in taxis and cafes. Tips are always welcome as service wages are modest." }
+    ]
+  },
+  "romania": {
+    "displayName": "Romania",
+    "expected": "optional",
+    "expectedLabel": "10–15% appreciated",
+    "summary": "Tipping is expected and welcomed in Romania. With relatively low service wages, tips make a significant difference to restaurant and hotel staff.",
+    "restaurant": "10–15% is standard at restaurants. Tell the server the amount you want to pay.",
+    "taxi": "Round up or add 10%. Use Bolt or local meter taxis.",
+    "hotel": "RON 10–20 per bag for porters. RON 10–20 per night for housekeeping.",
+    "spa": "10–15% for personal treatments.",
+    "keyFact": "Romanian restaurant etiquette: state the total you want to pay to the server. Leaving money on the table is not common.",
+    "faqs": [
+      { "q": "Do you tip in Romania?", "a": "Yes, 10–15% at restaurants is expected. Tell the server your desired total. Taxi tipping of 10% is standard." }
+    ]
+  },
+  "russia": {
+    "displayName": "Russia",
+    "expected": "optional",
+    "expectedLabel": "10% appreciated",
+    "summary": "Tipping in Russia is not legally required but 10% at restaurants is common and appreciated in major cities. The custom is growing in tourist areas.",
+    "restaurant": "10% is standard at sit-down restaurants. Some restaurants include a service charge.",
+    "taxi": "Round up. App-based taxis like Yandex have standard pricing.",
+    "hotel": "100–200 RUB per bag for porters. 100–200 RUB per night for housekeeping.",
+    "spa": "10% is appreciated.",
+    "keyFact": "Always use app-based or metered taxis in Russian cities — street taxis often charge inflated prices to tourists.",
+    "faqs": [
+      { "q": "Do you tip in Russia?", "a": "10% at restaurants is common in Moscow and St. Petersburg. It's not obligatory but appreciated. Taxi tipping is not expected." }
+    ]
+  },
+  "saudi-arabia": {
+    "displayName": "Saudi Arabia",
+    "expected": "optional",
+    "expectedLabel": "Appreciated — not obligatory",
+    "summary": "Tipping is not obligatory in Saudi Arabia — workers often earn stable wages. However, tipping is warmly received and appreciated, especially in restaurants and hotels.",
+    "restaurant": "10% for good service. Some restaurants add a service charge. Check your bill.",
+    "taxi": "Round up or add 10%. App-based services like Careem/Uber are common.",
+    "hotel": "SAR 5–20 per bag for porters. SAR 10–20 per night for housekeeping.",
+    "spa": "10–15% for personal treatments.",
+    "keyFact": "In Saudi Arabia, offering a tip should be done discreetly and graciously. Workers appreciate the gesture.",
+    "faqs": [
+      { "q": "Do you tip in Saudi Arabia?", "a": "Tipping is appreciated but not obligatory. 10% at restaurants is a generous gesture. Taxi tipping of 10% is also welcomed." }
+    ]
+  },
+  "singapore": {
+    "displayName": "Singapore",
+    "expected": "no",
+    "expectedLabel": "Service charge included (10%)",
+    "summary": "Most Singapore restaurants and hotels add a mandatory 10% service charge plus 9% GST (shown as '++' on menus). Additional tipping is not expected or necessary.",
+    "restaurant": "10% service charge is included automatically. No additional tip needed. For exceptional service, a few dollars cash is a kind gesture that goes directly to staff.",
+    "taxi": "Not expected. Use Grab for reliable metered pricing.",
+    "hotel": "Service is included. Bellhop: S$2–5 per bag is optional.",
+    "spa": "S$10–20 cash is appreciated as service charge may not reach therapists.",
+    "keyFact": "The '++'  on Singapore menus means 10% service + 9% GST will be added. Your final bill is noticeably higher than menu prices.",
+    "faqs": [
+      { "q": "Do you tip in Singapore?", "a": "No additional tipping is needed — a 10% service charge is already included in most restaurant and hotel bills. Cash tips for spa workers are appreciated." },
+      { "q": "What does '++' mean in Singapore restaurants?", "a": "+++ means 10% service charge and 9% GST will be added to the menu price. Budget for a total bill of about 20% more than the listed prices." }
+    ]
+  },
+  "south-africa": {
+    "displayName": "South Africa",
+    "expected": "yes",
+    "expectedLabel": "Expected — 10–15%",
+    "summary": "Tipping is deeply embedded in South African culture and is an important part of income for many service workers. 10–15% at restaurants is standard and expected.",
+    "restaurant": "10–15% is expected. A service charge is rarely included.",
+    "taxi": "Not applicable for metered taxis — agree fares in advance for unmetered ones. Round up for Uber/Bolt.",
+    "hotel": "R20–50 per bag for porters. R20–50 per night for housekeeping.",
+    "spa": "10–15% for personal treatments.",
+    "keyFact": "Car guards (informal parking attendants) are common in South Africa. R5–10 for watching your car is expected. Petrol station attendants who clean your windscreen appreciate R5–10.",
+    "faqs": [
+      { "q": "How much do you tip in South Africa?", "a": "10–15% at restaurants is expected. R20–50 for hotel staff per service. R5–10 for car guards and petrol station attendants." }
+    ]
+  },
+  "south-korea": {
+    "displayName": "South Korea",
+    "expected": "no",
+    "expectedLabel": "Not expected",
+    "summary": "Tipping is not practiced in South Korea. Offering a tip can cause confusion or even embarrassment, as excellent service is considered a standard part of the job.",
+    "restaurant": "Do not tip. Service is included in menu prices. Many Korean restaurants are self-service for water and banchan (side dishes).",
+    "taxi": "Do not tip. Metered taxis are standard and reliable.",
+    "hotel": "Not expected. Service is included.",
+    "spa": "Not expected at jimjilbangs (Korean bathhouses) or local spas.",
+    "keyFact": "Like Japan, tipping in Korea can make people uncomfortable. Show appreciation with a sincere thank-you and a smile instead.",
+    "faqs": [
+      { "q": "Do you tip in South Korea?", "a": "No. Tipping is not part of Korean culture. Service workers are paid to do their job well and do not expect or rely on tips. Attempting to tip may cause awkwardness." }
+    ]
+  },
+  "spain": {
+    "displayName": "Spain",
+    "expected": "optional",
+    "expectedLabel": "Optional — small tip",
+    "summary": "Tipping in Spain is modest and optional. Spaniards typically leave only a small amount of change — not a percentage. Large tips are uncommon and not expected.",
+    "restaurant": "Leave €1–3 per person or round up for a good meal. 5–10% is generous in tourist areas.",
+    "taxi": "Round up to the nearest euro. Not required.",
+    "hotel": "€1–2 per bag for porters. €1–2 per night for housekeeping.",
+    "spa": "10% is appreciated.",
+    "keyFact": "In Spain, leaving just your small change (centimos) on the table is an acceptable and common tip. A percentage-based tip is not the Spanish custom.",
+    "faqs": [
+      { "q": "Do you tip in Spain?", "a": "Tipping is optional in Spain. Leave €1–3 or your small change at restaurants. 5–10% is generous. Taxi tipping is not expected." }
+    ]
+  },
+  "sweden": {
+    "displayName": "Sweden",
+    "expected": "no",
+    "expectedLabel": "Not expected — service included",
+    "summary": "Sweden has no tipping culture — workers earn a fair wage and service charges are included in prices. Swedes generally do not tip.",
+    "restaurant": "Not expected. Rounding up is perfectly fine if you enjoyed the meal.",
+    "taxi": "Not required.",
+    "hotel": "Not expected.",
+    "spa": "Not expected.",
+    "keyFact": "Sweden is a high-cost country. Prices reflect the full cost of service.",
+    "faqs": [
+      { "q": "Do you tip in Sweden?", "a": "No. Tipping is not part of Swedish culture. Workers earn good wages and service is included in prices. Rounding up is acceptable but not expected." }
+    ]
+  },
+  "switzerland": {
+    "displayName": "Switzerland",
+    "expected": "optional",
+    "expectedLabel": "Service included — round up optional",
+    "summary": "Service charge is legally included in Swiss prices. Additional tipping is completely optional — rounding up is a polite gesture if you enjoyed the service.",
+    "restaurant": "Service is already included. Round up or leave a few francs for excellent service.",
+    "taxi": "Round up to the nearest franc.",
+    "hotel": "CHF 1–2 per bag for porters. CHF 1–2 per night for housekeeping.",
+    "spa": "CHF 10–20 for outstanding personal treatments.",
+    "keyFact": "Swiss law requires service to be included in all prices. You will never owe more than the listed price.",
+    "faqs": [
+      { "q": "Do you tip in Switzerland?", "a": "Service is legally included in Swiss prices. Rounding up is a nice gesture but never obligatory. Switzerland is expensive — prices already reflect excellent service." }
+    ]
+  },
+  "taiwan": {
+    "displayName": "Taiwan",
+    "expected": "no",
+    "expectedLabel": "Not expected — often refused",
+    "summary": "Tipping is not practiced in Taiwan and can cause confusion or discomfort. Service is considered part of the job and staff take pride in it.",
+    "restaurant": "Do not tip. Many restaurants include a 10% service charge.",
+    "taxi": "Do not tip. Metered taxis are reliable and use standard rates.",
+    "hotel": "Not expected. Higher-end hotels may accept bellhop tips.",
+    "spa": "Not expected at local establishments.",
+    "keyFact": "If a restaurant adds a 10% service charge, it's already on your bill. No additional tip is needed or expected.",
+    "faqs": [
+      { "q": "Do you tip in Taiwan?", "a": "No. Tipping is not customary in Taiwan. Many restaurants already include a 10% service charge. Staff may refuse additional tips." }
+    ]
+  },
+  "thailand": {
+    "displayName": "Thailand",
+    "expected": "optional",
+    "expectedLabel": "Appreciated — growing custom",
+    "summary": "Tipping is not traditionally obligatory in Thailand but is widely appreciated, particularly in tourist areas. Small tips make a genuine difference to the staff who receive them.",
+    "restaurant": "20–100 THB is appropriate depending on the meal price. Upscale restaurants may include a service charge.",
+    "taxi": "Round up or add 20–50 THB for metered taxis. Agree fares in advance for unmetered taxis and tuk-tuks.",
+    "hotel": "20–50 THB per bag for porters. 20–50 THB per night for housekeeping.",
+    "spa": "50–100 THB for a full-body massage. 20–50 THB for foot massage.",
+    "keyFact": "Always insist on the meter in Bangkok taxis. Agree prices before boarding tuk-tuks and songthaews (shared taxis).",
+    "faqs": [
+      { "q": "Do you tip in Thailand?", "a": "Tipping is appreciated but not obligatory. 20–100 THB at restaurants, 50–100 THB at spas, and rounding up for taxis is common and welcomed." },
+      { "q": "How much do you tip a massage therapist in Thailand?", "a": "50–100 THB for a 1-hour massage is standard and appreciated. 20–50 THB for foot massages. Tip directly in cash to the therapist." }
+    ]
+  },
+  "turkey": {
+    "displayName": "Turkey",
+    "expected": "optional",
+    "expectedLabel": "10–15% appreciated",
+    "summary": "Tipping is customary in Turkey and staff genuinely appreciate it. With the economic pressures many Turkish workers face, tips can make a real difference.",
+    "restaurant": "10–15% for good service. Some restaurants include a service charge — check your bill.",
+    "taxi": "Round up or add 10%. Always use metered taxis.",
+    "hotel": "TRY 50–100 per bag for porters. TRY 50–100 per night for housekeeping.",
+    "spa": "10–15% for hammam and massage treatments.",
+    "keyFact": "In Turkish restaurants, you can ask for the bill by making a writing gesture. Tips are best given in cash directly to the server.",
+    "faqs": [
+      { "q": "Do you tip in Turkey?", "a": "Yes, 10–15% at restaurants is appreciated. Taxi rounding up is common. For hammams, 10–15% is expected." }
+    ]
+  },
+  "uae": {
+    "displayName": "UAE",
+    "expected": "optional",
+    "expectedLabel": "10–15% appreciated",
+    "summary": "Tipping is appreciated in the UAE though not obligatory. Service charges are sometimes added. Staff — many of whom are migrant workers — genuinely appreciate tips.",
+    "restaurant": "10–15% for good service. Some restaurants include a service charge — check the bill.",
+    "taxi": "Round up. Use Careem or Uber for standard pricing.",
+    "hotel": "AED 5–20 per bag for porters. AED 10–20 per night for housekeeping.",
+    "spa": "AED 20–50 for personal treatments.",
+    "keyFact": "Many service workers in the UAE are migrant workers on modest wages. Tips are especially meaningful and appreciated.",
+    "faqs": [
+      { "q": "Do you tip in Dubai or Abu Dhabi?", "a": "10–15% at restaurants is appreciated. Hotel staff, taxi drivers, and spa workers welcome tips. Many workers are on modest expatriate wages." }
+    ]
+  },
+  "ukraine": {
+    "displayName": "Ukraine",
+    "expected": "optional",
+    "expectedLabel": "10% appreciated",
+    "summary": "Tipping of 10% is common in Ukrainian restaurants and is appreciated. Staff wages are modest and tips supplement income meaningfully.",
+    "restaurant": "10% is standard. Tell the server the amount you want to pay.",
+    "taxi": "Round up or add 10%. Use Bolt or Uklon app.",
+    "hotel": "UAH 50–100 per bag for porters. UAH 50–100 per night for housekeeping.",
+    "spa": "10% is appreciated.",
+    "keyFact": "State the total you want to pay to the server — change is given back. Tips via card may not reach the server directly.",
+    "faqs": [
+      { "q": "Do you tip in Ukraine?", "a": "10% at restaurants is standard and appreciated. Tell the server the amount you want to pay. Taxi rounding up is common." }
+    ]
+  },
+  "united-kingdom": {
+    "displayName": "United Kingdom",
+    "expected": "optional",
+    "expectedLabel": "10–12.5% for table service",
+    "summary": "Tipping in the UK is expected at sit-down restaurants but not in pubs when ordering at the bar. A 10–12.5% tip is standard. Many restaurants now add a discretionary service charge.",
+    "restaurant": "10–12.5% for table service. Check if a service charge is already included. You can ask for it to be removed if unhappy. No tip expected at the bar.",
+    "taxi": "Round up or add 10%. Black cab drivers in London appreciate rounding up.",
+    "hotel": "£1–2 per bag for porters. £1–2 per night for housekeeping.",
+    "spa": "10% is appreciated.",
+    "keyFact": "In UK pubs, it's common to offer the bartender a drink ('and one for yourself?') instead of a cash tip — they may take the money instead.",
+    "faqs": [
+      { "q": "How much do you tip in the UK?", "a": "10–12.5% at sit-down restaurants for table service. Check if service is already included. No tip expected at pub bars or counter service." },
+      { "q": "Do you tip London taxi drivers?", "a": "Yes, rounding up or 10% is appreciated. Black cab drivers in London are licensed and professional — a tip acknowledges good service." }
+    ]
+  },
+  "united-states": {
+    "displayName": "United States",
+    "expected": "yes",
+    "expectedLabel": "Expected — 18–22%",
+    "summary": "Tipping is deeply embedded in US culture and is effectively required in most service situations. Many US service workers earn a 'tipped minimum wage' significantly below the standard minimum — tips are not optional.",
+    "restaurant": "18–22% is the current standard. 15% is considered low. Many payment systems default to 18–20–25% options.",
+    "taxi": "15–20% is expected. Same for rideshares (Uber, Lyft).",
+    "hotel": "US$2–5 per bag for porters (bellhops). US$2–5 per night for housekeeping. US$5–20 for concierge services.",
+    "spa": "18–20% for all personal treatments.",
+    "keyFact": "US server wages can be as low as $2.13/hour federally — tips are the primary income. Not tipping for standard service is considered rude and directly harms the worker.",
+    "faqs": [
+      { "q": "How much do you tip at restaurants in the US?", "a": "18–22% is now the standard. 15% is considered below average. Pre-tax amount is traditional but most people tip on the post-tax total." },
+      { "q": "Do you tip at fast food restaurants in the US?", "a": "Counter service and fast food: no obligation, though tip jars are common. Some tablet systems prompt for tips — these are optional." },
+      { "q": "Do you tip Uber and Lyft drivers in the US?", "a": "Yes. 15–20% is standard. Both apps prompt for tips in-app after your ride." }
+    ]
+  },
+  "vietnam": {
+    "displayName": "Vietnam",
+    "expected": "optional",
+    "expectedLabel": "Appreciated — growing custom",
+    "summary": "Tipping is not traditional in Vietnam but is increasingly appreciated in tourist areas, hotels, and upscale restaurants. Small tips in local currency go a long way.",
+    "restaurant": "10,000–50,000 VND for casual meals. 10% for upscale restaurants. Rounding up is always welcomed.",
+    "taxi": "Round up. Use Grab for reliable metered pricing and avoid street hails.",
+    "hotel": "20,000–50,000 VND per bag for porters. 20,000–50,000 VND per night for housekeeping.",
+    "spa": "50,000–100,000 VND for a 1-hour massage is generous and appreciated.",
+    "keyFact": "Tip in cash in Vietnamese dong. Always use Grab or pre-booked airport taxis to avoid tourist surcharges.",
+    "faqs": [
+      { "q": "Do you tip in Vietnam?", "a": "Tipping is not obligatory but appreciated. 10% at restaurants, 50,000–100,000 VND at spas, and rounding up for taxis is welcomed. Always tip in cash." }
+    ]
+  }
+}

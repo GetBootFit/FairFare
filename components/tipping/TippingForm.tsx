@@ -1,0 +1,227 @@
+'use client'
+
+import { useState, useEffect } from 'react'
+import Image from 'next/image'
+import { Spinner } from '@/components/ui/Spinner'
+import { PaymentModal } from '@/components/PaymentModal'
+import { TippingResult } from '@/components/tipping/TippingResult'
+import {
+  getStoredToken,
+  isTokenExpired,
+  clearStoredToken,
+  storeToken,
+  getCountryPassToken,
+  storeCountryPass,
+  isCountryPassValid,
+  storeBundleTokens,
+  popBundleToken,
+} from '@/lib/tokens'
+import { useLanguage } from '@/context/LanguageContext'
+import { COUNTRY_FLAGS } from '@/lib/flags'
+import type { TippingResult as TippingResultType } from '@/types'
+
+const COUNTRIES = [
+  'Argentina', 'Australia', 'Austria', 'Belgium', 'Brazil', 'Canada', 'Chile',
+  'China', 'Colombia', 'Croatia', 'Czech Republic', 'Denmark', 'Egypt',
+  'Finland', 'France', 'Germany', 'Greece', 'Hong Kong', 'Hungary', 'India',
+  'Indonesia', 'Ireland', 'Israel', 'Italy', 'Japan', 'Jordan', 'Malaysia',
+  'Mexico', 'Morocco', 'Netherlands', 'New Zealand', 'Norway', 'Peru',
+  'Philippines', 'Poland', 'Portugal', 'Romania', 'Russia', 'Saudi Arabia',
+  'Singapore', 'South Africa', 'South Korea', 'Spain', 'Sweden', 'Switzerland',
+  'Taiwan', 'Thailand', 'Turkey', 'UAE', 'Ukraine', 'United Kingdom',
+  'United States', 'Vietnam',
+]
+
+const STORAGE_KEY = 'ff_tipping_form'
+
+interface TokenEventDetail {
+  token: string
+  tokens?: string[]   // present for query_bundle
+  product?: string
+  country?: string
+}
+
+export function TippingForm() {
+  const { t } = useLanguage()
+  const [country, setCountry] = useState('')
+  const [query, setQuery] = useState('')
+  const [status, setStatus] = useState<'idle' | 'paying' | 'loading' | 'done' | 'error'>('idle')
+  const [result, setResult] = useState<TippingResultType | null>(null)
+  const [errorMsg, setErrorMsg] = useState('')
+
+  const filtered = COUNTRIES.filter((c) =>
+    c.toLowerCase().includes(query.toLowerCase())
+  )
+
+  // Restore after Stripe redirect
+  useEffect(() => {
+    const saved = sessionStorage.getItem(STORAGE_KEY)
+    if (saved) {
+      try { setCountry(JSON.parse(saved)); sessionStorage.removeItem(STORAGE_KEY) } catch { /* ignore */ }
+    }
+  }, [])
+
+  const handleSubmit = async (selectedCountry: string) => {
+    if (!selectedCountry) return
+
+    // Priority: country pass → bundle queue → single token → payment modal
+    if (isCountryPassValid(selectedCountry)) {
+      const passToken = getCountryPassToken(selectedCountry)!
+      setCountry(selectedCountry)
+      setStatus('loading')
+      await fetchResult(passToken, selectedCountry)
+      return
+    }
+
+    const bundleToken = popBundleToken()
+    if (bundleToken) {
+      setCountry(selectedCountry)
+      setStatus('loading')
+      await fetchResult(bundleToken, selectedCountry)
+      return
+    }
+
+    // Then check single-query token
+    const token = getStoredToken()
+    if (!token || isTokenExpired(token)) {
+      sessionStorage.setItem(STORAGE_KEY, JSON.stringify(selectedCountry))
+      setCountry(selectedCountry)
+      setStatus('paying')
+      return
+    }
+    setCountry(selectedCountry)
+    setStatus('loading')
+    await fetchResult(token, selectedCountry)
+  }
+
+  const fetchResult = async (token: string, c: string) => {
+    try {
+      const res = await fetch('/api/tipping', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ country: c }),
+      })
+      const data = await res.json()
+      if (!res.ok) {
+        if (res.status === 401) clearStoredToken()
+        throw new Error(data.error ?? 'Failed to fetch tipping guide')
+      }
+      setResult(data as TippingResultType)
+      setStatus('done')
+    } catch (err) {
+      setStatus('error')
+      setErrorMsg(err instanceof Error ? err.message : t('common_error'))
+    }
+  }
+
+  // Listen for token from success page after Stripe redirect
+  useEffect(() => {
+    const handler = async (e: Event) => {
+      const detail = (e as CustomEvent<TokenEventDetail>).detail
+
+      // Bundle: store all tokens, pop first for immediate use
+      if (detail?.product === 'query_bundle' && detail.tokens?.length) {
+        storeBundleTokens(detail.tokens)
+        const token = popBundleToken()
+        const saved = sessionStorage.getItem(STORAGE_KEY)
+        const c = saved ? JSON.parse(saved) : country
+        if (token && c) {
+          sessionStorage.removeItem(STORAGE_KEY)
+          setCountry(c)
+          setStatus('loading')
+          await fetchResult(token, c)
+        }
+        return
+      }
+
+      const token = detail?.token ?? (detail as unknown as string) // backward compat
+
+      if (detail?.product === 'country_pass' && detail.country) {
+        storeCountryPass(detail.country, token)
+      } else {
+        storeToken(token)
+      }
+
+      const saved = sessionStorage.getItem(STORAGE_KEY)
+      const c = saved ? JSON.parse(saved) : country
+      if (c) {
+        sessionStorage.removeItem(STORAGE_KEY)
+        setCountry(c)
+        setStatus('loading')
+        await fetchResult(token, c)
+      }
+    }
+    window.addEventListener('ff:token', handler)
+    return () => window.removeEventListener('ff:token', handler)
+  }, [country]) // eslint-disable-line react-hooks/exhaustive-deps
+
+  const handleReset = () => {
+    setCountry(''); setQuery(''); setResult(null); setStatus('idle'); setErrorMsg('')
+    clearStoredToken()
+  }
+
+  if (status === 'done' && result) {
+    return <TippingResult result={result} onReset={handleReset} />
+  }
+
+  return (
+    <div className="space-y-4">
+      {(status === 'idle' || status === 'error') && (
+        <>
+          <p className="text-zinc-400 text-sm">{t('tipping_description')}</p>
+          <input
+            type="text"
+            placeholder={t('tipping_search')}
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            className="w-full rounded-xl bg-zinc-800 border border-zinc-700 px-4 py-3.5 text-white placeholder-zinc-500 text-base focus:border-zinc-500 transition-colors"
+          />
+          {errorMsg && <p className="text-red-400 text-sm">{errorMsg}</p>}
+          <div className="grid grid-cols-2 gap-2 max-h-80 overflow-y-auto pr-1">
+            {filtered.map((c) => {
+              const iso2 = COUNTRY_FLAGS[c]
+              return (
+                <button
+                  key={c}
+                  onClick={() => handleSubmit(c)}
+                  className="flex items-center gap-2.5 text-left px-3.5 py-3 rounded-xl bg-zinc-900 border border-zinc-800 text-sm text-zinc-200 hover:bg-zinc-800 hover:border-zinc-700 transition-colors min-w-0"
+                >
+                  {iso2 && (
+                    <Image
+                      src={`/images/flags/${iso2}.svg`}
+                      alt=""
+                      width={20}
+                      height={15}
+                      className="rounded-sm shrink-0"
+                      unoptimized
+                    />
+                  )}
+                  <span className="truncate">{c}</span>
+                </button>
+              )
+            })}
+          </div>
+        </>
+      )}
+
+      {status === 'loading' && (
+        <div className="flex flex-col items-center gap-3 py-12 text-zinc-400">
+          <Spinner className="h-7 w-7 text-teal-400" />
+          <span className="text-sm">{t('tipping_loading', { country })}</span>
+        </div>
+      )}
+
+      {/* Payment modal — pass selected country for Country Pass offer */}
+      {status === 'paying' && (
+        <PaymentModal
+          feature="tipping"
+          country={country}
+          onCancel={() => setStatus('idle')}
+        />
+      )}
+    </div>
+  )
+}

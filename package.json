@@ -1,0 +1,44 @@
+{
+  "name": "fairfare",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "seed": "tsx scripts/seed-cache.ts",
+    "seed:dry": "tsx scripts/seed-cache.ts --dry-run",
+    "seed:tipping": "tsx scripts/seed-cache.ts --tipping-only",
+    "seed:taxi": "tsx scripts/seed-cache.ts --taxi-only"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.30.0",
+    "@googlemaps/google-maps-services-js": "^3.4.0",
+    "@googlemaps/js-api-loader": "^1.16.6",
+    "@vercel/analytics": "^1.6.1",
+    "@vercel/kv": "^3.0.0",
+    "clsx": "^2.1.1",
+    "jose": "^5.9.6",
+    "lucide-react": "^0.400.0",
+    "next": "^16.1.6",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "stripe": "^16.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "@types/google.maps": "^3.55.7",
+    "@types/node": "^20.14.10",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.19",
+    "dotenv": "^17.3.1",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^16.1.6",
+    "postcss": "^8.4.39",
+    "tailwindcss": "^3.4.4",
+    "tsx": "^4.21.0",
+    "typescript": "^5.5.3"
+  }
+}

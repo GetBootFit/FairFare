@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: 'Inter', system-ui, sans-serif;
+}
+
+html {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Prevent body scroll when modal is open */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Google Places Autocomplete dropdown dark theme */
+.pac-container {
+  background-color: #18181b !important;
+  border: 1px solid #3f3f46 !important;
+  border-radius: 12px !important;
+  margin-top: 4px !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5) !important;
+  font-family: var(--font-inter) !important;
+}
+
+.pac-item {
+  background-color: #18181b !important;
+  border-color: #27272a !important;
+  color: #d4d4d8 !important;
+  padding: 8px 16px !important;
+  cursor: pointer;
+}
+
+.pac-item:hover,
+.pac-item-selected {
+  background-color: #27272a !important;
+}
+
+.pac-item-query {
+  color: #fff !important;
+  font-size: 14px !important;
+}
+
+.pac-icon {
+  filter: invert(0.7);
+}
+
+/* Hide Google logo in dropdown */
+.pac-logo::after {
+  display: none !important;
+}
+
+/* Remove outline rings on form inputs */
+input[type='text']:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Safe area inset for iPhone home bar */
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}

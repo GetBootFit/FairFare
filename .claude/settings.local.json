@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install)",
+      "Bash(npm install next@latest)",
+      "Bash(node -e \"console.log\\(require\\(''./node_modules/next/package.json''\\).version\\)\")",
+      "Bash(npm install eslint-config-next@latest react@latest react-dom@latest)",
+      "Bash(npm install eslint-config-next@latest --legacy-peer-deps)",
+      "Bash(npm run build)",
+      "Bash(npm install @vercel/kv)",
+      "Bash(npm install @vercel/kv --legacy-peer-deps)",
+      "Bash(npm install --save-dev tsx dotenv --legacy-peer-deps)",
+      "Bash(\"C:\\\\Users\\\\david\\\\Projects\\\\FairFare\\\\next.config.js\":*)",
+      "Bash(node -e \":*)",
+      "Bash(powershell -Command \":*)",
+      "Bash(npm install @vercel/analytics --legacy-peer-deps)",
+      "Bash(node -e \"console.log\\(require\\(''crypto''\\).randomBytes\\(32\\).toString\\(''base64url''\\)\\)\")"
+    ]
+  }
+}
