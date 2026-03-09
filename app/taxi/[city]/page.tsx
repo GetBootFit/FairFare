@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ChevronRight, Car, MapPin, ArrowRight } from 'lucide-react'
+import { getUSDPrices } from '@/lib/currency'
 import {
   getAllCitySlugs,
   getCityData,
@@ -113,6 +114,7 @@ export default async function TaxiCityPage(
   const countrySlug = countryToSlug(data.country)
   const faqs = buildFaqs(cityName, data.country, data)
   const year = new Date().getFullYear()
+  const { single } = getUSDPrices()
 
   const jsonLd = [
     taxiBreadcrumbJsonLd(city, cityName),
@@ -232,7 +234,7 @@ export default async function TaxiCityPage(
           >
             Check My Route <ArrowRight size={16} />
           </Link>
-          <p className="text-xs text-zinc-600">From {data.currencySymbol === '$' ? 'USD' : ''} $0.99 · No account required</p>
+          <p className="text-xs text-zinc-600">From {single} · No account required</p>
         </div>
 
         {/* FAQ */}

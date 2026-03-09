@@ -116,6 +116,20 @@ export function storeCurrency(currency: CurrencyCode): void {
 }
 
 /**
+ * Returns USD prices as formatted display strings.
+ * Used in static pages (FAQ, About, SEO city/country pages) so that
+ * all pricing copy updates automatically when PRICES.USD changes.
+ * Server-safe — no browser APIs required.
+ */
+export function getUSDPrices(): { single: string; pass: string; bundle: string } {
+  return {
+    single: formatPrice('USD', PRICES.USD.single),  // e.g. "$1.99"
+    pass:   formatPrice('USD', PRICES.USD.pass),     // e.g. "$4.99"
+    bundle: formatPrice('USD', PRICES.USD.bundle),   // e.g. "$9.99"
+  }
+}
+
+/**
  * Format a price from Stripe's smallest unit to display string.
  * e.g. formatPrice('AUD', 149) → "A$1.49"
  *      formatPrice('JPY', 149) → "¥149"

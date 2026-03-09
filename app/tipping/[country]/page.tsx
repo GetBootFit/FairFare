@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ChevronRight, Banknote, ArrowRight, UtensilsCrossed, Car, Hotel, Sparkles } from 'lucide-react'
+import { getUSDPrices } from '@/lib/currency'
 import {
   getAllCountrySlugs,
   slugToDisplayName,
@@ -119,6 +120,7 @@ export default async function TippingCountryPage(
   const year = new Date().getFullYear()
   const countryName = data.displayName
   const badge = expectedBadge(data.expected)
+  const { single } = getUSDPrices()
 
   const jsonLd = [
     tippingBreadcrumbJsonLd(country, countryName),
@@ -219,7 +221,7 @@ export default async function TippingCountryPage(
           >
             Get Full Guide <ArrowRight size={16} />
           </Link>
-          <p className="text-xs text-zinc-600">From $0.99 · No account required</p>
+          <p className="text-xs text-zinc-600">From {single} · No account required</p>
         </div>
 
         {/* FAQ */}

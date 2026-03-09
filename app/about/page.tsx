@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Car, Banknote, MapPin, Brain, CreditCard, ShieldCheck } from 'lucide-react'
+import { getUSDPrices } from '@/lib/currency'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -8,14 +9,15 @@ export const metadata: Metadata = {
 }
 
 export default function AboutPage() {
+  const { single } = getUSDPrices()
   return (
     <div className="space-y-8 pb-4">
       {/* Header */}
       <div>
         <div className="flex items-center gap-3 mb-3">
-          <div className="w-10 h-10 rounded-xl bg-purple-600 flex items-center justify-center text-lg font-bold text-white">
+          <Link href="/" className="w-10 h-10 rounded-xl bg-purple-600 flex items-center justify-center text-lg font-bold text-white hover:bg-purple-700 transition-colors shrink-0">
             F
-          </div>
+          </Link>
           <h1 className="text-xl font-bold text-white">About FairFare</h1>
         </div>
         <p className="text-sm text-zinc-400 leading-relaxed">
@@ -70,8 +72,8 @@ export default function AboutPage() {
           />
           <Step
             number="3"
-            title="Unlock for $0.99"
-            description="Pay once with card, Apple Pay, or Google Pay. No account, no subscription. Your access token is valid for 30 minutes."
+            title={`Unlock from ${single}`}
+            description="Pay once with card, Apple Pay, or Google Pay. No account, no subscription. Choose a single query, Country Pass, or 10-query bundle."
           />
           <Step
             number="4"
