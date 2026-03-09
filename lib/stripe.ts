@@ -52,8 +52,7 @@ export async function createCheckoutSession(params: CheckoutParams): Promise<str
 
   const session = await stripe.checkout.sessions.create({
     mode: 'payment',
-    payment_method_types: ['card'],
-    // Apple Pay / Google Pay enabled automatically when available
+    automatic_payment_methods: { enabled: true }, // enables Apple Pay, Google Pay, cards automatically
     line_items: [
       {
         price_data: {
@@ -64,6 +63,11 @@ export async function createCheckoutSession(params: CheckoutParams): Promise<str
         quantity: 1,
       },
     ],
+    custom_text: {
+      submit: {
+        message: 'Your result unlocks instantly. No account or subscription required.',
+      },
+    },
     success_url: `${appUrl}/success?session_id={CHECKOUT_SESSION_ID}&redirect=/${redirectFeature}`,
     cancel_url: `${appUrl}/${redirectFeature}`,
     metadata: {
