@@ -52,7 +52,8 @@ export async function createCheckoutSession(params: CheckoutParams): Promise<str
 
   const session = await stripe.checkout.sessions.create({
     mode: 'payment',
-    automatic_payment_methods: { enabled: true }, // enables Apple Pay, Google Pay, cards automatically
+    // Omitting payment_method_types lets Stripe Checkout auto-show all available methods
+    // including Apple Pay, Google Pay, cards — based on customer device and location
     line_items: [
       {
         price_data: {
