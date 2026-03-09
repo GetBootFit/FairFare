@@ -25,11 +25,11 @@ export function TaxiPreview({ preview }: Props) {
 
       {/* Distance / time */}
       <div className="grid grid-cols-2 gap-3">
-        <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-4 text-center">
+        <div className="bg-zinc-900 ring-1 ring-zinc-800 rounded-2xl p-4 text-center">
           <p className="text-2xl font-bold text-white">{preview.distance.km}</p>
           <p className="text-xs text-zinc-500 mt-0.5">km · {preview.distance.mi} mi</p>
         </div>
-        <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-4 text-center">
+        <div className="bg-zinc-900 ring-1 ring-zinc-800 rounded-2xl p-4 text-center">
           <Clock size={20} className="mx-auto text-purple-400 mb-1" />
           <p className="text-2xl font-bold text-white">{preview.duration.minutes}</p>
           <p className="text-xs text-zinc-500 mt-0.5">min driving</p>
