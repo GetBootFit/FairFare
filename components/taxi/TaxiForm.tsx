@@ -147,7 +147,8 @@ export function TaxiForm() {
     setResult(null)
     setStatus('idle')
     setErrorMsg('')
-    clearStoredToken()
+    // Preserve token in dev so repeated testing doesn't require re-pasting
+    if (process.env.NODE_ENV !== 'development') clearStoredToken()
   }
 
   // Listen for token issued by the success page after Stripe redirect
