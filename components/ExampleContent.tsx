@@ -155,8 +155,19 @@ const SAMPLE_TIPPING: TippingResultType = {
 
 type Tab = 'taxi' | 'tipping'
 
-export function ExampleContent() {
+interface ExampleContentProps {
+  /** Server-generated Static Maps URL for the sample route (BKK → Sukhumvit). */
+  sampleMapUrl?: string
+}
+
+export function ExampleContent({ sampleMapUrl }: ExampleContentProps) {
   const [tab, setTab] = useState<Tab>('taxi')
+
+  // Merge the server-generated map URL into the sample data so TaxiResult
+  // renders the "View route on map" section when the Static Maps API is available.
+  const taxiResult: TaxiFullResult = sampleMapUrl
+    ? { ...SAMPLE_TAXI, routeMapUrl: sampleMapUrl }
+    : SAMPLE_TAXI
 
   return (
     <div className="space-y-4">
@@ -194,7 +205,7 @@ export function ExampleContent() {
 
       {/* Results */}
       {tab === 'taxi' ? (
-        <TaxiResult result={SAMPLE_TAXI} />
+        <TaxiResult result={taxiResult} />
       ) : (
         <TippingResult result={SAMPLE_TIPPING} />
       )}

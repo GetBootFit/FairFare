@@ -5,7 +5,7 @@ import { useState, useEffect, useCallback } from 'react'
 import {
   AlertTriangle, Navigation, RotateCcw,
   Volume2, VolumeX, Copy, Check, Maximize2, Share2, Moon,
-  Map, ChevronDown, ChevronUp, ChevronRight, Phone,
+  Map, ChevronDown, ChevronUp, ChevronRight, Phone, ExternalLink,
 } from 'lucide-react'
 import Link from 'next/link'
 import clsx from 'clsx'
@@ -16,6 +16,7 @@ import { ShowPhraseModal } from '@/components/ui/ShowPhraseModal'
 import { PhraseTranslator } from '@/components/ui/PhraseTranslator'
 import { getEmergencyNumbers } from '@/lib/emergency-contacts'
 import { getDrivingInfo, toMph, toKmh } from '@/lib/driving-info'
+import { getRideShareApps } from '@/lib/rideshare'
 
 // ── Custom SVG icon helper ────────────────────────────────────────────────────
 function SvgIcon({ name, size = 20, className = '' }: { name: string; size?: number; className?: string }) {
@@ -61,8 +62,9 @@ export function TaxiResult({ result, onReset }: Props) {
   const { fareRange, transitOptions, scamWarnings, distance, duration } = result
   const rates = useExchangeRates(fareRange.currency)
   const langCode = getLangCode(result.country)
-  const emergency = getEmergencyNumbers(result.country)
-  const driving   = getDrivingInfo(result.country)
+  const emergency  = getEmergencyNumbers(result.country)
+  const driving    = getDrivingInfo(result.country)
+  const rideshare  = getRideShareApps(result.city, result.country)
 
   // ── UI state ──────────────────────────────────────────────────────────────
   const [audioAvail, setAudioAvail] = useState(false)
@@ -221,28 +223,59 @@ export function TaxiResult({ result, onReset }: Props) {
           </div>
         )}
 
-        {/* Transport alternatives */}
-        {transitOptions.length > 0 && (
+        {/* Transport alternatives + ride-sharing */}
+        {(transitOptions.length > 0 || rideshare.length > 0) && (
           <div className="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden">
             <p className="text-xs text-zinc-500 uppercase tracking-wider px-4 pt-4 pb-2">Alternatives</p>
-            <div className="divide-y divide-zinc-800">
-              {transitOptions.map((opt, i) => (
-                <div key={i} className="flex items-center gap-3 px-4 py-3">
-                  <div className="w-7 flex items-center justify-center shrink-0">
-                    {transitIcon[opt.mode]}
+
+            {/* Google Maps transit options */}
+            {transitOptions.length > 0 && (
+              <div className="divide-y divide-zinc-800 border-t border-zinc-800">
+                {transitOptions.map((opt, i) => (
+                  <div key={i} className="flex items-center gap-3 px-4 py-3">
+                    <div className="w-7 flex items-center justify-center shrink-0">
+                      {transitIcon[opt.mode]}
+                    </div>
+                    <div className="flex-1">
+                      <span className="text-sm text-white">{transitLabel[opt.mode]}</span>
+                      {opt.lines.length > 0 && (
+                        <span className="text-xs text-zinc-500 ml-1.5">
+                          {opt.lines.slice(0, 2).join(', ')}
+                        </span>
+                      )}
+                    </div>
+                    <span className="text-sm text-zinc-300">{opt.duration}</span>
                   </div>
-                  <div className="flex-1">
-                    <span className="text-sm text-white">{transitLabel[opt.mode]}</span>
-                    {opt.lines.length > 0 && (
-                      <span className="text-xs text-zinc-500 ml-1.5">
-                        {opt.lines.slice(0, 2).join(', ')}
-                      </span>
-                    )}
-                  </div>
-                  <span className="text-sm text-zinc-300">{opt.duration}</span>
+                ))}
+              </div>
+            )}
+
+            {/* Ride-sharing apps */}
+            {rideshare.length > 0 && (
+              <div className="border-t border-zinc-800 px-4 py-3">
+                <p className="text-xs text-zinc-600 uppercase tracking-wider mb-2.5">Ride-sharing</p>
+                <div className="flex flex-wrap gap-2">
+                  {rideshare.map((app) => (
+                    <a
+                      key={app.name}
+                      href={app.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 hover:border-zinc-600 text-sm text-zinc-200 transition-colors"
+                    >
+                      {app.name}
+                      {app.affiliate && (
+                        <span className="text-zinc-600 text-[10px] leading-none">*</span>
+                      )}
+                      <ExternalLink size={11} className="text-zinc-600 shrink-0" />
+                    </a>
+                  ))}
                 </div>
-              ))}
-            </div>
+                {rideshare.some(a => a.affiliate) && (
+                  <p className="text-[10px] text-zinc-700 mt-2">* Affiliate link — we may earn a small commission at no cost to you.</p>
+                )}
+              </div>
+            )}
           </div>
         )}
 

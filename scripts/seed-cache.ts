@@ -1,38 +1,118 @@
 /**
- * scripts/seed-cache.ts
+ * FairFare — Cache Seed Script
  *
- * Pre-generates all Claude AI responses for every known city and country,
- * and writes them directly to Vercel KV. Run once at deploy time (or on demand).
+ * Pre-warms the Vercel KV cache for all 114 taxi cities + 53 tipping countries
+ * by calling the same lib/claude.ts functions the app itself uses — guaranteeing
+ * identical cache keys, data format, and TTL (90 days).
  *
- * Usage:
- *   npx tsx scripts/seed-cache.ts                    # seed everything
- *   npx tsx scripts/seed-cache.ts --tipping-only     # tipping guides only
- *   npx tsx scripts/seed-cache.ts --taxi-only        # taxi AI only
- *   npx tsx scripts/seed-cache.ts --dry-run          # print plan, no API calls
+ * Safe to re-run: cities already in KV are returned instantly with no Claude call
+ * and no charge. Only cold (uncached) entries hit the API.
  *
- * Prerequisites:
- *   npm install --legacy-peer-deps
- *   Copy .env.local.example → .env.local and fill ANTHROPIC_API_KEY + KV_* vars.
+ * Estimated cost (first full run, all cold):  ~$1.50
+ * Estimated time (first full run, all cold):  ~6–8 minutes
+ * Estimated cost (re-run, all warm):          ~$0.00
+ * Estimated time (re-run, all warm):          ~1–2 minutes
  *
- * Cost estimate (claude-sonnet-4-5 as of 2025):
- *   ~$1.00–$1.50 one-time for all 53 tipping + 120+ taxi entries.
- *   After seeding, those queries cost $0 (KV reads only).
+ * ─── Usage ───────────────────────────────────────────────────────────────────
  *
- * KV TTL: 30 days (matches lib/claude.ts KV_TTL).
+ *   npx tsx scripts/seed-cache.ts                  full run
+ *   npx tsx scripts/seed-cache.ts --dry-run         list what would be seeded, no API calls
+ *   npx tsx scripts/seed-cache.ts --taxi            taxi cities only
+ *   npx tsx scripts/seed-cache.ts --tipping         tipping countries only
+ *
+ * ─── Prerequisites ───────────────────────────────────────────────────────────
+ *
+ *   .env.local must contain:
+ *     ANTHROPIC_API_KEY=sk-ant-...
+ *     KV_REST_API_URL=https://...
+ *     KV_REST_API_TOKEN=...
+ *
+ *   tsx must be available: npm install --legacy-peer-deps
+ *   Run from the project root: cd /path/to/fairfare
  */
 
-import { config } from 'dotenv'
-config({ path: '.env.local' })
-import Anthropic from '@anthropic-ai/sdk'
-import { kv } from '@vercel/kv'
-import taxiRatesRaw from '../data/taxi-rates.json'
+import fs   from 'fs'
+import path from 'path'
+import { fileURLToPath } from 'url'
 
-// ─── Config ──────────────────────────────────────────────────────────────────
+// ── Resolve project root ───────────────────────────────────────────────────────
+const __filename  = fileURLToPath(import.meta.url)
+const projectRoot = path.resolve(path.dirname(__filename), '..')
 
-const MODEL = 'claude-sonnet-4-6'
-const KV_TTL = 30 * 24 * 60 * 60 // 30 days in seconds
-const DELAY_MS = 500              // ms between requests to avoid rate-limiting
+// ── 1. Load .env.local BEFORE importing anything that reads process.env ────────
+//    (Anthropic SDK and @vercel/kv both read env vars at instantiation time)
+function loadDotEnv(): void {
+  const envPath = path.join(projectRoot, '.env.local')
+  if (!fs.existsSync(envPath)) {
+    console.warn('⚠️  .env.local not found — using existing process.env values.\n')
+    return
+  }
+  const lines = fs.readFileSync(envPath, 'utf8').split('\n')
+  let count = 0
+  for (const line of lines) {
+    const trimmed = line.trim()
+    if (!trimmed || trimmed.startsWith('#')) continue
+    const eqIdx = trimmed.indexOf('=')
+    if (eqIdx === -1) continue
+    const key = trimmed.slice(0, eqIdx).trim()
+    const val = trimmed.slice(eqIdx + 1).trim().replace(/^["']|["']$/g, '')
+    if (key && !process.env[key]) { process.env[key] = val; count++ }
+  }
+  console.log(`📋 Loaded ${count} env vars from .env.local\n`)
+}
+loadDotEnv()
 
+// ── 2. Validate env vars ───────────────────────────────────────────────────────
+const missing: string[] = []
+if (!process.env.ANTHROPIC_API_KEY) missing.push('ANTHROPIC_API_KEY')
+if (!process.env.KV_REST_API_URL)   missing.push('KV_REST_API_URL')
+if (!process.env.KV_REST_API_TOKEN) missing.push('KV_REST_API_TOKEN')
+if (missing.length) {
+  console.error('❌  Missing required env vars:')
+  missing.forEach(v => console.error(`     ${v}`))
+  console.error('\n   Add them to .env.local and try again.')
+  console.error('   KV vars are in Vercel dashboard → Storage → your KV store → .env.local tab.\n')
+  process.exit(1)
+}
+
+// ── 3. Parse CLI flags ─────────────────────────────────────────────────────────
+const argv       = process.argv.slice(2)
+const DRY_RUN    = argv.includes('--dry-run')
+const TAXI_ONLY  = argv.includes('--taxi')
+const TIP_ONLY   = argv.includes('--tipping')
+const runTaxi    = !TIP_ONLY
+const runTipping = !TAXI_ONLY
+
+// ── 4. Build city list from taxi-rates.json ────────────────────────────────────
+type RateEntry = { country: string }
+const taxiRatesRaw = JSON.parse(
+  fs.readFileSync(path.join(projectRoot, 'data', 'taxi-rates.json'), 'utf8')
+) as Record<string, RateEntry>
+
+// Where key → title-case doesn't match the canonical Google Maps city name,
+// provide the exact string Google Maps returns so cache keys align with real queries.
+const CITY_NAME_OVERRIDES: Record<string, string> = {
+  ho_chi_minh:   'Ho Chi Minh City',
+  sao_paulo:     'São Paulo',
+  cancun:        'Cancún',
+  st_petersburg: 'Saint Petersburg',
+  washington_dc: 'Washington D.C.',
+  tel_aviv:      'Tel Aviv',
+  east_province: 'Eastern Province',
+  halong:        'Ha Long',
+}
+
+function keyToCity(key: string): string {
+  return CITY_NAME_OVERRIDES[key] ??
+    key.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
+}
+
+const taxiCities = Object.entries(taxiRatesRaw).map(([key, entry]) => ({
+  city:    keyToCity(key),
+  country: entry.country,
+}))
+
+// ── 5. Tipping countries (must match TippingForm.tsx exactly) ──────────────────
 const TIPPING_COUNTRIES = [
   'Argentina', 'Australia', 'Austria', 'Belgium', 'Brazil', 'Canada', 'Chile',
   'China', 'Colombia', 'Croatia', 'Czech Republic', 'Denmark', 'Egypt',
@@ -45,241 +125,113 @@ const TIPPING_COUNTRIES = [
   'United States', 'Vietnam',
 ]
 
-// ─── Helpers ─────────────────────────────────────────────────────────────────
+// ── 6. Helpers ─────────────────────────────────────────────────────────────────
+const delay = (ms: number) => new Promise(r => setTimeout(r, ms))
 
-type TaxiRateEntry = {
-  country: string
-  currency: string
-  currencySymbol: string
-  baseRate: number
-  ratePerKm: number
-  minimumFare: number
-  note: string
+function pad(n: number, total: number): string {
+  return String(n).padStart(String(total).length, ' ')
 }
 
-const taxiRates = taxiRatesRaw as Record<string, TaxiRateEntry>
+// ── 7. Main ────────────────────────────────────────────────────────────────────
+async function main(): Promise<void> {
+  const nTaxi    = runTaxi    ? taxiCities.length        : 0
+  const nTipping = runTipping ? TIPPING_COUNTRIES.length : 0
+  const nTotal   = nTaxi + nTipping
 
-function sleep(ms: number) {
-  return new Promise((r) => setTimeout(r, ms))
-}
+  // Rough cost estimate: taxi ~$0.007/city, tipping ~$0.013/country (cold only)
+  const estCost = (nTaxi * 0.007) + (nTipping * 0.013)
+  // ~2.3s per cold call (1.5s API + 0.8s delay)
+  const estMins = Math.ceil(nTotal * 2.3 / 60)
 
-function toDisplayName(key: string): string {
-  return key
-    .replace(/_/g, ' ')
-    .replace(/\b\w/g, (c) => c.toUpperCase())
-}
+  console.log('╔══════════════════════════════════════════╗')
+  console.log('║      FairFare — Cache Seed Script        ║')
+  console.log('╚══════════════════════════════════════════╝\n')
+  console.log(`  Taxi cities:         ${nTaxi}`)
+  console.log(`  Tipping countries:   ${nTipping}`)
+  console.log(`  Total (max calls):   ${nTotal}`)
+  console.log(`  Max cost (all cold): ~$${estCost.toFixed(2)}`)
+  console.log(`  Max time (all cold): ~${estMins} min`)
+  console.log(`  Already cached:      skipped automatically (zero charge)`)
+  console.log(`  KV TTL:              90 days\n`)
 
-async function kvExists(key: string): Promise<boolean> {
-  try {
-    const val = await kv.exists(key)
-    return val === 1
-  } catch {
-    return false
-  }
-}
-
-// ─── Claude calls ─────────────────────────────────────────────────────────────
-
-const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY })
-
-async function generateTaxiAiInfo(city: string, country: string) {
-  const prompt = `You are a concise travel safety assistant. Provide taxi safety information for ${city}, ${country}.
-
-Return ONLY valid JSON with this exact structure (no markdown, no explanation):
-{
-  "scamWarnings": [
-    "<scam warning specific to ${city}>",
-    "<scam warning specific to ${city}>",
-    "<scam warning specific to ${city}>"
-  ],
-  "tipping": {
-    "isExpected": <true|false>,
-    "recommendation": "<one short sentence, e.g. 'Round up to nearest euro' or 'Not expected'>"
-  },
-  "confirmationPhrase": {
-    "localLanguage": "<phrase to confirm fare in the local language of ${country}>",
-    "transliteration": "<romanisation if non-Latin script, otherwise null>",
-    "english": "<English translation of the phrase>"
-  }
-}
-
-Rules:
-- Scam warnings must be specific to ${city}, not generic travel advice
-- Keep each warning under 15 words
-- Confirmation phrase should ask for the fare before getting in`
-
-  const message = await anthropic.messages.create({
-    model: MODEL,
-    max_tokens: 600,
-    messages: [{ role: 'user', content: prompt }],
-  })
-
-  const text = message.content[0].type === 'text' ? message.content[0].text : ''
-  return JSON.parse(text)
-}
-
-async function generateTippingGuide(country: string) {
-  const prompt = `You are a concise travel etiquette assistant. Provide tipping customs for ${country}.
-
-Return ONLY valid JSON with this exact structure (no markdown, no explanation):
-{
-  "country": "${country}",
-  "currency": "<3-letter ISO code>",
-  "currencySymbol": "<symbol>",
-  "scenarios": {
-    "restaurant": {
-      "isExpected": <true|false>,
-      "rating": "<expected|appreciated|optional|avoid>",
-      "percentageMin": <number or null>,
-      "percentageMax": <number or null>,
-      "typicalAmount": "<e.g. '1-2€' or null>",
-      "notes": "<one sentence under 20 words>"
-    },
-    "taxi": { "isExpected": <true|false>, "rating": "...", "percentageMin": ..., "percentageMax": ..., "typicalAmount": ..., "notes": "..." },
-    "hotel_porter": { "isExpected": <true|false>, "rating": "...", "percentageMin": null, "percentageMax": null, "typicalAmount": "<per bag amount>", "notes": "..." },
-    "bar": { "isExpected": <true|false>, "rating": "...", "percentageMin": ..., "percentageMax": ..., "typicalAmount": ..., "notes": "..." },
-    "tour_guide": { "isExpected": <true|false>, "rating": "...", "percentageMin": ..., "percentageMax": ..., "typicalAmount": ..., "notes": "..." },
-    "delivery": { "isExpected": <true|false>, "rating": "...", "percentageMin": ..., "percentageMax": ..., "typicalAmount": ..., "notes": "..." }
-  }
-}
-
-Rating guide:
-- "expected" = not tipping is considered rude
-- "appreciated" = welcomed, common but not required
-- "optional" = uncommon, never inappropriate
-- "avoid" = tipping can cause offence`
-
-  const message = await anthropic.messages.create({
-    model: MODEL,
-    max_tokens: 1200,
-    messages: [{ role: 'user', content: prompt }],
-  })
-
-  const text = message.content[0].type === 'text' ? message.content[0].text : ''
-  return JSON.parse(text)
-}
-
-// ─── Main ─────────────────────────────────────────────────────────────────────
-
-async function main() {
-  const args = process.argv.slice(2)
-  const dryRun = args.includes('--dry-run')
-  const taxiOnly = args.includes('--taxi-only')
-  const tippingOnly = args.includes('--tipping-only')
-
-  if (!dryRun) {
-    if (!process.env.ANTHROPIC_API_KEY) {
-      console.error('❌  ANTHROPIC_API_KEY is not set. Copy .env.local.example → .env.local and fill it in.')
-      process.exit(1)
+  if (DRY_RUN) {
+    console.log('🔍  DRY RUN — no API calls will be made.\n')
+    if (runTaxi) {
+      console.log(`Taxi cities (${taxiCities.length}):`)
+      taxiCities.forEach(({ city, country }) => console.log(`   ${city}, ${country}`))
     }
-    if (!process.env.KV_REST_API_URL || !process.env.KV_REST_API_TOKEN) {
-      console.error('❌  KV_REST_API_URL / KV_REST_API_TOKEN not set. Add them from your Vercel KV store.')
-      process.exit(1)
+    if (runTipping) {
+      console.log(`\nTipping countries (${TIPPING_COUNTRIES.length}):`)
+      TIPPING_COUNTRIES.forEach(c => console.log(`   ${c}`))
     }
+    console.log('\nRemove --dry-run to seed for real.\n')
+    return
   }
 
-  // Build taxi seed list from taxi-rates.json (deduplicated city+country pairs)
-  const taxiEntries = Object.entries(taxiRates).map(([key, entry]) => ({
-    key,
-    city: toDisplayName(key),
-    country: entry.country,
-    cacheKey: `taxi:${key.replace(/_/g, ' ')}:${entry.country.toLowerCase()}`,
-  }))
+  // Dynamic import runs AFTER loadDotEnv() so env vars are in process.env
+  // before lib/claude.ts instantiates the Anthropic client and @vercel/kv.
+  const { getTaxiAiInfo, getTippingGuide } = await import('../lib/claude.js')
 
-  // Summary
-  console.log('\n🌍  FairFare Cache Seeder')
-  console.log('─'.repeat(50))
-  if (!tippingOnly) console.log(`  Taxi entries  : ${taxiEntries.length}`)
-  if (!taxiOnly)    console.log(`  Tipping entries: ${TIPPING_COUNTRIES.length}`)
-  console.log(`  KV TTL        : 30 days`)
-  console.log(`  Mode          : ${dryRun ? '🔍 DRY RUN (no API calls)' : '🚀 LIVE'}`)
-  console.log('─'.repeat(50))
+  let ok = 0, fail = 0
+  const errors: string[] = []
 
-  let seeded = 0
-  let skipped = 0
-  let errors = 0
-
-  // ── Taxi ──────────────────────────────────────────────────────────────────
-
-  if (!tippingOnly) {
-    console.log('\n📍  Seeding taxi AI info…\n')
-    for (const entry of taxiEntries) {
-      const label = `${entry.city}, ${entry.country}`
+  // ── Taxi ──────────────────────────────────────────────────────────────────────
+  if (runTaxi) {
+    console.log(`🚕  Seeding ${taxiCities.length} taxi cities...\n`)
+    for (let i = 0; i < taxiCities.length; i++) {
+      const { city, country } = taxiCities[i]
+      const label = `[${pad(i + 1, taxiCities.length)}/${taxiCities.length}] ${city}, ${country}`
       try {
-        const exists = dryRun ? false : await kvExists(entry.cacheKey)
-        if (exists) {
-          console.log(`  ⏭️   ${label} — already cached`)
-          skipped++
-          continue
-        }
-
-        if (dryRun) {
-          console.log(`  📋  ${label} — would seed (key: ${entry.cacheKey})`)
-          seeded++
-          continue
-        }
-
-        process.stdout.write(`  ⏳  ${label}…`)
-        const data = await generateTaxiAiInfo(entry.city, entry.country)
-        await kv.set(entry.cacheKey, JSON.stringify(data), { ex: KV_TTL })
-        console.log(' ✅')
-        seeded++
-        await sleep(DELAY_MS)
+        process.stdout.write(`  ${label}… `)
+        await getTaxiAiInfo(city, country)
+        process.stdout.write('✓\n')
+        ok++
       } catch (err) {
-        console.log(` ❌  ${err instanceof Error ? err.message : err}`)
-        errors++
+        const msg = err instanceof Error ? err.message : String(err)
+        process.stdout.write(`✗  ${msg}\n`)
+        errors.push(`Taxi › ${city}, ${country} — ${msg}`)
+        fail++
       }
+      if (i < taxiCities.length - 1) await delay(800)
     }
   }
 
-  // ── Tipping ───────────────────────────────────────────────────────────────
-
-  if (!taxiOnly) {
-    console.log('\n💵  Seeding tipping guides…\n')
-    for (const country of TIPPING_COUNTRIES) {
-      const cacheKey = `tipping:${country.toLowerCase()}`
+  // ── Tipping ───────────────────────────────────────────────────────────────────
+  if (runTipping) {
+    console.log(`\n💰  Seeding ${TIPPING_COUNTRIES.length} tipping countries...\n`)
+    for (let i = 0; i < TIPPING_COUNTRIES.length; i++) {
+      const country = TIPPING_COUNTRIES[i]
+      const label = `[${pad(i + 1, TIPPING_COUNTRIES.length)}/${TIPPING_COUNTRIES.length}] ${country}`
       try {
-        const exists = dryRun ? false : await kvExists(cacheKey)
-        if (exists) {
-          console.log(`  ⏭️   ${country} — already cached`)
-          skipped++
-          continue
-        }
-
-        if (dryRun) {
-          console.log(`  📋  ${country} — would seed (key: ${cacheKey})`)
-          seeded++
-          continue
-        }
-
-        process.stdout.write(`  ⏳  ${country}…`)
-        const data = await generateTippingGuide(country)
-        await kv.set(cacheKey, JSON.stringify(data), { ex: KV_TTL })
-        console.log(' ✅')
-        seeded++
-        await sleep(DELAY_MS)
+        process.stdout.write(`  ${label}… `)
+        await getTippingGuide(country)
+        process.stdout.write('✓\n')
+        ok++
       } catch (err) {
-        console.log(` ❌  ${err instanceof Error ? err.message : err}`)
-        errors++
+        const msg = err instanceof Error ? err.message : String(err)
+        process.stdout.write(`✗  ${msg}\n`)
+        errors.push(`Tipping › ${country} — ${msg}`)
+        fail++
       }
+      if (i < TIPPING_COUNTRIES.length - 1) await delay(800)
     }
   }
 
-  // ── Summary ───────────────────────────────────────────────────────────────
-
-  console.log('\n' + '─'.repeat(50))
-  console.log(`  ✅  Seeded  : ${seeded}`)
-  console.log(`  ⏭️   Skipped : ${skipped} (already in KV)`)
-  if (errors > 0) console.log(`  ❌  Errors  : ${errors}`)
-  console.log('─'.repeat(50))
-  if (errors > 0) {
-    console.log('\n⚠️  Some entries failed. Re-run the script to retry failed entries only.')
+  // ── Summary ───────────────────────────────────────────────────────────────────
+  console.log('\n══════════════════════════════════════════════')
+  console.log(`  ✅  Succeeded: ${ok}`)
+  console.log(`  ❌  Failed:    ${fail}`)
+  console.log('══════════════════════════════════════════════\n')
+  if (fail > 0) {
+    console.log('Failed entries:')
+    errors.forEach(e => console.log(`  ${e}`))
+    console.log('\n⚠️  Re-run the script to retry — succeeded entries will be skipped (no charge).\n')
   } else {
-    console.log('\n🎉  Cache seeded successfully. All future requests will be served from KV.')
+    console.log('✅  Cache fully warm. Re-run in 90 days to refresh.\n')
   }
 }
 
-main().catch((err) => {
-  console.error('\n❌  Fatal error:', err)
+main().catch(err => {
+  console.error('\n💥  Fatal:', err)
   process.exit(1)
 })

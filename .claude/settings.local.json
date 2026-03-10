@@ -32,7 +32,8 @@
       "Bash(node -e \"const d = require\\(''./data/taxi-rates.json''\\); console.log\\(''Sample Bangkok:'', JSON.stringify\\(d[''bangkok''], null, 2\\)\\); console.log\\(''Sample Tokyo:'', JSON.stringify\\(d[''tokyo''], null, 2\\)\\);\")",
       "Bash(node -e \"const d = require\\(''./data/tipping-seo.json''\\); const keys = Object.keys\\(d\\); console.log\\(''Total countries:'', keys.length\\); console.log\\(''All keys:'', JSON.stringify\\(keys.sort\\(\\)\\)\\);\")",
       "Bash(node -e \"const d = require\\(''./data/tipping-seo.json''\\); console.log\\(''Sample Thailand:'', JSON.stringify\\(d[''thailand''], null, 2\\)\\);\")",
-      "Bash(node -e \"const d = require\\(''./data/taxi-rates.json''\\); const sample = Object.entries\\(d\\).slice\\(0,3\\).map\\(\\([k,v]\\) => \\({key:k, fields: Object.keys\\(v\\)}\\)\\); console.log\\(JSON.stringify\\(sample, null, 2\\)\\);\")"
+      "Bash(node -e \"const d = require\\(''./data/taxi-rates.json''\\); const sample = Object.entries\\(d\\).slice\\(0,3\\).map\\(\\([k,v]\\) => \\({key:k, fields: Object.keys\\(v\\)}\\)\\); console.log\\(JSON.stringify\\(sample, null, 2\\)\\);\")",
+      "Bash(npx tsc --noEmit --skipLibCheck)"
     ]
   }
 }

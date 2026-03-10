@@ -5,6 +5,11 @@ const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY })
 const MODEL = 'claude-sonnet-4-6'
 const KV_TTL = 90 * 24 * 60 * 60 // 90 days — taxi scams / tipping customs change over years, not weeks
 
+/** Strip markdown code fences Claude occasionally adds despite being told not to. */
+function stripJson(raw: string): string {
+  return raw.replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/, '').trim()
+}
+
 // ─── In-memory cache (fast, resets on cold start) ─────────────────────────────
 const memCache = new Map<string, { data: unknown; cachedAt: number }>()
 const MEM_TTL_MS = 90 * 24 * 60 * 60 * 1000
@@ -132,7 +137,7 @@ Rules:
   })
 
   const text = message.content[0].type === 'text' ? message.content[0].text : ''
-  const data = JSON.parse(text) as TaxiAiInfo
+  const data = JSON.parse(stripJson(text)) as TaxiAiInfo
   await cacheSet(cacheKey, data)
   return data
 }
@@ -223,7 +228,7 @@ Phrase rules:
   })
 
   const text = message.content[0].type === 'text' ? message.content[0].text : ''
-  const data = JSON.parse(text) as TippingAiResult
+  const data = JSON.parse(stripJson(text)) as TippingAiResult
   await cacheSet(cacheKey, data)
   return data
 }

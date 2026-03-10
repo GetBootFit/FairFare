@@ -15,7 +15,50 @@ export const metadata: Metadata = {
   },
 }
 
+/**
+ * Build a dark-styled Static Maps URL for the BKK Airport → Sukhumvit sample.
+ * Uses a straight two-point path (no polyline encoding required for the sample).
+ * Returns undefined when GOOGLE_MAPS_API_KEY is not set, or when the Maps
+ * Static API is not enabled — TaxiResult silently hides the map section.
+ */
+function buildSampleMapUrl(): string | undefined {
+  const key = process.env.GOOGLE_MAPS_API_KEY ?? process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+  if (!key) return undefined
+
+  // Dark styles matching FairFare's zinc palette (same as buildRouteMapUrl)
+  const styles = [
+    'element:geometry|color:0x1c1c27',
+    'element:geometry.stroke|color:0x2e2e3e',
+    'element:labels.text.fill|color:0x686878',
+    'element:labels.text.stroke|color:0x1c1c27',
+    'feature:road|element:geometry|color:0x2d2d40',
+    'feature:road.highway|element:geometry|color:0x3d3d5a',
+    'feature:road.highway|element:geometry.stroke|color:0x242432',
+    'feature:water|element:geometry|color:0x0d1117',
+    'feature:landscape|element:geometry|color:0x1a1a28',
+    'feature:poi|visibility:off',
+    'feature:transit|visibility:off',
+    'feature:administrative.land_parcel|visibility:off',
+  ]
+
+  const params = [
+    'size=640x320',
+    'scale=2',
+    'maptype=roadmap',
+    ...styles.map(s => `style=${s}`),
+    // Two-point path: Suvarnabhumi Airport → Sukhumvit Soi 11
+    'path=color:0xa855f7ff|weight:4|13.6900,100.7501|13.7452,100.5547',
+    'markers=color:0x9333ea|size:small|13.6900,100.7501',
+    'markers=color:0x6b21a8|size:small|13.7452,100.5547',
+    `key=${encodeURIComponent(key)}`,
+  ]
+
+  return `https://maps.googleapis.com/maps/api/staticmap?${params.join('&')}`
+}
+
 export default function ExamplePage() {
+  const sampleMapUrl = buildSampleMapUrl()
+
   return (
     <div className="space-y-5 pb-8">
       {/* Header */}
@@ -33,7 +76,7 @@ export default function ExamplePage() {
       </div>
 
       {/* Interactive sample result */}
-      <ExampleContent />
+      <ExampleContent sampleMapUrl={sampleMapUrl} />
 
       {/* CTAs */}
       <div className="space-y-3 pt-2">

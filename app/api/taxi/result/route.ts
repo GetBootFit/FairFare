@@ -56,6 +56,11 @@ export async function POST(req: NextRequest) {
 
     // ── Fare range from static dataset ───────────────────────────────────────
     const rateData = findCityRate(`${route.city} ${route.country}`)
+    if (!rateData) {
+      // Paying user searched a city not in our dataset — log for manual review.
+      // Filter Vercel logs by [CITY_MISS] to find cities worth adding to taxi-rates.json.
+      console.warn(`[CITY_MISS] ${route.city}, ${route.country}`)
+    }
     const fareRange = rateData
       ? calculateFareRange(rateData, route.distanceKm)
       : {

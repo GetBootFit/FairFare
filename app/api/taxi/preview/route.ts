@@ -1,5 +1,6 @@
 ﻿import { NextRequest } from 'next/server'
 import { getRouteInfo } from '@/lib/google-maps'
+import { findCityRate } from '@/lib/taxi-rates'
 import { isRateLimited, getClientIp } from '@/lib/rate-limit'
 import type { TaxiPreviewResult } from '@/types'
 
@@ -37,6 +38,12 @@ export async function POST(req: NextRequest) {
       pickupPlaceId,
       destPlaceId,
     )
+
+    // Log cities not in our fare dataset — free-tier signal, no payment required.
+    // Combine with [CITY_MISS] (paid) logs to prioritise which cities to add next.
+    if (!findCityRate(`${route.city} ${route.country}`)) {
+      console.warn(`[CITY_MISS:preview] ${route.city}, ${route.country}`)
+    }
 
     const result: TaxiPreviewResult = {
       pickup,
