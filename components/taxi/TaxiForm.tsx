@@ -18,7 +18,11 @@ import {
   popBundleToken,
 } from '@/lib/tokens'
 import { useLanguage } from '@/context/LanguageContext'
+import { useRecentSearches } from '@/hooks/useRecentSearches'
+import { Clock, Plane } from 'lucide-react'
 import type { TaxiPreviewResult, TaxiFullResult } from '@/types'
+
+const AIRPORT_RE = /airport|aéroport|aeropuerto|aeroporto|flughafen|luchthaven|havalimanı|flygplats/i
 
 const STORAGE_KEY = 'ff_taxi_form'
 
@@ -38,6 +42,7 @@ interface FormState {
 
 export function TaxiForm() {
   const { t } = useLanguage()
+  const { recent, addSearch } = useRecentSearches()
   const [form, setForm] = useState<FormState>({
     pickup: '', destination: '', pickupPlaceId: '', destPlaceId: '',
   })
@@ -45,6 +50,8 @@ export function TaxiForm() {
   const [preview, setPreview] = useState<TaxiPreviewResult | null>(null)
   const [result, setResult] = useState<TaxiFullResult | null>(null)
   const [errorMsg, setErrorMsg] = useState('')
+
+  const isAirportPickup = AIRPORT_RE.test(form.pickup)
 
   // Restore form from sessionStorage after payment redirect
   useEffect(() => {
@@ -130,6 +137,12 @@ export function TaxiForm() {
     }
     setResult(data as TaxiFullResult)
     setStatus('done')
+    addSearch({
+      pickup: currentForm.pickup,
+      destination: currentForm.destination,
+      pickupPlaceId: currentForm.pickupPlaceId,
+      destPlaceId: currentForm.destPlaceId,
+    })
   }
 
   const handleUnlock = () => {
@@ -216,6 +229,15 @@ export function TaxiForm() {
               onChange={(v) => setField('pickup', v)}
               onSelect={(addr, id) => setForm((f) => ({ ...f, pickup: addr, pickupPlaceId: id }))}
             />
+            {/* Airport tip */}
+            {isAirportPickup && (
+              <div className="flex items-start gap-2 mt-2 px-1">
+                <Plane size={12} className="text-purple-400 shrink-0 mt-0.5" />
+                <p className="text-xs text-zinc-500 leading-snug">
+                  Always use the official taxi queue — ignore touts inside the terminal.
+                </p>
+              </div>
+            )}
           </div>
           <div>
             <label htmlFor="destination" className="block text-xs text-zinc-500 mb-1.5 uppercase tracking-wider">{t('taxi_to')}</label>
@@ -235,6 +257,37 @@ export function TaxiForm() {
           >
             {t('taxi_check_route')}
           </button>
+
+          {/* Recent searches */}
+          {recent.length > 0 && (
+            <div className="pt-1 space-y-1.5">
+              <p className="flex items-center gap-1.5 text-xs text-zinc-600 uppercase tracking-wider">
+                <Clock size={11} />
+                Recent
+              </p>
+              {recent.map((r, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => {
+                    setForm({
+                      pickup: r.pickup,
+                      destination: r.destination,
+                      pickupPlaceId: r.pickupPlaceId,
+                      destPlaceId: r.destPlaceId,
+                    })
+                  }}
+                  className="w-full text-left px-3 py-2.5 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 rounded-xl transition-colors"
+                >
+                  <p className="text-xs text-zinc-400 truncate">
+                    <span className="text-zinc-300">{r.pickup}</span>
+                    <span className="text-zinc-600 mx-1.5">→</span>
+                    {r.destination}
+                  </p>
+                </button>
+              ))}
+            </div>
+          )}
         </form>
       )}
 

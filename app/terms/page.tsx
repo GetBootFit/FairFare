@@ -12,9 +12,14 @@ const CONTACT = 'legal@fairfare.app'
 export default function TermsPage() {
   return (
     <div className="space-y-6 pb-4">
-      <div>
-        <h1 className="text-xl font-bold text-white">Terms of Service</h1>
-        <p className="text-xs text-zinc-500 mt-1">Effective {EFFECTIVE}</p>
+      <div className="flex items-center gap-3">
+        <Link href="/" className="w-10 h-10 rounded-xl bg-purple-600 flex items-center justify-center text-lg font-bold text-white hover:bg-purple-700 transition-colors shrink-0">
+          F
+        </Link>
+        <div>
+          <h1 className="text-xl font-bold text-white">Terms of Service</h1>
+          <p className="text-xs text-zinc-500 mt-1">Effective {EFFECTIVE}</p>
+        </div>
       </div>
 
       <p className="text-sm text-zinc-400 leading-relaxed">

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Car, Banknote, ChevronRight, Sparkles } from 'lucide-react'
+import { ChevronRight, Sparkles } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 import { InstallPrompt } from '@/components/InstallPrompt'
 import { getStoredCurrency, formatPrice, PRICES, type CurrencyCode } from '@/lib/currency'
@@ -12,18 +12,17 @@ interface FeatureCardProps {
   icon: React.ReactNode
   title: string
   description: string
-  accentColor: string
   bgColor: string
   borderColor: string
 }
 
-function FeatureCard({ href, icon, title, description, accentColor, bgColor, borderColor }: FeatureCardProps) {
+function FeatureCard({ href, icon, title, description, bgColor, borderColor }: FeatureCardProps) {
   return (
     <Link
       href={href}
       className={`group flex items-center gap-4 p-5 rounded-2xl bg-zinc-900 border ${borderColor} hover:bg-zinc-800 transition-colors`}
     >
-      <div className={`w-14 h-14 rounded-xl ${bgColor} flex items-center justify-center ${accentColor} shrink-0`}>
+      <div className={`w-14 h-14 rounded-xl ${bgColor} flex items-center justify-center shrink-0`}>
         {icon}
       </div>
       <div className="flex-1 min-w-0">
@@ -81,19 +80,17 @@ export function HomeContent() {
       <div className="space-y-3 flex-1">
         <FeatureCard
           href="/taxi"
-          icon={<Car size={28} strokeWidth={1.8} />}
+          icon={<img src="/icons/SVG/taxi-car.svg" alt="" width={38} height={38} aria-hidden="true" />}
           title={t('home_taxi_title')}
           description={t('home_taxi_desc')}
-          accentColor="text-purple-400"
           bgColor="bg-purple-900/20"
           borderColor="border-purple-900/40"
         />
         <FeatureCard
           href="/tipping"
-          icon={<Banknote size={28} strokeWidth={1.8} />}
+          icon={<img src="/icons/SVG/money-notes.svg" alt="" width={38} height={38} aria-hidden="true" />}
           title={t('home_tipping_title')}
           description={t('home_tipping_desc')}
-          accentColor="text-teal-400"
           bgColor="bg-teal-900/20"
           borderColor="border-teal-900/40"
         />
@@ -109,6 +106,29 @@ export function HomeContent() {
           <Sparkles size={11} />
           See a sample result
         </Link>
+      </div>
+
+      {/* Footer */}
+      <div className="border-t border-zinc-900 pt-4 pb-2 space-y-3">
+        <div className="flex items-center justify-center gap-4 flex-wrap">
+          {[
+            { href: '/about', label: 'About' },
+            { href: '/faq', label: 'FAQ' },
+            { href: '/terms', label: 'Terms' },
+            { href: '/privacy', label: 'Privacy' },
+          ].map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              className="text-xs text-zinc-700 hover:text-zinc-500 transition-colors"
+            >
+              {label}
+            </Link>
+          ))}
+        </div>
+        <p className="text-center text-xs text-zinc-800">
+          © {new Date().getFullYear()} FairFare — Know before you go
+        </p>
       </div>
     </div>
   )

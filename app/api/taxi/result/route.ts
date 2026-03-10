@@ -1,6 +1,6 @@
 import { NextRequest } from 'next/server'
 import { verifyToken } from '@/lib/tokens'
-import { getRouteInfo } from '@/lib/google-maps'
+import { getRouteInfo, buildRouteMapUrl } from '@/lib/google-maps'
 import { getTaxiAiInfo } from '@/lib/claude'
 import { findCityRate, calculateFareRange } from '@/lib/taxi-rates'
 import type { TaxiFullResult, TransportOption } from '@/types'
@@ -88,6 +88,22 @@ export async function POST(req: NextRequest) {
       }
     })
 
+    // ── Route map URL (dark-styled Static Maps) ───────────────────────────────
+    let routeMapUrl: string | undefined
+    if (route.overviewPolyline && route.startLocation && route.endLocation) {
+      try {
+        routeMapUrl = buildRouteMapUrl(
+          route.overviewPolyline,
+          route.startLocation.lat,
+          route.startLocation.lng,
+          route.endLocation.lat,
+          route.endLocation.lng,
+        )
+      } catch {
+        // Non-fatal — map unavailable (e.g. key not configured)
+      }
+    }
+
     const result: TaxiFullResult = {
       pickup,
       destination,
@@ -99,7 +115,8 @@ export async function POST(req: NextRequest) {
       transitOptions,
       scamWarnings: aiInfo.scamWarnings,
       tipping: aiInfo.tipping,
-      confirmationPhrase: aiInfo.confirmationPhrase,
+      driverPhrases: aiInfo.driverPhrases,
+      routeMapUrl,
     }
 
     return Response.json(result)

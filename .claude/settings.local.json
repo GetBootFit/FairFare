@@ -14,7 +14,25 @@
       "Bash(node -e \":*)",
       "Bash(powershell -Command \":*)",
       "Bash(npm install @vercel/analytics --legacy-peer-deps)",
-      "Bash(node -e \"console.log\\(require\\(''crypto''\\).randomBytes\\(32\\).toString\\(''base64url''\\)\\)\")"
+      "Bash(node -e \"console.log\\(require\\(''crypto''\\).randomBytes\\(32\\).toString\\(''base64url''\\)\\)\")",
+      "Bash(powershell.exe -Command \"New-Item -Path ''C:\\\\Users\\\\david\\\\Projects\\\\FairFare\\\\public\\\\llms.txt'' -ItemType File -Force\")",
+      "Bash(npx tsc --noEmit)",
+      "Bash(echo \"EXIT:$?\")",
+      "Bash(npx next build)",
+      "Bash(Get-ChildItem \"C:\\\\Users\\\\david\\\\Projects\\\\FairFare\\\\public\\\\icons\\\\SVG\" -Filter \"*.svg\")",
+      "Bash(Select-Object -ExpandProperty Name)",
+      "Bash(Sort-Object)",
+      "Bash(grep -ohE '#[0-9a-fA-F]{6}' /c/Users/david/Projects/FairFare/public/icons/SVG/*.svg)",
+      "Bash(python3:*)",
+      "Bash(python -c \":*)",
+      "Bash(python recolor-svgs.py)",
+      "Bash(node -e \"const d = require\\(''./data/taxi-rates.json''\\); console.log\\(''Total entries:'', d.length\\); console.log\\(''Sample:'', JSON.stringify\\(d.slice\\(0,3\\), null, 2\\)\\)\")",
+      "Bash(node -e \"const d = require\\(''./data/taxi-rates.json''\\); const keys = Object.keys\\(d\\); console.log\\(''Structure type:'', typeof d\\); console.log\\(''Top-level keys:'', keys.length\\); console.log\\(''Keys:'', keys.slice\\(0,10\\)\\);\")",
+      "Bash(node -e \"const d = require\\(''./data/taxi-rates.json''\\); const keys = Object.keys\\(d\\); console.log\\(''Total cities:'', keys.length\\); console.log\\(''All keys:'', JSON.stringify\\(keys.sort\\(\\), null, 2\\)\\);\")",
+      "Bash(node -e \"const d = require\\(''./data/taxi-rates.json''\\); console.log\\(''Sample Bangkok:'', JSON.stringify\\(d[''bangkok''], null, 2\\)\\); console.log\\(''Sample Tokyo:'', JSON.stringify\\(d[''tokyo''], null, 2\\)\\);\")",
+      "Bash(node -e \"const d = require\\(''./data/tipping-seo.json''\\); const keys = Object.keys\\(d\\); console.log\\(''Total countries:'', keys.length\\); console.log\\(''All keys:'', JSON.stringify\\(keys.sort\\(\\)\\)\\);\")",
+      "Bash(node -e \"const d = require\\(''./data/tipping-seo.json''\\); console.log\\(''Sample Thailand:'', JSON.stringify\\(d[''thailand''], null, 2\\)\\);\")",
+      "Bash(node -e \"const d = require\\(''./data/taxi-rates.json''\\); const sample = Object.entries\\(d\\).slice\\(0,3\\).map\\(\\([k,v]\\) => \\({key:k, fields: Object.keys\\(v\\)}\\)\\); console.log\\(JSON.stringify\\(sample, null, 2\\)\\);\")"
     ]
   }
 }

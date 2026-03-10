@@ -33,11 +33,32 @@ const SAMPLE_TAXI: TaxiFullResult = {
     isExpected: false,
     recommendation: 'Round up or add ฿20–50 for good service. Not required.',
   },
-  confirmationPhrase: {
-    localLanguage: 'เปิดมิเตอร์ด้วยครับ',
-    transliteration: 'Pèrt mi-dtêr dûay khráp',
-    english: 'Please turn on the meter',
-  },
+  driverPhrases: [
+    {
+      context: 'Greeting',
+      localLanguage: 'สวัสดีครับ',
+      transliteration: 'Sawadee khráp',
+      english: 'Hello',
+    },
+    {
+      context: 'Meter',
+      localLanguage: 'เปิดมิเตอร์ด้วยครับ',
+      transliteration: 'Pèrt mi-dtêr dûay khráp',
+      english: 'Please use the meter',
+    },
+    {
+      context: 'Thank you',
+      localLanguage: 'ขอบคุณครับ',
+      transliteration: 'Khob khun khráp',
+      english: 'Thank you',
+    },
+    {
+      context: 'Goodbye',
+      localLanguage: 'ลาก่อนครับ',
+      transliteration: 'La gòn khráp',
+      english: 'Goodbye',
+    },
+  ],
 }
 
 // ── Sample tipping result — Thailand ─────────────────────────────────────────
@@ -46,6 +67,38 @@ const SAMPLE_TIPPING: TippingResultType = {
   country: 'Thailand',
   currency: 'THB',
   currencySymbol: '฿',
+  servicePhrases: [
+    {
+      context: 'Thank you',
+      localLanguage: 'ขอบคุณครับ',
+      transliteration: 'Khob khun khráp',
+      english: 'Thank you',
+    },
+    {
+      context: 'This was wonderful',
+      localLanguage: 'อร่อยมากครับ',
+      transliteration: 'Aroi mak khráp',
+      english: 'This was delicious',
+    },
+    {
+      context: 'Compliments to the chef',
+      localLanguage: 'ขอฝากคำชมให้พ่อครัวด้วยครับ',
+      transliteration: 'Kho fak kham chom hai pho khrua duai khráp',
+      english: 'Please pass my compliments to the chef',
+    },
+    {
+      context: 'Keep the change',
+      localLanguage: 'เก็บเงินทอนไว้ได้เลยครับ',
+      transliteration: 'Kep ngoen thon wai dai loei khráp',
+      english: 'Please keep the change',
+    },
+    {
+      context: 'You were wonderful',
+      localLanguage: 'คุณดูแลเราดีมากครับ',
+      transliteration: 'Khun du lae rao di mak khráp',
+      english: 'You took wonderful care of us',
+    },
+  ],
   scenarios: {
     restaurant: {
       isExpected: false,
@@ -141,9 +194,9 @@ export function ExampleContent() {
 
       {/* Results */}
       {tab === 'taxi' ? (
-        <TaxiResult result={SAMPLE_TAXI} onReset={() => {}} />
+        <TaxiResult result={SAMPLE_TAXI} />
       ) : (
-        <TippingResult result={SAMPLE_TIPPING} onReset={() => {}} />
+        <TippingResult result={SAMPLE_TIPPING} />
       )}
     </div>
   )

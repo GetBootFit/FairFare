@@ -3,11 +3,11 @@ import { kvGet, kvSet } from '@/lib/kv'
 
 const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY })
 const MODEL = 'claude-sonnet-4-6'
-const KV_TTL = 30 * 24 * 60 * 60 // 30 days — city/country data changes rarely
+const KV_TTL = 90 * 24 * 60 * 60 // 90 days — taxi scams / tipping customs change over years, not weeks
 
 // ─── In-memory cache (fast, resets on cold start) ─────────────────────────────
 const memCache = new Map<string, { data: unknown; cachedAt: number }>()
-const MEM_TTL_MS = 30 * 24 * 60 * 60 * 1000
+const MEM_TTL_MS = 90 * 24 * 60 * 60 * 1000
 
 function memGet<T>(key: string): T | null {
   const entry = memCache.get(key)
@@ -39,11 +39,12 @@ async function cacheSet(key: string, data: unknown): Promise<void> {
 export interface TaxiAiInfo {
   scamWarnings: string[]
   tipping: { isExpected: boolean; recommendation: string }
-  confirmationPhrase: {
+  driverPhrases: Array<{
+    context: string
     localLanguage: string
     transliteration: string | null
     english: string
-  }
+  }>
 }
 
 export interface TippingAiResult {
@@ -61,16 +62,22 @@ export interface TippingAiResult {
       notes: string
     }
   >
+  servicePhrases: Array<{
+    context: string
+    localLanguage: string
+    transliteration: string | null
+    english: string
+  }>
 }
 
 // ─── Taxi AI info (cached per city) ──────────────────────────────────────────
 
 export async function getTaxiAiInfo(city: string, country: string): Promise<TaxiAiInfo> {
-  const cacheKey = `taxi:${city.toLowerCase()}:${country.toLowerCase()}`
+  const cacheKey = `taxi_v2:${city.toLowerCase()}:${country.toLowerCase()}`
   const cached = await cacheGet<TaxiAiInfo>(cacheKey)
   if (cached) return cached
 
-  const prompt = `You are a concise travel safety assistant. Provide taxi safety information for ${city}, ${country}.
+  const prompt = `You are a friendly travel assistant. Provide taxi safety information and useful driver phrases for ${city}, ${country}.
 
 Return ONLY valid JSON with this exact structure (no markdown, no explanation):
 {
@@ -83,21 +90,44 @@ Return ONLY valid JSON with this exact structure (no markdown, no explanation):
     "isExpected": <true|false>,
     "recommendation": "<one short sentence, e.g. 'Round up to nearest euro' or 'Not expected'>"
   },
-  "confirmationPhrase": {
-    "localLanguage": "<phrase to confirm fare in the local language of ${country}>",
-    "transliteration": "<romanisation if non-Latin script, otherwise null>",
-    "english": "<English translation of the phrase>"
-  }
+  "driverPhrases": [
+    {
+      "context": "Greeting",
+      "localLanguage": "<a warm, friendly hello appropriate for greeting a taxi driver in ${country}>",
+      "transliteration": "<romanisation if non-Latin script, otherwise null>",
+      "english": "Hello"
+    },
+    {
+      "context": "Meter",
+      "localLanguage": "<a polite phrase asking the driver to use the meter in the local language of ${country}>",
+      "transliteration": "<romanisation if non-Latin script, otherwise null>",
+      "english": "Please use the meter"
+    },
+    {
+      "context": "Thank you",
+      "localLanguage": "<thank you in the local language of ${country}>",
+      "transliteration": "<romanisation if non-Latin script, otherwise null>",
+      "english": "Thank you"
+    },
+    {
+      "context": "Goodbye",
+      "localLanguage": "<a friendly goodbye or have a safe trip in the local language of ${country}>",
+      "transliteration": "<romanisation if non-Latin script, otherwise null>",
+      "english": "Goodbye"
+    }
+  ]
 }
 
 Rules:
 - Scam warnings must be specific to ${city}, not generic travel advice
-- Keep each warning under 15 words
-- Confirmation phrase should ask for the fare before getting in`
+- Keep each warning under 20 words
+- Driver phrases should be warm and natural, not confrontational
+- Use the primary local language of the region (e.g. Thai in Bangkok, Arabic in Cairo)
+- Include transliteration for any non-Latin script; set to null for Latin-script languages`
 
   const message = await anthropic.messages.create({
     model: MODEL,
-    max_tokens: 600,
+    max_tokens: 900,
     messages: [{ role: 'user', content: prompt }],
   })
 
@@ -110,7 +140,7 @@ Rules:
 // ─── Tipping guide (cached per country) ──────────────────────────────────────
 
 export async function getTippingGuide(country: string): Promise<TippingAiResult> {
-  const cacheKey = `tipping:${country.toLowerCase()}`
+  const cacheKey = `tipping_v2:${country.toLowerCase()}`
   const cached = await cacheGet<TippingAiResult>(cacheKey)
   if (cached) return cached
 
@@ -144,11 +174,51 @@ Rating guide:
 - "optional" = uncommon, never inappropriate
 - "avoid" = tipping can cause offence
 
-Regional variation: If there is meaningful variation within ${country} (e.g. tourist areas vs local neighbourhoods, specific major cities, urban vs rural), mention it concisely in the relevant scenario's notes field. Keep each notes field under 20 words total.`
+Regional variation: If there is meaningful variation within ${country} (e.g. tourist areas vs local neighbourhoods, specific major cities, urban vs rural), mention it concisely in the relevant scenario's notes field. Keep each notes field under 20 words total.
+
+Also include a "servicePhrases" array with exactly 5 entries — useful phrases for tipping and appreciation moments, in the primary local language of ${country}:
+
+  "servicePhrases": [
+    {
+      "context": "Thank you",
+      "localLanguage": "<thank you in the local language of ${country}>",
+      "transliteration": "<romanisation if non-Latin script, otherwise null>",
+      "english": "Thank you"
+    },
+    {
+      "context": "This was wonderful",
+      "localLanguage": "<'this was wonderful / delicious' in the local language of ${country}>",
+      "transliteration": "<romanisation if non-Latin script, otherwise null>",
+      "english": "This was wonderful"
+    },
+    {
+      "context": "Compliments to the chef",
+      "localLanguage": "<'please pass my compliments to the chef' in the local language of ${country}>",
+      "transliteration": "<romanisation if non-Latin script, otherwise null>",
+      "english": "Please pass my compliments to the chef"
+    },
+    {
+      "context": "Keep the change",
+      "localLanguage": "<'please keep the change' in the local language of ${country}>",
+      "transliteration": "<romanisation if non-Latin script, otherwise null>",
+      "english": "Please keep the change"
+    },
+    {
+      "context": "You were wonderful",
+      "localLanguage": "<'you have been wonderful / you took great care of us' in the local language of ${country}>",
+      "transliteration": "<romanisation if non-Latin script, otherwise null>",
+      "english": "You have been wonderful"
+    }
+  ]
+
+Phrase rules:
+- Use the primary local language of ${country} (e.g. Thai in Thailand, Arabic in Egypt, French in France)
+- Keep phrases warm, genuine, and natural — not stiff or formal
+- Include transliteration for non-Latin scripts; set to null for Latin-script languages`
 
   const message = await anthropic.messages.create({
     model: MODEL,
-    max_tokens: 1200,
+    max_tokens: 1600,
     messages: [{ role: 'user', content: prompt }],
   })
 

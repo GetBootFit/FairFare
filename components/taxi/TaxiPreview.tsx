@@ -1,8 +1,21 @@
 import type { TaxiPreviewResult } from '@/types'
-import { MapPin, Clock, Route, Lock } from 'lucide-react'
+import { MapPin, Route, Lock } from 'lucide-react'
 
 interface Props {
   preview: TaxiPreviewResult
+}
+
+function SvgIcon({ name, size = 20, className = '' }: { name: string; size?: number; className?: string }) {
+  return (
+    <img
+      src={`/icons/SVG/${name}.svg`}
+      alt=""
+      width={size}
+      height={size}
+      className={className}
+      aria-hidden="true"
+    />
+  )
 }
 
 export function TaxiPreview({ preview }: Props) {
@@ -26,11 +39,16 @@ export function TaxiPreview({ preview }: Props) {
       {/* Distance / time */}
       <div className="grid grid-cols-2 gap-3">
         <div className="bg-zinc-900 ring-1 ring-zinc-800 rounded-2xl p-4 text-center">
+          <div className="flex justify-center mb-2">
+            <SvgIcon name="distance" size={28} />
+          </div>
           <p className="text-2xl font-bold text-white">{preview.distance.km}</p>
           <p className="text-xs text-zinc-500 mt-0.5">km · {preview.distance.mi} mi</p>
         </div>
         <div className="bg-zinc-900 ring-1 ring-zinc-800 rounded-2xl p-4 text-center">
-          <Clock size={20} className="mx-auto text-purple-400 mb-1" />
+          <div className="flex justify-center mb-2">
+            <SvgIcon name="time-duration" size={28} />
+          </div>
           <p className="text-2xl font-bold text-white">{preview.duration.minutes}</p>
           <p className="text-xs text-zinc-500 mt-0.5">min driving</p>
         </div>
@@ -39,7 +57,7 @@ export function TaxiPreview({ preview }: Props) {
       {/* Locked sections teaser */}
       <div className="bg-zinc-900 border border-zinc-800 rounded-2xl divide-y divide-zinc-800 overflow-hidden">
         {[
-          { label: 'Fair fare range', sublabel: 'With local currency' },
+          { label: 'Estimated fare', sublabel: 'With local currency conversion' },
           { label: 'Scam alerts', sublabel: '3 warnings found' },
           { label: 'Phrase for driver', sublabel: 'In local language' },
         ].map(({ label, sublabel }) => (

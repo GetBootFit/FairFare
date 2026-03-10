@@ -30,11 +30,14 @@ export interface TaxiFullResult extends TaxiPreviewResult {
     isExpected: boolean
     recommendation: string
   }
-  confirmationPhrase: {
+  driverPhrases: Array<{
+    context: string
     localLanguage: string
     transliteration: string | null
     english: string
-  }
+  }>
+  /** Dark-styled Google Static Maps URL showing the driving route. Optional — omitted when polyline is unavailable. */
+  routeMapUrl?: string
 }
 
 // ─── Tipping ──────────────────────────────────────────────────────────────────
@@ -63,6 +66,12 @@ export interface TippingResult {
   currency: string
   currencySymbol: string
   scenarios: Record<TippingScenario, ScenarioTip>
+  servicePhrases?: Array<{
+    context: string
+    localLanguage: string
+    transliteration: string | null
+    english: string
+  }>
 }
 
 // ─── API ──────────────────────────────────────────────────────────────────────
