@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ChevronRight, Car, MapPin, ArrowRight } from 'lucide-react'
 import { getUSDPrices } from '@/lib/currency'
 import {
@@ -62,6 +63,13 @@ export async function generateMetadata(
     },
   }
 }
+
+// ── City stickers ─────────────────────────────────────────────────────────────
+
+const CITY_STICKERS = new Set([
+  'amsterdam', 'barcelona', 'dubai', 'istanbul', 'london',
+  'melbourne', 'new-york', 'paris', 'rome', 'singapore', 'sydney', 'tokyo',
+])
 
 // ── Sample distances to show ─────────────────────────────────────────────────
 
@@ -154,6 +162,18 @@ export default async function TaxiCityPage(
 
         {/* Hero */}
         <div>
+          {CITY_STICKERS.has(city) && (
+            <div className="flex justify-center mb-4">
+              <Image
+                src={`/images/cities/hootling-${city}.png`}
+                alt={`${cityName} city sticker`}
+                width={160}
+                height={160}
+                className="object-contain drop-shadow-lg"
+                priority
+              />
+            </div>
+          )}
           <div className="flex items-center gap-3 mb-2">
             <div className="w-9 h-9 rounded-xl bg-teal-900/40 flex items-center justify-center text-teal-400 shrink-0">
               <Car size={20} strokeWidth={1.8} />

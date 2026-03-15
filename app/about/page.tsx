@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Car, Banknote, MapPin, Brain, CreditCard, ShieldCheck } from 'lucide-react'
 import { getUSDPrices } from '@/lib/currency'
 
@@ -15,8 +16,13 @@ export default function AboutPage() {
       {/* Header */}
       <div>
         <div className="flex items-center gap-3 mb-3">
-          <Link href="/" className="w-10 h-10 rounded-xl bg-purple-600 flex items-center justify-center text-lg font-bold text-white hover:bg-purple-700 transition-colors shrink-0">
-            H
+          <Link href="/" className="shrink-0 hover:opacity-80 transition-opacity">
+            <Image
+              src="/images/brand/hootling-logo-icon.png"
+              alt="Hootling"
+              width={40}
+              height={40}
+            />
           </Link>
           <h1 className="text-xl font-bold text-white">About Hootling</h1>
         </div>

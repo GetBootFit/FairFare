@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ChevronRight, Banknote, ArrowRight, UtensilsCrossed, Car, Hotel, Sparkles } from 'lucide-react'
 import { getUSDPrices } from '@/lib/currency'
 import {
@@ -28,6 +29,22 @@ interface TippingEntry {
 }
 
 const allTipping = tippingData as Record<string, TippingEntry>
+
+// ── Country → city sticker map ────────────────────────────────────────────────
+
+const COUNTRY_STICKER: Record<string, string> = {
+  'netherlands': 'amsterdam',
+  'spain': 'barcelona',
+  'united-arab-emirates': 'dubai',
+  'turkey': 'istanbul',
+  'united-kingdom': 'london',
+  'australia': 'sydney',
+  'france': 'paris',
+  'italy': 'rome',
+  'singapore': 'singapore',
+  'japan': 'tokyo',
+  'united-states': 'new-york',
+}
 
 // ── Static generation ────────────────────────────────────────────────────────
 
@@ -153,6 +170,7 @@ export default async function TippingCountryPage(
   const countryName = data.displayName
   const badge = expectedBadge(data.expected)
   const { single } = getUSDPrices()
+  const citySticker = COUNTRY_STICKER[country] ?? null
 
   const jsonLd = [
     tippingBreadcrumbJsonLd(country, countryName),
@@ -183,6 +201,18 @@ export default async function TippingCountryPage(
 
         {/* Hero */}
         <div>
+          {citySticker && (
+            <div className="flex justify-center mb-4">
+              <Image
+                src={`/images/cities/hootling-${citySticker}.png`}
+                alt={`${countryName} city sticker`}
+                width={160}
+                height={160}
+                className="object-contain drop-shadow-lg"
+                priority
+              />
+            </div>
+          )}
           <div className="flex items-center gap-3 mb-3">
             <div className="w-9 h-9 rounded-xl bg-teal-900/40 flex items-center justify-center text-teal-400 shrink-0">
               <Banknote size={20} strokeWidth={1.8} />

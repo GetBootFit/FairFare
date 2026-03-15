@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef, useCallback } from 'react'
+import Image from 'next/image'
 import { Spinner } from '@/components/ui/Spinner'
 import { useLanguage } from '@/context/LanguageContext'
 import { track } from '@vercel/analytics'
@@ -175,8 +176,14 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
 
         {/* Header */}
         <div className="text-center pt-1">
-          <span className="text-2xl" aria-hidden="true">🔓</span>
-          <p id="payment-modal-title" className="text-white text-lg font-bold mt-1">{t('payment_title')}</p>
+          <Image
+            src="/images/brand/hootling-logo-icon.png"
+            alt="Hootling"
+            width={64}
+            height={64}
+            className="mx-auto"
+          />
+          <p id="payment-modal-title" className="text-white text-lg font-bold mt-2">{t('payment_title')}</p>
         </div>
 
         {/* Pricing options — radiogroup for accessible keyboard navigation */}

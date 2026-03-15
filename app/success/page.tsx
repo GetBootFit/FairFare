@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
+import Image from 'next/image'
 import { Spinner } from '@/components/ui/Spinner'
 import { storeToken, storeCountryPass, storeBundleTokens } from '@/lib/tokens'
 import { track } from '@vercel/analytics'
@@ -94,7 +95,13 @@ function SuccessInner() {
   if (status === 'email_capture') {
     return (
       <div className="flex flex-col items-center gap-6 py-16 px-4 text-center max-w-sm mx-auto">
-        <div className="text-4xl">✅</div>
+        <Image
+          src="/images/brand/hootling-logo-icon.png"
+          alt="Hootling"
+          width={80}
+          height={80}
+          className="drop-shadow-lg"
+        />
         <div>
           <p className="text-white font-semibold text-lg">Payment confirmed</p>
           <p className="text-zinc-500 text-sm mt-1">Your result is ready</p>
