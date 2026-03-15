@@ -3,18 +3,18 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'FairFare Privacy Policy — how we handle your data when you use our travel fare and tipping service.',
+  description: 'Hootling Privacy Policy — how we handle your data when you use our travel fare and tipping service.',
 }
 
 const EFFECTIVE = '7 March 2026'
-const CONTACT = 'privacy@fairfare.app'
+const CONTACT = 'privacy@hootling.com'
 
 export default function PrivacyPage() {
   return (
     <div className="space-y-6 pb-4">
       <div className="flex items-center gap-3">
         <Link href="/" className="w-10 h-10 rounded-xl bg-purple-600 flex items-center justify-center text-lg font-bold text-white hover:bg-purple-700 transition-colors shrink-0">
-          F
+          H
         </Link>
         <div>
           <h1 className="text-xl font-bold text-white">Privacy Policy</h1>
@@ -23,9 +23,9 @@ export default function PrivacyPage() {
       </div>
 
       <p className="text-sm text-zinc-400 leading-relaxed">
-        FairFare (&ldquo;we&rdquo;, &ldquo;us&rdquo;) is operated from Victoria, Australia and
+        Hootling (&ldquo;we&rdquo;, &ldquo;us&rdquo;) is operated from Victoria, Australia and
         is committed to protecting your privacy. This policy explains what data we collect, why
-        we collect it, and how it is handled when you use the FairFare service. This policy is
+        we collect it, and how it is handled when you use the Hootling service. This policy is
         governed by the <em>Privacy Act 1988</em> (Cth) and the{' '}
         <em>Privacy and Data Protection Act 2014</em> (Vic).
       </p>
@@ -64,7 +64,7 @@ export default function PrivacyPage() {
         <h3 className="text-zinc-200 font-medium mt-3 mb-1.5">2c. Payment information</h3>
         <p>
           When you pay $0.99 for a query, you are redirected to a Stripe-hosted checkout page.
-          FairFare never sees, handles, or stores your card number, CVC, or banking details.
+          Hootling never sees, handles, or stores your card number, CVC, or banking details.
           Stripe&apos;s data practices are governed by the{' '}
           <a href="https://stripe.com/privacy" target="_blank" rel="noopener noreferrer"
             className="text-purple-400 underline">Stripe Privacy Policy</a>.
@@ -96,7 +96,7 @@ export default function PrivacyPage() {
           </li>
         </ul>
         <p className="mt-2">
-          None of this browser-stored data is transmitted to FairFare servers.
+          None of this browser-stored data is transmitted to Hootling servers.
         </p>
       </Section>
 
@@ -112,7 +112,7 @@ export default function PrivacyPage() {
 
       <Section title="4. Cookies &amp; Analytics">
         <p>
-          FairFare does <strong className="text-white">not</strong> use advertising cookies or
+          Hootling does <strong className="text-white">not</strong> use advertising cookies or
           tracking pixels. We use no cookies at all — only browser localStorage and sessionStorage
           as described above, which are not cookies and are not transmitted to any server.
         </p>
@@ -139,7 +139,7 @@ export default function PrivacyPage() {
 
       <Section title="6. Children's Privacy">
         <p>
-          FairFare is not directed to children under the age of 13. We do not knowingly collect
+          Hootling is not directed to children under the age of 13. We do not knowingly collect
           any information from children. If you believe a child has used the Service and provided
           any personal information, please contact us and we will take steps to remove it.
         </p>
@@ -147,7 +147,7 @@ export default function PrivacyPage() {
 
       <Section title="7. International Users &amp; Your Rights">
         <p>
-          FairFare is designed for international travellers and is accessible worldwide. By
+          Hootling is designed for international travellers and is accessible worldwide. By
           using the Service, you acknowledge that data (such as your location query and city
           name) may be processed in countries where our third-party providers (Google, Anthropic,
           Stripe, Vercel) operate, which may have different data protection laws than your country.
@@ -188,7 +188,7 @@ export default function PrivacyPage() {
 
       <div className="pt-2 border-t border-zinc-800">
         <Link href="/" className="text-sm text-zinc-600 hover:text-zinc-400 transition-colors">
-          ← Back to FairFare
+          ← Back to Hootling
         </Link>
       </div>
     </div>

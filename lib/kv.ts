@@ -44,6 +44,17 @@ export async function kvSet(key: string, value: unknown, ttlSeconds: number): Pr
   }
 }
 
+/** Atomically increment a counter by 1. Returns the new value, or null when KV unavailable. */
+export async function kvIncrement(key: string): Promise<number | null> {
+  try {
+    const client = getClient()
+    if (!client) return null
+    return await client.incr(key)
+  } catch {
+    return null
+  }
+}
+
 /** Returns true if the key exists (used to mark Stripe sessions as used). */
 export async function kvExists(key: string): Promise<boolean> {
   try {

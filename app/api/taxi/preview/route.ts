@@ -2,6 +2,7 @@
 import { getRouteInfo } from '@/lib/google-maps'
 import { findCityRate } from '@/lib/taxi-rates'
 import { isRateLimited, getClientIp } from '@/lib/rate-limit'
+import { kvIncrement } from '@/lib/kv'
 import type { TaxiPreviewResult } from '@/types'
 
 const RATE_LIMIT = 30
@@ -39,9 +40,11 @@ export async function POST(req: NextRequest) {
       destPlaceId,
     )
 
-    // Log cities not in our fare dataset — free-tier signal, no payment required.
-    // Combine with [CITY_MISS] (paid) logs to prioritise which cities to add next.
+    // Track cities not in our fare dataset.
+    // KV counter per city drives the admin dashboard for prioritising additions.
     if (!findCityRate(`${route.city} ${route.country}`)) {
+      const missKey = `city_miss:${route.city.toLowerCase().replace(/\s+/g, '_')}`
+      await kvIncrement(missKey)
       console.warn(`[CITY_MISS:preview] ${route.city}, ${route.country}`)
     }
 

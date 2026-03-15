@@ -1,9 +1,16 @@
 import { NextRequest } from 'next/server'
 import { createCheckoutSession } from '@/lib/stripe'
 import { CURRENCIES, PRICES, type CurrencyCode } from '@/lib/currency'
+import { isRateLimited, getClientIp } from '@/lib/rate-limit'
 
 export async function POST(req: NextRequest) {
   try {
+    const ip = getClientIp(req)
+    const limited = await isRateLimited('create-session', ip, 10, 3600)
+    if (limited) {
+      return Response.json({ error: 'Too many requests. Please try again later.' }, { status: 429 })
+    }
+
     const body = (await req.json()) as {
       feature: string
       product?: string

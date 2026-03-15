@@ -67,7 +67,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/success'],
       },
     ],
-    sitemap: 'https://fairfare.app/sitemap.xml',
-    host: 'https://fairfare.app',
+    sitemap: 'https://hootling.com/sitemap.xml',
+    host: 'https://hootling.com',
   }
 }

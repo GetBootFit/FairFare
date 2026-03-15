@@ -34,8 +34,10 @@ export async function POST(req: NextRequest) {
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object as Stripe.Checkout.Session
     if (session.id) {
-      // Mark session used (TTL 1 hour — same as verify route)
-      await kvSet(`ff:session:${session.id}`, '1', 3600)
+      // Mark session used with 90-day TTL — matches bundle token lifetime (longest lived token).
+      // Must match the TTL set by the verify route so the replay-prevention key never
+      // expires before the tokens it protects.
+      await kvSet(`ff:session:${session.id}`, '1', 90 * 86400)
     }
   }
 

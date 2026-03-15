@@ -5,6 +5,7 @@ import { Languages, ChevronDown, ChevronUp, Loader2, Volume2, VolumeX, Copy, Che
 import clsx from 'clsx'
 import { getStoredToken, getCountryPassToken, isTokenExpired } from '@/lib/tokens'
 import { speakText, stopSpeech } from '@/lib/speech'
+import { useLanguage } from '@/context/LanguageContext'
 
 const MAX_TRANSLATIONS = 5
 
@@ -32,6 +33,7 @@ function findActiveToken(country: string): string | null {
 }
 
 export function PhraseTranslator({ country, langCode, accent = 'purple' }: Props) {
+  const { t } = useLanguage()
   const [expanded, setExpanded] = useState(false)
   const [input, setInput] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'done' | 'error' | 'limit'>('idle')
@@ -63,7 +65,7 @@ export function PhraseTranslator({ country, langCode, accent = 'purple' }: Props
     const token = findActiveToken(country)
     if (!token) {
       setStatus('error')
-      setErrorMsg('Session expired — please start a new search to translate phrases.')
+      setErrorMsg(t('phrase_session_expired'))
       return
     }
 
@@ -95,7 +97,7 @@ export function PhraseTranslator({ country, langCode, accent = 'purple' }: Props
       setStatus(translated.limitReached ? 'limit' : 'done')
     } catch (err) {
       setStatus('error')
-      setErrorMsg(err instanceof Error ? err.message : 'Translation failed — please try again.')
+      setErrorMsg(err instanceof Error ? err.message : t('phrase_translation_failed'))
     }
   }, [input, status, country])
 
@@ -132,7 +134,7 @@ export function PhraseTranslator({ country, langCode, accent = 'purple' }: Props
         )}
       >
         <Languages size={13} />
-        Translate your own phrase
+        {t('phrase_translate_own')}
         {expanded ? <ChevronUp size={11} /> : <ChevronDown size={11} />}
       </button>
 
@@ -143,10 +145,12 @@ export function PhraseTranslator({ country, langCode, accent = 'purple' }: Props
           {/* Rate-limit info — always visible when expanded */}
           <p className="text-xs text-zinc-600 text-center leading-snug">
             {remaining === MAX_TRANSLATIONS && status === 'idle'
-              ? `${MAX_TRANSLATIONS} custom translations included with your result`
+              ? t('phrase_included', { count: String(MAX_TRANSLATIONS) })
               : isAtLimit
-              ? "You've used all translations included with this result"
-              : `${remaining} translation${remaining !== 1 ? 's' : ''} remaining`
+              ? t('phrase_all_used')
+              : remaining === 1
+              ? t('phrase_remaining_one')
+              : t('phrase_remaining_many', { count: String(remaining) })
             }
           </p>
 
@@ -158,7 +162,7 @@ export function PhraseTranslator({ country, langCode, accent = 'purple' }: Props
                 value={input}
                 onChange={e => setInput(e.target.value)}
                 onKeyDown={e => { if (e.key === 'Enter') handleTranslate() }}
-                placeholder={`e.g. "You made our trip special"`}
+                placeholder={t('phrase_placeholder')}
                 maxLength={200}
                 disabled={status === 'loading'}
                 className="w-full bg-zinc-800 border border-zinc-700 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-zinc-500 disabled:opacity-50 transition-colors"
@@ -172,8 +176,8 @@ export function PhraseTranslator({ country, langCode, accent = 'purple' }: Props
                 )}
               >
                 {status === 'loading'
-                  ? <><Loader2 size={14} className="animate-spin" /> Translating…</>
-                  : 'Translate →'
+                  ? <><Loader2 size={14} className="animate-spin" /> {t('phrase_translating')}</>
+                  : t('phrase_translate_btn')
                 }
               </button>
             </div>
@@ -187,7 +191,7 @@ export function PhraseTranslator({ country, langCode, accent = 'purple' }: Props
           {/* ── Limit reached ── */}
           {isAtLimit && (
             <p className="text-xs text-zinc-500 text-center leading-snug">
-              Start a new search to get more translations.
+              {t('phrase_new_search')}
             </p>
           )}
 
@@ -196,7 +200,7 @@ export function PhraseTranslator({ country, langCode, accent = 'purple' }: Props
             <div className="bg-zinc-800/60 rounded-xl px-4 py-3 space-y-0.5">
               <p className="text-xs text-zinc-500 flex items-center gap-1.5 mb-1.5">
                 <span>💬</span>
-                <span className="uppercase tracking-wider">Your phrase</span>
+                <span className="uppercase tracking-wider">{t('phrase_your_phrase')}</span>
               </p>
               <p className="text-sm text-white font-medium">
                 &ldquo;{result.localLanguage}&rdquo;
@@ -213,8 +217,8 @@ export function PhraseTranslator({ country, langCode, accent = 'purple' }: Props
                   className="flex items-center gap-1.5 text-xs text-zinc-500 hover:text-zinc-300 transition-colors"
                 >
                   {copied
-                    ? <><Check size={12} className="text-green-400" /><span className="text-green-400">Copied</span></>
-                    : <><Copy size={12} />Copy</>
+                    ? <><Check size={12} className="text-green-400" /><span className="text-green-400">{t('phrase_copied')}</span></>
+                    : <><Copy size={12} />{t('phrase_copy')}</>
                   }
                 </button>
 
@@ -229,8 +233,8 @@ export function PhraseTranslator({ country, langCode, accent = 'purple' }: Props
                     )}
                   >
                     {playing
-                      ? <><VolumeX size={12} />Stop</>
-                      : <><Volume2 size={12} />Listen</>
+                      ? <><VolumeX size={12} />{t('phrase_stop')}</>
+                      : <><Volume2 size={12} />{t('phrase_listen')}</>
                     }
                   </button>
                 )}

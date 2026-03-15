@@ -1,8 +1,9 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { Spinner } from '@/components/ui/Spinner'
 import { useLanguage } from '@/context/LanguageContext'
+import { track } from '@vercel/analytics'
 import {
   CURRENCIES,
   PRICES,
@@ -21,6 +22,13 @@ interface Props {
 
 type Product = 'single' | 'country_pass' | 'query_bundle'
 
+const FOCUSABLE = [
+  'button:not([disabled])',
+  'input:not([disabled])',
+  'select:not([disabled])',
+  '[tabindex]:not([tabindex="-1"])',
+].join(', ')
+
 export function PaymentModal({ feature, country, onCancel }: Props) {
   const { t } = useLanguage()
 
@@ -31,11 +39,80 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
   )
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  // Suppress price display until localStorage is read to prevent currency flash
+  const [mounted, setMounted] = useState(false)
+
+  const modalRef = useRef<HTMLDivElement>(null)
+  const radioGroupRef = useRef<HTMLDivElement>(null)
 
   // Hydrate currency from localStorage / browser locale on mount
   useEffect(() => {
     setCurrencyState(getStoredCurrency())
+    setMounted(true)
+
+    const onStorage = (e: StorageEvent) => {
+      if (e.key === 'ff_currency') setCurrencyState(getStoredCurrency())
+    }
+    window.addEventListener('storage', onStorage)
+    return () => window.removeEventListener('storage', onStorage)
   }, [])
+
+  // Focus trap: keep focus inside modal, handle Escape to close, restore focus on unmount
+  useEffect(() => {
+    const modal = modalRef.current
+    if (!modal) return
+
+    const previousFocus = document.activeElement as HTMLElement | null
+    modal.querySelector<HTMLElement>(FOCUSABLE)?.focus()
+
+    const trap = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onCancel()
+        return
+      }
+      if (e.key !== 'Tab') return
+
+      const focusables = Array.from(modal.querySelectorAll<HTMLElement>(FOCUSABLE))
+      if (!focusables.length) return
+      const first = focusables[0]
+      const last = focusables[focusables.length - 1]
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault()
+        last.focus()
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault()
+        first.focus()
+      }
+    }
+
+    document.addEventListener('keydown', trap)
+    return () => {
+      document.removeEventListener('keydown', trap)
+      previousFocus?.focus()
+    }
+  }, [onCancel])
+
+  // Radiogroup arrow-key navigation between product options
+  const handleRadioKeyDown = useCallback((e: React.KeyboardEvent, product: Product) => {
+    const available: Product[] = [
+      'single',
+      ...(country ? (['country_pass'] as Product[]) : []),
+      'query_bundle',
+    ]
+    const idx = available.indexOf(product)
+    let nextIdx: number | null = null
+    if (e.key === 'ArrowDown' || e.key === 'ArrowRight') nextIdx = (idx + 1) % available.length
+    else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') nextIdx = (idx - 1 + available.length) % available.length
+
+    if (nextIdx !== null) {
+      e.preventDefault()
+      setSelectedProduct(available[nextIdx])
+      radioGroupRef.current
+        ?.querySelectorAll<HTMLButtonElement>('[role="radio"]')
+        [nextIdx]?.focus()
+    }
+  }, [country])
 
   const handleCurrencyChange = (c: CurrencyCode) => {
     setCurrencyState(c)
@@ -44,9 +121,10 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
   }
 
   const prices = PRICES[currency]
-  const singlePrice = formatPrice(currency, prices.single)
-  const passPrice = formatPrice(currency, prices.pass)
-  const bundlePrice = formatPrice(currency, prices.bundle)
+  // Show '—' before mount to avoid a flash from the SSR default (USD) to the stored currency
+  const singlePrice = mounted ? formatPrice(currency, prices.single) : '—'
+  const passPrice   = mounted ? formatPrice(currency, prices.pass)   : '—'
+  const bundlePrice = mounted ? formatPrice(currency, prices.bundle) : '—'
 
   // Display country with title case
   const countryDisplay = country
@@ -87,20 +165,34 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/70 backdrop-blur-sm px-4 pb-6 sm:pb-0">
-      <div className="w-full max-w-sm bg-zinc-900 border border-zinc-800 rounded-2xl p-5 space-y-4">
+      <div
+        ref={modalRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="payment-modal-title"
+        className="w-full max-w-sm bg-zinc-900 border border-zinc-800 rounded-2xl p-5 space-y-4"
+      >
 
         {/* Header */}
         <div className="text-center pt-1">
-          <span className="text-2xl">🔓</span>
-          <p className="text-white text-lg font-bold mt-1">{t('payment_title')}</p>
+          <span className="text-2xl" aria-hidden="true">🔓</span>
+          <p id="payment-modal-title" className="text-white text-lg font-bold mt-1">{t('payment_title')}</p>
         </div>
 
-        {/* Pricing options */}
-        <div className="space-y-2">
+        {/* Pricing options — radiogroup for accessible keyboard navigation */}
+        <div
+          ref={radioGroupRef}
+          role="radiogroup"
+          aria-labelledby="payment-modal-title"
+          className="space-y-2"
+        >
 
           {/* Single result */}
           <button
-            onClick={() => setSelectedProduct('single')}
+            role="radio"
+            aria-checked={selectedProduct === 'single'}
+            onClick={() => { setSelectedProduct('single'); track('tier_selected', { tier: 'single', feature }) }}
+            onKeyDown={(e) => handleRadioKeyDown(e, 'single')}
             className={`w-full text-left flex items-center justify-between p-3.5 rounded-xl border transition-colors ${
               selectedProduct === 'single'
                 ? 'border-purple-500 bg-purple-900/20'
@@ -115,7 +207,7 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
             </div>
             <div className="flex items-center gap-2 shrink-0 ml-3">
               <span className="text-white font-bold text-sm">{singlePrice}</span>
-              <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
+              <div aria-hidden="true" className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
                 selectedProduct === 'single' ? 'border-purple-400' : 'border-zinc-600'
               }`}>
                 {selectedProduct === 'single' && (
@@ -128,7 +220,10 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
           {/* Country Pass — only shown when country is provided */}
           {country && (
             <button
-              onClick={() => setSelectedProduct('country_pass')}
+              role="radio"
+              aria-checked={selectedProduct === 'country_pass'}
+              onClick={() => { setSelectedProduct('country_pass'); track('tier_selected', { tier: 'country_pass', feature, country: country ?? '' }) }}
+              onKeyDown={(e) => handleRadioKeyDown(e, 'country_pass')}
               className={`w-full text-left flex items-center justify-between p-3.5 rounded-xl border transition-colors relative ${
                 selectedProduct === 'country_pass'
                   ? 'border-purple-500 bg-purple-900/20'
@@ -136,7 +231,7 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
               }`}
             >
               {/* "For this trip" badge */}
-              <span className="absolute -top-2 right-3 bg-zinc-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">
+              <span aria-hidden="true" className="absolute -top-2 right-3 bg-zinc-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">
                 {t('payment_for_this_trip')}
               </span>
               <div className="pr-2">
@@ -147,7 +242,7 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
               </div>
               <div className="flex items-center gap-2 shrink-0">
                 <span className="text-white font-bold text-sm">{passPrice}</span>
-                <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
+                <div aria-hidden="true" className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
                   selectedProduct === 'country_pass' ? 'border-purple-400' : 'border-zinc-600'
                 }`}>
                   {selectedProduct === 'country_pass' && (
@@ -160,7 +255,10 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
 
           {/* 10-Query Bundle — always shown */}
           <button
-            onClick={() => setSelectedProduct('query_bundle')}
+            role="radio"
+            aria-checked={selectedProduct === 'query_bundle'}
+            onClick={() => { setSelectedProduct('query_bundle'); track('tier_selected', { tier: 'bundle', feature }) }}
+            onKeyDown={(e) => handleRadioKeyDown(e, 'query_bundle')}
             className={`w-full text-left flex items-center justify-between p-3.5 rounded-xl border transition-colors relative ${
               selectedProduct === 'query_bundle'
                 ? 'border-purple-500 bg-purple-900/20'
@@ -168,7 +266,7 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
             }`}
           >
             {/* Best value badge */}
-            <span className="absolute -top-2 right-3 bg-purple-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">
+            <span aria-hidden="true" className="absolute -top-2 right-3 bg-purple-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">
               {t('payment_best_value')}
             </span>
             <div className="pr-2">
@@ -177,7 +275,7 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
             </div>
             <div className="flex items-center gap-2 shrink-0">
               <span className="text-white font-bold text-sm">{bundlePrice}</span>
-              <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
+              <div aria-hidden="true" className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
                 selectedProduct === 'query_bundle' ? 'border-purple-400' : 'border-zinc-600'
               }`}>
                 {selectedProduct === 'query_bundle' && (
@@ -194,7 +292,7 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
           {feature === 'taxi' ? t('payment_taxi_desc') : t('payment_tipping_desc')}
         </p>
 
-        {error && <p className="text-red-400 text-sm text-center">{error}</p>}
+        {error && <p role="alert" className="text-red-400 text-sm text-center">{error}</p>}
 
         {/* Currency selector */}
         <div className="flex items-center justify-center gap-1.5 text-xs text-zinc-500">
@@ -237,6 +335,10 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
               ? t('payment_redirecting')
               : t('payment_pay_btn', { price: activePrice })}
           </button>
+          {/* Trust signals */}
+          <p className="text-center text-[11px] text-zinc-600">
+            🔒 Stripe-secured · Apple Pay &amp; Google Pay accepted · No account needed
+          </p>
           <button
             onClick={onCancel}
             disabled={loading}

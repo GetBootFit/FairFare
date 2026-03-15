@@ -69,17 +69,26 @@ export async function generateMetadata(
   return {
     title: `Tipping in ${countryName} (${year}) — How Much & Etiquette`,
     description: `${data.summary.slice(0, 145)}…`,
-    alternates: { canonical: `https://fairfare.app/tipping/${country}` },
+    alternates: { canonical: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'}/tipping/${country}` },
     openGraph: {
-      title: `Tipping in ${countryName} (${year}) — FairFare`,
+      title: `Tipping in ${countryName} (${year}) — Hootling`,
       description: `Tipping etiquette for restaurants, taxis, hotels & spas in ${countryName}. ${data.expectedLabel}.`,
-      url: `https://fairfare.app/tipping/${country}`,
+      url: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'}/tipping/${country}`,
       type: 'website',
+      images: [
+        {
+          url: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'}/api/og/city?city=${encodeURIComponent(country)}`,
+          width: 1200,
+          height: 630,
+          alt: `Tipping guide for ${countryName} — Hootling`,
+        },
+      ],
     },
     twitter: {
-      card: 'summary',
-      title: `Tipping in ${countryName} — FairFare`,
+      card: 'summary_large_image',
+      title: `Tipping in ${countryName} — Hootling`,
       description: `${data.expectedLabel} · Restaurant: ${data.restaurant.slice(0, 60)}`,
+      images: [`${process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'}/api/og/city?city=${encodeURIComponent(country)}`],
     },
   }
 }
@@ -97,12 +106,35 @@ function ScenarioRow({
 }) {
   return (
     <div className="flex items-start gap-3 py-3 border-b border-zinc-800 last:border-0">
-      <div className="w-8 h-8 rounded-lg bg-teal-900/30 flex items-center justify-center text-teal-400 shrink-0 mt-0.5">
+      <div className="w-8 h-8 rounded-lg bg-purple-900/30 flex items-center justify-center text-purple-400 shrink-0 mt-0.5">
         {icon}
       </div>
       <div className="flex-1 min-w-0">
         <p className="text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-0.5">{label}</p>
         <p className="text-sm text-zinc-300 leading-relaxed">{description}</p>
+      </div>
+    </div>
+  )
+}
+
+function LockedScenarioRow({
+  icon,
+  label,
+}: {
+  icon: React.ReactNode
+  label: string
+}) {
+  return (
+    <div className="flex items-start gap-3 py-3 border-b border-zinc-800 last:border-0 opacity-50">
+      <div className="w-8 h-8 rounded-lg bg-zinc-800 flex items-center justify-center text-zinc-600 shrink-0 mt-0.5">
+        {icon}
+      </div>
+      <div className="flex-1 min-w-0">
+        <p className="text-xs font-semibold text-zinc-600 uppercase tracking-wider mb-0.5">{label}</p>
+        <div className="flex items-center gap-1.5">
+          <div className="h-3 bg-zinc-800 rounded w-3/4" />
+          <span className="text-zinc-700 text-xs">🔒</span>
+        </div>
       </div>
     </div>
   )
@@ -174,7 +206,7 @@ export default async function TippingCountryPage(
           <p className="text-sm text-zinc-300 leading-relaxed">{data.summary}</p>
         </div>
 
-        {/* Scenario breakdown */}
+        {/* Scenario breakdown — restaurants + taxis shown; rest locked */}
         <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-4 space-y-1">
           <h2 className="text-sm font-semibold text-zinc-300 uppercase tracking-wider mb-2">By Situation</h2>
           <ScenarioRow
@@ -187,37 +219,22 @@ export default async function TippingCountryPage(
             label="Taxis & Rideshares"
             description={data.taxi}
           />
-          <ScenarioRow
-            icon={<Hotel size={15} />}
-            label="Hotels"
-            description={data.hotel}
-          />
-          <ScenarioRow
-            icon={<Sparkles size={15} />}
-            label="Spa & Massage"
-            description={data.spa}
-          />
-        </div>
-
-        {/* Key fact */}
-        <div className="bg-teal-950/30 border border-teal-900/40 rounded-2xl p-4 flex items-start gap-3">
-          <span className="text-teal-400 text-lg shrink-0">💡</span>
-          <div>
-            <p className="text-xs font-semibold text-teal-400 uppercase tracking-wider mb-1">Key Fact</p>
-            <p className="text-sm text-zinc-300 leading-relaxed">{data.keyFact}</p>
+          <LockedScenarioRow icon={<Hotel size={15} />} label="Hotels & Porters" />
+          <LockedScenarioRow icon={<Sparkles size={15} />} label="Spa & Massage" />
+          <div className="pt-2">
+            <p className="text-xs text-zinc-600">Full guide includes hotels, spa, bars, tour guides & delivery — plus useful phrases in the local language.</p>
           </div>
         </div>
 
         {/* CTA */}
-        <div className="bg-teal-950/40 border border-teal-900/50 rounded-2xl p-5 text-center space-y-3">
+        <div className="bg-purple-950/40 border border-purple-900/50 rounded-2xl p-5 text-center space-y-3">
           <h2 className="text-base font-bold text-white">Get the Complete {countryName} Tipping Guide</h2>
           <p className="text-sm text-zinc-400">
-            Exact amounts for every scenario, cultural context, useful phrases,
-            and a breakdown by city for larger countries.
+            All 6 scenarios with exact amounts, cultural context, useful phrases in the local language, and a currency reference.
           </p>
           <Link
             href="/tipping"
-            className="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold px-6 py-3 rounded-xl transition-colors text-sm"
+            className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-3 rounded-xl transition-colors text-sm"
           >
             Get Full Guide <ArrowRight size={16} />
           </Link>

@@ -1,11 +1,28 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { TaxiResult } from '@/components/taxi/TaxiResult'
 import { TippingResult } from '@/components/tipping/TippingResult'
 import type { TaxiFullResult, TippingResult as TippingResultType } from '@/types'
+import type { TaxiAiInfo } from '@/lib/claude'
+import { useLanguage } from '@/context/LanguageContext'
+
+function SvgIcon({ name, size = 18, style }: { name: string; size?: number; style?: React.CSSProperties }) {
+  return (
+    <img
+      src={`/icons/SVG/${name}.svg`}
+      alt=""
+      width={size}
+      height={size}
+      style={style}
+      aria-hidden="true"
+    />
+  )
+}
 
 // ── Sample taxi result — Bangkok Airport → Sukhumvit ──────────────────────────
+// Structural / numeric data only — AI text (scamWarnings, tipping, driverPhrases,
+// fareRange.note) is replaced at runtime with locale-aware content from the API.
 
 const SAMPLE_TAXI: TaxiFullResult = {
   pickup: 'Suvarnabhumi Airport (BKK)',
@@ -62,6 +79,7 @@ const SAMPLE_TAXI: TaxiFullResult = {
 }
 
 // ── Sample tipping result — Thailand ─────────────────────────────────────────
+// Used as fallback only — replaced at runtime with locale-aware content from the API.
 
 const SAMPLE_TIPPING: TippingResultType = {
   country: 'Thailand',
@@ -155,19 +173,62 @@ const SAMPLE_TIPPING: TippingResultType = {
 
 type Tab = 'taxi' | 'tipping'
 
+interface SampleApiResponse {
+  taxiAi: TaxiAiInfo
+  tipping: TippingResultType
+}
+
 interface ExampleContentProps {
   /** Server-generated Static Maps URL for the sample route (BKK → Sukhumvit). */
   sampleMapUrl?: string
 }
 
 export function ExampleContent({ sampleMapUrl }: ExampleContentProps) {
+  const { t, locale } = useLanguage()
   const [tab, setTab] = useState<Tab>('taxi')
+  const [aiContent, setAiContent] = useState<SampleApiResponse | null>(null)
 
-  // Merge the server-generated map URL into the sample data so TaxiResult
-  // renders the "View route on map" section when the Static Maps API is available.
-  const taxiResult: TaxiFullResult = sampleMapUrl
-    ? { ...SAMPLE_TAXI, routeMapUrl: sampleMapUrl }
-    : SAMPLE_TAXI
+  // Fetch locale-aware AI content whenever the language changes.
+  // For English, the API returns from KV/memory cache (near-instant).
+  // An AbortController prevents stale responses from a previous locale overwriting a newer one.
+  useEffect(() => {
+    const controller = new AbortController()
+
+    async function fetchSample() {
+      try {
+        const res = await fetch(`/api/taxi/sample?locale=${locale}`, {
+          signal: controller.signal,
+        })
+        if (!res.ok) return
+        const data = (await res.json()) as SampleApiResponse
+        setAiContent(data)
+      } catch {
+        // AbortError on cleanup or network failure — fall back to static English content
+      }
+    }
+
+    fetchSample()
+    return () => controller.abort()
+  }, [locale])
+
+  // Merge locale-aware AI content over the structural static data.
+  // Falls back gracefully to the hardcoded English constants when the fetch is still in flight.
+  const taxiResult: TaxiFullResult = {
+    ...(sampleMapUrl ? { ...SAMPLE_TAXI, routeMapUrl: sampleMapUrl } : SAMPLE_TAXI),
+    ...(aiContent?.taxiAi
+      ? {
+          scamWarnings: aiContent.taxiAi.scamWarnings,
+          tipping: aiContent.taxiAi.tipping,
+          driverPhrases: aiContent.taxiAi.driverPhrases,
+          fareRange: {
+            ...SAMPLE_TAXI.fareRange,
+            note: aiContent.taxiAi.fareNoteTranslated ?? SAMPLE_TAXI.fareRange.note,
+          },
+        }
+      : {}),
+  }
+
+  const tippingResult: TippingResultType = aiContent?.tipping ?? SAMPLE_TIPPING
 
   return (
     <div className="space-y-4">
@@ -175,30 +236,34 @@ export function ExampleContent({ sampleMapUrl }: ExampleContentProps) {
       <div className="flex gap-2 bg-zinc-900 p-1 rounded-xl border border-zinc-800">
         <button
           onClick={() => setTab('taxi')}
-          className={`flex-1 py-2 rounded-lg text-sm font-medium transition-colors ${
+          className={`flex-1 py-2 rounded-lg text-sm font-medium transition-colors flex items-center justify-center gap-2 ${
             tab === 'taxi'
-              ? 'bg-purple-600 text-white'
-              : 'text-zinc-500 hover:text-zinc-300'
-          }`}
-        >
-          🚕 Taxi Result
-        </button>
-        <button
-          onClick={() => setTab('tipping')}
-          className={`flex-1 py-2 rounded-lg text-sm font-medium transition-colors ${
-            tab === 'tipping'
               ? 'bg-teal-600 text-white'
               : 'text-zinc-500 hover:text-zinc-300'
           }`}
         >
-          💵 Tipping Guide
+          {/* White icon on teal bg; teal+white icon on dark bg (hue-rotate shifts native purple→teal) */}
+          <SvgIcon name="taxi-car" size={17} style={tab === 'taxi' ? { filter: 'brightness(0) invert(1)' } : { filter: 'hue-rotate(262deg) saturate(88%)' }} />
+          {t('example_tab_taxi')}
+        </button>
+        <button
+          onClick={() => setTab('tipping')}
+          className={`flex-1 py-2 rounded-lg text-sm font-medium transition-colors flex items-center justify-center gap-2 ${
+            tab === 'tipping'
+              ? 'bg-purple-600 text-white'
+              : 'text-zinc-500 hover:text-zinc-300'
+          }`}
+        >
+          {/* White icon on purple bg; native purple+white icon on dark bg */}
+          <SvgIcon name="money-cash" size={17} style={tab === 'tipping' ? { filter: 'brightness(0) invert(1)' } : undefined} />
+          {t('example_tab_tipping')}
         </button>
       </div>
 
       {/* Route context (taxi only) */}
       {tab === 'taxi' && (
         <div className="bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3">
-          <p className="text-xs text-zinc-500 mb-0.5">Example route</p>
+          <p className="text-xs text-zinc-500 mb-0.5">{t('example_route_label')}</p>
           <p className="text-sm text-zinc-200 font-medium">Suvarnabhumi Airport → Sukhumvit, Bangkok</p>
         </div>
       )}
@@ -207,7 +272,7 @@ export function ExampleContent({ sampleMapUrl }: ExampleContentProps) {
       {tab === 'taxi' ? (
         <TaxiResult result={taxiResult} />
       ) : (
-        <TippingResult result={SAMPLE_TIPPING} />
+        <TippingResult result={tippingResult} />
       )}
     </div>
   )

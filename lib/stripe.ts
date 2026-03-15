@@ -19,27 +19,27 @@ export async function createCheckoutSession(params: CheckoutParams): Promise<str
 
   const productLabels: Record<string, { name: string; description: string }> = {
     single_taxi: {
-      name: 'FairFare — Taxi Fare Check',
+      name: 'Hootling — Taxi Fare Check',
       description: 'Fair fare range, scam warnings & local phrase — one query',
     },
     single_tipping: {
-      name: 'FairFare — Tipping Guide',
+      name: 'Hootling — Tipping Guide',
       description: 'Full tipping etiquette for all service scenarios — one query',
     },
     country_pass_taxi: {
-      name: `FairFare — ${country ? country.charAt(0).toUpperCase() + country.slice(1) : ''} Country Pass`,
+      name: `Hootling — ${country ? country.charAt(0).toUpperCase() + country.slice(1) : ''} Country Pass`,
       description: 'All taxi fare checks + tipping guide for this country · 24 hours',
     },
     country_pass_tipping: {
-      name: `FairFare — ${country ? country.charAt(0).toUpperCase() + country.slice(1) : ''} Country Pass`,
+      name: `Hootling — ${country ? country.charAt(0).toUpperCase() + country.slice(1) : ''} Country Pass`,
       description: 'All taxi fare checks + tipping guide for this country · 24 hours',
     },
     query_bundle_taxi: {
-      name: 'FairFare — 10-Query Bundle',
+      name: 'Hootling — 10-Query Bundle',
       description: '10 taxi + tipping queries · stored on your device · 90 days',
     },
     query_bundle_tipping: {
-      name: 'FairFare — 10-Query Bundle',
+      name: 'Hootling — 10-Query Bundle',
       description: '10 taxi + tipping queries · stored on your device · 90 days',
     },
   }
@@ -68,6 +68,11 @@ export async function createCheckoutSession(params: CheckoutParams): Promise<str
       submit: {
         message: 'Your result unlocks instantly. No account or subscription required.',
       },
+    },
+    // Statement descriptor shown on bank statements — reduces chargebacks.
+    // Customers who search "HOOTLING.COM" will find the site immediately.
+    payment_intent_data: {
+      statement_descriptor_suffix: 'HOOTLING',
     },
     success_url: `${appUrl}/success?session_id={CHECKOUT_SESSION_ID}&redirect=/${redirectFeature}`,
     cancel_url: `${appUrl}/${redirectFeature}`,

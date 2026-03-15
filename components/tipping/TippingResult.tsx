@@ -4,6 +4,7 @@ import type { TippingResult, TippingScenario, ScenarioTip, TippingRating } from 
 import { useState, useEffect, useCallback } from 'react'
 import { RotateCcw, Volume2, VolumeX, Copy, Check, Maximize2 } from 'lucide-react'
 
+// SVGs are already purple (#9333ea) + white by design — no filter needed.
 function SvgIcon({ name, size = 20, className = '' }: { name: string; size?: number; className?: string }) {
   return (
     <img
@@ -21,27 +22,37 @@ import { useExchangeRates } from '@/hooks/useExchangeRates'
 import { CurrencySelector, ReferenceRate } from '@/components/ui/CurrencyConverter'
 import { getLangCode, speakText, stopSpeech } from '@/lib/speech'
 import { ShowPhraseModal } from '@/components/ui/ShowPhraseModal'
+import { AffiliateLinks } from '@/components/AffiliateLinks'
 import { PhraseTranslator } from '@/components/ui/PhraseTranslator'
+import { useLanguage } from '@/context/LanguageContext'
+import type { TranslationKey } from '@/lib/i18n'
 
 interface Props {
   result: TippingResult
   onReset?: () => void
 }
 
-const SCENARIOS: { key: TippingScenario; label: string; icon: string; svgName?: string }[] = [
-  { key: 'restaurant',   label: 'Restaurant', icon: '🍴', svgName: 'restaurant'  },
-  { key: 'taxi',         label: 'Taxi',        icon: '🚕', svgName: 'taxi-car'    },
-  { key: 'hotel_porter', label: 'Porter',      icon: '🧳', svgName: 'conceirge'  },
-  { key: 'bar',          label: 'Bar',         icon: '🍺', svgName: 'beer'        },
-  { key: 'tour_guide',   label: 'Tour guide',  icon: '🧭', svgName: 'person'     },
-  { key: 'delivery',     label: 'Delivery',    icon: '🛵'                        },
+const SCENARIOS: { key: TippingScenario; labelKey: TranslationKey; icon: string; svgName?: string; iconSize?: number }[] = [
+  { key: 'restaurant',   labelKey: 'scenario_restaurant', icon: '🍴', svgName: 'restaurant', iconSize: 22 },
+  { key: 'taxi',         labelKey: 'scenario_taxi',        icon: '🚕', svgName: 'taxi-car'               },
+  { key: 'hotel_porter', labelKey: 'scenario_porter',      icon: '🧳', svgName: 'conceirge'              },
+  { key: 'bar',          labelKey: 'scenario_bar',         icon: '🍺', svgName: 'beer'                   },
+  { key: 'tour_guide',   labelKey: 'scenario_tour_guide',  icon: '🧭', svgName: 'person',    iconSize: 22 },
+  { key: 'delivery',     labelKey: 'scenario_delivery',    icon: '🛵', svgName: 'trolley'                },
 ]
 
-const RATING_BADGE: Record<TippingRating, { label: string; className: string }> = {
-  expected:    { label: 'Expected',    className: 'bg-amber-900/40 text-amber-400 border border-amber-800/50' },
-  appreciated: { label: 'Appreciated', className: 'bg-green-900/40 text-green-400 border border-green-800/50' },
-  optional:    { label: 'Optional',    className: 'bg-zinc-800 text-zinc-400' },
-  avoid:       { label: 'Avoid',       className: 'bg-red-900/40 text-red-400 border border-red-800/50' },
+const RATING_KEY: Record<TippingRating, TranslationKey> = {
+  expected:    'rating_expected',
+  appreciated: 'rating_appreciated',
+  optional:    'rating_optional',
+  avoid:       'rating_avoid',
+}
+
+const RATING_BADGE: Record<TippingRating, { className: string }> = {
+  expected:    { className: 'bg-amber-900/40 text-amber-400 border border-amber-800/50' },
+  appreciated: { className: 'bg-green-900/40 text-green-400 border border-green-800/50' },
+  optional:    { className: 'bg-zinc-800 text-zinc-400' },
+  avoid:       { className: 'bg-red-900/40 text-red-400 border border-red-800/50' },
 }
 
 const PHRASE_EMOJI: Record<string, string> = {
@@ -62,6 +73,7 @@ function tipAmount(tip: ScenarioTip): string {
 }
 
 export function TippingResult({ result, onReset }: Props) {
+  const { t } = useLanguage()
   const rates = useExchangeRates(result.currency)
   const langCode = getLangCode(result.country)
   const phrases = result.servicePhrases ?? []
@@ -107,7 +119,7 @@ export function TippingResult({ result, onReset }: Props) {
           <div>
             <h2 className="text-lg font-bold text-white">{result.country}</h2>
             <p className="text-xs text-zinc-500">
-              Currency: {result.currency} ({result.currencySymbol})
+              {t('result_currency', { currency: result.currency, symbol: result.currencySymbol })}
             </p>
             <ReferenceRate rates={rates} localSymbol={result.currencySymbol} localCurrency={result.currency} />
           </div>
@@ -117,7 +129,7 @@ export function TippingResult({ result, onReset }: Props) {
         {/* Scenario grid */}
         <div className="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden">
           <div className="divide-y divide-zinc-800">
-            {SCENARIOS.map(({ key, label, icon, svgName }) => {
+            {SCENARIOS.map(({ key, labelKey, icon, svgName, iconSize }) => {
               const tip = result.scenarios[key]
               if (!tip) return null
               const badge = RATING_BADGE[tip.rating as TippingRating]
@@ -128,16 +140,16 @@ export function TippingResult({ result, onReset }: Props) {
                     <div className="flex items-center gap-2.5">
                       {svgName
                         ? <div className="w-7 flex items-center justify-center shrink-0">
-                            <SvgIcon name={svgName} size={28} />
+                            <SvgIcon name={svgName} size={iconSize ?? 28} />
                           </div>
                         : <span className="text-xl w-7 text-center shrink-0">{icon}</span>
                       }
-                      <span className="text-sm font-medium text-white">{label}</span>
+                      <span className="text-sm font-medium text-white">{t(labelKey)}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <span className="text-sm font-semibold text-zinc-200">{amount}</span>
                       <span className={clsx('text-xs font-medium px-2 py-0.5 rounded-full', badge.className)}>
-                        {badge.label}
+                        {t(RATING_KEY[tip.rating as TippingRating])}
                       </span>
                     </div>
                   </div>
@@ -151,7 +163,7 @@ export function TippingResult({ result, onReset }: Props) {
         {/* Service phrases */}
         {phrases.length > 0 && (
           <div className="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden">
-            <p className="text-xs text-zinc-500 uppercase tracking-wider px-4 pt-4 pb-2">Say it in the local language</p>
+            <p className="text-xs text-zinc-500 uppercase tracking-wider px-4 pt-4 pb-2">{t('result_say_local_lang')}</p>
             <div className="divide-y divide-zinc-800">
               {phrases.map((phrase, i) => {
                 const emoji = PHRASE_EMOJI[phrase.context.toLowerCase()] ?? '💬'
@@ -178,7 +190,7 @@ export function TippingResult({ result, onReset }: Props) {
                         <button
                           onClick={() => handleCopy(phrase.localLanguage, i)}
                           className="w-8 h-8 rounded-lg bg-zinc-800 hover:bg-zinc-700 flex items-center justify-center transition-colors"
-                          title="Copy phrase"
+                          aria-label={isCopied ? 'Copied to clipboard' : `Copy "${phrase.english}" phrase`}
                         >
                           {isCopied
                             ? <Check size={14} className="text-green-400" />
@@ -193,10 +205,10 @@ export function TippingResult({ result, onReset }: Props) {
                             className={clsx(
                               'w-8 h-8 rounded-lg flex items-center justify-center transition-colors',
                               isPlaying
-                                ? 'bg-teal-600 animate-pulse'
+                                ? 'bg-purple-600 animate-pulse'
                                 : 'bg-zinc-800 hover:bg-zinc-700'
                             )}
-                            title={isPlaying ? 'Stop' : 'Listen'}
+                            aria-label={isPlaying ? `Stop speaking "${phrase.english}"` : `Listen to "${phrase.english}"`}
                           >
                             {isPlaying
                               ? <VolumeX size={14} className="text-white" />
@@ -214,10 +226,10 @@ export function TippingResult({ result, onReset }: Props) {
             {/* Show to server/guide button */}
             <button
               onClick={() => setShowPhraseIdx(0)}
-              className="w-full flex items-center justify-center gap-2 text-xs text-zinc-500 hover:text-teal-400 transition-colors py-3 border-t border-zinc-800"
+              className="w-full flex items-center justify-center gap-2 text-xs text-zinc-500 hover:text-purple-400 transition-colors py-3 border-t border-zinc-800"
             >
               <Maximize2 size={13} />
-              Show to your server or guide
+              {t('result_show_server_guide')}
             </button>
 
             {/* Custom phrase translator */}
@@ -229,6 +241,9 @@ export function TippingResult({ result, onReset }: Props) {
           </div>
         )}
 
+        {/* Affiliate links */}
+        <AffiliateLinks country={result.country} tint="purple" />
+
         {/* Reset */}
         {onReset && (
           <button
@@ -236,7 +251,7 @@ export function TippingResult({ result, onReset }: Props) {
             className="w-full flex items-center justify-center gap-2 text-zinc-600 text-sm py-2 hover:text-zinc-400 transition-colors"
           >
             <RotateCcw size={14} />
-            Check another country
+            {t('result_check_another')}
           </button>
         )}
       </div>
@@ -247,7 +262,7 @@ export function TippingResult({ result, onReset }: Props) {
           phrases={phrases}
           initialIdx={showPhraseIdx}
           langCode={langCode}
-          title="Show to your server or guide"
+          title={t('result_show_server_guide')}
           onClose={() => {
             stopSpeech()
             setShowPhraseIdx(null)

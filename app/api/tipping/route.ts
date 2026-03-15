@@ -2,6 +2,7 @@
 import { verifyToken } from '@/lib/tokens'
 import { getTippingGuide } from '@/lib/claude'
 import { TIPPING_COUNTRIES } from '@/lib/seo-helpers'
+import { isRateLimited, getClientIp } from '@/lib/rate-limit'
 
 // Normalise country for whitelist comparison
 const norm = (s: string) =>
@@ -10,6 +11,12 @@ const norm = (s: string) =>
 const VALID_COUNTRIES = new Set(TIPPING_COUNTRIES.map(norm))
 
 export async function POST(req: NextRequest) {
+  // Rate limiting — protect Claude API from abuse with valid tokens
+  const ip = getClientIp(req)
+  if (await isRateLimited('result', ip, 20, 3600)) {
+    return Response.json({ error: 'Too many requests. Please try again later.' }, { status: 429 })
+  }
+
   // Auth
   const auth = req.headers.get('Authorization')
   if (!auth?.startsWith('Bearer ')) {
@@ -23,7 +30,7 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    const { country } = await req.json()
+    const { country, locale = 'en' } = await req.json()
     if (!country || typeof country !== 'string') {
       return Response.json({ error: 'Country is required' }, { status: 400 })
     }
@@ -43,7 +50,7 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    const result = await getTippingGuide(country)
+    const result = await getTippingGuide(country, locale)
     return Response.json(result)
   } catch (err) {
     console.error('[tipping]', err)

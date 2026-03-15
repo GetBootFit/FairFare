@@ -1,11 +1,10 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import React from 'react'
 import Link from 'next/link'
 import { ChevronRight, Sparkles } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 import { InstallPrompt } from '@/components/InstallPrompt'
-import { getStoredCurrency, formatPrice, PRICES, type CurrencyCode } from '@/lib/currency'
 
 interface FeatureCardProps {
   href: string
@@ -13,122 +12,130 @@ interface FeatureCardProps {
   title: string
   description: string
   bgColor: string
+  hoverBgColor: string
+  cardBg: string
   borderColor: string
+  hoverBorderColor: string
+  hoverCardBg: string
+  glowColor: string
 }
 
-function FeatureCard({ href, icon, title, description, bgColor, borderColor }: FeatureCardProps) {
+function FeatureCard({ href, icon, title, description, bgColor, hoverBgColor, cardBg, borderColor, hoverBorderColor, hoverCardBg, glowColor }: FeatureCardProps) {
   return (
     <Link
       href={href}
-      className={`group flex items-center gap-4 p-5 rounded-2xl bg-zinc-900 border ${borderColor} hover:bg-zinc-800 transition-colors`}
+      className={`group flex items-center gap-4 p-5 rounded-2xl ${cardBg} border ${borderColor} ${hoverBorderColor} ${hoverCardBg} transition-all duration-200 ${glowColor}`}
     >
-      <div className={`w-14 h-14 rounded-xl ${bgColor} flex items-center justify-center shrink-0`}>
+      <div className={`w-14 h-14 rounded-xl ${bgColor} ${hoverBgColor} flex items-center justify-center shrink-0 transition-colors duration-200`}>
         {icon}
       </div>
       <div className="flex-1 min-w-0">
         <p className="text-base font-semibold text-white">{title}</p>
-        <p className="text-xs text-zinc-500 leading-relaxed mt-0.5">{description}</p>
+        <p className="text-xs text-zinc-400 group-hover:text-zinc-300 leading-relaxed mt-0.5 transition-colors duration-200">{description}</p>
       </div>
-      <ChevronRight size={18} className="text-zinc-700 group-hover:text-zinc-500 shrink-0 transition-colors" />
+      <ChevronRight size={18} className="text-zinc-400 group-hover:text-white shrink-0 transition-colors duration-200" />
     </Link>
   )
 }
 
 export function HomeContent() {
   const { t } = useLanguage()
-  const [currency, setCurrency] = useState<CurrencyCode>('USD')
-
-  // Hydrate from localStorage and re-sync whenever storeCurrency() is called
-  useEffect(() => {
-    setCurrency(getStoredCurrency())
-
-    // React to same-tab and cross-tab currency changes
-    const onStorage = (e: StorageEvent) => {
-      if (e.key === 'ff_currency') setCurrency(getStoredCurrency())
-    }
-    window.addEventListener('storage', onStorage)
-    return () => window.removeEventListener('storage', onStorage)
-  }, [])
-
-  const prices = PRICES[currency]
-  const pricingVars = {
-    single: formatPrice(currency, prices.single),
-    bundle: formatPrice(currency, prices.bundle),
-  }
-
   return (
-    <div className="flex flex-col justify-between min-h-[calc(100vh-6rem)]">
+    <div className="flex flex-col min-h-[calc(100vh-6rem)]">
       {/* Logo / hero */}
       <div className="pt-8 pb-6">
-        <div className="flex items-center gap-3 mb-2">
-          <div className="w-10 h-10 rounded-xl bg-purple-600 flex items-center justify-center text-lg font-bold text-white">
-            F
-          </div>
-          <h1 className="text-2xl font-bold text-white tracking-tight">FairFare</h1>
+        <div className="mb-2">
+          <Link href="/">
+            <img
+              src="/images/brand/hootling-logo-wordmark-transparent.png"
+              alt="Hootling"
+              className="h-24 w-auto"
+            />
+          </Link>
         </div>
         <p className="text-zinc-400 text-sm leading-relaxed mt-3 max-w-xs">
           {t('home_tagline')}
         </p>
-      </div>
-
-      {/* PWA install prompt */}
-      <div className="mb-4">
-        <InstallPrompt />
+        {/* Coverage stats — social proof + SEO signal */}
+        <div className="flex items-center gap-2 mt-3 flex-wrap">
+          <span className="inline-flex items-center gap-1 text-xs text-zinc-600 bg-zinc-900 border border-zinc-800 rounded-full px-2.5 py-1">
+            <span className="text-purple-400 font-semibold">120+</span> cities
+          </span>
+          <span className="inline-flex items-center gap-1 text-xs text-zinc-600 bg-zinc-900 border border-zinc-800 rounded-full px-2.5 py-1">
+            <span className="text-teal-400 font-semibold">50+</span> tipping guides
+          </span>
+          <span className="inline-flex items-center gap-1 text-xs text-zinc-600 bg-zinc-900 border border-zinc-800 rounded-full px-2.5 py-1">
+            No account required
+          </span>
+        </div>
       </div>
 
       {/* Feature cards */}
-      <div className="space-y-3 flex-1">
+      <div className="space-y-3">
         <FeatureCard
           href="/taxi"
-          icon={<img src="/icons/SVG/taxi-car.svg" alt="" width={38} height={38} aria-hidden="true" />}
+          icon={<img src="/icons/SVG/taxi-car.svg" alt="" width={38} height={38} aria-hidden="true" style={{ filter: 'brightness(0) invert(1)' }} />}
           title={t('home_taxi_title')}
           description={t('home_taxi_desc')}
-          bgColor="bg-purple-900/20"
-          borderColor="border-purple-900/40"
+          bgColor="bg-teal-900/50"
+          hoverBgColor="group-hover:bg-teal-700/60"
+          cardBg="bg-teal-950/60"
+          borderColor="border-teal-900/50"
+          hoverBorderColor="hover:border-teal-500/70"
+          hoverCardBg="hover:bg-teal-900/70"
+          glowColor="hover:shadow-[0_0_24px_-4px_rgba(45,212,191,0.35)]"
         />
         <FeatureCard
           href="/tipping"
-          icon={<img src="/icons/SVG/money-notes.svg" alt="" width={38} height={38} aria-hidden="true" />}
+          icon={<img src="/icons/SVG/money-notes.svg" alt="" width={38} height={38} aria-hidden="true" style={{ filter: 'brightness(0) invert(1)' }} />}
           title={t('home_tipping_title')}
           description={t('home_tipping_desc')}
-          bgColor="bg-teal-900/20"
-          borderColor="border-teal-900/40"
+          bgColor="bg-purple-900/50"
+          hoverBgColor="group-hover:bg-purple-700/60"
+          cardBg="bg-purple-950/60"
+          borderColor="border-purple-900/50"
+          hoverBorderColor="hover:border-purple-500/70"
+          hoverCardBg="hover:bg-purple-900/70"
+          glowColor="hover:shadow-[0_0_24px_-4px_rgba(147,51,234,0.4)]"
         />
       </div>
 
-      {/* Pricing note + example link */}
-      <div className="pb-4 pt-6 text-center space-y-2">
-        <p className="text-zinc-600 text-xs">{t('home_pricing', pricingVars)}</p>
+      {/* Sample result CTA — low-friction entry point */}
+      <div className="mt-5">
         <Link
           href="/example"
-          className="inline-flex items-center gap-1.5 text-xs text-zinc-600 hover:text-purple-400 transition-colors"
+          className="flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-zinc-800 bg-zinc-900/60 text-sm text-zinc-300 hover:text-white hover:border-zinc-600 hover:bg-zinc-800/80 transition-all duration-200"
         >
-          <Sparkles size={11} />
+          <Sparkles size={14} className="text-purple-400" />
           See a sample result
         </Link>
       </div>
 
-      {/* Footer */}
-      <div className="border-t border-zinc-900 pt-4 pb-2 space-y-3">
-        <div className="flex items-center justify-center gap-4 flex-wrap">
-          {[
-            { href: '/about', label: 'About' },
-            { href: '/faq', label: 'FAQ' },
-            { href: '/terms', label: 'Terms' },
-            { href: '/privacy', label: 'Privacy' },
-          ].map(({ href, label }) => (
-            <Link
-              key={href}
-              href={href}
-              className="text-xs text-zinc-700 hover:text-zinc-500 transition-colors"
-            >
-              {label}
-            </Link>
-          ))}
+      {/* Footer — pushed to bottom */}
+      <div className="mt-auto pt-8 pb-2 space-y-3">
+        {/* Install prompt as quiet micro copy — sits just above the divider */}
+        <InstallPrompt variant="micro" />
+        <div className="border-t border-zinc-900 pt-4 space-y-3">
+          <div className="flex items-center justify-center gap-4 flex-wrap">
+            {[
+              { href: '/about', label: 'About' },
+              { href: '/faq', label: 'FAQ' },
+              { href: '/terms', label: 'Terms' },
+              { href: '/privacy', label: 'Privacy' },
+            ].map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                className="text-xs text-zinc-700 hover:text-zinc-500 transition-colors"
+              >
+                {label}
+              </Link>
+            ))}
+          </div>
+          <p className="text-center text-xs text-zinc-800">
+            © {new Date().getFullYear()} Hootling — Travel wise, pay right
+          </p>
         </div>
-        <p className="text-center text-xs text-zinc-800">
-          © {new Date().getFullYear()} FairFare — Know before you go
-        </p>
       </div>
     </div>
   )

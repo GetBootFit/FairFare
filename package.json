@@ -1,5 +1,5 @@
 {
-  "name": "fairfare",
+  "name": "hootling",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -16,6 +16,7 @@
     "@anthropic-ai/sdk": "^0.30.0",
     "@googlemaps/google-maps-services-js": "^3.4.0",
     "@googlemaps/js-api-loader": "^1.16.6",
+    "@sentry/nextjs": "^10.43.0",
     "@vercel/analytics": "^1.6.1",
     "@vercel/kv": "^3.0.0",
     "clsx": "^2.1.1",
@@ -24,6 +25,7 @@
     "next": "^16.1.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "resend": "^6.9.3",
     "stripe": "^16.0.0"
   },
   "devDependencies": {

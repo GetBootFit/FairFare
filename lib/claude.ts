@@ -39,6 +39,20 @@ async function cacheSet(key: string, data: unknown): Promise<void> {
   await kvSet(key, data, KV_TTL)
 }
 
+// ─── Locale → language name (used in Claude prompts) ─────────────────────────
+
+const LOCALE_LANGUAGE: Record<string, string> = {
+  en: 'English',
+  es: 'Spanish',
+  fr: 'French',
+  de: 'German',
+  pt: 'Portuguese',
+  zh: 'Simplified Chinese',
+  ja: 'Japanese',
+  ko: 'Korean',
+  hi: 'Hindi',
+}
+
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 export interface TaxiAiInfo {
@@ -50,6 +64,8 @@ export interface TaxiAiInfo {
     transliteration: string | null
     english: string
   }>
+  /** Present when locale is non-English and a fare note was provided for translation. */
+  fareNoteTranslated?: string
 }
 
 export interface TippingAiResult {
@@ -77,12 +93,40 @@ export interface TippingAiResult {
 
 // ─── Taxi AI info (cached per city) ──────────────────────────────────────────
 
-export async function getTaxiAiInfo(city: string, country: string): Promise<TaxiAiInfo> {
-  const cacheKey = `taxi_v2:${city.toLowerCase()}:${country.toLowerCase()}`
+export async function getTaxiAiInfo(
+  city: string,
+  country: string,
+  locale = 'en',
+  fareNote?: string,
+): Promise<TaxiAiInfo> {
+  // English uses the legacy key for backward-compat with existing cache entries.
+  // Non-English locales get their own locale-scoped cache entry.
+  const cacheKey = locale === 'en'
+    ? `taxi_v2:${city.toLowerCase()}:${country.toLowerCase()}`
+    : `taxi_v2:${city.toLowerCase()}:${country.toLowerCase()}:${locale}`
   const cached = await cacheGet<TaxiAiInfo>(cacheKey)
   if (cached) return cached
 
-  const prompt = `You are a friendly travel assistant. Provide taxi safety information and useful driver phrases for ${city}, ${country}.
+  const lang = LOCALE_LANGUAGE[locale] ?? 'English'
+  const isEnglish = locale === 'en'
+
+  // Language instruction injected at the top for non-English locales.
+  const langInstruction = isEnglish ? '' : `
+LANGUAGE: Respond entirely in ${lang}. Two exceptions that must always stay in their original form:
+- "localLanguage" fields in driverPhrases → always the native language of ${country} (never ${lang})
+- "transliteration" fields → always romanized script
+All other text (scamWarnings, tipping.recommendation, context labels, english fields) must be in ${lang}.
+`
+
+  // Fare note translation — only for non-English locales with a note to translate.
+  const fareNoteField = !isEnglish && fareNote
+    ? `,\n  "fareNoteTranslated": "<translate to ${lang}, keeping all currency symbols and numbers exactly: ${fareNote}>"`
+    : ''
+  const fareNoteInstruction = !isEnglish && fareNote
+    ? `\n- "fareNoteTranslated": translate the following fare note to ${lang}, preserving all numbers and currency symbols exactly: "${fareNote}"`
+    : ''
+
+  const prompt = `${langInstruction}You are a friendly travel assistant. Provide taxi safety information and useful driver phrases for ${city}, ${country}.
 
 Return ONLY valid JSON with this exact structure (no markdown, no explanation):
 {
@@ -120,7 +164,7 @@ Return ONLY valid JSON with this exact structure (no markdown, no explanation):
       "transliteration": "<romanisation if non-Latin script, otherwise null>",
       "english": "Goodbye"
     }
-  ]
+  ]${fareNoteField}
 }
 
 Rules:
@@ -128,7 +172,7 @@ Rules:
 - Keep each warning under 20 words
 - Driver phrases should be warm and natural, not confrontational
 - Use the primary local language of the region (e.g. Thai in Bangkok, Arabic in Cairo)
-- Include transliteration for any non-Latin script; set to null for Latin-script languages`
+- Include transliteration for any non-Latin script; set to null for Latin-script languages${fareNoteInstruction}`
 
   const message = await anthropic.messages.create({
     model: MODEL,
@@ -144,12 +188,24 @@ Rules:
 
 // ─── Tipping guide (cached per country) ──────────────────────────────────────
 
-export async function getTippingGuide(country: string): Promise<TippingAiResult> {
-  const cacheKey = `tipping_v2:${country.toLowerCase()}`
+export async function getTippingGuide(country: string, locale = 'en'): Promise<TippingAiResult> {
+  // English uses the legacy key for backward-compat with existing cache entries.
+  const cacheKey = locale === 'en'
+    ? `tipping_v2:${country.toLowerCase()}`
+    : `tipping_v2:${country.toLowerCase()}:${locale}`
   const cached = await cacheGet<TippingAiResult>(cacheKey)
   if (cached) return cached
 
-  const prompt = `You are a concise travel etiquette assistant. Provide tipping customs for ${country}.
+  const lang = LOCALE_LANGUAGE[locale] ?? 'English'
+  const isEnglish = locale === 'en'
+  const langInstruction = isEnglish ? '' : `
+LANGUAGE: Respond entirely in ${lang}. Two exceptions that must always stay in their original form:
+- "localLanguage" fields in servicePhrases → always the native language of ${country} (never ${lang})
+- "transliteration" fields → always romanized script
+All other text (scenario notes, context labels, english fields) must be in ${lang}.
+`
+
+  const prompt = `${langInstruction}You are a concise travel etiquette assistant. Provide tipping customs for ${country}.
 
 Return ONLY valid JSON with this exact structure (no markdown, no explanation):
 {

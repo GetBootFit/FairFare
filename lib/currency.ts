@@ -40,25 +40,27 @@ export const CURRENCIES: {
 
 /**
  * Hardcoded prices in Stripe's smallest currency unit:
- *   - cents for most currencies (USD 199 = $1.99)
- *   - whole units for zero-decimal currencies (JPY 299 = ¥299)
+ *   - cents for most currencies (USD 299 = $2.99)
+ *   - whole units for zero-decimal currencies (JPY 449 = ¥449)
  *
  * Tiers:
  *   single  — one taxi or tipping query
  *   pass    — Country Pass: all queries for one country, 24h
  *   bundle  — 10-query bundle, device-stored, 90-day expiry
+ *
+ * Last reviewed: March 2026
  */
 export const PRICES: Record<CurrencyCode, { single: number; pass: number; bundle: number }> = {
-  USD: { single: 199,  pass: 499,  bundle: 999  },
-  EUR: { single: 179,  pass: 449,  bundle: 899  },
-  GBP: { single: 149,  pass: 399,  bundle: 799  },
-  AUD: { single: 299,  pass: 749,  bundle: 1499 },
-  CAD: { single: 249,  pass: 649,  bundle: 1299 },
-  NZD: { single: 319,  pass: 799,  bundle: 1599 },
-  SGD: { single: 249,  pass: 649,  bundle: 1299 },
-  JPY: { single: 299,  pass: 749,  bundle: 1499 },
-  CHF: { single: 179,  pass: 449,  bundle: 899  },
-  HKD: { single: 1499, pass: 3899, bundle: 7799 },
+  USD: { single: 299,  pass: 799,  bundle: 1999 },
+  EUR: { single: 279,  pass: 699,  bundle: 1799 },
+  GBP: { single: 249,  pass: 599,  bundle: 1599 },
+  AUD: { single: 449,  pass: 1199, bundle: 2999 },
+  CAD: { single: 399,  pass: 999,  bundle: 2499 },
+  NZD: { single: 499,  pass: 1299, bundle: 3199 },
+  SGD: { single: 399,  pass: 999,  bundle: 2499 },
+  JPY: { single: 449,  pass: 1199, bundle: 2999 },
+  CHF: { single: 279,  pass: 699,  bundle: 1799 },
+  HKD: { single: 2399, pass: 5999, bundle: 14999 },
 }
 
 // navigator.language → CurrencyCode

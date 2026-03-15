@@ -102,7 +102,7 @@ export function getAllCountrySlugs(): string[] {
 
 // ── JSON-LD builders ─────────────────────────────────────────────────────────
 
-const BASE_URL = 'https://fairfare.app'
+const BASE_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'
 
 export function taxiBreadcrumbJsonLd(citySlug: string, cityName: string) {
   return {
@@ -149,7 +149,7 @@ export function taxiServiceJsonLd(cityName: string, country: string, citySlug: s
     url: `${BASE_URL}/taxi/${citySlug}`,
     provider: {
       '@type': 'WebApplication',
-      name: 'FairFare',
+      name: 'Hootling',
       url: BASE_URL,
     },
     areaServed: {
@@ -169,7 +169,7 @@ export function tippingServiceJsonLd(countryName: string, countrySlug: string) {
     url: `${BASE_URL}/tipping/${countrySlug}`,
     provider: {
       '@type': 'WebApplication',
-      name: 'FairFare',
+      name: 'Hootling',
       url: BASE_URL,
     },
     areaServed: {

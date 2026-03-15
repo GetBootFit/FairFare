@@ -1,5 +1,5 @@
 /**
- * FairFare Service Worker
+ * Hootling Service Worker
  * Strategy: Network-first with cache fallback. Offline page for failed navigations.
  */
 

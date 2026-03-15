@@ -27,9 +27,9 @@ export interface RouteInfo {
 }
 
 /**
- * Build a Google Static Maps URL with a dark theme styled to match the app.
- * The polyline is `encodeURIComponent`-encoded; `|` and `:` separators in
- * style/path/markers values are kept literal so Google can parse them.
+ * Build an internal proxy URL for the route map image.
+ * The actual Google Static Maps request is made server-side by /api/maps/static,
+ * keeping the API key off the client and bypassing HTTP referrer restrictions.
  */
 export function buildRouteMapUrl(
   polyline: string,
@@ -38,38 +38,14 @@ export function buildRouteMapUrl(
   endLat: number,
   endLng: number,
 ): string {
-  const key = apiKey()
-
-  // Dark map style matching FairFare's zinc/dark palette
-  const styles = [
-    'element:geometry|color:0x1c1c27',
-    'element:geometry.stroke|color:0x2e2e3e',
-    'element:labels.text.fill|color:0x686878',
-    'element:labels.text.stroke|color:0x1c1c27',
-    'feature:road|element:geometry|color:0x2d2d40',
-    'feature:road.highway|element:geometry|color:0x3d3d5a',
-    'feature:road.highway|element:geometry.stroke|color:0x242432',
-    'feature:water|element:geometry|color:0x0d1117',
-    'feature:landscape|element:geometry|color:0x1a1a28',
-    'feature:poi|visibility:off',
-    'feature:transit|visibility:off',
-    'feature:administrative.land_parcel|visibility:off',
-  ]
-
-  const params = [
-    'size=640x320',
-    'scale=2',
-    'maptype=roadmap',
-    ...styles.map(s => `style=${s}`),
-    // Route polyline in purple; encodeURIComponent handles all special chars
-    `path=color:0xa855f7ff|weight:4|enc:${encodeURIComponent(polyline)}`,
-    // Start marker (lighter purple) + end marker (darker purple)
-    `markers=color:0x9333ea|size:small|${startLat},${startLng}`,
-    `markers=color:0x6b21a8|size:small|${endLat},${endLng}`,
-    `key=${encodeURIComponent(key)}`,
-  ]
-
-  return `https://maps.googleapis.com/maps/api/staticmap?${params.join('&')}`
+  const params = new URLSearchParams({
+    poly: polyline,
+    slat: String(startLat),
+    slng: String(startLng),
+    elat: String(endLat),
+    elng: String(endLng),
+  })
+  return `/api/maps/static?${params.toString()}`
 }
 
 export interface TransitRouteOption {

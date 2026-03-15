@@ -39,24 +39,33 @@ export async function generateMetadata(
   return {
     title: `Taxi Fares in ${cityName}, ${data.country} (${year}) — Rates & Scam Alerts`,
     description: `${cityName} taxi fares: flag fall ${sym}${data.baseRate}, ${sym}${data.ratePerKm}/km. A 3 km trip costs roughly ${sym}${fare3.min}–${fare3.max}. Check exact fares, avoid scams, know what's fair.`,
-    alternates: { canonical: `https://fairfare.app/taxi/${city}` },
+    alternates: { canonical: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'}/taxi/${city}` },
     openGraph: {
-      title: `Taxi Fares in ${cityName} (${year}) — FairFare`,
-      description: `Fair taxi fare ranges, local rates, and scam warnings for ${cityName}, ${data.country}.`,
-      url: `https://fairfare.app/taxi/${city}`,
+      title: `Taxi Fares in ${cityName} (${year}) — Hootling`,
+      description: `Real taxi meter rates, fare ranges and scam warnings for ${cityName}, ${data.country}. Know before you ride.`,
+      url: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'}/taxi/${city}`,
       type: 'website',
+      images: [
+        {
+          url: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'}/api/og/city?city=${encodeURIComponent(city)}`,
+          width: 1200,
+          height: 630,
+          alt: `Taxi fares in ${cityName} — Hootling`,
+        },
+      ],
     },
     twitter: {
-      card: 'summary',
-      title: `Taxi Fares in ${cityName} — FairFare`,
+      card: 'summary_large_image',
+      title: `Taxi Fares in ${cityName} — Hootling`,
       description: `Flag fall ${sym}${data.baseRate} · ${sym}${data.ratePerKm}/km · Know what's fair before you ride.`,
+      images: [`${process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'}/api/og/city?city=${encodeURIComponent(city)}`],
     },
   }
 }
 
 // ── Sample distances to show ─────────────────────────────────────────────────
 
-const SAMPLE_KM = [3, 5, 10, 20]
+const SAMPLE_KM = [5, 10]
 
 // ── Scam warnings common to most cities ─────────────────────────────────────
 
@@ -146,7 +155,7 @@ export default async function TaxiCityPage(
         {/* Hero */}
         <div>
           <div className="flex items-center gap-3 mb-2">
-            <div className="w-9 h-9 rounded-xl bg-purple-900/40 flex items-center justify-center text-purple-400 shrink-0">
+            <div className="w-9 h-9 rounded-xl bg-teal-900/40 flex items-center justify-center text-teal-400 shrink-0">
               <Car size={20} strokeWidth={1.8} />
             </div>
             <div>
@@ -182,8 +191,8 @@ export default async function TaxiCityPage(
 
         {/* Sample fare table */}
         <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-4 space-y-3">
-          <h2 className="text-sm font-semibold text-zinc-300 uppercase tracking-wider">Estimated Fare Ranges</h2>
-          <p className="text-xs text-zinc-500">Based on meter rates ± 15% for traffic and route variation</p>
+          <h2 className="text-sm font-semibold text-zinc-300 uppercase tracking-wider">Estimated Fare</h2>
+          <p className="text-xs text-zinc-500">Generic distances — enter your route for an exact fare range</p>
           <div className="space-y-2">
             {SAMPLE_KM.map((km) => {
               const { min, max } = sampleFare(data, km)
@@ -209,28 +218,32 @@ export default async function TaxiCityPage(
 
         {/* Scam warnings teaser */}
         <div className="bg-amber-950/30 border border-amber-900/40 rounded-2xl p-4 space-y-3">
-          <h2 className="text-sm font-semibold text-amber-400 uppercase tracking-wider">⚠️ Common Scams to Know</h2>
+          <div className="flex items-center justify-between gap-2">
+            <h2 className="text-sm font-semibold text-amber-400 uppercase tracking-wider">⚠️ Watch Out</h2>
+            <span className="text-[10px] text-amber-700 font-medium uppercase tracking-wide border border-amber-900/60 rounded-full px-2 py-0.5">General</span>
+          </div>
           <ul className="space-y-2">
             {COMMON_SCAM_WARNINGS.map((w) => (
               <li key={w} className="flex items-start gap-2 text-sm text-zinc-400">
-                <span className="text-amber-500 mt-0.5 shrink-0">×</span>
+                <span className="text-amber-500 mt-0.5 shrink-0">›</span>
                 {w}
               </li>
             ))}
           </ul>
-          <p className="text-xs text-zinc-500 pt-1">Get city-specific scam warnings when you check your exact route →</p>
+          <div className="pt-1 border-t border-amber-900/30">
+            <p className="text-xs text-amber-700/80">These are worldwide patterns. Your paid result includes AI-generated warnings specific to {cityName} and your exact route.</p>
+          </div>
         </div>
 
         {/* CTA */}
-        <div className="bg-purple-950/40 border border-purple-900/50 rounded-2xl p-5 text-center space-y-3">
+        <div className="bg-teal-950/40 border border-teal-900/50 rounded-2xl p-5 text-center space-y-3">
           <h2 className="text-base font-bold text-white">Check the Exact Fare for Your Route</h2>
           <p className="text-sm text-zinc-400">
-            Enter your pickup and destination for a precise fare estimate,
-            route-specific scam warnings, and what to say to your driver.
+            Enter your pickup and destination for a precise fare estimate, city-specific scam warnings, and what to say to your driver.
           </p>
           <Link
             href="/taxi"
-            className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-3 rounded-xl transition-colors text-sm"
+            className="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold px-6 py-3 rounded-xl transition-colors text-sm"
           >
             Check My Route <ArrowRight size={16} />
           </Link>

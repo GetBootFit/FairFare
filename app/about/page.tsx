@@ -4,8 +4,8 @@ import { Car, Banknote, MapPin, Brain, CreditCard, ShieldCheck } from 'lucide-re
 import { getUSDPrices } from '@/lib/currency'
 
 export const metadata: Metadata = {
-  title: 'About',
-  description: 'Learn how FairFare helps international travellers get fair taxi prices and tipping guidance — powered by Google Maps and Anthropic Claude.',
+  title: 'About Hootling | Travel wise, pay right',
+  description: 'Learn how Hootling helps international travellers get fair taxi prices and tipping guidance — powered by Google Maps and Anthropic Claude.',
 }
 
 export default function AboutPage() {
@@ -16,12 +16,12 @@ export default function AboutPage() {
       <div>
         <div className="flex items-center gap-3 mb-3">
           <Link href="/" className="w-10 h-10 rounded-xl bg-purple-600 flex items-center justify-center text-lg font-bold text-white hover:bg-purple-700 transition-colors shrink-0">
-            F
+            H
           </Link>
-          <h1 className="text-xl font-bold text-white">About FairFare</h1>
+          <h1 className="text-xl font-bold text-white">About Hootling</h1>
         </div>
         <p className="text-sm text-zinc-400 leading-relaxed">
-          FairFare gives travellers the confidence to jump in any taxi, anywhere in the
+          Hootling gives travellers the confidence to jump in any taxi, anywhere in the
           world — without getting ripped off or undertipping.
         </p>
       </div>
@@ -32,8 +32,22 @@ export default function AboutPage() {
         <p className="text-sm text-zinc-400 leading-relaxed">
           Arriving in a new city after a long flight is stressful enough. Negotiating
           with a taxi driver when you don&apos;t know the local fare, don&apos;t speak the
-          language, and can&apos;t tell a fair price from a tourist trap is worse. FairFare
-          solves that in under five seconds, for $0.99.
+          language, and can&apos;t tell a fair price from a tourist trap is worse. Travellers
+          get ripped off every day in cities all over the world — overcharged fares,
+          rigged meters, unofficial &ldquo;taxis&rdquo; with no accountability.
+        </p>
+        <p className="text-sm text-zinc-400 leading-relaxed">
+          Hootling was built to fix that. The name combines the wisdom of the owl with
+          the English diminutive &ldquo;-ling&rdquo; — a baby owl, curious and wide-eyed,
+          exploring the world for the first time, just like every traveller in a new city.
+          Our mascot is Hootling: a baby owl with golden yellow feathers, a teal backpack,
+          and big curious teal eyes. He&apos;s been everywhere — and he always knows the
+          fair price.
+        </p>
+        <p className="text-sm text-zinc-400 leading-relaxed">
+          Hootling solves the taxi problem in under five seconds, from {single}.
+          Real meter rate data sourced from local taxi authorities. AI-powered scam
+          warnings from Anthropic Claude. 120+ cities, 50+ countries. No subscription.
         </p>
       </section>
 
@@ -142,7 +156,7 @@ export default function AboutPage() {
 
       <div className="pt-2 border-t border-zinc-800">
         <Link href="/" className="text-sm text-zinc-600 hover:text-zinc-400 transition-colors">
-          ← Back to FairFare
+          ← Back to Hootling
         </Link>
       </div>
     </div>

@@ -18,6 +18,7 @@ import {
 } from '@/lib/tokens'
 import { useLanguage } from '@/context/LanguageContext'
 import { COUNTRY_FLAGS } from '@/lib/flags'
+import { track } from '@vercel/analytics'
 import type { TippingResult as TippingResultType } from '@/types'
 
 const COUNTRIES = [
@@ -42,7 +43,7 @@ interface TokenEventDetail {
 }
 
 export function TippingForm() {
-  const { t } = useLanguage()
+  const { t, locale } = useLanguage()
   const [country, setCountry] = useState('')
   const [query, setQuery] = useState('')
   const [status, setStatus] = useState<'idle' | 'paying' | 'loading' | 'done' | 'error'>('idle')
@@ -84,6 +85,7 @@ export function TippingForm() {
     // Then check single-query token
     const token = getStoredToken()
     if (!token || isTokenExpired(token)) {
+      track('unlock_clicked', { feature: 'tipping' })
       sessionStorage.setItem(STORAGE_KEY, JSON.stringify(selectedCountry))
       setCountry(selectedCountry)
       setStatus('paying')
@@ -102,7 +104,7 @@ export function TippingForm() {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify({ country: c }),
+        body: JSON.stringify({ country: c, locale }),
       })
       const data = await res.json()
       if (!res.ok) {
@@ -111,6 +113,7 @@ export function TippingForm() {
       }
       setResult(data as TippingResultType)
       setStatus('done')
+      track('result_loaded', { feature: 'tipping' })
     } catch (err) {
       setStatus('error')
       setErrorMsg(err instanceof Error ? err.message : t('common_error'))
@@ -167,8 +170,18 @@ export function TippingForm() {
     return <TippingResult result={result} onReset={handleReset} />
   }
 
+  // Screen reader announcements for dynamic state changes
+  const srAnnouncement =
+    status === 'loading' ? t('tipping_loading', { country }) :
+    status === 'error'   ? errorMsg :
+    ''
+
   return (
     <div className="space-y-4">
+      {/* Visually-hidden ARIA live region — announces loading/error states to screen readers */}
+      <div role="status" aria-live="polite" aria-atomic="true" className="sr-only">
+        {srAnnouncement}
+      </div>
       {(status === 'idle' || status === 'error') && (
         <>
           <p className="text-zinc-400 text-sm">{t('tipping_description')}</p>
@@ -208,9 +221,9 @@ export function TippingForm() {
       )}
 
       {status === 'loading' && (
-        <div className="flex flex-col items-center gap-3 py-12 text-zinc-400">
+        <div aria-busy="true" className="flex flex-col items-center gap-3 py-12 text-zinc-400">
           <Spinner className="h-7 w-7 text-teal-400" />
-          <span className="text-sm">{t('tipping_loading', { country })}</span>
+          <span className="text-sm" aria-hidden="true">{t('tipping_loading', { country })}</span>
         </div>
       )}
 

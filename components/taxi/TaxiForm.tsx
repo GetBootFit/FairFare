@@ -20,6 +20,9 @@ import {
 import { useLanguage } from '@/context/LanguageContext'
 import { useRecentSearches } from '@/hooks/useRecentSearches'
 import { Clock, Plane } from 'lucide-react'
+import { track } from '@vercel/analytics'
+import Link from 'next/link'
+import { matchAirport } from '@/lib/airport-data'
 import type { TaxiPreviewResult, TaxiFullResult } from '@/types'
 
 const AIRPORT_RE = /airport|aéroport|aeropuerto|aeroporto|flughafen|luchthaven|havalimanı|flygplats/i
@@ -41,7 +44,7 @@ interface FormState {
 }
 
 export function TaxiForm() {
-  const { t } = useLanguage()
+  const { t, locale } = useLanguage()
   const { recent, addSearch } = useRecentSearches()
   const [form, setForm] = useState<FormState>({
     pickup: '', destination: '', pickupPlaceId: '', destPlaceId: '',
@@ -52,6 +55,9 @@ export function TaxiForm() {
   const [errorMsg, setErrorMsg] = useState('')
 
   const isAirportPickup = AIRPORT_RE.test(form.pickup)
+  // Specific airport page match — higher signal than the generic AIRPORT_RE
+  const pickupAirport  = matchAirport(form.pickup)
+  const destAirport    = matchAirport(form.destination)
 
   // Restore form from sessionStorage after payment redirect
   useEffect(() => {
@@ -106,6 +112,7 @@ export function TaxiForm() {
             setStatus('loading')
             await fetchFullResult(token, form)
           } else {
+            track('preview_loaded', { feature: 'taxi' })
             setStatus('preview_done')
           }
         }
@@ -128,6 +135,7 @@ export function TaxiForm() {
         destination: currentForm.destination,
         pickupPlaceId: currentForm.pickupPlaceId || undefined,
         destPlaceId: currentForm.destPlaceId || undefined,
+        locale,
       }),
     })
     const data = await res.json()
@@ -137,6 +145,7 @@ export function TaxiForm() {
     }
     setResult(data as TaxiFullResult)
     setStatus('done')
+    track('result_loaded', { feature: 'taxi' })
     addSearch({
       pickup: currentForm.pickup,
       destination: currentForm.destination,
@@ -146,6 +155,7 @@ export function TaxiForm() {
   }
 
   const handleUnlock = () => {
+    track('unlock_clicked', { feature: 'taxi' })
     sessionStorage.setItem(STORAGE_KEY, JSON.stringify(form))
     setStatus('paying')
   }
@@ -212,8 +222,19 @@ export function TaxiForm() {
     return <TaxiResult result={result} onReset={handleReset} />
   }
 
+  // Screen reader announcements for dynamic state changes
+  const srAnnouncement =
+    status === 'previewing' ? t('taxi_calculating') :
+    status === 'loading'    ? t('taxi_loading_full') :
+    status === 'error'      ? errorMsg :
+    ''
+
   return (
     <div className="space-y-4">
+      {/* Visually-hidden ARIA live region — announces loading/error states to screen readers */}
+      <div role="status" aria-live="polite" aria-atomic="true" className="sr-only">
+        {srAnnouncement}
+      </div>
       {/* Input form */}
       {(status === 'idle' || status === 'error') && (
         <form
@@ -229,15 +250,29 @@ export function TaxiForm() {
               onChange={(v) => setField('pickup', v)}
               onSelect={(addr, id) => setForm((f) => ({ ...f, pickup: addr, pickupPlaceId: id }))}
             />
-            {/* Airport tip */}
-            {isAirportPickup && (
-              <div className="flex items-start gap-2 mt-2 px-1">
-                <Plane size={12} className="text-purple-400 shrink-0 mt-0.5" />
-                <p className="text-xs text-zinc-500 leading-snug">
-                  Always use the official taxi queue — ignore touts inside the terminal.
+            {/* Airport hint — specific page link when we have data, generic tip otherwise */}
+            {pickupAirport ? (
+              <div className="flex items-center gap-1.5 mt-2 px-1">
+                <Plane size={11} className="text-teal-400 shrink-0" />
+                <p className="text-xs text-zinc-500">
+                  {t('form_airport_from', { code: pickupAirport.code })}{' '}
+                  <Link
+                    href={`/taxi/airport/${pickupAirport.code}`}
+                    className="text-teal-400 hover:text-teal-300 transition-colors"
+                    target="_blank"
+                  >
+                    {pickupAirport.name} →
+                  </Link>
                 </p>
               </div>
-            )}
+            ) : isAirportPickup ? (
+              <div className="flex items-start gap-2 mt-2 px-1">
+                <Plane size={11} className="text-teal-400 shrink-0 mt-0.5" />
+                <p className="text-xs text-zinc-500 leading-snug">
+                  {t('form_airport_hint')}
+                </p>
+              </div>
+            ) : null}
           </div>
           <div>
             <label htmlFor="destination" className="block text-xs text-zinc-500 mb-1.5 uppercase tracking-wider">{t('taxi_to')}</label>
@@ -248,12 +283,28 @@ export function TaxiForm() {
               onChange={(v) => setField('destination', v)}
               onSelect={(addr, id) => setForm((f) => ({ ...f, destination: addr, destPlaceId: id }))}
             />
+            {/* Airport hint for destination — useful for outbound trips */}
+            {destAirport && (
+              <div className="flex items-center gap-1.5 mt-2 px-1">
+                <Plane size={11} className="text-teal-400 shrink-0" />
+                <p className="text-xs text-zinc-500">
+                  {t('form_airport_to', { code: destAirport.code })}{' '}
+                  <Link
+                    href={`/taxi/airport/${destAirport.code}`}
+                    className="text-teal-400 hover:text-teal-300 transition-colors"
+                    target="_blank"
+                  >
+                    {destAirport.name} →
+                  </Link>
+                </p>
+              </div>
+            )}
           </div>
           {errorMsg && <p className="text-red-400 text-sm">{errorMsg}</p>}
           <button
             type="submit"
             disabled={!form.pickup.trim() || !form.destination.trim()}
-            className="w-full bg-purple-600 hover:bg-purple-700 disabled:opacity-40 text-white font-semibold py-3.5 rounded-xl transition-colors"
+            className="w-full bg-teal-600 hover:bg-teal-700 disabled:opacity-40 text-white font-semibold py-3.5 rounded-xl transition-colors"
           >
             {t('taxi_check_route')}
           </button>
@@ -263,7 +314,7 @@ export function TaxiForm() {
             <div className="pt-1 space-y-1.5">
               <p className="flex items-center gap-1.5 text-xs text-zinc-600 uppercase tracking-wider">
                 <Clock size={11} />
-                Recent
+                {t('form_recent')}
               </p>
               {recent.map((r, i) => (
                 <button
@@ -293,9 +344,9 @@ export function TaxiForm() {
 
       {/* Previewing */}
       {status === 'previewing' && (
-        <div className="flex flex-col items-center gap-3 py-8 text-zinc-400">
-          <Spinner className="h-7 w-7 text-purple-400" />
-          <span className="text-sm">{t('taxi_calculating')}</span>
+        <div aria-busy="true" className="flex flex-col items-center gap-3 py-8 text-zinc-400">
+          <Spinner className="h-7 w-7 text-teal-400" />
+          <span className="text-sm" aria-hidden="true">{t('taxi_calculating')}</span>
         </div>
       )}
 
@@ -304,14 +355,14 @@ export function TaxiForm() {
         <div className="space-y-4">
           <TaxiPreview preview={preview} />
           {status === 'loading' ? (
-            <div className="flex flex-col items-center gap-3 py-4 text-zinc-400">
-              <Spinner className="h-7 w-7 text-purple-400" />
-              <span className="text-sm">{t('taxi_loading_full')}</span>
+            <div aria-busy="true" className="flex flex-col items-center gap-3 py-4 text-zinc-400">
+              <Spinner className="h-7 w-7 text-teal-400" />
+              <span className="text-sm" aria-hidden="true">{t('taxi_loading_full')}</span>
             </div>
           ) : (
             <button
               onClick={handleUnlock}
-              className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3.5 rounded-xl transition-colors"
+              className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3.5 rounded-xl transition-colors"
             >
               {t('taxi_unlock_btn')}
             </button>

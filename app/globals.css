@@ -48,10 +48,6 @@ body.modal-open {
   filter: invert(0.7);
 }
 
-/* Hide Google logo in dropdown */
-.pac-logo::after {
-  display: none !important;
-}
 
 /* Remove outline rings on form inputs */
 input[type='text']:focus {

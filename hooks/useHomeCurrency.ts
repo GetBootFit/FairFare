@@ -25,11 +25,22 @@ export function useHomeCurrency() {
   useEffect(() => {
     const stored = localStorage.getItem(LS_KEY) as HomeCurrency | null
     setCurrencyState(stored ?? detectCurrency())
+
+    // Sync across hook instances on the same tab (via synthetic StorageEvent) and cross-tab
+    const onStorage = (e: StorageEvent) => {
+      if (e.key === LS_KEY && e.newValue) {
+        setCurrencyState(e.newValue as HomeCurrency)
+      }
+    }
+    window.addEventListener('storage', onStorage)
+    return () => window.removeEventListener('storage', onStorage)
   }, [])
 
   const setCurrency = useCallback((c: HomeCurrency) => {
     setCurrencyState(c)
     localStorage.setItem(LS_KEY, c)
+    // Notify other hook instances on the same tab
+    window.dispatchEvent(new StorageEvent('storage', { key: LS_KEY, newValue: c }))
   }, [])
 
   return { currency, setCurrency }

@@ -11,21 +11,48 @@ interface BeforeInstallPromptEvent extends Event {
   userChoice: Promise<{ outcome: 'accepted' | 'dismissed' }>
 }
 
-export function InstallPrompt() {
+function detectIOSSafari(): boolean {
+  const ua = navigator.userAgent
+  const isIOS = /iPad|iPhone|iPod/.test(ua) && !(window as any).MSStream
+  // Exclude Chrome on iOS (CriOS), Firefox (FxiOS), Edge (EdgiOS)
+  const isSafari = /Safari/.test(ua) && !/CriOS|FxiOS|EdgiOS/.test(ua)
+  return isIOS && isSafari
+}
+
+function isStandalone(): boolean {
+  return (
+    window.matchMedia('(display-mode: standalone)').matches ||
+    (window.navigator as any).standalone === true
+  )
+}
+
+interface InstallPromptProps {
+  /** 'card' = prominent banner (default), 'micro' = quiet footer text */
+  variant?: 'card' | 'micro'
+}
+
+export function InstallPrompt({ variant = 'card' }: InstallPromptProps) {
   const { t } = useLanguage()
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null)
+  const [isIOS, setIsIOS] = useState(false)
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    // Don't show if previously dismissed
-    if (localStorage.getItem(LS_KEY)) return
+    if (localStorage.getItem(LS_KEY) || isStandalone()) return
 
+    // iOS Safari: no beforeinstallprompt — show manual instruction instead
+    if (detectIOSSafari()) {
+      setIsIOS(true)
+      setVisible(true)
+      return
+    }
+
+    // Chrome / Edge / Android: use the native install prompt
     const handler = (e: Event) => {
       e.preventDefault()
       setDeferredPrompt(e as BeforeInstallPromptEvent)
       setVisible(true)
     }
-
     window.addEventListener('beforeinstallprompt', handler)
     return () => window.removeEventListener('beforeinstallprompt', handler)
   }, [])
@@ -34,9 +61,7 @@ export function InstallPrompt() {
     if (!deferredPrompt) return
     await deferredPrompt.prompt()
     const { outcome } = await deferredPrompt.userChoice
-    if (outcome === 'accepted') {
-      setVisible(false)
-    }
+    if (outcome === 'accepted') setVisible(false)
     setDeferredPrompt(null)
   }
 
@@ -47,22 +72,64 @@ export function InstallPrompt() {
 
   if (!visible) return null
 
-  return (
-    <div className="flex items-center gap-3 bg-zinc-800 border border-zinc-700 rounded-xl px-4 py-3 text-sm">
-      <span className="text-lg shrink-0">📲</span>
-      <p className="text-zinc-300 flex-1 text-xs leading-snug">
-        {t('home_install_prompt')}
-      </p>
-      <div className="flex items-center gap-2 shrink-0">
-        <button
-          onClick={handleAdd}
-          className="text-purple-400 font-semibold text-xs hover:text-purple-300"
-        >
-          {t('home_install_btn')}
-        </button>
+  // ── Micro variant — quiet text near footer ──────────────────────────────
+  if (variant === 'micro') {
+    return (
+      <p className="text-center text-xs text-zinc-700 leading-relaxed">
+        {isIOS ? (
+          <>
+            Tap{' '}
+            <span className="text-zinc-500">Share ↑</span> then{' '}
+            <span className="text-zinc-500">Add to Home Screen</span>
+          </>
+        ) : (
+          <>
+            {t('home_install_prompt')} —{' '}
+            <button
+              onClick={handleAdd}
+              className="text-zinc-500 hover:text-zinc-400 transition-colors underline underline-offset-2"
+            >
+              {t('home_install_btn')}
+            </button>
+          </>
+        )}
         <button
           onClick={handleDismiss}
-          className="text-zinc-600 hover:text-zinc-400"
+          className="ml-2 text-zinc-800 hover:text-zinc-600 transition-colors"
+          aria-label="Dismiss"
+        >
+          <X size={11} />
+        </button>
+      </p>
+    )
+  }
+
+  // ── Card variant (default) ───────────────────────────────────────────────
+  return (
+    <div className="flex items-center gap-3 bg-zinc-800 border border-zinc-700 rounded-xl px-4 py-3">
+      <span className="text-lg shrink-0">📲</span>
+      {isIOS ? (
+        <p className="text-zinc-300 flex-1 text-xs leading-snug">
+          Tap <span className="font-semibold text-white">Share ↑</span> then{' '}
+          <span className="font-semibold text-white">Add to Home Screen</span>
+        </p>
+      ) : (
+        <p className="text-zinc-300 flex-1 text-xs leading-snug">
+          {t('home_install_prompt')}
+        </p>
+      )}
+      <div className="flex items-center gap-2 shrink-0">
+        {!isIOS && (
+          <button
+            onClick={handleAdd}
+            className="text-purple-400 font-semibold text-xs hover:text-purple-300 transition-colors"
+          >
+            {t('home_install_btn')}
+          </button>
+        )}
+        <button
+          onClick={handleDismiss}
+          className="text-zinc-600 hover:text-zinc-400 transition-colors"
           aria-label="Dismiss"
         >
           <X size={14} />
