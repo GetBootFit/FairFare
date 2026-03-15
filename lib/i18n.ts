@@ -175,6 +175,16 @@ export type TranslationKey =
   | 'offline_reconnect'
   | 'offline_cached'
   | 'offline_try_again'
+  // Home page stats + footer
+  | 'home_stat_cities'
+  | 'home_stat_tipping'
+  | 'home_no_account'
+  | 'home_sample_btn'
+  | 'footer_about'
+  | 'footer_faq'
+  | 'footer_terms'
+  | 'footer_privacy'
+  | 'footer_copyright'
 
 type Translations = Record<TranslationKey, string>
 
@@ -317,6 +327,15 @@ const translations: Record<Locale, Translations> = {
     offline_reconnect: 'Reconnect to load your result.',
     offline_cached: 'Cached pages available',
     offline_try_again: 'Try again',
+    home_stat_cities: 'cities',
+    home_stat_tipping: 'tipping guides',
+    home_no_account: 'No account required',
+    home_sample_btn: 'See a sample result',
+    footer_about: 'About',
+    footer_faq: 'FAQ',
+    footer_terms: 'Terms',
+    footer_privacy: 'Privacy',
+    footer_copyright: '© {year} Hootling — Travel wise, pay right',
   },
 
   es: {
@@ -457,6 +476,15 @@ const translations: Record<Locale, Translations> = {
     offline_reconnect: 'Vuelve a conectarte para cargar tu resultado.',
     offline_cached: 'Páginas en caché disponibles',
     offline_try_again: 'Reintentar',
+    home_stat_cities: 'ciudades',
+    home_stat_tipping: 'guías de propinas',
+    home_no_account: 'Sin cuenta requerida',
+    home_sample_btn: 'Ver un resultado de ejemplo',
+    footer_about: 'Acerca de',
+    footer_faq: 'FAQ',
+    footer_terms: 'Términos',
+    footer_privacy: 'Privacidad',
+    footer_copyright: '© {year} Hootling — Viaja inteligente, propina bien',
   },
 
   fr: {
@@ -597,6 +625,15 @@ const translations: Record<Locale, Translations> = {
     offline_reconnect: 'Reconnectez-vous pour charger votre résultat.',
     offline_cached: 'Pages mises en cache disponibles',
     offline_try_again: 'Réessayer',
+    home_stat_cities: 'villes',
+    home_stat_tipping: 'guides de pourboires',
+    home_no_account: 'Aucun compte requis',
+    home_sample_btn: 'Voir un exemple de résultat',
+    footer_about: 'À propos',
+    footer_faq: 'FAQ',
+    footer_terms: 'CGU',
+    footer_privacy: 'Confidentialité',
+    footer_copyright: '© {year} Hootling — Le bon prix, le bon pourboire',
   },
 
   de: {
@@ -737,6 +774,15 @@ const translations: Record<Locale, Translations> = {
     offline_reconnect: 'Verbinde dich erneut, um dein Ergebnis zu laden.',
     offline_cached: 'Gecachte Seiten verfügbar',
     offline_try_again: 'Erneut versuchen',
+    home_stat_cities: 'Städte',
+    home_stat_tipping: 'Trinkgeld-Guides',
+    home_no_account: 'Kein Konto nötig',
+    home_sample_btn: 'Beispielergebnis ansehen',
+    footer_about: 'Über uns',
+    footer_faq: 'FAQ',
+    footer_terms: 'AGB',
+    footer_privacy: 'Datenschutz',
+    footer_copyright: '© {year} Hootling — Klug reisen, richtig bezahlen',
   },
 
   pt: {
@@ -877,6 +923,15 @@ const translations: Record<Locale, Translations> = {
     offline_reconnect: 'Reconecte para carregar seu resultado.',
     offline_cached: 'Páginas em cache disponíveis',
     offline_try_again: 'Tentar novamente',
+    home_stat_cities: 'cidades',
+    home_stat_tipping: 'guias de gorjeta',
+    home_no_account: 'Sem conta necessária',
+    home_sample_btn: 'Ver um resultado de exemplo',
+    footer_about: 'Sobre',
+    footer_faq: 'FAQ',
+    footer_terms: 'Termos',
+    footer_privacy: 'Privacidade',
+    footer_copyright: '© {year} Hootling — Viaje com sabedoria, pague certo',
   },
 
   zh: {
@@ -1017,6 +1072,15 @@ const translations: Record<Locale, Translations> = {
     offline_reconnect: '重新连接以加载您的结果。',
     offline_cached: '可用的缓存页面',
     offline_try_again: '重试',
+    home_stat_cities: '个城市',
+    home_stat_tipping: '条小费指南',
+    home_no_account: '无需账户',
+    home_sample_btn: '查看示例结果',
+    footer_about: '关于',
+    footer_faq: '常见问题',
+    footer_terms: '条款',
+    footer_privacy: '隐私',
+    footer_copyright: '© {year} Hootling — 智慧出行，合理消费',
   },
 
   ja: {
@@ -1157,6 +1221,15 @@ const translations: Record<Locale, Translations> = {
     offline_reconnect: '再接続して結果を表示します。',
     offline_cached: '利用可能なキャッシュページ',
     offline_try_again: '再試行',
+    home_stat_cities: '都市',
+    home_stat_tipping: '件チップガイド',
+    home_no_account: 'アカウント不要',
+    home_sample_btn: 'サンプル結果を見る',
+    footer_about: '概要',
+    footer_faq: 'よくある質問',
+    footer_terms: '利用規約',
+    footer_privacy: 'プライバシー',
+    footer_copyright: '© {year} Hootling — 賢く旅して、適切なチップを',
   },
 
   ko: {
@@ -1297,6 +1370,15 @@ const translations: Record<Locale, Translations> = {
     offline_reconnect: '재연결하여 결과를 불러오세요.',
     offline_cached: '캐시된 페이지 이용 가능',
     offline_try_again: '다시 시도',
+    home_stat_cities: '개 도시',
+    home_stat_tipping: '개 팁 가이드',
+    home_no_account: '계정 불필요',
+    home_sample_btn: '샘플 결과 보기',
+    footer_about: '소개',
+    footer_faq: 'FAQ',
+    footer_terms: '이용약관',
+    footer_privacy: '개인정보',
+    footer_copyright: '© {year} Hootling — 현명한 여행, 올바른 팁',
   },
 
   hi: {
@@ -1437,6 +1519,15 @@ const translations: Record<Locale, Translations> = {
     offline_reconnect: 'अपना परिणाम लोड करने के लिए पुनः कनेक्ट करें।',
     offline_cached: 'उपलब्ध कैश्ड पृष्ठ',
     offline_try_again: 'पुनः प्रयास करें',
+    home_stat_cities: 'शहर',
+    home_stat_tipping: 'टिपिंग गाइड',
+    home_no_account: 'कोई खाता नहीं चाहिए',
+    home_sample_btn: 'नमूना परिणाम देखें',
+    footer_about: 'के बारे में',
+    footer_faq: 'सामान्य प्रश्न',
+    footer_terms: 'नियम',
+    footer_privacy: 'गोपनीयता',
+    footer_copyright: '© {year} Hootling — समझदारी से यात्रा करें, सही टिप दें',
   },
 }
 
