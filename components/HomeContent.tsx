@@ -45,7 +45,7 @@ export function HomeContent() {
       {/* Logo / hero */}
       <div className="pt-8 pb-6">
         <div className="mb-2">
-          <Link href="/" className="inline-flex items-center gap-2.5 hover:opacity-90 transition-opacity">
+          <Link href="/" className="inline-flex items-end gap-2.5 hover:opacity-90 transition-opacity">
             <img
               src="/images/brand/hootling-logo-icon.svg"
               alt=""
