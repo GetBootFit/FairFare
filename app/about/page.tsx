@@ -18,7 +18,7 @@ export default function AboutPage() {
         <div className="flex items-center gap-3 mb-3">
           <Link href="/" className="shrink-0 hover:opacity-80 transition-opacity">
             <Image
-              src="/images/brand/hootling-logo-icon.png"
+              src="/images/brand/hootling-logo-icon.svg"
               alt="Hootling"
               width={40}
               height={40}

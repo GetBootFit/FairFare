@@ -7,7 +7,7 @@ export default function TippingLoading() {
       {/* Branded loading indicator */}
       <div className="flex flex-col items-center gap-2 py-4">
         <Image
-          src="/images/brand/hootling-logo-icon.png"
+          src="/images/brand/hootling-logo-icon.svg"
           alt="Hootling"
           width={56}
           height={56}

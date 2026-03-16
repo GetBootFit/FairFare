@@ -177,7 +177,7 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
         {/* Header */}
         <div className="text-center pt-1">
           <Image
-            src="/images/brand/hootling-logo-icon.png"
+            src="/images/brand/hootling-logo-icon.svg"
             alt="Hootling"
             width={64}
             height={64}

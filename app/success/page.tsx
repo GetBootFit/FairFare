@@ -96,7 +96,7 @@ function SuccessInner() {
     return (
       <div className="flex flex-col items-center gap-6 py-16 px-4 text-center max-w-sm mx-auto">
         <Image
-          src="/images/brand/hootling-logo-icon.png"
+          src="/images/brand/hootling-logo-icon.svg"
           alt="Hootling"
           width={80}
           height={80}

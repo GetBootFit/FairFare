@@ -5,7 +5,7 @@ export default function NotFound() {
   return (
     <div className="flex flex-col items-center gap-6 py-20 px-4 text-center">
       <Image
-        src="/images/brand/hootling-logo-icon.png"
+        src="/images/brand/hootling-logo-icon.svg"
         alt="Hootling got lost"
         width={96}
         height={96}
