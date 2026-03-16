@@ -150,13 +150,13 @@ export default function AboutPage() {
           href="/taxi"
           className="block w-full text-center bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3.5 rounded-xl transition-colors text-sm"
         >
-          Try Taxi Fare Check
+          Try Taxi Fare Check →
         </Link>
         <Link
           href="/tipping"
           className="block w-full text-center bg-zinc-800 hover:bg-zinc-700 text-white font-semibold py-3.5 rounded-xl transition-colors text-sm"
         >
-          Try Tipping Guide
+          Try Tipping Guide →
         </Link>
       </div>
 
