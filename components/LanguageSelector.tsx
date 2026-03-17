@@ -1,22 +1,99 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 import Image from 'next/image'
 import { LOCALES, type Locale } from '@/lib/i18n'
 import { useLanguage } from '@/context/LanguageContext'
 
+const LISTBOX_ID = 'language-listbox'
+
 export function LanguageSelector() {
   const { locale, setLocale } = useLanguage()
   const [open, setOpen] = useState(false)
+  const buttonRef = useRef<HTMLButtonElement>(null)
+  const listboxRef = useRef<HTMLDivElement>(null)
+  const optionRefs = useRef<(HTMLButtonElement | null)[]>([])
 
   const current = LOCALES.find((l) => l.code === locale) ?? LOCALES[0]
+  const currentIndex = LOCALES.findIndex((l) => l.code === locale)
+
+  // ── Open / close ────────────────────────────────────────────────────────────
+
+  const openDropdown = useCallback(() => {
+    setOpen(true)
+  }, [])
+
+  const closeDropdown = useCallback(() => {
+    setOpen(false)
+    buttonRef.current?.focus()
+  }, [])
+
+  // Move focus to the currently selected option when dropdown opens
+  useEffect(() => {
+    if (open) {
+      const idx = currentIndex >= 0 ? currentIndex : 0
+      // Defer to next frame so the list is mounted in the DOM
+      requestAnimationFrame(() => {
+        optionRefs.current[idx]?.focus()
+      })
+    }
+  }, [open, currentIndex])
+
+  // ── Keyboard navigation ──────────────────────────────────────────────────────
+
+  const handleButtonKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowDown') {
+      e.preventDefault()
+      openDropdown()
+    }
+  }
+
+  const handleOptionKeyDown = (e: React.KeyboardEvent, idx: number) => {
+    switch (e.key) {
+      case 'Escape':
+        e.preventDefault()
+        closeDropdown()
+        break
+      case 'ArrowDown':
+        e.preventDefault()
+        optionRefs.current[Math.min(idx + 1, LOCALES.length - 1)]?.focus()
+        break
+      case 'ArrowUp':
+        e.preventDefault()
+        if (idx === 0) closeDropdown()
+        else optionRefs.current[Math.max(idx - 1, 0)]?.focus()
+        break
+      case 'Home':
+        e.preventDefault()
+        optionRefs.current[0]?.focus()
+        break
+      case 'End':
+        e.preventDefault()
+        optionRefs.current[LOCALES.length - 1]?.focus()
+        break
+      case 'Tab':
+        // Tab should close the dropdown and let focus move naturally
+        closeDropdown()
+        break
+    }
+  }
+
+  const handleSelect = (code: Locale) => {
+    setLocale(code)
+    closeDropdown()
+  }
 
   return (
     <div className="relative">
       <button
-        onClick={() => setOpen((o) => !o)}
-        className="flex flex-col items-center gap-1 py-3 px-3 text-xs font-medium text-zinc-500 hover:text-zinc-300 transition-colors min-h-[44px] min-w-[44px] justify-center"
+        ref={buttonRef}
+        onClick={() => (open ? closeDropdown() : openDropdown())}
+        onKeyDown={handleButtonKeyDown}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        aria-controls={LISTBOX_ID}
         aria-label={`Language: ${current.label}`}
+        className="flex flex-col items-center gap-1 py-3 px-3 text-xs font-medium text-zinc-500 hover:text-zinc-300 transition-colors min-h-[44px] min-w-[44px] justify-center"
       >
         <Image
           src={`/images/flags/${current.flagCode}.svg`}
@@ -31,21 +108,30 @@ export function LanguageSelector() {
 
       {open && (
         <>
-          {/* Backdrop */}
+          {/* Backdrop — click outside to close */}
           <div
             className="fixed inset-0 z-40"
-            onClick={() => setOpen(false)}
+            onClick={closeDropdown}
             aria-hidden="true"
           />
-          {/* Dropdown — opens upward from bottom nav */}
-          <div className="absolute bottom-full right-0 mb-2 z-50 bg-zinc-900 border border-zinc-700 rounded-xl overflow-hidden shadow-xl min-w-[160px] max-h-64 overflow-y-auto">
-            {LOCALES.map((l) => (
+          {/* Listbox — opens upward from bottom nav */}
+          <div
+            ref={listboxRef}
+            id={LISTBOX_ID}
+            role="listbox"
+            aria-label="Select language"
+            aria-activedescendant={`lang-option-${locale}`}
+            className="absolute bottom-full right-0 mb-2 z-50 bg-zinc-900 border border-zinc-700 rounded-xl overflow-hidden shadow-xl min-w-[160px] max-h-64 overflow-y-auto"
+          >
+            {LOCALES.map((l, idx) => (
               <button
                 key={l.code}
-                onClick={() => {
-                  setLocale(l.code as Locale)
-                  setOpen(false)
-                }}
+                id={`lang-option-${l.code}`}
+                ref={(el) => { optionRefs.current[idx] = el }}
+                role="option"
+                aria-selected={l.code === locale}
+                onClick={() => handleSelect(l.code as Locale)}
+                onKeyDown={(e) => handleOptionKeyDown(e, idx)}
                 className={`w-full text-left flex items-center gap-3 px-4 py-3 text-sm transition-colors min-h-[44px] ${
                   l.code === locale
                     ? 'text-purple-400 bg-purple-900/20 font-medium'
@@ -61,6 +147,9 @@ export function LanguageSelector() {
                   unoptimized
                 />
                 <span>{l.label}</span>
+                {l.code === locale && (
+                  <span className="sr-only">(selected)</span>
+                )}
               </button>
             ))}
           </div>

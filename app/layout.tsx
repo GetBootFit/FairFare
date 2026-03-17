@@ -141,13 +141,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {GA4_ID && <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />}
       </head>
       <body className={`${inter.variable} font-sans bg-black text-white antialiased`}>
+        {/* Skip-to-main-content — visually hidden until focused by keyboard users.
+            Satisfies WCAG 2.4.1 (Bypass Blocks) Level A. */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:px-4 focus:py-2 focus:bg-purple-600 focus:text-white focus:rounded-lg focus:text-sm focus:font-semibold focus:shadow-lg"
+        >
+          Skip to main content
+        </a>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <LanguageProvider>
           <HtmlLangUpdater />
-          <main className="max-w-md mx-auto min-h-screen pb-24 px-4 pt-6">
+          {/* id + tabIndex={-1} allows the skip link to move focus here programmatically. */}
+          <main id="main-content" tabIndex={-1} className="max-w-md mx-auto min-h-screen pb-24 px-4 pt-6 focus:outline-none">
             {children}
           </main>
           <BottomNav />

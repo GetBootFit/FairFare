@@ -171,28 +171,40 @@ export function TippingForm() {
   }
 
   // Screen reader announcements for dynamic state changes
-  const srAnnouncement =
-    status === 'loading' ? t('tipping_loading', { country }) :
-    status === 'error'   ? errorMsg :
-    ''
+  const srLoadingAnnouncement = status === 'loading' ? t('tipping_loading', { country }) : ''
 
   return (
     <div className="space-y-4">
-      {/* Visually-hidden ARIA live region — announces loading/error states to screen readers */}
+      {/* Polite live region — announces loading progress */}
       <div role="status" aria-live="polite" aria-atomic="true" className="sr-only">
-        {srAnnouncement}
+        {srLoadingAnnouncement}
       </div>
+      {/* Assertive live region — announces errors immediately */}
+      {status === 'error' && errorMsg && (
+        <div role="alert" aria-atomic="true" className="sr-only">
+          {errorMsg}
+        </div>
+      )}
       {(status === 'idle' || status === 'error') && (
         <>
           <p className="text-zinc-400 text-sm">{t('tipping_description')}</p>
+          <label htmlFor="tipping-country-search" className="sr-only">
+            Search for a country
+          </label>
           <input
+            id="tipping-country-search"
             type="text"
             placeholder={t('tipping_search')}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
+            aria-describedby={errorMsg ? 'tipping-form-error' : undefined}
             className="w-full rounded-xl bg-zinc-800 border border-zinc-700 px-4 py-3.5 text-white placeholder-zinc-500 text-base focus:border-zinc-500 transition-colors"
           />
-          {errorMsg && <p className="text-red-400 text-sm">{errorMsg}</p>}
+          {errorMsg && (
+            <p id="tipping-form-error" role="alert" className="text-red-400 text-sm">
+              {errorMsg}
+            </p>
+          )}
           <div className="grid grid-cols-2 gap-2 max-h-80 overflow-y-auto pr-1">
             {filtered.map((c) => {
               const iso2 = COUNTRY_FLAGS[c]

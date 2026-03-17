@@ -272,7 +272,7 @@ export default async function TaxiCityPage(
           </p>
           <Link
             href="/taxi"
-            className="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold px-6 py-3 rounded-xl transition-colors text-sm"
+            className="inline-flex items-center gap-2 bg-teal-700 hover:bg-teal-800 text-white font-semibold px-6 py-3 rounded-xl transition-colors text-sm"
           >
             Check My Route <ArrowRight size={16} />
           </Link>

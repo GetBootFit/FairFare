@@ -6,14 +6,20 @@ import clsx from 'clsx'
 
 interface Props {
   id: string
+  /** Visible or sr-only label text. When a visible <label> exists in the parent (htmlFor={id}),
+   *  omit this prop. Pass it when the component is used without an external label element,
+   *  so the input is always accessible regardless of context. */
+  label?: string
   placeholder: string
   value: string
   onChange: (value: string) => void
   onSelect: (address: string, placeId: string) => void
+  /** Associates this input with an error message element via aria-describedby. */
+  errorId?: string
   className?: string
 }
 
-export function PlaceInput({ id, placeholder, value, onChange, onSelect, className }: Props) {
+export function PlaceInput({ id, label, placeholder, value, onChange, onSelect, errorId, className }: Props) {
   const mapsLoaded = useGoogleMaps()
   const inputRef = useRef<HTMLInputElement>(null)
   const acRef = useRef<google.maps.places.Autocomplete | null>(null)
@@ -54,21 +60,30 @@ export function PlaceInput({ id, placeholder, value, onChange, onSelect, classNa
   }
 
   return (
-    <input
-      ref={inputRef}
-      id={id}
-      type="text"
-      value={value}
-      placeholder={placeholder}
-      autoComplete="off"
-      onFocus={handleFocus}
-      onChange={(e) => onChange(e.target.value)}
-      className={clsx(
-        'w-full rounded-xl bg-zinc-800 border border-zinc-700 px-4 py-3.5',
-        'text-white placeholder-zinc-500 text-base',
-        'focus:border-zinc-500 focus:bg-zinc-750 transition-colors',
-        className
+    <>
+      {/* Render a visually-hidden label when no external <label htmlFor> is provided. */}
+      {label && (
+        <label htmlFor={id} className="sr-only">
+          {label}
+        </label>
       )}
-    />
+      <input
+        ref={inputRef}
+        id={id}
+        type="text"
+        value={value}
+        placeholder={placeholder}
+        autoComplete="off"
+        onFocus={handleFocus}
+        onChange={(e) => onChange(e.target.value)}
+        aria-describedby={errorId}
+        className={clsx(
+          'w-full rounded-xl bg-zinc-800 border border-zinc-700 px-4 py-3.5',
+          'text-white placeholder-zinc-500 text-base',
+          'focus:border-zinc-500 focus:bg-zinc-750 transition-colors',
+          className
+        )}
+      />
+    </>
   )
 }

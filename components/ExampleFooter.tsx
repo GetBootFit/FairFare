@@ -28,7 +28,7 @@ export function ExampleFooter() {
       <div className="space-y-3 pt-2">
         <Link
           href="/taxi"
-          className="flex items-center justify-center gap-2 w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3.5 rounded-xl transition-colors text-sm"
+          className="flex items-center justify-center gap-2 w-full bg-teal-700 hover:bg-teal-800 text-white font-semibold py-3.5 rounded-xl transition-colors text-sm"
         >
           <SvgIcon name="taxi-car" size={18} />
           {t('example_cta_taxi')} <ArrowRight size={16} />

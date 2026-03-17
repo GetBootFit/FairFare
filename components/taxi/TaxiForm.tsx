@@ -239,18 +239,24 @@ export function TaxiForm() {
   }
 
   // Screen reader announcements for dynamic state changes
-  const srAnnouncement =
+  const srLoadingAnnouncement =
     status === 'previewing' ? t('taxi_calculating') :
     status === 'loading'    ? t('taxi_loading_full') :
-    status === 'error'      ? errorMsg :
     ''
 
   return (
     <div className="space-y-4">
-      {/* Visually-hidden ARIA live region — announces loading/error states to screen readers */}
+      {/* Polite live region — announces loading progress (non-interrupting) */}
       <div role="status" aria-live="polite" aria-atomic="true" className="sr-only">
-        {srAnnouncement}
+        {srLoadingAnnouncement}
       </div>
+      {/* Assertive live region — announces errors immediately.
+          role=alert implies aria-live=assertive so the message interrupts the current announcement. */}
+      {status === 'error' && errorMsg && (
+        <div role="alert" aria-atomic="true" className="sr-only">
+          {errorMsg}
+        </div>
+      )}
       {/* Input form */}
       {(status === 'idle' || status === 'error') && (
         <form
@@ -258,13 +264,14 @@ export function TaxiForm() {
           className="space-y-3"
         >
           <div>
-            <label htmlFor="pickup" className="block text-xs text-zinc-500 mb-1.5 uppercase tracking-wider">{t('taxi_from')}</label>
+            <label htmlFor="pickup" className="block text-xs text-zinc-400 mb-1.5 uppercase tracking-wider">{t('taxi_from')}</label>
             <PlaceInput
               id="pickup"
               placeholder={t('taxi_pickup_placeholder')}
               value={form.pickup}
               onChange={(v) => setField('pickup', v)}
               onSelect={(addr, id) => setForm((f) => ({ ...f, pickup: addr, pickupPlaceId: id }))}
+              errorId={errorMsg ? 'taxi-form-error' : undefined}
             />
             {/* Airport hint — specific page link when we have data, generic tip otherwise */}
             {pickupAirport ? (
@@ -291,13 +298,14 @@ export function TaxiForm() {
             ) : null}
           </div>
           <div>
-            <label htmlFor="destination" className="block text-xs text-zinc-500 mb-1.5 uppercase tracking-wider">{t('taxi_to')}</label>
+            <label htmlFor="destination" className="block text-xs text-zinc-400 mb-1.5 uppercase tracking-wider">{t('taxi_to')}</label>
             <PlaceInput
               id="destination"
               placeholder={t('taxi_dest_placeholder')}
               value={form.destination}
               onChange={(v) => setField('destination', v)}
               onSelect={(addr, id) => setForm((f) => ({ ...f, destination: addr, destPlaceId: id }))}
+              errorId={errorMsg ? 'taxi-form-error' : undefined}
             />
             {/* Airport hint for destination — useful for outbound trips */}
             {destAirport && (
@@ -316,11 +324,15 @@ export function TaxiForm() {
               </div>
             )}
           </div>
-          {errorMsg && <p className="text-red-400 text-sm">{errorMsg}</p>}
+          {errorMsg && (
+            <p id="taxi-form-error" role="alert" className="text-red-400 text-sm">
+              {errorMsg}
+            </p>
+          )}
           <button
             type="submit"
             disabled={!form.pickup.trim() || !form.destination.trim()}
-            className="w-full bg-teal-600 hover:bg-teal-700 disabled:opacity-40 text-white font-semibold py-3.5 rounded-xl transition-colors"
+            className="w-full bg-teal-700 hover:bg-teal-800 disabled:opacity-40 text-white font-semibold py-3.5 rounded-xl transition-colors"
           >
             {t('taxi_check_route')}
           </button>
@@ -402,7 +414,7 @@ export function TaxiForm() {
             <>
               <button
                 onClick={handleUnlock}
-                className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3.5 rounded-xl transition-colors"
+                className="w-full bg-teal-700 hover:bg-teal-800 text-white font-semibold py-3.5 rounded-xl transition-colors"
               >
                 {t('taxi_unlock_btn')}
               </button>
