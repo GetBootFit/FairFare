@@ -137,6 +137,7 @@ export async function POST(req: NextRequest) {
       tipping: aiInfo.tipping,
       driverPhrases: aiInfo.driverPhrases,
       routeMapUrl,
+      ...(aiInfo.aiUnavailable ? { aiUnavailable: true } : {}),
     }
 
     return Response.json(result)

@@ -1,9 +1,16 @@
 import { NextRequest } from 'next/server'
 import { Resend } from 'resend'
+import { isRateLimited, getClientIp } from '@/lib/rate-limit'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export async function POST(req: NextRequest) {
+  // Rate limit: 5 subscription attempts per IP per hour
+  const ip = getClientIp(req)
+  if (await isRateLimited('email_subscribe', ip, 5, 3600)) {
+    return Response.json({ error: 'Too many requests. Please try again later.' }, { status: 429 })
+  }
+
   try {
     const { email } = await req.json()
 

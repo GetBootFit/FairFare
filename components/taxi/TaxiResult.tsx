@@ -353,6 +353,15 @@ export function TaxiResult({ result, onReset }: Props) {
                 </li>
               ))}
             </ul>
+            {result.aiUnavailable && (
+              <p className="text-xs text-amber-700/70 pt-1 border-t border-amber-900/30">
+                City-specific alerts temporarily unavailable — these are general warnings.
+                If you need a refund, email{' '}
+                <a href="mailto:legal@hootling.com" className="underline hover:text-amber-500">
+                  legal@hootling.com
+                </a>
+              </p>
+            )}
           </div>
         )}
 

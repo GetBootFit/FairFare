@@ -38,6 +38,8 @@ export interface TaxiFullResult extends TaxiPreviewResult {
   }>
   /** Dark-styled Google Static Maps URL showing the driving route. Optional — omitted when polyline is unavailable. */
   routeMapUrl?: string
+  /** True when Claude was unavailable and scam warnings / phrases are generic fallback data. */
+  aiUnavailable?: true
 }
 
 // ─── Tipping ──────────────────────────────────────────────────────────────────

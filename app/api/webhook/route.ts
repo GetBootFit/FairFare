@@ -2,6 +2,7 @@ import { NextRequest } from 'next/server'
 import { stripe } from '@/lib/stripe'
 import { kvSet } from '@/lib/kv'
 import Stripe from 'stripe'
+import * as Sentry from '@sentry/nextjs'
 
 /**
  * Stripe webhook handler.

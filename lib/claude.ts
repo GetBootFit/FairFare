@@ -71,6 +71,20 @@ export interface TaxiAiInfo {
   }>
   /** Present when locale is non-English and a fare note was provided for translation. */
   fareNoteTranslated?: string
+  /** True when Claude API was unavailable and this is generic fallback data. */
+  aiUnavailable?: true
+}
+
+/** Generic fallback returned when the Claude API is down — the user still gets their paid fare data. */
+const TAXI_AI_FALLBACK: TaxiAiInfo = {
+  scamWarnings: [
+    'Insist on the meter — do not accept flat rates from drivers.',
+    'Use official taxi ranks or verified ride-hailing apps.',
+    'Confirm the total price (all passengers, all luggage) before departure.',
+  ],
+  tipping: { isExpected: false, recommendation: 'Round up to the nearest whole number.' },
+  driverPhrases: [],
+  aiUnavailable: true,
 }
 
 export interface TippingAiResult {
@@ -179,16 +193,25 @@ Rules:
 - Use the primary local language of the region (e.g. Thai in Bangkok, Arabic in Cairo)
 - Include transliteration for any non-Latin script; set to null for Latin-script languages${fareNoteInstruction}`
 
-  const message = await anthropic.messages.create({
-    model: MODEL,
-    max_tokens: 900,
-    messages: [{ role: 'user', content: prompt }],
-  })
+  try {
+    const message = await anthropic.messages.create({
+      model: MODEL,
+      max_tokens: 900,
+      messages: [{ role: 'user', content: prompt }],
+    })
 
-  const text = message.content[0].type === 'text' ? message.content[0].text : ''
-  const data = JSON.parse(stripJson(text)) as TaxiAiInfo
-  await cacheSet(cacheKey, data)
-  return data
+    const text = message.content[0].type === 'text' ? message.content[0].text : ''
+    const data = JSON.parse(stripJson(text)) as TaxiAiInfo
+    await cacheSet(cacheKey, data)
+    return data
+  } catch (err) {
+    // Claude API unavailable or returned invalid JSON.
+    // Log for alerting but return generic fallback so the user still gets their
+    // paid fare data rather than a 500. The aiUnavailable flag lets the client
+    // surface a "Scam alerts temporarily unavailable" notice.
+    console.error('[claude/getTaxiAiInfo] API error — returning fallback:', err)
+    return TAXI_AI_FALLBACK
+  }
 }
 
 // ─── Tipping guide (cached per country) ──────────────────────────────────────
