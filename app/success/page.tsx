@@ -86,7 +86,15 @@ function SuccessInner() {
   if (status === 'verifying') {
     return (
       <div className="flex flex-col items-center gap-4 py-20">
-        <Spinner className="h-8 w-8 text-purple-400" />
+        <Image
+          src="/images/owl/stickers/owl-magnifying-glass.svg"
+          alt=""
+          aria-hidden="true"
+          width={80}
+          height={80}
+          className="animate-pulse"
+        />
+        <Spinner className="h-6 w-6 text-purple-400" />
         <p className="text-zinc-400 text-sm">Verifying payment…</p>
       </div>
     )
@@ -96,7 +104,7 @@ function SuccessInner() {
     return (
       <div className="flex flex-col items-center gap-6 py-16 px-4 text-center max-w-sm mx-auto">
         <Image
-          src="/images/owl/expressions/owl-excited.svg"
+          src="/images/owl/stickers/owl-celebrating.svg"
           alt=""
           aria-hidden="true"
           width={80}

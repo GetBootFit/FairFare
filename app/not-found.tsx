@@ -5,7 +5,7 @@ export default function NotFound() {
   return (
     <div className="flex flex-col items-center gap-6 py-20 px-4 text-center">
       <Image
-        src="/images/owl/expressions/owl-confused.svg"
+        src="/images/owl/expressions/owl-wise.svg"
         alt=""
         aria-hidden="true"
         width={96}

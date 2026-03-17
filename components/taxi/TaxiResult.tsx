@@ -2,8 +2,9 @@
 
 import type { TaxiFullResult, TransportOption } from '@/types'
 import { useState, useEffect, useCallback } from 'react'
+import Image from 'next/image'
 import {
-  AlertTriangle, Navigation, RotateCcw,
+  Navigation, RotateCcw,
   Volume2, VolumeX, Copy, Check, Maximize2, Share2, Moon,
   Map, ChevronDown, ChevronUp, ChevronRight, Phone, ExternalLink,
 } from 'lucide-react'
@@ -332,7 +333,7 @@ export function TaxiResult({ result, onReset }: Props) {
         {scamWarnings.length > 0 && (
           <div className="bg-amber-950/30 border border-amber-900/50 rounded-2xl p-4 space-y-2">
             <div className="flex items-center gap-2 mb-1">
-              <AlertTriangle size={16} className="text-amber-400" />
+              <Image src="/images/owl/stickers/owl-warning.svg" alt="" aria-hidden="true" width={28} height={28} />
               <p className="text-xs text-amber-400 font-semibold uppercase tracking-wider">{t('result_watch_out')}</p>
             </div>
             <ul className="space-y-2">

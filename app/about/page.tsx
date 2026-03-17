@@ -50,6 +50,15 @@ export default function AboutPage() {
           and big curious teal eyes. He&apos;s been everywhere — and he always knows the
           fair price.
         </p>
+        <div className="flex justify-center py-2">
+          <Image
+            src="/images/owl/stickers/owl-flying.svg"
+            alt="Hootling the owl"
+            width={96}
+            height={96}
+            className="drop-shadow-lg"
+          />
+        </div>
         <p className="text-sm text-zinc-400 leading-relaxed">
           Hootling solves the taxi problem in under five seconds, from {single}.
           Real meter rate data sourced from local taxi authorities. AI-powered scam

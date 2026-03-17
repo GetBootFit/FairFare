@@ -76,7 +76,11 @@
       "Bash(node -e \"require\\(''sharp''\\); console.log\\(''sharp available''\\)\")",
       "Bash(Move-Item \"C:\\\\Users\\\\david\\\\Projects\\\\Hootling\\\\public\\\\images\\\\owl\\\\expressions\\\\SVG\\\\*.svg\" \"C:\\\\Users\\\\david\\\\Projects\\\\Hootling\\\\public\\\\images\\\\owl\\\\expressions\"\" && Remove-Item \"C:UsersdavidProjectsHootlingpublicimagesowlexpressionsSVG \")",
       "Bash(mv \"/c/Users/david/Projects/Hootling/public/images/owl/expressions/SVG/\"*.svg \"/c/Users/david/Projects/Hootling/public/images/owl/expressions/\")",
-      "Bash(rmdir \"/c/Users/david/Projects/Hootling/public/images/owl/expressions/SVG\")"
+      "Bash(rmdir \"/c/Users/david/Projects/Hootling/public/images/owl/expressions/SVG\")",
+      "Bash(Move-Item \"C:\\\\Users\\\\david\\\\Projects\\\\Hootling\\\\public\\\\images\\\\owl\\\\stickers\\\\SVG\\\\*.svg\" \"C:\\\\Users\\\\david\\\\Projects\\\\Hootling\\\\public\\\\images\\\\owl\\\\stickers\"\" && Remove-Item \"C:UsersdavidProjectsHootlingpublicimagesowlstickersSVG \" -Force)",
+      "Bash(mv SVG/*.svg .)",
+      "Bash(rmdir SVG)",
+      "Bash(rm -rf SVG)"
     ]
   }
 }
