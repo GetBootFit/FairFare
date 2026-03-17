@@ -10,7 +10,7 @@ export function TaxiPageHeader() {
     <div className="flex items-center gap-3 pt-2">
       <Link href="/" className="shrink-0 hover:opacity-80 transition-opacity">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/owl/stickers/owl-magnifying-glass.svg" alt="" aria-hidden="true" width={40} height={40} />
+        <img src="/images/owl/stickers/owl-shrugging.svg" alt="" aria-hidden="true" width={40} height={40} />
       </Link>
       <div className="flex-1">
         <h1 className="text-lg font-bold text-white">{t('home_taxi_title')}</h1>

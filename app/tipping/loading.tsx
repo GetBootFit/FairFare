@@ -7,7 +7,7 @@ export default function TippingLoading() {
       {/* Branded loading indicator */}
       <div className="flex flex-col items-center gap-2 py-4">
         <Image
-          src="/images/owl/stickers/owl-magnifying-glass.svg"
+          src="/images/owl/stickers/owl-shrugging.svg"
           alt=""
           aria-hidden="true"
           width={56}

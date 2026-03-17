@@ -87,7 +87,7 @@ function SuccessInner() {
     return (
       <div className="flex flex-col items-center gap-4 py-20">
         <Image
-          src="/images/owl/stickers/owl-magnifying-glass.svg"
+          src="/images/owl/stickers/owl-shrugging.svg"
           alt=""
           aria-hidden="true"
           width={80}
