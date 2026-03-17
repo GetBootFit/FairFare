@@ -399,14 +399,16 @@ export function TaxiForm() {
               <span className="text-sm" aria-hidden="true">{t('taxi_loading_full')}</span>
             </div>
           ) : (
-            <button
-              onClick={handleUnlock}
-              className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3.5 rounded-xl transition-colors"
-            >
-              {t('taxi_unlock_btn')}
-            </button>
-            {/* One-line reminder of what unlocking reveals */}
-            <p className="text-center text-xs text-zinc-600">{t('home_taxi_desc')}</p>
+            <>
+              <button
+                onClick={handleUnlock}
+                className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3.5 rounded-xl transition-colors"
+              >
+                {t('taxi_unlock_btn')}
+              </button>
+              {/* One-line reminder of what unlocking reveals */}
+              <p className="text-center text-xs text-zinc-600">{t('home_taxi_desc')}</p>
+            </>
           )}
           <button
             onClick={handleReset}

@@ -160,6 +160,38 @@ export function taxiServiceJsonLd(cityName: string, country: string, citySlug: s
   }
 }
 
+/**
+ * PriceSpecification schema — surfaces fare range as a rich snippet.
+ * Uses the 10 km sample fare as a representative estimate.
+ */
+export function taxiPriceJsonLd(
+  cityName: string,
+  country: string,
+  rate: CityRateEntry,
+  citySlug: string,
+) {
+  const fare10 = sampleFare(rate, 10)
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: `Taxi Fare — ${cityName}`,
+    description: `Estimated taxi fare for a 10 km trip in ${cityName}, ${country}. Based on official meter rates.`,
+    url: `${BASE_URL}/taxi/${citySlug}`,
+    offers: {
+      '@type': 'AggregateOffer',
+      lowPrice: fare10.min,
+      highPrice: fare10.max,
+      priceCurrency: rate.currency,
+      offerCount: 1,
+      seller: {
+        '@type': 'WebApplication',
+        name: 'Hootling',
+        url: BASE_URL,
+      },
+    },
+  }
+}
+
 export function tippingServiceJsonLd(countryName: string, countrySlug: string) {
   return {
     '@context': 'https://schema.org',

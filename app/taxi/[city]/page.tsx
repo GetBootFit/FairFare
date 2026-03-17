@@ -11,9 +11,9 @@ import {
   sampleFare,
   formatFare,
   taxiBreadcrumbJsonLd,
-  tippingBreadcrumbJsonLd,
   faqJsonLd,
   taxiServiceJsonLd,
+  taxiPriceJsonLd,
   countryToSlug,
 } from '@/lib/seo-helpers'
 
@@ -34,16 +34,16 @@ export async function generateMetadata(
 
   const cityName = slugToDisplayName(city)
   const sym = data.currencySymbol
-  const fare3 = sampleFare(data, 3)
+  const fare10 = sampleFare(data, 10)
   const year = new Date().getFullYear()
 
   return {
-    title: `Taxi Fares in ${cityName}, ${data.country} (${year}) — Rates & Scam Alerts`,
-    description: `${cityName} taxi fares: flag fall ${sym}${data.baseRate}, ${sym}${data.ratePerKm}/km. A 3 km trip costs roughly ${sym}${fare3.min}–${fare3.max}. Check exact fares, avoid scams, know what's fair.`,
+    title: `${cityName} Taxi Fares & Scam Alerts (${year}) | Hootling`,
+    description: `${cityName} taxi meter rates for ${year}. Flag fall ${sym}${data.baseRate}, ${sym}${data.ratePerKm}/km. Typical 10 km trip: ${sym}${fare10.min}–${sym}${fare10.max}. Avoid scams — check your route before you ride.`,
     alternates: { canonical: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'}/taxi/${city}` },
     openGraph: {
-      title: `Taxi Fares in ${cityName} (${year}) — Hootling`,
-      description: `Real taxi meter rates, fare ranges and scam warnings for ${cityName}, ${data.country}. Know before you ride.`,
+      title: `${cityName} Taxi Fares (${year}) — Rates & Scam Alerts | Hootling`,
+      description: `Real meter rates, fare ranges and AI-powered scam warnings for ${cityName}, ${data.country}. Know the fair price before you get in.`,
       url: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'}/taxi/${city}`,
       type: 'website',
       images: [
@@ -57,8 +57,8 @@ export async function generateMetadata(
     },
     twitter: {
       card: 'summary_large_image',
-      title: `Taxi Fares in ${cityName} — Hootling`,
-      description: `Flag fall ${sym}${data.baseRate} · ${sym}${data.ratePerKm}/km · Know what's fair before you ride.`,
+      title: `${cityName} Taxi Fares (${year}) | Hootling`,
+      description: `Flag fall ${sym}${data.baseRate} · ${sym}${data.ratePerKm}/km · Typical 10 km: ${sym}${fare10.min}–${sym}${fare10.max} · Know the fair price before you ride.`,
       images: [`${process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'}/api/og/city?city=${encodeURIComponent(city)}`],
     },
   }
@@ -136,6 +136,7 @@ export default async function TaxiCityPage(
   const jsonLd = [
     taxiBreadcrumbJsonLd(city, cityName),
     taxiServiceJsonLd(cityName, data.country, city),
+    taxiPriceJsonLd(cityName, data.country, data, city),
     faqJsonLd(faqs),
   ]
 
@@ -180,7 +181,7 @@ export default async function TaxiCityPage(
             </div>
             <div>
               <h1 className="text-xl font-bold text-white leading-tight">
-                Taxi Fares in {cityName}
+                {cityName} Taxi Fare Checker
               </h1>
               <p className="text-zinc-500 text-xs flex items-center gap-1 mt-0.5">
                 <MapPin size={10} />

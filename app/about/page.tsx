@@ -166,6 +166,12 @@ export default function AboutPage() {
         >
           Try Tipping Guide →
         </Link>
+        <Link
+          href="/example"
+          className="block w-full text-center text-zinc-500 hover:text-zinc-300 text-sm py-2 transition-colors"
+        >
+          See an example result first →
+        </Link>
       </div>
 
       <div className="pt-2 border-t border-zinc-800">

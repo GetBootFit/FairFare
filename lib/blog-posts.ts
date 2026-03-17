@@ -993,6 +993,382 @@ export const BLOG_POSTS: BlogPost[] = [
       },
     ],
   },
+  // ── 10. Phuket ─────────────────────────────────────────────────────────────
+  {
+    slug: 'how-much-does-a-taxi-cost-in-phuket',
+    title: 'How Much Does a Taxi Cost in Phuket? (2026 Fare Guide)',
+    description:
+      'Phuket taxi fares, fixed-rate zones, airport scams, and when to use Grab instead — everything you need to know before hailing a cab in 2026.',
+    publishedAt: '2026-03-08',
+    readingMinutes: 6,
+    category: 'taxi',
+    city: 'Phuket',
+    country: 'Thailand',
+    citySlug: 'phuket',
+    countrySlug: 'thailand',
+    content: [
+      {
+        type: 'intro',
+        body: 'Phuket taxis are infamous for refusing meters and quoting inflated flat rates to tourists. Unlike Bangkok, there is no obligation for drivers to use a meter — knowing the fixed zones before you travel is your best protection.',
+      },
+      {
+        type: 'h2',
+        heading: 'How Phuket Taxi Pricing Works',
+      },
+      {
+        type: 'p',
+        body: 'Phuket operates on a fixed-zone system rather than a running meter. Prices are set per route. Drivers will quote a flat rate — knowing the typical ranges below lets you negotiate from a position of knowledge.',
+      },
+      {
+        type: 'h2',
+        heading: 'Sample Fares from Phuket Airport (HKT)',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'HKT → Patong Beach', value: '฿600–700' },
+          { label: 'HKT → Kata / Karon Beach', value: '฿700–800' },
+          { label: 'HKT → Phuket Town', value: '฿400–500' },
+          { label: 'HKT → Rawai / Nai Harn', value: '฿800–900' },
+          { label: 'HKT → Kamala Beach', value: '฿500–600' },
+          { label: 'Patong → Phuket Town', value: '฿300–400' },
+        ],
+      },
+      {
+        type: 'warning',
+        body: 'Airport "limousine" services in the arrivals hall charge 30–50% more than official airport taxis. Exit the terminal and use the airport taxi desk on the ground floor.',
+      },
+      {
+        type: 'h2',
+        heading: 'Common Phuket Taxi Scams',
+      },
+      {
+        type: 'ul',
+        items: [
+          'Quoting ฿1,200–1,500 for airport routes where ฿600–700 is standard.',
+          'Tuk-tuk drivers offering "free rides" to a shopping area — you pay with your time and pressure to buy.',
+          'Songthaew (shared truck taxi) overcharging tourists who don\'t know the local fares.',
+          'Late-night price doubling — always agree the fare before getting in, especially after midnight.',
+        ],
+      },
+      {
+        type: 'h2',
+        heading: 'Grab vs Taxi in Phuket',
+      },
+      {
+        type: 'p',
+        body: 'Grab operates in Phuket and is the most reliable option for transparent pricing. However, Grab availability is lower than Bangkok — during peak season, wait times can exceed 15–20 minutes. Always have the flat-rate zones in mind as a fallback.',
+      },
+      {
+        type: 'tip',
+        body: 'For beach-to-beach travel, songthaew (shared pickups) run fixed routes for ฿30–50 per person — 10x cheaper than a private taxi for the same distance.',
+      },
+      {
+        type: 'faq',
+        faqs: [
+          { q: 'How much is a taxi from Phuket airport to Patong?', a: 'The official fixed rate is ฿600–700. If quoted more than ฿800, negotiate or use the Grab app.' },
+          { q: 'Do Phuket taxis use meters?', a: 'Most do not — Phuket largely operates on fixed-zone pricing. Always agree the fare before getting in.' },
+          { q: 'What is the cheapest way to get around Phuket?', a: 'Songthaew (shared trucks) for ฿30–50 per person between beaches. Scooter rental for ฿200–300/day is cheapest for flexible travel.' },
+        ],
+      },
+    ],
+  },
+
+  // ── 11. Barcelona ──────────────────────────────────────────────────────────
+  {
+    slug: 'how-much-does-a-taxi-cost-in-barcelona',
+    title: 'How Much Does a Taxi Cost in Barcelona? (2026 Guide)',
+    description:
+      'Barcelona taxi meter rates, airport fares from El Prat, zone tariffs, and when Uber is cheaper — updated for 2026.',
+    publishedAt: '2026-03-09',
+    readingMinutes: 5,
+    category: 'taxi',
+    city: 'Barcelona',
+    country: 'Spain',
+    citySlug: 'barcelona',
+    countrySlug: 'spain',
+    content: [
+      {
+        type: 'intro',
+        body: 'Barcelona\'s black-and-yellow taxis (Taxi Barcelonaand) are well-regulated and metered. Fares are set by AMB (Àrea Metropolitana de Barcelona) and posted inside every taxi. Overcharging is uncommon but knowing the rates eliminates any doubt.',
+      },
+      {
+        type: 'h2',
+        heading: 'Barcelona Taxi Meter Rates (2026)',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'Flag fall (Tariff T-1, day)', value: '€2.35' },
+          { label: 'Flag fall (Tariff T-2, night/weekend)', value: '€2.95' },
+          { label: 'Per km (T-1)', value: '€1.30' },
+          { label: 'Per km (T-2 — night/weekend)', value: '€1.47' },
+          { label: 'Airport supplement (BCN El Prat)', value: '€4.30' },
+          { label: 'Large luggage supplement', value: '€1.10/bag' },
+          { label: 'Night rate (21:00–08:00)', value: 'T-2 applies' },
+        ],
+      },
+      {
+        type: 'h2',
+        heading: 'Sample Fares from Barcelona Airport (BCN)',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'BCN Airport → Las Ramblas / Gothic Quarter', value: '€25–35' },
+          { label: 'BCN Airport → Eixample', value: '€30–40' },
+          { label: 'BCN Airport → Gràcia / Sagrada Família', value: '€32–42' },
+          { label: 'BCN Airport → Barceloneta Beach', value: '€25–35' },
+          { label: 'City centre → Sagrada Família', value: '€8–14' },
+        ],
+      },
+      {
+        type: 'h2',
+        heading: 'Uber vs Official Taxi in Barcelona',
+      },
+      {
+        type: 'p',
+        body: 'Uber operates in Barcelona (legally, as a licensed VTC service). Uber is often comparable in price to metered taxis and offers upfront pricing — useful if you prefer certainty. During surge hours, metered taxis are cheaper. For airport runs, the fixed official taxi rate is competitive.',
+      },
+      {
+        type: 'tip',
+        body: 'The AEROBUS express coach connects both airport terminals to Plaça Catalunya in 35 minutes for €6.75 — far cheaper than a taxi for solo travellers heading to central Barcelona.',
+      },
+      {
+        type: 'h2',
+        heading: 'Is Tipping Expected in Barcelona Taxis?',
+      },
+      {
+        type: 'p',
+        body: 'Tipping is not mandatory in Spain. Rounding up to the nearest euro or leaving €1–2 on longer trips is common and appreciated. For a €28 airport fare, rounding to €30 is perfectly normal.',
+      },
+      {
+        type: 'faq',
+        faqs: [
+          { q: 'How much is a taxi from Barcelona airport to the city?', a: 'Expect €25–42 depending on traffic and destination, plus a €4.30 airport supplement. Night and weekend rates (T-2) apply after 21:00.' },
+          { q: 'Are Barcelona taxis metered?', a: 'Yes — all official taxis use AMB-regulated meters. If the meter is not running, ask the driver to start it.' },
+          { q: 'Is Uber available in Barcelona?', a: 'Yes, Uber operates legally in Barcelona as a licensed VTC service. Bolt is also available and often slightly cheaper.' },
+        ],
+      },
+    ],
+  },
+
+  // ── 12. Sydney ─────────────────────────────────────────────────────────────
+  {
+    slug: 'how-much-does-a-taxi-cost-in-sydney',
+    title: 'How Much Does a Taxi Cost in Sydney? (2026 Fare Guide)',
+    description:
+      'Sydney taxi rates, airport fares from Kingsford Smith, booking fees, and Uber vs taxi comparison for 2026.',
+    publishedAt: '2026-03-10',
+    readingMinutes: 5,
+    category: 'taxi',
+    city: 'Sydney',
+    country: 'Australia',
+    citySlug: 'sydney',
+    countrySlug: 'australia',
+    content: [
+      {
+        type: 'intro',
+        body: 'Sydney taxis are metered and regulated by Transport for NSW. They\'re reliable but significantly more expensive than Southeast Asia — knowing the rates helps you decide when Uber is genuinely cheaper.',
+      },
+      {
+        type: 'h2',
+        heading: 'Sydney Taxi Meter Rates (2026)',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'Flag fall', value: 'A$3.60' },
+          { label: 'Per km (under 10 km/h or waiting)', value: 'A$0.99/min' },
+          { label: 'Per km (over 10 km/h)', value: 'A$2.19/km' },
+          { label: 'Airport booking fee (from SYD)', value: 'A$4.40' },
+          { label: 'Night rate (10 pm–6 am)', value: '20% surcharge' },
+          { label: 'Public holiday surcharge', value: 'A$2.50' },
+        ],
+      },
+      {
+        type: 'h2',
+        heading: 'Sample Fares from Sydney Airport (SYD)',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'SYD → CBD / Circular Quay', value: 'A$45–60' },
+          { label: 'SYD → Surry Hills / Darlinghurst', value: 'A$35–50' },
+          { label: 'SYD → Bondi Beach', value: 'A$40–55' },
+          { label: 'SYD → Manly (to ferry terminal)', value: 'A$55–75' },
+          { label: 'CBD → Bondi Beach', value: 'A$25–35' },
+        ],
+      },
+      {
+        type: 'h2',
+        heading: 'Uber vs Taxi in Sydney',
+      },
+      {
+        type: 'p',
+        body: 'Uber is widely available in Sydney and is often 10–20% cheaper than a metered taxi for standard routes. However, Uber surge pricing during events (New Year\'s Eve, Sydney FC matches, Vivid festival) can make taxis the better value. The Airport Link train (A$21.60 from the airport to the CBD) is the cheapest option for solo travellers.',
+      },
+      {
+        type: 'tip',
+        body: 'The Airport Link train takes 13 minutes to Central Station for A$21.60 — about a third the price of a taxi. Combine with an Opal card for free transfer to buses and ferries.',
+      },
+      {
+        type: 'faq',
+        faqs: [
+          { q: 'How much is a taxi from Sydney airport to the CBD?', a: 'Expect A$45–65 including the A$4.40 airport booking fee. The journey takes 20–45 minutes depending on traffic.' },
+          { q: 'Are there toll roads from Sydney airport?', a: 'Yes — the Eastern Distributor tunnel adds A$8.65 (inbound) to most city routes. This is paid by the passenger on top of the meter.' },
+          { q: 'Is tipping expected in Sydney taxis?', a: 'Tipping is not expected in Australia. Rounding up to the nearest dollar is common but entirely optional.' },
+        ],
+      },
+    ],
+  },
+
+  // ── 13. Amsterdam ──────────────────────────────────────────────────────────
+  {
+    slug: 'how-much-does-a-taxi-cost-in-amsterdam',
+    title: 'How Much Does a Taxi Cost in Amsterdam? (2026 Guide)',
+    description:
+      'Amsterdam taxi meter rates, Schiphol airport fares, and why booking a pre-agreed taxi saves money — updated for 2026.',
+    publishedAt: '2026-03-11',
+    readingMinutes: 5,
+    category: 'taxi',
+    city: 'Amsterdam',
+    country: 'Netherlands',
+    citySlug: 'amsterdam',
+    countrySlug: 'netherlands',
+    content: [
+      {
+        type: 'intro',
+        body: 'Amsterdam taxis have a reputation for overcharging tourists — but the city has a capped tariff system to protect passengers. Knowing the maximum allowable fare from Schiphol is your first line of defence.',
+      },
+      {
+        type: 'h2',
+        heading: 'Amsterdam Taxi Rates (2026)',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'Flag fall', value: '€3.19' },
+          { label: 'Per km', value: '€2.35' },
+          { label: 'Per minute (waiting/slow traffic)', value: '€0.38' },
+          { label: 'Fixed Schiphol → Amsterdam city', value: 'Capped at €47' },
+          { label: 'Night rate (22:00–07:00)', value: 'No separate night tariff — meter applies' },
+        ],
+      },
+      {
+        type: 'h2',
+        heading: 'Schiphol Airport to Amsterdam — What to Pay',
+      },
+      {
+        type: 'p',
+        body: 'The municipality caps the Schiphol to Amsterdam city centre fare at approximately €47. If a driver quotes significantly more, you can legally dispute the charge. The train (Intercity Direct, €5.50, 17 minutes to Centraal Station) is by far the cheapest option.',
+      },
+      {
+        type: 'warning',
+        body: 'Unofficial taxi touts operate aggressively outside Schiphol arrivals. Only use TCA-licenced taxis (look for the blue "Taxi" oval sign) from the official taxi rank at exit 4 of the arrivals hall.',
+      },
+      {
+        type: 'h2',
+        heading: 'Sample City Fares',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'Centraal Station → Rijksmuseum', value: '€12–18' },
+          { label: 'Centraal Station → Vondelpark', value: '€14–20' },
+          { label: 'Centraal Station → De Pijp', value: '€10–16' },
+          { label: 'Centraal Station → Jordaan', value: '€8–14' },
+        ],
+      },
+      {
+        type: 'tip',
+        body: 'Amsterdam\'s canal ring is compact — most city-centre attractions are walkable or a short tram ride apart. A GVB day pass (€9.50) covers all trams, buses and metro and is almost always better value than a taxi for daytime sightseeing.',
+      },
+      {
+        type: 'faq',
+        faqs: [
+          { q: 'How much is a taxi from Schiphol to Amsterdam centre?', a: 'The capped rate is approximately €47. Expect €40–50 in practice. The Intercity train takes 17 minutes for €5.50.' },
+          { q: 'Are Amsterdam taxis metered?', a: 'Yes — all licensed TCA taxis use regulated meters. If the meter is not running, ask the driver to start it or leave the vehicle.' },
+          { q: 'Is tipping expected in Amsterdam taxis?', a: 'Rounding up to the nearest euro or adding 5–10% is common courtesy. It is not mandatory.' },
+        ],
+      },
+    ],
+  },
+
+  // ── 14. Mumbai ─────────────────────────────────────────────────────────────
+  {
+    slug: 'how-much-does-a-taxi-cost-in-mumbai',
+    title: 'How Much Does a Taxi Cost in Mumbai? (2026 Guide)',
+    description:
+      'Mumbai taxi and auto-rickshaw rates, airport fares, meter conversion charts, and Ola vs Uber comparison for 2026.',
+    publishedAt: '2026-03-12',
+    readingMinutes: 7,
+    category: 'taxi',
+    city: 'Mumbai',
+    country: 'India',
+    citySlug: 'mumbai',
+    countrySlug: 'india',
+    content: [
+      {
+        type: 'intro',
+        body: 'Mumbai has two types of metered cabs: the iconic black-and-yellow taxis (Kaali-Peeli) and air-conditioned app cabs. Both use meters — but the Kaali-Peeli meter reading must be multiplied by a tariff card rate, which confuses many visitors.',
+      },
+      {
+        type: 'h2',
+        heading: 'Mumbai Taxi Rates (2026)',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'Kaali-Peeli flag fall (first 1.5 km)', value: '₹28' },
+          { label: 'Kaali-Peeli per km after 1.5 km', value: '₹14.43' },
+          { label: 'Night surcharge (midnight–5 am)', value: '25% on meter' },
+          { label: 'AC Cool Cab / Meru (app cabs) flag fall', value: '₹25' },
+          { label: 'AC app cabs per km', value: '₹16–18' },
+          { label: 'Auto-rickshaw flag fall (suburbs only)', value: '₹21' },
+          { label: 'Auto-rickshaw per km', value: '₹13.48' },
+        ],
+      },
+      {
+        type: 'warning',
+        body: 'Kaali-Peeli taxi meters show an old tariff. The driver will produce a printed "tariff card" and multiply the meter reading to get the real fare. This is legal — ask to see the card before paying.',
+      },
+      {
+        type: 'h2',
+        heading: 'Sample Fares from Mumbai Airports',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'BOM (T2) → Bandra', value: '₹400–600' },
+          { label: 'BOM (T2) → Colaba / South Mumbai', value: '₹700–1,000' },
+          { label: 'BOM (T2) → Juhu Beach', value: '₹200–350' },
+          { label: 'BOM (T2) → Andheri', value: '₹150–250' },
+          { label: 'BOM (T1 domestic) → Andheri', value: '₹100–180' },
+        ],
+      },
+      {
+        type: 'h2',
+        heading: 'Ola and Uber in Mumbai',
+      },
+      {
+        type: 'p',
+        body: 'Ola and Uber are the most reliable options in Mumbai — fixed upfront pricing, no meter card confusion, and payment via app. Both are typically 10–20% more expensive than a Kaali-Peeli taxi but far more convenient. During peak hours (8–10 am, 6–9 pm), surge pricing can double the fare — switch to a metered Kaali-Peeli as a backup.',
+      },
+      {
+        type: 'tip',
+        body: 'Auto-rickshaws are not allowed in South Mumbai (below Mahim/Sion causeway) — only taxis operate there. In the suburbs, rickshaws are usually cheaper and faster for short trips.',
+      },
+      {
+        type: 'faq',
+        faqs: [
+          { q: 'How much is a taxi from Mumbai airport to South Mumbai?', a: 'Approximately ₹700–1,000 by metered Kaali-Peeli or app cab. The journey takes 45–90 minutes depending on traffic.' },
+          { q: 'Why does the Mumbai taxi meter show a different amount to what I pay?', a: 'Black-and-yellow Kaali-Peeli meters use a legacy tariff. The driver multiplies the meter reading by the printed tariff card. This is the legal fare — ask to see the tariff card before paying.' },
+          { q: 'Is tipping expected in Mumbai taxis?', a: 'Rounding up the fare or leaving ₹10–20 extra is appreciated but not mandatory. For Ola/Uber, tips can be added in-app after the ride.' },
+        ],
+      },
+    ],
+  },
 ]
 
 export function getBlogPost(slug: string): BlogPost | undefined {
