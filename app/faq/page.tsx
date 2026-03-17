@@ -69,7 +69,7 @@ function buildFaqs(p: { single: string; pass: string; bundle: string }) {
   },
   {
     q: 'What languages is the app available in?',
-    a: 'The Hootling interface is available in English, Spanish, French, German, and Portuguese (Brazilian). Use the language selector in the bottom navigation bar to switch. AI-generated content (scam warnings, tipping advice) is currently in English only.',
+    a: 'Hootling is fully available in 9 languages: English, Spanish, French, German, Portuguese (Brazilian), Chinese (Simplified), Japanese, Korean, and Hindi. The entire interface, AI-generated scam warnings, tipping advice, and driver phrases all respond in your selected language. Use the language selector in the bottom navigation bar to switch.',
   },
 ]}
 
