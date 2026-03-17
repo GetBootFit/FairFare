@@ -114,19 +114,24 @@ export function TaxiForm() {
       if (previewData.country && isCountryPassValid(previewData.country)) {
         setStatus('loading')
         const passToken = getCountryPassToken(previewData.country)!
-        await fetchFullResult(passToken, currentForm)
+        await fetchFullResult(passToken, currentForm, 'country_pass')
       } else {
         const bundleToken = popBundleToken()
         if (bundleToken) {
           setStatus('loading')
-          await fetchFullResult(bundleToken, currentForm)
+          await fetchFullResult(bundleToken, currentForm, 'bundle')
         } else {
           const token = getStoredToken()
           if (token && !isTokenExpired(token)) {
             setStatus('loading')
-            await fetchFullResult(token, currentForm)
+            await fetchFullResult(token, currentForm, 'single')
           } else {
-            track('preview_loaded', { feature: 'taxi' })
+            // User must pay — fire preview_loaded so we can measure free→paid conversion
+            track('preview_loaded', {
+              feature: 'taxi',
+              city: previewData.city,
+              country: previewData.country,
+            })
             setStatus('preview_done')
           }
         }
@@ -137,7 +142,7 @@ export function TaxiForm() {
     }
   }
 
-  const fetchFullResult = async (token: string, currentForm: FormState) => {
+  const fetchFullResult = async (token: string, currentForm: FormState, tokenType: 'single' | 'country_pass' | 'bundle') => {
     const res = await fetch('/api/taxi/result', {
       method: 'POST',
       headers: {
@@ -157,11 +162,17 @@ export function TaxiForm() {
       if (res.status === 401) clearStoredToken()
       throw new Error(data.error ?? 'Failed to fetch result')
     }
-    setResult(data as TaxiFullResult)
+    const fullResult = data as TaxiFullResult
+    setResult(fullResult)
     setStatus('done')
     // Tactile confirmation for PWA users on Android (no-op on iOS / unsupported browsers)
     try { navigator.vibrate?.(100) } catch { /* not supported */ }
-    track('result_loaded', { feature: 'taxi' })
+    track('result_loaded', {
+      feature: 'taxi',
+      city: fullResult.city ?? preview?.city ?? '',
+      country: fullResult.country ?? preview?.country ?? '',
+      tokenType,
+    })
     addSearch({
       pickup: currentForm.pickup,
       destination: currentForm.destination,
@@ -171,7 +182,11 @@ export function TaxiForm() {
   }
 
   const handleUnlock = () => {
-    track('unlock_clicked', { feature: 'taxi' })
+    track('unlock_clicked', {
+      feature: 'taxi',
+      city: preview?.city ?? '',
+      country: preview?.country ?? '',
+    })
     sessionStorage.setItem(STORAGE_KEY, JSON.stringify(form))
     setStatus('paying')
   }
@@ -202,7 +217,7 @@ export function TaxiForm() {
         if (token && form.pickup && form.destination) {
           setStatus('loading')
           try {
-            await fetchFullResult(token, form)
+            await fetchFullResult(token, form, 'bundle')
           } catch (err) {
             setStatus('error')
             setErrorMsg(err instanceof Error ? err.message : t('common_error'))
@@ -222,7 +237,8 @@ export function TaxiForm() {
       if (form.pickup && form.destination) {
         setStatus('loading')
         try {
-          await fetchFullResult(token, form)
+          const tokenType = detail?.product === 'country_pass' ? 'country_pass' : 'single'
+          await fetchFullResult(token, form, tokenType)
         } catch (err) {
           setStatus('error')
           setErrorMsg(err instanceof Error ? err.message : t('common_error'))

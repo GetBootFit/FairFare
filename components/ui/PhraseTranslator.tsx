@@ -6,6 +6,7 @@ import clsx from 'clsx'
 import { getStoredToken, getCountryPassToken, isTokenExpired } from '@/lib/tokens'
 import { speakText, stopSpeech } from '@/lib/speech'
 import { useLanguage } from '@/context/LanguageContext'
+import { track } from '@vercel/analytics'
 
 const MAX_TRANSLATIONS = 5
 
@@ -95,6 +96,7 @@ export function PhraseTranslator({ country, langCode, accent = 'purple' }: Props
       setResult(translated)
       setRemaining(translated.remaining)
       setStatus(translated.limitReached ? 'limit' : 'done')
+      track('phrase_translated', { country, language: langCode })
     } catch (err) {
       setStatus('error')
       setErrorMsg(err instanceof Error ? err.message : t('phrase_translation_failed'))

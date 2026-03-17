@@ -65,6 +65,8 @@ export function TippingForm() {
   const handleSubmit = async (selectedCountry: string) => {
     if (!selectedCountry) return
 
+    track('tipping_country_selected', { country: selectedCountry })
+
     // Priority: country pass → bundle queue → single token → payment modal
     if (isCountryPassValid(selectedCountry)) {
       const passToken = getCountryPassToken(selectedCountry)!
@@ -85,7 +87,7 @@ export function TippingForm() {
     // Then check single-query token
     const token = getStoredToken()
     if (!token || isTokenExpired(token)) {
-      track('unlock_clicked', { feature: 'tipping' })
+      track('unlock_clicked', { feature: 'tipping', country: selectedCountry })
       sessionStorage.setItem(STORAGE_KEY, JSON.stringify(selectedCountry))
       setCountry(selectedCountry)
       setStatus('paying')
@@ -113,7 +115,7 @@ export function TippingForm() {
       }
       setResult(data as TippingResultType)
       setStatus('done')
-      track('result_loaded', { feature: 'tipping' })
+      track('result_loaded', { feature: 'tipping', country: c })
     } catch (err) {
       setStatus('error')
       setErrorMsg(err instanceof Error ? err.message : t('common_error'))

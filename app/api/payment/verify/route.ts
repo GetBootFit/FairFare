@@ -33,21 +33,26 @@ export async function GET(req: NextRequest) {
     // Mark session as used — TTL 90 days (longest token lifespan = bundle)
     await kvSet(`ff:session:${sessionId}`, '1', 90 * 86400)
 
+    // Expose payment amount so the client can fire an accurate GA4 purchase event.
+    // amount_total is in the smallest currency unit (cents/pence/etc.) — divide by 100 for display.
+    const amountTotal = session.amount_total ?? 0
+    const currency = (session.currency ?? 'usd').toUpperCase()
+
     if (product === 'query_bundle') {
       // Issue 10 independent bundle tokens in parallel
       const tokens = await Promise.all(
         Array.from({ length: 10 }, (_, i) => createBundleToken(`${sessionId}_${i}`))
       )
-      return Response.json({ tokens, feature, product: 'query_bundle' })
+      return Response.json({ tokens, feature, product: 'query_bundle', amountTotal, currency })
     }
 
     if (product === 'country_pass' && country) {
       const token = await createCountryPassToken(sessionId, country)
-      return Response.json({ token, feature, product: 'country_pass', country })
+      return Response.json({ token, feature, product: 'country_pass', country, amountTotal, currency })
     }
 
     const token = await createToken({ sessionId, feature })
-    return Response.json({ token, feature, product: 'single' })
+    return Response.json({ token, feature, product: 'single', amountTotal, currency })
   } catch (err) {
     console.error('[verify]', err)
     return Response.json({ error: 'Failed to verify payment' }, { status: 500 })

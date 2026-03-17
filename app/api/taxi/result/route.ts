@@ -4,6 +4,7 @@ import { getRouteInfo, buildRouteMapUrl } from '@/lib/google-maps'
 import { getTaxiAiInfo } from '@/lib/claude'
 import { findCityRate, calculateFareRange } from '@/lib/taxi-rates'
 import { isRateLimited, getClientIp } from '@/lib/rate-limit'
+import { kvIncrement } from '@/lib/kv'
 import type { TaxiFullResult, TransportOption } from '@/types'
 
 /**
@@ -67,6 +68,9 @@ export async function POST(req: NextRequest) {
       // Paying user searched a city not in our dataset — log for manual review.
       // Filter Vercel logs by [CITY_MISS] to find cities worth adding to taxi-rates.json.
       console.warn(`[CITY_MISS] ${route.city}, ${route.country}`)
+      // Increment KV counter (graceful no-op when KV is not configured)
+      const missKey = `city_miss:${route.city.toLowerCase().replace(/\s+/g, '_')}_${route.country.toLowerCase().replace(/\s+/g, '_')}`
+      void kvIncrement(missKey)
     }
     const fareRange = rateData
       ? calculateFareRange(rateData, route.distanceKm)

@@ -42,7 +42,38 @@ function SuccessInner() {
           storeToken(data.token)
         }
 
-        track('payment_completed', { product: data.product ?? 'single' })
+        // Vercel Analytics — funnel conversion event with product + revenue context
+        track('payment_completed', {
+          product: data.product ?? 'single',
+          feature: data.feature ?? 'unknown',
+          value: data.amountTotal ? (data.amountTotal / 100).toFixed(2) : undefined,
+          currency: data.currency ?? 'USD',
+        })
+
+        // GA4 e-commerce purchase event — attributes revenue to the acquisition source.
+        // gtag is available only when NEXT_PUBLIC_GA4_ID is configured.
+        // amount_total from Stripe is in the smallest currency unit (cents) — divide by 100.
+        try {
+          const g = (window as Window & { gtag?: (...a: unknown[]) => void }).gtag
+          if (typeof g === 'function' && data.amountTotal) {
+            const value = data.amountTotal / 100
+            g('event', 'purchase', {
+              transaction_id: params.get('session_id') ?? undefined,
+              value,
+              currency: data.currency ?? 'USD',
+              items: [{
+                item_id: data.product ?? 'single',
+                item_name:
+                  data.product === 'query_bundle'   ? 'Hootling 10-Query Bundle' :
+                  data.product === 'country_pass'   ? `Hootling Country Pass — ${data.country ?? ''}` :
+                  'Hootling Single Query',
+                item_category: data.feature ?? 'taxi',
+                price: value,
+                quantity: 1,
+              }],
+            })
+          }
+        } catch { /* gtag unavailable */ }
 
         // Fire event so open TaxiForm/TippingForm can auto-submit
         window.dispatchEvent(

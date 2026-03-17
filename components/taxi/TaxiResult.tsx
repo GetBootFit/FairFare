@@ -165,12 +165,14 @@ export function TaxiResult({ result, onReset }: Props) {
     if (typeof navigator.share === 'function') {
       try {
         await navigator.share({ title: 'Hootling fare result', text: lines })
+        track('share_clicked', { feature: 'taxi', city: result.city, country: result.country, method: 'native' })
       } catch { /* user cancelled */ }
     } else {
       try {
         await navigator.clipboard.writeText(lines)
         setShareCopied(true)
         setTimeout(() => setShareCopied(false), 2500)
+        track('share_clicked', { feature: 'taxi', city: result.city, country: result.country, method: 'clipboard' })
       } catch { /* clipboard unavailable */ }
     }
   }, [result, fareRange, duration, distance, scamWarnings, rates, homeCurrency])
