@@ -49,6 +49,8 @@ export const metadata: Metadata = {
       'it': APP_URL,
       'id': APP_URL,
       'vi': APP_URL,
+      'th': APP_URL,
+      'zh-TW': APP_URL,
       'x-default': APP_URL,
     },
   },

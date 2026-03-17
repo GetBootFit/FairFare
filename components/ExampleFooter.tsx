@@ -43,9 +43,13 @@ export function ExampleFooter() {
         <p className="text-center text-xs text-zinc-600">{t('example_pricing')}</p>
       </div>
 
-      <p className="text-center text-xs text-zinc-700 leading-relaxed px-2">
-        {t('example_ai_disclosure')}
-      </p>
+      <div className="flex items-start gap-2 px-2">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/images/owl/stickers/owl-warning.svg" alt="" aria-hidden="true" width={22} height={22} className="shrink-0 mt-0.5" />
+        <p className="text-xs text-zinc-600 leading-relaxed">
+          {t('example_ai_disclosure')}
+        </p>
+      </div>
     </>
   )
 }

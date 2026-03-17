@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Terms of Service',
@@ -13,8 +14,8 @@ export default function TermsPage() {
   return (
     <div className="space-y-6 pb-4">
       <div className="flex items-center gap-3">
-        <Link href="/" className="w-10 h-10 rounded-xl bg-purple-600 flex items-center justify-center text-lg font-bold text-white hover:bg-purple-700 transition-colors shrink-0">
-          H
+        <Link href="/" className="shrink-0 hover:opacity-80 transition-opacity">
+          <Image src="/images/owl/expressions/owl-curious.svg" alt="Hootling" width={40} height={40} />
         </Link>
         <div>
           <h1 className="text-xl font-bold text-white">Terms of Service</h1>

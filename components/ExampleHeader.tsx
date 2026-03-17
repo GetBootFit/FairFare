@@ -19,6 +19,10 @@ export function ExampleHeader() {
           {t('example_badge')}
         </span>
       </div>
+      <div className="flex justify-center py-2">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/images/owl/expressions/owl-excited.svg" alt="" aria-hidden="true" width={72} height={72} className="drop-shadow-lg" />
+      </div>
       <h1 className="text-xl font-bold text-white">{t('example_heading')}</h1>
       <p className="text-zinc-500 text-sm leading-relaxed">
         {t('example_description')}

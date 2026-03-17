@@ -54,6 +54,8 @@ const LOCALE_LANGUAGE: Record<string, string> = {
   it: 'Italian',
   id: 'Indonesian',
   vi: 'Vietnamese',
+  th: 'Thai',
+  tw: 'Traditional Chinese',
 }
 
 // ─── Types ────────────────────────────────────────────────────────────────────

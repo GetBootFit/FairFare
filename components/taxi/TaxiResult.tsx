@@ -365,7 +365,10 @@ export function TaxiResult({ result, onReset }: Props) {
         {/* Driver phrases */}
         {result.driverPhrases?.length > 0 && (
           <div className="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden">
-            <p className="text-xs text-zinc-500 uppercase tracking-wider px-4 pt-4 pb-2">{t('result_say_to_driver')}</p>
+            <div className="flex items-center gap-2 px-4 pt-4 pb-2">
+              <img src="/images/owl/stickers/owl-winking.svg" alt="" aria-hidden="true" width={20} height={20} className="shrink-0" />
+              <p className="text-xs text-zinc-500 uppercase tracking-wider">{t('result_say_to_driver')}</p>
+            </div>
             <div className="divide-y divide-zinc-800">
               {result.driverPhrases.map((phrase, i) => {
                 const emoji = PHRASE_EMOJI[phrase.context.toLowerCase()] ?? '💬'

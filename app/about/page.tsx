@@ -14,18 +14,17 @@ export default function AboutPage() {
   return (
     <div className="space-y-8 pb-4">
       {/* Header */}
-      <div>
-        <div className="flex items-center gap-3 mb-3">
-          <Link href="/" className="shrink-0 hover:opacity-80 transition-opacity">
-            <Image
-              src="/images/brand/hootling-logo-icon.svg"
-              alt="Hootling"
-              width={40}
-              height={40}
-            />
-          </Link>
-          <h1 className="text-xl font-bold text-white">About Hootling</h1>
+      <div className="text-center">
+        <div className="flex justify-center mb-4">
+          <Image
+            src="/images/owl/character/owl-front.svg"
+            alt="Hootling the owl"
+            width={120}
+            height={120}
+            className="drop-shadow-lg"
+          />
         </div>
+        <h1 className="text-xl font-bold text-white mb-2">About Hootling</h1>
         <p className="text-sm text-zinc-400 leading-relaxed">
           Hootling gives travellers the confidence to jump in any taxi, anywhere in the
           world — without getting ripped off or undertipping.

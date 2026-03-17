@@ -55,6 +55,13 @@ const RATING_BADGE: Record<TippingRating, { className: string }> = {
   avoid:       { className: 'bg-red-900/40 text-red-400 border border-red-800/50' },
 }
 
+const RATING_OWL: Record<TippingRating, string> = {
+  expected:    'owl-thumbs-up',
+  appreciated: 'owl-mind-blown',
+  optional:    'owl-shrugging',
+  avoid:       'owl-facepalm',
+}
+
 const PHRASE_EMOJI: Record<string, string> = {
   'thank you': '🙏',
   'this was wonderful': '😊',
@@ -148,7 +155,8 @@ export function TippingResult({ result, onReset }: Props) {
                     </div>
                     <div className="flex items-center gap-2">
                       <span className="text-sm font-semibold text-zinc-200">{amount}</span>
-                      <span className={clsx('text-xs font-medium px-2 py-0.5 rounded-full', badge.className)}>
+                      <span className={clsx('inline-flex items-center gap-1 text-xs font-medium px-2 py-0.5 rounded-full', badge.className)}>
+                        <img src={`/images/owl/stickers/${RATING_OWL[tip.rating as TippingRating]}.svg`} width={12} height={12} alt="" aria-hidden="true" className="shrink-0" />
                         {t(RATING_KEY[tip.rating as TippingRating])}
                       </span>
                     </div>

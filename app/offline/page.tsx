@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { WifiOff, Car, Banknote, Home, RotateCcw } from 'lucide-react'
+import { Car, Banknote, Home, RotateCcw } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 
 /** Read the most recently searched city/country pair from sessionStorage. */
@@ -34,9 +34,14 @@ export default function OfflinePage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-[70vh] text-center space-y-6 px-4">
       {/* Icon */}
-      <div className="w-16 h-16 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center">
-        <WifiOff size={28} className="text-zinc-500" />
-      </div>
+      <img
+        src="/images/owl/stickers/owl-sleeping.svg"
+        alt=""
+        aria-hidden="true"
+        width={88}
+        height={88}
+        className="drop-shadow-lg"
+      />
 
       {/* Heading */}
       <div className="space-y-2">

@@ -80,7 +80,12 @@
       "Bash(Move-Item \"C:\\\\Users\\\\david\\\\Projects\\\\Hootling\\\\public\\\\images\\\\owl\\\\stickers\\\\SVG\\\\*.svg\" \"C:\\\\Users\\\\david\\\\Projects\\\\Hootling\\\\public\\\\images\\\\owl\\\\stickers\"\" && Remove-Item \"C:UsersdavidProjectsHootlingpublicimagesowlstickersSVG \" -Force)",
       "Bash(mv SVG/*.svg .)",
       "Bash(rmdir SVG)",
-      "Bash(rm -rf SVG)"
+      "Bash(rm -rf SVG)",
+      "Bash(Move-Item \"C:\\\\Users\\\\david\\\\Projects\\\\Hootling\\\\public\\\\images\\\\owl\\\\character\\\\SVG\\\\*.svg\" \"C:\\\\Users\\\\david\\\\Projects\\\\Hootling\\\\public\\\\images\\\\owl\\\\character\"\" && Remove-Item \"C:UsersdavidProjectsHootlingpublicimagesowlcharacterSVG \" -Force)",
+      "Bash(mv \"/c/Users/david/Projects/Hootling/public/images/owl/character/SVG/\"*.svg \"/c/Users/david/Projects/Hootling/public/images/owl/character/\")",
+      "Bash(rmdir \"/c/Users/david/Projects/Hootling/public/images/owl/character/SVG\")",
+      "Bash(mv \"/c/Users/david/Projects/Hootling/public/images/owl/monochrome/SVG/\"*.svg \"/c/Users/david/Projects/Hootling/public/images/owl/monochrome/\")",
+      "Bash(rmdir \"/c/Users/david/Projects/Hootling/public/images/owl/monochrome/SVG\")"
     ]
   }
 }

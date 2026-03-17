@@ -12,7 +12,7 @@ export function HtmlLangUpdater() {
   const { locale } = useLanguage()
   useEffect(() => {
     // Map internal locale codes to valid BCP-47 language tags
-    const langMap: Record<string, string> = { pt: 'pt-BR' }
+    const langMap: Record<string, string> = { pt: 'pt-BR', tw: 'zh-TW' }
     document.documentElement.lang = langMap[locale] ?? locale
 
     // RTL infrastructure — set dir attribute for right-to-left locales

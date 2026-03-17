@@ -177,11 +177,11 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
         {/* Header */}
         <div className="text-center pt-1">
           <Image
-            src="/images/brand/hootling-logo-icon.svg"
+            src="/images/owl/stickers/owl-thumbs-up.svg"
             alt="Hootling"
-            width={64}
-            height={64}
-            className="mx-auto"
+            width={72}
+            height={72}
+            className="mx-auto drop-shadow-md"
           />
           <p id="payment-modal-title" className="text-white text-lg font-bold mt-2">{t('payment_title')}</p>
         </div>
