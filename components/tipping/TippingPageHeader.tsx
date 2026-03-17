@@ -1,18 +1,16 @@
 'use client'
 
 import Link from 'next/link'
-import { Banknote, Sparkles } from 'lucide-react'
+import { Sparkles } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 
 export function TippingPageHeader() {
   const { t } = useLanguage()
   return (
     <div className="flex items-center gap-3 pt-2">
-      <Link
-        href="/"
-        className="w-10 h-10 rounded-xl bg-purple-900/40 border border-purple-800/50 flex items-center justify-center hover:bg-purple-900/60 transition-colors"
-      >
-        <Banknote size={20} className="text-purple-400" />
+      <Link href="/" className="shrink-0 hover:opacity-80 transition-opacity">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/images/owl/stickers/owl-thumbs-up.svg" alt="" aria-hidden="true" width={40} height={40} />
       </Link>
       <div className="flex-1">
         <h1 className="text-lg font-bold text-white">{t('home_tipping_title')}</h1>
