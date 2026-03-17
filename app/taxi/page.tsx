@@ -1,3 +1,5 @@
+import Link from 'next/link'
+import { AlertTriangle } from 'lucide-react'
 import { TaxiForm } from '@/components/taxi/TaxiForm'
 import { TaxiPageHeader } from '@/components/taxi/TaxiPageHeader'
 import { ErrorBoundary } from '@/components/ErrorBoundary'
@@ -36,6 +38,16 @@ export default function TaxiPage() {
       </ErrorBoundary>
 
       <PopularCitiesSection cities={FEATURED_CITIES} />
+
+      {/* Link to scam guide */}
+      <Link
+        href="/taxi/scams"
+        className="flex items-center gap-2.5 px-4 py-3 bg-zinc-900 border border-zinc-800 rounded-xl text-sm text-zinc-400 hover:text-zinc-200 hover:border-zinc-700 transition-colors group"
+      >
+        <AlertTriangle size={14} className="text-amber-400 shrink-0" />
+        <span>Taxi Scam Warning Signs — country-by-country guide</span>
+        <span className="ml-auto text-zinc-600 group-hover:text-zinc-400 transition-colors">→</span>
+      </Link>
     </div>
   )
 }

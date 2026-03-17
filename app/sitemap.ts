@@ -22,6 +22,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/tipping`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE}/blog`, lastModified: DATA_LAST_MODIFIED, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE}/taxi/airport`, lastModified: DATA_LAST_MODIFIED, changeFrequency: 'monthly', priority: 0.85 },
+    // Standalone guides — high-value linkable reference pages
+    { url: `${BASE}/taxi/scams`, lastModified: DATA_LAST_MODIFIED, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/tipping/guide`, lastModified: DATA_LAST_MODIFIED, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${BASE}/example`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
     { url: `${BASE}/faq`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE}/about`, lastModified: now, changeFrequency: 'yearly', priority: 0.5 },

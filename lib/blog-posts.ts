@@ -1369,6 +1369,841 @@ export const BLOG_POSTS: BlogPost[] = [
       },
     ],
   },
+
+  // ── Mexico City ────────────────────────────────────────────────────────────
+  {
+    slug: 'how-much-does-a-taxi-cost-in-mexico-city',
+    title: 'How Much Does a Taxi Cost in Mexico City? (2026 Guide)',
+    description: 'Mexico City taxi rates, AICM airport taxi costs, Uber vs sitio taxis, and how to avoid tourist scams in CDMX for 2026.',
+    publishedAt: '2026-03-15',
+    readingMinutes: 7,
+    category: 'taxi',
+    city: 'Mexico City',
+    country: 'Mexico',
+    citySlug: 'mexico_city',
+    countrySlug: 'mexico',
+    content: [
+      {
+        type: 'intro',
+        body: 'Mexico City (CDMX) has one of the most complex taxi ecosystems in Latin America. Metered "sitio" taxis, authorised airport booths, and app services like Uber and InDriver all coexist — and the safety rules for each are very different. Here\'s what to pay and how to pay it safely.',
+      },
+      {
+        type: 'h2',
+        heading: 'Mexico City Taxi Rates (2026)',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'Flag fall', value: '$16 MXN' },
+          { label: 'Per km', value: '$12 MXN' },
+          { label: 'Minimum fare', value: '$28 MXN' },
+          { label: '5 km trip (estimate)', value: '$76–95 MXN' },
+          { label: '10 km trip (estimate)', value: '$140–175 MXN' },
+          { label: 'Night surcharge (10 pm–6 am)', value: '+20% on meter' },
+        ],
+      },
+      {
+        type: 'warning',
+        body: 'Never hail a taxi off the street in Mexico City. Street hailing ("taxi libre") carries a real risk of express kidnapping and robbery. Always use authorised sitio taxis called via phone/app, or book through a hotel concierge.',
+      },
+      {
+        type: 'h2',
+        heading: 'Airport Taxi Fares — AICM and NAICM (Felipe Ángeles)',
+      },
+      {
+        type: 'p',
+        body: 'From Aeropuerto Internacional de la Ciudad de México (AICM, Terminal 1 & 2), use only the official prepaid taxi booths inside the terminal — yellow "Taxi Autorizado" or "Sitio 300." Pay at the booth before going to the car. Fares are fixed by zone.',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'AICM → Centro Histórico', value: '$220–280 MXN' },
+          { label: 'AICM → Roma / Condesa / Polanco', value: '$260–320 MXN' },
+          { label: 'AICM → Santa Fe', value: '$380–450 MXN' },
+          { label: 'NAICM (Felipe Ángeles) → Centro', value: '$450–600 MXN (via highway)' },
+        ],
+      },
+      {
+        type: 'tip',
+        body: 'Uber is allowed at AICM from a designated area outside Terminal 2 (look for the Uber lane). It is often cheaper than the official taxi zones and fully trackable.',
+      },
+      {
+        type: 'h2',
+        heading: 'Uber, Cabify and InDriver in CDMX',
+      },
+      {
+        type: 'p',
+        body: 'Uber and Cabify are the recommended options for tourists in Mexico City — upfront pricing, in-app payment, and a record of your journey. InDriver lets you negotiate the fare directly with the driver, which can result in lower prices during off-peak hours. All three are widely available across the city and are generally faster to book than calling a sitio.',
+      },
+      {
+        type: 'h2',
+        heading: 'Sitio Taxis (Safe Street Option)',
+      },
+      {
+        type: 'p',
+        body: 'Sitio taxis are metered cabs that operate from fixed stands (sitios) outside shopping centres, hotels, and metro stations. They are a legitimate safe option — the driver\'s details are registered with the stand. Ask the attendant at the sitio for a cab rather than approaching drivers directly. The meter starts at $16 MXN flag fall and runs $12 MXN per km.',
+      },
+      {
+        type: 'faq',
+        faqs: [
+          { q: 'Is it safe to take a taxi in Mexico City?', a: 'Yes — if you use the right type. Uber, Cabify, or official sitio taxis are safe. Never hail a taxi off the street. At the airport, only use pre-paid booth taxis (Taxi Autorizado/Sitio 300).' },
+          { q: 'How much is a taxi from Mexico City airport to Polanco?', a: 'Approximately $280–350 MXN from the official prepaid booth, or $200–280 MXN via Uber from Terminal 2\'s designated area.' },
+          { q: 'Should I tip a taxi driver in Mexico City?', a: 'Tipping is not expected for metered taxis, but rounding up the fare is appreciated. For Uber/Cabify, a 10% in-app tip is welcomed.' },
+        ],
+      },
+    ],
+  },
+
+  // ── Buenos Aires ───────────────────────────────────────────────────────────
+  {
+    slug: 'how-much-does-a-taxi-cost-in-buenos-aires',
+    title: 'How Much Does a Taxi Cost in Buenos Aires? (2026 Rates)',
+    description: 'Buenos Aires taxi rates in ARS, Ezeiza and Aeroparque airport fares, Cabify vs metered cabs, and tips for navigating high inflation in 2026.',
+    publishedAt: '2026-03-15',
+    readingMinutes: 6,
+    category: 'taxi',
+    city: 'Buenos Aires',
+    country: 'Argentina',
+    citySlug: 'buenos_aires',
+    countrySlug: 'argentina',
+    content: [
+      {
+        type: 'intro',
+        body: 'Buenos Aires has one of South America\'s best taxi networks — yellow-and-black Radio Taxis with meters are everywhere. The challenge is Argentina\'s inflation: rates change frequently and the ARS figures below may shift by the time you arrive. Always verify the current rate on arrival.',
+      },
+      {
+        type: 'h2',
+        heading: 'Buenos Aires Taxi Rates (2026)',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'Flag fall', value: '$8,000 ARS' },
+          { label: 'Per km', value: '$3,000 ARS' },
+          { label: 'Minimum fare', value: '$8,000 ARS' },
+          { label: '5 km trip (estimate)', value: '$23,000–28,000 ARS' },
+          { label: '10 km trip (estimate)', value: '$38,000–47,000 ARS' },
+          { label: 'Night surcharge (10 pm–6 am)', value: '+20%' },
+        ],
+      },
+      {
+        type: 'warning',
+        body: 'Argentina\'s inflation means taxi rates are updated regularly by the Buenos Aires city government. The figures above may be out of date. Use Cabify or InDriver for a fixed-price quote at the time of booking — no inflation surprise.',
+      },
+      {
+        type: 'h2',
+        heading: 'Airport Taxi Fares — Ezeiza (EZE) and Aeroparque (AEP)',
+      },
+      {
+        type: 'p',
+        body: 'Ezeiza International (EZE, 35 km from centre) is the main hub for international flights. Use official "Manuel Tienda León" remis service from the booths inside arrivals — fixed rate, no negotiation needed. Aeroparque Jorge Newbery (AEP) is 4 km from the city centre and served by metered Radio Taxis.',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'EZE → Palermo / Recoleta', value: '~$35,000–45,000 ARS (approx. USD 35–45 at current rates)' },
+          { label: 'EZE → Centro / Microcentro', value: '~$35,000–50,000 ARS' },
+          { label: 'AEP → Palermo', value: '~$5,000–8,000 ARS' },
+          { label: 'AEP → San Telmo', value: '~$8,000–12,000 ARS' },
+        ],
+      },
+      {
+        type: 'tip',
+        body: 'Carry US dollars or euros — many airport taxi services price in USD to hedge against inflation, and you\'ll get a better deal paying in foreign currency at the blue-market rate. Confirm before travel whether USD is accepted.',
+      },
+      {
+        type: 'h2',
+        heading: 'Cabify and InDriver in Buenos Aires',
+      },
+      {
+        type: 'p',
+        body: 'Cabify is the dominant ride-hailing app in Buenos Aires — more popular than Uber here. It offers fixed upfront pricing and in-app payment. InDriver lets you propose a fare and drivers bid on it, which can yield savings of 15–25% during quiet periods. Both apps are reliable and drivers track well on the map.',
+      },
+      {
+        type: 'h2',
+        heading: 'Radio Taxis — Hailing on the Street',
+      },
+      {
+        type: 'p',
+        body: 'Licensed Radio Taxis (yellow body, black roof) are safe to hail in Buenos Aires — this is one Latin American city where street hailing is generally okay. Look for the illuminated "Radio Taxi" sign on the roof and a visible driver ID card inside. Always confirm the meter starts at the correct flag fall before departure.',
+      },
+      {
+        type: 'faq',
+        faqs: [
+          { q: 'How much does a taxi cost from Ezeiza to Buenos Aires?', a: 'Approximately $35,000–50,000 ARS or USD 35–50 via official remis service. Journey is 40–60 minutes depending on traffic. Due to inflation these figures change — check on arrival.' },
+          { q: 'Is Uber available in Buenos Aires?', a: 'Uber operates in Buenos Aires but in a grey legal area — drivers may ask you to pretend to be a friend to avoid conflict with taxi unions. Cabify is the safer, legally clearer option.' },
+          { q: 'Should I tip taxi drivers in Buenos Aires?', a: 'Rounding up to the nearest 1,000 ARS is customary and appreciated. A 5–10% tip is generous; tipping is not obligatory.' },
+        ],
+      },
+    ],
+  },
+
+  // ── Cairo ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'how-much-does-a-taxi-cost-in-cairo',
+    title: 'How Much Does a Taxi Cost in Cairo? (2026 Fare Guide)',
+    description: 'Cairo taxi fares in EGP, Cairo International Airport rates, Uber vs Careem vs white taxis, and what to know about meter negotiation in Egypt 2026.',
+    publishedAt: '2026-03-15',
+    readingMinutes: 6,
+    category: 'taxi',
+    city: 'Cairo',
+    country: 'Egypt',
+    citySlug: 'cairo',
+    countrySlug: 'egypt',
+    content: [
+      {
+        type: 'intro',
+        body: 'Getting around Cairo by taxi is cheap — but requires knowing the rules. Official meters exist on newer white taxis but are often ignored. The classic black-and-white cabs use a traditional system where you\'re expected to know the fare. Using Uber or Careem eliminates all of this uncertainty at a slight premium.',
+      },
+      {
+        type: 'h2',
+        heading: 'Cairo Taxi Rates (2026)',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'White taxi flag fall', value: 'E£5' },
+          { label: 'White taxi per km', value: 'E£3' },
+          { label: 'Minimum fare (metered)', value: 'E£15' },
+          { label: '5 km trip (estimate)', value: 'E£20–30' },
+          { label: '10 km trip (estimate)', value: 'E£35–50' },
+          { label: 'Old black-and-white taxi (negotiated)', value: 'E£20–60 per trip' },
+        ],
+      },
+      {
+        type: 'warning',
+        body: 'Many Cairo taxi drivers — especially outside tourist areas — will not use the meter. Negotiate and agree the fare in Egyptian pounds before getting in. Once you\'re seated, the agreed fare is binding. Never accept a fare quoted in US dollars.',
+      },
+      {
+        type: 'h2',
+        heading: 'Cairo International Airport Taxi Fares (CAI)',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'CAI → Downtown Cairo / Tahrir', value: 'E£150–250 (negotiated) or E£130–200 via Uber/Careem' },
+          { label: 'CAI → Zamalek', value: 'E£150–230' },
+          { label: 'CAI → Giza / Pyramids area', value: 'E£250–380' },
+          { label: 'CAI → Heliopolis (local)', value: 'E£60–100' },
+        ],
+      },
+      {
+        type: 'tip',
+        body: 'At Cairo airport, Uber and Careem have designated pickup zones in the arrivals area. Booking via app is strongly recommended — you get upfront pricing, no negotiation, and the driver\'s details on record.',
+      },
+      {
+        type: 'h2',
+        heading: 'Uber and Careem in Cairo',
+      },
+      {
+        type: 'p',
+        body: 'Both Uber and Careem (Uber\'s regional brand) operate widely in Cairo and are the recommended option for tourists. Careem was founded in the Middle East and has deep local driver networks. Both offer cash and card payment. Prices are fixed before the trip — no meter negotiation required. Expect to pay 10–20% more than a negotiated street taxi for the convenience and safety.',
+      },
+      {
+        type: 'h2',
+        heading: 'Tips for Taking Taxis in Cairo',
+      },
+      {
+        type: 'ul',
+        items: [
+          'Have small denominations of EGP ready — drivers rarely carry change',
+          'Agree the fare in EGP before entering any non-metered cab',
+          'State the destination clearly before entering — the driver can decline before you commit',
+          'For late-night travel, use Uber or Careem rather than negotiating in the dark',
+          'Airport official taxi stands (white Nile Taxi and Cairo Airport Taxi) are a safe metered alternative if you prefer not to use apps',
+        ],
+      },
+      {
+        type: 'faq',
+        faqs: [
+          { q: 'How much is a taxi from Cairo airport to the city centre?', a: 'Expect E£150–250 negotiated, or E£130–200 via Uber/Careem. Journey is 30–60 minutes depending on time of day.' },
+          { q: 'Should I negotiate taxi fares in Cairo?', a: 'For old black-and-white taxis, yes — agree the fare before you get in. For white metered taxis, insist the meter is running. For Uber/Careem, pricing is automatic.' },
+          { q: 'Do taxi drivers in Cairo accept card payment?', a: 'Cash only for metered and negotiated taxis. Uber and Careem accept both card and cash.' },
+        ],
+      },
+    ],
+  },
+
+  // ── Marrakech ─────────────────────────────────────────────────────────────
+  {
+    slug: 'how-much-does-a-taxi-cost-in-marrakech',
+    title: 'How Much Does a Taxi Cost in Marrakech? (2026 Fare Guide)',
+    description: 'Marrakech petit taxi and grand taxi fares in MAD, Menara airport rates, medina zone pricing, and how to avoid overcharging in Morocco 2026.',
+    publishedAt: '2026-03-15',
+    readingMinutes: 6,
+    category: 'taxi',
+    city: 'Marrakech',
+    country: 'Morocco',
+    citySlug: 'marrakech',
+    countrySlug: 'morocco',
+    content: [
+      {
+        type: 'intro',
+        body: 'Marrakech has two taxi tiers: red petit taxis (metered, within city limits) and grand taxis (beige, fixed routes, negotiated). Knowing which to use — and insisting on the meter — will save you significant money as a tourist.',
+      },
+      {
+        type: 'h2',
+        heading: 'Marrakech Petit Taxi Rates (2026)',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'Flag fall', value: '5 MAD' },
+          { label: 'Per km', value: '3.50 MAD' },
+          { label: 'Minimum fare', value: '12 MAD' },
+          { label: '5 km trip (estimate)', value: '22–28 MAD' },
+          { label: '10 km trip (estimate)', value: '40–50 MAD' },
+          { label: 'Night rate (8 pm–6 am)', value: '+50% on meter' },
+        ],
+      },
+      {
+        type: 'warning',
+        body: 'Petit taxi drivers frequently claim the meter is broken or suggest a fixed price before you get in. The meter is legally required. If a driver refuses to use the meter, exit the taxi and find another. Quoting a fixed price without the meter is almost always more expensive than the metered fare.',
+      },
+      {
+        type: 'h2',
+        heading: 'Marrakech Airport Fares — RAK Menara',
+      },
+      {
+        type: 'p',
+        body: 'Marrakech Menara Airport is just 3 km from the city centre — one of the closest major airports to any city in North Africa. Official petit taxi fares from the airport are set by the municipality.',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'RAK → Medina (Jemaa el-Fnaa area)', value: '70–80 MAD (fixed official rate)' },
+          { label: 'RAK → Gueliz (new town)', value: '50–60 MAD' },
+          { label: 'RAK → Hivernage hotels', value: '55–65 MAD' },
+          { label: 'RAK → Palmeraie', value: '90–120 MAD' },
+        ],
+      },
+      {
+        type: 'tip',
+        body: 'The official airport petit taxi rate is posted on a board inside the arrivals hall. Memorise the fare for your destination before walking out — drivers may quote higher figures knowing tourists have just landed.',
+      },
+      {
+        type: 'h2',
+        heading: 'Medina Zone Fares',
+      },
+      {
+        type: 'p',
+        body: 'Petit taxis cannot enter the narrow lanes of the medina. They drop off at the nearest accessible gate (Bab Doukkala, Bab Laksour, etc.). From there, you walk or use a horse-drawn calèche or mule cart. The taxi ride to the gate from Gueliz costs 15–25 MAD. Always agree the Medina gate destination clearly — "Jemaa el-Fnaa" will take you to the closest accessible drop-off.',
+      },
+      {
+        type: 'h2',
+        heading: 'Grand Taxis — Intercity Routes',
+      },
+      {
+        type: 'p',
+        body: 'Grand taxis (large Mercedes saloons, usually beige) operate fixed intercity routes — Marrakech to Essaouira, Ouarzazate, etc. They depart when full (6 passengers) or you can buy multiple seats for a private run. Fares are negotiated. For day trips to the Atlas Mountains or Ourika Valley, a negotiated grand taxi is often the cheapest option if you\'re in a small group.',
+      },
+      {
+        type: 'faq',
+        faqs: [
+          { q: 'How much is a taxi from Marrakech airport to the medina?', a: '70–80 MAD in a petit taxi (officially posted rate). The journey takes 10–15 minutes. Agree the fare at the official board inside arrivals.' },
+          { q: 'Can I use Uber or Bolt in Marrakech?', a: 'Neither Uber nor Bolt operates in Marrakech. Use petit taxis with the meter, or book a riad transfer in advance. Some riads arrange private transfers.' },
+          { q: 'What is the night rate for taxis in Marrakech?', a: 'After 8 pm, petit taxis apply a 50% night surcharge on the meter. This is legal — the meter rate itself changes. A trip costing 30 MAD by day costs around 45 MAD at night.' },
+        ],
+      },
+    ],
+  },
+
+  // ── Ho Chi Minh City ──────────────────────────────────────────────────────
+  {
+    slug: 'how-much-does-a-taxi-cost-in-ho-chi-minh-city',
+    title: 'How Much Does a Taxi Cost in Ho Chi Minh City? (2026 Guide)',
+    description: 'Ho Chi Minh City (Saigon) taxi fares in VND, Tan Son Nhat airport rates, Grab vs Vinasun vs Mai Linh, and how to avoid fake taxi scams in 2026.',
+    publishedAt: '2026-03-15',
+    readingMinutes: 7,
+    category: 'taxi',
+    city: 'Ho Chi Minh City',
+    country: 'Vietnam',
+    citySlug: 'ho_chi_minh',
+    countrySlug: 'vietnam',
+    content: [
+      {
+        type: 'intro',
+        body: 'Ho Chi Minh City (Saigon) is one of Southeast Asia\'s most chaotic and exhilarating cities to navigate. Metered taxis are cheap — but fake taxis with rigged meters are a well-documented problem. Using Grab or sticking to two reputable metered brands eliminates the risk entirely.',
+      },
+      {
+        type: 'h2',
+        heading: 'Ho Chi Minh City Taxi Rates (2026)',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'Flag fall (metered cab)', value: '₫12,000' },
+          { label: 'Per km', value: '₫9,000' },
+          { label: 'Minimum fare', value: '₫12,000' },
+          { label: '5 km trip (estimate)', value: '₫57,000–70,000' },
+          { label: '10 km trip (estimate)', value: '₫102,000–125,000' },
+          { label: 'Night surcharge (11 pm–6 am)', value: '+10–15%' },
+        ],
+      },
+      {
+        type: 'warning',
+        body: 'Fake taxis in Ho Chi Minh City use company names, colours and logos nearly identical to Vinasun and Mai Linh. Their meters run at 10–20× the legal speed. Check the car door for the correct website URL and phone number before entering. When in doubt, use Grab.',
+      },
+      {
+        type: 'h2',
+        heading: 'Trusted Metered Taxi Brands',
+      },
+      {
+        type: 'ul',
+        items: [
+          'Vinasun — white cars with green and red logo. Website: vinasun.com. Hotline: 1088',
+          'Mai Linh — green cars. Website: mailinh.vn. Hotline: 1055',
+          'These two brands are consistently reliable and meter-honest throughout the city',
+          'Avoid taxis that look similar but have slightly different logos, different phone numbers, or offer a "special rate" upfront',
+        ],
+      },
+      {
+        type: 'h2',
+        heading: 'Grab and Be Apps — Recommended for Tourists',
+      },
+      {
+        type: 'p',
+        body: 'Grab is dominant in Vietnam and the safest option for tourists. Fixed upfront pricing, driver tracking, and card/wallet payment mean zero negotiation. Be (formerly FastGo) is a local competitor often 10–15% cheaper. GrabBike (motorbike taxi) is the fastest option for solo travellers in traffic — prices start from ₫15,000 for short hops.',
+      },
+      {
+        type: 'h2',
+        heading: 'Tan Son Nhat Airport (SGN) Taxi Fares',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'SGN → District 1 (Bến Thành area)', value: '₫130,000–180,000 metered; ₫110,000–160,000 via Grab' },
+          { label: 'SGN → District 3', value: '₫140,000–200,000' },
+          { label: 'SGN → Bình Thạnh', value: '₫100,000–150,000' },
+          { label: 'SGN → District 7 (Phú Mỹ Hưng)', value: '₫200,000–280,000' },
+        ],
+      },
+      {
+        type: 'tip',
+        body: 'Book your Grab before exiting the airport terminal. Grab operates from a designated zone in the international arrivals carpark — follow signs. The Grab price is fixed and will typically be ₫20,000–40,000 less than the taxi rank outside arrivals.',
+      },
+      {
+        type: 'faq',
+        faqs: [
+          { q: 'How much is a taxi from Ho Chi Minh City airport to District 1?', a: 'Expect ₫130,000–180,000 by Vinasun or Mai Linh meter. Via Grab it\'s typically ₫110,000–160,000 with upfront pricing. Journey is 20–40 minutes depending on traffic.' },
+          { q: 'Is Grab safe in Ho Chi Minh City?', a: 'Yes. Grab is the safest and most convenient option. All drivers are registered, the route is tracked, and pricing is fixed before the trip. It\'s the recommended option for most tourists.' },
+          { q: 'Should I tip taxi drivers in Ho Chi Minh City?', a: 'Tipping is not expected but appreciated. Rounding up to the nearest 10,000 VND is common. For Grab, a small cash tip to the driver is a nice gesture but not required.' },
+        ],
+      },
+    ],
+  },
+
+  // ── Kuala Lumpur ──────────────────────────────────────────────────────────
+  {
+    slug: 'how-much-does-a-taxi-cost-in-kuala-lumpur',
+    title: 'How Much Does a Taxi Cost in Kuala Lumpur? (2026 Guide)',
+    description: 'Kuala Lumpur taxi rates in MYR, KLIA and KL Sentral airport fares, Grab vs metered cabs, and KLIA Ekspres train comparison for 2026.',
+    publishedAt: '2026-03-15',
+    readingMinutes: 6,
+    category: 'taxi',
+    city: 'Kuala Lumpur',
+    country: 'Malaysia',
+    citySlug: 'kuala_lumpur',
+    countrySlug: 'malaysia',
+    content: [
+      {
+        type: 'intro',
+        body: 'Kuala Lumpur\'s taxi market has been largely supplanted by Grab — which is faster, cheaper, and more reliable than metered cabs for most journeys. But metered taxis remain an option if you know the rules, and the KLIA Ekspres train from the airport is a bargain the apps can\'t beat.',
+      },
+      {
+        type: 'h2',
+        heading: 'Kuala Lumpur Taxi Rates (2026)',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'Flag fall (first km)', value: 'RM 3.00' },
+          { label: 'Per km', value: 'RM 1.50' },
+          { label: 'Minimum fare', value: 'RM 3.00' },
+          { label: '5 km trip (estimate)', value: 'RM 10–13' },
+          { label: '10 km trip (estimate)', value: 'RM 18–22' },
+          { label: 'Waiting time', value: 'RM 0.40/min' },
+          { label: 'Night surcharge (midnight–6 am)', value: '+50%' },
+        ],
+      },
+      {
+        type: 'warning',
+        body: 'Metered taxi drivers in Kuala Lumpur frequently try to charge a flat rate rather than use the meter — especially from tourist areas like KLCC, Bukit Bintang, and the airport. The meter is legally required. Insist on it, or use Grab for transparent pricing.',
+      },
+      {
+        type: 'h2',
+        heading: 'KLIA and KLIA2 Airport Taxi Fares',
+      },
+      {
+        type: 'p',
+        body: 'Kuala Lumpur International Airport (KLIA and KLIA2, 57 km from city centre) offers both budget and premium taxi options from fixed-price booths inside arrivals. Pay at the booth — no negotiation.',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'Budget taxi → KL city centre', value: 'RM 75–85' },
+          { label: 'Premier taxi → KL city centre', value: 'RM 110–130' },
+          { label: 'Budget taxi → Petaling Jaya / Subang', value: 'RM 65–80' },
+          { label: 'Grab from KLIA → KL city centre', value: 'RM 55–90 (varies by time)' },
+        ],
+      },
+      {
+        type: 'tip',
+        body: 'The KLIA Ekspres train runs from KLIA directly to KL Sentral in just 28 minutes for RM 55 — faster and cheaper than any taxi or Grab during peak hours. Highly recommended if you\'re staying near KL Sentral, Brickfields, or Bangsar.',
+      },
+      {
+        type: 'h2',
+        heading: 'Grab in Kuala Lumpur',
+      },
+      {
+        type: 'p',
+        body: 'Grab is the default transport choice for most KL residents and visitors. The app is available in both KLIA and KLIA2 (designated pickup zones) and throughout the city. GrabCar pricing is typically 10–30% cheaper than metered taxis with upfront pricing and no surcharges. GrabBike is not available in KL (banned for safety reasons).',
+      },
+      {
+        type: 'faq',
+        faqs: [
+          { q: 'How much is a taxi from KLIA to Kuala Lumpur city centre?', a: 'Fixed booth taxi: RM 75–85 (budget) or RM 110–130 (premier). Grab: RM 55–90 depending on time. KLIA Ekspres train: RM 55, 28 minutes — often the best option.' },
+          { q: 'Is Grab better than taxis in Kuala Lumpur?', a: 'For most tourists, yes. Grab offers upfront pricing, no meter refusal issues, and drivers who know the route. It\'s also typically cheaper than flagging a metered cab that refuses to use the meter.' },
+          { q: 'Do taxis in Kuala Lumpur take credit cards?', a: 'Most metered cabs are cash only. Grab accepts card, e-wallet (GrabPay, Touch \'n Go), and cash.' },
+        ],
+      },
+    ],
+  },
+
+  // ── Lisbon ────────────────────────────────────────────────────────────────
+  {
+    slug: 'how-much-does-a-taxi-cost-in-lisbon',
+    title: 'How Much Does a Taxi Cost in Lisbon? (2026 Fare Guide)',
+    description: 'Lisbon taxi fares in euros, Humberto Delgado airport rates, Uber vs licensed taxis, and why trams are sometimes a better choice in 2026.',
+    publishedAt: '2026-03-15',
+    readingMinutes: 6,
+    category: 'taxi',
+    city: 'Lisbon',
+    country: 'Portugal',
+    citySlug: 'lisbon',
+    countrySlug: 'portugal',
+    content: [
+      {
+        type: 'intro',
+        body: 'Lisbon taxis are reliable, metered, and relatively affordable by Western European standards. The city also has excellent Uber coverage, making it one of the easier European capitals for transparent transport. The one catch: the historic city centre\'s steep hills and narrow streets add time (and fare) to many journeys.',
+      },
+      {
+        type: 'h2',
+        heading: 'Lisbon Taxi Rates (2026)',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'Flag fall (Tarifa 1, 6 am–9 pm weekdays)', value: '€3.25' },
+          { label: 'Per km (Tarifa 1)', value: '€0.47' },
+          { label: 'Flag fall (Tarifa 2, nights/weekends)', value: '€3.90' },
+          { label: 'Per km (Tarifa 2)', value: '€0.57' },
+          { label: 'Tarifa 3 (outside city limits)', value: '+20% on Tarifa 2' },
+          { label: 'Luggage surcharge', value: '€1.60 per item over 3 bags' },
+          { label: 'Minimum fare', value: '€3.25' },
+        ],
+      },
+      {
+        type: 'h2',
+        heading: 'Lisbon Airport Taxi Fares — Humberto Delgado (LIS)',
+      },
+      {
+        type: 'p',
+        body: 'Lisbon\'s airport is just 7 km from Baixa (city centre). All licensed taxis use the meter — no fixed zones. Expect Tarifa 1 during daytime on weekdays, Tarifa 2 evenings and weekends.',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'LIS → Baixa / Rossio', value: '€12–18 (Tarifa 1) / €15–22 (Tarifa 2)' },
+          { label: 'LIS → Alfama / Castelo', value: '€14–20' },
+          { label: 'LIS → Belém', value: '€18–28' },
+          { label: 'LIS → Parque das Nações', value: '€8–14' },
+          { label: 'LIS → Cascais (outside city limits)', value: '€50–70 (Tarifa 3)' },
+        ],
+      },
+      {
+        type: 'tip',
+        body: 'The Aerobus (Bus 1) runs from the airport to Baixa and Cais do Sodré for €4. The Metro (Red Line → Green/Blue Line) costs €1.65 and takes about 30 minutes to Rossio. Both are excellent alternatives to a taxi if you have manageable luggage.',
+      },
+      {
+        type: 'h2',
+        heading: 'Uber in Lisbon',
+      },
+      {
+        type: 'p',
+        body: 'Uber is legal and widely used in Lisbon — one of its strongest European markets. Bolt is also available and frequently 10–15% cheaper than Uber. Both operate from a designated zone at the airport. In the city, Uber cars (mostly white Peugeots and Renaults) are abundant and response times are typically 3–5 minutes. Upfront pricing removes any meter ambiguity.',
+      },
+      {
+        type: 'h2',
+        heading: 'When Trams and Metro Beat Taxis',
+      },
+      {
+        type: 'p',
+        body: 'Lisbon\'s famous yellow trams (especially Tram 28E through Alfama and Graça) are slower than taxis but far cheaper and give you a window seat into the city\'s most scenic streets. The Metro is faster than both for longer journeys. For trips entirely within the central zone, taxis and Uber often cost €8–15 for distances a 20-minute walk would cover — the hill gradient makes walking tough but the alternatives are affordable.',
+      },
+      {
+        type: 'faq',
+        faqs: [
+          { q: 'How much is a taxi from Lisbon airport to the city centre?', a: 'Expect €12–18 during daytime weekdays (Tarifa 1) or €15–22 evenings/weekends (Tarifa 2). The journey takes 15–25 minutes. Add luggage surcharge (€1.60) if you have more than 3 bags.' },
+          { q: 'Is Uber or taxi cheaper in Lisbon?', a: 'Bolt tends to be cheapest, followed by Uber, then licensed taxis. Differences are small for short trips but can be €3–6 for airport journeys. All are reliable options.' },
+          { q: 'Do Lisbon taxi drivers speak English?', a: 'Many do, especially airport drivers. If not, showing the address on your phone works fine. Apps like Uber and Bolt remove the language barrier entirely.' },
+        ],
+      },
+    ],
+  },
+
+  // ── Taxi Driver Phrases (Tier 2 — Linkable / Shareable) ───────────────────
+  {
+    slug: 'what-to-say-to-your-taxi-driver-in-15-languages',
+    title: 'What to Say to Your Taxi Driver in 15 Languages',
+    description: 'Essential taxi phrases in 15 languages — from "please use the meter" to "I\'d like a receipt." A reference guide for travellers visiting 120+ countries.',
+    publishedAt: '2026-03-15',
+    readingMinutes: 8,
+    category: 'travel',
+    content: [
+      {
+        type: 'intro',
+        body: 'Knowing five phrases in the local language can transform a taxi ride from stressful to smooth. You don\'t need to be fluent — you just need to cover the moments that matter: destination, meter, price, receipt. Here\'s your cheat sheet for 15 languages covering most of the world\'s major tourist destinations.',
+      },
+      {
+        type: 'h2',
+        heading: 'Why These Six Phrases Matter',
+      },
+      {
+        type: 'ul',
+        items: [
+          '"Please take me to [destination]" — the most fundamental phrase',
+          '"Please use the meter" — combats the most common tourist overcharge tactic',
+          '"How much does it cost?" — for routes where meters are not used',
+          '"Is this the correct price?" — signals you\'re informed',
+          '"Please stop here" — essential for flexible navigation',
+          '"Can I have a receipt?" — important for business travellers and expense claims',
+        ],
+      },
+      {
+        type: 'h2',
+        heading: 'Spanish',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'Please take me to…', value: '"Por favor, lléveme a…"' },
+          { label: 'Please use the meter', value: '"Por favor, use el taxímetro"' },
+          { label: 'How much does it cost?', value: '"¿Cuánto cuesta?"' },
+          { label: 'Stop here please', value: '"Pare aquí, por favor"' },
+          { label: 'Can I have a receipt?', value: '"¿Me puede dar un recibo?"' },
+        ],
+      },
+      {
+        type: 'h2',
+        heading: 'French',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'Please take me to…', value: '"Emmenez-moi à… s\'il vous plaît"' },
+          { label: 'Please use the meter', value: '"Utilisez le compteur, s\'il vous plaît"' },
+          { label: 'How much does it cost?', value: '"Combien ça coûte ?"' },
+          { label: 'Stop here please', value: '"Arrêtez-vous ici, s\'il vous plaît"' },
+          { label: 'Can I have a receipt?', value: '"Puis-je avoir un reçu ?"' },
+        ],
+      },
+      {
+        type: 'h2',
+        heading: 'Thai (ภาษาไทย)',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'Please take me to…', value: '"ไปที่… หน่อยครับ/ค่ะ" (Pai tee… noi khrap/kha)' },
+          { label: 'Please use the meter', value: '"ใช้มิเตอร์ด้วยครับ/ค่ะ" (Chai miter duay khrap/kha)' },
+          { label: 'How much does it cost?', value: '"ราคาเท่าไร?" (Raka thaorai?)' },
+          { label: 'Stop here please', value: '"จอดตรงนี้ครับ/ค่ะ" (Jod trong nee khrap/kha)' },
+          { label: 'Can I have a receipt?', value: '"ขอใบเสร็จด้วยครับ/ค่ะ" (Kho bai set duay khrap/kha)' },
+        ],
+      },
+      {
+        type: 'h2',
+        heading: 'Japanese (日本語)',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'Please take me to…', value: '"…まで行ってください" (… made itte kudasai)' },
+          { label: 'Please use the meter', value: '"メーターを使ってください" (Meter wo tsukatte kudasai)' },
+          { label: 'How much does it cost?', value: '"いくらですか？" (Ikura desu ka?)' },
+          { label: 'Stop here please', value: '"ここで止めてください" (Koko de tomete kudasai)' },
+          { label: 'Can I have a receipt?', value: '"領収書をください" (Ryōshūsho wo kudasai)' },
+        ],
+      },
+      {
+        type: 'h2',
+        heading: 'Arabic (العربية)',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'Please take me to…', value: '"من فضلك خذني إلى…" (Min fadlak khudhni ila…)' },
+          { label: 'Please use the meter', value: '"من فضلك استخدم العداد" (Min fadlak istaakhdam al-adad)' },
+          { label: 'How much does it cost?', value: '"بكم؟" (Bikam?)' },
+          { label: 'Stop here please', value: '"قف هنا من فضلك" (Qif huna min fadlak)' },
+          { label: 'Can I have a receipt?', value: '"ممكن فاتورة؟" (Mumkin fatora?)' },
+        ],
+      },
+      {
+        type: 'h2',
+        heading: 'Vietnamese (Tiếng Việt)',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'Please take me to…', value: '"Cho tôi đến… với"' },
+          { label: 'Please use the meter', value: '"Bật đồng hồ đi ạ"' },
+          { label: 'How much does it cost?', value: '"Bao nhiêu tiền?"' },
+          { label: 'Stop here please', value: '"Dừng ở đây nhé"' },
+          { label: 'Can I have a receipt?', value: '"Cho tôi hóa đơn được không?"' },
+        ],
+      },
+      {
+        type: 'h2',
+        heading: 'Indonesian / Malay (Bahasa)',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'Please take me to…', value: '"Tolong antar saya ke…"' },
+          { label: 'Please use the meter', value: '"Tolong pakai argo"' },
+          { label: 'How much does it cost?', value: '"Berapa harganya?"' },
+          { label: 'Stop here please', value: '"Berhenti di sini, tolong"' },
+          { label: 'Can I have a receipt?', value: '"Boleh minta kuitansi?"' },
+        ],
+      },
+      {
+        type: 'h2',
+        heading: 'Portuguese (Português)',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'Please take me to…', value: '"Por favor, leve-me a…"' },
+          { label: 'Please use the meter', value: '"Por favor, use o taxímetro"' },
+          { label: 'How much does it cost?', value: '"Quanto custa?"' },
+          { label: 'Stop here please', value: '"Pare aqui, por favor"' },
+          { label: 'Can I have a receipt?', value: '"Pode me dar um recibo?"' },
+        ],
+      },
+      {
+        type: 'h2',
+        heading: 'Italian (Italiano)',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'Please take me to…', value: '"Per favore, mi porti a…"' },
+          { label: 'Please use the meter', value: '"Per favore, usi il tassametro"' },
+          { label: 'How much does it cost?', value: '"Quanto costa?"' },
+          { label: 'Stop here please', value: '"Si fermi qui, per favore"' },
+          { label: 'Can I have a receipt?', value: '"Può darmi una ricevuta?"' },
+        ],
+      },
+      {
+        type: 'h2',
+        heading: 'German (Deutsch)',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'Please take me to…', value: '"Bitte fahren Sie mich zu…"' },
+          { label: 'Please use the meter', value: '"Bitte schalten Sie das Taxameter ein"' },
+          { label: 'How much does it cost?', value: '"Wie viel kostet das?"' },
+          { label: 'Stop here please', value: '"Halten Sie hier bitte an"' },
+          { label: 'Can I have a receipt?', value: '"Kann ich eine Quittung bekommen?"' },
+        ],
+      },
+      {
+        type: 'h2',
+        heading: 'Hindi (हिंदी)',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'Please take me to…', value: '"कृपया मुझे… ले चलिए" (Kripaya mujhe… le chaliye)' },
+          { label: 'Please use the meter', value: '"कृपया मीटर चलाइए" (Kripaya meter chalaiye)' },
+          { label: 'How much does it cost?', value: '"कितने का है?" (Kitne ka hai?)' },
+          { label: 'Stop here please', value: '"यहाँ रोकिए" (Yahaan rokiye)' },
+          { label: 'Can I have a receipt?', value: '"रसीद दीजिए" (Raseed dijiye)' },
+        ],
+      },
+      {
+        type: 'h2',
+        heading: 'Korean (한국어)',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'Please take me to…', value: '"…으로 가주세요" (…euro gajuseyo)' },
+          { label: 'Please use the meter', value: '"미터기 켜주세요" (Mitogi kyeojuseyo)' },
+          { label: 'How much does it cost?', value: '"얼마예요?" (Eolmayeyo?)' },
+          { label: 'Stop here please', value: '"여기 세워주세요" (Yeogi sewojuseyo)' },
+          { label: 'Can I have a receipt?', value: '"영수증 주세요" (Yeongsujeung juseyo)' },
+        ],
+      },
+      {
+        type: 'h2',
+        heading: 'Chinese Simplified (普通话)',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'Please take me to…', value: '"请送我去…" (Qǐng sòng wǒ qù…)' },
+          { label: 'Please use the meter', value: '"请打表" (Qǐng dǎ biǎo)' },
+          { label: 'How much does it cost?', value: '"多少钱？" (Duōshao qián?)' },
+          { label: 'Stop here please', value: '"在这里停车" (Zài zhèlǐ tíngchē)' },
+          { label: 'Can I have a receipt?', value: '"可以给我收据吗？" (Kěyǐ gěi wǒ shōujù ma?)' },
+        ],
+      },
+      {
+        type: 'h2',
+        heading: 'Russian (Русский)',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'Please take me to…', value: '"Пожалуйста, отвезите меня в…" (Pozhaluista, otvezite menya v…)' },
+          { label: 'Please use the meter', value: '"Включите счётчик, пожалуйста" (Vklyuchite schyotchik, pozhaluista)' },
+          { label: 'How much does it cost?', value: '"Сколько стоит?" (Skol\'ko stoit?)' },
+          { label: 'Stop here please', value: '"Остановитесь здесь" (Ostanovites\' zdes\')' },
+          { label: 'Can I have a receipt?', value: '"Можно квитанцию?" (Mozhno kvitantsiyu?)' },
+        ],
+      },
+      {
+        type: 'h2',
+        heading: 'Turkish (Türkçe)',
+      },
+      {
+        type: 'table',
+        rows: [
+          { label: 'Please take me to…', value: '"Lütfen beni…\'ye götürün"' },
+          { label: 'Please use the meter', value: '"Lütfen taksimetreyi açın"' },
+          { label: 'How much does it cost?', value: '"Ne kadar tutar?"' },
+          { label: 'Stop here please', value: '"Burada durun lütfen"' },
+          { label: 'Can I have a receipt?', value: '"Fiş alabilir miyim?"' },
+        ],
+      },
+      {
+        type: 'tip',
+        body: 'Screenshot the phrases for your destination before you travel — no WiFi required. In countries where meter refusal is common (Thailand, Vietnam, Egypt, Morocco), "Please use the meter" is the single most valuable phrase you can memorise.',
+      },
+      {
+        type: 'faq',
+        faqs: [
+          { q: 'What is the most useful taxi phrase when travelling internationally?', a: '"Please use the meter" — or its equivalent in the local language. Meter refusal is the most common form of tourist overcharging worldwide. Knowing this phrase signals you\'re informed and deters opportunistic pricing.' },
+          { q: 'How do I get city-specific advice on what to say to drivers?', a: 'Hootling\'s taxi fare checker includes AI-generated driver phrases in the local language for your specific route — including contextual tips for the city you\'re in. Available for 120+ cities after a route check.' },
+          { q: 'Do I need to speak the local language to take a taxi safely?', a: 'Not fluently — but knowing two or three key phrases makes a significant difference. Showing your destination address on your phone is always a safe fallback. Ride-hailing apps like Grab, Uber, and Bolt eliminate the language barrier entirely.' },
+        ],
+      },
+    ],
+  },
 ]
 
 export function getBlogPost(slug: string): BlogPost | undefined {

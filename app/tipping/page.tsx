@@ -1,3 +1,5 @@
+import Link from 'next/link'
+import { Globe } from 'lucide-react'
 import { TippingForm } from '@/components/tipping/TippingForm'
 import { TippingPageHeader } from '@/components/tipping/TippingPageHeader'
 import { ErrorBoundary } from '@/components/ErrorBoundary'
@@ -36,6 +38,16 @@ export default function TippingPage() {
       </ErrorBoundary>
 
       <PopularCountriesSection countries={FEATURED_COUNTRIES} />
+
+      {/* Link to the global overview guide */}
+      <Link
+        href="/tipping/guide"
+        className="flex items-center gap-2.5 px-4 py-3 bg-zinc-900 border border-zinc-800 rounded-xl text-sm text-zinc-400 hover:text-zinc-200 hover:border-zinc-700 transition-colors group"
+      >
+        <Globe size={14} className="text-purple-400 shrink-0" />
+        <span>Global Tipping Customs 2026 — country-by-country overview</span>
+        <span className="ml-auto text-zinc-600 group-hover:text-zinc-400 transition-colors">→</span>
+      </Link>
     </div>
   )
 }
