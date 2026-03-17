@@ -51,6 +51,9 @@ const LOCALE_LANGUAGE: Record<string, string> = {
   ja: 'Japanese',
   ko: 'Korean',
   hi: 'Hindi',
+  it: 'Italian',
+  id: 'Indonesian',
+  vi: 'Vietnamese',
 }
 
 // ─── Types ────────────────────────────────────────────────────────────────────
