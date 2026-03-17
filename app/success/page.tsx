@@ -96,8 +96,9 @@ function SuccessInner() {
     return (
       <div className="flex flex-col items-center gap-6 py-16 px-4 text-center max-w-sm mx-auto">
         <Image
-          src="/images/brand/hootling-logo-icon.svg"
-          alt="Hootling"
+          src="/images/owl/expressions/owl-excited.svg"
+          alt=""
+          aria-hidden="true"
           width={80}
           height={80}
           className="drop-shadow-lg"
@@ -142,7 +143,13 @@ function SuccessInner() {
 
   return (
     <div className="flex flex-col items-center gap-4 py-20 text-center">
-      <div className="text-4xl">❌</div>
+      <Image
+        src="/images/owl/expressions/owl-worried.svg"
+        alt=""
+        aria-hidden="true"
+        width={72}
+        height={72}
+      />
       <p className="text-white font-semibold">Something went wrong</p>
       <p className="text-zinc-400 text-sm">{error}</p>
       <button

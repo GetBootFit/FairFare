@@ -7,8 +7,9 @@ export default function TippingLoading() {
       {/* Branded loading indicator */}
       <div className="flex flex-col items-center gap-2 py-4">
         <Image
-          src="/images/brand/hootling-logo-icon.svg"
-          alt="Hootling"
+          src="/images/owl/expressions/owl-curious.svg"
+          alt=""
+          aria-hidden="true"
           width={56}
           height={56}
           className="animate-pulse"

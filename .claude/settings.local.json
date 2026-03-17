@@ -73,7 +73,10 @@
       "Bash(curl -s http://localhost:3000/about)",
       "Bash(curl -s http://localhost:3000/nonexistent-page)",
       "Bash(node -e \"console.log\\(require\\(''crypto''\\).randomBytes\\(32\\).toString\\(''hex''\\)\\)\")",
-      "Bash(node -e \"require\\(''sharp''\\); console.log\\(''sharp available''\\)\")"
+      "Bash(node -e \"require\\(''sharp''\\); console.log\\(''sharp available''\\)\")",
+      "Bash(Move-Item \"C:\\\\Users\\\\david\\\\Projects\\\\Hootling\\\\public\\\\images\\\\owl\\\\expressions\\\\SVG\\\\*.svg\" \"C:\\\\Users\\\\david\\\\Projects\\\\Hootling\\\\public\\\\images\\\\owl\\\\expressions\"\" && Remove-Item \"C:UsersdavidProjectsHootlingpublicimagesowlexpressionsSVG \")",
+      "Bash(mv \"/c/Users/david/Projects/Hootling/public/images/owl/expressions/SVG/\"*.svg \"/c/Users/david/Projects/Hootling/public/images/owl/expressions/\")",
+      "Bash(rmdir \"/c/Users/david/Projects/Hootling/public/images/owl/expressions/SVG\")"
     ]
   }
 }

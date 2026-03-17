@@ -5,11 +5,12 @@ export default function NotFound() {
   return (
     <div className="flex flex-col items-center gap-6 py-20 px-4 text-center">
       <Image
-        src="/images/brand/hootling-logo-icon.svg"
-        alt="Hootling got lost"
+        src="/images/owl/expressions/owl-confused.svg"
+        alt=""
+        aria-hidden="true"
         width={96}
         height={96}
-        className="opacity-80"
+        className="opacity-90"
       />
       <div>
         <p className="text-white font-bold text-xl">Hootling got lost</p>

@@ -97,8 +97,8 @@ export default function FaqPage() {
     />
     <div className="space-y-6 pb-4">
       <div className="flex items-center gap-3">
-        <Link href="/" className="w-10 h-10 rounded-xl bg-purple-600 flex items-center justify-center text-lg font-bold text-white hover:bg-purple-700 transition-colors shrink-0">
-          H
+        <Link href="/" className="w-10 h-10 shrink-0 hover:opacity-90 transition-opacity">
+          <img src="/images/owl/expressions/owl-wise.svg" alt="" aria-hidden="true" className="w-full h-full object-contain" />
         </Link>
         <div>
           <h1 className="text-xl font-bold text-white">Frequently Asked Questions</h1>
