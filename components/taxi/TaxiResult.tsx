@@ -236,8 +236,10 @@ export function TaxiResult({ result, onReset }: Props) {
               {fareRange.note && (
                 <p className="text-xs text-zinc-500 mt-2 leading-relaxed">{fareRange.note}</p>
               )}
-              <p className="text-[10px] text-zinc-700 mt-2">
-                Rate data sourced from official meter rates · Verified 2025
+              <p className="text-[10px] text-zinc-600 mt-2 leading-relaxed">
+                Estimated range based on official meter rates ±15% for traffic &amp; route variation.
+                Actual fares may vary — always confirm the fare with your driver before travel.
+                Hootling accepts no liability for discrepancies.
               </p>
             </>
 
@@ -562,6 +564,11 @@ export function TaxiResult({ result, onReset }: Props) {
 
         {/* Affiliate links */}
         <AffiliateLinks city={result.city} country={result.country} tint="teal" />
+
+        {/* AI + data disclosure — required on paid result pages */}
+        <p className="text-[10px] text-zinc-600 text-center leading-relaxed px-2">
+          {t('example_ai_disclosure')}
+        </p>
 
         {/* Reset */}
         {onReset && (

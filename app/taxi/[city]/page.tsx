@@ -193,7 +193,10 @@ export default async function TaxiCityPage(
 
         {/* Rate card */}
         <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-4 space-y-3">
-          <h2 className="text-sm font-semibold text-zinc-300 uppercase tracking-wider">Official Meter Rates</h2>
+          <div className="flex items-center justify-between gap-2">
+            <h2 className="text-sm font-semibold text-zinc-300 uppercase tracking-wider">Official Meter Rates</h2>
+            <span className="text-[10px] text-zinc-600">Verified {year}</span>
+          </div>
           <div className="grid grid-cols-3 gap-3">
             <div className="bg-zinc-800/60 rounded-xl p-3 text-center">
               <p className="text-xs text-zinc-500 mb-1">Flag fall</p>
@@ -227,6 +230,11 @@ export default async function TaxiCityPage(
               )
             })}
           </div>
+          <p className="text-[10px] text-zinc-600 leading-relaxed pt-1">
+            Estimated ranges only (±15% for traffic and surcharges). Hootling provides fare information for reference only —
+            actual fares may vary. Always confirm the fare with your driver before travel.
+            Hootling accepts no liability for fare discrepancies.
+          </p>
         </div>
 
         {/* Local tips */}

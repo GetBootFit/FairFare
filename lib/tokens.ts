@@ -152,7 +152,18 @@ export function popBundleToken(): string | null {
 
 // ─── Shared: decode expiry (no signature check — client only) ─────────────────
 
-/** Decode (no signature check) — client-side only, to check expiry. */
+/**
+ * Decodes the JWT payload client-side (no signature check) to determine expiry.
+ *
+ * SECURITY NOTE: This function is intentionally UI-only. A sophisticated user
+ * could craft a JWT with a far-future `exp` claim and store it in localStorage,
+ * making the UI show "token valid" when it isn't. This is acceptable because:
+ *   1. Every paid API call verifies the full signature server-side via jose.
+ *   2. A forged token will be rejected by the server regardless of what the UI shows.
+ *   3. The only consequence of a forged token is a cosmetic UI state — the user
+ *      cannot extract any paid data without a genuine signed token.
+ * Do NOT use this function for server-side authorization decisions.
+ */
 export function isTokenExpired(token: string): boolean {
   try {
     const [, b64] = token.split('.')

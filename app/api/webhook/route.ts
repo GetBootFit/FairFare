@@ -28,6 +28,12 @@ export async function POST(req: NextRequest) {
   try {
     event = stripe.webhooks.constructEvent(body, sig, secret)
   } catch (err) {
+    // Log to Sentry — repeated failures indicate misconfiguration or an active attack.
+    // Filter Sentry by tag webhook=stripe to monitor this.
+    Sentry.captureException(err, {
+      tags: { webhook: 'stripe', failure: 'signature_verification' },
+      extra: { sigHeader: sig?.slice(0, 20) }, // first 20 chars only — no secrets
+    })
     console.error('[webhook] signature verification failed:', err)
     return Response.json({ error: 'Invalid signature' }, { status: 400 })
   }

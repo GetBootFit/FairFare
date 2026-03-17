@@ -154,7 +154,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </LanguageProvider>
         <ServiceWorkerRegistration />
         <Analytics />
-        {/* Google Analytics 4 — add NEXT_PUBLIC_GA4_ID=G-XXXXXXXXXX to .env.local */}
+        {/* Google Analytics 4 — add NEXT_PUBLIC_GA4_ID=G-XXXXXXXXXX to .env.local
+            Cookieless mode: client_storage='none' disables _ga/_ga_* cookie writes.
+            Page-view events are still sent. No cookie consent banner required under GDPR
+            as long as this config remains in place. If you re-enable client_storage,
+            a cookie consent mechanism is required before GA initialises. */}
         {GA4_ID && (
           <>
             <Script
@@ -165,7 +169,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', '${GA4_ID}', { page_path: window.location.pathname });
+              gtag('config', '${GA4_ID}', {
+                page_path: window.location.pathname,
+                client_storage: 'none',
+                anonymize_ip: true
+              });
             `}</Script>
           </>
         )}
