@@ -57,16 +57,26 @@ export function TaxiPreview({ preview }: Props) {
       {/* Locked sections teaser */}
       <div className="bg-zinc-900 border border-zinc-800 rounded-2xl divide-y divide-zinc-800 overflow-hidden">
         {[
-          { label: 'Estimated fare', sublabel: 'With local currency conversion' },
+          // Blurred fare placeholder triggers loss-aversion — user sees there IS a number
+          { label: 'Estimated fare', sublabel: 'With local currency conversion', blurred: '฿280 – ฿420' },
           { label: 'Scam alerts', sublabel: '3 warnings found' },
           { label: 'Phrase for driver', sublabel: 'In local language' },
-        ].map(({ label, sublabel }) => (
+        ].map(({ label, sublabel, blurred }) => (
           <div key={label} className="flex items-center justify-between px-4 py-3.5">
             <div>
               <p className="text-sm text-zinc-400">{label}</p>
               <p className="text-xs text-zinc-600">{sublabel}</p>
             </div>
-            <Lock size={16} className="text-zinc-600" />
+            {blurred ? (
+              <span
+                className="text-base font-bold text-white blur-sm select-none pointer-events-none"
+                aria-hidden="true"
+              >
+                {blurred}
+              </span>
+            ) : (
+              <Lock size={16} className="text-zinc-600" />
+            )}
           </div>
         ))}
       </div>

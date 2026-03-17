@@ -95,7 +95,8 @@ function SuccessInner() {
           className="animate-pulse"
         />
         <Spinner className="h-6 w-6 text-purple-400" />
-        <p className="text-zinc-400 text-sm">Verifying payment…</p>
+        <p className="text-zinc-400 text-sm">Confirming your payment…</p>
+        <p className="text-zinc-600 text-xs">This only takes a moment</p>
       </div>
     )
   }
@@ -149,8 +150,11 @@ function SuccessInner() {
     )
   }
 
+  // Detect a replayed / already-used session so we can show a friendlier message
+  const isAlreadyUsed = /already|used|redeemed|replay/i.test(error)
+
   return (
-    <div className="flex flex-col items-center gap-4 py-20 text-center">
+    <div className="flex flex-col items-center gap-4 py-20 text-center px-4">
       <Image
         src="/images/owl/expressions/owl-worried.svg"
         alt=""
@@ -158,13 +162,19 @@ function SuccessInner() {
         width={72}
         height={72}
       />
-      <p className="text-white font-semibold">Something went wrong</p>
-      <p className="text-zinc-400 text-sm">{error}</p>
+      <p className="text-white font-semibold">
+        {isAlreadyUsed ? 'Link already redeemed' : 'Something went wrong'}
+      </p>
+      <p className="text-zinc-400 text-sm max-w-xs leading-relaxed">
+        {isAlreadyUsed
+          ? 'This payment link has already been used. Your result is ready — go back to the app to see it.'
+          : error}
+      </p>
       <button
-        onClick={() => router.push('/')}
+        onClick={() => router.push(isAlreadyUsed ? (redirect || '/') : '/')}
         className="mt-2 text-purple-400 text-sm underline"
       >
-        Go home
+        {isAlreadyUsed ? 'Go to my result →' : 'Go home'}
       </button>
     </div>
   )

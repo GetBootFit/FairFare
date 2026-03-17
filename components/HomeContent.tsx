@@ -74,6 +74,11 @@ export function HomeContent() {
             {t('home_no_account')}
           </span>
         </div>
+        {/* Star rating trust strip */}
+        <p className="text-xs text-zinc-500 mt-3">
+          <span className="text-yellow-400 tracking-tight">★★★★★</span>
+          <span className="ml-1.5">Trusted by travellers in 120+ cities</span>
+        </p>
       </div>
 
       {/* Feature cards */}
@@ -106,8 +111,29 @@ export function HomeContent() {
         />
       </div>
 
+      {/* Example result teaser — evidences the value proposition for cold visitors */}
+      <div className="mt-4 bg-zinc-900/60 border border-zinc-800 rounded-2xl p-4">
+        <p className="text-[10px] text-zinc-600 uppercase tracking-wider mb-2.5 font-medium">Example result</p>
+        <div className="flex items-start justify-between gap-3">
+          <div className="space-y-0.5">
+            <p className="text-xs text-zinc-400">
+              <span className="text-zinc-200 font-medium">Bangkok Airport</span>
+              <span className="text-zinc-600 mx-1">→</span>
+              Sukhumvit
+            </p>
+            <p className="text-xl font-bold text-white">฿280 <span className="text-zinc-500 font-normal text-base">–</span> ฿420</p>
+          </div>
+          <div className="shrink-0 text-right space-y-1">
+            <span className="inline-block bg-amber-900/40 border border-amber-700/40 text-amber-400 text-[10px] font-semibold px-2 py-0.5 rounded-full">
+              ⚠ Scam alert
+            </span>
+            <p className="text-[10px] text-zinc-600">Meter refusal common</p>
+          </div>
+        </div>
+      </div>
+
       {/* Sample result CTA — low-friction entry point */}
-      <div className="mt-5">
+      <div className="mt-3">
         <Link
           href="/example"
           className="flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-zinc-800 bg-zinc-900/60 text-sm text-zinc-300 hover:text-white hover:border-zinc-600 hover:bg-zinc-800/80 transition-all duration-200"

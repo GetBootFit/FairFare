@@ -44,6 +44,15 @@ export function PlaceInput({ id, placeholder, value, onChange, onSelect, classNa
     })
   }, [mapsLoaded, onSelect])
 
+  // On mobile, the software keyboard shrinks the viewport and can push the
+  // autocomplete dropdown behind it. Scrolling the input into view after the
+  // keyboard has animated in (300 ms delay) keeps the field visible.
+  const handleFocus = () => {
+    setTimeout(() => {
+      inputRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }, 300)
+  }
+
   return (
     <input
       ref={inputRef}
@@ -52,6 +61,7 @@ export function PlaceInput({ id, placeholder, value, onChange, onSelect, classNa
       value={value}
       placeholder={placeholder}
       autoComplete="off"
+      onFocus={handleFocus}
       onChange={(e) => onChange(e.target.value)}
       className={clsx(
         'w-full rounded-xl bg-zinc-800 border border-zinc-700 px-4 py-3.5',

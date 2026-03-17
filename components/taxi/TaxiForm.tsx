@@ -29,6 +29,12 @@ const AIRPORT_RE = /airport|aéroport|aeropuerto|aeroporto|flughafen|luchthaven|
 
 const STORAGE_KEY = 'ff_taxi_form'
 
+const POPULAR_ROUTES = [
+  { pickup: 'Suvarnabhumi Airport, Bangkok', destination: 'Sukhumvit, Bangkok', pickupPlaceId: '', destPlaceId: '', label: '🇹🇭 Bangkok' },
+  { pickup: 'Dubai International Airport', destination: 'Downtown Dubai', pickupPlaceId: '', destPlaceId: '', label: '🇦🇪 Dubai' },
+  { pickup: 'Heathrow Airport, London', destination: 'Victoria Station, London', pickupPlaceId: '', destPlaceId: '', label: '🇬🇧 London' },
+]
+
 interface TokenEventDetail {
   token: string
   tokens?: string[]   // present for query_bundle
@@ -75,8 +81,13 @@ export function TaxiForm() {
     setForm((f) => ({ ...f, [key]: val }))
   }, [])
 
-  const handlePreview = async () => {
-    if (!form.pickup.trim() || !form.destination.trim()) return
+  const handlePreview = async (opts?: { pickup: string; destination: string; pickupPlaceId?: string; destPlaceId?: string }) => {
+    const pickup = opts?.pickup ?? form.pickup
+    const destination = opts?.destination ?? form.destination
+    const pickupPlaceId = opts?.pickupPlaceId ?? form.pickupPlaceId
+    const destPlaceId = opts?.destPlaceId ?? form.destPlaceId
+    if (!pickup.trim() || !destination.trim()) return
+    if (opts) setForm({ pickup, destination, pickupPlaceId: pickupPlaceId ?? '', destPlaceId: destPlaceId ?? '' })
     setStatus('previewing')
     setErrorMsg('')
 
@@ -85,10 +96,10 @@ export function TaxiForm() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          pickup: form.pickup,
-          destination: form.destination,
-          pickupPlaceId: form.pickupPlaceId || undefined,
-          destPlaceId: form.destPlaceId || undefined,
+          pickup,
+          destination,
+          pickupPlaceId: pickupPlaceId || undefined,
+          destPlaceId: destPlaceId || undefined,
         }),
       })
       const data = await res.json()
@@ -96,21 +107,24 @@ export function TaxiForm() {
       const previewData = data as TaxiPreviewResult
       setPreview(previewData)
 
+      // Use resolved values (not form state, which may not have updated yet for popular routes)
+      const currentForm: FormState = { pickup, destination, pickupPlaceId: pickupPlaceId ?? '', destPlaceId: destPlaceId ?? '' }
+
       // Priority: country pass → bundle queue → single token → payment modal
       if (previewData.country && isCountryPassValid(previewData.country)) {
         setStatus('loading')
         const passToken = getCountryPassToken(previewData.country)!
-        await fetchFullResult(passToken, form)
+        await fetchFullResult(passToken, currentForm)
       } else {
         const bundleToken = popBundleToken()
         if (bundleToken) {
           setStatus('loading')
-          await fetchFullResult(bundleToken, form)
+          await fetchFullResult(bundleToken, currentForm)
         } else {
           const token = getStoredToken()
           if (token && !isTokenExpired(token)) {
             setStatus('loading')
-            await fetchFullResult(token, form)
+            await fetchFullResult(token, currentForm)
           } else {
             track('preview_loaded', { feature: 'taxi' })
             setStatus('preview_done')
@@ -145,6 +159,8 @@ export function TaxiForm() {
     }
     setResult(data as TaxiFullResult)
     setStatus('done')
+    // Tactile confirmation for PWA users on Android (no-op on iOS / unsupported browsers)
+    try { navigator.vibrate?.(100) } catch { /* not supported */ }
     track('result_loaded', { feature: 'taxi' })
     addSearch({
       pickup: currentForm.pickup,
@@ -309,6 +325,29 @@ export function TaxiForm() {
             {t('taxi_check_route')}
           </button>
 
+          {/* Popular routes — shown only when no recent searches */}
+          {recent.length === 0 && (
+            <div className="pt-1 space-y-1.5">
+              <p className="flex items-center gap-1.5 text-xs text-zinc-600 uppercase tracking-wider">
+                Popular routes
+              </p>
+              {POPULAR_ROUTES.map((r) => (
+                <button
+                  key={r.label}
+                  type="button"
+                  onClick={() => handlePreview({ pickup: r.pickup, destination: r.destination, pickupPlaceId: r.pickupPlaceId, destPlaceId: r.destPlaceId })}
+                  className="w-full text-left px-3 py-2.5 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 rounded-xl transition-colors"
+                >
+                  <p className="text-xs text-zinc-400 truncate">
+                    <span className="text-zinc-300">{r.label}</span>
+                    <span className="text-zinc-600 mx-1.5">·</span>
+                    {r.pickup.split(',')[0]} → {r.destination.split(',')[0]}
+                  </p>
+                </button>
+              ))}
+            </div>
+          )}
+
           {/* Recent searches */}
           {recent.length > 0 && (
             <div className="pt-1 space-y-1.5">
@@ -366,6 +405,8 @@ export function TaxiForm() {
             >
               {t('taxi_unlock_btn')}
             </button>
+            {/* One-line reminder of what unlocking reveals */}
+            <p className="text-center text-xs text-zinc-600">{t('home_taxi_desc')}</p>
           )}
           <button
             onClick={handleReset}

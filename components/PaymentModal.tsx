@@ -166,13 +166,16 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/70 backdrop-blur-sm px-4 pb-6 sm:pb-0">
+      {/* Outer shell — clips the scroll container to rounded corners */}
       <div
         ref={modalRef}
         role="dialog"
         aria-modal="true"
         aria-labelledby="payment-modal-title"
-        className="w-full max-w-sm bg-zinc-900 border border-zinc-800 rounded-2xl p-5 space-y-4"
+        className="w-full max-w-sm bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden relative"
       >
+        {/* Scrollable inner — max-h keeps content within the viewport on small phones */}
+        <div className="overflow-y-auto p-5 space-y-4 max-h-[85vh]">
 
         {/* Header */}
         <div className="text-center pt-1">
@@ -346,6 +349,10 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
           <p className="text-center text-[11px] text-zinc-600">
             🔒 Stripe-secured · Apple Pay &amp; Google Pay accepted · No account needed
           </p>
+          {/* Satisfaction guarantee */}
+          <p className="text-center text-[11px] text-zinc-600">
+            Not happy? Email us and we&apos;ll sort it out.
+          </p>
           <button
             onClick={onCancel}
             disabled={loading}
@@ -354,6 +361,12 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
             {t('payment_cancel')}
           </button>
         </div>
+        </div>{/* end scrollable inner */}
+        {/* Subtle scroll shadow — signals more content below on short screens */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute bottom-0 inset-x-0 h-8 bg-gradient-to-t from-zinc-900 to-transparent rounded-b-2xl"
+        />
       </div>
     </div>
   )

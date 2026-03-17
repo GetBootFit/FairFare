@@ -15,7 +15,7 @@ export function LanguageSelector() {
     <div className="relative">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex flex-col items-center gap-1 py-3 px-3 text-xs font-medium text-zinc-500 hover:text-zinc-300 transition-colors"
+        className="flex flex-col items-center gap-1 py-3 px-3 text-xs font-medium text-zinc-500 hover:text-zinc-300 transition-colors min-h-[44px] min-w-[44px] justify-center"
         aria-label={`Language: ${current.label}`}
       >
         <Image
@@ -38,7 +38,7 @@ export function LanguageSelector() {
             aria-hidden="true"
           />
           {/* Dropdown — opens upward from bottom nav */}
-          <div className="absolute bottom-full right-0 mb-2 z-50 bg-zinc-900 border border-zinc-700 rounded-xl overflow-hidden shadow-xl min-w-[160px]">
+          <div className="absolute bottom-full right-0 mb-2 z-50 bg-zinc-900 border border-zinc-700 rounded-xl overflow-hidden shadow-xl min-w-[160px] max-h-64 overflow-y-auto">
             {LOCALES.map((l) => (
               <button
                 key={l.code}
@@ -46,7 +46,7 @@ export function LanguageSelector() {
                   setLocale(l.code as Locale)
                   setOpen(false)
                 }}
-                className={`w-full text-left flex items-center gap-3 px-4 py-3 text-sm transition-colors ${
+                className={`w-full text-left flex items-center gap-3 px-4 py-3 text-sm transition-colors min-h-[44px] ${
                   l.code === locale
                     ? 'text-purple-400 bg-purple-900/20 font-medium'
                     : 'text-zinc-200 hover:bg-zinc-800'

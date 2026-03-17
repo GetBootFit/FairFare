@@ -222,16 +222,25 @@ export function TaxiResult({ result, onReset }: Props) {
           </div>
           {fareRange.min > 0 ? (
             <>
-              <p className="text-3xl font-bold text-white">
-                {fareRange.currencySymbol}{fareRange.min}
-                <span className="text-zinc-500 text-2xl"> – </span>
-                {fareRange.currencySymbol}{fareRange.max}
-              </p>
+              {/* flex-wrap lets the range break gracefully at 320 px (iPhone SE) */}
+              <div className="flex flex-wrap items-baseline gap-x-1.5 gap-y-0.5">
+                <span className="text-3xl font-bold text-white">
+                  {fareRange.currencySymbol}{fareRange.min}
+                </span>
+                <span className="text-zinc-500 text-2xl">–</span>
+                <span className="text-3xl font-bold text-white">
+                  {fareRange.currencySymbol}{fareRange.max}
+                </span>
+              </div>
               <FareConversion rates={rates} min={fareRange.min} max={fareRange.max} localCurrency={fareRange.currency} />
               {fareRange.note && (
                 <p className="text-xs text-zinc-500 mt-2 leading-relaxed">{fareRange.note}</p>
               )}
+              <p className="text-[10px] text-zinc-700 mt-2">
+                Rate data sourced from official meter rates · Verified 2025
+              </p>
             </>
+
           ) : (
             <p className="text-sm text-zinc-400">{fareRange.note ?? t('result_fare_unavailable')}</p>
           )}
