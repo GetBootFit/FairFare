@@ -198,7 +198,7 @@ const translations: Record<Locale, Translations> = {
     nav_home: 'Home',
     nav_taxi: 'Taxi',
     nav_tipping: 'Tipping',
-    home_tagline: 'Travel wise. Fare smart. Tip right.',
+    home_tagline: 'Fair Fare. Tip Right. Travel Wise.',
     home_taxi_title: 'Taxi Fare Check',
     home_taxi_desc: 'Fare range, scam alerts & driver phrases',
     home_tipping_title: 'Tipping Guide',
@@ -340,7 +340,7 @@ const translations: Record<Locale, Translations> = {
     footer_faq: 'FAQ',
     footer_terms: 'Terms',
     footer_privacy: 'Privacy',
-    footer_copyright: '© {year} Hootling — Travel wise, pay right',
+    footer_copyright: '© {year} Hootling — Travel wise.',
   },
 
   es: {

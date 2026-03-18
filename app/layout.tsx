@@ -16,7 +16,7 @@ const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'
 export const metadata: Metadata = {
   metadataBase: new URL(APP_URL),
   title: {
-    default: 'Hootling — Travel wise, pay right',
+    default: 'Hootling — Travel wise.',
     template: '%s | Hootling',
   },
   description:
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: APP_URL,
     siteName: 'Hootling',
-    title: 'Hootling — Travel wise, pay right',
+    title: 'Hootling — Travel wise.',
     description: 'Instant taxi fare checks and tipping guides for international travellers.',
     images: [
       {
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@TheHootling',
-    title: 'Hootling — Travel wise, pay right',
+    title: 'Hootling — Travel wise.',
     description: 'Instant taxi fare checks and tipping guides for international travellers.',
     images: ['/images/og/hootling-og-1200x630.png'],
   },

@@ -5,7 +5,7 @@ import { Car, Banknote, MapPin, Brain, CreditCard, ShieldCheck } from 'lucide-re
 import { getUSDPrices } from '@/lib/currency'
 
 export const metadata: Metadata = {
-  title: 'About Hootling | Travel wise, pay right',
+  title: 'About Hootling | Travel wise.',
   description: 'Learn how Hootling helps international travellers get fair taxi prices and tipping guidance — powered by Google Maps and Anthropic Claude.',
 }
 
