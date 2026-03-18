@@ -5,7 +5,7 @@ import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
 import {
   Navigation, RotateCcw,
-  Volume2, VolumeX, Copy, Check, Maximize2, Share2, Moon,
+  Volume2, VolumeX, Copy, Check, Maximize2, Share2, Moon, ImageDown,
   Map, ChevronDown, ChevronUp, ChevronRight, Phone, ExternalLink,
 } from 'lucide-react'
 import Link from 'next/link'
@@ -23,6 +23,7 @@ import { AffiliateLinks } from '@/components/AffiliateLinks'
 import { track } from '@vercel/analytics'
 import { useLanguage } from '@/context/LanguageContext'
 import type { TranslationKey } from '@/lib/i18n'
+import { InstallPrompt } from '@/components/InstallPrompt'
 
 // ── Custom SVG icon helper ────────────────────────────────────────────────────
 // The icon set has two native colour families:
@@ -128,54 +129,62 @@ export function TaxiResult({ result, onReset }: Props) {
     } catch { /* clipboard unavailable */ }
   }, [])
 
+  // ── Build share / OG card URLs ────────────────────────────────────────────
+  const buildShareParams = useCallback((): URLSearchParams => {
+    const fromShort = result.pickup.split(',')[0].trim()
+    const toShort   = result.destination.split(',')[0].trim()
+    const p = new URLSearchParams()
+    if (result.city)    p.set('city',    result.city)
+    if (result.country) p.set('country', result.country)
+    if (fromShort)      p.set('from',    fromShort)
+    if (toShort)        p.set('to',      toShort)
+    if (fareRange.min > 0) {
+      p.set('min',  String(fareRange.min))
+      p.set('max',  String(fareRange.max))
+      p.set('sym',  fareRange.currencySymbol)
+      p.set('curr', fareRange.currency)
+    }
+    p.set('km',  String(distance.km))
+    p.set('dur', duration.text)
+    return p
+  }, [result, fareRange, distance, duration])
+
+  /** URL of the /share landing page — used for native/clipboard sharing */
+  const shareUrl = useCallback((): string => {
+    const base = process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'
+    return `${base}/share?${buildShareParams().toString()}`
+  }, [buildShareParams])
+
+  /** URL of the /api/og/result image — used for the download card link */
+  const ogCardUrl = useCallback((): string => {
+    return `/api/og/result?${buildShareParams().toString()}`
+  }, [buildShareParams])
+
   // ── Share result ──────────────────────────────────────────────────────────
   const handleShare = useCallback(async () => {
-    // Build fare line — include home currency conversion when available
-    let fareLine: string
-    if (fareRange.min > 0) {
-      fareLine = `💰 Fare estimate: ${fareRange.currencySymbol}${fareRange.min}–${fareRange.max}`
-      const isLocalCurrency = fareRange.currency?.toUpperCase() === homeCurrency
-      if (!isLocalCurrency && rates) {
-        const rate = rates[homeCurrency]
-        if (rate) {
-          const lo = Math.round(fareRange.min * rate)
-          const hi = Math.round(fareRange.max * rate)
-          fareLine += ` (≈ ${homeCurrency} ${lo}–${hi})`
-        }
-      }
-    } else {
-      fareLine = '💰 Fare: Verify with driver'
-    }
-
-    const lines = [
-      `Hootling — ${result.city}, ${result.country}`,
-      `${result.pickup} → ${result.destination}`,
-      '',
-      fareLine,
-      `⏱️ ${duration.text}  ·  📏 ${distance.km} km`,
-      '',
-      ...( scamWarnings.length ? [
-        '⚠️ Watch out:',
-        ...scamWarnings.map(w => `• ${w}`),
-        '',
-      ] : []),
-      'Checked with Hootling — hootling.com',
-    ].join('\n')
+    const url = shareUrl()
+    const fromShort = result.pickup.split(',')[0].trim()
+    const toShort   = result.destination.split(',')[0].trim()
+    const fareText  = fareRange.min > 0
+      ? `${fareRange.currencySymbol}${fareRange.min}–${fareRange.max}`
+      : 'fare unavailable'
+    const shareTitle = `Taxi fare: ${fromShort} → ${toShort} — ${result.city}`
+    const shareText  = `I checked the taxi fare from ${fromShort} to ${toShort} in ${result.city} — should be ${fareText}. Check yours:`
 
     if (typeof navigator.share === 'function') {
       try {
-        await navigator.share({ title: 'Hootling fare result', text: lines })
+        await navigator.share({ title: shareTitle, text: shareText, url })
         track('share_clicked', { feature: 'taxi', city: result.city, country: result.country, method: 'native' })
       } catch { /* user cancelled */ }
     } else {
       try {
-        await navigator.clipboard.writeText(lines)
+        await navigator.clipboard.writeText(url)
         setShareCopied(true)
         setTimeout(() => setShareCopied(false), 2500)
         track('share_clicked', { feature: 'taxi', city: result.city, country: result.country, method: 'clipboard' })
       } catch { /* clipboard unavailable */ }
     }
-  }, [result, fareRange, duration, distance, scamWarnings, rates, homeCurrency])
+  }, [result, fareRange, shareUrl])
 
   return (
     <>
@@ -204,18 +213,30 @@ export function TaxiResult({ result, onReset }: Props) {
               <SvgIcon name="money-cash" size={22} />
               <p className="text-xs text-zinc-500 uppercase tracking-wider">{t('result_estimated_fare')}</p>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
               <button
                 onClick={handleShare}
                 className="flex items-center gap-1.5 text-xs text-zinc-500 hover:text-zinc-300 transition-colors"
                 title="Share result"
               >
                 {shareCopied ? (
-                  <><Check size={13} className="text-green-400" /><span className="text-green-400">{t('result_share_copied')}</span></>
+                  <><Check size={13} className="text-green-400" /><span className="text-green-400">Link copied!</span></>
                 ) : (
                   <><Share2 size={13} /><span>{t('result_share')}</span></>
                 )}
               </button>
+              {/* Download share card — opens the OG image directly */}
+              <a
+                href={ogCardUrl()}
+                download={`hootling-${result.city.toLowerCase().replace(/\s+/g, '-')}-fare.png`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 text-xs text-zinc-600 hover:text-zinc-400 transition-colors"
+                title="Download share card"
+                onClick={() => track('card_download_clicked', { city: result.city, country: result.country })}
+              >
+                <ImageDown size={13} />
+              </a>
               <div className="flex items-center gap-1">
                 <SvgIcon name="money-exchange" size={15} className="opacity-60" />
                 <CurrencySelector />
@@ -571,6 +592,9 @@ export function TaxiResult({ result, onReset }: Props) {
         <p className="text-[10px] text-zinc-600 text-center leading-relaxed px-2">
           {t('example_ai_disclosure')}
         </p>
+
+        {/* PWA install — shown post-result (highest-conversion moment) */}
+        <InstallPrompt variant="card" />
 
         {/* Reset */}
         {onReset && (

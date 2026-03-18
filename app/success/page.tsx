@@ -14,6 +14,7 @@ function SuccessInner() {
   const [status, setStatus] = useState<'verifying' | 'email_capture' | 'error'>('verifying')
   const [redirect, setRedirect] = useState('/')
   const [error, setError] = useState('')
+  const [feature, setFeature] = useState('taxi')
   const [email, setEmail] = useState('')
   const [emailStatus, setEmailStatus] = useState<'idle' | 'submitting' | 'done'>('idle')
 
@@ -87,6 +88,8 @@ function SuccessInner() {
           })
         )
 
+        // Capture feature for personalised welcome email subject + content
+        setFeature(data.feature ?? 'taxi')
         setStatus('email_capture')
       })
       .catch((err) => {
@@ -103,7 +106,7 @@ function SuccessInner() {
       await fetch('/api/email/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, feature }),
       })
     } catch { /* ignore — non-critical */ }
     setEmailStatus('done')

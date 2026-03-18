@@ -134,6 +134,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className="bg-black">
       <head>
+        {/* Safari Pinned Tab / mask-icon — must be a single-colour SVG */}
+        <link rel="mask-icon" href="/images/brand/hootling-logo-icon-mono.svg" color="#7c3aed" />
         {/* Preconnect to external domains to reduce DNS + TLS handshake latency */}
         <link rel="preconnect" href="https://maps.googleapis.com" />
         <link rel="preconnect" href="https://maps.gstatic.com" crossOrigin="anonymous" />

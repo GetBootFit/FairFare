@@ -88,7 +88,23 @@
       "Bash(rmdir \"/c/Users/david/Projects/Hootling/public/images/owl/monochrome/SVG\")",
       "Bash(npm ls:*)",
       "Bash(ls -la \"C:\\\\Users\\\\david\\\\Projects\\\\Hootling\\\\app\\\\taxi\\\\scams\"\" 2>&1 || echo \"Directory does not exist \")",
-      "Bash(grep -rn \"from ''@vercel/analytics\" --include=\"*.ts\" --include=\"*.tsx\" .)"
+      "Bash(grep -rn \"from ''@vercel/analytics\" --include=\"*.ts\" --include=\"*.tsx\" .)",
+      "Bash(find C:/Users/david/Projects/Hootling -type f \\\\\\(-name *email* -o -name *og* -o -name *manifest* \\\\\\))",
+      "Bash(find C:UsersdavidProjectsHootling -maxdepth 1 -type f -name *.md)",
+      "Bash(grep -E \"\\\\.\\(md|txt|doc\\)$\")",
+      "Bash(git -C C:UsersdavidProjectsHootling log --oneline --grep=audit)",
+      "Bash(git -C \"C:\\\\Users\\\\david\\\\Projects\\\\Hootling\" log --format=\"%H %s\" --grep=\"audit\")",
+      "Bash(git -C C:UsersdavidProjectsHootling show 7a1647b --stat)",
+      "Bash(git -C \"C:\\\\Users\\\\david\\\\Projects\\\\Hootling\" log --format=\"%B\" -n 1 7a1647b)",
+      "Bash(git -C C:UsersdavidProjectsHootling log --format=%B --all)",
+      "Bash(grep -o \"\"content\"\":[[^]]*audit[^]]*] C:Usersdavid.claudeprojectsC--Users-david-Projects-Hootling16613823-1b9d-4b1f-b8bf-66c4e36bd058.jsonl)",
+      "Bash(find C:Usersdavid.claude -name *.txt -path */tool-results/* -type f)",
+      "Bash(xargs grep:*)",
+      "Bash(grep -r 'Section 1' C:Usersdavid.claudeprojectsC--Users-david-Projects-Hootling --include=*.txt)",
+      "Bash(grep -r 'Hootling Audit' C:Usersdavid.claudeprojectsC--Users-david-Projects-Hootling --include=*.txt)",
+      "Bash(awk 'length > 50000' /c/Users/david/.claude/projects/C--Users-david-Projects-Hootling/16613823-1b9d-4b1f-b8bf-66c4e36bd058.jsonl)",
+      "Bash(awk 'length > 100000' /c/Users/david/.claude/projects/C--Users-david-Projects-Hootling/16613823-1b9d-4b1f-b8bf-66c4e36bd058.jsonl)",
+      "Bash(awk 'length > 200000' /c/Users/david/.claude/projects/C--Users-david-Projects-Hootling/16613823-1b9d-4b1f-b8bf-66c4e36bd058.jsonl)"
     ]
   }
 }

@@ -24,6 +24,7 @@ import { getLangCode, speakText, stopSpeech } from '@/lib/speech'
 import { ShowPhraseModal } from '@/components/ui/ShowPhraseModal'
 import { AffiliateLinks } from '@/components/AffiliateLinks'
 import { PhraseTranslator } from '@/components/ui/PhraseTranslator'
+import { InstallPrompt } from '@/components/InstallPrompt'
 import { useLanguage } from '@/context/LanguageContext'
 import type { TranslationKey } from '@/lib/i18n'
 
@@ -251,6 +252,9 @@ export function TippingResult({ result, onReset }: Props) {
 
         {/* Affiliate links */}
         <AffiliateLinks country={result.country} tint="purple" />
+
+        {/* PWA install — shown post-result (highest-conversion moment) */}
+        <InstallPrompt variant="card" />
 
         {/* Reset */}
         {onReset && (

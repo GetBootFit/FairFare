@@ -11,6 +11,17 @@ interface BeforeInstallPromptEvent extends Event {
   userChoice: Promise<{ outcome: 'accepted' | 'dismissed' }>
 }
 
+/**
+ * Module-level cache of the beforeinstallprompt event.
+ *
+ * The browser fires this event once, early in the page lifecycle, and does NOT
+ * re-fire it on client-side navigation. Storing it here (outside React state)
+ * means any component instance — including those mounted after navigation —
+ * can still access the captured prompt even after the original listener
+ * component was unmounted.
+ */
+let _capturedPrompt: BeforeInstallPromptEvent | null = null
+
 function detectIOSSafari(): boolean {
   const ua = navigator.userAgent
   const isIOS = /iPad|iPhone|iPod/.test(ua) && !(window as any).MSStream
@@ -47,10 +58,19 @@ export function InstallPrompt({ variant = 'card' }: InstallPromptProps) {
       return
     }
 
-    // Chrome / Edge / Android: use the native install prompt
+    // If the prompt was already captured on a previous page (module-level cache),
+    // surface it immediately without waiting for the event to re-fire.
+    if (_capturedPrompt) {
+      setDeferredPrompt(_capturedPrompt)
+      setVisible(true)
+      return
+    }
+
+    // Chrome / Edge / Android: capture the one-shot beforeinstallprompt event
     const handler = (e: Event) => {
       e.preventDefault()
-      setDeferredPrompt(e as BeforeInstallPromptEvent)
+      _capturedPrompt = e as BeforeInstallPromptEvent
+      setDeferredPrompt(_capturedPrompt)
       setVisible(true)
     }
     window.addEventListener('beforeinstallprompt', handler)
@@ -61,12 +81,14 @@ export function InstallPrompt({ variant = 'card' }: InstallPromptProps) {
     if (!deferredPrompt) return
     await deferredPrompt.prompt()
     const { outcome } = await deferredPrompt.userChoice
-    if (outcome === 'accepted') setVisible(false)
+    _capturedPrompt = null   // consumed — browser won't re-fire the event
     setDeferredPrompt(null)
+    if (outcome === 'accepted') setVisible(false)
   }
 
   const handleDismiss = () => {
     localStorage.setItem(LS_KEY, '1')
+    _capturedPrompt = null   // don't re-surface on next navigation
     setVisible(false)
   }
 
