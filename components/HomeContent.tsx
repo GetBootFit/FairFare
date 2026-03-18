@@ -2,9 +2,51 @@
 
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { ChevronRight, Sparkles } from 'lucide-react'
+import { ChevronRight, Sparkles, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 import { InstallPrompt } from '@/components/InstallPrompt'
+
+// Social handles — update URLs when accounts are created
+const SOCIAL_LINKS = [
+  {
+    label: 'Instagram',
+    href: 'https://www.instagram.com/hootlingapp',
+    icon: <Instagram size={15} />,
+  },
+  {
+    label: 'TikTok',
+    href: 'https://www.tiktok.com/@hootlingapp',
+    icon: (
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.78a4.85 4.85 0 0 1-1.01-.09z" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Facebook',
+    href: 'https://www.facebook.com/hootlingapp',
+    icon: <Facebook size={15} />,
+  },
+  {
+    label: 'X (Twitter)',
+    href: 'https://x.com/hootlingapp',
+    icon: (
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.26 5.631 5.905-5.631zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+      </svg>
+    ),
+  },
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/company/hootling',
+    icon: <Linkedin size={15} />,
+  },
+  {
+    label: 'YouTube',
+    href: 'https://www.youtube.com/@hootlingapp',
+    icon: <Youtube size={15} />,
+  },
+]
 
 interface FeatureCardProps {
   href: string
@@ -163,11 +205,33 @@ export function HomeContent() {
       <div className="mt-auto pt-8 pb-2 space-y-3">
         {/* Install prompt as quiet micro copy — sits just above the divider */}
         <InstallPrompt variant="micro" />
-        <div className="border-t border-zinc-900 pt-4 space-y-3">
+        <div className="border-t border-zinc-900 pt-4 space-y-4">
+
+          {/* Social follow row */}
+          <div className="flex flex-col items-center gap-2">
+            <p className="text-[10px] text-zinc-700 uppercase tracking-widest">Follow us</p>
+            <div className="flex items-center gap-4">
+              {SOCIAL_LINKS.map(({ label, href, icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Hootling on ${label}`}
+                  className="text-zinc-700 hover:text-zinc-400 transition-colors"
+                >
+                  {icon}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Nav links */}
           <div className="flex items-center justify-center gap-4 flex-wrap">
             {[
               { href: '/about', label: t('footer_about') },
               { href: '/faq', label: t('footer_faq') },
+              { href: '/business', label: 'Business' },
               { href: '/terms', label: t('footer_terms') },
               { href: '/privacy', label: t('footer_privacy') },
             ].map(({ href, label }) => (
