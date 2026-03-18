@@ -30,6 +30,12 @@ interface TippingEntry {
 
 const allTipping = tippingData as Record<string, TippingEntry>
 
+// ── City sticker helper ───────────────────────────────────────────────────────
+
+/** Converts a city slug to the PascalCase SVG filename, e.g. 'new-york' → 'NewYork' */
+const slugToStickerSvg = (slug: string) =>
+  slug.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join('')
+
 // ── Country → city sticker map ────────────────────────────────────────────────
 
 const COUNTRY_STICKER: Record<string, string> = {
@@ -204,12 +210,13 @@ export default async function TippingCountryPage(
           {citySticker && (
             <div className="flex justify-center mb-4">
               <Image
-                src={`/images/cities/hootling-${citySticker}.png`}
+                src={`/images/cities/${slugToStickerSvg(citySticker)}.svg`}
                 alt={`${countryName} city sticker`}
                 width={160}
                 height={160}
                 className="object-contain drop-shadow-lg"
                 priority
+                unoptimized
               />
             </div>
           )}

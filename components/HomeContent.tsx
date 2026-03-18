@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { ChevronRight, Sparkles } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
@@ -40,6 +40,17 @@ function FeatureCard({ href, icon, title, description, bgColor, hoverBgColor, ca
 
 export function HomeContent() {
   const { t } = useLanguage()
+  const [queryCount, setQueryCount] = useState<string | null>(null)
+
+  useEffect(() => {
+    fetch('/api/stats/queries')
+      .then((r) => r.json())
+      .then((d: { count: number }) =>
+        setQueryCount(d.count.toLocaleString('en-US'))
+      )
+      .catch(() => { /* non-fatal — badge stays hidden */ })
+  }, [])
+
   return (
     <div className="flex flex-col min-h-[calc(100vh-6rem)]">
       {/* Logo / hero */}
@@ -73,6 +84,11 @@ export function HomeContent() {
           <span className="inline-flex items-center gap-1 text-xs text-zinc-600 bg-zinc-900 border border-zinc-800 rounded-full px-2.5 py-1">
             {t('home_no_account')}
           </span>
+          {queryCount && (
+            <span className="inline-flex items-center gap-1 text-xs text-zinc-600 bg-zinc-900 border border-zinc-800 rounded-full px-2.5 py-1">
+              <span className="text-green-400 font-semibold">{queryCount}</span> fare checks run
+            </span>
+          )}
         </div>
         {/* Star rating trust strip */}
         <p className="text-xs text-zinc-500 mt-3">

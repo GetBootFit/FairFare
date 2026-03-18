@@ -67,9 +67,13 @@ export async function generateMetadata(
 // ── City stickers ─────────────────────────────────────────────────────────────
 
 const CITY_STICKERS = new Set([
-  'amsterdam', 'barcelona', 'dubai', 'istanbul', 'london',
+  'amsterdam', 'bangkok', 'barcelona', 'dubai', 'istanbul', 'london',
   'melbourne', 'new-york', 'paris', 'rome', 'singapore', 'sydney', 'tokyo',
 ])
+
+/** Converts a city slug to the PascalCase SVG filename, e.g. 'new-york' → 'NewYork' */
+const slugToStickerSvg = (slug: string) =>
+  slug.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join('')
 
 // ── Sample distances to show ─────────────────────────────────────────────────
 
@@ -166,12 +170,13 @@ export default async function TaxiCityPage(
           {CITY_STICKERS.has(city) && (
             <div className="flex justify-center mb-4">
               <Image
-                src={`/images/cities/hootling-${city}.png`}
+                src={`/images/cities/${slugToStickerSvg(city)}.svg`}
                 alt={`${cityName} city sticker`}
                 width={160}
                 height={160}
                 className="object-contain drop-shadow-lg"
                 priority
+                unoptimized
               />
             </div>
           )}

@@ -144,6 +144,9 @@ export async function POST(req: NextRequest) {
       ...(aiInfo.aiUnavailable ? { aiUnavailable: true } : {}),
     }
 
+    // Increment global query counter for social proof (non-fatal)
+    void kvIncrement('total_queries')
+
     return Response.json(result)
   } catch (err) {
     console.error('[taxi/result]', err)

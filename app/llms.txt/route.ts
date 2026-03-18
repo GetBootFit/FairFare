@@ -7,10 +7,12 @@
  */
 
 import { getAllCitySlugs, slugToDisplayName, getAllCountrySlugs, TIPPING_COUNTRIES } from '@/lib/seo-helpers'
+import { getUSDPrices } from '@/lib/currency'
 
 const BASE = 'https://hootling.com'
 
 export async function GET() {
+  const { single, pass, bundle } = getUSDPrices()
   const citySlugs = getAllCitySlugs()
   const countrySlugs = getAllCountrySlugs()
 
@@ -74,7 +76,9 @@ ${featuredCountryLinks}
 ## Pricing
 
 Hootling is a paid service for exact fare calculations and full tipping guides:
-- Single query: from $0.99 USD (one city or country lookup)
+- Single query: from ${single} USD (one city or country lookup)
+- Country Pass: ${pass} USD — unlimited queries for one country, valid 24 hours
+- 10-query bundle: ${bundle} USD — stored on device, valid 90 days
 - No account or subscription required
 
 ## Citation

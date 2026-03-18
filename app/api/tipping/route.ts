@@ -3,6 +3,7 @@ import { verifyToken } from '@/lib/tokens'
 import { getTippingGuide } from '@/lib/claude'
 import { TIPPING_COUNTRIES } from '@/lib/seo-helpers'
 import { isRateLimited, getClientIp } from '@/lib/rate-limit'
+import { kvIncrement } from '@/lib/kv'
 
 // Normalise country for whitelist comparison
 const norm = (s: string) =>
@@ -51,6 +52,10 @@ export async function POST(req: NextRequest) {
     }
 
     const result = await getTippingGuide(country, locale)
+
+    // Increment global query counter for social proof (non-fatal)
+    void kvIncrement('total_queries')
+
     return Response.json(result)
   } catch (err) {
     console.error('[tipping]', err)
