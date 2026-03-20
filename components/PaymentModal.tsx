@@ -10,7 +10,7 @@ import {
   PRICES,
   formatPrice,
   getStoredCurrency,
-  storeCurrency,
+  storeManualCurrency,
   type CurrencyCode,
 } from '@/lib/currency'
 
@@ -117,7 +117,7 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
 
   const handleCurrencyChange = (c: CurrencyCode) => {
     setCurrencyState(c)
-    storeCurrency(c)
+    storeManualCurrency(c)  // marks ff_currency_manual=true — prevents auto-override on locale change
     setShowCurrencyPicker(false)
   }
 

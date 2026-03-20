@@ -2206,10 +2206,15 @@ export const BLOG_POSTS: BlogPost[] = [
   },
 ]
 
+import { GENERATED_BLOG_POSTS } from './blog-posts-generated'
+
+/** All posts: hand-written + AI-generated. */
+const ALL_POSTS: BlogPost[] = [...BLOG_POSTS, ...GENERATED_BLOG_POSTS]
+
 export function getBlogPost(slug: string): BlogPost | undefined {
-  return BLOG_POSTS.find((p) => p.slug === slug)
+  return ALL_POSTS.find((p) => p.slug === slug)
 }
 
 export function getAllBlogSlugs(): string[] {
-  return BLOG_POSTS.map((p) => p.slug)
+  return ALL_POSTS.map((p) => p.slug)
 }

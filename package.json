@@ -10,7 +10,11 @@
     "seed": "tsx scripts/seed-cache.ts",
     "seed:dry": "tsx scripts/seed-cache.ts --dry-run",
     "seed:tipping": "tsx scripts/seed-cache.ts --tipping-only",
-    "seed:taxi": "tsx scripts/seed-cache.ts --taxi-only"
+    "seed:taxi": "tsx scripts/seed-cache.ts --taxi-only",
+    "warm-translations": "tsx scripts/warm-translations.ts",
+    "warm-translations:dry": "tsx scripts/warm-translations.ts --dry-run",
+    "generate-blog-posts": "tsx scripts/generate-blog-posts.ts",
+    "generate-blog-posts:dry": "tsx scripts/generate-blog-posts.ts --dry-run"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.30.0",

@@ -103,6 +103,48 @@ export function detectCurrency(): CurrencyCode {
 }
 
 const LS_KEY = 'ff_currency'
+const LS_MANUAL_KEY = 'ff_currency_manual'
+
+/**
+ * Maps Hootling app locale codes → payment currency.
+ * Used when the user switches app language so we can auto-update their currency
+ * (unless they've already chosen one manually).
+ */
+const APP_LOCALE_TO_CURRENCY: Partial<Record<string, CurrencyCode>> = {
+  ja: 'JPY',
+  fr: 'EUR',
+  de: 'EUR',
+  it: 'EUR',
+  es: 'EUR',
+  zh: 'HKD',  // Simplified Chinese — HK proxy
+  tw: 'HKD',  // Traditional Chinese — HK proxy
+}
+
+/**
+ * Infer payment currency from an app locale code (e.g. 'ja' → 'JPY').
+ * Returns null when no mapping exists (caller should keep current currency).
+ */
+export function inferPaymentCurrencyFromLocale(locale: string): CurrencyCode | null {
+  return APP_LOCALE_TO_CURRENCY[locale] ?? null
+}
+
+/** Returns true when the user has explicitly chosen a currency (vs auto-detected). */
+export function isManualCurrency(): boolean {
+  if (typeof window === 'undefined') return false
+  return localStorage.getItem(LS_MANUAL_KEY) === 'true'
+}
+
+/**
+ * Store a user-chosen currency and mark it as a manual override.
+ * Dispatches a StorageEvent so other hook instances on the same tab update.
+ */
+export function storeManualCurrency(currency: CurrencyCode): void {
+  if (typeof window !== 'undefined') {
+    localStorage.setItem(LS_KEY, currency)
+    localStorage.setItem(LS_MANUAL_KEY, 'true')
+    window.dispatchEvent(new StorageEvent('storage', { key: LS_KEY, newValue: currency }))
+  }
+}
 
 export function getStoredCurrency(): CurrencyCode {
   if (typeof window === 'undefined') return 'USD'
@@ -114,6 +156,7 @@ export function getStoredCurrency(): CurrencyCode {
 export function storeCurrency(currency: CurrencyCode): void {
   if (typeof window !== 'undefined') {
     localStorage.setItem(LS_KEY, currency)
+    window.dispatchEvent(new StorageEvent('storage', { key: LS_KEY, newValue: currency }))
   }
 }
 

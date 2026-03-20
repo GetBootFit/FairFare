@@ -121,7 +121,20 @@
       "Bash(find /c/Users/david/Projects/Hootling/components -name \"*.tsx\" -exec grep -l \"><\" {})",
       "Bash(/tmp/i18n_audit.txt:*)",
       "Read(//tmp/**)",
-      "Bash(node -e \"const {getTranslations} = require\\(''''./lib/i18n.ts''''\\); console.log\\(''''ok''''\\)\")"
+      "Bash(node -e \"const {getTranslations} = require\\(''''./lib/i18n.ts''''\\); console.log\\(''''ok''''\\)\")",
+      "Bash(grep -r \"formatPrice\\\\|PRICES\\\\|zeroDecimal\" /c/Users/david/Projects/Hootling --include=*.tsx --include=*.ts --exclude-dir=node_modules)",
+      "Bash(grep -r \"formatPrice\\\\|PRICES\" /c/Users/david/Projects/Hootling/components --include=*.tsx)",
+      "Bash(grep -r \"getUSDPrices\\\\|USD\" /c/Users/david/Projects/Hootling --include=*.tsx --include=*.ts --exclude-dir=node_modules)",
+      "Bash(node -e \"const d = require\\(''./data/taxi-rates.json''\\); const keys = Object.keys\\(d\\); console.log\\(''Cities:'', keys.length\\); console.log\\(keys.slice\\(0,20\\).join\\('', ''\\)\\)\")",
+      "Bash(node -e \"const d = require\\(''./data/taxi-rates.json''\\); console.log\\(Object.keys\\(d\\).join\\(''\\\\n''\\)\\)\")",
+      "Bash(node -e \"const {BLOG_POSTS} = require\\(''./lib/blog-posts.ts''\\); console.log\\(BLOG_POSTS.length\\)\")",
+      "Bash(node -e \"const d = require\\(''./data/tipping-seo.json''\\); console.log\\(typeof d, Array.isArray\\(d\\) ? d.length : Object.keys\\(d\\).length\\); console.log\\(JSON.stringify\\(d\\).slice\\(0,400\\)\\)\")",
+      "Bash(powershell -command \"Select-String -Path ''C:\\\\Users\\\\david\\\\Projects\\\\Hootling\\\\lib\\\\blog-posts.ts'' -Pattern ''slug:'' | Measure-Object | Select-Object -ExpandProperty Count\")",
+      "Bash(powershell -command \"Select-String -Path ''C:\\\\Users\\\\david\\\\Projects\\\\Hootling\\\\lib\\\\blog-posts.ts'' -Pattern ''slug:'' | Select-Object -ExpandProperty Line | ForEach-Object { $_Trim\\(\\) }\")",
+      "Bash(node -e \"const d = require\\(''./data/tipping-seo.json''\\); console.log\\(Object.keys\\(d\\).join\\('', ''\\)\\)\")",
+      "Bash(node -e \"const d = require\\(''./data/taxi-rates.json''\\); const cities = [''hong_kong'',''prague'',''vienna'',''athens'',''seoul'',''rio_de_janeiro'',''taipei'',''beijing'',''milan'',''madrid'',''dublin'',''cape_town'',''los_angeles'',''chicago'',''miami'',''san_francisco'',''toronto'',''venice'',''florence'',''munich'',''berlin'',''jakarta'',''chiang_mai'',''cancun'',''delhi'']; cities.forEach\\(c => { const r = d[c]; if\\(r\\) { const fare10 = r.baseRate + r.ratePerKm*10; console.log\\(JSON.stringify\\({key:c,...r,fare5: Math.round\\(r.baseRate+r.ratePerKm*5\\), fare10: Math.round\\(fare10\\), fare15: Math.round\\(r.baseRate+r.ratePerKm*15\\), fare20: Math.round\\(r.baseRate+r.ratePerKm*20\\)}\\)\\) } else console.log\\(''MISSING: ''+c\\) }\\)\")",
+      "Bash(npm run:*)",
+      "Bash(tr -d '\\(,')"
     ]
   }
 }

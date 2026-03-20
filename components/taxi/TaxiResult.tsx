@@ -374,14 +374,16 @@ export function TaxiResult({ result, onReset }: Props) {
               {scamWarnings.map((w, i) => (
                 <li key={i} className="text-sm text-amber-100/80 leading-snug flex gap-2">
                   <span className="text-amber-600 shrink-0 mt-0.5">›</span>
-                  {w}
+                  {result.aiUnavailable
+                    ? t((`ai_fallback_warning_${i + 1}`) as 'ai_fallback_warning_1' | 'ai_fallback_warning_2' | 'ai_fallback_warning_3')
+                    : w}
                 </li>
               ))}
             </ul>
             {result.aiUnavailable && (
               <p className="text-xs text-amber-700/70 pt-1 border-t border-amber-900/30">
-                City-specific alerts temporarily unavailable — these are general warnings.
-                If you need a refund, email{' '}
+                {t('ai_fallback_notice')}
+                {' — '}
                 <a href="mailto:legal@hootling.com" className="underline hover:text-amber-500">
                   legal@hootling.com
                 </a>

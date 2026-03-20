@@ -212,6 +212,11 @@ export type TranslationKey =
   | 'error_taxi_body'
   | 'error_tipping_body'
   | 'error_try_again'
+  // AI fallback strings (shown when Claude API is unavailable)
+  | 'ai_fallback_warning_1'
+  | 'ai_fallback_warning_2'
+  | 'ai_fallback_warning_3'
+  | 'ai_fallback_notice'
 
 type Translations = Record<TranslationKey, string>
 
@@ -381,6 +386,10 @@ const translations: Record<Locale, Translations> = {
     home_data_source: 'Official meter rate data · local taxi authorities · 14 languages',
     home_problem_statement: 'Two things every smart traveller checks first:',
     home_example_source: 'From official Bangkok meter rates',
+    ai_fallback_warning_1: 'Insist on the meter — do not accept flat rates from drivers.',
+    ai_fallback_warning_2: 'Use official taxi ranks or verified ride-hailing apps.',
+    ai_fallback_warning_3: 'Confirm the total price (all passengers, all luggage) before departure.',
+    ai_fallback_notice: 'City-specific alerts temporarily unavailable — these are general warnings.',
   },
 
   es: {
@@ -548,6 +557,10 @@ const translations: Record<Locale, Translations> = {
     home_data_source: 'Tarifas oficiales de taxímetro · autoridades locales · 14 idiomas',
     home_problem_statement: 'Dos cosas que todo viajero inteligente comprueba primero:',
     home_example_source: 'Tarifas oficiales de taxi en Bangkok',
+    ai_fallback_warning_1: 'Insiste en el taxímetro — no aceptes tarifas fijas de los conductores.',
+    ai_fallback_warning_2: 'Usa paradas de taxis oficiales o apps de transporte verificadas.',
+    ai_fallback_warning_3: 'Confirma el precio total (todos los pasajeros y equipaje) antes de salir.',
+    ai_fallback_notice: 'Alertas específicas de ciudad temporalmente no disponibles — estas son advertencias generales.',
   },
 
   fr: {
@@ -715,6 +728,10 @@ const translations: Record<Locale, Translations> = {
     home_data_source: 'Tarifs officiels de taximètre · autorités locales · 14 langues',
     home_problem_statement: 'Deux choses que tout voyageur averti vérifie en premier :',
     home_example_source: 'D\'après les tarifs officiels des taxis de Bangkok',
+    ai_fallback_warning_1: 'Insistez sur le compteur — ne pas accepter les prix fixes des chauffeurs.',
+    ai_fallback_warning_2: 'Utilisez les files de taxis officielles ou des applications vérifiées.',
+    ai_fallback_warning_3: 'Confirmez le prix total (tous les passagers, tous les bagages) avant le départ.',
+    ai_fallback_notice: 'Alertes spécifiques à la ville temporairement indisponibles — ce sont des avertissements généraux.',
   },
 
   de: {
@@ -882,6 +899,10 @@ const translations: Record<Locale, Translations> = {
     home_data_source: 'Offizielle Taxameter-Tarife · lokale Behörden · 14 Sprachen',
     home_problem_statement: 'Zwei Dinge, die jeder clevere Reisende zuerst prüft:',
     home_example_source: 'Aus offiziellen Bangkok-Taxitarifen',
+    ai_fallback_warning_1: 'Bestehen Sie auf dem Taxameter — keine Pauschalpreise akzeptieren.',
+    ai_fallback_warning_2: 'Nutzen Sie offizielle Taxistände oder verifizierte Fahrdienste.',
+    ai_fallback_warning_3: 'Bestätigen Sie den Gesamtpreis (alle Passagiere, alles Gepäck) vor der Abfahrt.',
+    ai_fallback_notice: 'Stadtspezifische Warnungen vorübergehend nicht verfügbar — dies sind allgemeine Hinweise.',
   },
 
   pt: {
@@ -1049,6 +1070,10 @@ const translations: Record<Locale, Translations> = {
     home_data_source: 'Tarifas oficiais de taxímetro · autoridades locais · 14 idiomas',
     home_problem_statement: 'Duas coisas que todo viajante esperto verifica primeiro:',
     home_example_source: 'Com base nas tarifas oficiais de táxi de Bangkok',
+    ai_fallback_warning_1: 'Insista no taxímetro — não aceite tarifas fixas dos motoristas.',
+    ai_fallback_warning_2: 'Use pontos de táxi oficiais ou aplicativos de transporte verificados.',
+    ai_fallback_warning_3: 'Confirme o preço total (todos os passageiros, toda a bagagem) antes de partir.',
+    ai_fallback_notice: 'Alertas específicos da cidade temporariamente indisponíveis — estes são avisos gerais.',
   },
 
   zh: {
@@ -1216,6 +1241,10 @@ const translations: Record<Locale, Translations> = {
     home_data_source: '官方计价器费率数据 · 当地出租车管理部门 · 14种语言',
     home_problem_statement: '每位聪明旅行者首先确认的两件事：',
     home_example_source: '来自曼谷官方出租车计价器数据',
+    ai_fallback_warning_1: '坚持使用计价器 — 不接受司机的固定价格。',
+    ai_fallback_warning_2: '使用官方出租车站或经过验证的打车应用。',
+    ai_fallback_warning_3: '出发前确认总价格（所有乘客、所有行李）。',
+    ai_fallback_notice: '特定城市的提示暂时不可用 — 这些是一般性警告。',
   },
 
   ja: {
@@ -1383,6 +1412,10 @@ const translations: Record<Locale, Translations> = {
     home_data_source: '公式メーター料金データ · 現地タクシー当局 · 14言語',
     home_problem_statement: '賢い旅行者が必ず最初に確認する2つのこと：',
     home_example_source: 'バンコク公式メーター料金より',
+    ai_fallback_warning_1: 'メーターの使用を主張してください — 定額料金は拒否してください。',
+    ai_fallback_warning_2: '公式のタクシー乗り場や認証済みの配車アプリをご利用ください。',
+    ai_fallback_warning_3: '出発前に総額（全乗客・全荷物）を確認してください。',
+    ai_fallback_notice: '都市固有の警告は一時的に利用できません — これらは一般的な警告です。',
   },
 
   ko: {
@@ -1550,6 +1583,10 @@ const translations: Record<Locale, Translations> = {
     home_data_source: '공식 미터 요금 데이터 · 현지 택시 당국 · 14개 언어',
     home_problem_statement: '스마트한 여행자라면 반드시 먼저 확인하는 두 가지:',
     home_example_source: '방콕 공식 미터 요금 기준',
+    ai_fallback_warning_1: '미터기 사용을 요청하세요 — 기사의 고정 요금은 거절하세요.',
+    ai_fallback_warning_2: '공식 택시 승강장이나 검증된 라이드헤일링 앱을 이용하세요.',
+    ai_fallback_warning_3: '출발 전 총 요금(모든 승객, 모든 수하물)을 확인하세요.',
+    ai_fallback_notice: '도시별 경고는 일시적으로 이용할 수 없습니다 — 이것들은 일반적인 경고입니다.',
   },
 
   hi: {
@@ -1717,6 +1754,10 @@ const translations: Record<Locale, Translations> = {
     home_data_source: 'आधिकारिक मीटर दर डेटा · स्थानीय टैक्सी प्राधिकरण · 14 भाषाएं',
     home_problem_statement: 'हर समझदार यात्री जो दो चीजें पहले जांचता है:',
     home_example_source: 'बैंकॉक की आधिकारिक मीटर दरों से',
+    ai_fallback_warning_1: 'मीटर पर जोर दें — ड्राइवर से फिक्स्ड रेट स्वीकार न करें।',
+    ai_fallback_warning_2: 'आधिकारिक टैक्सी स्टैंड या सत्यापित ऐप का उपयोग करें।',
+    ai_fallback_warning_3: 'प्रस्थान से पहले कुल किराया (सभी यात्री, सभी सामान) की पुष्टि करें।',
+    ai_fallback_notice: 'शहर-विशिष्ट अलर्ट अस्थायी रूप से अनुपलब्ध — ये सामान्य चेतावनियाँ हैं।',
   },
 
   it: {
@@ -1884,6 +1925,10 @@ const translations: Record<Locale, Translations> = {
     home_data_source: 'Tariffe ufficiali del tassametro · autorità locali · 14 lingue',
     home_problem_statement: 'Due cose che ogni viaggiatore intelligente controlla per prima:',
     home_example_source: 'Dalle tariffe ufficiali dei taxi di Bangkok',
+    ai_fallback_warning_1: 'Insisti sul tassametro — non accettare tariffe fisse dai conducenti.',
+    ai_fallback_warning_2: 'Utilizza i posteggi taxi ufficiali o app di trasporto verificate.',
+    ai_fallback_warning_3: 'Conferma il prezzo totale (tutti i passeggeri, tutti i bagagli) prima della partenza.',
+    ai_fallback_notice: 'Avvisi specifici della città temporaneamente non disponibili — questi sono avvisi generali.',
   },
 
   id: {
@@ -2051,6 +2096,10 @@ const translations: Record<Locale, Translations> = {
     home_data_source: 'Data tarif argometer resmi · otoritas taksi lokal · 14 bahasa',
     home_problem_statement: 'Dua hal yang selalu dicek lebih dulu oleh pelancong cerdas:',
     home_example_source: 'Dari tarif resmi taksi Bangkok',
+    ai_fallback_warning_1: 'Minta sopir gunakan argometer — jangan terima tarif tetap dari pengemudi.',
+    ai_fallback_warning_2: 'Gunakan pangkalan taksi resmi atau aplikasi transportasi terverifikasi.',
+    ai_fallback_warning_3: 'Konfirmasi total harga (semua penumpang dan bagasi) sebelum berangkat.',
+    ai_fallback_notice: 'Peringatan khusus kota tidak tersedia sementara — ini adalah peringatan umum.',
   },
 
   vi: {
@@ -2218,6 +2267,10 @@ const translations: Record<Locale, Translations> = {
     home_data_source: 'Dữ liệu giá đồng hồ chính thức · cơ quan taxi địa phương · 14 ngôn ngữ',
     home_problem_statement: 'Hai điều mọi du khách thông minh kiểm tra trước tiên:',
     home_example_source: 'Từ giá taxi chính thức của Bangkok',
+    ai_fallback_warning_1: 'Yêu cầu dùng đồng hồ tính tiền — không chấp nhận giá cố định từ tài xế.',
+    ai_fallback_warning_2: 'Sử dụng điểm đón taxi chính thức hoặc ứng dụng vận tải đã xác minh.',
+    ai_fallback_warning_3: 'Xác nhận tổng giá (tất cả hành khách, hành lý) trước khi khởi hành.',
+    ai_fallback_notice: 'Cảnh báo theo thành phố tạm thời không có — đây là cảnh báo chung.',
   },
 
   th: {
@@ -2385,6 +2438,10 @@ const translations: Record<Locale, Translations> = {
     home_data_source: 'ข้อมูลอัตรามิเตอร์ราชการ · หน่วยงานแท็กซี่ท้องถิ่น · 14 ภาษา',
     home_problem_statement: 'สองสิ่งที่นักท่องเที่ยวฉลาดทุกคนตรวจสอบก่อนเสมอ:',
     home_example_source: 'จากอัตราค่าโดยสารมิเตอร์ราชการของกรุงเทพฯ',
+    ai_fallback_warning_1: 'ยืนกรานให้ใช้มิเตอร์ — อย่ายอมรับราคาเหมาจากคนขับ',
+    ai_fallback_warning_2: 'ใช้จุดจอดแท็กซี่อย่างเป็นทางการหรือแอปรถรับจ้างที่ได้รับการตรวจสอบ',
+    ai_fallback_warning_3: 'ยืนยันราคารวมก่อนออกเดินทาง (ทุกคน ทุกกระเป๋า)',
+    ai_fallback_notice: 'การแจ้งเตือนเฉพาะเมืองไม่พร้อมใช้งานชั่วคราว — นี่คือคำเตือนทั่วไป',
   },
 
   tw: {
@@ -2552,6 +2609,10 @@ const translations: Record<Locale, Translations> = {
     home_data_source: '官方計價器費率數據 · 當地計程車管理機關 · 14種語言',
     home_problem_statement: '每位聰明旅行者首先確認的兩件事：',
     home_example_source: '來自曼谷官方計程車計價器數據',
+    ai_fallback_warning_1: '堅持使用計費表 — 不接受司機的固定價格。',
+    ai_fallback_warning_2: '使用官方計程車站或經過驗證的叫車應用程式。',
+    ai_fallback_warning_3: '出發前確認總價格（所有乘客、所有行李）。',
+    ai_fallback_notice: '特定城市的提示暫時不可用 — 這些是一般性警告。',
   },
 }
 

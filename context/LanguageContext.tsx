@@ -8,6 +8,7 @@ import {
   type ReactNode,
 } from 'react'
 import { type Locale, type TranslationKey, getTranslations, interpolate } from '@/lib/i18n'
+import { inferPaymentCurrencyFromLocale, isManualCurrency, storeCurrency } from '@/lib/currency'
 import { track } from '@vercel/analytics'
 
 const LS_KEY = 'ff_lang'
@@ -40,6 +41,13 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     setLocaleState(l)
     localStorage.setItem(LS_KEY, l)
     track('language_changed', { locale: l })
+
+    // Auto-update payment currency when the user switches language,
+    // but only if they haven't already manually chosen a currency.
+    if (!isManualCurrency()) {
+      const inferred = inferPaymentCurrencyFromLocale(l)
+      if (inferred) storeCurrency(inferred)
+    }
   }
 
   const translations = getTranslations(locale)

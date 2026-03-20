@@ -100,6 +100,31 @@ export function getAllCountrySlugs(): string[] {
   return TIPPING_COUNTRIES.map(countryToSlug)
 }
 
+// ── Hreflang helpers ─────────────────────────────────────────────────────────
+
+/**
+ * All 14 supported locales in their BCP 47 representations.
+ * Used for both sitemap alternates and per-page metadata.
+ */
+export const HREFLANG_LOCALES = [
+  'en', 'es', 'fr', 'de', 'pt', 'it', 'id', 'vi', 'th',
+  'zh', 'zh-TW', 'ja', 'ko', 'hi',
+] as const
+
+/**
+ * Build `alternates.languages` metadata for a given page URL.
+ * Since the app uses client-side locale switching (not URL-based routing),
+ * all variants point to the same URL. Includes x-default.
+ */
+export function pageAlternates(url: string): { languages: Record<string, string> } {
+  return {
+    languages: Object.fromEntries([
+      ...HREFLANG_LOCALES.map((l) => [l, url]),
+      ['x-default', url],
+    ]),
+  }
+}
+
 // ── JSON-LD builders ─────────────────────────────────────────────────────────
 
 const BASE_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'

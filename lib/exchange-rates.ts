@@ -7,14 +7,19 @@
 
 import { kvGet, kvSet } from './kv'
 
-// The 6 most common traveller home currencies
+// The most common traveller home currencies (covers all supported app languages)
 export const HOME_CURRENCIES = [
-  { code: 'USD', symbol: '$',   label: 'US Dollar'  },
-  { code: 'EUR', symbol: '€',   label: 'Euro'        },
-  { code: 'GBP', symbol: '£',   label: 'Pound'       },
-  { code: 'AUD', symbol: 'A$',  label: 'Aus Dollar'  },
-  { code: 'CAD', symbol: 'C$',  label: 'Can Dollar'  },
-  { code: 'JPY', symbol: '¥',   label: 'Yen'         },
+  { code: 'USD', symbol: '$',    label: 'US Dollar'     },
+  { code: 'EUR', symbol: '€',    label: 'Euro'          },
+  { code: 'GBP', symbol: '£',    label: 'Pound'         },
+  { code: 'AUD', symbol: 'A$',   label: 'Aus Dollar'    },
+  { code: 'CAD', symbol: 'C$',   label: 'Can Dollar'    },
+  { code: 'JPY', symbol: '¥',    label: 'Yen'           },
+  { code: 'SGD', symbol: 'S$',   label: 'Sing Dollar'   },
+  { code: 'HKD', symbol: 'HK$',  label: 'HK Dollar'     },
+  { code: 'KRW', symbol: '₩',    label: 'Korean Won'    },
+  { code: 'INR', symbol: '₹',    label: 'Indian Rupee'  },
+  { code: 'THB', symbol: '฿',    label: 'Thai Baht'     },
 ] as const
 
 export type HomeCurrency = (typeof HOME_CURRENCIES)[number]['code']
@@ -33,12 +38,6 @@ export async function getExchangeRates(
   fromCurrency: string
 ): Promise<Record<HomeCurrency, number> | null> {
   const from = fromCurrency.toUpperCase()
-
-  // If the source currency is already one of our target currencies, return trivial rates
-  const trivial = HOME_CURRENCIES.find((c) => c.code === from)
-  if (trivial) {
-    return Object.fromEntries(HOME_CURRENCIES.map((c) => [c.code, c.code === from ? 1 : 0])) as Record<HomeCurrency, number>
-  }
 
   // Memory cache hit
   const mem = memCache.get(from)
