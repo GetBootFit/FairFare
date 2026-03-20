@@ -379,7 +379,7 @@ const translations: Record<Locale, Translations> = {
     error_tipping_body: 'The tipping guide encountered an unexpected error.',
     error_try_again: 'Try again',
     home_data_source: 'Official meter rate data · local taxi authorities · 14 languages',
-    home_problem_statement: 'Two questions every international traveller dreads:',
+    home_problem_statement: 'Two things every smart traveller checks first:',
     home_example_source: 'From official Bangkok meter rates',
   },
 
@@ -546,7 +546,7 @@ const translations: Record<Locale, Translations> = {
     error_tipping_body: 'La guía de propinas encontró un error inesperado.',
     error_try_again: 'Intentar de nuevo',
     home_data_source: 'Tarifas oficiales de taxímetro · autoridades locales · 14 idiomas',
-    home_problem_statement: 'Dos preguntas que todo viajero internacional teme:',
+    home_problem_statement: 'Dos cosas que todo viajero inteligente comprueba primero:',
     home_example_source: 'Tarifas oficiales de taxi en Bangkok',
   },
 
@@ -713,7 +713,7 @@ const translations: Record<Locale, Translations> = {
     error_tipping_body: 'Le guide de pourboires a rencontré une erreur inattendue.',
     error_try_again: 'Réessayer',
     home_data_source: 'Tarifs officiels de taximètre · autorités locales · 14 langues',
-    home_problem_statement: 'Deux questions que tout voyageur international redoute :',
+    home_problem_statement: 'Deux choses que tout voyageur averti vérifie en premier :',
     home_example_source: 'D\'après les tarifs officiels des taxis de Bangkok',
   },
 
@@ -880,7 +880,7 @@ const translations: Record<Locale, Translations> = {
     error_tipping_body: 'Der Trinkgeldführer ist auf einen unerwarteten Fehler gestoßen.',
     error_try_again: 'Erneut versuchen',
     home_data_source: 'Offizielle Taxameter-Tarife · lokale Behörden · 14 Sprachen',
-    home_problem_statement: 'Zwei Fragen, die jeden internationalen Reisenden beschäftigen:',
+    home_problem_statement: 'Zwei Dinge, die jeder clevere Reisende zuerst prüft:',
     home_example_source: 'Aus offiziellen Bangkok-Taxitarifen',
   },
 
@@ -1047,7 +1047,7 @@ const translations: Record<Locale, Translations> = {
     error_tipping_body: 'O guia de gorjetas encontrou um erro inesperado.',
     error_try_again: 'Tentar novamente',
     home_data_source: 'Tarifas oficiais de taxímetro · autoridades locais · 14 idiomas',
-    home_problem_statement: 'Duas perguntas que todo viajante internacional teme:',
+    home_problem_statement: 'Duas coisas que todo viajante esperto verifica primeiro:',
     home_example_source: 'Com base nas tarifas oficiais de táxi de Bangkok',
   },
 
@@ -1214,7 +1214,7 @@ const translations: Record<Locale, Translations> = {
     error_tipping_body: '小费指南遇到意外错误。',
     error_try_again: '重试',
     home_data_source: '官方计价器费率数据 · 当地出租车管理部门 · 14种语言',
-    home_problem_statement: '每位国际旅行者都担心的两个问题：',
+    home_problem_statement: '每位聪明旅行者首先确认的两件事：',
     home_example_source: '来自曼谷官方出租车计价器数据',
   },
 
@@ -1381,7 +1381,7 @@ const translations: Record<Locale, Translations> = {
     error_tipping_body: 'チップガイドで予期せぬエラーが発生しました。',
     error_try_again: 'もう一度試す',
     home_data_source: '公式メーター料金データ · 現地タクシー当局 · 14言語',
-    home_problem_statement: '海外旅行者が必ず直面する2つの不安：',
+    home_problem_statement: '賢い旅行者が必ず最初に確認する2つのこと：',
     home_example_source: 'バンコク公式メーター料金より',
   },
 
@@ -1548,7 +1548,7 @@ const translations: Record<Locale, Translations> = {
     error_tipping_body: '팁 가이드에서 예상치 못한 오류가 발생했습니다.',
     error_try_again: '다시 시도',
     home_data_source: '공식 미터 요금 데이터 · 현지 택시 당국 · 14개 언어',
-    home_problem_statement: '해외 여행자라면 누구나 한 번쯤 고민하는 두 가지 질문:',
+    home_problem_statement: '스마트한 여행자라면 반드시 먼저 확인하는 두 가지:',
     home_example_source: '방콕 공식 미터 요금 기준',
   },
 
@@ -1715,7 +1715,7 @@ const translations: Record<Locale, Translations> = {
     error_tipping_body: 'टिपिंग गाइड में एक अनपेक्षित त्रुटि आई।',
     error_try_again: 'फिर कोशिश करें',
     home_data_source: 'आधिकारिक मीटर दर डेटा · स्थानीय टैक्सी प्राधिकरण · 14 भाषाएं',
-    home_problem_statement: 'दो सवाल जो हर अंतर्राष्ट्रीय यात्री को परेशान करते हैं:',
+    home_problem_statement: 'हर समझदार यात्री जो दो चीजें पहले जांचता है:',
     home_example_source: 'बैंकॉक की आधिकारिक मीटर दरों से',
   },
 
@@ -1882,7 +1882,7 @@ const translations: Record<Locale, Translations> = {
     error_tipping_body: 'La guida alle mance ha riscontrato un errore inaspettato.',
     error_try_again: 'Riprova',
     home_data_source: 'Tariffe ufficiali del tassametro · autorità locali · 14 lingue',
-    home_problem_statement: 'Due domande che ogni viaggiatore internazionale teme:',
+    home_problem_statement: 'Due cose che ogni viaggiatore intelligente controlla per prima:',
     home_example_source: 'Dalle tariffe ufficiali dei taxi di Bangkok',
   },
 
@@ -2049,7 +2049,7 @@ const translations: Record<Locale, Translations> = {
     error_tipping_body: 'Panduan tip mengalami kesalahan tak terduga.',
     error_try_again: 'Coba lagi',
     home_data_source: 'Data tarif argometer resmi · otoritas taksi lokal · 14 bahasa',
-    home_problem_statement: 'Dua pertanyaan yang selalu ada di benak setiap pelancong:',
+    home_problem_statement: 'Dua hal yang selalu dicek lebih dulu oleh pelancong cerdas:',
     home_example_source: 'Dari tarif resmi taksi Bangkok',
   },
 
@@ -2216,7 +2216,7 @@ const translations: Record<Locale, Translations> = {
     error_tipping_body: 'Hướng dẫn tiền tip đã gặp lỗi không mong đợi.',
     error_try_again: 'Thử lại',
     home_data_source: 'Dữ liệu giá đồng hồ chính thức · cơ quan taxi địa phương · 14 ngôn ngữ',
-    home_problem_statement: 'Hai câu hỏi mà bất kỳ du khách quốc tế nào cũng lo ngại:',
+    home_problem_statement: 'Hai điều mọi du khách thông minh kiểm tra trước tiên:',
     home_example_source: 'Từ giá taxi chính thức của Bangkok',
   },
 
@@ -2383,7 +2383,7 @@ const translations: Record<Locale, Translations> = {
     error_tipping_body: 'คู่มือทิปพบข้อผิดพลาดที่ไม่คาดคิด',
     error_try_again: 'ลองอีกครั้ง',
     home_data_source: 'ข้อมูลอัตรามิเตอร์ราชการ · หน่วยงานแท็กซี่ท้องถิ่น · 14 ภาษา',
-    home_problem_statement: 'สองคำถามที่นักท่องเที่ยวต่างชาติทุกคนวิตกกังวล:',
+    home_problem_statement: 'สองสิ่งที่นักท่องเที่ยวฉลาดทุกคนตรวจสอบก่อนเสมอ:',
     home_example_source: 'จากอัตราค่าโดยสารมิเตอร์ราชการของกรุงเทพฯ',
   },
 
@@ -2550,7 +2550,7 @@ const translations: Record<Locale, Translations> = {
     error_tipping_body: '小費指南遇到意外錯誤。',
     error_try_again: '重試',
     home_data_source: '官方計價器費率數據 · 當地計程車管理機關 · 14種語言',
-    home_problem_statement: '每位國際旅行者都擔心的兩個問題：',
+    home_problem_statement: '每位聰明旅行者首先確認的兩件事：',
     home_example_source: '來自曼谷官方計程車計價器數據',
   },
 }
