@@ -147,10 +147,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://maps.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://va.vercel-scripts.com" crossOrigin="anonymous" />
         {GA4_ID && <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />}
-        {/* Travelpayouts — site ownership verification */}
-        <Script
-          id="travelpayouts-verify"
-          strategy="afterInteractive"
+        {/* Travelpayouts — site ownership verification (plain script tag keeps it in <head>) */}
+        {/* eslint-disable-next-line @next/next/no-before-interactive-script-component */}
+        <script
           data-noptimize="1"
           data-cfasync="false"
           dangerouslySetInnerHTML={{
