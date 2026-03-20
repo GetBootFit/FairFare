@@ -11,7 +11,7 @@ import { type Locale, type TranslationKey, getTranslations, interpolate } from '
 import { track } from '@vercel/analytics'
 
 const LS_KEY = 'ff_lang'
-const VALID_LOCALES: Locale[] = ['en', 'es', 'fr', 'de', 'pt', 'zh', 'ja', 'ko', 'hi']
+const VALID_LOCALES: Locale[] = ['en', 'es', 'fr', 'de', 'it', 'pt', 'id', 'vi', 'th', 'zh', 'tw', 'ja', 'ko', 'hi']
 
 interface LanguageContextValue {
   locale: Locale

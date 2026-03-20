@@ -116,7 +116,12 @@
       "Bash(grep -r AffiliateLinks /c/Users/david/Projects/Hootling --include=*.tsx --include=*.ts --include=*.jsx --include=*.js)",
       "Bash(grep -r affiliate /c/Users/david/Projects/Hootling/app --include=*.tsx --include=*.ts)",
       "Bash(pip install:*)",
-      "Bash(python scripts/generate-publisher-profile.py)"
+      "Bash(python scripts/generate-publisher-profile.py)",
+      "Bash(cat:*)",
+      "Bash(find /c/Users/david/Projects/Hootling/components -name \"*.tsx\" -exec grep -l \"><\" {})",
+      "Bash(/tmp/i18n_audit.txt:*)",
+      "Read(//tmp/**)",
+      "Bash(node -e \"const {getTranslations} = require\\(''''./lib/i18n.ts''''\\); console.log\\(''''ok''''\\)\")"
     ]
   }
 }

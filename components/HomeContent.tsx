@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Link from 'next/link'
 import { ChevronRight, Sparkles, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
@@ -82,16 +82,6 @@ function FeatureCard({ href, icon, title, description, bgColor, hoverBgColor, ca
 
 export function HomeContent() {
   const { t } = useLanguage()
-  const [queryCount, setQueryCount] = useState<string | null>(null)
-
-  useEffect(() => {
-    fetch('/api/stats/queries')
-      .then((r) => r.json())
-      .then((d: { count: number }) =>
-        setQueryCount(d.count.toLocaleString('en-US'))
-      )
-      .catch(() => { /* non-fatal — badge stays hidden */ })
-  }, [])
 
   return (
     <div className="flex flex-col min-h-[calc(100vh-6rem)]">
@@ -126,18 +116,13 @@ export function HomeContent() {
           <span className="inline-flex items-center gap-1 text-xs text-zinc-600 bg-zinc-900 border border-zinc-800 rounded-full px-2.5 py-1">
             {t('home_no_account')}
           </span>
-          {queryCount && (
-            <span className="inline-flex items-center gap-1 text-xs text-zinc-600 bg-zinc-900 border border-zinc-800 rounded-full px-2.5 py-1">
-              <span className="text-green-400 font-semibold">{queryCount}</span> fare checks run
-            </span>
-          )}
         </div>
-        {/* Star rating trust strip */}
-        <p className="text-xs text-zinc-500 mt-3">
-          <span className="text-yellow-400 tracking-tight">★★★★★</span>
-          <span className="ml-1.5">Trusted by travellers in 120+ cities</span>
-        </p>
+        {/* Data provenance trust strip */}
+        <p className="text-xs text-zinc-600 mt-3">{t('home_data_source')}</p>
       </div>
+
+      {/* Problem statement — frames the two cards before they appear */}
+      <p className="text-[11px] text-zinc-600 mt-5 mb-2">{t('home_problem_statement')}</p>
 
       {/* Feature cards */}
       <div className="space-y-3">
@@ -171,7 +156,7 @@ export function HomeContent() {
 
       {/* Example result teaser — evidences the value proposition for cold visitors */}
       <div className="mt-4 bg-zinc-900/60 border border-zinc-800 rounded-2xl p-4">
-        <p className="text-[10px] text-zinc-600 uppercase tracking-wider mb-2.5 font-medium">Example result</p>
+        <p className="text-[10px] text-zinc-600 uppercase tracking-wider mb-2.5 font-medium">{t('home_example_result')}</p>
         <div className="flex items-start justify-between gap-3">
           <div className="space-y-0.5">
             <p className="text-xs text-zinc-400">
@@ -183,11 +168,12 @@ export function HomeContent() {
           </div>
           <div className="shrink-0 text-right space-y-1">
             <span className="inline-block bg-amber-900/40 border border-amber-700/40 text-amber-400 text-[10px] font-semibold px-2 py-0.5 rounded-full">
-              ⚠ Scam alert
+              {t('home_scam_alert')}
             </span>
-            <p className="text-[10px] text-zinc-600">Meter refusal common</p>
+            <p className="text-[10px] text-zinc-600">{t('home_meter_refusal')}</p>
           </div>
         </div>
+        <p className="text-[10px] text-zinc-700 mt-2.5 pt-2.5 border-t border-zinc-800">{t('home_example_source')}</p>
       </div>
 
       {/* Sample result CTA — low-friction entry point */}
@@ -209,7 +195,7 @@ export function HomeContent() {
 
           {/* Social follow row */}
           <div className="flex flex-col items-center gap-2">
-            <p className="text-[10px] text-zinc-700 uppercase tracking-widest">Follow us</p>
+            <p className="text-[10px] text-zinc-700 uppercase tracking-widest">{t('home_follow_us')}</p>
             <div className="flex items-center gap-4">
               {SOCIAL_LINKS.map(({ label, href, icon }) => (
                 <a
@@ -231,7 +217,7 @@ export function HomeContent() {
             {[
               { href: '/about', label: t('footer_about') },
               { href: '/faq', label: t('footer_faq') },
-              { href: '/business', label: 'Business' },
+              { href: '/business', label: t('nav_business') },
               { href: '/terms', label: t('footer_terms') },
               { href: '/privacy', label: t('footer_privacy') },
             ].map(({ href, label }) => (
