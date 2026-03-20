@@ -320,7 +320,7 @@ export function TaxiResult({ result, onReset }: Props) {
                     <div className="flex-1">
                       <span className="text-sm text-white">{t(transitLabelKey[opt.mode])}</span>
                       {opt.lines.length > 0 && (
-                        <span className="text-xs text-zinc-500 ml-1.5">
+                        <span className="text-xs text-zinc-500 ml-1.5 rtl:ml-0 rtl:mr-1.5">
                           {opt.lines.slice(0, 2).join(', ')}
                         </span>
                       )}
@@ -372,8 +372,8 @@ export function TaxiResult({ result, onReset }: Props) {
             </div>
             <ul className="space-y-2">
               {scamWarnings.map((w, i) => (
-                <li key={i} className="text-sm text-amber-100/80 leading-snug flex gap-2">
-                  <span className="text-amber-600 shrink-0 mt-0.5">›</span>
+                <li key={i} className="text-sm text-amber-100/80 leading-snug flex gap-2 rtl:flex-row-reverse">
+                  <span className="text-amber-600 shrink-0 mt-0.5 rtl:scale-x-[-1]">›</span>
                   {result.aiUnavailable
                     ? t((`ai_fallback_warning_${i + 1}`) as 'ai_fallback_warning_1' | 'ai_fallback_warning_2' | 'ai_fallback_warning_3')
                     : w}
@@ -404,7 +404,7 @@ export function TaxiResult({ result, onReset }: Props) {
               {t('result_how_much_tip').replace('{country}', result.country)}
             </p>
           </div>
-          <ChevronRight size={14} className="text-zinc-600 group-hover:text-teal-400 transition-colors shrink-0" />
+          <ChevronRight size={14} className="text-zinc-600 group-hover:text-teal-400 transition-colors shrink-0 rtl:rotate-180" />
         </Link>
 
         {/* Driver phrases */}
@@ -496,7 +496,7 @@ export function TaxiResult({ result, onReset }: Props) {
           <div className="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden">
             <button
               onClick={() => setShowEmergency(e => !e)}
-              className="w-full flex items-center justify-between px-4 py-3 text-left"
+              className="w-full flex items-center justify-between px-4 py-3 text-left rtl:text-right"
             >
               <div className="flex items-center gap-2.5">
                 <Phone size={13} className="text-zinc-600" />
@@ -522,7 +522,7 @@ export function TaxiResult({ result, onReset }: Props) {
           <div className="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden">
             <button
               onClick={() => setShowDriving(d => !d)}
-              className="w-full flex items-center justify-between px-4 py-3 text-left"
+              className="w-full flex items-center justify-between px-4 py-3 text-left rtl:text-right"
             >
               <div className="flex items-center gap-2.5">
                 <SvgIcon name="transport-speed-limit" size={14} />
@@ -675,7 +675,7 @@ function SpeedRow({ label, value, unit, note }: {
   return (
     <div className="flex items-center justify-between py-1.5 border-b border-zinc-800/60 last:border-0">
       <span className="text-xs text-zinc-500">{label}</span>
-      <div className="flex items-center gap-2 text-right">
+      <div className="flex items-center gap-2 text-right rtl:text-left">
         <span className="text-sm font-semibold text-white">{localStr}</span>
         <span className="text-xs text-zinc-600">· {otherStr}</span>
         {note && <span className="text-xs text-zinc-700 italic">({note})</span>}

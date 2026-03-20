@@ -12,7 +12,7 @@ import { inferPaymentCurrencyFromLocale, isManualCurrency, storeCurrency } from 
 import { track } from '@vercel/analytics'
 
 const LS_KEY = 'ff_lang'
-const VALID_LOCALES: Locale[] = ['en', 'es', 'fr', 'de', 'it', 'pt', 'id', 'vi', 'th', 'zh', 'tw', 'ja', 'ko', 'hi']
+const VALID_LOCALES: Locale[] = ['en', 'ar', 'es', 'fr', 'de', 'it', 'pt', 'id', 'vi', 'th', 'zh', 'tw', 'ja', 'ko', 'hi']
 
 interface LanguageContextValue {
   locale: Locale

@@ -300,7 +300,7 @@ export function TaxiForm() {
                     className="text-teal-400 hover:text-teal-300 transition-colors"
                     target="_blank"
                   >
-                    {pickupAirport.name} →
+                    {pickupAirport.name}{' '}<span className="inline-block rtl:rotate-180">→</span>
                   </Link>
                 </p>
               </div>
@@ -334,7 +334,7 @@ export function TaxiForm() {
                     className="text-teal-400 hover:text-teal-300 transition-colors"
                     target="_blank"
                   >
-                    {destAirport.name} →
+                    {destAirport.name}{' '}<span className="inline-block rtl:rotate-180">→</span>
                   </Link>
                 </p>
               </div>
@@ -364,12 +364,12 @@ export function TaxiForm() {
                   key={r.label}
                   type="button"
                   onClick={() => handlePreview({ pickup: r.pickup, destination: r.destination, pickupPlaceId: r.pickupPlaceId, destPlaceId: r.destPlaceId })}
-                  className="w-full text-left px-3 py-2.5 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 rounded-xl transition-colors"
+                  className="w-full text-left rtl:text-right px-3 py-2.5 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 rounded-xl transition-colors"
                 >
                   <p className="text-xs text-zinc-400 truncate">
                     <span className="text-zinc-300">{r.label}</span>
                     <span className="text-zinc-600 mx-1.5">·</span>
-                    {r.pickup.split(',')[0]} → {r.destination.split(',')[0]}
+                    {r.pickup.split(',')[0]}{' '}<span className="inline-block rtl:rotate-180">→</span>{' '}{r.destination.split(',')[0]}
                   </p>
                 </button>
               ))}
@@ -395,11 +395,11 @@ export function TaxiForm() {
                       destPlaceId: r.destPlaceId,
                     })
                   }}
-                  className="w-full text-left px-3 py-2.5 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 rounded-xl transition-colors"
+                  className="w-full text-left rtl:text-right px-3 py-2.5 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 rounded-xl transition-colors"
                 >
                   <p className="text-xs text-zinc-400 truncate">
                     <span className="text-zinc-300">{r.pickup}</span>
-                    <span className="text-zinc-600 mx-1.5">→</span>
+                    <span className="text-zinc-600 mx-1.5 inline-block rtl:rotate-180">→</span>
                     {r.destination}
                   </p>
                 </button>

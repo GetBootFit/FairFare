@@ -207,14 +207,14 @@ export function TippingForm() {
               {errorMsg}
             </p>
           )}
-          <div className="grid grid-cols-2 gap-2 max-h-80 overflow-y-auto pr-1">
+          <div className="grid grid-cols-2 gap-2 max-h-80 overflow-y-auto pr-1 rtl:pr-0 rtl:pl-1">
             {filtered.map((c) => {
               const iso2 = COUNTRY_FLAGS[c]
               return (
                 <button
                   key={c}
                   onClick={() => handleSubmit(c)}
-                  className="flex items-center gap-2.5 text-left px-3.5 py-3 rounded-xl bg-zinc-900 border border-zinc-800 text-sm text-zinc-200 hover:bg-zinc-800 hover:border-zinc-700 transition-colors min-w-0"
+                  className="flex items-center gap-2.5 text-left rtl:text-right px-3.5 py-3 rounded-xl bg-zinc-900 border border-zinc-800 text-sm text-zinc-200 hover:bg-zinc-800 hover:border-zinc-700 transition-colors min-w-0"
                 >
                   {iso2 && (
                     <Image

@@ -18,6 +18,7 @@ const KV_TTL = 365 * 24 * 60 * 60
 const CONTENT_VERSION = 'v20260320'
 
 const LOCALE_LANGUAGE: Record<string, string> = {
+  ar: 'Arabic',
   es: 'Spanish', fr: 'French', de: 'German', pt: 'Portuguese (Brazilian)',
   it: 'Italian', id: 'Indonesian', vi: 'Vietnamese', th: 'Thai',
   zh: 'Simplified Chinese', tw: 'Traditional Chinese', ja: 'Japanese',

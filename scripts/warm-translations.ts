@@ -2,7 +2,7 @@
  * warm-translations.ts
  *
  * Pre-populates the KV cache with translations for all 3 content pages
- * across all 13 non-English locales (39 combinations total).
+ * across all 14 non-English locales (42 combinations total).
  *
  * Usage:
  *   npm run warm-translations               # hits production (NEXT_PUBLIC_BASE_URL or auto-detect)
@@ -12,8 +12,8 @@
  * Prerequisites:
  *   - Server must be running (dev or production)
  *   - KV must be configured for the results to persist
- *   - About $0.60 USD in Claude API credits (39 × ~$0.015 per translation)
- *     — cost is a one-time hit; translations cache for 90 days
+ *   - About $0.63 USD in Claude API credits (42 × ~$0.015 per translation)
+ *     — cost is a one-time hit; translations cache for 365 days
  */
 
 import * as dotenv from 'dotenv'
@@ -22,9 +22,10 @@ dotenv.config({ path: path.resolve(process.cwd(), '.env.local') })
 dotenv.config({ path: path.resolve(process.cwd(), '.env') })
 
 const SLUGS = ['about', 'faq', 'business'] as const
-const LOCALES = ['es', 'fr', 'de', 'pt', 'it', 'id', 'vi', 'th', 'zh', 'tw', 'ja', 'ko', 'hi'] as const
+const LOCALES = ['ar', 'es', 'fr', 'de', 'pt', 'it', 'id', 'vi', 'th', 'zh', 'tw', 'ja', 'ko', 'hi'] as const
 
 const LOCALE_NAMES: Record<string, string> = {
+  ar: 'Arabic',
   es: 'Spanish', fr: 'French', de: 'German', pt: 'Portuguese (BR)',
   it: 'Italian', id: 'Indonesian', vi: 'Vietnamese', th: 'Thai',
   zh: 'Simplified Chinese', tw: 'Traditional Chinese', ja: 'Japanese',

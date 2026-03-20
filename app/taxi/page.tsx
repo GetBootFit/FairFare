@@ -46,7 +46,7 @@ export default function TaxiPage() {
       >
         <AlertTriangle size={14} className="text-amber-400 shrink-0" />
         <span>Taxi Scam Warning Signs — country-by-country guide</span>
-        <span className="ml-auto text-zinc-600 group-hover:text-zinc-400 transition-colors">→</span>
+        <span className="ml-auto rtl:ml-0 rtl:mr-auto text-zinc-600 group-hover:text-zinc-400 transition-colors inline-block rtl:rotate-180">→</span>
       </Link>
     </div>
   )

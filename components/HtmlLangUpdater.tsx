@@ -15,9 +15,9 @@ export function HtmlLangUpdater() {
     const langMap: Record<string, string> = { pt: 'pt-BR', tw: 'zh-TW' }
     document.documentElement.lang = langMap[locale] ?? locale
 
-    // RTL infrastructure — set dir attribute for right-to-left locales
-    // Currently no RTL locales are active; 'ar' will be added here when Arabic is implemented
-    const rtlLocales = new Set<string>([/* 'ar' */])
+    // RTL locales — sets dir="rtl" on <html> so Tailwind rtl: variants and
+    // native browser text-align/flex-direction mirroring work automatically.
+    const rtlLocales = new Set<string>(['ar'])
     document.documentElement.dir = rtlLocales.has(locale) ? 'rtl' : 'ltr'
   }, [locale])
   return null

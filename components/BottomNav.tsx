@@ -49,7 +49,7 @@ export function BottomNav() {
               <span className="relative">
                 <Icon size={22} strokeWidth={active ? 2.2 : 1.8} />
                 {bundleCount > 0 && (href === '/taxi' || href === '/tipping') && (
-                  <span className="absolute -top-1 -right-1.5 min-w-[14px] h-[14px] rounded-full bg-purple-500 text-white text-[9px] font-bold flex items-center justify-center px-0.5">
+                  <span className="absolute -top-1 -right-1.5 rtl:-left-1.5 rtl:right-auto min-w-[14px] h-[14px] rounded-full bg-purple-500 text-white text-[9px] font-bold flex items-center justify-center px-0.5">
                     {bundleCount}
                   </span>
                 )}
@@ -60,7 +60,7 @@ export function BottomNav() {
           )
         })}
         {/* Language selector — separated by a thin border */}
-        <div className="border-l border-zinc-800 flex items-center">
+        <div className="border-l rtl:border-l-0 rtl:border-r border-zinc-800 flex items-center">
           <LanguageSelector />
         </div>
       </div>

@@ -30,7 +30,8 @@ const LOCALE_TO_HOME: Record<string, HomeCurrency> = {
   SG: 'SGD', HK: 'HKD', KR: 'KRW', IN: 'INR', TH: 'THB',
   DE: 'EUR', FR: 'EUR', IT: 'EUR', ES: 'EUR', NL: 'EUR',
   BE: 'EUR', AT: 'EUR', PT: 'EUR', GR: 'EUR', IE: 'EUR', FI: 'EUR',
-  // App locale codes (14 Hootling languages)
+  // App locale codes (15 Hootling languages)
+  ar: 'USD',   // Arabic spans many countries; USD is the safest universal default
   ja: 'JPY',
   ko: 'KRW',
   th: 'THB',

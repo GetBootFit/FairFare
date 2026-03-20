@@ -107,7 +107,7 @@ export function getAllCountrySlugs(): string[] {
  * Used for both sitemap alternates and per-page metadata.
  */
 export const HREFLANG_LOCALES = [
-  'en', 'es', 'fr', 'de', 'pt', 'it', 'id', 'vi', 'th',
+  'en', 'ar', 'es', 'fr', 'de', 'pt', 'it', 'id', 'vi', 'th',
   'zh', 'zh-TW', 'ja', 'ko', 'hi',
 ] as const
 

@@ -75,7 +75,7 @@ function FeatureCard({ href, icon, title, description, bgColor, hoverBgColor, ca
         <p className="text-base font-semibold text-white">{title}</p>
         <p className="text-xs text-zinc-400 group-hover:text-zinc-300 leading-relaxed mt-0.5 transition-colors duration-200">{description}</p>
       </div>
-      <ChevronRight size={18} className="text-zinc-400 group-hover:text-white shrink-0 transition-colors duration-200" />
+      <ChevronRight size={18} className="text-zinc-400 group-hover:text-white shrink-0 transition-colors duration-200 rtl:rotate-180" />
     </Link>
   )
 }
@@ -161,12 +161,12 @@ export function HomeContent() {
           <div className="space-y-0.5">
             <p className="text-xs text-zinc-400">
               <span className="text-zinc-200 font-medium">Bangkok Airport</span>
-              <span className="text-zinc-600 mx-1">→</span>
+              <span className="text-zinc-600 mx-1 inline-block rtl:rotate-180">→</span>
               Sukhumvit
             </p>
             <p className="text-xl font-bold text-white">฿280 <span className="text-zinc-500 font-normal text-base">–</span> ฿420</p>
           </div>
-          <div className="shrink-0 text-right space-y-1">
+          <div className="shrink-0 text-right rtl:text-left space-y-1">
             <span className="inline-block bg-amber-900/40 border border-amber-700/40 text-amber-400 text-[10px] font-semibold px-2 py-0.5 rounded-full">
               {t('home_scam_alert')}
             </span>

@@ -134,7 +134,10 @@
       "Bash(node -e \"const d = require\\(''./data/tipping-seo.json''\\); console.log\\(Object.keys\\(d\\).join\\('', ''\\)\\)\")",
       "Bash(node -e \"const d = require\\(''./data/taxi-rates.json''\\); const cities = [''hong_kong'',''prague'',''vienna'',''athens'',''seoul'',''rio_de_janeiro'',''taipei'',''beijing'',''milan'',''madrid'',''dublin'',''cape_town'',''los_angeles'',''chicago'',''miami'',''san_francisco'',''toronto'',''venice'',''florence'',''munich'',''berlin'',''jakarta'',''chiang_mai'',''cancun'',''delhi'']; cities.forEach\\(c => { const r = d[c]; if\\(r\\) { const fare10 = r.baseRate + r.ratePerKm*10; console.log\\(JSON.stringify\\({key:c,...r,fare5: Math.round\\(r.baseRate+r.ratePerKm*5\\), fare10: Math.round\\(fare10\\), fare15: Math.round\\(r.baseRate+r.ratePerKm*15\\), fare20: Math.round\\(r.baseRate+r.ratePerKm*20\\)}\\)\\) } else console.log\\(''MISSING: ''+c\\) }\\)\")",
       "Bash(npm run:*)",
-      "Bash(tr -d '\\(,')"
+      "Bash(tr -d '\\(,')",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
+      "Bash(BASE_URL=http://localhost:3000 npx ts-node --project tsconfig.json -e \"require\\(''./scripts/warm-translations.ts''\\)\")",
+      "Bash(npx tsx:*)"
     ]
   }
 }

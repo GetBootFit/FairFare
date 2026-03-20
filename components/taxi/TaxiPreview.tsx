@@ -27,8 +27,8 @@ export function TaxiPreview({ preview }: Props) {
           <MapPin size={16} className="text-green-400 mt-0.5 shrink-0" />
           <span className="text-sm text-zinc-200 leading-snug">{preview.pickup}</span>
         </div>
-        <div className="ml-2 border-l border-zinc-700 pl-5 py-0.5">
-          <Route size={12} className="text-zinc-600 -ml-[18px]" />
+        <div className="ml-2 rtl:ml-0 rtl:mr-2 border-l rtl:border-l-0 rtl:border-r border-zinc-700 pl-5 rtl:pl-0 rtl:pr-5 py-0.5">
+          <Route size={12} className="text-zinc-600 -ml-[18px] rtl:ml-0 rtl:-mr-[18px]" />
         </div>
         <div className="flex items-start gap-3">
           <MapPin size={16} className="text-red-400 mt-0.5 shrink-0" />

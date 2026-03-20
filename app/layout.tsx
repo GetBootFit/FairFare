@@ -38,6 +38,7 @@ export const metadata: Metadata = {
     canonical: APP_URL,
     languages: {
       'en': APP_URL,
+      'ar': APP_URL,
       'es': APP_URL,
       'fr': APP_URL,
       'de': APP_URL,

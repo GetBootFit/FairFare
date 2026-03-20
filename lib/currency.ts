@@ -118,6 +118,8 @@ const APP_LOCALE_TO_CURRENCY: Partial<Record<string, CurrencyCode>> = {
   es: 'EUR',
   zh: 'HKD',  // Simplified Chinese — HK proxy
   tw: 'HKD',  // Traditional Chinese — HK proxy
+  // Arabic speakers come from many countries; USD is the most universally understood
+  // fallback for travellers. UAE users will see AED at checkout via Stripe geolocation.
 }
 
 /**

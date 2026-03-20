@@ -162,7 +162,7 @@ export function TippingResult({ result, onReset }: Props) {
                       </span>
                     </div>
                   </div>
-                  <p className="text-xs text-zinc-500 leading-relaxed pl-[38px]">{tip.notes}</p>
+                  <p className="text-xs text-zinc-500 leading-relaxed pl-[38px] rtl:pl-0 rtl:pr-[38px]">{tip.notes}</p>
                 </div>
               )
             })}

@@ -121,7 +121,7 @@ export function LanguageSelector() {
             role="listbox"
             aria-label="Select language"
             aria-activedescendant={`lang-option-${locale}`}
-            className="absolute bottom-full right-0 mb-2 z-50 bg-zinc-900 border border-zinc-700 rounded-xl overflow-hidden shadow-xl min-w-[160px] max-h-64 overflow-y-auto"
+            className="absolute bottom-full right-0 rtl:right-auto rtl:left-0 mb-2 z-50 bg-zinc-900 border border-zinc-700 rounded-xl overflow-hidden shadow-xl min-w-[160px] max-h-64 overflow-y-auto"
           >
             {LOCALES.map((l, idx) => (
               <button
@@ -132,7 +132,7 @@ export function LanguageSelector() {
                 aria-selected={l.code === locale}
                 onClick={() => handleSelect(l.code as Locale)}
                 onKeyDown={(e) => handleOptionKeyDown(e, idx)}
-                className={`w-full text-left flex items-center gap-3 px-4 py-3 text-sm transition-colors min-h-[44px] ${
+                className={`w-full text-left rtl:text-right flex items-center gap-3 px-4 py-3 text-sm transition-colors min-h-[44px] ${
                   l.code === locale
                     ? 'text-purple-400 bg-purple-900/20 font-medium'
                     : 'text-zinc-200 hover:bg-zinc-800'

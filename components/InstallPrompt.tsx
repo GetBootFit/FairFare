@@ -117,7 +117,7 @@ export function InstallPrompt({ variant = 'card' }: InstallPromptProps) {
         )}
         <button
           onClick={handleDismiss}
-          className="ml-2 text-zinc-800 hover:text-zinc-600 transition-colors"
+          className="ml-2 rtl:ml-0 rtl:mr-2 text-zinc-800 hover:text-zinc-600 transition-colors"
           aria-label="Dismiss"
         >
           <X size={11} />

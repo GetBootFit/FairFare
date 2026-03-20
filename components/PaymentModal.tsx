@@ -215,7 +215,7 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
                 {feature === 'taxi' ? t('payment_single_desc_taxi') : t('payment_single_desc_tipping')}
               </p>
             </div>
-            <div className="flex items-center gap-2 shrink-0 ml-3">
+            <div className="flex items-center gap-2 shrink-0 ml-3 rtl:ml-0 rtl:mr-3">
               <span className="text-white font-bold text-sm">{singlePrice}</span>
               <div aria-hidden="true" className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
                 selectedProduct === 'single' ? 'border-purple-400' : 'border-zinc-600'
@@ -241,10 +241,10 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
               }`}
             >
               {/* "For this trip" badge */}
-              <span aria-hidden="true" className="absolute -top-2 right-3 bg-zinc-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">
+              <span aria-hidden="true" className="absolute -top-2 right-3 rtl:right-auto rtl:left-3 bg-zinc-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">
                 {t('payment_for_this_trip')}
               </span>
-              <div className="pr-2">
+              <div className="pr-2 rtl:pr-0 rtl:pl-2">
                 <p className="text-sm font-semibold text-white">
                   {t('payment_country_pass', { country: countryDisplay })}
                 </p>
@@ -276,10 +276,10 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
             }`}
           >
             {/* Best value badge */}
-            <span aria-hidden="true" className="absolute -top-2 right-3 bg-purple-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">
+            <span aria-hidden="true" className="absolute -top-2 right-3 rtl:right-auto rtl:left-3 bg-purple-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">
               {t('payment_best_value')}
             </span>
-            <div className="pr-2">
+            <div className="pr-2 rtl:pr-0 rtl:pl-2">
               <p className="text-sm font-semibold text-white">{t('payment_bundle')}</p>
               <p className="text-xs text-zinc-400 mt-0.5">{t('payment_bundle_desc')}</p>
             </div>
