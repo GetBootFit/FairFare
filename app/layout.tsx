@@ -147,6 +147,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://maps.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://va.vercel-scripts.com" crossOrigin="anonymous" />
         {GA4_ID && <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />}
+        {/* Travelpayouts — site ownership verification */}
+        <Script
+          id="travelpayouts-verify"
+          strategy="afterInteractive"
+          data-noptimize="1"
+          data-cfasync="false"
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var s=document.createElement("script");s.async=1;s.src="https://tpembars.com/NTA5OTg1.js?t=509985";document.head.appendChild(s);})();`,
+          }}
+        />
       </head>
       <body className={`${inter.variable} font-sans bg-black text-white antialiased`}>
         {/* Skip-to-main-content — visually hidden until focused by keyboard users.
