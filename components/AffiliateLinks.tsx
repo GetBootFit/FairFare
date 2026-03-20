@@ -30,10 +30,25 @@ interface Props {
   tint: 'teal' | 'purple'
 }
 
-// TODO: Replace placeholder affiliate/partner IDs with your actual IDs before launch.
+// Affiliate IDs — update as each programme is approved.
 // GetYourGuide: https://partner.getyourguide.com  → replace PARTNER_ID
-// Booking.com:  https://www.booking.com/affiliate-program → replace AID
-// Airalo:       https://www.airalo.com/partners         → replace REF_CODE
+// Airalo:       https://partner.airalo.com         → replace REF_CODE
+
+// Booking.com via AWIN (Australia — awinmid 18118, publisher 2817222)
+// clickref passes the city name so AWIN reports show per-destination performance.
+const BOOKING_AWIN_MID = '18118'
+const BOOKING_AWIN_AFF = '2817222'
+
+function bookingHref(dest: string, location: string): string {
+  const bookingUrl = `https://www.booking.com/searchresults.html?ss=${dest}`
+  return (
+    `https://www.awin1.com/cread.php` +
+    `?awinmid=${BOOKING_AWIN_MID}` +
+    `&awinaffid=${BOOKING_AWIN_AFF}` +
+    `&clickref=${encodeURIComponent(location)}` +
+    `&p=${encodeURIComponent(bookingUrl)}`
+  )
+}
 
 function buildLinks(city: string | undefined, country: string) {
   const dest = encodeURIComponent(city ?? country)
@@ -49,7 +64,7 @@ function buildLinks(city: string | undefined, country: string) {
     {
       name: 'Booking.com',
       labelKey: 'affiliate_hotels' as TranslationKey,
-      href: `https://www.booking.com/searchresults.html?ss=${dest}&aid=AID`,
+      href: bookingHref(dest, location),
       svgIcon: 'buildings',
       ariaLabel: `Find hotels in ${location} on Booking.com (opens in new tab)`,
     },

@@ -114,7 +114,9 @@
       "Bash(grep -n \"src=.*images/cities/hootling\\\\|CITY_STICKERS\\\\|COUNTRY_STICKER\" /c/Users/david/Projects/Hootling/app/taxi/[city]/page.tsx)",
       "Bash(grep -n \"src=.*images/cities/hootling\\\\|COUNTRY_STICKER\\\\|citySticker\" /c/Users/david/Projects/Hootling/app/tipping/[country]/page.tsx)",
       "Bash(grep -r AffiliateLinks /c/Users/david/Projects/Hootling --include=*.tsx --include=*.ts --include=*.jsx --include=*.js)",
-      "Bash(grep -r affiliate /c/Users/david/Projects/Hootling/app --include=*.tsx --include=*.ts)"
+      "Bash(grep -r affiliate /c/Users/david/Projects/Hootling/app --include=*.tsx --include=*.ts)",
+      "Bash(pip install:*)",
+      "Bash(python scripts/generate-publisher-profile.py)"
     ]
   }
 }
