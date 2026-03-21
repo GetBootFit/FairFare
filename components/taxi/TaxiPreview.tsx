@@ -1,5 +1,7 @@
 import type { TaxiPreviewResult } from '@/types'
 import { MapPin, Route, Lock } from 'lucide-react'
+import { AffiliatePreviewStrip } from '@/components/AffiliatePreviewStrip'
+import { getPartnersForZoneSync } from '@/lib/affiliates'
 
 interface Props {
   preview: TaxiPreviewResult
@@ -53,6 +55,21 @@ export function TaxiPreview({ preview }: Props) {
           <p className="text-xs text-zinc-500 mt-0.5">min driving</p>
         </div>
       </div>
+
+      {(() => {
+        const previewPartners = getPartnersForZoneSync('preview', {
+          categories: ['transfer'],
+          maxItems: 2,
+        })
+        if (previewPartners.length === 0) return null
+        return (
+          <AffiliatePreviewStrip
+            partners={previewPartners}
+            city={preview.city}
+            country={preview.country}
+          />
+        )
+      })()}
 
       {/* Locked sections teaser */}
       <div className="bg-zinc-900 border border-zinc-800 rounded-2xl divide-y divide-zinc-800 overflow-hidden">

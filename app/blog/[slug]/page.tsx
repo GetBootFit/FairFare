@@ -3,6 +3,9 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ChevronRight, ArrowRight } from 'lucide-react'
 import { getBlogPost, getAllBlogSlugs, type BlogSection } from '@/lib/blog-posts'
+import { BlogAffiliateCard } from '@/components/BlogAffiliateCard'
+import { getPartnersForZone } from '@/lib/affiliates'
+import type { AffiliateCategory } from '@/data/affiliate-config'
 
 // ── Static generation + ISR ───────────────────────────────────────────────────
 
@@ -199,6 +202,16 @@ export default async function BlogArticlePage(
   const mainContent = post.content.filter((s) => s.type !== 'faq')
   const faqContent = post.content.filter((s) => s.type === 'faq')
 
+  const blogCategories: AffiliateCategory[] =
+    post.category === 'tipping' ? ['tours'] :
+    post.category === 'travel' ? ['transfer', 'hotel'] :
+    ['transfer']
+
+  const affiliatePartners = await getPartnersForZone('blog', {
+    categories: blogCategories,
+    maxItems: 3,
+  })
+
   return (
     <>
       {jsonLd.map((schema, i) => (
@@ -268,6 +281,13 @@ export default async function BlogArticlePage(
             ))}
           </div>
         )}
+
+        <BlogAffiliateCard
+          partners={affiliatePartners}
+          category={post.category}
+          city={post.city}
+          country={post.country}
+        />
 
         {/* CTA */}
         <div className="bg-gradient-to-br from-purple-900/30 to-zinc-900 border border-purple-800/30 rounded-2xl p-5 text-center space-y-3">

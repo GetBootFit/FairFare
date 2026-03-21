@@ -19,7 +19,8 @@ import { PhraseTranslator } from '@/components/ui/PhraseTranslator'
 import { getEmergencyNumbers } from '@/lib/emergency-contacts'
 import { getDrivingInfo, toMph, toKmh } from '@/lib/driving-info'
 import { getRideShareApps } from '@/lib/rideshare'
-import { AffiliateLinks } from '@/components/AffiliateLinks'
+import { AffiliateBlock } from '@/components/AffiliateBlock'
+import { getPartnersForZoneSync } from '@/lib/affiliates'
 import { track } from '@vercel/analytics'
 import { useLanguage } from '@/context/LanguageContext'
 import type { TranslationKey } from '@/lib/i18n'
@@ -587,8 +588,32 @@ export function TaxiResult({ result, onReset }: Props) {
           </div>
         )}
 
+        {/* AI transfer note — shown above affiliate block when Claude recommends pre-booking */}
+        {result.transferNote && (
+          <div className="flex items-start gap-2.5 px-4 py-3 rounded-xl bg-zinc-900 border border-zinc-800">
+            <span className="text-teal-500 shrink-0 mt-0.5 text-base leading-none">ℹ</span>
+            <p className="text-xs text-zinc-400 leading-relaxed">{result.transferNote}</p>
+          </div>
+        )}
+
         {/* Affiliate links */}
-        <AffiliateLinks city={result.city} country={result.country} tint="teal" />
+        {(() => {
+          const partners = getPartnersForZoneSync('result', {
+            categories: ['transfer', 'hotel', 'esim'],
+            maxItems: 4,
+          })
+          return (
+            <AffiliateBlock
+              partners={partners}
+              zone="result"
+              city={result.city}
+              country={result.country}
+              tint="teal"
+              headingKey="affiliate_book_transfer"
+              headingDestination={result.city ?? result.country}
+            />
+          )
+        })()}
 
         {/* AI + data disclosure — required on paid result pages */}
         <p className="text-[10px] text-zinc-600 text-center leading-relaxed px-2">

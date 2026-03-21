@@ -69,6 +69,12 @@ export interface TaxiAiInfo {
     transliteration: string | null
     english: string
   }>
+  /**
+   * One sentence about pre-booked transfers when contextually relevant
+   * (airport routes, cities with high meter-dispute rates).
+   * Omitted when not meaningful. Never names specific brands.
+   */
+  transferNote?: string
   /** Present when locale is non-English and a fare note was provided for translation. */
   fareNoteTranslated?: string
   /** True when Claude API was unavailable and this is generic fallback data. */
@@ -183,7 +189,8 @@ Return ONLY valid JSON with this exact structure (no markdown, no explanation):
       "transliteration": "<romanisation if non-Latin script, otherwise null>",
       "english": "Goodbye"
     }
-  ]${fareNoteField}
+  ],
+  "transferNote": "<optional: one sentence about the benefit of pre-booked airport transfers IF this city is known for meter disputes, airport taxi scams, or confusing pickup situations. Omit entirely (null) if not relevant. Never name specific brands. Example: 'For airport arrivals, pre-booking a transfer at a fixed rate eliminates the risk of overcharging entirely.'>"${fareNoteField}
 }
 
 Rules:
@@ -191,12 +198,13 @@ Rules:
 - Keep each warning under 20 words
 - Driver phrases should be warm and natural, not confrontational
 - Use the primary local language of the region (e.g. Thai in Bangkok, Arabic in Cairo)
-- Include transliteration for any non-Latin script; set to null for Latin-script languages${fareNoteInstruction}`
+- Include transliteration for any non-Latin script; set to null for Latin-script languages
+- transferNote: only include when genuinely useful (e.g. Bangkok, Cairo, Istanbul, Prague, Barcelona airports) — omit for cities with low taxi-scam risk or excellent metered services${fareNoteInstruction}`
 
   try {
     const message = await anthropic.messages.create({
       model: MODEL,
-      max_tokens: 900,
+      max_tokens: 1000,
       messages: [{ role: 'user', content: prompt }],
     })
 

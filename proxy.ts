@@ -81,35 +81,32 @@ export async function proxy(req: NextRequest) {
     }
   }
 
-  // ── 2. HTTP Basic Auth on /admin/* ────────────────────────────────────────
-  if (pathname.startsWith('/admin')) {
+  // ── 2. Cookie-based auth on /admin/* and /api/admin/* ────────────────────
+  if (pathname.startsWith('/admin') || pathname.startsWith('/api/admin')) {
+    // Allow the login page and its POST handler through without a token
+    if (pathname === '/admin/login' || pathname === '/api/admin/login') {
+      return NextResponse.next()
+    }
+
     const adminSecret = process.env.ADMIN_SECRET
     if (!adminSecret) {
-      // No secret configured — deny all access
+      // ADMIN_SECRET not configured — block all access
+      if (pathname.startsWith('/api/admin')) {
+        return NextResponse.json({ error: 'Admin not configured' }, { status: 503 })
+      }
       return new NextResponse('Admin not configured', { status: 503 })
     }
 
-    const authHeader = req.headers.get('Authorization') ?? ''
-    if (authHeader.startsWith('Basic ')) {
-      try {
-        const decoded = atob(authHeader.slice(6))
-        // Accept any username + the admin secret as password
-        const password = decoded.split(':').slice(1).join(':')
-        if (password === adminSecret) {
-          return NextResponse.next()
-        }
-      } catch {
-        // Invalid base64 — fall through to challenge
+    const token = req.cookies.get('admin_token')?.value
+    if (!token || token !== adminSecret) {
+      // API routes → 401 JSON; page routes → redirect to login
+      if (pathname.startsWith('/api/admin')) {
+        return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
       }
+      const loginUrl = new URL('/admin/login', req.url)
+      loginUrl.searchParams.set('from', pathname)
+      return NextResponse.redirect(loginUrl)
     }
-
-    // Issue Basic Auth challenge
-    return new NextResponse('Unauthorised', {
-      status: 401,
-      headers: {
-        'WWW-Authenticate': 'Basic realm="FairFare Admin", charset="UTF-8"',
-      },
-    })
   }
 
   // ── 3. IP rate limiting on API routes ─────────────────────────────────────
@@ -135,6 +132,7 @@ export const config = {
   matcher: [
     '/dev', '/dev/:path*',
     '/admin', '/admin/:path*',
+    '/api/admin', '/api/admin/:path*',
     '/api/payment/create-session',
     '/api/taxi/result',
     '/api/tipping',

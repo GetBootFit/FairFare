@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { ChevronRight, Sparkles, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 import { InstallPrompt } from '@/components/InstallPrompt'
+import { BLOG_POSTS } from '@/lib/blog-posts'
 
 // Social handles — update URLs when accounts are created
 const SOCIAL_LINKS = [
@@ -187,6 +188,45 @@ export function HomeContent() {
         </Link>
       </div>
 
+      {/* Blog section */}
+      {(() => {
+        const recentPosts = [...BLOG_POSTS]
+          .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+          .slice(0, 3)
+        const categoryColour: Record<string, string> = {
+          taxi: 'text-teal-400',
+          tipping: 'text-purple-400',
+          travel: 'text-blue-400',
+        }
+        return (
+          <div className="mt-6 border-t border-zinc-900 pt-5">
+            <div className="flex items-center justify-between mb-3">
+              <p className="text-[10px] text-zinc-600 uppercase tracking-widest">{t('home_blog_heading')}</p>
+              <Link href="/blog" className="text-[10px] text-zinc-600 hover:text-zinc-400 transition-colors flex items-center gap-0.5">
+                {t('home_blog_view_all')} <span className="inline-block rtl:rotate-180">→</span>
+              </Link>
+            </div>
+            <div className="space-y-2">
+              {recentPosts.map(post => (
+                <Link
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  className="flex items-start gap-3 py-2 group"
+                >
+                  <span className={`text-[9px] uppercase tracking-wider font-semibold shrink-0 mt-0.5 w-10 ${categoryColour[post.category] ?? 'text-zinc-500'}`}>
+                    {post.category}
+                  </span>
+                  <span className="text-xs text-zinc-500 group-hover:text-zinc-300 transition-colors leading-snug flex-1 line-clamp-2">
+                    {post.title}
+                  </span>
+                  <ChevronRight size={12} className="text-zinc-700 group-hover:text-zinc-500 shrink-0 mt-0.5 transition-colors rtl:rotate-180" />
+                </Link>
+              ))}
+            </div>
+          </div>
+        )
+      })()}
+
       {/* Footer — pushed to bottom */}
       <div className="mt-auto pt-8 pb-2 space-y-3">
         {/* Install prompt as quiet micro copy — sits just above the divider */}
@@ -217,6 +257,7 @@ export function HomeContent() {
             {[
               { href: '/about', label: t('footer_about') },
               { href: '/faq', label: t('footer_faq') },
+              { href: '/blog', label: t('footer_blog') },
               { href: '/business', label: t('nav_business') },
               { href: '/terms', label: t('footer_terms') },
               { href: '/privacy', label: t('footer_privacy') },

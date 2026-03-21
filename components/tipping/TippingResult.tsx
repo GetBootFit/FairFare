@@ -22,7 +22,8 @@ import { useExchangeRates } from '@/hooks/useExchangeRates'
 import { CurrencySelector, ReferenceRate } from '@/components/ui/CurrencyConverter'
 import { getLangCode, speakText, stopSpeech } from '@/lib/speech'
 import { ShowPhraseModal } from '@/components/ui/ShowPhraseModal'
-import { AffiliateLinks } from '@/components/AffiliateLinks'
+import { AffiliateBlock } from '@/components/AffiliateBlock'
+import { getPartnersForZoneSync } from '@/lib/affiliates'
 import { PhraseTranslator } from '@/components/ui/PhraseTranslator'
 import { InstallPrompt } from '@/components/InstallPrompt'
 import { useLanguage } from '@/context/LanguageContext'
@@ -251,7 +252,22 @@ export function TippingResult({ result, onReset }: Props) {
         )}
 
         {/* Affiliate links */}
-        <AffiliateLinks country={result.country} tint="purple" />
+        {(() => {
+          const partners = getPartnersForZoneSync('result', {
+            categories: ['tours', 'hotel', 'esim'],
+            maxItems: 3,
+          })
+          return (
+            <AffiliateBlock
+              partners={partners}
+              zone="result"
+              country={result.country}
+              tint="purple"
+              headingKey="affiliate_explore_destination"
+              headingDestination={result.country}
+            />
+          )
+        })()}
 
         {/* PWA install — shown post-result (highest-conversion moment) */}
         <InstallPrompt variant="card" />

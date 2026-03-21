@@ -66,3 +66,36 @@ export async function kvExists(key: string): Promise<boolean> {
     return false
   }
 }
+
+/** Delete a key. No-ops when KV is unavailable. */
+export async function kvDelete(key: string): Promise<void> {
+  try {
+    const client = getClient()
+    if (!client) return
+    await client.del(key)
+  } catch {
+    // Non-fatal
+  }
+}
+
+/** Get a value without TTL (for config storage without expiry). */
+export async function kvSetPermanent(key: string, value: unknown): Promise<void> {
+  try {
+    const client = getClient()
+    if (!client) return
+    await client.set(key, value)
+  } catch {
+    // Non-fatal
+  }
+}
+
+/** Scan keys matching a pattern. Returns empty array when KV unavailable. */
+export async function kvKeys(pattern: string): Promise<string[]> {
+  try {
+    const client = getClient()
+    if (!client) return []
+    return await client.keys(pattern)
+  } catch {
+    return []
+  }
+}

@@ -7,6 +7,8 @@ import { Spinner } from '@/components/ui/Spinner'
 import { storeToken, storeCountryPass, storeBundleTokens } from '@/lib/tokens'
 import { track } from '@vercel/analytics'
 import { Suspense } from 'react'
+import { AffiliateBlock } from '@/components/AffiliateBlock'
+import { getPartnersForZoneSync } from '@/lib/affiliates'
 
 function SuccessInner() {
   const router = useRouter()
@@ -136,6 +138,8 @@ function SuccessInner() {
   }
 
   if (status === 'email_capture') {
+    const successPartners = getPartnersForZoneSync('success', { maxItems: 3 })
+
     return (
       <div className="flex flex-col items-center gap-6 py-16 px-4 text-center max-w-sm mx-auto">
         <Image
@@ -150,6 +154,18 @@ function SuccessInner() {
           <p className="text-white font-semibold text-lg">Payment confirmed</p>
           <p className="text-zinc-500 text-sm mt-1">Your result is ready</p>
         </div>
+
+        {/* Affiliate block — shown while result is loading */}
+        {successPartners.length > 0 && (
+          <div className="mt-4">
+            <AffiliateBlock
+              partners={successPartners}
+              zone="success"
+              tint="teal"
+              headingKey="affiliate_while_loading"
+            />
+          </div>
+        )}
 
         <div className="w-full border border-zinc-800 rounded-2xl p-5 bg-zinc-900/60 text-left space-y-4">
           <div>
