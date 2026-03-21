@@ -27,41 +27,208 @@ function normaliseKey(input: string): string {
 
 /**
  * Aliases map alternative spellings/names to canonical dataset keys.
+ * Keys are city-only (no country suffix) — the lookup tries progressively
+ * shorter keys so country tokens are automatically stripped.
+ *
+ * Airport → city mappings are critical: many airports are located in a
+ * suburb or neighbouring municipality that Google Maps returns instead of
+ * the major city (e.g. Suvarnabhumi → Samut Prakan, not Bangkok).
  */
 const ALIASES: Record<string, string> = {
-  ho_chi_minh_city:      'ho_chi_minh',
-  saigon:                'ho_chi_minh',
-  ha_long:               'halong',
-  halong_bay:            'halong',
-  ha_long_city:          'halong',
-  new_york_city:         'new_york',
-  nyc:                   'new_york',
-  los_angeles:           'los_angeles',
-  la:                    'los_angeles',
-  dc:                    'washington_dc',
-  washington:            'washington_dc',
-  sf:                    'san_francisco',
-  dammam:                'east_province',
-  al_khobar:             'east_province',
-  khobar:                'east_province',
-  makkah:                'mecca',
-  makkah_al_mukarramah:  'mecca',
-  makka:                 'mecca',
-  bali:                  'denpasar',
-  bodrum:                'mugla',
-  marmaris:              'mugla',
-  fethiye:               'mugla',
-  kyiv:                  'kyiv',
-  kiev:                  'kyiv',
-  sao_paulo:             'sao_paulo',
-  st_pete:               'st_petersburg',
-  saint_petersburg:      'st_petersburg',
-  kolkata:               'kolkata',
-  calcutta:              'kolkata',
-  mumbai:                'mumbai',
-  bombay:                'mumbai',
-  cape_town:             'cape_town',
-  buenos_aires:          'buenos_aires',
+  // ── Name variants ─────────────────────────────────────────────────────────
+  ho_chi_minh_city:        'ho_chi_minh',
+  saigon:                  'ho_chi_minh',
+  ha_long:                 'halong',
+  halong_bay:              'halong',
+  ha_long_city:            'halong',
+  new_york_city:           'new_york',
+  nyc:                     'new_york',
+  los_angeles:             'los_angeles',
+  la:                      'los_angeles',
+  dc:                      'washington_dc',
+  washington:              'washington_dc',
+  sf:                      'san_francisco',
+  dammam:                  'east_province',
+  al_khobar:               'east_province',
+  khobar:                  'east_province',
+  makkah:                  'mecca',
+  makkah_al_mukarramah:    'mecca',
+  makka:                   'mecca',
+  bali:                    'denpasar',
+  bodrum:                  'mugla',
+  marmaris:                'mugla',
+  fethiye:                 'mugla',
+  kyiv:                    'kyiv',
+  kiev:                    'kyiv',
+  sao_paulo:               'sao_paulo',
+  st_pete:                 'st_petersburg',
+  saint_petersburg:        'st_petersburg',
+  kolkata:                 'kolkata',
+  calcutta:                'kolkata',
+  mumbai:                  'mumbai',
+  bombay:                  'mumbai',
+  cape_town:               'cape_town',
+  buenos_aires:            'buenos_aires',
+
+  // ── Airport → city mappings ───────────────────────────────────────────────
+  // Bangkok — Suvarnabhumi is in Samut Prakan Province; Don Mueang is its own district
+  samut_prakan:            'bangkok',
+  bang_phli:               'bangkok',
+  racha_thewa:             'bangkok',
+  don_mueang:              'bangkok',
+
+  // London — Heathrow → Hillingdon; Gatwick → Crawley; Stansted → Uttlesford
+  hillingdon:              'london',
+  crawley:                 'london',
+  gatwick:                 'london',
+  uttlesford:              'london',
+  stansted_mountfitchet:   'london',
+  spelthorne:              'london',  // Heathrow area borough
+
+  // Paris — CDG is in Roissy-en-France / Val-d'Oise
+  roissy_en_france:        'paris',
+  roissy:                  'paris',
+  gonesse:                 'paris',
+  tremblay_en_france:      'paris',
+
+  // Amsterdam — Schiphol is in Haarlemmermeer municipality
+  haarlemmermeer:          'amsterdam',
+  schiphol:                'amsterdam',
+
+  // New York — JFK / LaGuardia are in Queens
+  queens:                  'new_york',
+  jamaica:                 'new_york',
+  east_elmhurst:           'new_york',
+  newark:                  'new_york',  // EWR serves NYC
+
+  // Tokyo — Narita is in Chiba Prefecture; Haneda is in Ota (Tokyo ward, handled by partial)
+  narita:                  'tokyo',
+  chiba:                   'tokyo',   // Narita area
+  ota:                     'tokyo',   // Haneda ward
+
+  // Rome — Fiumicino airport in Fiumicino municipality
+  fiumicino:               'rome',
+  ciampino:                'rome',
+
+  // Barcelona — El Prat de Llobregat
+  el_prat_de_llobregat:    'barcelona',
+  prat_de_llobregat:       'barcelona',
+  hospitalet_de_llobregat: 'barcelona',
+
+  // Istanbul — New airport in Arnavutköy; Sabiha Gökçen in Pendik
+  arnavutkoy:              'istanbul',
+  pendik:                  'istanbul',
+  tuzla:                   'istanbul',
+
+  // Sydney — Kingsford Smith is in Mascot / Botany Bay
+  mascot:                  'sydney',
+  botany_bay:              'sydney',
+  wolli_creek:             'sydney',
+
+  // Melbourne — Tullamarine in Hume City
+  tullamarine:             'melbourne',
+  hume:                    'melbourne',
+
+  // Toronto — Pearson is in Mississauga
+  mississauga:             'toronto',
+  brampton:                'toronto',
+
+  // Vancouver — YVR is in Richmond
+  richmond:                'vancouver',
+  sea_island:              'vancouver',
+
+  // Moscow — Sheremetyevo in Khimki; Domodedovo south of city
+  khimki:                  'moscow',
+  domodedovo:              'moscow',
+  zhukovsky:               'moscow',
+  lobnya:                  'moscow',  // Sheremetyevo area
+
+  // Milan — Malpensa in Cardano al Campo / Somma Lombardo
+  cardano_al_campo:        'milan',
+  somma_lombardo:          'milan',
+  samarate:                'milan',
+  sesto_calende:           'milan',
+
+  // Kuala Lumpur — KLIA is in Sepang
+  sepang:                  'kuala_lumpur',
+
+  // Seoul — Incheon International is a separate city from Seoul
+  incheon:                 'seoul',
+  jung_gu:                 'seoul',
+
+  // Beijing — Capital Airport in Shunyi District
+  shunyi:                  'beijing',
+
+  // San Francisco — SFO is in San Mateo County
+  san_mateo:               'san_francisco',
+  millbrae:                'san_francisco',
+  burlingame:              'san_francisco',
+  brisbane:                'san_francisco',  // Brisbane, CA (not Australia)
+
+  // Seattle — SeaTac city is a separate municipality
+  seatac:                  'seattle',
+  sea_tac:                 'seattle',
+  tukwila:                 'seattle',
+
+  // Washington DC — Reagan in Arlington; Dulles in Loudoun County
+  arlington:               'washington_dc',
+  sterling:                'washington_dc',
+  chantilly:               'washington_dc',
+  dulles:                  'washington_dc',
+
+  // Las Vegas — Harry Reid airport is in Paradise NV (unincorporated)
+  paradise:                'las_vegas',
+  enterprise:              'las_vegas',
+
+  // Atlanta — Hartsfield-Jackson spans Atlanta / College Park / Hapeville
+  college_park:            'atlanta',
+  hapeville:               'atlanta',
+  east_point:              'atlanta',
+
+  // Brussels — Brussels Airport in Zaventem
+  zaventem:                'brussels',
+
+  // Dublin — Dublin Airport in Fingal
+  fingal:                  'dublin',
+  swords:                  'dublin',
+
+  // Vienna — Vienna Airport in Schwechat (Lower Austria)
+  schwechat:               'vienna',
+  fischamend:              'vienna',
+
+  // Zurich — Airport in Kloten
+  kloten:                  'zurich',
+  opfikon:                 'zurich',
+
+  // Munich — MUC in Freising / Erding / Oberding
+  freising:                'munich',
+  erding:                  'munich',
+  oberding:                'munich',
+  hallbergmoos:            'munich',
+
+  // Athens — Athens International in Spata / Markopoulo
+  spata:                   'athens',
+  markopoulo:              'athens',
+  koropi:                  'athens',
+
+  // Manila — NAIA terminals in Pasay and Parañaque
+  pasay:                   'manila',
+  paranaque:               'manila',
+
+  // Jakarta — Soetta (CGK) in Tangerang
+  tangerang:               'jakarta',
+  kosambi:                 'jakarta',
+
+  // Buenos Aires — Ezeiza International south of city
+  ezeiza:                  'buenos_aires',
+
+  // São Paulo — Guarulhos airport in Guarulhos city
+  guarulhos:               'sao_paulo',
+  cumbica:                 'sao_paulo',
+
+  // Rio de Janeiro — Galeão on Ilha do Governador
+  ilha_do_governador:      'rio_de_janeiro',
+  galeao:                  'rio_de_janeiro',
 }
 
 /**
@@ -74,10 +241,22 @@ export function findCityRate(cityString: string): (CityRate & { city: string }) 
   // 1. Direct match
   if (taxiRates[key]) return { ...taxiRates[key], city: key }
 
-  // 2. Alias match
+  // 2. Alias match (exact key)
   if (ALIASES[key] && taxiRates[ALIASES[key]]) {
     const resolved = ALIASES[key]
     return { ...taxiRates[resolved], city: resolved }
+  }
+
+  // 2b. Alias match stripping trailing country tokens (1–3 words).
+  //     e.g. "samut_prakan_thailand" → try "samut_prakan" → ALIASES → "bangkok"
+  //     e.g. "el_prat_de_llobregat_spain" → try shorter prefixes until match
+  const parts = key.split('_')
+  for (let drop = 1; drop <= Math.min(3, parts.length - 1); drop++) {
+    const shorter = parts.slice(0, parts.length - drop).join('_')
+    if (shorter.length >= 3 && ALIASES[shorter] && taxiRates[ALIASES[shorter]]) {
+      const resolved = ALIASES[shorter]
+      return { ...taxiRates[resolved], city: resolved }
+    }
   }
 
   // 3. Partial match: find dataset key that appears inside the input key

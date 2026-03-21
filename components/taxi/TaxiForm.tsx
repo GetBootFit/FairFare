@@ -16,6 +16,7 @@ import {
   isCountryPassValid,
   storeBundleTokens,
   popBundleToken,
+  getBundleCount,
 } from '@/lib/tokens'
 import { useLanguage } from '@/context/LanguageContext'
 import { useRecentSearches } from '@/hooks/useRecentSearches'
@@ -59,13 +60,20 @@ export function TaxiForm() {
   const [preview, setPreview] = useState<TaxiPreviewResult | null>(null)
   const [result, setResult] = useState<TaxiFullResult | null>(null)
   const [errorMsg, setErrorMsg] = useState('')
+  // Set to true when form is restored from sessionStorage AND a fresh token exists.
+  // A separate effect then fires once the form state has actually populated.
+  const [pendingAutoSubmit, setPendingAutoSubmit] = useState(false)
 
   const isAirportPickup = AIRPORT_RE.test(form.pickup)
   // Specific airport page match — higher signal than the generic AIRPORT_RE
   const pickupAirport  = matchAirport(form.pickup)
   const destAirport    = matchAirport(form.destination)
 
-  // Restore form from sessionStorage after payment redirect
+  // Restore form from sessionStorage after payment redirect.
+  // If a fresh token already exists in localStorage (stored by the success page),
+  // set pendingAutoSubmit so the next effect auto-triggers the result fetch.
+  // The ff:token window event fires on the SUCCESS page — it never reaches this
+  // page after a full navigation, so we must poll localStorage instead.
   useEffect(() => {
     const saved = sessionStorage.getItem(STORAGE_KEY)
     if (saved) {
@@ -73,9 +81,37 @@ export function TaxiForm() {
         const data = JSON.parse(saved) as FormState
         setForm(data)
         sessionStorage.removeItem(STORAGE_KEY)
+        const token = getStoredToken()
+        if ((token && !isTokenExpired(token)) || getBundleCount() > 0) {
+          setPendingAutoSubmit(true)
+        }
       } catch { /* ignore */ }
     }
   }, [])
+
+  // Auto-submit once form values are populated after a post-payment redirect.
+  useEffect(() => {
+    if (!pendingAutoSubmit || !form.pickup || !form.destination) return
+    setPendingAutoSubmit(false)
+    const autoFetch = async () => {
+      setStatus('loading')
+      try {
+        const bundleToken = popBundleToken()
+        if (bundleToken) {
+          await fetchFullResult(bundleToken, form, 'bundle')
+        } else {
+          const token = getStoredToken()
+          if (token && !isTokenExpired(token)) {
+            await fetchFullResult(token, form, 'single')
+          }
+        }
+      } catch (err) {
+        setStatus('error')
+        setErrorMsg(err instanceof Error ? err.message : t('common_error'))
+      }
+    }
+    autoFetch()
+  }, [pendingAutoSubmit, form.pickup, form.destination]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const setField = useCallback(<K extends keyof FormState>(key: K, val: string) => {
     setForm((f) => ({ ...f, [key]: val }))

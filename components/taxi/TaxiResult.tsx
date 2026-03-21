@@ -191,6 +191,21 @@ export function TaxiResult({ result, onReset }: Props) {
     <>
       <div className="space-y-3">
 
+        {/* Route header — pickup → destination */}
+        <div className="bg-zinc-900 border border-zinc-800 rounded-2xl px-4 py-3">
+          <div className="flex items-start gap-2.5">
+            <SvgIcon name="distance" size={16} className="shrink-0 mt-0.5 opacity-60" />
+            <div className="flex-1 min-w-0 space-y-1">
+              <p className="text-xs text-zinc-400 truncate">
+                <span className="text-zinc-300 font-medium">{result.pickup.split(',')[0].trim()}</span>
+                <span className="text-zinc-600 mx-1.5">→</span>
+                <span className="text-zinc-300 font-medium">{result.destination.split(',')[0].trim()}</span>
+              </p>
+              <p className="text-[11px] text-zinc-600">{result.city}{result.country ? `, ${result.country}` : ''}</p>
+            </div>
+          </div>
+        </div>
+
         {/* Distance + time */}
         <div className="grid grid-cols-2 gap-3">
           <Stat label={t('result_distance')} value={`${distance.km} km`} sub={`${distance.mi} mi`} icon="distance" />
@@ -588,15 +603,7 @@ export function TaxiResult({ result, onReset }: Props) {
           </div>
         )}
 
-        {/* AI transfer note — shown above affiliate block when Claude recommends pre-booking */}
-        {result.transferNote && (
-          <div className="flex items-start gap-2.5 px-4 py-3 rounded-xl bg-zinc-900 border border-zinc-800">
-            <span className="text-teal-500 shrink-0 mt-0.5 text-base leading-none">ℹ</span>
-            <p className="text-xs text-zinc-400 leading-relaxed">{result.transferNote}</p>
-          </div>
-        )}
-
-        {/* Affiliate links */}
+        {/* Affiliate links — transferNote appears as microcopy under the heading */}
         {(() => {
           const partners = getPartnersForZoneSync('result', {
             categories: ['transfer', 'hotel', 'esim'],
@@ -611,6 +618,7 @@ export function TaxiResult({ result, onReset }: Props) {
               tint="teal"
               headingKey="affiliate_book_transfer"
               headingDestination={result.city ?? result.country}
+              subtitle={result.transferNote}
             />
           )
         })()}

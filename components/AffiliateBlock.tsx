@@ -59,6 +59,8 @@ interface AffiliateBlockProps {
   headingKey?: TranslationKey
   /** Override heading destination interpolation */
   headingDestination?: string
+  /** Optional microcopy shown below the heading (e.g. AI transferNote) */
+  subtitle?: string
 }
 
 export function AffiliateBlock({
@@ -70,6 +72,7 @@ export function AffiliateBlock({
   tint,
   headingKey = 'affiliate_plan_trip',
   headingDestination,
+  subtitle,
 }: AffiliateBlockProps) {
   const { t } = useLanguage()
 
@@ -87,9 +90,14 @@ export function AffiliateBlock({
 
   return (
     <div className="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden">
-      <p className="text-xs text-zinc-500 uppercase tracking-wider px-4 pt-3.5 pb-2">
-        {t(headingKey, { destination })}
-      </p>
+      <div className="px-4 pt-3.5 pb-2">
+        <p className="text-xs text-zinc-500 uppercase tracking-wider">
+          {t(headingKey, { destination })}
+        </p>
+        {subtitle && (
+          <p className="text-xs text-zinc-400 leading-relaxed mt-1">{subtitle}</p>
+        )}
+      </div>
       <div className="divide-y divide-zinc-800">
         {partners.map(partner => (
           <a
