@@ -16,16 +16,42 @@ export function LanguageSelector() {
 
   const current = LOCALES.find((l) => l.code === locale) ?? LOCALES[0]
   const currentIndex = LOCALES.findIndex((l) => l.code === locale)
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   // ── Open / close ────────────────────────────────────────────────────────────
 
   const openDropdown = useCallback(() => {
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current)
+      closeTimerRef.current = null
+    }
     setOpen(true)
   }, [])
 
   const closeDropdown = useCallback(() => {
     setOpen(false)
     buttonRef.current?.focus()
+  }, [])
+
+  // Auto-close on mouse leave (desktop only — touch never fires this)
+  const handleMouseEnter = useCallback(() => {
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current)
+      closeTimerRef.current = null
+    }
+  }, [])
+
+  const handleMouseLeave = useCallback(() => {
+    closeTimerRef.current = setTimeout(() => {
+      setOpen(false)
+    }, 250)
+  }, [])
+
+  // Clean up timer on unmount
+  useEffect(() => {
+    return () => {
+      if (closeTimerRef.current) clearTimeout(closeTimerRef.current)
+    }
   }, [])
 
   // Move focus to the currently selected option when dropdown opens
@@ -84,7 +110,7 @@ export function LanguageSelector() {
   }
 
   return (
-    <div className="relative">
+    <div className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <button
         ref={buttonRef}
         onClick={() => (open ? closeDropdown() : openDropdown())}

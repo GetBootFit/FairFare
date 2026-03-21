@@ -73,8 +73,7 @@ export const DEFAULT_AFFILIATE_CONFIG: AffiliatePartner[] = [
     // Strong in Eastern Europe, Russia, SE Asia, Middle East
     preferredRegions: ['RU', 'UA', 'PL', 'CZ', 'HU', 'RO', 'TH', 'VN', 'AE', 'TR', 'EG', 'IN'],
     zones: ['result', 'preview', 'blog', 'success'],
-    // Paste your Travelpayouts Kiwitaxi tracking link here (or update via /admin)
-    baseUrl: 'TRAVELPAYOUTS_KIWITAXI_URL',
+    baseUrl: 'https://kiwitaxi.tpk.lu/r3buLnXk',
   },
   {
     id: 'welcome_pickups',
@@ -87,7 +86,7 @@ export const DEFAULT_AFFILIATE_CONFIG: AffiliatePartner[] = [
     // Strong in Mediterranean, Southern Europe, Middle East
     preferredRegions: ['GR', 'ES', 'PT', 'IT', 'FR', 'HR', 'CY', 'MT', 'IL', 'JO', 'MA', 'TN'],
     zones: ['result', 'preview', 'blog', 'success'],
-    baseUrl: 'TRAVELPAYOUTS_WELCOME_PICKUPS_URL',
+    baseUrl: 'https://tpk.lu/uISwgG5I',
   },
   {
     id: 'gettransfer',
@@ -99,7 +98,7 @@ export const DEFAULT_AFFILIATE_CONFIG: AffiliatePartner[] = [
     priority: 3,
     // Global coverage — shown everywhere as fallback
     zones: ['result', 'preview', 'blog'],
-    baseUrl: 'TRAVELPAYOUTS_GETTRANSFER_URL',
+    baseUrl: 'https://gettransfer.tpk.lu/AoQRdSfe',
   },
   {
     id: 'intui',
@@ -111,7 +110,7 @@ export const DEFAULT_AFFILIATE_CONFIG: AffiliatePartner[] = [
     priority: 4,
     // Global, strong in Eastern Europe and Asia
     zones: ['result'],
-    baseUrl: 'TRAVELPAYOUTS_INTUI_URL',
+    baseUrl: 'https://intui.tpk.lu/hiWdruZ9',
   },
 
   // ─────────────────────────────────────────
