@@ -42,9 +42,9 @@ export default function TippingPage() {
       {/* Link to the global overview guide */}
       <Link
         href="/tipping/guide"
-        className="flex items-center gap-2.5 px-4 py-3 bg-zinc-900 border border-zinc-800 rounded-xl text-sm text-zinc-400 hover:text-zinc-200 hover:border-zinc-700 transition-colors group"
+        className="flex items-center gap-2 px-4 py-3 bg-zinc-900 border border-zinc-800 rounded-xl text-xs text-zinc-400 hover:text-zinc-200 hover:border-zinc-700 transition-colors group"
       >
-        <Globe size={14} className="text-purple-400 shrink-0" />
+        <Globe size={13} className="text-purple-400 shrink-0" />
         <span>Global Tipping Customs 2026 — country-by-country overview</span>
         <span className="ml-auto rtl:ml-0 rtl:mr-auto text-zinc-600 group-hover:text-zinc-400 transition-colors inline-block rtl:rotate-180">→</span>
       </Link>
