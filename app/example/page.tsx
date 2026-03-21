@@ -4,14 +4,14 @@ import { ExampleHeader } from '@/components/ExampleHeader'
 import { ExampleFooter } from '@/components/ExampleFooter'
 
 export const metadata: Metadata = {
-  title: 'See a Sample Result — FairFare',
+  title: 'See a Sample Result — Hootling',
   description:
-    'See exactly what you get with FairFare — a real sample taxi fare result and tipping guide before you pay.',
-  alternates: { canonical: 'https://fairfare.app/example' },
+    'See exactly what you get with Hootling — a real sample taxi fare result and tipping guide before you pay.',
+  alternates: { canonical: 'https://hootling.com/example' },
   openGraph: {
-    title: 'Sample Result — FairFare',
+    title: 'Sample Result — Hootling',
     description: 'See a real taxi fare result and tipping guide before you pay.',
-    url: 'https://fairfare.app/example',
+    url: 'https://hootling.com/example',
   },
 }
 

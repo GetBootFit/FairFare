@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Airport Taxi Fares — Fare Guides for Major International Airports',
   description:
     'Taxi fare guides for the world\'s busiest airports: Bangkok BKK, Dubai DXB, Singapore SIN, London LHR, New York JFK. Know the real cost before you land.',
-  alternates: { canonical: 'https://fairfare.app/taxi/airport' },
+  alternates: { canonical: 'https://hootling.com/taxi/airport' },
 }
 
 export default function AirportIndexPage() {

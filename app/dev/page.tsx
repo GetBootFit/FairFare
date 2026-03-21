@@ -83,7 +83,7 @@ export default function DevPage() {
     }
     setTaxi({ status: 'idle', message: '' })
     setTipping({ status: 'idle', message: '' })
-    alert('All FairFare tokens cleared from localStorage.')
+    alert('All Hootling tokens cleared from localStorage.')
   }
 
   if (process.env.NODE_ENV !== 'development') return null

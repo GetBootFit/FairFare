@@ -27,18 +27,18 @@ export async function generateMetadata(
   return {
     title: `${airport.code} Taxi Fares — ${airport.name} to ${airport.city} (${year})`,
     description: `Official taxi fares from ${airport.name} to ${airport.city}. ${airport.approxCityFare}. Scam warnings, alternatives and practical tips for ${year}.`,
-    alternates: { canonical: `https://fairfare.app/taxi/airport/${code}` },
+    alternates: { canonical: `https://hootling.com/taxi/airport/${code}` },
     openGraph: {
       title: `${airport.code} Taxi Fares — ${airport.name} (${year})`,
       description: `${airport.approxCityFare} · Avoid scams · Compare alternatives.`,
-      url: `https://fairfare.app/taxi/airport/${code}`,
+      url: `https://hootling.com/taxi/airport/${code}`,
       type: 'website',
       images: [
         {
-          url: `https://fairfare.app/api/og/city?city=${encodeURIComponent(airport.city.toLowerCase())}`,
+          url: `https://hootling.com/api/og/city?city=${encodeURIComponent(airport.city.toLowerCase())}`,
           width: 1200,
           height: 630,
-          alt: `Taxi fares from ${airport.name} — FairFare`,
+          alt: `Taxi fares from ${airport.name} — Hootling`,
         },
       ],
     },

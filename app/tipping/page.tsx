@@ -6,7 +6,7 @@ import { ErrorBoundary } from '@/components/ErrorBoundary'
 import { TIPPING_COUNTRIES } from '@/lib/seo-helpers'
 import { PopularCountriesSection } from '@/components/PopularCountriesSection'
 
-export const metadata = { title: 'Tipping Guide — FairFare' }
+export const metadata = { title: 'Tipping Guide — Hootling' }
 
 // Hand-curated list of high-traffic tourist countries — ordered by outbound travel volume.
 // All entries must exist in TIPPING_COUNTRIES; filtered at build time for safety.

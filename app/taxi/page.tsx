@@ -6,7 +6,7 @@ import { ErrorBoundary } from '@/components/ErrorBoundary'
 import { getAllCitySlugs } from '@/lib/seo-helpers'
 import { PopularCitiesSection } from '@/components/PopularCitiesSection'
 
-export const metadata = { title: 'Taxi Fare Check — FairFare' }
+export const metadata = { title: 'Taxi Fare Check — Hootling' }
 
 // Hand-curated list of high-traffic tourist cities — ordered by global search volume.
 // Must exist in data/taxi-rates.json; validated against the live slug set at build time.

@@ -1,5 +1,5 @@
 /**
- * FairFare — Cache Seed Script
+ * Hootling — Cache Seed Script
  *
  * Pre-warms the Vercel KV cache for all 114 taxi cities + 53 tipping countries
  * by calling the same lib/claude.ts functions the app itself uses — guaranteeing
@@ -28,7 +28,7 @@
  *     KV_REST_API_TOKEN=...
  *
  *   tsx must be available: npm install --legacy-peer-deps
- *   Run from the project root: cd /path/to/fairfare
+ *   Run from the project root: cd /path/to/hootling
  */
 
 import fs   from 'fs'
@@ -144,7 +144,7 @@ async function main(): Promise<void> {
   const estMins = Math.ceil(nTotal * 2.3 / 60)
 
   console.log('╔══════════════════════════════════════════╗')
-  console.log('║      FairFare — Cache Seed Script        ║')
+  console.log('║      Hootling — Cache Seed Script        ║')
   console.log('╚══════════════════════════════════════════╝\n')
   console.log(`  Taxi cities:         ${nTaxi}`)
   console.log(`  Tipping countries:   ${nTipping}`)

@@ -140,7 +140,10 @@
       "Bash(npx tsx:*)",
       "WebFetch(domain:www.hootling.com)",
       "Bash(python /c/Users/david/Projects/Hootling/scripts/patch-i18n.py)",
-      "Bash(del \"C:\\\\Users\\\\david\\\\Projects\\\\Hootling\\\\middleware.ts\")"
+      "Bash(del \"C:\\\\Users\\\\david\\\\Projects\\\\Hootling\\\\middleware.ts\")",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ]
   }
 }
