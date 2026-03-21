@@ -11,6 +11,12 @@ function apiKey(): string {
   return key
 }
 
+export interface RouteStep {
+  instruction: string  // Plain text (HTML stripped)
+  distance: string     // e.g. "1.2 km"
+  maneuver: string     // e.g. "turn-left", "straight", ""
+}
+
 export interface RouteInfo {
   distanceMeters: number
   distanceKm: number
@@ -24,6 +30,7 @@ export interface RouteInfo {
   overviewPolyline: string | null
   startLocation: { lat: number; lng: number } | null
   endLocation: { lat: number; lng: number } | null
+  routeSteps: RouteStep[]
 }
 
 /**
@@ -162,6 +169,21 @@ export async function getRouteInfo(
     // Transit data unavailable for this route — that's fine
   }
 
+  // ── Turn-by-turn driving steps ────────────────────────────────────────────
+  const routeSteps: RouteStep[] = (drivingLeg.steps ?? [])
+    .map((step) => ({
+      instruction: step.html_instructions
+        // Strip HTML tags, collapse whitespace
+        .replace(/<[^>]+>/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim(),
+      distance: step.distance?.text ?? '',
+      maneuver: (step.maneuver as string) ?? '',
+    }))
+    .filter((s) => s.instruction.length > 0)
+    // Cap at 40 steps to keep response size reasonable
+    .slice(0, 40)
+
   return {
     distanceMeters,
     distanceKm: Math.round((distanceMeters / 1000) * 10) / 10,
@@ -175,5 +197,6 @@ export async function getRouteInfo(
     overviewPolyline,
     startLocation,
     endLocation,
+    routeSteps,
   }
 }

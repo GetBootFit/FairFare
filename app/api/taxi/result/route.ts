@@ -141,6 +141,7 @@ export async function POST(req: NextRequest) {
       tipping: aiInfo.tipping,
       driverPhrases: aiInfo.driverPhrases,
       routeMapUrl,
+      ...(route.routeSteps?.length ? { routeSteps: route.routeSteps } : {}),
       ...(aiInfo.transferNote ? { transferNote: aiInfo.transferNote } : {}),
       ...(aiInfo.aiUnavailable ? { aiUnavailable: true } : {}),
     }

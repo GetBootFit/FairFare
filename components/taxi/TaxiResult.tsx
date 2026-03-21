@@ -7,6 +7,7 @@ import {
   Navigation, RotateCcw,
   Volume2, VolumeX, Copy, Check, Maximize2, Share2, Moon, ImageDown,
   Map, ChevronDown, ChevronUp, ChevronRight, Phone, ExternalLink,
+  Printer, ArrowUp,
 } from 'lucide-react'
 import Link from 'next/link'
 import clsx from 'clsx'
@@ -97,6 +98,7 @@ export function TaxiResult({ result, onReset }: Props) {
   const [isNight, setIsNight] = useState(false)
   const [showMap, setShowMap] = useState(false)
   const [mapError, setMapError] = useState(false)
+  const [showDirections, setShowDirections] = useState(false)
   const [showEmergency, setShowEmergency] = useState(false)
   const [showDriving,   setShowDriving]   = useState(false)
 
@@ -187,9 +189,15 @@ export function TaxiResult({ result, onReset }: Props) {
     }
   }, [result, fareRange, shareUrl])
 
+  // ── Print / Save as PDF ───────────────────────────────────────────────────
+  const handlePrint = useCallback(() => {
+    track('print_clicked', { city: result.city, country: result.country })
+    window.print()
+  }, [result.city, result.country])
+
   return (
     <>
-      <div className="space-y-3">
+      <div className="space-y-3 print-result">
 
         {/* Route header — pickup → destination */}
         <div className="bg-zinc-900 border border-zinc-800 rounded-2xl px-4 py-3">
@@ -247,12 +255,20 @@ export function TaxiResult({ result, onReset }: Props) {
                 download={`hootling-${result.city.toLowerCase().replace(/\s+/g, '-')}-fare.png`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1 text-xs text-zinc-600 hover:text-zinc-400 transition-colors"
+                className="flex items-center gap-1 text-xs text-zinc-600 hover:text-zinc-400 transition-colors print-hide"
                 title="Download share card"
                 onClick={() => track('card_download_clicked', { city: result.city, country: result.country })}
               >
                 <ImageDown size={13} />
               </a>
+              {/* Save as PDF */}
+              <button
+                onClick={handlePrint}
+                className="flex items-center gap-1 text-xs text-zinc-600 hover:text-zinc-400 transition-colors print-hide"
+                title="Save as PDF"
+              >
+                <Printer size={13} />
+              </button>
               <div className="flex items-center gap-1">
                 <SvgIcon name="money-exchange" size={15} className="opacity-60" />
                 <CurrencySelector />
@@ -296,7 +312,7 @@ export function TaxiResult({ result, onReset }: Props) {
                 setShowMap(next)
                 if (next) track('map_viewed', { city: result.city, country: result.country })
               }}
-              className="w-full flex items-center justify-center gap-2 text-xs text-zinc-500 hover:text-teal-400 transition-colors py-3"
+              className="w-full flex items-center justify-center gap-2 text-xs text-zinc-500 hover:text-teal-400 transition-colors py-3 print-hide"
             >
               <Map size={13} />
               <span>{showMap ? t('result_hide_map') : t('result_view_map')}</span>
@@ -317,6 +333,42 @@ export function TaxiResult({ result, onReset }: Props) {
                 />
               )
             )}
+          </div>
+        )}
+
+        {/* Turn-by-turn directions */}
+        {result.routeSteps && result.routeSteps.length > 0 && (
+          <div className="bg-zinc-900 border border-zinc-800 hover:border-teal-800/60 rounded-2xl overflow-hidden transition-colors">
+            <button
+              onClick={() => {
+                const next = !showDirections
+                setShowDirections(next)
+                if (next) track('directions_viewed', { city: result.city, country: result.country })
+              }}
+              className="w-full flex items-center justify-center gap-2 text-xs text-zinc-500 hover:text-teal-400 transition-colors py-3 print-hide"
+            >
+              <Navigation size={13} />
+              <span>{showDirections ? 'Hide directions' : 'Turn-by-turn directions'}</span>
+              {showDirections ? <ChevronUp size={11} /> : <ChevronDown size={11} />}
+            </button>
+            {/* Always visible when printing */}
+            <div className={showDirections ? 'block' : 'hidden print:block'}>
+              <div className="border-t border-zinc-800 divide-y divide-zinc-800/60">
+                {result.routeSteps.map((step, i) => (
+                  <div key={i} className="flex items-start gap-3 px-4 py-2.5">
+                    <div className="w-5 shrink-0 flex justify-center pt-0.5">
+                      <ManeuverIcon maneuver={step.maneuver} />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-xs text-zinc-300 leading-snug">{step.instruction}</p>
+                    </div>
+                    {step.distance && (
+                      <span className="text-[10px] text-zinc-600 shrink-0 pt-0.5">{step.distance}</span>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         )}
 
@@ -407,21 +459,6 @@ export function TaxiResult({ result, onReset }: Props) {
             )}
           </div>
         )}
-
-        {/* Tipping guide CTA — replaces the old inline tipping card */}
-        <Link
-          href={`/tipping/${result.country.toLowerCase().replace(/\s+/g, '-')}`}
-          className="flex items-center gap-3.5 bg-zinc-900 border border-zinc-800 hover:border-teal-800/60 rounded-2xl px-4 py-3.5 transition-colors group"
-        >
-          <SvgIcon name="money-notes" size={30} className="shrink-0" />
-          <div className="flex-1 min-w-0">
-            <p className="text-xs text-zinc-500 uppercase tracking-wider mb-0.5">{t('result_tipping_guide')}</p>
-            <p className="text-sm text-white group-hover:text-teal-300 transition-colors">
-              {t('result_how_much_tip').replace('{country}', result.country)}
-            </p>
-          </div>
-          <ChevronRight size={14} className="text-zinc-600 group-hover:text-teal-400 transition-colors shrink-0 rtl:rotate-180" />
-        </Link>
 
         {/* Driver phrases */}
         {result.driverPhrases?.length > 0 && (
@@ -623,6 +660,20 @@ export function TaxiResult({ result, onReset }: Props) {
           )
         })()}
 
+        {/* Tipping guide — compact link, below affiliates */}
+        <Link
+          href={`/tipping/${result.country.toLowerCase().replace(/\s+/g, '-')}`}
+          className="flex items-center gap-3 bg-zinc-900 border border-zinc-800 hover:border-zinc-700 rounded-2xl px-4 py-3 transition-colors group print-hide"
+        >
+          <SvgIcon name="money-notes" size={22} className="shrink-0 opacity-60" />
+          <div className="flex-1 min-w-0">
+            <p className="text-xs text-zinc-500">
+              {t('result_how_much_tip').replace('{country}', result.country)}
+            </p>
+          </div>
+          <ChevronRight size={13} className="text-zinc-700 group-hover:text-zinc-500 transition-colors shrink-0 rtl:rotate-180" />
+        </Link>
+
         {/* AI + data disclosure — required on paid result pages */}
         <p className="text-[10px] text-zinc-600 text-center leading-relaxed px-2">
           {t('example_ai_disclosure')}
@@ -635,7 +686,7 @@ export function TaxiResult({ result, onReset }: Props) {
         {onReset && (
           <button
             onClick={onReset}
-            className="w-full flex items-center justify-center gap-2 text-zinc-600 text-sm py-2 hover:text-zinc-400 transition-colors"
+            className="w-full flex items-center justify-center gap-2 text-zinc-600 text-sm py-2 hover:text-zinc-400 transition-colors print-hide"
           >
             <RotateCcw size={14} />
             {t('result_new_search')}
@@ -661,6 +712,34 @@ export function TaxiResult({ result, onReset }: Props) {
 }
 
 // ── Sub-components ────────────────────────────────────────────────────────────
+
+// ── Maneuver icon for turn-by-turn directions ─────────────────────────────
+function ManeuverIcon({ maneuver }: { maneuver: string }) {
+  const base = 'text-teal-500 shrink-0'
+  if (maneuver.includes('uturn')) {
+    return <ArrowUp size={13} className={`${base} rotate-180`} />
+  }
+  if (maneuver.includes('sharp-left') || maneuver === 'turn-left') {
+    return <ArrowUp size={13} className={`${base} -rotate-90`} />
+  }
+  if (maneuver.includes('slight-left') || maneuver === 'keep-left') {
+    return <ArrowUp size={13} className={`${base} -rotate-45`} />
+  }
+  if (maneuver.includes('sharp-right') || maneuver === 'turn-right') {
+    return <ArrowUp size={13} className={`${base} rotate-90`} />
+  }
+  if (maneuver.includes('slight-right') || maneuver === 'keep-right' || maneuver === 'ramp-right' || maneuver === 'merge') {
+    return <ArrowUp size={13} className={`${base} rotate-45`} />
+  }
+  if (maneuver === 'ramp-left') {
+    return <ArrowUp size={13} className={`${base} -rotate-45`} />
+  }
+  if (maneuver.includes('roundabout')) {
+    return <Navigation size={12} className={base} />
+  }
+  // straight / fork / default
+  return <ArrowUp size={13} className={base} />
+}
 
 function Stat({ label, value, sub, color, icon }: {
   label: string
