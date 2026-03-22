@@ -6,7 +6,7 @@ Renames, reorganises, resizes, and generates derived assets
 from Adobe Firefly source images.
 
 Run from any directory:
-  python /c/Users/david/Projects/FairFare/public/organise_assets.py
+  python /c/Users/david/Projects/Hootling/public/organise_assets.py
 """
 
 import os
@@ -16,7 +16,7 @@ import io
 from pathlib import Path
 from PIL import Image, ImageDraw
 
-BASE   = Path("C:/Users/david/Projects/FairFare/public")
+BASE   = Path("C:/Users/david/Projects/Hootling/public")
 SRC    = BASE / "images"
 ICONS  = BASE / "icons"
 

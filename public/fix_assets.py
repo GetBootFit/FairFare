@@ -14,7 +14,7 @@ import shutil
 from pathlib import Path
 from PIL import Image
 
-BASE   = Path("C:/Users/david/Projects/FairFare/public")
+BASE   = Path("C:/Users/david/Projects/Hootling/public")
 SRC    = BASE / "images"
 ICONS  = BASE / "icons"
 BG     = (24, 24, 27)   # #18181b

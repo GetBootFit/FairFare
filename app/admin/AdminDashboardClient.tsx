@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useCallback } from 'react'
-import { BarChart3, Settings, RefreshCw, Save, RotateCcw, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react'
+import { BarChart3, Settings, RefreshCw, Save, RotateCcw, ChevronDown, ChevronUp, ExternalLink, Eye, Car, Banknote, CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
 import type { AffiliatePartner } from '@/data/affiliate-config'
 
 interface MetricsData {
@@ -21,7 +21,7 @@ interface Props {
 }
 
 export function AdminDashboardClient({ initialConfig }: Props) {
-  const [activeTab, setActiveTab] = useState<'metrics' | 'config'>('metrics')
+  const [activeTab, setActiveTab] = useState<'metrics' | 'config' | 'preview'>('metrics')
   const [metrics, setMetrics] = useState<MetricsData | null>(null)
   const [metricsLoading, setMetricsLoading] = useState(false)
   const [config, setConfig] = useState<AffiliatePartner[]>(initialConfig)
@@ -116,7 +116,7 @@ export function AdminDashboardClient({ initialConfig }: Props) {
     <div className="space-y-4">
       {/* Tab switcher */}
       <div className="flex gap-1 bg-zinc-900 rounded-xl p-1 w-fit">
-        {(['metrics', 'config'] as const).map(tab => (
+        {(['metrics', 'config', 'preview'] as const).map(tab => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
@@ -124,8 +124,8 @@ export function AdminDashboardClient({ initialConfig }: Props) {
               activeTab === tab ? 'bg-zinc-700 text-white' : 'text-zinc-500 hover:text-zinc-300'
             }`}
           >
-            {tab === 'metrics' ? <BarChart3 size={13} /> : <Settings size={13} />}
-            {tab === 'metrics' ? 'Metrics' : 'Affiliate Config'}
+            {tab === 'metrics' ? <BarChart3 size={13} /> : tab === 'config' ? <Settings size={13} /> : <Eye size={13} />}
+            {tab === 'metrics' ? 'Metrics' : tab === 'config' ? 'Affiliate Config' : 'Preview'}
           </button>
         ))}
       </div>
@@ -218,6 +218,9 @@ export function AdminDashboardClient({ initialConfig }: Props) {
           )}
         </div>
       )}
+
+      {/* ── PREVIEW TAB ── */}
+      {activeTab === 'preview' && <AdminPreviewTab />}
 
       {/* ── CONFIG TAB ── */}
       {activeTab === 'config' && (
@@ -381,6 +384,124 @@ export function AdminDashboardClient({ initialConfig }: Props) {
           </div>
         </div>
       )}
+    </div>
+  )
+}
+
+// ─── Admin Preview Tab ──────────────────────────────────────────────────────────
+
+type PreviewStatus = 'idle' | 'loading' | 'success' | 'error'
+
+function AdminPreviewTab() {
+  const [taxi, setTaxi] = useState<{ status: PreviewStatus; message: string }>({ status: 'idle', message: '' })
+  const [tipping, setTipping] = useState<{ status: PreviewStatus; message: string }>({ status: 'idle', message: '' })
+
+  async function getPreviewToken(feature: 'taxi' | 'tipping') {
+    const setter = feature === 'taxi' ? setTaxi : setTipping
+    setter({ status: 'loading', message: '' })
+
+    try {
+      const res = await fetch(`/api/admin/preview-token?feature=${feature}`)
+      const data = await res.json()
+
+      if (!res.ok || !data.token) {
+        setter({ status: 'error', message: data.error ?? 'Unknown error' })
+        return
+      }
+
+      localStorage.setItem('ff_token', data.token)
+      setter({ status: 'success', message: `✓ Token stored (7 days). Opening /${feature}…` })
+      setTimeout(() => window.open(`/${feature}`, '_blank'), 800)
+    } catch (err) {
+      setter({ status: 'error', message: String(err) })
+    }
+  }
+
+  function clearTokens() {
+    localStorage.removeItem('ff_token')
+    for (let i = localStorage.length - 1; i >= 0; i--) {
+      const key = localStorage.key(i)
+      if (key?.startsWith('ff_pass_') || key?.startsWith('ff_bundle_')) localStorage.removeItem(key!)
+    }
+    setTaxi({ status: 'idle', message: '' })
+    setTipping({ status: 'idle', message: '' })
+    alert('All Hootling tokens cleared from localStorage.')
+  }
+
+  return (
+    <div className="space-y-4">
+      <div>
+        <h2 className="text-sm font-semibold text-zinc-300">Preview Paid Pages</h2>
+        <p className="text-xs text-zinc-600 mt-1">
+          Issue a 7-day admin token to review paid features on the live site without going through Stripe.
+          Token opens in a new tab.
+        </p>
+      </div>
+
+      <div className="space-y-3">
+        {/* Taxi */}
+        <button
+          onClick={() => getPreviewToken('taxi')}
+          disabled={taxi.status === 'loading' || taxi.status === 'success'}
+          className="w-full flex items-center gap-4 p-4 rounded-2xl bg-zinc-900 border border-purple-800/50 hover:bg-zinc-800 transition-colors disabled:opacity-60 disabled:cursor-not-allowed text-left"
+        >
+          <div className="w-12 h-12 rounded-xl bg-purple-900/20 flex items-center justify-center shrink-0">
+            {taxi.status === 'loading' ? <Loader2 size={20} className="animate-spin text-zinc-400" />
+              : taxi.status === 'success' ? <CheckCircle size={20} className="text-green-400" />
+              : taxi.status === 'error' ? <AlertCircle size={20} className="text-red-400" />
+              : <Car size={20} className="text-purple-400" />}
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="text-sm font-semibold text-white">Preview Taxi Fare Check</p>
+            {taxi.message ? (
+              <p className={`text-xs mt-0.5 ${taxi.status === 'error' ? 'text-red-400' : 'text-green-400'}`}>{taxi.message}</p>
+            ) : (
+              <p className="text-xs text-zinc-500 mt-0.5">Issues a 7-day token → opens /taxi in new tab</p>
+            )}
+          </div>
+        </button>
+
+        {/* Tipping */}
+        <button
+          onClick={() => getPreviewToken('tipping')}
+          disabled={tipping.status === 'loading' || tipping.status === 'success'}
+          className="w-full flex items-center gap-4 p-4 rounded-2xl bg-zinc-900 border border-teal-800/50 hover:bg-zinc-800 transition-colors disabled:opacity-60 disabled:cursor-not-allowed text-left"
+        >
+          <div className="w-12 h-12 rounded-xl bg-teal-900/20 flex items-center justify-center shrink-0">
+            {tipping.status === 'loading' ? <Loader2 size={20} className="animate-spin text-zinc-400" />
+              : tipping.status === 'success' ? <CheckCircle size={20} className="text-green-400" />
+              : tipping.status === 'error' ? <AlertCircle size={20} className="text-red-400" />
+              : <Banknote size={20} className="text-teal-400" />}
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="text-sm font-semibold text-white">Preview Tipping Guide</p>
+            {tipping.message ? (
+              <p className={`text-xs mt-0.5 ${tipping.status === 'error' ? 'text-red-400' : 'text-green-400'}`}>{tipping.message}</p>
+            ) : (
+              <p className="text-xs text-zinc-500 mt-0.5">Issues a 7-day token → opens /tipping in new tab</p>
+            )}
+          </div>
+        </button>
+      </div>
+
+      <div className="pt-2 border-t border-zinc-800">
+        <button
+          onClick={clearTokens}
+          className="text-xs text-zinc-600 hover:text-red-400 transition-colors"
+        >
+          Clear all tokens from localStorage
+        </button>
+      </div>
+
+      <div className="rounded-xl bg-zinc-900 border border-zinc-800 p-4 space-y-1.5">
+        <p className="text-xs font-semibold text-zinc-400">How this works</p>
+        <ul className="text-xs text-zinc-600 space-y-1 list-disc list-inside">
+          <li>Calls <code className="text-zinc-500">/api/admin/preview-token</code> (admin cookie required)</li>
+          <li>Issues a JWT signed with <code className="text-zinc-500">ENTITLEMENT_SECRET</code></li>
+          <li>Stores token as <code className="text-zinc-500">ff_token</code> in localStorage</li>
+          <li>Valid for 7 days — no payment needed</li>
+        </ul>
+      </div>
     </div>
   )
 }

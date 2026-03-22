@@ -2,14 +2,14 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "FairFare Dev",
+      "name": "Hootling Dev",
       "runtimeExecutable": "node",
       "runtimeArgs": ["C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js", "run", "dev"],
       "port": 3000,
       "autoPort": true
     },
     {
-      "name": "FairFare Preview",
+      "name": "Hootling Preview",
       "runtimeExecutable": "node",
       "runtimeArgs": ["node_modules/next/dist/bin/next", "start", "--port", "3002"],
       "port": 3002,
