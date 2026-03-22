@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, Globe } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -137,16 +138,16 @@ function ExpectationBadge({ status }: { status: TipExpectation }) {
 }
 
 const REGIONS_SUMMARY = [
-  { region: 'North America', countries: [{ flag: '🇺🇸', name: 'USA' }, { flag: '🇨🇦', name: 'Canada' }], summary: 'Strong tipping culture. 15–20% in restaurants is standard, not optional. Taxi drivers, hotel porters, and bartenders all expect tips. Skipping a tip is considered rude and signals poor service.', level: 'expected' as TipExpectation },
-  { region: 'Latin America', countries: [{ flag: '🇲🇽', name: 'Mexico' }, { flag: '🇧🇷', name: 'Brazil' }, { flag: '🇦🇷', name: 'Argentina' }, { flag: '🇨🇴', name: 'Colombia' }, { flag: '🇨🇱', name: 'Chile' }, { flag: '🇵🇪', name: 'Peru' }], summary: 'Mixed. Mexico and Brazil have growing tipping cultures in restaurants (10–15%). Argentina is complicated by inflation. Smaller countries and informal meals typically don\'t expect tips.', level: 'optional' as TipExpectation },
-  { region: 'Western Europe', countries: [{ flag: '🇬🇧', name: 'UK' }, { flag: '🇫🇷', name: 'France' }, { flag: '🇩🇪', name: 'Germany' }, { flag: '🇮🇹', name: 'Italy' }, { flag: '🇪🇸', name: 'Spain' }, { flag: '🇵🇹', name: 'Portugal' }], summary: 'Service charges are often included. Where they are, no additional tip is expected. Leaving small change or rounding up is appreciated but never obligatory. Spain and Scandinavia have the weakest tipping cultures.', level: 'optional' as TipExpectation },
-  { region: 'Eastern Europe', countries: [{ flag: '🇵🇱', name: 'Poland' }, { flag: '🇨🇿', name: 'Czech Rep.' }, { flag: '🇭🇺', name: 'Hungary' }, { flag: '🇷🇴', name: 'Romania' }], summary: 'Tipping at restaurants (10%) is expected and appreciated — more so than in Western Europe. Staff wages are generally lower. Round up taxi fares.', level: 'expected' as TipExpectation },
-  { region: 'East Asia', countries: [{ flag: '🇯🇵', name: 'Japan' }, { flag: '🇰🇷', name: 'S. Korea' }, { flag: '🇨🇳', name: 'China' }, { flag: '🇹🇼', name: 'Taiwan' }], summary: 'Japan is the clearest case: tipping is considered insulting — it implies the service was unexpected or that the worker needs charity. South Korea and China are similar. Hong Kong is more accepting due to Western influence.', level: 'rude' as TipExpectation },
-  { region: 'Southeast Asia', countries: [{ flag: '🇹🇭', name: 'Thailand' }, { flag: '🇻🇳', name: 'Vietnam' }, { flag: '🇮🇩', name: 'Indonesia' }, { flag: '🇲🇾', name: 'Malaysia' }, { flag: '🇵🇭', name: 'Philippines' }], summary: 'Tipping is appreciated but not expected. Round up the fare, leave 20–50 local currency units at restaurants, and tip hotel staff who assist with luggage. Amounts are small in absolute terms but meaningful to workers.', level: 'optional' as TipExpectation },
-  { region: 'South Asia', countries: [{ flag: '🇮🇳', name: 'India' }], summary: 'Tipping is expected at restaurants (10%) and for hotel staff. For taxis, rounding up or leaving a small amount is appreciated. The hospitality sector relies partly on gratuity.', level: 'optional' as TipExpectation },
-  { region: 'Middle East', countries: [{ flag: '🇦🇪', name: 'UAE' }, { flag: '🇸🇦', name: 'Saudi Arabia' }, { flag: '🇯🇴', name: 'Jordan' }, { flag: '🇪🇬', name: 'Egypt' }, { flag: '🇲🇦', name: 'Morocco' }], summary: 'Mixed and culturally complex. Egypt has a strong baksheesh culture (small tips for many services). UAE upscale venues add service charges. Morocco: restaurants and taxis expect rounding up.', level: 'optional' as TipExpectation },
-  { region: 'Africa', countries: [{ flag: '🇿🇦', name: 'South Africa' }], summary: 'South Africa has a strong tipping culture similar to North America: 10–15% at restaurants, tips for petrol station attendants, guides, and safari staff.', level: 'expected' as TipExpectation },
-  { region: 'Oceania', countries: [{ flag: '🇦🇺', name: 'Australia' }, { flag: '🇳🇿', name: 'New Zealand' }], summary: 'Minimum wage legislation means workers are not dependent on tips. Tipping is appreciated but genuinely optional. Rounding up or adding 10% for exceptional service is fine; not doing so is perfectly acceptable.', level: 'optional' as TipExpectation },
+  { region: 'North America', countries: [{ iso2: 'us', name: 'USA' }, { iso2: 'ca', name: 'Canada' }], summary: 'Strong tipping culture. 15–20% in restaurants is standard, not optional. Taxi drivers, hotel porters, and bartenders all expect tips. Skipping a tip is considered rude and signals poor service.', level: 'expected' as TipExpectation },
+  { region: 'Latin America', countries: [{ iso2: 'mx', name: 'Mexico' }, { iso2: 'br', name: 'Brazil' }, { iso2: 'ar', name: 'Argentina' }, { iso2: 'co', name: 'Colombia' }, { iso2: 'cl', name: 'Chile' }, { iso2: 'pe', name: 'Peru' }], summary: 'Mixed. Mexico and Brazil have growing tipping cultures in restaurants (10–15%). Argentina is complicated by inflation. Smaller countries and informal meals typically don\'t expect tips.', level: 'optional' as TipExpectation },
+  { region: 'Western Europe', countries: [{ iso2: 'gb', name: 'UK' }, { iso2: 'fr', name: 'France' }, { iso2: 'de', name: 'Germany' }, { iso2: 'it', name: 'Italy' }, { iso2: 'es', name: 'Spain' }, { iso2: 'pt', name: 'Portugal' }], summary: 'Service charges are often included. Where they are, no additional tip is expected. Leaving small change or rounding up is appreciated but never obligatory. Spain and Scandinavia have the weakest tipping cultures.', level: 'optional' as TipExpectation },
+  { region: 'Eastern Europe', countries: [{ iso2: 'pl', name: 'Poland' }, { iso2: 'cz', name: 'Czech Rep.' }, { iso2: 'hu', name: 'Hungary' }, { iso2: 'ro', name: 'Romania' }], summary: 'Tipping at restaurants (10%) is expected and appreciated — more so than in Western Europe. Staff wages are generally lower. Round up taxi fares.', level: 'expected' as TipExpectation },
+  { region: 'East Asia', countries: [{ iso2: 'jp', name: 'Japan' }, { iso2: 'kr', name: 'S. Korea' }, { iso2: 'cn', name: 'China' }, { iso2: 'tw', name: 'Taiwan' }], summary: 'Japan is the clearest case: tipping is considered insulting — it implies the service was unexpected or that the worker needs charity. South Korea and China are similar. Hong Kong is more accepting due to Western influence.', level: 'rude' as TipExpectation },
+  { region: 'Southeast Asia', countries: [{ iso2: 'th', name: 'Thailand' }, { iso2: 'vn', name: 'Vietnam' }, { iso2: 'id', name: 'Indonesia' }, { iso2: 'my', name: 'Malaysia' }, { iso2: 'ph', name: 'Philippines' }], summary: 'Tipping is appreciated but not expected. Round up the fare, leave 20–50 local currency units at restaurants, and tip hotel staff who assist with luggage. Amounts are small in absolute terms but meaningful to workers.', level: 'optional' as TipExpectation },
+  { region: 'South Asia', countries: [{ iso2: 'in', name: 'India' }], summary: 'Tipping is expected at restaurants (10%) and for hotel staff. For taxis, rounding up or leaving a small amount is appreciated. The hospitality sector relies partly on gratuity.', level: 'optional' as TipExpectation },
+  { region: 'Middle East', countries: [{ iso2: 'ae', name: 'UAE' }, { iso2: 'sa', name: 'Saudi Arabia' }, { iso2: 'jo', name: 'Jordan' }, { iso2: 'eg', name: 'Egypt' }, { iso2: 'ma', name: 'Morocco' }], summary: 'Mixed and culturally complex. Egypt has a strong baksheesh culture (small tips for many services). UAE upscale venues add service charges. Morocco: restaurants and taxis expect rounding up.', level: 'optional' as TipExpectation },
+  { region: 'Africa', countries: [{ iso2: 'za', name: 'South Africa' }], summary: 'South Africa has a strong tipping culture similar to North America: 10–15% at restaurants, tips for petrol station attendants, guides, and safari staff.', level: 'expected' as TipExpectation },
+  { region: 'Oceania', countries: [{ iso2: 'au', name: 'Australia' }, { iso2: 'nz', name: 'New Zealand' }], summary: 'Minimum wage legislation means workers are not dependent on tips. Tipping is appreciated but genuinely optional. Rounding up or adding 10% for exceptional service is fine; not doing so is perfectly acceptable.', level: 'optional' as TipExpectation },
 ]
 
 export default function TippingGuidePage() {
@@ -201,8 +202,15 @@ export default function TippingGuidePage() {
                 </div>
                 <div className="flex flex-wrap gap-1.5">
                   {r.countries.map((c) => (
-                    <span key={c.name} className="inline-flex items-center gap-1 text-[10px] text-zinc-400 bg-zinc-800/60 rounded-full px-2 py-0.5">
-                      <span>{c.flag}</span>
+                    <span key={c.name} className="inline-flex items-center gap-1.5 text-[10px] text-zinc-400 bg-zinc-800/60 rounded-full px-2 py-0.5">
+                      <Image
+                        src={`/images/flags/${c.iso2}.svg`}
+                        alt=""
+                        width={14}
+                        height={11}
+                        className="rounded-sm shrink-0"
+                        unoptimized
+                      />
                       <span>{c.name}</span>
                     </span>
                   ))}
