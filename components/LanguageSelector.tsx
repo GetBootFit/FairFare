@@ -147,7 +147,7 @@ export function LanguageSelector() {
             role="listbox"
             aria-label="Select language"
             aria-activedescendant={`lang-option-${locale}`}
-            className="absolute bottom-full right-0 rtl:right-auto rtl:left-0 mb-2 z-50 bg-zinc-900 border border-zinc-700 rounded-xl overflow-hidden shadow-xl min-w-[160px] max-h-64 overflow-y-auto"
+            className="absolute bottom-full right-0 rtl:right-auto rtl:left-0 mb-2 z-50 bg-zinc-900 border border-zinc-700 rounded-xl overflow-hidden shadow-xl min-w-[160px] max-h-64 overflow-y-auto scrollbar-purple"
           >
             {LOCALES.map((l, idx) => (
               <button

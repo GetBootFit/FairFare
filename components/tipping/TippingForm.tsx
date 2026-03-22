@@ -207,7 +207,7 @@ export function TippingForm() {
               {errorMsg}
             </p>
           )}
-          <div className="grid grid-cols-2 gap-2 max-h-80 overflow-y-auto pr-1 rtl:pr-0 rtl:pl-1">
+          <div className="grid grid-cols-2 gap-2 max-h-80 overflow-y-auto pr-1 rtl:pr-0 rtl:pl-1 scrollbar-teal">
             {filtered.map((c) => {
               const iso2 = COUNTRY_FLAGS[c]
               return (
