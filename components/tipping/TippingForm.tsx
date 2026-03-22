@@ -33,6 +33,12 @@ const COUNTRIES = [
   'United States', 'Vietnam',
 ]
 
+// Top 8 destinations shown as quick-tap buttons before the user starts typing
+const POPULAR_COUNTRIES = [
+  'United States', 'United Kingdom', 'France', 'Japan',
+  'Italy', 'Thailand', 'Australia', 'Spain',
+]
+
 const STORAGE_KEY = 'ff_tipping_form'
 
 interface TokenEventDetail {
@@ -207,30 +213,72 @@ export function TippingForm() {
               {errorMsg}
             </p>
           )}
-          <div className="grid grid-cols-2 gap-2 max-h-80 overflow-y-auto pr-1 rtl:pr-0 rtl:pl-1 scrollbar-teal">
-            {filtered.map((c) => {
-              const iso2 = COUNTRY_FLAGS[c]
-              return (
-                <button
-                  key={c}
-                  onClick={() => handleSubmit(c)}
-                  className="flex items-center gap-2.5 text-left rtl:text-right px-3.5 py-3 rounded-xl bg-zinc-900 border border-zinc-800 text-sm text-zinc-200 hover:bg-zinc-800 hover:border-zinc-700 transition-colors min-w-0"
-                >
-                  {iso2 && (
-                    <Image
-                      src={`/images/flags/${iso2}.svg`}
-                      alt=""
-                      width={20}
-                      height={15}
-                      className="rounded-sm shrink-0"
-                      unoptimized
-                    />
-                  )}
-                  <span className="truncate">{c}</span>
-                </button>
-              )
-            })}
-          </div>
+
+          {/* Popular quick-taps — shown when search is empty */}
+          {query.length === 0 && (
+            <div className="space-y-2">
+              <p className="text-[11px] text-zinc-600 uppercase tracking-wider">Popular destinations</p>
+              <div className="grid grid-cols-2 gap-2">
+                {POPULAR_COUNTRIES.map((c) => {
+                  const iso2 = COUNTRY_FLAGS[c]
+                  return (
+                    <button
+                      key={c}
+                      onClick={() => handleSubmit(c)}
+                      className="flex items-center gap-2.5 text-left rtl:text-right px-3.5 py-3 rounded-xl bg-zinc-900 border border-zinc-800 text-sm text-zinc-200 hover:bg-zinc-800 hover:border-teal-800/50 hover:text-teal-300 transition-colors min-w-0"
+                    >
+                      {iso2 && (
+                        <Image
+                          src={`/images/flags/${iso2}.svg`}
+                          alt=""
+                          width={20}
+                          height={15}
+                          className="rounded-sm shrink-0"
+                          unoptimized
+                        />
+                      )}
+                      <span className="truncate">{c}</span>
+                    </button>
+                  )
+                })}
+              </div>
+              <p className="text-[11px] text-zinc-600 pt-1">
+                Don't see your destination? Search above for all 54 countries.
+              </p>
+            </div>
+          )}
+
+          {/* Full filtered list — shown when user is searching */}
+          {query.length > 0 && (
+            <div className="grid grid-cols-2 gap-2 max-h-80 overflow-y-auto pr-1 rtl:pr-0 rtl:pl-1 scrollbar-teal">
+              {filtered.length > 0 ? filtered.map((c) => {
+                const iso2 = COUNTRY_FLAGS[c]
+                return (
+                  <button
+                    key={c}
+                    onClick={() => handleSubmit(c)}
+                    className="flex items-center gap-2.5 text-left rtl:text-right px-3.5 py-3 rounded-xl bg-zinc-900 border border-zinc-800 text-sm text-zinc-200 hover:bg-zinc-800 hover:border-teal-800/50 hover:text-teal-300 transition-colors min-w-0"
+                  >
+                    {iso2 && (
+                      <Image
+                        src={`/images/flags/${iso2}.svg`}
+                        alt=""
+                        width={20}
+                        height={15}
+                        className="rounded-sm shrink-0"
+                        unoptimized
+                      />
+                    )}
+                    <span className="truncate">{c}</span>
+                  </button>
+                )
+              }) : (
+                <p className="col-span-2 text-sm text-zinc-500 py-4 text-center">
+                  No countries found for &ldquo;{query}&rdquo;
+                </p>
+              )}
+            </div>
+          )}
         </>
       )}
 
