@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, Globe } from 'lucide-react'
+import { TipCardActions } from '@/components/tipping/TipCardActions'
 
 export const metadata: Metadata = {
   title: 'Global Tipping Customs 2026: Country-by-Country Guide | Hootling',
@@ -34,7 +35,7 @@ type TipExpectation = 'expected' | 'optional' | 'not-expected' | 'rude'
 interface CountryTip {
   country: string
   slug: string
-  flag: string
+  iso2: string
   restaurant: TipExpectation
   taxi: TipExpectation
   hotel: TipExpectation
@@ -43,66 +44,66 @@ interface CountryTip {
 
 const COUNTRIES: CountryTip[] = [
   // Americas — high tipping culture
-  { country: 'United States', slug: 'united-states', flag: '🇺🇸', restaurant: 'expected', taxi: 'expected', hotel: 'expected', highlight: '15–20% restaurant; 15–20% taxi; $1–5/bag porter' },
-  { country: 'Canada', slug: 'canada', flag: '🇨🇦', restaurant: 'expected', taxi: 'expected', hotel: 'optional', highlight: '15–18% restaurant; 10–15% taxi' },
-  { country: 'Mexico', slug: 'mexico', flag: '🇲🇽', restaurant: 'expected', taxi: 'optional', hotel: 'optional', highlight: '10–15% restaurant; round up taxi fare' },
-  { country: 'Brazil', slug: 'brazil', flag: '🇧🇷', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: '10% usually included; round up otherwise' },
-  { country: 'Argentina', slug: 'argentina', flag: '🇦🇷', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: 'Round up; inflation makes cash tips complex' },
-  { country: 'Colombia', slug: 'colombia', flag: '🇨🇴', restaurant: 'optional', taxi: 'not-expected', hotel: 'optional', highlight: '10% optional in restaurants; not for taxis' },
-  { country: 'Chile', slug: 'chile', flag: '🇨🇱', restaurant: 'optional', taxi: 'not-expected', hotel: 'optional', highlight: '10% in restaurants; round up taxi fares' },
-  { country: 'Peru', slug: 'peru', flag: '🇵🇪', restaurant: 'optional', taxi: 'not-expected', hotel: 'optional', highlight: '10% in upscale restaurants; not for metered taxis' },
+  { country: 'United States', slug: 'united-states', iso2: 'us', restaurant: 'expected', taxi: 'expected', hotel: 'expected', highlight: '15–20% restaurant; 15–20% taxi; $1–5/bag porter' },
+  { country: 'Canada', slug: 'canada', iso2: 'ca', restaurant: 'expected', taxi: 'expected', hotel: 'optional', highlight: '15–18% restaurant; 10–15% taxi' },
+  { country: 'Mexico', slug: 'mexico', iso2: 'mx', restaurant: 'expected', taxi: 'optional', hotel: 'optional', highlight: '10–15% restaurant; round up taxi fare' },
+  { country: 'Brazil', slug: 'brazil', iso2: 'br', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: '10% usually included; round up otherwise' },
+  { country: 'Argentina', slug: 'argentina', iso2: 'ar', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: 'Round up; inflation makes cash tips complex' },
+  { country: 'Colombia', slug: 'colombia', iso2: 'co', restaurant: 'optional', taxi: 'not-expected', hotel: 'optional', highlight: '10% optional in restaurants; not for taxis' },
+  { country: 'Chile', slug: 'chile', iso2: 'cl', restaurant: 'optional', taxi: 'not-expected', hotel: 'optional', highlight: '10% in restaurants; round up taxi fares' },
+  { country: 'Peru', slug: 'peru', iso2: 'pe', restaurant: 'optional', taxi: 'not-expected', hotel: 'optional', highlight: '10% in upscale restaurants; not for metered taxis' },
 
   // Europe — mixed
-  { country: 'United Kingdom', slug: 'united-kingdom', flag: '🇬🇧', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: '10–12.5% restaurant; round up taxi; service often included' },
-  { country: 'France', slug: 'france', flag: '🇫🇷', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: 'Service compris included; leave coins if happy' },
-  { country: 'Germany', slug: 'germany', flag: '🇩🇪', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: 'Round up to nearest €; say "stimmt so" (keep the change)' },
-  { country: 'Italy', slug: 'italy', flag: '🇮🇹', restaurant: 'optional', taxi: 'not-expected', hotel: 'optional', highlight: '€1–2 coperto included; small tip for exceptional service' },
-  { country: 'Spain', slug: 'spain', flag: '🇪🇸', restaurant: 'not-expected', taxi: 'not-expected', hotel: 'not-expected', highlight: 'Tipping is not customary; small tip appreciated in tourist areas' },
-  { country: 'Portugal', slug: 'portugal', flag: '🇵🇹', restaurant: 'optional', taxi: 'optional', hotel: 'not-expected', highlight: '5–10% if satisfied; round up taxi' },
-  { country: 'Netherlands', slug: 'netherlands', flag: '🇳🇱', restaurant: 'optional', taxi: 'optional', hotel: 'not-expected', highlight: '5–10% for good service; round up taxi fare' },
-  { country: 'Belgium', slug: 'belgium', flag: '🇧🇪', restaurant: 'optional', taxi: 'optional', hotel: 'not-expected', highlight: 'Service usually included; round up if not' },
-  { country: 'Austria', slug: 'austria', flag: '🇦🇹', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: 'Round up or 5–10%; say amount when paying' },
-  { country: 'Switzerland', slug: 'switzerland', flag: '🇨🇭', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: 'Service included by law; small tip for good service' },
-  { country: 'Denmark', slug: 'denmark', flag: '🇩🇰', restaurant: 'not-expected', taxi: 'not-expected', hotel: 'not-expected', highlight: 'Service included; tipping not expected' },
-  { country: 'Sweden', slug: 'sweden', flag: '🇸🇪', restaurant: 'not-expected', taxi: 'not-expected', hotel: 'not-expected', highlight: 'Service included in bill; tipping declining' },
-  { country: 'Norway', slug: 'norway', flag: '🇳🇴', restaurant: 'optional', taxi: 'not-expected', hotel: 'not-expected', highlight: 'Round up at restaurants; not expected elsewhere' },
-  { country: 'Finland', slug: 'finland', flag: '🇫🇮', restaurant: 'not-expected', taxi: 'not-expected', hotel: 'not-expected', highlight: 'Tipping not traditional; uncommon' },
-  { country: 'Poland', slug: 'poland', flag: '🇵🇱', restaurant: 'expected', taxi: 'optional', hotel: 'optional', highlight: '10–15% restaurant; round up taxi' },
-  { country: 'Czech Republic', slug: 'czech-republic', flag: '🇨🇿', restaurant: 'expected', taxi: 'optional', hotel: 'optional', highlight: '10% restaurant; round up taxi; say total when paying' },
-  { country: 'Hungary', slug: 'hungary', flag: '🇭🇺', restaurant: 'expected', taxi: 'optional', hotel: 'optional', highlight: '10–15% restaurant; common to tip drivers' },
-  { country: 'Romania', slug: 'romania', flag: '🇷🇴', restaurant: 'expected', taxi: 'optional', hotel: 'optional', highlight: '10% restaurant; round up taxi' },
-  { country: 'Croatia', slug: 'croatia', flag: '🇭🇷', restaurant: 'optional', taxi: 'not-expected', hotel: 'not-expected', highlight: '10% in restaurants appreciated; not for taxis' },
-  { country: 'Greece', slug: 'greece', flag: '🇬🇷', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: '5–10% restaurant; round up taxi; €1–2 porter' },
-  { country: 'Ireland', slug: 'ireland', flag: '🇮🇪', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: '10–15% restaurant; round up taxi' },
-  { country: 'Ukraine', slug: 'ukraine', flag: '🇺🇦', restaurant: 'optional', taxi: 'not-expected', hotel: 'not-expected', highlight: '5–10% restaurants; not expected for taxis' },
-  { country: 'Russia', slug: 'russia', flag: '🇷🇺', restaurant: 'optional', taxi: 'not-expected', hotel: 'not-expected', highlight: '10% in upscale restaurants; not for regular taxis' },
-  { country: 'Israel', slug: 'israel', flag: '🇮🇱', restaurant: 'expected', taxi: 'optional', hotel: 'optional', highlight: '10–15% restaurant; round up taxi' },
+  { country: 'United Kingdom', slug: 'united-kingdom', iso2: 'gb', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: '10–12.5% restaurant; round up taxi; service often included' },
+  { country: 'France', slug: 'france', iso2: 'fr', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: 'Service compris included; leave coins if happy' },
+  { country: 'Germany', slug: 'germany', iso2: 'de', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: 'Round up to nearest €; say "stimmt so" (keep the change)' },
+  { country: 'Italy', slug: 'italy', iso2: 'it', restaurant: 'optional', taxi: 'not-expected', hotel: 'optional', highlight: '€1–2 coperto included; small tip for exceptional service' },
+  { country: 'Spain', slug: 'spain', iso2: 'es', restaurant: 'not-expected', taxi: 'not-expected', hotel: 'not-expected', highlight: 'Tipping is not customary; small tip appreciated in tourist areas' },
+  { country: 'Portugal', slug: 'portugal', iso2: 'pt', restaurant: 'optional', taxi: 'optional', hotel: 'not-expected', highlight: '5–10% if satisfied; round up taxi' },
+  { country: 'Netherlands', slug: 'netherlands', iso2: 'nl', restaurant: 'optional', taxi: 'optional', hotel: 'not-expected', highlight: '5–10% for good service; round up taxi fare' },
+  { country: 'Belgium', slug: 'belgium', iso2: 'be', restaurant: 'optional', taxi: 'optional', hotel: 'not-expected', highlight: 'Service usually included; round up if not' },
+  { country: 'Austria', slug: 'austria', iso2: 'at', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: 'Round up or 5–10%; say amount when paying' },
+  { country: 'Switzerland', slug: 'switzerland', iso2: 'ch', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: 'Service included by law; small tip for good service' },
+  { country: 'Denmark', slug: 'denmark', iso2: 'dk', restaurant: 'not-expected', taxi: 'not-expected', hotel: 'not-expected', highlight: 'Service included; tipping not expected' },
+  { country: 'Sweden', slug: 'sweden', iso2: 'se', restaurant: 'not-expected', taxi: 'not-expected', hotel: 'not-expected', highlight: 'Service included in bill; tipping declining' },
+  { country: 'Norway', slug: 'norway', iso2: 'no', restaurant: 'optional', taxi: 'not-expected', hotel: 'not-expected', highlight: 'Round up at restaurants; not expected elsewhere' },
+  { country: 'Finland', slug: 'finland', iso2: 'fi', restaurant: 'not-expected', taxi: 'not-expected', hotel: 'not-expected', highlight: 'Tipping not traditional; uncommon' },
+  { country: 'Poland', slug: 'poland', iso2: 'pl', restaurant: 'expected', taxi: 'optional', hotel: 'optional', highlight: '10–15% restaurant; round up taxi' },
+  { country: 'Czech Republic', slug: 'czech-republic', iso2: 'cz', restaurant: 'expected', taxi: 'optional', hotel: 'optional', highlight: '10% restaurant; round up taxi; say total when paying' },
+  { country: 'Hungary', slug: 'hungary', iso2: 'hu', restaurant: 'expected', taxi: 'optional', hotel: 'optional', highlight: '10–15% restaurant; common to tip drivers' },
+  { country: 'Romania', slug: 'romania', iso2: 'ro', restaurant: 'expected', taxi: 'optional', hotel: 'optional', highlight: '10% restaurant; round up taxi' },
+  { country: 'Croatia', slug: 'croatia', iso2: 'hr', restaurant: 'optional', taxi: 'not-expected', hotel: 'not-expected', highlight: '10% in restaurants appreciated; not for taxis' },
+  { country: 'Greece', slug: 'greece', iso2: 'gr', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: '5–10% restaurant; round up taxi; €1–2 porter' },
+  { country: 'Ireland', slug: 'ireland', iso2: 'ie', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: '10–15% restaurant; round up taxi' },
+  { country: 'Ukraine', slug: 'ukraine', iso2: 'ua', restaurant: 'optional', taxi: 'not-expected', hotel: 'not-expected', highlight: '5–10% restaurants; not expected for taxis' },
+  { country: 'Russia', slug: 'russia', iso2: 'ru', restaurant: 'optional', taxi: 'not-expected', hotel: 'not-expected', highlight: '10% in upscale restaurants; not for regular taxis' },
+  { country: 'Israel', slug: 'israel', iso2: 'il', restaurant: 'expected', taxi: 'optional', hotel: 'optional', highlight: '10–15% restaurant; round up taxi' },
 
   // Asia — generally low tipping
-  { country: 'Japan', slug: 'japan', flag: '🇯🇵', restaurant: 'rude', taxi: 'rude', hotel: 'rude', highlight: 'Tipping is considered insulting — do not tip' },
-  { country: 'South Korea', slug: 'south-korea', flag: '🇰🇷', restaurant: 'not-expected', taxi: 'not-expected', hotel: 'not-expected', highlight: 'Tipping not customary; may cause awkwardness' },
-  { country: 'China', slug: 'china', flag: '🇨🇳', restaurant: 'not-expected', taxi: 'not-expected', hotel: 'not-expected', highlight: 'Not expected; tourist-facing staff may appreciate it' },
-  { country: 'Hong Kong', slug: 'hong-kong', flag: '🇭🇰', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: '10% service usually added; small tip appreciated' },
-  { country: 'Taiwan', slug: 'taiwan', flag: '🇹🇼', restaurant: 'not-expected', taxi: 'not-expected', hotel: 'not-expected', highlight: 'Not customary; high-end hotels may expect it' },
-  { country: 'Singapore', slug: 'singapore', flag: '🇸🇬', restaurant: 'not-expected', taxi: 'not-expected', hotel: 'not-expected', highlight: '10% GST already added; no additional tipping expected' },
-  { country: 'Thailand', slug: 'thailand', flag: '🇹🇭', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: '20–50 THB restaurant; round up taxi; 20–50 THB porter' },
-  { country: 'Vietnam', slug: 'vietnam', flag: '🇻🇳', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: '10% restaurant; round up taxi or Grab' },
-  { country: 'Indonesia', slug: 'indonesia', flag: '🇮🇩', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: '5–10% restaurant; round up Grab/Gojek' },
-  { country: 'Malaysia', slug: 'malaysia', flag: '🇲🇾', restaurant: 'optional', taxi: 'not-expected', hotel: 'optional', highlight: '5–10% service usually added; not for taxis' },
-  { country: 'Philippines', slug: 'philippines', flag: '🇵🇭', restaurant: 'expected', taxi: 'optional', hotel: 'expected', highlight: '10% service charge common; additional 5–10% welcome' },
-  { country: 'India', slug: 'india', flag: '🇮🇳', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: '10% restaurant; 10 INR per bag porter; round up taxi' },
+  { country: 'Japan', slug: 'japan', iso2: 'jp', restaurant: 'rude', taxi: 'rude', hotel: 'rude', highlight: 'Tipping is considered insulting — do not tip' },
+  { country: 'South Korea', slug: 'south-korea', iso2: 'kr', restaurant: 'not-expected', taxi: 'not-expected', hotel: 'not-expected', highlight: 'Tipping not customary; may cause awkwardness' },
+  { country: 'China', slug: 'china', iso2: 'cn', restaurant: 'not-expected', taxi: 'not-expected', hotel: 'not-expected', highlight: 'Not expected; tourist-facing staff may appreciate it' },
+  { country: 'Hong Kong', slug: 'hong-kong', iso2: 'hk', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: '10% service usually added; small tip appreciated' },
+  { country: 'Taiwan', slug: 'taiwan', iso2: 'tw', restaurant: 'not-expected', taxi: 'not-expected', hotel: 'not-expected', highlight: 'Not customary; high-end hotels may expect it' },
+  { country: 'Singapore', slug: 'singapore', iso2: 'sg', restaurant: 'not-expected', taxi: 'not-expected', hotel: 'not-expected', highlight: '10% GST already added; no additional tipping expected' },
+  { country: 'Thailand', slug: 'thailand', iso2: 'th', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: '20–50 THB restaurant; round up taxi; 20–50 THB porter' },
+  { country: 'Vietnam', slug: 'vietnam', iso2: 'vn', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: '10% restaurant; round up taxi or Grab' },
+  { country: 'Indonesia', slug: 'indonesia', iso2: 'id', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: '5–10% restaurant; round up Grab/Gojek' },
+  { country: 'Malaysia', slug: 'malaysia', iso2: 'my', restaurant: 'optional', taxi: 'not-expected', hotel: 'optional', highlight: '5–10% service usually added; not for taxis' },
+  { country: 'Philippines', slug: 'philippines', iso2: 'ph', restaurant: 'expected', taxi: 'optional', hotel: 'expected', highlight: '10% service charge common; additional 5–10% welcome' },
+  { country: 'India', slug: 'india', iso2: 'in', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: '10% restaurant; 10 INR per bag porter; round up taxi' },
 
   // Middle East & Africa
-  { country: 'UAE', slug: 'uae', flag: '🇦🇪', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: '10% service often added; AED 5–10 tip for drivers' },
-  { country: 'Saudi Arabia', slug: 'saudi-arabia', flag: '🇸🇦', restaurant: 'optional', taxi: 'not-expected', hotel: 'optional', highlight: '10% in upscale restaurants; not for taxis' },
-  { country: 'Jordan', slug: 'jordan', flag: '🇯🇴', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: '10% restaurant; round up taxi; negotiate not to tip guides upfront' },
-  { country: 'Egypt', slug: 'egypt', flag: '🇪🇬', restaurant: 'expected', taxi: 'optional', hotel: 'expected', highlight: 'Baksheesh culture — small tips expected for many services' },
-  { country: 'Morocco', slug: 'morocco', flag: '🇲🇦', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: '10–15% restaurant; round up taxi; MAD 5–10 porter' },
-  { country: 'South Africa', slug: 'south-africa', flag: '🇿🇦', restaurant: 'expected', taxi: 'expected', hotel: 'expected', highlight: '10–15% restaurant; 10% taxi; R5–10 petrol attendant' },
+  { country: 'UAE', slug: 'uae', iso2: 'ae', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: '10% service often added; AED 5–10 tip for drivers' },
+  { country: 'Saudi Arabia', slug: 'saudi-arabia', iso2: 'sa', restaurant: 'optional', taxi: 'not-expected', hotel: 'optional', highlight: '10% in upscale restaurants; not for taxis' },
+  { country: 'Jordan', slug: 'jordan', iso2: 'jo', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: '10% restaurant; round up taxi; negotiate not to tip guides upfront' },
+  { country: 'Egypt', slug: 'egypt', iso2: 'eg', restaurant: 'expected', taxi: 'optional', hotel: 'expected', highlight: 'Baksheesh culture — small tips expected for many services' },
+  { country: 'Morocco', slug: 'morocco', iso2: 'ma', restaurant: 'optional', taxi: 'optional', hotel: 'optional', highlight: '10–15% restaurant; round up taxi; MAD 5–10 porter' },
+  { country: 'South Africa', slug: 'south-africa', iso2: 'za', restaurant: 'expected', taxi: 'expected', hotel: 'expected', highlight: '10–15% restaurant; 10% taxi; R5–10 petrol attendant' },
 
   // Oceania
-  { country: 'Australia', slug: 'australia', flag: '🇦🇺', restaurant: 'optional', taxi: 'optional', hotel: 'not-expected', highlight: 'Minimum wage laws mean tipping less expected; 10% appreciated' },
-  { country: 'New Zealand', slug: 'new-zealand', flag: '🇳🇿', restaurant: 'optional', taxi: 'not-expected', hotel: 'not-expected', highlight: 'Not expected; 10% for exceptional service' },
+  { country: 'Australia', slug: 'australia', iso2: 'au', restaurant: 'optional', taxi: 'optional', hotel: 'not-expected', highlight: 'Minimum wage laws mean tipping less expected; 10% appreciated' },
+  { country: 'New Zealand', slug: 'new-zealand', iso2: 'nz', restaurant: 'optional', taxi: 'not-expected', hotel: 'not-expected', highlight: 'Not expected; 10% for exceptional service' },
 ]
 
 type SortedByExpectation = {
@@ -250,7 +251,7 @@ export default function TippingGuidePage() {
                   >
                     <div className="min-w-0 space-y-0.5">
                       <div className="flex items-center gap-2">
-                        <span className="text-base leading-none">{c.flag}</span>
+                        <Image src={`/images/flags/${c.iso2}.svg`} alt="" width={20} height={15} className="rounded-sm shrink-0" unoptimized />
                         <span className="text-sm font-medium text-white group-hover:text-purple-300 transition-colors">{c.country}</span>
                       </div>
                       <p className="text-[11px] text-zinc-500 leading-snug">{c.highlight}</p>
@@ -260,6 +261,15 @@ export default function TippingGuidePage() {
                         <span className="text-[9px] text-zinc-600 uppercase">Tax</span>
                         <ExpectationBadge status={c.taxi} />
                       </div>
+                      <TipCardActions
+                        country={c.country}
+                        iso2={c.iso2}
+                        restaurant={c.restaurant}
+                        taxi={c.taxi}
+                        hotel={c.hotel}
+                        highlight={c.highlight}
+                        slug={c.slug}
+                      />
                       <ArrowRight size={14} className="text-zinc-600 group-hover:text-zinc-400 transition-colors" />
                     </div>
                   </Link>
@@ -284,25 +294,30 @@ export default function TippingGuidePage() {
             </thead>
             <tbody className="divide-y divide-zinc-900">
               {[
-                { country: '🇺🇸 USA', status: 'expected' as TipExpectation, amount: '15–20%' },
-                { country: '🇨🇦 Canada', status: 'expected' as TipExpectation, amount: '10–15%' },
-                { country: '🇬🇧 UK', status: 'optional' as TipExpectation, amount: 'Round up' },
-                { country: '🇫🇷 France', status: 'optional' as TipExpectation, amount: 'Round up' },
-                { country: '🇩🇪 Germany', status: 'optional' as TipExpectation, amount: 'Round up' },
-                { country: '🇮🇹 Italy', status: 'not-expected' as TipExpectation, amount: 'Not expected' },
-                { country: '🇪🇸 Spain', status: 'not-expected' as TipExpectation, amount: 'Not expected' },
-                { country: '🇿🇦 South Africa', status: 'expected' as TipExpectation, amount: '10%' },
-                { country: '🇦🇪 UAE', status: 'optional' as TipExpectation, amount: 'AED 5–10' },
-                { country: '🇲🇽 Mexico', status: 'optional' as TipExpectation, amount: 'Round up' },
-                { country: '🇹🇭 Thailand', status: 'optional' as TipExpectation, amount: '20–50 THB' },
-                { country: '🇻🇳 Vietnam', status: 'optional' as TipExpectation, amount: 'Round up' },
-                { country: '🇯🇵 Japan', status: 'rude' as TipExpectation, amount: 'Do not tip' },
-                { country: '🇰🇷 South Korea', status: 'not-expected' as TipExpectation, amount: 'Not expected' },
-                { country: '🇨🇳 China', status: 'not-expected' as TipExpectation, amount: 'Not expected' },
-                { country: '🇸🇬 Singapore', status: 'not-expected' as TipExpectation, amount: 'Not expected' },
+                { iso2: 'us', name: 'USA', status: 'expected' as TipExpectation, amount: '15–20%' },
+                { iso2: 'ca', name: 'Canada', status: 'expected' as TipExpectation, amount: '10–15%' },
+                { iso2: 'gb', name: 'UK', status: 'optional' as TipExpectation, amount: 'Round up' },
+                { iso2: 'fr', name: 'France', status: 'optional' as TipExpectation, amount: 'Round up' },
+                { iso2: 'de', name: 'Germany', status: 'optional' as TipExpectation, amount: 'Round up' },
+                { iso2: 'it', name: 'Italy', status: 'not-expected' as TipExpectation, amount: 'Not expected' },
+                { iso2: 'es', name: 'Spain', status: 'not-expected' as TipExpectation, amount: 'Not expected' },
+                { iso2: 'za', name: 'South Africa', status: 'expected' as TipExpectation, amount: '10%' },
+                { iso2: 'ae', name: 'UAE', status: 'optional' as TipExpectation, amount: 'AED 5–10' },
+                { iso2: 'mx', name: 'Mexico', status: 'optional' as TipExpectation, amount: 'Round up' },
+                { iso2: 'th', name: 'Thailand', status: 'optional' as TipExpectation, amount: '20–50 THB' },
+                { iso2: 'vn', name: 'Vietnam', status: 'optional' as TipExpectation, amount: 'Round up' },
+                { iso2: 'jp', name: 'Japan', status: 'rude' as TipExpectation, amount: 'Do not tip' },
+                { iso2: 'kr', name: 'South Korea', status: 'not-expected' as TipExpectation, amount: 'Not expected' },
+                { iso2: 'cn', name: 'China', status: 'not-expected' as TipExpectation, amount: 'Not expected' },
+                { iso2: 'sg', name: 'Singapore', status: 'not-expected' as TipExpectation, amount: 'Not expected' },
               ].map((row) => (
-                <tr key={row.country} className="text-zinc-400">
-                  <td className="py-2 pr-4 text-zinc-300">{row.country}</td>
+                <tr key={row.iso2} className="text-zinc-400">
+                  <td className="py-2 pr-4">
+                    <div className="flex items-center gap-2">
+                      <Image src={`/images/flags/${row.iso2}.svg`} alt="" width={16} height={12} className="rounded-sm shrink-0" unoptimized />
+                      <span className="text-zinc-300">{row.name}</span>
+                    </div>
+                  </td>
                   <td className="py-2 pr-4"><ExpectationBadge status={row.status} /></td>
                   <td className="py-2 text-zinc-500">{row.amount}</td>
                 </tr>
@@ -365,7 +380,7 @@ export default function TippingGuidePage() {
               href={`/tipping/${c.slug}`}
               className="flex items-center gap-2 px-3 py-2.5 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 rounded-xl text-xs text-zinc-300 hover:text-white transition-colors group"
             >
-              <span className="text-sm">{c.flag}</span>
+              <Image src={`/images/flags/${c.iso2}.svg`} alt="" width={18} height={14} className="rounded-sm shrink-0" unoptimized />
               <span className="truncate">{c.country}</span>
             </Link>
           ))}
