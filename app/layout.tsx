@@ -16,7 +16,7 @@ const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'
 export const metadata: Metadata = {
   metadataBase: new URL(APP_URL),
   verification: {
-    google: 'xJfxOnrLLvnzqbWsRLpZ6cVhXWILBYwc7bX9T9Mu7L0',
+    google: ['xJfxOnrLLvnzqbWsRLpZ6cVhXWILBYwc7bX9T9Mu7L0', 'NhttHQAZ1GPfbbxxhEpxqxZ015Xai0PjN60zDGDnuvc'],
   },
   title: {
     default: 'Hootling — Travel wise.',

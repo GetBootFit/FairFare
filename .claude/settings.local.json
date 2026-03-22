@@ -143,7 +143,8 @@
       "Bash(del \"C:\\\\Users\\\\david\\\\Projects\\\\Hootling\\\\middleware.ts\")",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(node -e \"const d = require\\(''C:/Users/david/Projects/Hootling/data/taxi-rates.json''\\); console.log\\(Object.keys\\(d\\).sort\\(\\).join\\(''\\\\n''\\)\\)\")"
     ]
   }
 }
