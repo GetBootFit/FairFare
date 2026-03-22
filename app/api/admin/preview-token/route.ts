@@ -16,15 +16,15 @@ function secret(): Uint8Array {
   return new TextEncoder().encode(s)
 }
 
-function isAdminAuthed(): boolean {
-  const cookieStore = cookies()
+async function isAdminAuthed(): Promise<boolean> {
+  const cookieStore = await cookies()
   const adminToken = cookieStore.get('admin_token')?.value
   const adminSecret = process.env.ADMIN_SECRET
   return !!(adminToken && adminSecret && adminToken === adminSecret)
 }
 
 export async function GET(req: NextRequest) {
-  if (!isAdminAuthed()) {
+  if (!await isAdminAuthed()) {
     return Response.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
