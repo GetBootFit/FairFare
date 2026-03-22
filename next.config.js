@@ -8,7 +8,7 @@ const { withSentryConfig } = require('@sentry/nextjs')
 // Vercel Analytics loads from va.vercel-scripts.com / vitals.vercel-insights.com.
 // Sentry reports to *.sentry.io / *.ingest.sentry.io.
 // GA4 (gtag) loads from www.googletagmanager.com / www.google-analytics.com.
-// No Stripe JS is loaded on FairFare pages — Stripe Checkout is a full redirect.
+// No Stripe JS is loaded on Hootling pages — Stripe Checkout is a full redirect.
 const ContentSecurityPolicy = [
   "default-src 'self'",
   "script-src 'self' 'unsafe-inline' https://maps.googleapis.com https://maps.gstatic.com https://va.vercel-scripts.com https://www.googletagmanager.com",
@@ -22,7 +22,7 @@ const ContentSecurityPolicy = [
   "upgrade-insecure-requests",
 ].join('; ')
 
-const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'https://fairfare.app'
+const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com'
 
 const nextConfig = {
   // Next.js 15+ uses serverExternalPackages (was experimental.serverComponentsExternalPackages)
@@ -37,9 +37,9 @@ const nextConfig = {
           { key: 'X-Content-Type-Options', value: 'nosniff' },
           { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
           { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
-          // payment=() is intentional and safe: FairFare uses Stripe Checkout (full-page redirect
+          // payment=() is intentional and safe: Hootling uses Stripe Checkout (full-page redirect
           // to checkout.stripe.com), never Stripe Elements iframes. This header only governs
-          // FairFare's own origin pages, not the Stripe Checkout domain. Apple Pay / Google Pay
+          // Hootling's own origin pages, not the Stripe Checkout domain. Apple Pay / Google Pay
           // operate on Stripe's domain where Stripe's own headers apply. If Stripe Elements is
           // ever added (embedded card fields), remove payment=() from this policy.
           { key: 'Permissions-Policy', value: 'geolocation=(), microphone=(), camera=(), payment=()' },
