@@ -40,6 +40,7 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
   )
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const [tosAccepted, setTosAccepted] = useState(false)
   // Suppress price display until localStorage is read to prevent currency flash
   const [mounted, setMounted] = useState(false)
 
@@ -333,11 +334,31 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
         {/* Payment note */}
         <p className="text-zinc-600 text-xs text-center">{t('payment_note')}</p>
 
+        {/* ToS acceptance */}
+        <label className="flex items-start gap-2.5 cursor-pointer">
+          <input
+            type="checkbox"
+            checked={tosAccepted}
+            onChange={e => setTosAccepted(e.target.checked)}
+            className="mt-0.5 accent-purple-500 w-4 h-4 shrink-0"
+          />
+          <span className="text-[11px] text-zinc-500 leading-relaxed">
+            I agree to the{' '}
+            <a href="/terms" target="_blank" rel="noopener noreferrer" className="text-purple-400 underline hover:text-purple-300">
+              Terms of Service
+            </a>
+            {' '}and{' '}
+            <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-purple-400 underline hover:text-purple-300">
+              Privacy Policy
+            </a>
+          </span>
+        </label>
+
         {/* Actions */}
         <div className="space-y-2">
           <button
             onClick={handlePay}
-            disabled={loading}
+            disabled={loading || !tosAccepted}
             className="w-full flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 active:bg-purple-800 disabled:opacity-60 text-white font-semibold py-3.5 rounded-xl transition-colors"
           >
             {loading ? <Spinner className="h-5 w-5 text-white" /> : null}

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Hootling Privacy Policy — how we handle your data when you use our travel fare and tipping service.',
 }
 
-const EFFECTIVE = '7 March 2026'
+const EFFECTIVE = '23 March 2026'
 const CONTACT = 'privacy@hootling.com'
 
 export default function PrivacyPage() {
@@ -39,6 +39,8 @@ export default function PrivacyPage() {
           <li>Query results and access tokens are stored locally in your browser only</li>
           <li>Location inputs you type are sent to Google Maps to calculate routes</li>
           <li>City and country data is sent to Anthropic to generate travel guidance</li>
+          <li>If you subscribe to our mailing list, your email address is collected and stored with Resend</li>
+          <li>An affiliate tracking script (Travelpayouts) loads on every page — see section 4</li>
         </ul>
       </Section>
 
@@ -64,7 +66,7 @@ export default function PrivacyPage() {
 
         <h3 className="text-zinc-200 font-medium mt-3 mb-1.5">2c. Payment information</h3>
         <p>
-          When you pay $0.99 for a query, you are redirected to a Stripe-hosted checkout page.
+          When you make a purchase, you are redirected to a Stripe-hosted checkout page.
           Hootling never sees, handles, or stores your card number, CVC, or banking details.
           Stripe&apos;s data practices are governed by the{' '}
           <a href="https://stripe.com/privacy" target="_blank" rel="noopener noreferrer"
@@ -72,19 +74,33 @@ export default function PrivacyPage() {
         </p>
         <p className="mt-2">
           After successful payment, Stripe notifies us that a session was completed. We store
-          a record that the session ID was used (to prevent token replay), but this record
-          contains no personal or financial information.
+          a record that the session ID was used (to prevent token replay). This record contains
+          no personal or financial information and is retained for up to 90 days before being
+          automatically deleted.
         </p>
 
-        <h3 className="text-zinc-200 font-medium mt-3 mb-1.5">2d. Browser storage</h3>
+        <h3 className="text-zinc-200 font-medium mt-3 mb-1.5">2d. Email address (optional)</h3>
+        <p>
+          After completing a purchase, you may optionally subscribe to the Hootling mailing list.
+          If you subscribe, your email address is collected and stored by{' '}
+          <strong className="text-zinc-300">Resend</strong> (our email service provider).
+          We use your email to send you travel tips, product updates, and occasional promotional
+          content. You can unsubscribe at any time via the link in any email or at{' '}
+          <Link href="/unsubscribe" className="text-purple-400 underline">hootling.com/unsubscribe</Link>.
+          Resend&apos;s data practices are governed by the{' '}
+          <a href="https://resend.com/privacy" target="_blank" rel="noopener noreferrer"
+            className="text-purple-400 underline">Resend Privacy Policy</a>.
+        </p>
+
+        <h3 className="text-zinc-200 font-medium mt-3 mb-1.5">2e. Browser storage</h3>
         <p>
           We store the following data <strong className="text-white">locally in your browser</strong>:
         </p>
         <ul className="mt-1.5 space-y-1.5 list-disc list-inside">
           <li>
-            <strong className="text-zinc-300">localStorage:</strong> A JWT access token (valid
-            30 minutes) that grants access to query results. Cleared when you start a new search
-            or the token expires.
+            <strong className="text-zinc-300">localStorage:</strong> JWT access tokens that
+            grant access to query results. Tokens expire automatically (30 minutes for single
+            queries, 24 hours for country passes, 90 days for bundle tokens).
           </li>
           <li>
             <strong className="text-zinc-300">sessionStorage:</strong> Your form inputs (pickup
@@ -92,8 +108,8 @@ export default function PrivacyPage() {
             restored when you return. This data is cleared after use.
           </li>
           <li>
-            <strong className="text-zinc-300">localStorage (language):</strong> Your selected
-            display language preference (e.g. &ldquo;es&rdquo; for Spanish). No personal data.
+            <strong className="text-zinc-300">localStorage (language/currency):</strong> Your
+            selected display language and currency preference. No personal data.
           </li>
         </ul>
         <p className="mt-2">
@@ -103,39 +119,65 @@ export default function PrivacyPage() {
 
       <Section title="3. Data We Do Not Collect">
         <ul className="space-y-1.5 list-disc list-inside">
-          <li>Name, email address, or any contact information</li>
-          <li>Device identifiers, IP address, or fingerprinting data</li>
+          <li>Payment card details, CVC, or banking information</li>
+          <li>Device identifiers or fingerprinting data</li>
           <li>Browsing history or cross-site tracking</li>
           <li>Precise GPS location (you type addresses manually)</li>
-          <li>Analytics or behavioural tracking cookies</li>
+          <li>Email address (unless you explicitly opt in to our mailing list)</li>
         </ul>
       </Section>
 
-      <Section title="4. Cookies &amp; Analytics">
+      <Section title="4. Cookies, Analytics &amp; Third-Party Scripts">
+        <h3 className="text-zinc-200 font-medium mb-1.5">Vercel Analytics</h3>
         <p>
-          Hootling does <strong className="text-white">not</strong> use advertising cookies or
-          tracking pixels. We use no cookies at all — only browser localStorage and sessionStorage
-          as described above, which are not cookies and are not transmitted to any server.
-        </p>
-        <p className="mt-2">
           We use <strong className="text-zinc-300">Vercel Analytics</strong>, a privacy-first tool
           that does <strong className="text-white">not</strong> use cookies, does not track
           individuals across sites, and collects only aggregate, anonymous data (page URL,
-          referrer, country, browser type). No personal data is collected or stored by Vercel
-          Analytics, and it is designed to be GDPR-compliant.
+          referrer, country, browser type). No personal data is collected or stored.
+        </p>
+
+        <h3 className="text-zinc-200 font-medium mt-3 mb-1.5">Google Analytics (GA4)</h3>
+        <p>
+          We use Google Analytics 4 in cookieless mode (<code className="text-zinc-500">client_storage=&apos;none&apos;</code>),
+          which disables cookies and prevents cross-site tracking. Aggregate usage data (page
+          views, session duration, device type) is collected to understand how the Service is used.
+        </p>
+
+        <h3 className="text-zinc-200 font-medium mt-3 mb-1.5">Travelpayouts Affiliate Tracking</h3>
+        <p>
+          We participate in the Travelpayouts affiliate programme. A tracking script from
+          Travelpayouts (<code className="text-zinc-500">tpembars.com</code>) loads on every
+          page of the Service. This script may set cookies or collect data for the purpose of
+          attributing affiliate commissions when you click on partner links (such as airport
+          transfer services). This tracking is subject to the{' '}
+          <a href="https://www.travelpayouts.com/en/privacy" target="_blank" rel="noopener noreferrer"
+            className="text-purple-400 underline">Travelpayouts Privacy Policy</a>.
+        </p>
+        <p className="mt-2">
+          We do not use advertising cookies or sell your data to advertisers.
         </p>
       </Section>
 
       <Section title="5. Data Retention">
-        <p>
-          AI query results (scam warnings, tipping guides) are cached on our servers for up to
-          7 days to improve performance and reduce costs. These cache entries contain only the
-          city/country name and the AI-generated response — no personal data.
-        </p>
-        <p className="mt-2">
-          Payment session records (used/not-used status) are retained for 24 hours to prevent
-          token replay attacks, then automatically deleted.
-        </p>
+        <ul className="space-y-1.5 list-disc list-inside">
+          <li>
+            <strong className="text-zinc-300">AI query results</strong> (scam warnings, tipping
+            guides) are cached on our servers for up to{' '}
+            <strong className="text-white">90 days</strong> to improve performance and reduce
+            costs. These entries contain only the city/country name and the AI response — no
+            personal data.
+          </li>
+          <li>
+            <strong className="text-zinc-300">Payment session records</strong> (used/not-used
+            status for replay prevention) are retained for up to{' '}
+            <strong className="text-white">90 days</strong>, then automatically deleted.
+          </li>
+          <li>
+            <strong className="text-zinc-300">Email addresses</strong> are retained for as long
+            as you remain subscribed. You may request deletion at any time by unsubscribing or
+            contacting us.
+          </li>
+        </ul>
       </Section>
 
       <Section title="6. Children's Privacy">
@@ -151,20 +193,25 @@ export default function PrivacyPage() {
           Hootling is designed for international travellers and is accessible worldwide. By
           using the Service, you acknowledge that data (such as your location query and city
           name) may be processed in countries where our third-party providers (Google, Anthropic,
-          Stripe, Vercel) operate, which may have different data protection laws than your country.
+          Stripe, Vercel, Resend, Travelpayouts) operate, which may have different data protection
+          laws than your country.
         </p>
         <p className="mt-2">
           <strong className="text-zinc-300">Australian users:</strong> Your privacy is protected
           under the <em>Privacy Act 1988</em> (Cth) and the{' '}
-          <em>Privacy and Data Protection Act 2014</em> (Vic). Since we do not collect personal
-          information as defined under the Act (we collect no names, emails, or persistent
-          identifiers), the Australian Privacy Principles have minimal practical application to
-          our Service.
+          <em>Privacy and Data Protection Act 2014</em> (Vic). You have the right to access,
+          correct, or request deletion of any personal information we hold about you (which is
+          limited to your email address if you have subscribed).
         </p>
         <p className="mt-2">
           <strong className="text-zinc-300">EEA &amp; UK users:</strong> You have rights under
-          GDPR/UK GDPR including the right to access, rectify, or erase personal data. Since we
-          collect no personal data directly, most GDPR rights are satisfied by default.
+          GDPR/UK GDPR including the right to access, rectify, erase, or port your personal data,
+          and to object to processing. To exercise any right, contact us at the address below.
+        </p>
+        <p className="mt-2">
+          <strong className="text-zinc-300">California users:</strong> You have rights under the
+          CCPA including the right to know what personal information is collected, to request
+          deletion, and to opt out of sale. We do not sell personal information.
         </p>
         <p className="mt-2">
           For any privacy enquiry or data subject request, contact us at{' '}

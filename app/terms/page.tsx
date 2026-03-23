@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Hootling Terms of Service — the rules for using our taxi fare check and tipping guide service.',
 }
 
-const EFFECTIVE = '7 March 2026'
+const EFFECTIVE = '23 March 2026'
 const CONTACT = 'legal@hootling.com'
 
 export default function TermsPage() {
@@ -45,13 +45,32 @@ export default function TermsPage() {
 
       <Section title="2. Payments and Refunds">
         <p>
-          Access to full query results costs <strong className="text-white">$0.99 USD</strong> per
-          query. Payment is processed securely by Stripe. We do not store your payment card
-          details — all payment handling is performed by Stripe, Inc.
+          Access to full query results requires a one-time payment processed securely by Stripe.
+          We offer three pricing options:
         </p>
+        <ul className="mt-2 space-y-1.5 list-disc list-inside text-zinc-400">
+          <li>
+            <strong className="text-zinc-300">Single Query</strong> — from{' '}
+            <strong className="text-white">$2.99 USD</strong> (price varies by currency).
+            Grants a single-use access token valid for 30 minutes for one taxi fare check
+            or one tipping guide.
+          </li>
+          <li>
+            <strong className="text-zinc-300">Country Pass</strong> — from{' '}
+            <strong className="text-white">$7.99 USD</strong>. Grants unlimited queries
+            for a single country for 24 hours.
+          </li>
+          <li>
+            <strong className="text-zinc-300">10-Query Bundle</strong> — from{' '}
+            <strong className="text-white">$19.99 USD</strong>. Grants 10 independent
+            access tokens, each valid for 90 days.
+          </li>
+        </ul>
         <p className="mt-2">
-          Each payment grants you a single-use access token valid for 30 minutes. Tokens are
-          non-transferable and cannot be shared between sessions or devices.
+          Prices displayed in your local currency are converted from USD at the time of purchase
+          and may vary slightly due to exchange rates. All payments are in the currency shown
+          at checkout. We do not store your payment card details — all payment handling is
+          performed by Stripe, Inc.
         </p>
         <p className="mt-2">
           Due to the instant digital nature of the Service, <strong className="text-white">all
@@ -59,6 +78,10 @@ export default function TermsPage() {
           delivered. If you experience a technical failure that prevents result delivery,
           contact us at <a href={`mailto:${CONTACT}`} className="text-purple-400 underline">{CONTACT}</a> and
           we will review your case within 5 business days.
+        </p>
+        <p className="mt-2">
+          By proceeding to payment, you confirm that you have read and agree to these Terms
+          of Service.
         </p>
       </Section>
 
@@ -83,7 +106,16 @@ export default function TermsPage() {
         </p>
       </Section>
 
-      <Section title="4. Acceptable Use">
+      <Section title="4. Affiliate Links">
+        <p>
+          The Service displays links to third-party travel services (such as airport transfer
+          providers). Some of these links are affiliate links, meaning Hootling may earn a small
+          commission if you make a purchase through them, at no additional cost to you. Affiliate
+          relationships do not influence the fare estimates or tipping information we provide.
+        </p>
+      </Section>
+
+      <Section title="5. Acceptable Use">
         <p>You agree not to:</p>
         <ul className="mt-2 space-y-1.5 list-disc list-inside text-zinc-400">
           <li>Use the Service for any unlawful purpose</li>
@@ -94,7 +126,7 @@ export default function TermsPage() {
         </ul>
       </Section>
 
-      <Section title="5. Intellectual Property">
+      <Section title="6. Intellectual Property">
         <p>
           All content, design, and software comprising the Service is owned by or licensed to
           Hootling. You may not reproduce, distribute, or create derivative works from any part
@@ -105,25 +137,28 @@ export default function TermsPage() {
         </p>
       </Section>
 
-      <Section title="6. Third-Party Services">
+      <Section title="7. Third-Party Services">
         <p>The Service relies on the following third-party providers, each with their own terms:</p>
         <ul className="mt-2 space-y-1.5 list-disc list-inside text-zinc-400">
           <li>
             <strong className="text-zinc-300">Google Maps Platform</strong> — routing, distance
-            calculation, and location autocomplete. Mapping results are provided by Google Maps.
-            Use of Google Maps features is subject to the{' '}
+            calculation, and location autocomplete. Use of Google Maps features is subject to the{' '}
             <a href="https://maps.google.com/help/terms_maps/" target="_blank" rel="noopener noreferrer"
               className="text-purple-400 underline">Google Maps Terms of Service</a>.
           </li>
           <li>
             <strong className="text-zinc-300">Anthropic Claude</strong> — AI-generated travel
-            safety and etiquette content
+            safety and etiquette content. Content is generated by AI and may contain errors.
           </li>
           <li>
             <strong className="text-zinc-300">Stripe</strong> — payment processing
           </li>
           <li>
-            <strong className="text-zinc-300">Vercel</strong> — hosting and privacy-first analytics
+            <strong className="text-zinc-300">Vercel</strong> — hosting and analytics
+          </li>
+          <li>
+            <strong className="text-zinc-300">Travelpayouts</strong> — affiliate programme
+            management and partner tracking
           </li>
         </ul>
         <p className="mt-2">
@@ -132,7 +167,7 @@ export default function TermsPage() {
         </p>
       </Section>
 
-      <Section title="7. Limitation of Liability">
+      <Section title="8. Limitation of Liability">
         <p>
           To the fullest extent permitted by applicable law, Hootling and its operators shall
           not be liable for any indirect, incidental, special, consequential, or punitive damages
@@ -151,7 +186,7 @@ export default function TermsPage() {
         </p>
       </Section>
 
-      <Section title="8. Indemnification">
+      <Section title="9. Indemnification">
         <p>
           You agree to indemnify and hold harmless Hootling and its operators from any claims,
           losses, or damages (including reasonable legal fees) arising out of your use of the
@@ -159,7 +194,7 @@ export default function TermsPage() {
         </p>
       </Section>
 
-      <Section title="9. Changes to Terms">
+      <Section title="10. Changes to Terms">
         <p>
           We may update these Terms from time to time. The &ldquo;Effective&rdquo; date at the
           top of this page will reflect the most recent revision. Continued use of the Service
@@ -167,7 +202,7 @@ export default function TermsPage() {
         </p>
       </Section>
 
-      <Section title="10. Governing Law">
+      <Section title="11. Governing Law">
         <p>
           These Terms shall be governed by and construed in accordance with the laws of{' '}
           <strong className="text-white">Victoria, Australia</strong>, without regard to conflict
@@ -181,7 +216,7 @@ export default function TermsPage() {
         </p>
       </Section>
 
-      <Section title="11. Contact">
+      <Section title="12. Contact">
         <p>
           Questions about these Terms? Contact us at{' '}
           <a href={`mailto:${CONTACT}`} className="text-purple-400 underline">{CONTACT}</a>.

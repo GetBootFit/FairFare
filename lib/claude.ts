@@ -313,14 +313,50 @@ Phrase rules:
 - Keep phrases warm, genuine, and natural — not stiff or formal
 - Include transliteration for non-Latin scripts; set to null for Latin-script languages`
 
-  const message = await anthropic.messages.create({
-    model: MODEL,
-    max_tokens: 1600,
-    messages: [{ role: 'user', content: prompt }],
-  })
+  try {
+    const message = await anthropic.messages.create({
+      model: MODEL,
+      max_tokens: 1600,
+      messages: [{ role: 'user', content: prompt }],
+    })
 
-  const text = message.content[0].type === 'text' ? message.content[0].text : ''
-  const data = JSON.parse(stripJson(text)) as TippingAiResult
-  await cacheSet(cacheKey, data)
-  return data
+    const text = message.content[0].type === 'text' ? message.content[0].text : ''
+    const data = JSON.parse(stripJson(text)) as TippingAiResult
+    await cacheSet(cacheKey, data)
+    return data
+  } catch (err) {
+    console.error('[claude/getTippingGuide] API error — returning fallback:', err)
+    return TIPPING_AI_FALLBACK(country)
+  }
+}
+
+function TIPPING_AI_FALLBACK(country: string): TippingAiResult {
+  const fallbackScenario = {
+    isExpected: false,
+    rating: 'optional',
+    percentageMin: null,
+    percentageMax: null,
+    typicalAmount: null,
+    notes: 'Tipping customs vary — verify locally.',
+  }
+  return {
+    country,
+    currency: 'USD',
+    currencySymbol: '$',
+    scenarios: {
+      restaurant:   fallbackScenario,
+      taxi:         fallbackScenario,
+      hotel_porter: fallbackScenario,
+      bar:          fallbackScenario,
+      tour_guide:   fallbackScenario,
+      delivery:     fallbackScenario,
+    },
+    servicePhrases: [
+      { context: 'Thank you', localLanguage: 'Thank you', transliteration: null, english: 'Thank you' },
+      { context: 'This was wonderful', localLanguage: 'This was wonderful', transliteration: null, english: 'This was wonderful' },
+      { context: 'Compliments to the chef', localLanguage: 'Please pass my compliments to the chef', transliteration: null, english: 'Please pass my compliments to the chef' },
+      { context: 'Keep the change', localLanguage: 'Please keep the change', transliteration: null, english: 'Please keep the change' },
+      { context: 'You were wonderful', localLanguage: 'You have been wonderful', transliteration: null, english: 'You have been wonderful' },
+    ],
+  }
 }

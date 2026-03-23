@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { jwtVerify } from 'jose'
 
 /**
  * Edge proxy — runs on every request before it reaches the page/API.
@@ -98,7 +99,16 @@ export async function proxy(req: NextRequest) {
     }
 
     const token = req.cookies.get('admin_token')?.value
-    if (!token || token !== adminSecret) {
+    let isAuthed = false
+    if (token) {
+      try {
+        await jwtVerify(token, new TextEncoder().encode(adminSecret))
+        isAuthed = true
+      } catch {
+        isAuthed = false
+      }
+    }
+    if (!isAuthed) {
       // API routes → 401 JSON; page routes → redirect to login
       if (pathname.startsWith('/api/admin')) {
         return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })

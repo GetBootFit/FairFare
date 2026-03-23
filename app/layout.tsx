@@ -120,7 +120,7 @@ const jsonLd = {
   operatingSystem: 'Any',
   offers: {
     '@type': 'Offer',
-    price: '0.99',
+    price: '2.99',
     priceCurrency: 'USD',
     description: 'Single query — no subscription required',
   },

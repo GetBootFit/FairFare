@@ -129,7 +129,7 @@ export function AffiliateBlock({
           </a>
         ))}
       </div>
-      <p className="text-[10px] text-zinc-700 px-4 pb-3 pt-1">{t('affiliate_disclaimer')}</p>
+      <p className="text-[10px] text-zinc-500 px-4 pb-3 pt-1">{t('affiliate_disclaimer')}</p>
     </div>
   )
 }

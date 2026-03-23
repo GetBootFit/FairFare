@@ -9,6 +9,7 @@
 import { type NextRequest } from 'next/server'
 import { SignJWT } from 'jose'
 import { cookies } from 'next/headers'
+import { jwtVerify } from 'jose'
 
 function secret(): Uint8Array {
   const s = process.env.ENTITLEMENT_SECRET
@@ -18,9 +19,15 @@ function secret(): Uint8Array {
 
 async function isAdminAuthed(): Promise<boolean> {
   const cookieStore = await cookies()
-  const adminToken = cookieStore.get('admin_token')?.value
+  const token = cookieStore.get('admin_token')?.value
   const adminSecret = process.env.ADMIN_SECRET
-  return !!(adminToken && adminSecret && adminToken === adminSecret)
+  if (!token || !adminSecret) return false
+  try {
+    await jwtVerify(token, new TextEncoder().encode(adminSecret))
+    return true
+  } catch {
+    return false
+  }
 }
 
 export async function GET(req: NextRequest) {
