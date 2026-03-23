@@ -144,7 +144,8 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git push:*)",
-      "Bash(node -e \"const d = require\\(''C:/Users/david/Projects/Hootling/data/taxi-rates.json''\\); console.log\\(Object.keys\\(d\\).sort\\(\\).join\\(''\\\\n''\\)\\)\")"
+      "Bash(node -e \"const d = require\\(''C:/Users/david/Projects/Hootling/data/taxi-rates.json''\\); console.log\\(Object.keys\\(d\\).sort\\(\\).join\\(''\\\\n''\\)\\)\")",
+      "Bash(grep -oP \"\\(?<=slug: ''\\)[^'']*\" /c/Users/david/Projects/Hootling/lib/blog-posts.ts)"
     ]
   }
 }
