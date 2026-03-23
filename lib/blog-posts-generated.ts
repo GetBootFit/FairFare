@@ -5593,5 +5593,516 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
         ]
       }
     ]
+  },
+
+  // ── Tipping in Germany ─────────────────────────────────────────────────────
+  {
+    "slug": "tipping-in-germany",
+    "title": "Tipping in Germany: How Much, When & What to Say (2026)",
+    "description": "Germany has its own tipping rules — round up, don't leave coins on the table, and always hand the tip directly to the server. Here's exactly how it works.",
+    "publishedAt": "2026-03-10",
+    "readingMinutes": 5,
+    "category": "tipping",
+    "country": "Germany",
+    "countrySlug": "germany",
+    "content": [
+      {
+        "type": "intro",
+        "body": "Tipping in Germany is optional but appreciated — and there's a right way and a wrong way to do it. Germans don't leave coins on the table; they tell the server directly how much change they want back. Get this wrong and your tip may not reach the right person."
+      },
+      {
+        "type": "h2",
+        "heading": "The Golden Rule: Aufstocken"
+      },
+      {
+        "type": "p",
+        "body": "The German approach is called 'aufstocken' — rounding up. When paying, you tell the server the total you want to pay, and they keep the rest. If your bill is €18.50, you say 'Zwanzig, bitte' (Twenty, please) and they keep €1.50. Never leave cash on the table — it can be overlooked or appear unintentional."
+      },
+      {
+        "type": "h2",
+        "heading": "How Much to Tip in Germany"
+      },
+      {
+        "type": "table",
+        "rows": [
+          { "label": "Restaurants", "value": "5–10% or round up" },
+          { "label": "Cafés & bars", "value": "Round up to nearest euro" },
+          { "label": "Taxis", "value": "Round up, or 5–10% for longer trips" },
+          { "label": "Hotel porter", "value": "€1–2 per bag" },
+          { "label": "Tour guides", "value": "€5–10 per person for a half-day" },
+          { "label": "Delivery", "value": "€1–2, optional" }
+        ]
+      },
+      {
+        "type": "h2",
+        "heading": "Paying by Card"
+      },
+      {
+        "type": "p",
+        "body": "Germany still uses cash heavily, but card payments are increasingly common. When paying by card, many terminals prompt for a tip amount. You can enter a custom amount or skip it entirely — neither is considered rude. If in doubt, round up the nearest €5 for good service."
+      },
+      {
+        "type": "tip",
+        "body": "Tipping is never expected in supermarkets, fast food, or self-service venues. A 'Danke' (thank you) is perfectly sufficient."
+      },
+      {
+        "type": "h2",
+        "heading": "Useful Phrases"
+      },
+      {
+        "type": "table",
+        "rows": [
+          { "label": "Stimmt so", "value": "Keep the change" },
+          { "label": "Zwanzig, bitte", "value": "Twenty, please (pay €20, keep rest)" },
+          { "label": "Das war ausgezeichnet", "value": "That was excellent" },
+          { "label": "Vielen Dank", "value": "Thank you very much" }
+        ]
+      },
+      {
+        "type": "faq",
+        "faqs": [
+          { "q": "Is tipping mandatory in Germany?", "a": "No. Tipping is optional and service is included in the menu price. Around 5–10% for good restaurant service is the norm, but no one will chase you for not tipping." },
+          { "q": "Why shouldn't I leave coins on the table in Germany?", "a": "Leaving coins on the table after paying can be interpreted as a dismissive gesture — as if the money isn't worth taking back. Always hand the tip to the server by stating the total you'd like to pay." },
+          { "q": "Do I need to tip in Berlin differently than in smaller towns?", "a": "Berlin is cosmopolitan and tipping norms align with other major German cities. Tourist-heavy areas may have slightly higher expectations, but 5–10% is always appropriate for good service anywhere in Germany." }
+        ]
+      }
+    ]
+  },
+
+  // ── Tipping in Mexico ──────────────────────────────────────────────────────
+  {
+    "slug": "tipping-in-mexico",
+    "title": "Tipping in Mexico: Complete Guide for 2026 (Restaurants, Taxis & More)",
+    "description": "Tipping is expected in Mexico — 10–15% at restaurants is standard, and taxi drivers appreciate a small tip. Here's everything you need to know before you go.",
+    "publishedAt": "2026-03-09",
+    "readingMinutes": 5,
+    "category": "tipping",
+    "country": "Mexico",
+    "countrySlug": "mexico",
+    "content": [
+      {
+        "type": "intro",
+        "body": "Mexico has a strong tipping culture, particularly in tourist areas. Service workers rely on tips to supplement modest base wages, so tipping generously makes a real difference. Here's exactly what's expected, where, and how much."
+      },
+      {
+        "type": "h2",
+        "heading": "How Much to Tip in Mexico"
+      },
+      {
+        "type": "table",
+        "rows": [
+          { "label": "Restaurants", "value": "10–15%, up to 20% for exceptional service" },
+          { "label": "Bars", "value": "10–15% or 10–20 MXN per drink" },
+          { "label": "Taxis (metered)", "value": "5–10% or round up" },
+          { "label": "Uber/DiDi drivers", "value": "Optional in-app tip, appreciated" },
+          { "label": "Hotel porter", "value": "20–50 MXN per bag" },
+          { "label": "Tour guides", "value": "50–100 MXN per person for half-day" },
+          { "label": "Street food / taquerias", "value": "Not expected, but 5–10 MXN is kind" }
+        ]
+      },
+      {
+        "type": "h2",
+        "heading": "Restaurant Tipping: The Propina"
+      },
+      {
+        "type": "p",
+        "body": "In sit-down restaurants, 10–15% is the standard — and 15–20% for outstanding service. Always check whether a 'propina incluida' (included tip) or 'servicio' charge is already on the bill, especially at tourist resorts, as double-tipping is common and avoidable. In local neighbourhood restaurants (fondas), 10% is plenty."
+      },
+      {
+        "type": "warning",
+        "body": "In beach resort areas (Cancún, Los Cabos, Puerto Vallarta), some restaurants add a 15–18% service charge automatically. Always read your bill before adding an additional tip."
+      },
+      {
+        "type": "h2",
+        "heading": "Taxis in Mexico"
+      },
+      {
+        "type": "p",
+        "body": "Mexico City (CDMX) has a mix of metered taxis, app-based taxis (Uber, Cabify, DiDi — all significantly safer and recommended), and unmetered street taxis. For metered or app taxis, rounding up or adding 5–10% is appreciated. Avoid unmarked street taxis in major cities — always use an app or official sitio taxi stand."
+      },
+      {
+        "type": "tip",
+        "body": "Tip in Mexican pesos whenever possible. US dollars are accepted in tourist areas but not preferred by local workers who have to exchange them."
+      },
+      {
+        "type": "faq",
+        "faqs": [
+          { "q": "Should I tip in USD or MXN in Mexico?", "a": "Mexican pesos are preferred. USD is accepted at many tourist resorts but workers often lose money on exchange. Pesos are always the right choice and show cultural awareness." },
+          { "q": "Do I tip hotel housekeeping in Mexico?", "a": "Yes — 20–50 MXN per day, left on the pillow or desk with a small note saying 'para limpieza' (for housekeeping). Turnover of staff is high, so daily tipping ensures the right person receives it." },
+          { "q": "Is tipping expected at tacos and street food stalls?", "a": "Not expected, but 5–10 MXN is a kind gesture, especially if the vendor is particularly helpful. The tip jar at taco stands is common — use your judgment." }
+        ]
+      }
+    ]
+  },
+
+  // ── Tipping in Indonesia ───────────────────────────────────────────────────
+  {
+    "slug": "tipping-in-indonesia",
+    "title": "Tipping in Indonesia (Bali, Jakarta & Beyond): 2026 Guide",
+    "description": "Tipping isn't traditional in Indonesia, but it's now expected in tourist areas of Bali. Here's how much to tip at restaurants, spas, and with drivers in Indonesia.",
+    "publishedAt": "2026-03-08",
+    "readingMinutes": 5,
+    "category": "tipping",
+    "country": "Indonesia",
+    "countrySlug": "indonesia",
+    "content": [
+      {
+        "type": "intro",
+        "body": "Indonesia doesn't have a deep-rooted tipping culture, but decades of tourism — particularly in Bali — have changed expectations significantly. In tourist areas, tipping is appreciated and increasingly expected. In local areas, it's a pleasant surprise."
+      },
+      {
+        "type": "h2",
+        "heading": "Bali vs The Rest of Indonesia"
+      },
+      {
+        "type": "p",
+        "body": "Bali operates on different norms to the rest of Indonesia. In Seminyak, Ubud, Canggu, and Kuta, staff at restaurants, spas, and hotels have come to expect tips from international visitors. In Jakarta, Yogyakarta, Lombok, or more local establishments, tipping is genuinely optional and not expected."
+      },
+      {
+        "type": "h2",
+        "heading": "How Much to Tip in Indonesia"
+      },
+      {
+        "type": "table",
+        "rows": [
+          { "label": "Restaurants (tourist areas)", "value": "10–15% or 20,000–50,000 IDR" },
+          { "label": "Restaurants (local warungs)", "value": "Not expected, small change appreciated" },
+          { "label": "Spa / massage", "value": "20,000–50,000 IDR (10–15%)" },
+          { "label": "Private driver (day hire)", "value": "50,000–100,000 IDR per day" },
+          { "label": "Hotel porter", "value": "10,000–20,000 IDR per bag" },
+          { "label": "Tour guide", "value": "50,000–100,000 IDR per person" },
+          { "label": "Taxis (Blue Bird)", "value": "Round up, optional" }
+        ]
+      },
+      {
+        "type": "tip",
+        "body": "In Bali, many restaurants include a 10% government tax and a 5–10% service charge. Always check the bill — the bottom line may already include a significant service component."
+      },
+      {
+        "type": "h2",
+        "heading": "Private Drivers in Bali"
+      },
+      {
+        "type": "p",
+        "body": "Hiring a private driver for a day tour (typically 400,000–600,000 IDR for 8 hours) is extremely common in Bali. A tip of 50,000–100,000 IDR for good service is appreciated and represents meaningful income. If your driver was exceptional — navigated traffic, suggested good spots, waited patiently — 100,000–150,000 IDR is generous without being excessive."
+      },
+      {
+        "type": "faq",
+        "faqs": [
+          { "q": "Should I tip at a warung (local food stall) in Bali?", "a": "Not expected. Warungs are informal local eateries and tipping isn't part of the culture. Rounding up or leaving small change (a few thousand IDR) is a kind gesture but entirely optional." },
+          { "q": "Is it safe to use Grab or Gojek in Indonesia?", "a": "Yes — both are widely used, reliable, and significantly safer than unmetered street taxis in major cities. The in-app tip option is appreciated but not required." },
+          { "q": "Do Balinese spa workers expect tips?", "a": "In tourist-area spas, yes. A 10–15% tip or 20,000–50,000 IDR for a full-body massage is standard practice and makes a meaningful difference to therapists earning modest wages." }
+        ]
+      }
+    ]
+  },
+
+  // ── Tipping in Singapore ───────────────────────────────────────────────────
+  {
+    "slug": "tipping-in-singapore",
+    "title": "Tipping in Singapore: Is It Expected? (2026 Guide)",
+    "description": "Singapore officially discourages tipping — most bills include a 10% service charge. Here's when, where, and how much to tip if you choose to.",
+    "publishedAt": "2026-03-07",
+    "readingMinutes": 4,
+    "category": "tipping",
+    "country": "Singapore",
+    "countrySlug": "singapore",
+    "content": [
+      {
+        "type": "intro",
+        "body": "Singapore is one of the few countries that actively discourages tipping — some establishments even post signs saying tips are not accepted. A 10% service charge is standard on most restaurant bills, and taxis run on strict meters. But there are still moments where a small tip is appropriate."
+      },
+      {
+        "type": "h2",
+        "heading": "The Service Charge Explained"
+      },
+      {
+        "type": "p",
+        "body": "Most restaurants, hotels, and bars in Singapore apply a '+' pricing structure: the menu price plus 9% GST (goods and services tax) plus a 10% service charge, totalling roughly 19–21% above the listed price. This service charge goes to the establishment, not directly to individual staff — so if you want to tip a specific server, a small cash amount is appropriate."
+      },
+      {
+        "type": "h2",
+        "heading": "Tipping Norms by Category"
+      },
+      {
+        "type": "table",
+        "rows": [
+          { "label": "Restaurants (service charge included)", "value": "No additional tip needed" },
+          { "label": "Hawker centres / food courts", "value": "Not expected" },
+          { "label": "Taxis & Grab", "value": "Not expected, metered" },
+          { "label": "Hotel porter", "value": "S$1–2 per bag is appreciated" },
+          { "label": "Tour guides", "value": "S$5–10 optional for excellent service" },
+          { "label": "Hotel housekeeping", "value": "S$2–5 optional" }
+        ]
+      },
+      {
+        "type": "tip",
+        "body": "Hawker centres are Singapore's famous open-air food courts — absolutely no tipping here. These are self-service or counter-service venues where tipping would be unusual and potentially awkward."
+      },
+      {
+        "type": "h2",
+        "heading": "When It's Appropriate to Tip"
+      },
+      {
+        "type": "p",
+        "body": "If a hotel concierge went out of their way to organise something special, a S$5–10 note as a thank-you is appropriate. The same applies for a tour guide who provided an exceptional experience. For hotel porters, S$1–2 per bag is reasonable and appreciated. Beyond these situations, you can comfortably decline to tip without any social awkwardness."
+      },
+      {
+        "type": "faq",
+        "faqs": [
+          { "q": "Is it rude to tip in Singapore?", "a": "Not rude, but unnecessary in most contexts. The 10% service charge on restaurant bills makes additional tipping redundant. Tipping taxi drivers is not expected and drivers don't anticipate it." },
+          { "q": "What about tipping at fine dining restaurants in Singapore?", "a": "Even at Michelin-starred restaurants, the service charge covers the tipping obligation. A personal compliment to the manager or a positive review is often more meaningful to staff than an additional cash tip." },
+          { "q": "Should I tip delivery riders in Singapore?", "a": "Not expected. Delivery riders for Grab Food, Foodpanda, and similar services receive fees through the app. An occasional in-app tip is appreciated but entirely optional." }
+        ]
+      }
+    ]
+  },
+
+  // ── Tipping in Turkey ──────────────────────────────────────────────────────
+  {
+    "slug": "tipping-in-turkey",
+    "title": "Tipping in Turkey: Istanbul, Bodrum & Beyond (2026 Guide)",
+    "description": "Tipping in Turkey is appreciated but not mandatory. Restaurants expect 10%, and taxi drivers appreciate rounding up. Here's the complete guide for travellers.",
+    "publishedAt": "2026-03-06",
+    "readingMinutes": 5,
+    "category": "tipping",
+    "country": "Turkey",
+    "countrySlug": "turkey",
+    "content": [
+      {
+        "type": "intro",
+        "body": "Turkey sits in an interesting middle ground: tipping isn't culturally obligatory, but it's warmly appreciated — particularly in Istanbul's restaurants and tourist areas along the Aegean and Mediterranean coasts. Here's exactly what's expected."
+      },
+      {
+        "type": "h2",
+        "heading": "How Much to Tip in Turkey"
+      },
+      {
+        "type": "table",
+        "rows": [
+          { "label": "Restaurants", "value": "10%, cash preferred" },
+          { "label": "Cafés & bars", "value": "Round up, optional" },
+          { "label": "Taxis", "value": "Round up, or 5–10% for longer trips" },
+          { "label": "Hotel porter", "value": "20–50 TRY per bag" },
+          { "label": "Tour guide", "value": "50–100 TRY per person" },
+          { "label": "Hammam (Turkish bath)", "value": "15–20% to the attendant" },
+          { "label": "Barber / hair salon", "value": "10–15%" }
+        ]
+      },
+      {
+        "type": "h2",
+        "heading": "Tipping at Turkish Restaurants"
+      },
+      {
+        "type": "p",
+        "body": "In sit-down restaurants, leaving 10% in cash on the table or handing it directly to your server is the norm. Turkish menus rarely include a service charge, so what you tip goes directly to the staff. At tourist-area restaurants in Istanbul's Sultanahmet or Beyoğlu, 10–15% is appropriate. At local neighbourood lokantaları, rounding up is fine."
+      },
+      {
+        "type": "tip",
+        "body": "The hammam (Turkish bath) experience includes an attendant who scrubs, massages, and guides you through the ritual. A 15–20% tip for your attendant is customary and greatly appreciated."
+      },
+      {
+        "type": "h2",
+        "heading": "Taxis in Istanbul"
+      },
+      {
+        "type": "p",
+        "body": "Istanbul taxis run on meters, but meter scams (running the meter from a previous journey, or taking long routes) are common for tourists. Use BiTaksi or Uber for safer, transparent pricing. A small tip — rounding up to the nearest 10 or 20 TRY — is appreciated but not expected."
+      },
+      {
+        "type": "faq",
+        "faqs": [
+          { "q": "Do I need to tip in Turkish currency (lira)?", "a": "Yes, wherever possible. Euros and USD are accepted at some tourist venues but Turkish lira is always preferred. Given recent inflation, ensure your tip represents meaningful value — check current rates." },
+          { "q": "Is tipping expected at all-inclusive resorts in Turkey?", "a": "At all-inclusive resorts (common in Antalya, Bodrum, Marmaris), a small daily tip for your waiter and room attendant (20–50 TRY each) is appreciated, even though drinks and food are included." },
+          { "q": "Should I tip at a Turkish barber?", "a": "Yes — Turkish barbershops (berbers) offer an experience that often includes a straight razor shave, hot towel, and sometimes a face massage. A 10–15% tip for this level of service is appropriate and expected." }
+        ]
+      }
+    ]
+  },
+
+  // ── Tipping in Brazil ──────────────────────────────────────────────────────
+  {
+    "slug": "tipping-in-brazil",
+    "title": "Tipping in Brazil: Rio, São Paulo & More (2026 Guide)",
+    "description": "Brazilian restaurants typically add a 10% service charge — you don't have to pay it, but most travellers do. Here's the full guide to tipping in Brazil.",
+    "publishedAt": "2026-03-05",
+    "readingMinutes": 5,
+    "category": "tipping",
+    "country": "Brazil",
+    "countrySlug": "brazil",
+    "content": [
+      {
+        "type": "intro",
+        "body": "Brazil has a unique tipping custom: a 10% 'taxa de serviço' (service charge) is added to most restaurant bills, but it's legally optional — you can decline to pay it. In practice, most travellers pay it, and local Brazilians often do too for good service."
+      },
+      {
+        "type": "h2",
+        "heading": "The 10% Service Charge: Optional, Not Mandatory"
+      },
+      {
+        "type": "p",
+        "body": "By Brazilian law, the 10% service charge is not compulsory. If service was poor, you can ask to have it removed. If service was good, paying it is the easiest and most expected form of tipping. Unlike in some countries, this charge does generally go to the staff — though distribution varies by establishment."
+      },
+      {
+        "type": "h2",
+        "heading": "How Much to Tip in Brazil"
+      },
+      {
+        "type": "table",
+        "rows": [
+          { "label": "Restaurants", "value": "10% service charge (pay or decline)" },
+          { "label": "Bars & nightlife", "value": "10% or round up" },
+          { "label": "Taxis (metered)", "value": "Round up, optional" },
+          { "label": "Uber / 99", "value": "In-app tip optional" },
+          { "label": "Hotel porter", "value": "R$5–10 per bag" },
+          { "label": "Tour guide", "value": "R$20–50 per person for a half-day" },
+          { "label": "Delivery (iFood, Rappi)", "value": "R$2–5 in-app optional" }
+        ]
+      },
+      {
+        "type": "h2",
+        "heading": "Taxis in Brazil"
+      },
+      {
+        "type": "p",
+        "body": "Use 99 or Uber rather than street taxis in Rio de Janeiro and São Paulo — app-based rides are safer, metered, and transparent. Tipping is optional via the app. If you take a traditional taxi, round up to the nearest R$5 for good service."
+      },
+      {
+        "type": "warning",
+        "body": "In tourist areas of Rio (Copacabana, Ipanema), always use app-based taxis at night. Street taxi scams targeting tourists are documented. Confirm the fare before entering any unmetered vehicle."
+      },
+      {
+        "type": "faq",
+        "faqs": [
+          { "q": "Can I refuse to pay the 10% service charge in Brazil?", "a": "Yes, it's legally optional. If you received poor service or simply don't want to pay, you can ask the server to remove it. Most restaurants will comply without issue." },
+          { "q": "Is US dollar tipping accepted in Brazil?", "a": "Not really. Brazil uses the real (BRL) and USD is not commonly accepted outside of a few tourist-facing businesses. Always tip in reais." },
+          { "q": "How much should I tip a tour guide in Rio de Janeiro?", "a": "For a half-day group tour, R$20–30 per person is appropriate. For a private guide showing you around Christ the Redeemer and Sugarloaf, R$50–80 per person is generous and appreciated." }
+        ]
+      }
+    ]
+  },
+
+  // ── Tipping in Canada ──────────────────────────────────────────────────────
+  {
+    "slug": "tipping-in-canada",
+    "title": "Tipping in Canada: How Much to Tip in 2026 (Full Guide)",
+    "description": "Canada has a strong tipping culture similar to the US — 15–20% at restaurants is standard, and taxi drivers expect a tip. Here's what you need to know.",
+    "publishedAt": "2026-03-04",
+    "readingMinutes": 5,
+    "category": "tipping",
+    "country": "Canada",
+    "countrySlug": "canada",
+    "content": [
+      {
+        "type": "intro",
+        "body": "Canada's tipping culture closely mirrors the United States — perhaps even more so in recent years, with 'tipflation' driving suggested amounts on card terminals as high as 25–30%. Here's what's genuinely expected versus what's being pushed on you by payment technology."
+      },
+      {
+        "type": "h2",
+        "heading": "How Much to Tip in Canada"
+      },
+      {
+        "type": "table",
+        "rows": [
+          { "label": "Restaurants (sit-down)", "value": "15–20%, 25% for exceptional service" },
+          { "label": "Bars", "value": "C$1–2 per drink, or 15% on tabs" },
+          { "label": "Taxis", "value": "15%, or round up generously" },
+          { "label": "Uber / Lyft", "value": "10–15% via app" },
+          { "label": "Hotel porter", "value": "C$2–3 per bag" },
+          { "label": "Tour guide", "value": "C$10–20 per person" },
+          { "label": "Coffee shops", "value": "Optional — C$1 or round up" }
+        ]
+      },
+      {
+        "type": "h2",
+        "heading": "The Card Terminal Tip Prompt Problem"
+      },
+      {
+        "type": "p",
+        "body": "Virtually every card terminal in Canada — from sit-down restaurants to quick-service cafés — now presents a tip prompt with suggested amounts of 18%, 20%, 22%, or even 25%. This includes counter-service venues where tipping wasn't historically expected. You are entirely within your rights to press 'No Tip' or enter a custom (lower) amount. The social pressure is real but the expectation is not — at a café where you collected your own order, 'No Tip' is always acceptable."
+      },
+      {
+        "type": "tip",
+        "body": "In Quebec, restaurant tipping norms match the rest of Canada (15–18% minimum for good service), but French dining etiquette means tipping is seen as a recognition of service quality, not an automatic obligation."
+      },
+      {
+        "type": "h2",
+        "heading": "Tipping in Different Canadian Cities"
+      },
+      {
+        "type": "p",
+        "body": "Toronto and Vancouver follow the same norms: 15–20% at restaurants, 15% for taxis and rideshare, C$1–2 per coffee-shop transaction if you choose to. Montreal is slightly more European in sensibility — 15% is the baseline and going higher for truly exceptional service is optional rather than expected. In smaller cities and rural areas, 15% at restaurants is perfectly appropriate."
+      },
+      {
+        "type": "faq",
+        "faqs": [
+          { "q": "Do I need to tip at Tim Hortons or other fast food chains in Canada?", "a": "No. Fast food and counter-service venues have introduced tip prompts, but tipping is not expected or obligatory. Pressing 'No Tip' is entirely appropriate." },
+          { "q": "Is 15% enough to tip in Canada?", "a": "15% is the minimum for adequate service at a sit-down restaurant. 18–20% is increasingly the baseline for good service, and 20–25% for excellent. Below 10% sends a strong signal of dissatisfaction." },
+          { "q": "Should I tip in Canadian dollars or US dollars?", "a": "Always Canadian dollars (CAD). USD may be accepted at some border-town businesses, but always tip in local currency to avoid confusion and ensure the worker receives full value." }
+        ]
+      }
+    ]
+  },
+
+  // ── Tipping in Portugal ────────────────────────────────────────────────────
+  {
+    "slug": "tipping-in-portugal",
+    "title": "Tipping in Portugal: Lisbon, Porto & the Algarve (2026 Guide)",
+    "description": "Tipping in Portugal is optional and appreciated — 5–10% at restaurants is the norm. Here's exactly when, how much, and how to tip in Portugal.",
+    "publishedAt": "2026-03-03",
+    "readingMinutes": 4,
+    "category": "tipping",
+    "country": "Portugal",
+    "countrySlug": "portugal",
+    "content": [
+      {
+        "type": "intro",
+        "body": "Portugal has a relaxed tipping culture. Service is included in menu prices, and there's no social expectation to tip — but leaving 5–10% for good restaurant service, or rounding up a taxi fare, is warmly received and increasingly common in tourist-heavy areas."
+      },
+      {
+        "type": "h2",
+        "heading": "How Much to Tip in Portugal"
+      },
+      {
+        "type": "table",
+        "rows": [
+          { "label": "Restaurants", "value": "5–10% for good service" },
+          { "label": "Cafés & pastelarias", "value": "Round up or leave small coins" },
+          { "label": "Taxis", "value": "Round up to nearest euro" },
+          { "label": "Uber (available in Lisbon/Porto)", "value": "Optional in-app tip" },
+          { "label": "Hotel porter", "value": "€1–2 per bag" },
+          { "label": "Tour guide", "value": "€5–10 per person" },
+          { "label": "Fado restaurant", "value": "10% appreciated — performers rely on tips" }
+        ]
+      },
+      {
+        "type": "h2",
+        "heading": "Lisbon vs the Algarve"
+      },
+      {
+        "type": "p",
+        "body": "In Lisbon and Porto, locals rarely tip beyond rounding up at cafés — but international visitors are welcome to leave 5–10%. In the Algarve, where tourism is the primary industry, 10% at restaurants has become more normalised. In both cases, tipping is never obligatory and no one will be offended if you don't."
+      },
+      {
+        "type": "tip",
+        "body": "At a traditional pastelaria (pastry café), it's common to leave a few coins on the counter — particularly after a bica (espresso) and pastel de nata. This is a cultural gesture rather than an obligatory tip."
+      },
+      {
+        "type": "h2",
+        "heading": "Fado Restaurant Tipping"
+      },
+      {
+        "type": "p",
+        "body": "Fado houses (casas de fado) in Lisbon's Alfama district typically charge a cover that includes food and a performance. A 10% tip for your waiter is appropriate, particularly if the performance was memorable. Some fado houses pass a small contribution box for musicians — putting in €2–5 per person is a kind gesture."
+      },
+      {
+        "type": "faq",
+        "faqs": [
+          { "q": "Is tipping expected in Portugal?", "a": "Not expected, but appreciated. Portugal is European in its tipping culture — service charges aren't added automatically, and not tipping won't offend anyone. 5–10% for sit-down restaurant service is a generous and appropriate gesture." },
+          { "q": "Do I tip at a Portuguese tasca (tavern)?", "a": "A tasca is a traditional local eatery — rounding up or leaving a euro or two is perfectly appropriate. Don't feel obligated to tip 15% at a casual family-run venue." },
+          { "q": "Should I tip the driver on a wine tour in the Douro Valley?", "a": "For a private wine tour with a knowledgeable guide, €10–15 per person is appropriate. For group tours, €5–10 per person. The Douro region is still off the beaten tourist path and tips are genuinely appreciated." }
+        ]
+      }
+    ]
   }
 ]

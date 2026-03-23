@@ -5,6 +5,7 @@ import Image from 'next/image'
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description: 'Hootling Privacy Policy — how we handle your data when you use our travel fare and tipping service.',
+  alternates: { canonical: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'}/privacy` },
 }
 
 const EFFECTIVE = '23 March 2026'

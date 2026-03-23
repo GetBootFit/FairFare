@@ -2,7 +2,7 @@
 
 import type { TippingResult, TippingScenario, ScenarioTip, TippingRating } from '@/types'
 import { useState, useEffect, useCallback } from 'react'
-import { RotateCcw, Volume2, VolumeX, Copy, Check, Maximize2 } from 'lucide-react'
+import { RotateCcw, Volume2, VolumeX, Copy, Check, Maximize2, ChevronRight } from 'lucide-react'
 
 // SVGs are already purple (#9333ea) + white by design — no filter needed.
 function SvgIcon({ name, size = 20, className = '' }: { name: string; size?: number; className?: string }) {
@@ -22,6 +22,8 @@ import { useExchangeRates } from '@/hooks/useExchangeRates'
 import { CurrencySelector, ReferenceRate } from '@/components/ui/CurrencyConverter'
 import { getLangCode, speakText, stopSpeech } from '@/lib/speech'
 import { ShowPhraseModal } from '@/components/ui/ShowPhraseModal'
+import Link from 'next/link'
+import { track } from '@vercel/analytics'
 import { AffiliateBlock } from '@/components/AffiliateBlock'
 import { getPartnersForZoneSync } from '@/lib/affiliates'
 import { PhraseTranslator } from '@/components/ui/PhraseTranslator'
@@ -268,6 +270,19 @@ export function TippingResult({ result, onReset }: Props) {
             />
           )
         })()}
+
+        {/* Taxi fare cross-sell */}
+        <Link
+          href="/taxi"
+          className="flex items-center gap-3 bg-zinc-900 border border-zinc-800 hover:border-zinc-700 rounded-2xl px-4 py-3 transition-colors group"
+          onClick={() => track('taxi_crosssell_clicked', { from: 'tipping', country: result.country })}
+        >
+          <SvgIcon name="taxi" size={22} className="shrink-0 opacity-60" />
+          <div className="flex-1 min-w-0">
+            <p className="text-xs text-zinc-500">Check taxi fares in {result.country}</p>
+          </div>
+          <ChevronRight size={13} className="text-zinc-700 group-hover:text-zinc-500 transition-colors shrink-0" />
+        </Link>
 
         {/* PWA install — shown post-result (highest-conversion moment) */}
         <InstallPrompt variant="card" />

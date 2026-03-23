@@ -283,6 +283,9 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
             <div className="pr-2 rtl:pr-0 rtl:pl-2">
               <p className="text-sm font-semibold text-white">{t('payment_bundle')}</p>
               <p className="text-xs text-zinc-400 mt-0.5">{t('payment_bundle_desc')}</p>
+              <p className="text-xs text-purple-400 mt-0.5">
+                Save {Math.round((10 * prices.single - prices.bundle) / (10 * prices.single) * 100)}% vs buying one at a time
+              </p>
             </div>
             <div className="flex items-center gap-2 shrink-0">
               <span className="text-white font-bold text-sm">{bundlePrice}</span>

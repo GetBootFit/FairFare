@@ -5,6 +5,7 @@ import Image from 'next/image'
 export const metadata: Metadata = {
   title: 'Terms of Service',
   description: 'Hootling Terms of Service — the rules for using our taxi fare check and tipping guide service.',
+  alternates: { canonical: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'}/terms` },
 }
 
 const EFFECTIVE = '23 March 2026'

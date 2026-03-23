@@ -664,6 +664,7 @@ export function TaxiResult({ result, onReset }: Props) {
         <Link
           href={`/tipping/${result.country.toLowerCase().replace(/\s+/g, '-')}`}
           className="flex items-center gap-3 bg-zinc-900 border border-zinc-800 hover:border-zinc-700 rounded-2xl px-4 py-3 transition-colors group print-hide"
+          onClick={() => track('tipping_crosssell_clicked', { from: 'taxi', country: result.country })}
         >
           <SvgIcon name="money-notes" size={22} className="shrink-0 opacity-60" />
           <div className="flex-1 min-w-0">
