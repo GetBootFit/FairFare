@@ -2207,9 +2207,10 @@ export const BLOG_POSTS: BlogPost[] = [
 ]
 
 import { GENERATED_BLOG_POSTS } from './blog-posts-generated'
+import { BATCH2_BLOG_POSTS } from './blog-posts-batch2'
 
 /** All posts: hand-written + AI-generated. */
-const ALL_POSTS: BlogPost[] = [...BLOG_POSTS, ...GENERATED_BLOG_POSTS]
+const ALL_POSTS: BlogPost[] = [...BLOG_POSTS, ...GENERATED_BLOG_POSTS, ...BATCH2_BLOG_POSTS]
 
 export function getBlogPost(slug: string): BlogPost | undefined {
   return ALL_POSTS.find((p) => p.slug === slug)
