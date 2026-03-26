@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { Spinner } from '@/components/ui/Spinner'
 import { useLanguage } from '@/context/LanguageContext'
 import { track } from '@vercel/analytics'
+import { ga4BeginCheckout, ga4TierSelected, ga4PaymentStarted } from '@/lib/analytics'
 import {
   CURRENCIES,
   PRICES,
@@ -46,6 +47,12 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
 
   const modalRef = useRef<HTMLDivElement>(null)
   const radioGroupRef = useRef<HTMLDivElement>(null)
+
+  // Fire begin_checkout once when modal opens
+  useEffect(() => {
+    ga4BeginCheckout({ feature, country })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   // Hydrate currency from localStorage / browser locale on mount
   useEffect(() => {
@@ -136,6 +143,12 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
   const handlePay = async () => {
     setLoading(true)
     setError('')
+    ga4PaymentStarted({
+      feature,
+      product: selectedProduct,
+      currency,
+      value: selectedProduct === 'country_pass' ? prices.pass : selectedProduct === 'query_bundle' ? prices.bundle : prices.single,
+    })
     try {
       const body: Record<string, string> = {
         feature,
@@ -202,7 +215,7 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
           <button
             role="radio"
             aria-checked={selectedProduct === 'single'}
-            onClick={() => { setSelectedProduct('single'); track('tier_selected', { tier: 'single', feature }) }}
+            onClick={() => { setSelectedProduct('single'); track('tier_selected', { tier: 'single', feature }); ga4TierSelected({ tier: 'single', feature }) }}
             onKeyDown={(e) => handleRadioKeyDown(e, 'single')}
             className={`w-full text-left flex items-center justify-between p-3.5 rounded-xl border transition-colors ${
               selectedProduct === 'single'
@@ -233,7 +246,7 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
             <button
               role="radio"
               aria-checked={selectedProduct === 'country_pass'}
-              onClick={() => { setSelectedProduct('country_pass'); track('tier_selected', { tier: 'country_pass', feature, country: country ?? '' }) }}
+              onClick={() => { setSelectedProduct('country_pass'); track('tier_selected', { tier: 'country_pass', feature, country: country ?? '' }); ga4TierSelected({ tier: 'country_pass', feature, country: country ?? '' }) }}
               onKeyDown={(e) => handleRadioKeyDown(e, 'country_pass')}
               className={`w-full text-left flex items-center justify-between p-3.5 rounded-xl border transition-colors relative ${
                 selectedProduct === 'country_pass'
@@ -268,7 +281,7 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
           <button
             role="radio"
             aria-checked={selectedProduct === 'query_bundle'}
-            onClick={() => { setSelectedProduct('query_bundle'); track('tier_selected', { tier: 'bundle', feature }) }}
+            onClick={() => { setSelectedProduct('query_bundle'); track('tier_selected', { tier: 'bundle', feature }); ga4TierSelected({ tier: 'bundle', feature }) }}
             onKeyDown={(e) => handleRadioKeyDown(e, 'query_bundle')}
             className={`w-full text-left flex items-center justify-between p-3.5 rounded-xl border transition-colors relative ${
               selectedProduct === 'query_bundle'

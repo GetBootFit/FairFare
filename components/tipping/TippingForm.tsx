@@ -19,6 +19,7 @@ import {
 import { useLanguage } from '@/context/LanguageContext'
 import { COUNTRY_FLAGS } from '@/lib/flags'
 import { track } from '@vercel/analytics'
+import { ga4ResultLoaded } from '@/lib/analytics'
 import type { TippingResult as TippingResultType } from '@/types'
 
 const COUNTRIES = [
@@ -122,6 +123,7 @@ export function TippingForm() {
       setResult(data as TippingResultType)
       setStatus('done')
       track('result_loaded', { feature: 'tipping', country: c })
+      ga4ResultLoaded({ feature: 'tipping', country: c })
     } catch (err) {
       setStatus('error')
       setErrorMsg(err instanceof Error ? err.message : t('common_error'))

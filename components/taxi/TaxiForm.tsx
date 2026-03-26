@@ -22,6 +22,7 @@ import { useLanguage } from '@/context/LanguageContext'
 import { useRecentSearches } from '@/hooks/useRecentSearches'
 import { Clock, Plane } from 'lucide-react'
 import { track } from '@vercel/analytics'
+import { ga4PreviewLoaded, ga4ResultLoaded } from '@/lib/analytics'
 import Link from 'next/link'
 import { matchAirport } from '@/lib/airport-data'
 import type { TaxiPreviewResult, TaxiFullResult } from '@/types'
@@ -168,6 +169,7 @@ export function TaxiForm() {
               city: previewData.city,
               country: previewData.country,
             })
+            ga4PreviewLoaded({ feature: 'taxi', city: previewData.city, country: previewData.country })
             setStatus('preview_done')
           }
         }
@@ -209,6 +211,7 @@ export function TaxiForm() {
       country: fullResult.country ?? preview?.country ?? '',
       tokenType,
     })
+    ga4ResultLoaded({ feature: 'taxi', city: fullResult.city ?? preview?.city ?? '', country: fullResult.country ?? preview?.country ?? '' })
     addSearch({
       pickup: currentForm.pickup,
       destination: currentForm.destination,
