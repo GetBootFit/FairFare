@@ -3,7 +3,7 @@ import { getAllCitySlugs, getAllCountrySlugs, HREFLANG_LOCALES } from '@/lib/seo
 import { getAllAirportCodes } from '@/lib/airport-data'
 import { getAllBlogSlugs } from '@/lib/blog-posts'
 
-const BASE = process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'
+const BASE = (process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com').replace(/\/$/, '')
 
 /** Build hreflang alternates for a given URL (all locales → same URL). */
 function hreflang(url: string): MetadataRoute.Sitemap[number]['alternates'] {

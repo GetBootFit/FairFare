@@ -1,73 +1,31 @@
 import { MetadataRoute } from 'next'
 
+const DISALLOW = ['/api/', '/admin', '/success']
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      // Default: allow everything except private API routes
+      // Default: allow everything except private routes
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/success'],
+        disallow: DISALLOW,
       },
       // Explicitly allow major AI / LLM crawlers
       // These are sometimes blocked by blanket rules — we want them indexed
-      {
-        userAgent: 'GPTBot',           // OpenAI / ChatGPT
-        allow: '/',
-        disallow: ['/api/', '/success'],
-      },
-      {
-        userAgent: 'ChatGPT-User',     // ChatGPT browsing plugin
-        allow: '/',
-        disallow: ['/api/', '/success'],
-      },
-      {
-        userAgent: 'anthropic-ai',     // Claude / Anthropic
-        allow: '/',
-        disallow: ['/api/', '/success'],
-      },
-      {
-        userAgent: 'ClaudeBot',        // Claude crawler
-        allow: '/',
-        disallow: ['/api/', '/success'],
-      },
-      {
-        userAgent: 'PerplexityBot',    // Perplexity AI
-        allow: '/',
-        disallow: ['/api/', '/success'],
-      },
-      {
-        userAgent: 'Googlebot',        // Google Search + Gemini grounding
-        allow: '/',
-        disallow: ['/api/', '/success'],
-      },
-      {
-        userAgent: 'Bingbot',          // Bing + Microsoft Copilot
-        allow: '/',
-        disallow: ['/api/', '/success'],
-      },
-      {
-        userAgent: 'Applebot',         // Apple Intelligence / Spotlight
-        allow: '/',
-        disallow: ['/api/', '/success'],
-      },
-      {
-        userAgent: 'Applebot-Extended',
-        allow: '/',
-        disallow: ['/api/', '/success'],
-      },
-      {
-        userAgent: 'cohere-ai',        // Cohere Command
-        allow: '/',
-        disallow: ['/api/', '/success'],
-      },
-      {
-        userAgent: 'CCBot',            // Common Crawl (used by many AI training sets)
-        allow: '/',
-        disallow: ['/api/', '/success'],
-      },
+      { userAgent: 'GPTBot',            allow: '/', disallow: DISALLOW }, // OpenAI / ChatGPT
+      { userAgent: 'ChatGPT-User',      allow: '/', disallow: DISALLOW }, // ChatGPT browsing plugin
+      { userAgent: 'anthropic-ai',      allow: '/', disallow: DISALLOW }, // Claude / Anthropic
+      { userAgent: 'ClaudeBot',         allow: '/', disallow: DISALLOW }, // Claude crawler
+      { userAgent: 'PerplexityBot',     allow: '/', disallow: DISALLOW }, // Perplexity AI
+      { userAgent: 'Googlebot',         allow: '/', disallow: DISALLOW }, // Google Search + Gemini grounding
+      { userAgent: 'Bingbot',           allow: '/', disallow: DISALLOW }, // Bing + Microsoft Copilot
+      { userAgent: 'Applebot',          allow: '/', disallow: DISALLOW }, // Apple Intelligence / Spotlight
+      { userAgent: 'Applebot-Extended', allow: '/', disallow: DISALLOW },
+      { userAgent: 'cohere-ai',         allow: '/', disallow: DISALLOW }, // Cohere Command
+      { userAgent: 'CCBot',             allow: '/', disallow: DISALLOW }, // Common Crawl
     ],
-    sitemap: 'https://hootling.com/sitemap.xml',
-    host: 'https://hootling.com',
+    sitemap: 'https://www.hootling.com/sitemap.xml',
+    host: 'https://www.hootling.com',
   }
 }
