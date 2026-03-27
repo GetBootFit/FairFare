@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ChevronRight } from 'lucide-react'
-import { BLOG_POSTS } from '@/lib/blog-posts'
+import { getAllBlogSlugs, getBlogPost } from '@/lib/blog-posts'
+
+const APP_URL = (process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com').replace(/\/$/, '')
 
 export const revalidate = 86400
 
@@ -9,11 +11,11 @@ export const metadata: Metadata = {
   title: 'Travel Tips & Taxi Guides — Hootling Blog',
   description:
     'Practical travel guides: how much taxis cost in Bangkok, Dubai, London, New York and more. Real meter rates, scam warnings and airport fare tables.',
-  alternates: { canonical: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'}/blog` },
+  alternates: { canonical: `${APP_URL}/blog` },
   openGraph: {
     title: 'Hootling Travel Blog — Taxi Costs & Tipping Guides',
     description: 'Real taxi fares and tipping customs for travellers. Updated for 2026.',
-    url: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'}/blog`,
+    url: `${APP_URL}/blog`,
     type: 'website',
   },
 }
@@ -31,12 +33,41 @@ const categoryColor: Record<string, string> = {
 }
 
 export default function BlogIndexPage() {
-  const sorted = [...BLOG_POSTS].sort(
-    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-  )
+  const slugs = getAllBlogSlugs()
+  const sorted = slugs
+    .map((s) => getBlogPost(s)!)
+    .filter(Boolean)
+    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+
+  const collectionPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Travel Tips & Taxi Guides — Hootling Blog',
+    description: 'Practical travel guides covering taxi fares, tipping customs, and travel tips for 120+ cities worldwide.',
+    url: `${APP_URL}/blog`,
+    publisher: {
+      '@type': 'Organization',
+      name: 'Hootling',
+      url: APP_URL,
+      logo: { '@type': 'ImageObject', url: `${APP_URL}/images/brand/hootling-logo-icon.png` },
+    },
+    hasPart: sorted.slice(0, 50).map((post) => ({
+      '@type': 'Article',
+      headline: post.title,
+      description: post.description,
+      url: `${APP_URL}/blog/${post.slug}`,
+      datePublished: post.publishedAt,
+      dateModified: post.updatedAt ?? post.publishedAt,
+    })),
+  }
 
   return (
-    <div className="space-y-6 pb-8">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageSchema) }}
+      />
+      <div className="space-y-6 pb-8">
       {/* Header */}
       <div>
         <nav className="flex items-center gap-1.5 text-xs text-zinc-500 mb-4" aria-label="Breadcrumb">
@@ -92,5 +123,6 @@ export default function BlogIndexPage() {
         ))}
       </div>
     </div>
+    </>
   )
 }

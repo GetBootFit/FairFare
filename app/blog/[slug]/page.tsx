@@ -1,11 +1,50 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronRight, ArrowRight } from 'lucide-react'
 import { getBlogPost, getAllBlogSlugs, type BlogSection } from '@/lib/blog-posts'
 import { BlogAffiliateCard } from '@/components/BlogAffiliateCard'
 import { getPartnersForZone } from '@/lib/affiliates'
 import type { AffiliateCategory } from '@/data/affiliate-config'
+
+// City SVG sticker map — 13 illustrated cities
+const CITY_IMAGES: Record<string, string> = {
+  amsterdam:  '/images/cities/Amsterdam.svg',
+  bangkok:    '/images/cities/Bangkok.svg',
+  barcelona:  '/images/cities/Barcelona.svg',
+  dubai:      '/images/cities/Dubai.svg',
+  istanbul:   '/images/cities/Istanbul.svg',
+  london:     '/images/cities/London.svg',
+  melbourne:  '/images/cities/Melbourne.svg',
+  'new-york': '/images/cities/NewYork.svg',
+  paris:      '/images/cities/Paris.svg',
+  rome:       '/images/cities/Rome.svg',
+  singapore:  '/images/cities/Singapore.svg',
+  sydney:     '/images/cities/Sydney.svg',
+  tokyo:      '/images/cities/Tokyo.svg',
+}
+
+// Country slug → ISO 3166-1 alpha-2 for flag images
+const COUNTRY_FLAGS: Record<string, string> = {
+  argentina:        'ar', australia:      'au', austria:        'at',
+  brazil:           'br', cambodia:       'kh', canada:         'ca',
+  chile:            'cl', china:          'cn', colombia:       'co',
+  croatia:          'hr', cuba:           'cu', 'czech-republic':'cz',
+  denmark:          'dk', egypt:          'eg', france:         'fr',
+  germany:          'de', greece:         'gr', hungary:        'hu',
+  india:            'in', indonesia:      'id', ireland:        'ie',
+  israel:           'il', italy:          'it', japan:          'jp',
+  kenya:            'ke', malaysia:       'my', mexico:         'mx',
+  morocco:          'ma', netherlands:    'nl', 'new-zealand':  'nz',
+  norway:           'no', peru:           'pe', philippines:    'ph',
+  poland:           'pl', portugal:       'pt', qatar:          'qa',
+  singapore:        'sg', 'south-africa': 'za', 'south-korea':  'kr',
+  spain:            'es', 'sri-lanka':    'lk', sweden:         'se',
+  switzerland:      'ch', thailand:       'th', turkey:         'tr',
+  uae:              'ae', 'united-kingdom':'gb', usa:            'us',
+  vietnam:          'vn',
+}
 
 // ── Static generation + ISR ───────────────────────────────────────────────────
 
@@ -242,6 +281,28 @@ export default async function BlogArticlePage(
           <h1 className="text-xl font-bold text-white leading-snug">{post.title}</h1>
           <p className="text-zinc-400 text-sm">{post.description}</p>
         </div>
+
+        {/* Post hero image — city sticker or country flag */}
+        {(() => {
+          const cityImg = post.citySlug ? CITY_IMAGES[post.citySlug] : undefined
+          const flagCode = post.countrySlug ? COUNTRY_FLAGS[post.countrySlug] : undefined
+          const flagImg = flagCode ? `/images/flags/${flagCode}.svg` : undefined
+          const src = cityImg ?? flagImg
+          if (!src) return null
+          const isCitySticker = !!cityImg
+          return (
+            <div className={`flex ${isCitySticker ? 'justify-center' : 'justify-start'} py-2`}>
+              <Image
+                src={src}
+                alt={isCitySticker ? `${post.city} city illustration` : `${post.country} flag`}
+                width={isCitySticker ? 120 : 64}
+                height={isCitySticker ? 120 : 48}
+                unoptimized
+                className={isCitySticker ? 'opacity-90 drop-shadow-lg' : 'rounded shadow-sm'}
+              />
+            </div>
+          )
+        })()}
 
         {/* Related links */}
         {(post.citySlug || post.countrySlug) && (

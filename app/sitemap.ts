@@ -16,7 +16,7 @@ function hreflang(url: string): MetadataRoute.Sitemap[number]['alternates'] {
 }
 
 // Data updated quarterly
-const DATA_LAST_MODIFIED = new Date('2026-03-11')
+const DATA_LAST_MODIFIED = new Date('2026-03-27')
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const citySlugs = getAllCitySlugs()
