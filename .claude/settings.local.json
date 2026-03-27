@@ -166,7 +166,10 @@
       "Bash(py -3 -c \"import pypdf; print\\(''pypdf available''\\)\")",
       "Bash(py -3 -m pip install pdfplumber --quiet)",
       "Bash(py -3 -c \":*)",
-      "Bash(ls \"C:\\\\Users\\\\david\\\\Projects\\\\Hootling\\\\lib\\\\blog-posts-batch3\"*)"
+      "Bash(ls \"C:\\\\Users\\\\david\\\\Projects\\\\Hootling\\\\lib\\\\blog-posts-batch3\"*)",
+      "Bash(find C:UsersdavidProjectsHootling -name *seo* -type f)",
+      "Bash(find C:UsersdavidProjectsHootlingpublic -type f \\\\\\(-name *.png -o -name *.jpg -o -name *.webp -o -name *.svg \\\\\\))",
+      "Bash(find C:UsersdavidProjectsHootlingpublic -type f \\\\\\(-name *.png -o -name *.jpg -o -name *.svg -o -name *.webp \\\\\\))"
     ]
   }
 }
