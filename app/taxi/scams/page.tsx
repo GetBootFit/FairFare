@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   title: 'Taxi Scam Warning Signs: A Country-by-Country Guide (2026) | Hootling',
   description:
     'The most common taxi scams by region and country — broken meters, fake taxis, airport touts, and long-routing. Know the warning signs before you travel.',
-  alternates: { canonical: 'https://hootling.com/taxi/scams' },
+  alternates: { canonical: 'https://www.hootling.com/taxi/scams' },
   openGraph: {
     title: 'Taxi Scam Warning Signs: A Country-by-Country Guide',
     description: 'Know the warning signs before you travel. Common taxi scams by region: Southeast Asia, Middle East, Africa, Europe, and Latin America.',
-    url: 'https://hootling.com/taxi/scams',
+    url: 'https://www.hootling.com/taxi/scams',
   },
 }
 

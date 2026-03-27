@@ -8,11 +8,11 @@ export const metadata: Metadata = {
   title: 'Global Tipping Customs 2026: Country-by-Country Guide | Hootling',
   description:
     'A comprehensive reference for tipping customs in 50+ countries. Where tipping is expected, where it\'s optional, and where it\'s considered rude — for restaurants, taxis, hotels, and more.',
-  alternates: { canonical: 'https://hootling.com/tipping/guide' },
+  alternates: { canonical: 'https://www.hootling.com/tipping/guide' },
   openGraph: {
     title: 'Global Tipping Customs 2026: Country-by-Country Guide',
     description: 'Where tipping is expected, optional, or considered rude — for restaurants, taxis, hotels, and spas in 50+ countries.',
-    url: 'https://hootling.com/tipping/guide',
+    url: 'https://www.hootling.com/tipping/guide',
   },
 }
 

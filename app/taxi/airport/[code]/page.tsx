@@ -27,7 +27,7 @@ export async function generateMetadata(
   return {
     title: `${airport.code} Taxi Fares — ${airport.name} to ${airport.city} (${year})`,
     description: `Official taxi fares from ${airport.name} to ${airport.city}. ${airport.approxCityFare}. Scam warnings, alternatives and practical tips for ${year}.`,
-    alternates: { canonical: `https://hootling.com/taxi/airport/${code}` },
+    alternates: { canonical: `https://www.hootling.com/taxi/airport/${code}` },
     openGraph: {
       title: `${airport.code} Taxi Fares — ${airport.name} (${year})`,
       description: `${airport.approxCityFare} · Avoid scams · Compare alternatives.`,

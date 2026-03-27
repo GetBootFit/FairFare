@@ -7,11 +7,11 @@ export const metadata: Metadata = {
   title: 'See a Sample Result — Hootling',
   description:
     'See exactly what you get with Hootling — a real sample taxi fare result and tipping guide before you pay.',
-  alternates: { canonical: 'https://hootling.com/example' },
+  alternates: { canonical: 'https://www.hootling.com/example' },
   openGraph: {
     title: 'Sample Result — Hootling',
     description: 'See a real taxi fare result and tipping guide before you pay.',
-    url: 'https://hootling.com/example',
+    url: 'https://www.hootling.com/example',
   },
 }
 
