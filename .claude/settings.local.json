@@ -169,7 +169,8 @@
       "Bash(ls \"C:\\\\Users\\\\david\\\\Projects\\\\Hootling\\\\lib\\\\blog-posts-batch3\"*)",
       "Bash(find C:UsersdavidProjectsHootling -name *seo* -type f)",
       "Bash(find C:UsersdavidProjectsHootlingpublic -type f \\\\\\(-name *.png -o -name *.jpg -o -name *.webp -o -name *.svg \\\\\\))",
-      "Bash(find C:UsersdavidProjectsHootlingpublic -type f \\\\\\(-name *.png -o -name *.jpg -o -name *.svg -o -name *.webp \\\\\\))"
+      "Bash(find C:UsersdavidProjectsHootlingpublic -type f \\\\\\(-name *.png -o -name *.jpg -o -name *.svg -o -name *.webp \\\\\\))",
+      "Bash(grep -rn \"canonical: ''https://hootling.com\" \"C:\\\\Users\\\\david\\\\Projects\\\\Hootling\\\\app\" --include=\"*.tsx\" --include=\"*.ts\")"
     ]
   }
 }
