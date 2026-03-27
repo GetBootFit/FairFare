@@ -312,7 +312,7 @@ export default async function BlogArticlePage(
                 href={`/taxi/${post.citySlug}`}
                 className="inline-flex items-center gap-1.5 text-xs bg-purple-900/30 border border-purple-800/40 text-purple-400 rounded-full px-3 py-1.5 hover:bg-purple-900/50 transition-colors"
               >
-                {post.city} fare table <ArrowRight size={11} />
+                Check your exact {post.city} fare <ArrowRight size={11} />
               </Link>
             )}
             {post.countrySlug && (
@@ -320,7 +320,7 @@ export default async function BlogArticlePage(
                 href={`/tipping/${post.countrySlug}`}
                 className="inline-flex items-center gap-1.5 text-xs bg-teal-900/30 border border-teal-800/40 text-teal-400 rounded-full px-3 py-1.5 hover:bg-teal-900/50 transition-colors"
               >
-                {post.country} tipping guide <ArrowRight size={11} />
+                {post.country} tipping customs <ArrowRight size={11} />
               </Link>
             )}
           </div>
@@ -350,19 +350,69 @@ export default async function BlogArticlePage(
           country={post.country}
         />
 
-        {/* CTA */}
-        <div className="bg-gradient-to-br from-purple-900/30 to-zinc-900 border border-purple-800/30 rounded-2xl p-5 text-center space-y-3">
-          <p className="text-white font-semibold">Check your exact route fare</p>
-          <p className="text-zinc-500 text-sm">
-            Get real-time fare estimates with scam warnings — any city, any route.
-          </p>
-          <Link
-            href="/taxi"
-            className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-3 rounded-xl transition-colors text-sm"
-          >
-            Check Route Fare <ArrowRight size={15} />
-          </Link>
-        </div>
+        {/* CTA — category-specific */}
+        {post.category === 'taxi' && (
+          <div className="bg-gradient-to-br from-purple-900/30 to-zinc-900 border border-purple-800/30 rounded-2xl p-5 text-center space-y-3">
+            <p className="text-white font-semibold">
+              That&apos;s the general range — what&apos;s YOUR route?
+            </p>
+            <p className="text-zinc-500 text-sm">
+              Fares shift by exact pickup point, time of day, and traffic. Get a personalised estimate
+              for your specific journey{post.city ? ` in ${post.city}` : ''}, plus scam warnings and
+              the phrase to say to your driver.
+            </p>
+            <Link
+              href="/taxi"
+              className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-3 rounded-xl transition-colors text-sm"
+            >
+              Check My Exact Fare <ArrowRight size={15} />
+            </Link>
+          </div>
+        )}
+
+        {post.category === 'tipping' && (
+          <div className="bg-gradient-to-br from-teal-900/30 to-zinc-900 border border-teal-800/30 rounded-2xl p-5 text-center space-y-3">
+            <p className="text-white font-semibold">
+              Know exactly what to tip before you reach for your wallet
+            </p>
+            <p className="text-zinc-500 text-sm">
+              Get the full tipping breakdown for{post.country ? ` ${post.country}` : ' your destination'} —
+              restaurants, taxis, hotels, spas, and tour guides — in under 10 seconds.
+            </p>
+            <Link
+              href={post.countrySlug ? `/tipping/${post.countrySlug}` : '/tipping'}
+              className="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold px-6 py-3 rounded-xl transition-colors text-sm"
+            >
+              Get {post.country ?? 'My'} Tipping Guide <ArrowRight size={15} />
+            </Link>
+          </div>
+        )}
+
+        {post.category === 'travel' && (
+          <div className="bg-gradient-to-br from-purple-900/30 to-zinc-900 border border-purple-800/30 rounded-2xl p-5 text-center space-y-3">
+            <p className="text-white font-semibold">
+              Go prepared — know the fair price before you land
+            </p>
+            <p className="text-zinc-500 text-sm">
+              Check real taxi fares and local tipping customs for{post.city ? ` ${post.city}` : post.country ? ` ${post.country}` : ' your destination'} —
+              so you never overpay on your first ride or leave an awkward tip.
+            </p>
+            <div className="flex items-center justify-center gap-3 flex-wrap">
+              <Link
+                href="/taxi"
+                className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white font-semibold px-5 py-2.5 rounded-xl transition-colors text-sm"
+              >
+                Check Taxi Fares <ArrowRight size={15} />
+              </Link>
+              <Link
+                href="/tipping"
+                className="inline-flex items-center gap-2 bg-zinc-700 hover:bg-zinc-600 text-white font-semibold px-5 py-2.5 rounded-xl transition-colors text-sm"
+              >
+                Tipping Guide <ArrowRight size={15} />
+              </Link>
+            </div>
+          </div>
+        )}
       </div>
     </>
   )
