@@ -10,6 +10,7 @@ export interface BlogPost {
   country?: string
   citySlug?: string     // link to /taxi/[city] if it exists
   countrySlug?: string  // link to /tipping/[country] if it exists
+  featured?: boolean    // pin this post at the top of the blog index + home page
   content: BlogSection[]
 }
 
@@ -281,6 +282,7 @@ export const BLOG_POSTS: BlogPost[] = [
     country: 'Thailand',
     citySlug: 'bangkok',
     countrySlug: 'thailand',
+    featured: true,
     content: [
       {
         type: 'intro',
@@ -2222,4 +2224,20 @@ export function getBlogPost(slug: string): BlogPost | undefined {
 
 export function getAllBlogSlugs(): string[] {
   return ALL_POSTS.map((p) => p.slug)
+}
+
+/** Returns the first post marked featured: true, or the most-recent post as fallback. */
+export function getFeaturedPost(): BlogPost {
+  return (
+    ALL_POSTS.find((p) => p.featured) ??
+    [...ALL_POSTS].sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())[0]
+  )
+}
+
+/** Returns the N most-recent posts across all batches, optionally excluding a slug. */
+export function getRecentPosts(n: number, excludeSlug?: string): BlogPost[] {
+  return [...ALL_POSTS]
+    .filter((p) => p.slug !== excludeSlug)
+    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+    .slice(0, n)
 }

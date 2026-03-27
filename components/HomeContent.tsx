@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { ChevronRight, Sparkles, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 import { InstallPrompt } from '@/components/InstallPrompt'
-import { BLOG_POSTS } from '@/lib/blog-posts'
+import { getFeaturedPost, getRecentPosts } from '@/lib/blog-posts'
 
 // Social handles — update URLs when accounts are created
 const SOCIAL_LINKS = [
@@ -190,12 +190,11 @@ export function HomeContent() {
 
       {/* Blog section */}
       {(() => {
-        const recentPosts = [...BLOG_POSTS]
-          .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
-          .slice(0, 3)
+        const featured = getFeaturedPost()
+        const recent = getRecentPosts(2, featured?.slug)
         const categoryColour: Record<string, string> = {
-          taxi: 'text-teal-400',
-          tipping: 'text-purple-400',
+          taxi: 'text-purple-400',
+          tipping: 'text-teal-400',
           travel: 'text-blue-400',
         }
         return (
@@ -206,8 +205,24 @@ export function HomeContent() {
                 {t('home_blog_view_all')} <span className="inline-block rtl:rotate-180">→</span>
               </Link>
             </div>
-            <div className="space-y-2">
-              {recentPosts.map(post => (
+            <div className="space-y-1">
+              {/* Featured post — subtle purple-tinted background */}
+              {featured && (
+                <Link
+                  href={`/blog/${featured.slug}`}
+                  className="flex items-start gap-3 px-2.5 py-2 rounded-xl bg-purple-950/30 border border-purple-900/30 group mb-1"
+                >
+                  <span className={`text-[9px] uppercase tracking-wider font-semibold shrink-0 mt-0.5 w-10 ${categoryColour[featured.category] ?? 'text-zinc-500'}`}>
+                    {featured.category}
+                  </span>
+                  <span className="text-xs text-zinc-400 group-hover:text-zinc-200 transition-colors leading-snug flex-1 line-clamp-2">
+                    {featured.title}
+                  </span>
+                  <ChevronRight size={12} className="text-purple-700 group-hover:text-purple-400 shrink-0 mt-0.5 transition-colors rtl:rotate-180" />
+                </Link>
+              )}
+              {/* 2 most-recent other posts */}
+              {recent.map(post => (
                 <Link
                   key={post.slug}
                   href={`/blog/${post.slug}`}

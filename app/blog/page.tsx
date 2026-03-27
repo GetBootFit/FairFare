@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ChevronRight } from 'lucide-react'
-import { getAllBlogSlugs, getBlogPost } from '@/lib/blog-posts'
+import { getAllBlogSlugs, getBlogPost, getFeaturedPost } from '@/lib/blog-posts'
+import { EmailCapture } from '@/components/EmailCapture'
+import { BlogIndexClient } from '@/components/BlogIndexClient'
 
 const APP_URL = (process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com').replace(/\/$/, '')
 
@@ -20,24 +22,16 @@ export const metadata: Metadata = {
   },
 }
 
-const categoryLabel: Record<string, string> = {
-  taxi: 'Taxi Fares',
-  tipping: 'Tipping',
-  travel: 'Travel Tips',
-}
-
-const categoryColor: Record<string, string> = {
-  taxi: 'bg-purple-900/40 text-purple-400 border-purple-800/40',
-  tipping: 'bg-teal-900/40 text-teal-400 border-teal-800/40',
-  travel: 'bg-blue-900/40 text-blue-400 border-blue-800/40',
-}
 
 export default function BlogIndexPage() {
+  const featured = getFeaturedPost()
   const slugs = getAllBlogSlugs()
   const sorted = slugs
     .map((s) => getBlogPost(s)!)
     .filter(Boolean)
     .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+    // Exclude the featured post — BlogIndexClient pins it separately
+    .filter((p) => p.slug !== featured?.slug)
 
   const collectionPageSchema = {
     '@context': 'https://schema.org',
@@ -81,47 +75,11 @@ export default function BlogIndexPage() {
         </p>
       </div>
 
-      {/* Article cards */}
-      <div className="space-y-3">
-        {sorted.map((post) => (
-          <Link
-            key={post.slug}
-            href={`/blog/${post.slug}`}
-            className="block bg-zinc-900 border border-zinc-800 hover:border-purple-800/50 rounded-2xl p-4 transition-colors group"
-          >
-            <div className="flex items-start justify-between gap-3">
-              <div className="space-y-1.5 flex-1 min-w-0">
-                <div className="flex items-center gap-2 flex-wrap">
-                  <span
-                    className={`inline-block text-[10px] font-medium px-2 py-0.5 rounded-full border ${categoryColor[post.category]}`}
-                  >
-                    {categoryLabel[post.category]}
-                  </span>
-                  {post.city && (
-                    <span className="text-xs text-zinc-600">{post.city}</span>
-                  )}
-                </div>
-                <h2 className="text-sm font-semibold text-white group-hover:text-purple-300 transition-colors leading-snug">
-                  {post.title}
-                </h2>
-                <p className="text-xs text-zinc-500 line-clamp-2">{post.description}</p>
-              </div>
-              <ChevronRight size={16} className="text-zinc-600 group-hover:text-purple-400 transition-colors shrink-0 mt-1" />
-            </div>
-            <div className="flex items-center gap-3 mt-3">
-              <span className="text-xs text-zinc-600">
-                {new Date(post.publishedAt).toLocaleDateString('en-GB', {
-                  day: 'numeric',
-                  month: 'short',
-                  year: 'numeric',
-                })}
-              </span>
-              <span className="text-zinc-700">·</span>
-              <span className="text-xs text-zinc-600">{post.readingMinutes} min read</span>
-            </div>
-          </Link>
-        ))}
-      </div>
+      {/* Email capture */}
+      <EmailCapture feature="taxi" variant="blog" />
+
+      {/* Featured + search + tabs + article list (client-interactive) */}
+      <BlogIndexClient posts={sorted} featured={featured} />
     </div>
     </>
   )

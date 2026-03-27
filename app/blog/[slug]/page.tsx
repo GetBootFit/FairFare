@@ -7,6 +7,7 @@ import { getBlogPost, getAllBlogSlugs, type BlogSection } from '@/lib/blog-posts
 import { BlogAffiliateCard } from '@/components/BlogAffiliateCard'
 import { getPartnersForZone } from '@/lib/affiliates'
 import type { AffiliateCategory } from '@/data/affiliate-config'
+import { EmailCapture } from '@/components/EmailCapture'
 
 // City SVG sticker map — 13 illustrated cities
 const CITY_IMAGES: Record<string, string> = {
@@ -413,6 +414,12 @@ export default async function BlogArticlePage(
             </div>
           </div>
         )}
+
+        {/* Email capture — soft, after primary CTA */}
+        <EmailCapture
+          feature={post.category === 'tipping' ? 'tipping' : 'taxi'}
+          variant="post"
+        />
       </div>
     </>
   )
