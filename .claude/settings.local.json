@@ -161,7 +161,12 @@
       "Bash(curl -s \"http://localhost:3000/blog/taxi-heathrow-to-london\" -o /dev/null -w \" %{http_code}\")",
       "Bash(curl -s \"http://localhost:3000/blog/taxi-scams-in-bali\" -o /dev/null -w \" %{http_code}\")",
       "Bash(curl -s \"http://localhost:3000/sitemap.xml\")",
-      "Bash(curl -s \"http://localhost:3000/blog/tipping-in-united-states\" -o /dev/null -w \"%{http_code}\")"
+      "Bash(curl -s \"http://localhost:3000/blog/tipping-in-united-states\" -o /dev/null -w \"%{http_code}\")",
+      "Bash(py -3 -c \"import pdfplumber; print\\(''pdfplumber available''\\)\")",
+      "Bash(py -3 -c \"import pypdf; print\\(''pypdf available''\\)\")",
+      "Bash(py -3 -m pip install pdfplumber --quiet)",
+      "Bash(py -3 -c \":*)",
+      "Bash(ls \"C:\\\\Users\\\\david\\\\Projects\\\\Hootling\\\\lib\\\\blog-posts-batch3\"*)"
     ]
   }
 }
