@@ -114,7 +114,7 @@ export function isCountryPassValid(country: string): boolean {
   return !isTokenExpired(token)
 }
 
-// ─── Client-side helpers: 10-query bundle queue ───────────────────────────────
+// ─── Client-side helpers: 20-query bundle queue ───────────────────────────────
 
 const BUNDLE_KEY = 'ff_bundle_queue'
 

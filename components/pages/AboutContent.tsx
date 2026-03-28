@@ -28,7 +28,7 @@ function getEnglishContent(): AboutStrings {
     step2_title: 'See the free preview',
     step2_desc: "Route distance and travel time load instantly — no payment needed to check you've entered the right locations.",
     step3_title: `Unlock from ${single}`,
-    step3_desc: 'Pay once with card, Apple Pay, or Google Pay. No account, no subscription. Choose a single query, Country Pass, or 10-query bundle.',
+    step3_desc: 'Pay once with card, Apple Pay, or Google Pay. No account, no subscription. Choose a single query, Country Pass, or 20-query bundle.',
     step4_title: 'Travel with confidence',
     step4_desc: 'Get the fare range, scam alerts, a local phrase for your driver, and full tipping guidance — all in one clear view.',
     powered_heading: 'Powered by',

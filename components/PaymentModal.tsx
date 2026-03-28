@@ -277,7 +277,7 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
             </button>
           )}
 
-          {/* 10-Query Bundle — always shown */}
+          {/* 20-Query Bundle — always shown */}
           <button
             role="radio"
             aria-checked={selectedProduct === 'query_bundle'}
@@ -297,7 +297,7 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
               <p className="text-sm font-semibold text-white">{t('payment_bundle')}</p>
               <p className="text-xs text-zinc-400 mt-0.5">{t('payment_bundle_desc')}</p>
               <p className="text-xs text-purple-400 mt-0.5">
-                Save {Math.round((10 * prices.single - prices.bundle) / (10 * prices.single) * 100)}% vs buying one at a time
+                Save {Math.round((20 * prices.single - prices.bundle) / (20 * prices.single) * 100)}% vs buying one at a time
               </p>
             </div>
             <div className="flex items-center gap-2 shrink-0">
