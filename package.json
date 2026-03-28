@@ -13,6 +13,8 @@
     "seed:taxi": "tsx scripts/seed-cache.ts --taxi-only",
     "warm-translations": "tsx scripts/warm-translations.ts",
     "warm-translations:dry": "tsx scripts/warm-translations.ts --dry-run",
+    "warm-blog-translations": "tsx scripts/warm-blog-translations.ts",
+    "warm-blog-translations:dry": "tsx scripts/warm-blog-translations.ts --dry-run",
     "generate-blog-posts": "tsx scripts/generate-blog-posts.ts",
     "generate-blog-posts:dry": "tsx scripts/generate-blog-posts.ts --dry-run"
   },
