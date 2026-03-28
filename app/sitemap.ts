@@ -2,8 +2,17 @@ import { MetadataRoute } from 'next'
 import { getAllCitySlugs, getAllCountrySlugs, HREFLANG_LOCALES } from '@/lib/seo-helpers'
 import { getAllAirportCodes } from '@/lib/airport-data'
 import { getAllBlogSlugs } from '@/lib/blog-posts'
+import { LOCALES } from '@/lib/i18n'
 
 const BASE = (process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com').replace(/\/$/, '')
+
+/** App locale codes for the 14 non-English locales (matches app/[locale]/ routes) */
+const NON_EN_LOCALES = LOCALES.filter((l) => l.code !== 'en').map((l) => l.code)
+
+/** Map app locale codes to BCP 47 for hreflang */
+function toBcp47(locale: string): string {
+  return locale === 'tw' ? 'zh-TW' : locale
+}
 
 /** Build hreflang alternates for a given URL (all locales → same URL). */
 function hreflang(url: string): MetadataRoute.Sitemap[number]['alternates'] {
@@ -13,6 +22,29 @@ function hreflang(url: string): MetadataRoute.Sitemap[number]['alternates'] {
       ['x-default', url],
     ]),
   }
+}
+
+/**
+ * Build hreflang alternates for blog pages with locale-specific URLs.
+ * English canonical stays at /blog/..., each locale gets /{locale}/blog/...
+ */
+function blogHreflang(slug: string): MetadataRoute.Sitemap[number]['alternates'] {
+  const enUrl = `${BASE}/blog/${slug}`
+  const languages: Record<string, string> = { en: enUrl, 'x-default': enUrl }
+  NON_EN_LOCALES.forEach((l) => {
+    languages[toBcp47(l)] = `${BASE}/${l}/blog/${slug}`
+  })
+  return { languages }
+}
+
+/** Hreflang for the blog index — locale variants at /{locale}/blog */
+function blogIndexHreflang(): MetadataRoute.Sitemap[number]['alternates'] {
+  const enUrl = `${BASE}/blog`
+  const languages: Record<string, string> = { en: enUrl, 'x-default': enUrl }
+  NON_EN_LOCALES.forEach((l) => {
+    languages[toBcp47(l)] = `${BASE}/${l}/blog`
+  })
+  return { languages }
 }
 
 // Data updated quarterly
@@ -30,7 +62,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: BASE,                        lastModified: now,               changeFrequency: 'monthly', priority: 1,    alternates: hreflang(BASE) },
     { url: `${BASE}/taxi`,              lastModified: now,               changeFrequency: 'monthly', priority: 0.9,  alternates: hreflang(`${BASE}/taxi`) },
     { url: `${BASE}/tipping`,           lastModified: now,               changeFrequency: 'monthly', priority: 0.9,  alternates: hreflang(`${BASE}/tipping`) },
-    { url: `${BASE}/blog`,              lastModified: DATA_LAST_MODIFIED, changeFrequency: 'weekly',  priority: 0.8,  alternates: hreflang(`${BASE}/blog`) },
+    { url: `${BASE}/blog`,              lastModified: DATA_LAST_MODIFIED, changeFrequency: 'weekly',  priority: 0.8,  alternates: blogIndexHreflang() },
     { url: `${BASE}/taxi/airport`,      lastModified: DATA_LAST_MODIFIED, changeFrequency: 'monthly', priority: 0.85, alternates: hreflang(`${BASE}/taxi/airport`) },
     { url: `${BASE}/taxi/scams`,        lastModified: DATA_LAST_MODIFIED, changeFrequency: 'monthly', priority: 0.85, alternates: hreflang(`${BASE}/taxi/scams`) },
     { url: `${BASE}/tipping/guide`,     lastModified: DATA_LAST_MODIFIED, changeFrequency: 'monthly', priority: 0.85, alternates: hreflang(`${BASE}/tipping/guide`) },
@@ -60,11 +92,45 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return { url, lastModified: DATA_LAST_MODIFIED, changeFrequency: 'monthly', priority: 0.85, alternates: hreflang(url) }
   })
 
-  // Blog pages
+  // Blog pages — English canonical with locale-specific hreflang alternates
   const blogPages: MetadataRoute.Sitemap = blogSlugs.map((slug) => {
-    const url = `${BASE}/blog/${slug}`
-    return { url, lastModified: DATA_LAST_MODIFIED, changeFrequency: 'monthly', priority: 0.7, alternates: hreflang(url) }
+    return {
+      url: `${BASE}/blog/${slug}`,
+      lastModified: DATA_LAST_MODIFIED,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+      alternates: blogHreflang(slug),
+    }
   })
 
-  return [...corePages, ...cityPages, ...countryPages, ...airportPages, ...blogPages]
+  // Locale blog index pages — one entry per non-English locale
+  const localeBlogIndexPages: MetadataRoute.Sitemap = NON_EN_LOCALES.map((locale) => ({
+    url: `${BASE}/${locale}/blog`,
+    lastModified: DATA_LAST_MODIFIED,
+    changeFrequency: 'weekly',
+    priority: 0.65,
+    alternates: blogIndexHreflang(),
+  }))
+
+  // Locale blog article pages — each non-English locale × every blog slug
+  // Priority 0.6 (slightly below English at 0.7 — English is canonical)
+  const localeBlogArticlePages: MetadataRoute.Sitemap = NON_EN_LOCALES.flatMap((locale) =>
+    blogSlugs.map((slug) => ({
+      url: `${BASE}/${locale}/blog/${slug}`,
+      lastModified: DATA_LAST_MODIFIED,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+      alternates: blogHreflang(slug),
+    })),
+  )
+
+  return [
+    ...corePages,
+    ...cityPages,
+    ...countryPages,
+    ...airportPages,
+    ...blogPages,
+    ...localeBlogIndexPages,
+    ...localeBlogArticlePages,
+  ]
 }

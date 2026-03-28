@@ -4,16 +4,11 @@ import { useState, useMemo } from 'react'
 import Link from 'next/link'
 import { ChevronRight, Search, X, Pin } from 'lucide-react'
 import type { BlogPost } from '@/lib/blog-posts'
+import { useLanguage } from '@/context/LanguageContext'
 
 interface BlogIndexClientProps {
   posts: BlogPost[]        // All posts, sorted by date (featured already excluded from this list)
   featured?: BlogPost
-}
-
-const CATEGORY_LABEL: Record<string, string> = {
-  taxi: 'Taxi Fares',
-  tipping: 'Tipping',
-  travel: 'Travel Tips',
 }
 
 const CATEGORY_BADGE: Record<string, string> = {
@@ -24,14 +19,8 @@ const CATEGORY_BADGE: Record<string, string> = {
 
 type Category = 'all' | 'taxi' | 'tipping' | 'travel'
 
-const TABS: { key: Category; label: string }[] = [
-  { key: 'all', label: 'All' },
-  { key: 'taxi', label: 'Taxi Fares' },
-  { key: 'tipping', label: 'Tipping' },
-  { key: 'travel', label: 'Travel Tips' },
-]
-
-function PostCard({ post }: { post: BlogPost }) {
+function PostCard({ post, categoryLabel }: { post: BlogPost; categoryLabel: string }) {
+  const { t } = useLanguage()
   return (
     <Link
       href={`/blog/${post.slug}`}
@@ -41,7 +30,7 @@ function PostCard({ post }: { post: BlogPost }) {
         <div className="space-y-1.5 flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
             <span className={`inline-block text-[10px] font-medium px-2 py-0.5 rounded-full border ${CATEGORY_BADGE[post.category]}`}>
-              {CATEGORY_LABEL[post.category]}
+              {categoryLabel}
             </span>
             {post.city && (
               <span className="text-xs text-zinc-600">{post.city}</span>
@@ -63,15 +52,29 @@ function PostCard({ post }: { post: BlogPost }) {
           })}
         </span>
         <span className="text-zinc-700">·</span>
-        <span className="text-xs text-zinc-600">{post.readingMinutes} min read</span>
+        <span className="text-xs text-zinc-600">{t('blog_min_read', { n: String(post.readingMinutes) })}</span>
       </div>
     </Link>
   )
 }
 
 export function BlogIndexClient({ posts, featured }: BlogIndexClientProps) {
+  const { t } = useLanguage()
   const [activeTab, setActiveTab] = useState<Category>('all')
   const [search, setSearch] = useState('')
+
+  const CATEGORY_LABEL: Record<string, string> = {
+    taxi: t('blog_category_taxi'),
+    tipping: t('blog_category_tipping'),
+    travel: t('blog_category_travel'),
+  }
+
+  const TABS: { key: Category; label: string }[] = [
+    { key: 'all', label: t('blog_category_all') },
+    { key: 'taxi', label: t('blog_category_taxi') },
+    { key: 'tipping', label: t('blog_category_tipping') },
+    { key: 'travel', label: t('blog_category_travel') },
+  ]
 
   const filtered = useMemo(() => {
     let result = posts
@@ -124,7 +127,7 @@ export function BlogIndexClient({ posts, featured }: BlogIndexClientProps) {
         >
           <div className="flex items-center gap-1.5 mb-2.5">
             <Pin size={10} className="text-purple-400 fill-purple-400" />
-            <span className="text-[10px] text-purple-400 uppercase tracking-wider font-medium">Featured</span>
+            <span className="text-[10px] text-purple-400 uppercase tracking-wider font-medium">{t('blog_featured')}</span>
           </div>
           <div className="flex items-start justify-between gap-3">
             <div className="space-y-1.5 flex-1 min-w-0">
@@ -152,7 +155,7 @@ export function BlogIndexClient({ posts, featured }: BlogIndexClientProps) {
               })}
             </span>
             <span className="text-zinc-700">·</span>
-            <span className="text-xs text-zinc-600">{featured.readingMinutes} min read</span>
+            <span className="text-xs text-zinc-600">{t('blog_min_read', { n: String(featured.readingMinutes) })}</span>
           </div>
         </Link>
       )}
@@ -162,7 +165,7 @@ export function BlogIndexClient({ posts, featured }: BlogIndexClientProps) {
         <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-600 pointer-events-none" />
         <input
           type="text"
-          placeholder="Search city, country or topic…"
+          placeholder={t('blog_search_placeholder')}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="w-full bg-zinc-900 border border-zinc-800 rounded-xl pl-8 pr-8 py-2.5 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-zinc-600 transition-colors"
@@ -198,7 +201,7 @@ export function BlogIndexClient({ posts, featured }: BlogIndexClientProps) {
       {/* ── Results count ── */}
       {isFiltering && (
         <p className="text-xs text-zinc-600">
-          {totalCount} {totalCount === 1 ? 'article' : 'articles'}
+          {totalCount} {totalCount === 1 ? t('blog_article_singular') : t('blog_article_plural')}
           {search.trim() ? ` matching "${search.trim()}"` : ''}
           {activeTab !== 'all' ? ` in ${CATEGORY_LABEL[activeTab]}` : ''}
         </p>
@@ -207,18 +210,18 @@ export function BlogIndexClient({ posts, featured }: BlogIndexClientProps) {
       {/* ── Article list ── */}
       {filtered.length === 0 && !featuredMatchesFilter ? (
         <div className="text-center py-10 space-y-2">
-          <p className="text-sm text-zinc-500">No articles match your search.</p>
+          <p className="text-sm text-zinc-500">{t('blog_no_results')}</p>
           <button
             onClick={() => { setSearch(''); setActiveTab('all') }}
             className="text-xs text-purple-400 hover:text-purple-300 transition-colors"
           >
-            Clear filters
+            {t('blog_clear_filters')}
           </button>
         </div>
       ) : (
         <div className="space-y-3">
           {filtered.map((post) => (
-            <PostCard key={post.slug} post={post} />
+            <PostCard key={post.slug} post={post} categoryLabel={CATEGORY_LABEL[post.category]} />
           ))}
         </div>
       )}

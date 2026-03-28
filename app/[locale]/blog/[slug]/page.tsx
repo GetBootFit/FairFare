@@ -3,11 +3,10 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronRight, ArrowRight, Plane, ExternalLink } from 'lucide-react'
-import { getBlogPost, getAllBlogSlugs, getRelatedPosts, getWordCount, type BlogSection, type BlogPost } from '@/lib/blog-posts'
-import { LOCALES } from '@/lib/i18n'
-
-const NON_EN_LOCALES_SLUG = LOCALES.filter((l) => l.code !== 'en').map((l) => l.code)
-function toBcp47Slug(locale: string): string { return locale === 'tw' ? 'zh-TW' : locale }
+import {
+  getBlogPost, getRelatedPosts, getWordCount, type BlogSection, type BlogPost,
+} from '@/lib/blog-posts'
+import { getTranslatedBlogContent } from '@/lib/blog-translation'
 import { BlogAffiliateCard } from '@/components/BlogAffiliateCard'
 import { RelatedPosts } from '@/components/RelatedPosts'
 import { getPartnersForZone } from '@/lib/affiliates'
@@ -16,8 +15,18 @@ import type { AffiliateCategory } from '@/data/affiliate-config'
 import { EmailCapture } from '@/components/EmailCapture'
 import { ScrollDepthTracker } from '@/components/ScrollDepthTracker'
 import { kvGet } from '@/lib/kv'
+import { LOCALES, getTranslations, interpolate, type Locale } from '@/lib/i18n'
 
-/** Resolve a post from static TS files first, then KV (for auto-generated posts). */
+const APP_URL = (process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com').replace(/\/$/, '')
+
+const NON_EN_LOCALES = LOCALES.filter((l) => l.code !== 'en').map((l) => l.code)
+const VALID_LOCALE_SET = new Set<string>(NON_EN_LOCALES)
+
+function toBcp47(locale: string): string {
+  return locale === 'tw' ? 'zh-TW' : locale
+}
+
+/** Resolve a post from static TS files first, then KV. */
 async function resolvePost(slug: string): Promise<BlogPost | undefined> {
   return getBlogPost(slug) ?? (await kvGet<BlogPost>(`blog:published:${slug}`)) ?? undefined
 }
@@ -39,111 +48,83 @@ const CITY_IMAGES: Record<string, string> = {
   tokyo:      '/images/cities/Tokyo.svg',
 }
 
-// Country slug → ISO 3166-1 alpha-2 for flag images
 const COUNTRY_FLAGS: Record<string, string> = {
-  argentina:        'ar', australia:      'au', austria:        'at',
-  brazil:           'br', cambodia:       'kh', canada:         'ca',
-  chile:            'cl', china:          'cn', colombia:       'co',
-  croatia:          'hr', cuba:           'cu', 'czech-republic':'cz',
-  denmark:          'dk', egypt:          'eg', france:         'fr',
-  germany:          'de', greece:         'gr', hungary:        'hu',
-  india:            'in', indonesia:      'id', ireland:        'ie',
-  israel:           'il', italy:          'it', japan:          'jp',
-  kenya:            'ke', malaysia:       'my', mexico:         'mx',
-  morocco:          'ma', netherlands:    'nl', 'new-zealand':  'nz',
-  norway:           'no', peru:           'pe', philippines:    'ph',
-  poland:           'pl', portugal:       'pt', qatar:          'qa',
-  singapore:        'sg', 'south-africa': 'za', 'south-korea':  'kr',
-  spain:            'es', 'sri-lanka':    'lk', sweden:         'se',
-  switzerland:      'ch', thailand:       'th', turkey:         'tr',
-  uae:              'ae', 'united-kingdom':'gb', usa:            'us',
-  vietnam:          'vn',
+  argentina: 'ar', australia: 'au', austria: 'at', brazil: 'br', cambodia: 'kh',
+  canada: 'ca', chile: 'cl', china: 'cn', colombia: 'co', croatia: 'hr', cuba: 'cu',
+  'czech-republic': 'cz', denmark: 'dk', egypt: 'eg', france: 'fr', germany: 'de',
+  greece: 'gr', hungary: 'hu', india: 'in', indonesia: 'id', ireland: 'ie',
+  israel: 'il', italy: 'it', japan: 'jp', kenya: 'ke', malaysia: 'my', mexico: 'mx',
+  morocco: 'ma', netherlands: 'nl', 'new-zealand': 'nz', norway: 'no', peru: 'pe',
+  philippines: 'ph', poland: 'pl', portugal: 'pt', qatar: 'qa', singapore: 'sg',
+  'south-africa': 'za', 'south-korea': 'kr', spain: 'es', 'sri-lanka': 'lk',
+  sweden: 'se', switzerland: 'ch', thailand: 'th', turkey: 'tr', uae: 'ae',
+  'united-kingdom': 'gb', usa: 'us', vietnam: 'vn',
 }
 
-// ── Static generation + ISR ───────────────────────────────────────────────────
-
-// Regenerate at most once every 24 h (blog content changes infrequently)
+// No static params — pages are built on demand (ISR) to avoid pre-building
+// 100 posts × 14 locales = 1,400 pages and incurring ~$40-80 Claude cost.
 export const revalidate = 86400
-
-export function generateStaticParams() {
-  return getAllBlogSlugs().map((slug) => ({ slug }))
-}
-
-// ── Metadata ──────────────────────────────────────────────────────────────────
+export const dynamicParams = true
 
 export async function generateMetadata(
-  { params }: { params: Promise<{ slug: string }> }
+  { params }: { params: Promise<{ locale: string; slug: string }> },
 ): Promise<Metadata> {
-  const { slug } = await params
+  const { locale, slug } = await params
+  if (!VALID_LOCALE_SET.has(locale)) return { title: 'Not Found' }
+
   const post = await resolvePost(slug)
   if (!post) return { title: 'Article Not Found' }
 
-  const APP_URL_META = (process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com').replace(/\/$/, '')
+  // Translated title/description for non-English meta
+  const translated = await getTranslatedBlogContent(post, locale)
+
+  // Hreflang: en → /blog/{slug}, each locale → /[locale]/blog/{slug}
   const localeLanguages: Record<string, string> = {
-    en: `${APP_URL_META}/blog/${slug}`,
-    'x-default': `${APP_URL_META}/blog/${slug}`,
+    en: `${APP_URL}/blog/${slug}`,
+    'x-default': `${APP_URL}/blog/${slug}`,
   }
-  NON_EN_LOCALES_SLUG.forEach((l) => {
-    localeLanguages[toBcp47Slug(l)] = `${APP_URL_META}/${l}/blog/${slug}`
+  NON_EN_LOCALES.forEach((l) => {
+    localeLanguages[toBcp47(l)] = `${APP_URL}/${l}/blog/${slug}`
   })
 
   return {
-    title: post.title,
-    description: post.description,
+    title: translated.title,
+    description: translated.description,
     alternates: {
-      canonical: `${APP_URL_META}/blog/${slug}`,
+      canonical: `${APP_URL}/${locale}/blog/${slug}`,
       languages: localeLanguages,
     },
     openGraph: {
-      title: post.title,
-      description: post.description,
-      url: `${APP_URL_META}/blog/${slug}`,
+      title: translated.title,
+      description: translated.description,
+      url: `${APP_URL}/${locale}/blog/${slug}`,
       type: 'article',
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt ?? post.publishedAt,
       images: post.citySlug
-        ? [
-            {
-              url: `${APP_URL_META}/api/og/city?city=${encodeURIComponent(post.citySlug)}`,
-              width: 1200,
-              height: 630,
-              alt: post.title,
-            },
-          ]
+        ? [{ url: `${APP_URL}/api/og/city?city=${encodeURIComponent(post.citySlug)}`, width: 1200, height: 630, alt: translated.title }]
         : undefined,
     },
     twitter: {
       card: 'summary_large_image',
-      title: post.title,
-      description: post.description,
-      images: post.citySlug
-        ? [`${APP_URL_META}/api/og/city?city=${encodeURIComponent(post.citySlug)}`]
-        : undefined,
+      title: translated.title,
+      description: translated.description,
     },
   }
 }
 
-// ── Section renderer ──────────────────────────────────────────────────────────
+// ── Section renderer (same as English page) ───────────────────────────────────
 
 function RenderSection({ section }: { section: BlogSection }) {
   switch (section.type) {
     case 'intro':
-      // .post-intro is referenced by SpeakableSpecification — voice/AI reads this first
-      return (
-        <p className="post-intro text-zinc-300 leading-relaxed text-sm">{section.body}</p>
-      )
+      return <p className="post-intro text-zinc-300 leading-relaxed text-sm">{section.body}</p>
     case 'h2':
-      return (
-        <h2 className="text-base font-bold text-white pt-2">{section.heading}</h2>
-      )
+      return <h2 className="text-base font-bold text-white pt-2">{section.heading}</h2>
     case 'h3':
-      return (
-        <h3 className="text-sm font-semibold text-zinc-200 pt-1">{section.heading}</h3>
-      )
+      return <h3 className="text-sm font-semibold text-zinc-200 pt-1">{section.heading}</h3>
     case 'p':
-      return (
-        <p className="text-zinc-400 leading-relaxed text-sm">{section.body}</p>
-      )
+      return <p className="text-zinc-400 leading-relaxed text-sm">{section.body}</p>
     case 'ul':
       return (
         <ul className="space-y-2">
@@ -159,10 +140,7 @@ function RenderSection({ section }: { section: BlogSection }) {
       return (
         <div className="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden">
           {section.rows?.map((row, i) => (
-            <div
-              key={i}
-              className="flex items-center justify-between px-4 py-2.5 border-b border-zinc-800 last:border-0"
-            >
+            <div key={i} className="flex items-center justify-between px-4 py-2.5 border-b border-zinc-800 last:border-0">
               <span className="text-sm text-zinc-400">{row.label}</span>
               <span className="text-sm font-semibold text-white ml-4 text-right">{row.value}</span>
             </div>
@@ -189,7 +167,6 @@ function RenderSection({ section }: { section: BlogSection }) {
           {section.faqs?.map((faq, i) => (
             <div key={i} className="bg-zinc-900 border border-zinc-800 rounded-xl p-4 space-y-1.5">
               <p className="text-sm font-semibold text-white">{faq.q}</p>
-              {/* .post-faq-answer referenced by SpeakableSpecification for voice/AI readout */}
               <p className="post-faq-answer text-sm text-zinc-400 leading-relaxed">{faq.a}</p>
             </div>
           ))}
@@ -202,103 +179,20 @@ function RenderSection({ section }: { section: BlogSection }) {
 
 // ── Page ──────────────────────────────────────────────────────────────────────
 
-export default async function BlogArticlePage(
-  { params }: { params: Promise<{ slug: string }> }
+export default async function LocaleBlogArticlePage(
+  { params }: { params: Promise<{ locale: string; slug: string }> },
 ) {
-  const { slug } = await params
+  const { locale, slug } = await params
+  if (!VALID_LOCALE_SET.has(locale)) notFound()
+
   const post = await resolvePost(slug)
   if (!post) notFound()
 
-  const APP_URL = (process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com').replace(/\/$/, '')
-  const canonicalUrl = `${APP_URL}/blog/${slug}`
-  const ogImageUrl = post.citySlug
-    ? `${APP_URL}/api/og/city?city=${encodeURIComponent(post.citySlug)}`
-    : undefined
+  const t = getTranslations(locale as Locale)
+  const translated = await getTranslatedBlogContent(post, locale)
 
-  // BlogPosting is a schema.org subtype of Article — more precise for blog content.
-  // wordCount aids Google's quality assessment. image is required for rich results.
-  const jsonLd: object[] = [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'BlogPosting',
-      headline: post.title,
-      description: post.description,
-      datePublished: post.publishedAt,
-      dateModified: post.updatedAt ?? post.publishedAt,
-      wordCount: getWordCount(post),
-      inLanguage: 'en',
-      author: {
-        '@type': 'Organization',
-        name: 'Hootling',
-        url: APP_URL,
-        logo: { '@type': 'ImageObject', url: `${APP_URL}/images/brand/hootling-logo-icon.png` },
-      },
-      publisher: {
-        '@type': 'Organization',
-        name: 'Hootling',
-        url: APP_URL,
-        logo: { '@type': 'ImageObject', url: `${APP_URL}/images/brand/hootling-logo-icon.png` },
-      },
-      url: canonicalUrl,
-      mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
-      ...(ogImageUrl ? {
-        image: { '@type': 'ImageObject', url: ogImageUrl, width: 1200, height: 630 },
-      } : {}),
-      // SpeakableSpecification — tells AI assistants and voice search engines which
-      // parts of the page to read aloud. CSS selectors map to elements in the JSX below.
-      // Google uses this for Google Assistant "Daily Briefing" and AI Overviews.
-      speakable: {
-        '@type': 'SpeakableSpecification',
-        cssSelector: ['.post-headline', '.post-intro', '.post-faq-answer'],
-      },
-    },
-  ]
-
-  // Add HowTo schema for instructional articles (those with h2 headings + body content)
-  // Treats each h2 + following p/ul as a HowTo step
-  const h2Sections = post.content.filter((s) => s.type === 'h2' && s.heading)
-  if (h2Sections.length >= 2) {
-    const steps = h2Sections.map((s, i) => {
-      // Find next paragraph or list after this h2
-      const h2Idx = post.content.indexOf(s)
-      const nextContent = post.content.slice(h2Idx + 1).find(
-        (c) => c.type === 'p' || c.type === 'ul'
-      )
-      const text = nextContent?.body ?? nextContent?.items?.join(' ') ?? s.heading ?? ''
-      return {
-        '@type': 'HowToStep',
-        position: i + 1,
-        name: s.heading,
-        text,
-      }
-    })
-    jsonLd.push({
-      '@context': 'https://schema.org',
-      '@type': 'HowTo',
-      name: post.title,
-      description: post.description,
-      step: steps,
-    })
-  }
-
-  // Add FAQPage schema if any FAQ sections exist
-  const faqSections = post.content.filter((s) => s.type === 'faq' && s.faqs?.length)
-  if (faqSections.length > 0) {
-    const allFaqs = faqSections.flatMap((s) => s.faqs ?? [])
-    jsonLd.push({
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: allFaqs.map((f) => ({
-        '@type': 'Question',
-        name: f.q,
-        acceptedAnswer: { '@type': 'Answer', text: f.a },
-      })),
-    })
-  }
-
-  // Split content into pre-FAQ and FAQ sections for layout
-  const mainContent = post.content.filter((s) => s.type !== 'faq')
-  const faqContent = post.content.filter((s) => s.type === 'faq')
+  const mainContent = translated.sections.filter((s) => s.type !== 'faq')
+  const faqContent = translated.sections.filter((s) => s.type === 'faq')
 
   const blogCategories: AffiliateCategory[] =
     post.category === 'tipping' ? ['tours'] :
@@ -310,44 +204,61 @@ export default async function BlogArticlePage(
     maxItems: 3,
   })
 
-  // Airport CTA — only for taxi-category posts about cities with an airport page
   const airportData = post.category === 'taxi' && post.city
     ? getAirportForCity(post.city)
     : null
 
-  // Related posts — 3 by relevance score (city > country > category)
   const relatedPosts = getRelatedPosts(post, 3)
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: translated.title,
+    description: translated.description,
+    datePublished: post.publishedAt,
+    dateModified: post.updatedAt ?? post.publishedAt,
+    wordCount: getWordCount(post),
+    inLanguage: toBcp47(locale),
+    author: { '@type': 'Organization', name: 'Hootling', url: APP_URL },
+    publisher: { '@type': 'Organization', name: 'Hootling', url: APP_URL },
+    url: `${APP_URL}/${locale}/blog/${slug}`,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `${APP_URL}/${locale}/blog/${slug}` },
+  }
 
   return (
     <>
-      {jsonLd.map((schema, i) => (
-        <script
-          key={i}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
-      ))}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       <div className="space-y-5 pb-8">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-1.5 text-xs text-zinc-500 flex-wrap" aria-label="Breadcrumb">
           <Link href="/" className="hover:text-zinc-300 transition-colors">Home</Link>
           <ChevronRight size={12} />
-          <Link href="/blog" className="hover:text-zinc-300 transition-colors">Blog</Link>
+          <Link href={`/${locale}/blog`} className="hover:text-zinc-300 transition-colors">
+            {t.blog_breadcrumb}
+          </Link>
           <ChevronRight size={12} />
           <span className="text-zinc-400 truncate max-w-[180px]">{post.city ?? 'Article'}</span>
         </nav>
 
         {/* Header */}
         <div className="space-y-3">
-          {/* zinc-400 on dark bg ≈ 6.5:1 — passes WCAG AA for small text (needs ≥4.5:1) */}
           <div className="flex items-center gap-3 text-xs text-zinc-400">
-            <span>{new Date(post.publishedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+            <span>
+              {new Date(post.publishedAt).toLocaleDateString('en-GB', {
+                day: 'numeric', month: 'long', year: 'numeric',
+              })}
+            </span>
             <span aria-hidden="true">·</span>
-            <span>{post.readingMinutes} min read</span>
+            <span>{interpolate(t.blog_min_read, { n: String(post.readingMinutes) })}</span>
           </div>
-          <h1 className="post-headline text-xl font-bold text-white leading-snug">{post.title}</h1>
-          <p className="text-zinc-400 text-sm">{post.description}</p>
+          <h1 className="post-headline text-xl font-bold text-white leading-snug">
+            {translated.title}
+          </h1>
+          <p className="text-zinc-400 text-sm">{translated.description}</p>
         </div>
 
         {/* Post hero image — city sticker or country flag */}
@@ -372,29 +283,29 @@ export default async function BlogArticlePage(
           )
         })()}
 
-        {/* Related links */}
+        {/* Quick links to fare check / tipping guide */}
         {(post.citySlug || post.countrySlug) && (
           <div className="flex flex-wrap gap-2">
-            {post.citySlug && (
+            {post.citySlug && post.city && (
               <Link
                 href={`/taxi/${post.citySlug}`}
                 className="inline-flex items-center gap-1.5 text-xs bg-purple-900/30 border border-purple-800/40 text-purple-400 rounded-full px-3 py-1.5 hover:bg-purple-900/50 transition-colors"
               >
-                Check your exact {post.city} fare <ArrowRight size={11} />
+                {interpolate(t.blog_check_fare, { city: post.city })} <ArrowRight size={11} />
               </Link>
             )}
-            {post.countrySlug && (
+            {post.countrySlug && post.country && (
               <Link
                 href={`/tipping/${post.countrySlug}`}
                 className="inline-flex items-center gap-1.5 text-xs bg-teal-900/30 border border-teal-800/40 text-teal-400 rounded-full px-3 py-1.5 hover:bg-teal-900/50 transition-colors"
               >
-                {post.country} tipping customs <ArrowRight size={11} />
+                {interpolate(t.blog_tipping_customs, { country: post.country })} <ArrowRight size={11} />
               </Link>
             )}
           </div>
         )}
 
-        {/* Main content */}
+        {/* Translated main content */}
         <div className="space-y-4">
           {mainContent.map((section, i) => (
             <RenderSection key={i} section={section} />
@@ -404,7 +315,7 @@ export default async function BlogArticlePage(
         {/* FAQ sections */}
         {faqContent.length > 0 && (
           <div className="space-y-4 pt-2">
-            <h2 className="text-base font-bold text-white">Frequently Asked Questions</h2>
+            <h2 className="text-base font-bold text-white">{t.blog_faq_heading}</h2>
             {faqContent.map((section, i) => (
               <RenderSection key={i} section={section} />
             ))}
@@ -418,22 +329,17 @@ export default async function BlogArticlePage(
           country={post.country}
         />
 
-        {/* CTA — category-specific */}
+        {/* CTA — category-specific (English links — taxi/tipping tools are English-only for now) */}
         {post.category === 'taxi' && (
           <div className="bg-gradient-to-br from-purple-900/30 to-zinc-900 border border-purple-800/30 rounded-2xl p-5 text-center space-y-3">
             <p className="text-white font-semibold">
-              That&apos;s the general range — what&apos;s YOUR route?
-            </p>
-            <p className="text-zinc-500 text-sm">
-              Fares shift by exact pickup point, time of day, and traffic. Get a personalised estimate
-              for your specific journey{post.city ? ` in ${post.city}` : ''}, plus scam warnings and
-              the phrase to say to your driver.
+              {interpolate(t.blog_check_fare, { city: post.city ?? '' })}
             </p>
             <Link
               href="/taxi"
               className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-3 rounded-xl transition-colors text-sm"
             >
-              Check My Exact Fare <ArrowRight size={15} />
+              Hootling <ArrowRight size={15} />
             </Link>
           </div>
         )}
@@ -441,50 +347,37 @@ export default async function BlogArticlePage(
         {post.category === 'tipping' && (
           <div className="bg-gradient-to-br from-teal-900/30 to-zinc-900 border border-teal-800/30 rounded-2xl p-5 text-center space-y-3">
             <p className="text-white font-semibold">
-              Know exactly what to tip before you reach for your wallet
-            </p>
-            <p className="text-zinc-500 text-sm">
-              Get the full tipping breakdown for{post.country ? ` ${post.country}` : ' your destination'} —
-              restaurants, taxis, hotels, spas, and tour guides — in under 10 seconds.
+              {post.country && interpolate(t.blog_tipping_customs, { country: post.country })}
             </p>
             <Link
               href={post.countrySlug ? `/tipping/${post.countrySlug}` : '/tipping'}
               className="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold px-6 py-3 rounded-xl transition-colors text-sm"
             >
-              Get {post.country ?? 'My'} Tipping Guide <ArrowRight size={15} />
+              Hootling <ArrowRight size={15} />
             </Link>
           </div>
         )}
 
         {post.category === 'travel' && (
           <div className="bg-gradient-to-br from-purple-900/30 to-zinc-900 border border-purple-800/30 rounded-2xl p-5 text-center space-y-3">
-            <p className="text-white font-semibold">
-              Go prepared — know the fair price before you land
-            </p>
-            <p className="text-zinc-500 text-sm">
-              Check real taxi fares and local tipping customs for{post.city ? ` ${post.city}` : post.country ? ` ${post.country}` : ' your destination'} —
-              so you never overpay on your first ride or leave an awkward tip.
-            </p>
             <div className="flex items-center justify-center gap-3 flex-wrap">
               <Link
                 href="/taxi"
                 className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white font-semibold px-5 py-2.5 rounded-xl transition-colors text-sm"
               >
-                Check Taxi Fares <ArrowRight size={15} />
+                Taxi <ArrowRight size={15} />
               </Link>
               <Link
                 href="/tipping"
                 className="inline-flex items-center gap-2 bg-zinc-700 hover:bg-zinc-600 text-white font-semibold px-5 py-2.5 rounded-xl transition-colors text-sm"
               >
-                Tipping Guide <ArrowRight size={15} />
+                Tipping <ArrowRight size={15} />
               </Link>
             </div>
           </div>
         )}
 
-        {/* Airport page CTA — taxi posts for cities with an airport landing page.
-            Links /blog/how-much-taxi-cost-in-bangkok → /taxi/airport/BKK.
-            High-intent cross-link: reader researching taxi costs → airport fare table. */}
+        {/* Airport page CTA */}
         {airportData && (
           <div className="flex items-start gap-3 bg-zinc-900 border border-zinc-800 rounded-2xl p-4">
             <div className="w-9 h-9 rounded-xl bg-purple-900/40 border border-purple-800/50 flex items-center justify-center shrink-0">
@@ -492,28 +385,23 @@ export default async function BlogArticlePage(
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-sm font-semibold text-white leading-snug">
-                Flying into {airportData.city}?
-              </p>
-              <p className="text-xs text-zinc-400 mt-0.5 leading-relaxed">
-                See the full {airportData.code} airport taxi fare table — route-by-route estimates,
-                scam warnings, and cheaper alternatives.
+                {airportData.city}
               </p>
               <Link
                 href={`/taxi/airport/${airportData.code}`}
                 className="inline-flex items-center gap-1.5 text-xs text-purple-400 hover:text-purple-300 font-medium mt-2 transition-colors"
               >
-                {airportData.name} taxi fares <ArrowRight size={11} />
+                {airportData.name} <ArrowRight size={11} />
               </Link>
             </div>
           </div>
         )}
 
-        {/* External references — authoritative outbound links signal topical depth.
-            Populated per-post in blog-posts.ts via the `references` field. */}
+        {/* External references */}
         {post.references && post.references.length > 0 && (
           <div className="border-t border-zinc-800 pt-5 space-y-2">
             <p className="text-[10px] text-zinc-500 uppercase tracking-widest font-medium">
-              Sources &amp; Further Reading
+              {t.blog_sources}
             </p>
             <ul className="space-y-1.5">
               {post.references.map((ref) => (
@@ -533,17 +421,16 @@ export default async function BlogArticlePage(
           </div>
         )}
 
-        {/* Email capture — soft, after primary CTA */}
+        {/* Email capture */}
         <EmailCapture
           feature={post.category === 'tipping' ? 'tipping' : 'taxi'}
           variant="post"
         />
 
-        {/* Related posts — cross-links within city/category cluster */}
+        {/* Related posts */}
         <RelatedPosts posts={relatedPosts} />
       </div>
 
-      {/* Invisible scroll depth tracker — fires analytics events at 25/50/75/100% */}
       <ScrollDepthTracker
         slug={post.slug}
         feature={post.category === 'tipping' ? 'tipping' : post.category === 'travel' ? 'travel' : 'taxi'}

@@ -5,8 +5,12 @@ import { getAllBlogSlugs, getBlogPost, getFeaturedPost, type BlogPost } from '@/
 import { EmailCapture } from '@/components/EmailCapture'
 import { BlogIndexClient } from '@/components/BlogIndexClient'
 import { kvKeys, kvGet } from '@/lib/kv'
+import { LOCALES } from '@/lib/i18n'
 
 const APP_URL = (process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com').replace(/\/$/, '')
+
+const NON_EN_LOCALES = LOCALES.filter((l) => l.code !== 'en').map((l) => l.code)
+function toBcp47(locale: string): string { return locale === 'tw' ? 'zh-TW' : locale }
 
 // Shorter revalidation so KV-published posts appear within 5 minutes
 export const revalidate = 300
@@ -15,7 +19,14 @@ export const metadata: Metadata = {
   title: 'Travel Tips & Taxi Guides — Hootling Blog',
   description:
     'Practical travel guides: how much taxis cost in Bangkok, Dubai, London, New York and more. Real meter rates, scam warnings and airport fare tables.',
-  alternates: { canonical: `${APP_URL}/blog` },
+  alternates: {
+    canonical: `${APP_URL}/blog`,
+    languages: {
+      en: `${APP_URL}/blog`,
+      'x-default': `${APP_URL}/blog`,
+      ...Object.fromEntries(NON_EN_LOCALES.map((l) => [toBcp47(l), `${APP_URL}/${l}/blog`])),
+    },
+  },
   openGraph: {
     title: 'Hootling Travel Blog — Taxi Costs & Tipping Guides',
     description: 'Real taxi fares and tipping customs for travellers. Updated for 2026.',
