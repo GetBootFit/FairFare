@@ -5,10 +5,10 @@ import Image from 'next/image'
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description: 'Hootling Privacy Policy — how we handle your data when you use our travel fare and tipping service.',
-  alternates: { canonical: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'}/privacy` },
+  alternates: { canonical: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com'}/privacy` },
 }
 
-const EFFECTIVE = '23 March 2026'
+const EFFECTIVE = '28 March 2026'
 const CONTACT = 'privacy@hootling.com'
 
 export default function PrivacyPage() {
@@ -41,7 +41,7 @@ export default function PrivacyPage() {
           <li>Location inputs you type are sent to Google Maps to calculate routes</li>
           <li>City and country data is sent to Anthropic to generate travel guidance</li>
           <li>If you subscribe to our mailing list, your email address is collected and stored with Resend</li>
-          <li>An affiliate tracking script (Travelpayouts) loads on every page — see section 4</li>
+          <li>An affiliate tracking script (Travelpayouts) only loads if you accept cookies — see section 4</li>
         </ul>
       </Section>
 
@@ -99,9 +99,10 @@ export default function PrivacyPage() {
         </p>
         <ul className="mt-1.5 space-y-1.5 list-disc list-inside">
           <li>
-            <strong className="text-zinc-300">localStorage:</strong> JWT access tokens that
-            grant access to query results. Tokens expire automatically (30 minutes for single
-            queries, 24 hours for country passes, 90 days for bundle tokens).
+            <strong className="text-zinc-300">httpOnly cookies:</strong> JWT access tokens that
+            grant access to query results. Tokens expire automatically (8 hours for single
+            queries, 24 hours for country passes, 90 days for bundle tokens). These cookies are
+            inaccessible to JavaScript and are never transmitted to third parties.
           </li>
           <li>
             <strong className="text-zinc-300">sessionStorage:</strong> Your form inputs (pickup
@@ -144,13 +145,27 @@ export default function PrivacyPage() {
           views, session duration, device type) is collected to understand how the Service is used.
         </p>
 
+        <h3 className="text-zinc-200 font-medium mt-3 mb-1.5">Microsoft Clarity (Session Recordings)</h3>
+        <p>
+          If you accept cookies, we load <strong className="text-zinc-300">Microsoft Clarity</strong>,
+          a session recording and heatmap tool. Clarity records anonymised interactions (mouse
+          movements, clicks, scroll depth) to help us identify usability issues.{' '}
+          <strong className="text-white">All text inputs are automatically masked</strong> —
+          Clarity never records what you type, including addresses, emails, or any personal data.
+          Clarity&apos;s use of data is governed by the{' '}
+          <a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank" rel="noopener noreferrer"
+            className="text-purple-400 underline">Microsoft Privacy Statement</a>.
+        </p>
+
         <h3 className="text-zinc-200 font-medium mt-3 mb-1.5">Travelpayouts Affiliate Tracking</h3>
         <p>
           We participate in the Travelpayouts affiliate programme. A tracking script from
-          Travelpayouts (<code className="text-zinc-500">tpembars.com</code>) loads on every
-          page of the Service. This script may set cookies or collect data for the purpose of
-          attributing affiliate commissions when you click on partner links (such as airport
-          transfer services). This tracking is subject to the{' '}
+          Travelpayouts (<code className="text-zinc-500">tpembars.com</code>) is loaded{' '}
+          <strong className="text-white">only if you accept cookies</strong> via the consent
+          banner displayed on your first visit. This script may set cookies or collect data for
+          the purpose of attributing affiliate commissions when you click on partner links (such
+          as airport transfer services). If you decline cookies, no Travelpayouts script is loaded
+          and no affiliate tracking cookies are set. This tracking, when active, is subject to the{' '}
           <a href="https://www.travelpayouts.com/en/privacy" target="_blank" rel="noopener noreferrer"
             className="text-purple-400 underline">Travelpayouts Privacy Policy</a>.
         </p>
@@ -202,17 +217,35 @@ export default function PrivacyPage() {
           under the <em>Privacy Act 1988</em> (Cth) and the{' '}
           <em>Privacy and Data Protection Act 2014</em> (Vic). You have the right to access,
           correct, or request deletion of any personal information we hold about you (which is
-          limited to your email address if you have subscribed).
+          limited to your email address if you have subscribed to our mailing list).
         </p>
         <p className="mt-2">
-          <strong className="text-zinc-300">EEA &amp; UK users:</strong> You have rights under
-          GDPR/UK GDPR including the right to access, rectify, erase, or port your personal data,
-          and to object to processing. To exercise any right, contact us at the address below.
+          <strong className="text-zinc-300">EEA &amp; UK users (GDPR / UK GDPR):</strong> Where
+          applicable, our lawful basis for processing your personal data is:{' '}
+          <em>legitimate interests</em> (preventing payment fraud via session replay records),{' '}
+          and <em>consent</em> (email subscriptions and affiliate tracking cookies). You have
+          the following rights under GDPR Articles 15–22:
+        </p>
+        <ul className="mt-1.5 space-y-1 list-disc list-inside">
+          <li><strong className="text-zinc-300">Access (Art. 15)</strong> — request a copy of the personal data we hold about you</li>
+          <li><strong className="text-zinc-300">Rectification (Art. 16)</strong> — request correction of inaccurate data</li>
+          <li><strong className="text-zinc-300">Erasure (Art. 17)</strong> — request deletion of your personal data (&ldquo;right to be forgotten&rdquo;)</li>
+          <li><strong className="text-zinc-300">Restriction (Art. 18)</strong> — request that we limit processing of your data</li>
+          <li><strong className="text-zinc-300">Portability (Art. 20)</strong> — receive your personal data in a structured, machine-readable format</li>
+          <li><strong className="text-zinc-300">Objection (Art. 21)</strong> — object to processing based on legitimate interests</li>
+          <li><strong className="text-zinc-300">Withdraw consent</strong> — you may withdraw consent for email marketing or cookies at any time without affecting the lawfulness of prior processing</li>
+        </ul>
+        <p className="mt-2">
+          The only personal data we hold directly is your email address (if subscribed). Payment
+          session records contain no personal data. We do not appoint a formal Data Protection
+          Officer as we are a small operator not engaged in large-scale systematic processing.
+          You also have the right to lodge a complaint with your local supervisory authority
+          (e.g. the ICO in the UK, or your national DPA in the EEA).
         </p>
         <p className="mt-2">
-          <strong className="text-zinc-300">California users:</strong> You have rights under the
-          CCPA including the right to know what personal information is collected, to request
-          deletion, and to opt out of sale. We do not sell personal information.
+          <strong className="text-zinc-300">California users (CCPA):</strong> You have the right
+          to know what personal information is collected, to request deletion, and to opt out of
+          sale. We do not sell personal information.
         </p>
         <p className="mt-2">
           For any privacy enquiry or data subject request, contact us at{' '}

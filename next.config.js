@@ -1,26 +1,11 @@
 /** @type {import('next').NextConfig} */
 const { withSentryConfig } = require('@sentry/nextjs')
 
-// Content-Security-Policy
-// 'unsafe-inline' on script-src is required for Next.js App Router hydration scripts.
-// For a nonce-based CSP (stricter), you'd need a custom middleware — not done here.
-// Google Maps Places Autocomplete loads scripts from maps.googleapis.com.
-// Vercel Analytics loads from va.vercel-scripts.com / vitals.vercel-insights.com.
-// Sentry reports to *.sentry.io / *.ingest.sentry.io.
-// GA4 (gtag) loads from www.googletagmanager.com / www.google-analytics.com.
-// No Stripe JS is loaded on Hootling pages — Stripe Checkout is a full redirect.
-const ContentSecurityPolicy = [
-  "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' https://maps.googleapis.com https://maps.gstatic.com https://va.vercel-scripts.com https://www.googletagmanager.com",
-  "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob: https://maps.googleapis.com https://maps.gstatic.com https://www.google-analytics.com",
-  "font-src 'self'",
-  "connect-src 'self' https://maps.googleapis.com https://maps.gstatic.com https://va.vercel-scripts.com https://vitals.vercel-insights.com https://www.google-analytics.com https://analytics.google.com https://*.sentry.io https://*.ingest.sentry.io",
-  "frame-src 'none'",
-  "object-src 'none'",
-  "base-uri 'self'",
-  "upgrade-insecure-requests",
-].join('; ')
+// Content-Security-Policy is handled by middleware.ts (nonce-based, per-request).
+// The static CSP previously set here has been removed — middleware.ts sets a
+// stricter `nonce + strict-dynamic` policy on every response, eliminating
+// `unsafe-inline` from script-src. style-src still uses `unsafe-inline`
+// because Tailwind utility classes are applied inline and hashing is impractical.
 
 const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com'
 
@@ -45,7 +30,7 @@ const nextConfig = {
           { key: 'Permissions-Policy', value: 'geolocation=(), microphone=(), camera=(), payment=()' },
           { key: 'X-XSS-Protection', value: '1; mode=block' },
           { key: 'X-DNS-Prefetch-Control', value: 'on' },
-          { key: 'Content-Security-Policy', value: ContentSecurityPolicy },
+          // CSP is set per-request by middleware.ts (nonce-based); not set here.
         ],
       },
       {

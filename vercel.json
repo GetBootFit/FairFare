@@ -1,0 +1,16 @@
+{
+  "crons": [
+    {
+      "path": "/api/cron/weekly-email",
+      "schedule": "0 8 * * 1"
+    },
+    {
+      "path": "/api/cron/weekly-post",
+      "schedule": "0 21 * * 0"
+    },
+    {
+      "path": "/api/cron/bundle-reminder",
+      "schedule": "0 8 * * *"
+    }
+  ]
+}

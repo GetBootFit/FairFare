@@ -64,6 +64,8 @@ export function TaxiForm() {
   // Set to true when form is restored from sessionStorage AND a fresh token exists.
   // A separate effect then fires once the form state has actually populated.
   const [pendingAutoSubmit, setPendingAutoSubmit] = useState(false)
+  const [purchasedProduct, setPurchasedProduct] = useState<'single' | 'country_pass' | 'bundle'>('single')
+  const [showUpgradeModal, setShowUpgradeModal] = useState(false)
 
   const isAirportPickup = AIRPORT_RE.test(form.pickup)
   // Specific airport page match — higher signal than the generic AIRPORT_RE
@@ -183,10 +185,8 @@ export function TaxiForm() {
   const fetchFullResult = async (token: string, currentForm: FormState, tokenType: 'single' | 'country_pass' | 'bundle') => {
     const res = await fetch('/api/taxi/result', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`,
-      },
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'same-origin',
       body: JSON.stringify({
         pickup: currentForm.pickup,
         destination: currentForm.destination,
@@ -202,6 +202,7 @@ export function TaxiForm() {
     }
     const fullResult = data as TaxiFullResult
     setResult(fullResult)
+    setPurchasedProduct(tokenType)
     setStatus('done')
     // Tactile confirmation for PWA users on Android (no-op on iOS / unsupported browsers)
     try { navigator.vibrate?.(100) } catch { /* not supported */ }
@@ -290,7 +291,24 @@ export function TaxiForm() {
 
   // ── Render ─────────────────────────────────────────────────────────────────
   if (status === 'done' && result) {
-    return <TaxiResult result={result} onReset={handleReset} />
+    return (
+      <>
+        <TaxiResult
+          result={result}
+          onReset={handleReset}
+          purchasedProduct={purchasedProduct}
+          onUpgradeToPass={() => setShowUpgradeModal(true)}
+        />
+        {showUpgradeModal && (
+          <PaymentModal
+            feature="taxi"
+            initialProduct="country_pass"
+            country={result.country}
+            onClose={() => setShowUpgradeModal(false)}
+          />
+        )}
+      </>
+    )
   }
 
   // Screen reader announcements for dynamic state changes

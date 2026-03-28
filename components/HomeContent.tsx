@@ -276,6 +276,8 @@ export function HomeContent() {
               { href: '/business', label: t('nav_business') },
               { href: '/terms', label: t('footer_terms') },
               { href: '/privacy', label: t('footer_privacy') },
+              { href: '/refund', label: 'Refund Policy' },
+              { href: '/affiliate-disclosure', label: 'Affiliate Disclosure' },
             ].map(({ href, label }) => (
               <Link
                 key={href}

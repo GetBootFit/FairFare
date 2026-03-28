@@ -856,6 +856,49 @@ export function matchAirport(query: string): AirportData | null {
   return null
 }
 
+/**
+ * City name → primary IATA airport code.
+ * Used in blog posts to surface a contextual airport CTA without needing each
+ * post to declare an airportCode field manually.
+ *
+ * Covers all airports in AIRPORT_DATA plus common alternate city spellings.
+ */
+const CITY_TO_AIRPORT_CODE: Record<string, string> = {
+  // Asia-Pacific
+  Bangkok: 'BKK', Suvarnabhumi: 'BKK',
+  Singapore: 'SIN',
+  Tokyo: 'HND', 'Tokyo (Haneda)': 'HND', 'Tokyo (Narita)': 'NRT',
+  Sydney: 'SYD',
+  Melbourne: 'MEL',
+  Beijing: 'PEK',
+  Seoul: 'ICN',
+  Mumbai: 'BOM', Bombay: 'BOM',
+  Delhi: 'DEL', 'New Delhi': 'DEL',
+  // Middle East
+  Dubai: 'DXB',
+  // Europe
+  London: 'LHR',
+  Paris: 'CDG',
+  Amsterdam: 'AMS',
+  Frankfurt: 'FRA',
+  Madrid: 'MAD',
+  Rome: 'FCO',
+  // Americas
+  'New York': 'JFK', 'New York City': 'JFK', NYC: 'JFK',
+  'Los Angeles': 'LAX',
+  Chicago: 'ORD',
+  'São Paulo': 'GRU', 'Sao Paulo': 'GRU',
+}
+
+/**
+ * Returns the AirportData for a city name, or null if no airport page exists.
+ * Used by blog posts to auto-link city taxi articles → /taxi/airport/[code].
+ */
+export function getAirportForCity(city: string): AirportData | null {
+  const code = CITY_TO_AIRPORT_CODE[city]
+  return code ? (AIRPORT_DATA[code] ?? null) : null
+}
+
 /** Calculate a fare estimate for a given route */
 export function estimateAirportFare(
   airport: AirportData,

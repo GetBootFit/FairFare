@@ -2,12 +2,21 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ChevronRight, ArrowRight } from 'lucide-react'
-import { getBlogPost, getAllBlogSlugs, type BlogSection } from '@/lib/blog-posts'
+import { ChevronRight, ArrowRight, Plane, ExternalLink } from 'lucide-react'
+import { getBlogPost, getAllBlogSlugs, getRelatedPosts, getWordCount, type BlogSection, type BlogPost } from '@/lib/blog-posts'
 import { BlogAffiliateCard } from '@/components/BlogAffiliateCard'
+import { RelatedPosts } from '@/components/RelatedPosts'
 import { getPartnersForZone } from '@/lib/affiliates'
+import { getAirportForCity } from '@/lib/airport-data'
 import type { AffiliateCategory } from '@/data/affiliate-config'
 import { EmailCapture } from '@/components/EmailCapture'
+import { ScrollDepthTracker } from '@/components/ScrollDepthTracker'
+import { kvGet } from '@/lib/kv'
+
+/** Resolve a post from static TS files first, then KV (for auto-generated posts). */
+async function resolvePost(slug: string): Promise<BlogPost | undefined> {
+  return getBlogPost(slug) ?? (await kvGet<BlogPost>(`blog:published:${slug}`)) ?? undefined
+}
 
 // City SVG sticker map — 13 illustrated cities
 const CITY_IMAGES: Record<string, string> = {
@@ -62,7 +71,7 @@ export async function generateMetadata(
   { params }: { params: Promise<{ slug: string }> }
 ): Promise<Metadata> {
   const { slug } = await params
-  const post = getBlogPost(slug)
+  const post = await resolvePost(slug)
   if (!post) return { title: 'Article Not Found' }
 
   return {
@@ -103,8 +112,9 @@ export async function generateMetadata(
 function RenderSection({ section }: { section: BlogSection }) {
   switch (section.type) {
     case 'intro':
+      // .post-intro is referenced by SpeakableSpecification — voice/AI reads this first
       return (
-        <p className="text-zinc-300 leading-relaxed text-sm">{section.body}</p>
+        <p className="post-intro text-zinc-300 leading-relaxed text-sm">{section.body}</p>
       )
     case 'h2':
       return (
@@ -163,7 +173,8 @@ function RenderSection({ section }: { section: BlogSection }) {
           {section.faqs?.map((faq, i) => (
             <div key={i} className="bg-zinc-900 border border-zinc-800 rounded-xl p-4 space-y-1.5">
               <p className="text-sm font-semibold text-white">{faq.q}</p>
-              <p className="text-sm text-zinc-400 leading-relaxed">{faq.a}</p>
+              {/* .post-faq-answer referenced by SpeakableSpecification for voice/AI readout */}
+              <p className="post-faq-answer text-sm text-zinc-400 leading-relaxed">{faq.a}</p>
             </div>
           ))}
         </div>
@@ -179,20 +190,51 @@ export default async function BlogArticlePage(
   { params }: { params: Promise<{ slug: string }> }
 ) {
   const { slug } = await params
-  const post = getBlogPost(slug)
+  const post = await resolvePost(slug)
   if (!post) notFound()
 
+  const APP_URL = (process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com').replace(/\/$/, '')
+  const canonicalUrl = `${APP_URL}/blog/${slug}`
+  const ogImageUrl = post.citySlug
+    ? `${APP_URL}/api/og/city?city=${encodeURIComponent(post.citySlug)}`
+    : undefined
+
+  // BlogPosting is a schema.org subtype of Article — more precise for blog content.
+  // wordCount aids Google's quality assessment. image is required for rich results.
   const jsonLd: object[] = [
     {
       '@context': 'https://schema.org',
-      '@type': 'Article',
+      '@type': 'BlogPosting',
       headline: post.title,
       description: post.description,
       datePublished: post.publishedAt,
       dateModified: post.updatedAt ?? post.publishedAt,
-      author: { '@type': 'Organization', name: 'Hootling Team', url: process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com' },
-      publisher: { '@type': 'Organization', name: 'Hootling Team', url: process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com' },
-      url: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'}/blog/${slug}`,
+      wordCount: getWordCount(post),
+      inLanguage: 'en',
+      author: {
+        '@type': 'Organization',
+        name: 'Hootling',
+        url: APP_URL,
+        logo: { '@type': 'ImageObject', url: `${APP_URL}/images/brand/hootling-logo-icon.png` },
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Hootling',
+        url: APP_URL,
+        logo: { '@type': 'ImageObject', url: `${APP_URL}/images/brand/hootling-logo-icon.png` },
+      },
+      url: canonicalUrl,
+      mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
+      ...(ogImageUrl ? {
+        image: { '@type': 'ImageObject', url: ogImageUrl, width: 1200, height: 630 },
+      } : {}),
+      // SpeakableSpecification — tells AI assistants and voice search engines which
+      // parts of the page to read aloud. CSS selectors map to elements in the JSX below.
+      // Google uses this for Google Assistant "Daily Briefing" and AI Overviews.
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['.post-headline', '.post-intro', '.post-faq-answer'],
+      },
     },
   ]
 
@@ -252,6 +294,14 @@ export default async function BlogArticlePage(
     maxItems: 3,
   })
 
+  // Airport CTA — only for taxi-category posts about cities with an airport page
+  const airportData = post.category === 'taxi' && post.city
+    ? getAirportForCity(post.city)
+    : null
+
+  // Related posts — 3 by relevance score (city > country > category)
+  const relatedPosts = getRelatedPosts(post, 3)
+
   return (
     <>
       {jsonLd.map((schema, i) => (
@@ -274,12 +324,13 @@ export default async function BlogArticlePage(
 
         {/* Header */}
         <div className="space-y-3">
-          <div className="flex items-center gap-3 text-xs text-zinc-600">
+          {/* zinc-400 on dark bg ≈ 6.5:1 — passes WCAG AA for small text (needs ≥4.5:1) */}
+          <div className="flex items-center gap-3 text-xs text-zinc-400">
             <span>{new Date(post.publishedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
-            <span>·</span>
+            <span aria-hidden="true">·</span>
             <span>{post.readingMinutes} min read</span>
           </div>
-          <h1 className="text-xl font-bold text-white leading-snug">{post.title}</h1>
+          <h1 className="post-headline text-xl font-bold text-white leading-snug">{post.title}</h1>
           <p className="text-zinc-400 text-sm">{post.description}</p>
         </div>
 
@@ -415,12 +466,72 @@ export default async function BlogArticlePage(
           </div>
         )}
 
+        {/* Airport page CTA — taxi posts for cities with an airport landing page.
+            Links /blog/how-much-taxi-cost-in-bangkok → /taxi/airport/BKK.
+            High-intent cross-link: reader researching taxi costs → airport fare table. */}
+        {airportData && (
+          <div className="flex items-start gap-3 bg-zinc-900 border border-zinc-800 rounded-2xl p-4">
+            <div className="w-9 h-9 rounded-xl bg-purple-900/40 border border-purple-800/50 flex items-center justify-center shrink-0">
+              <Plane size={17} className="text-purple-400" strokeWidth={1.8} />
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-semibold text-white leading-snug">
+                Flying into {airportData.city}?
+              </p>
+              <p className="text-xs text-zinc-400 mt-0.5 leading-relaxed">
+                See the full {airportData.code} airport taxi fare table — route-by-route estimates,
+                scam warnings, and cheaper alternatives.
+              </p>
+              <Link
+                href={`/taxi/airport/${airportData.code}`}
+                className="inline-flex items-center gap-1.5 text-xs text-purple-400 hover:text-purple-300 font-medium mt-2 transition-colors"
+              >
+                {airportData.name} taxi fares <ArrowRight size={11} />
+              </Link>
+            </div>
+          </div>
+        )}
+
+        {/* External references — authoritative outbound links signal topical depth.
+            Populated per-post in blog-posts.ts via the `references` field. */}
+        {post.references && post.references.length > 0 && (
+          <div className="border-t border-zinc-800 pt-5 space-y-2">
+            <p className="text-[10px] text-zinc-500 uppercase tracking-widest font-medium">
+              Sources &amp; Further Reading
+            </p>
+            <ul className="space-y-1.5">
+              {post.references.map((ref) => (
+                <li key={ref.url}>
+                  <a
+                    href={ref.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs text-zinc-400 hover:text-zinc-200 transition-colors"
+                  >
+                    <ExternalLink size={11} className="shrink-0 text-zinc-600" aria-hidden="true" />
+                    {ref.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         {/* Email capture — soft, after primary CTA */}
         <EmailCapture
           feature={post.category === 'tipping' ? 'tipping' : 'taxi'}
           variant="post"
         />
+
+        {/* Related posts — cross-links within city/category cluster */}
+        <RelatedPosts posts={relatedPosts} />
       </div>
+
+      {/* Invisible scroll depth tracker — fires analytics events at 25/50/75/100% */}
+      <ScrollDepthTracker
+        slug={post.slug}
+        feature={post.category === 'tipping' ? 'tipping' : post.category === 'travel' ? 'travel' : 'taxi'}
+      />
     </>
   )
 }

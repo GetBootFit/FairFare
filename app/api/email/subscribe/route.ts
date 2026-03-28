@@ -1,6 +1,7 @@
 import { NextRequest } from 'next/server'
 import { Resend } from 'resend'
 import { isRateLimited, getClientIp } from '@/lib/rate-limit'
+import { kvSet } from '@/lib/kv'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -210,9 +211,9 @@ function email3Html(email: string, feature: string): string {
               <table width="100%" cellpadding="0" cellspacing="0"
                      style="background:#3b1f6b;border:1px solid #6d28d9;border-radius:12px;padding:20px;">
                 <tr><td>
-                  <p style="margin:0 0 6px;font-size:14px;font-weight:700;color:#ffffff;">Save 33% with the 10-Query Bundle</p>
+                  <p style="margin:0 0 6px;font-size:14px;font-weight:700;color:#ffffff;">Save 66% with the 20-Query Bundle</p>
                   <p style="margin:0 0 14px;font-size:13px;color:#c4b5fd;line-height:1.5;">
-                    Use it for taxi fares and tipping — queries work across both tools. No expiry pressure: 90 days per query.
+                    20 queries across taxi fares and tipping — works across both tools. No expiry pressure: 90 days per query.
                   </p>
                   <a href="https://www.hootling.com/taxi" style="display:inline-block;background:#7c3aed;color:#ffffff;font-size:13px;font-weight:600;padding:10px 20px;border-radius:8px;text-decoration:none;">
                     Get the bundle →
@@ -235,10 +236,29 @@ export async function POST(req: NextRequest) {
 
   try {
     const body = await req.json()
-    const { email, feature = 'taxi' } = body as { email?: string; feature?: string }
+    const { email, feature = 'taxi', bundleSessionId, referralSource } = body as {
+      email?: string
+      feature?: string
+      bundleSessionId?: string
+      referralSource?: string
+    }
 
     if (!email || typeof email !== 'string' || !EMAIL_RE.test(email)) {
       return Response.json({ error: 'Invalid email address' }, { status: 400 })
+    }
+
+    // Bundle email registration — stored in KV so the daily bundle-reminder cron can
+    // check remaining token count and send a low-query nudge when 2 tokens remain.
+    // Stored independently of Resend configuration (the reminder uses its own email path).
+    if (bundleSessionId && typeof bundleSessionId === 'string') {
+      const KV_TTL_90D = 90 * 86400
+      await kvSet(`bundle:email:${bundleSessionId}`, {
+        email,
+        purchaseDate: new Date().toISOString(),
+        bundleSessionId,
+        ...(referralSource ? { referralSource } : {}),
+      }, KV_TTL_90D)
+      console.log(`[email/subscribe] Registered bundle email for ${bundleSessionId}`)
     }
 
     const apiKey     = process.env.RESEND_API_KEY

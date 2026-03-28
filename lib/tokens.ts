@@ -12,7 +12,7 @@ export interface TokenPayload {
   sessionId: string
   /** 'single' = one taxi OR tipping query (30 min).
    *  'country_pass' = all features for one country (24h).
-   *  'bundle' = one query from a 10-pack, device-stored (90 days).
+   *  'bundle' = one query from a 20-pack, device-stored (90 days).
    *  Undefined = legacy single-query token (backward compat). */
   tokenType?: 'single' | 'country_pass' | 'bundle'
   feature?: 'taxi' | 'tipping'  // present for single tokens
@@ -21,7 +21,15 @@ export interface TokenPayload {
 
 // ─── Server-side: sign / verify ───────────────────────────────────────────────
 
-/** Issue a single-use JWT valid for 30 minutes. */
+/** Issue a single-use JWT valid for 8 hours.
+ *
+ * 30 minutes was too short for real-world travel scenarios — a user could pay at
+ * check-in, board, and not open the app until after landing (2–3 h for regional
+ * flights, more for long-haul). 8 hours eliminates artificial urgency while still
+ * providing a meaningful expiry window. Stripe session replay is already prevented
+ * by the KV `ff:session:{id}` check in verify/route.ts, so extending the JWT TTL
+ * does not meaningfully increase the attack surface.
+ */
 export async function createToken(payload: {
   sessionId: string
   feature: 'taxi' | 'tipping'
@@ -29,11 +37,11 @@ export async function createToken(payload: {
   return new SignJWT({ ...payload, tokenType: 'single' } as Record<string, unknown>)
     .setProtectedHeader({ alg: 'HS256' })
     .setIssuedAt()
-    .setExpirationTime('30m')
+    .setExpirationTime('8h')
     .sign(secret())
 }
 
-/** Issue a bundle JWT valid for 90 days (one query from a purchased 10-pack). */
+/** Issue a bundle JWT valid for 90 days (one query from a purchased 20-pack). */
 export async function createBundleToken(sessionId: string): Promise<string> {
   return new SignJWT({ tokenType: 'bundle', sessionId } as Record<string, unknown>)
     .setProtectedHeader({ alg: 'HS256' })

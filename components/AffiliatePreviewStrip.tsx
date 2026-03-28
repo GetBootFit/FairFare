@@ -14,13 +14,17 @@
 import { ExternalLink } from 'lucide-react'
 import { track } from '@vercel/analytics'
 import { useLanguage } from '@/context/LanguageContext'
-import type { AffiliatePartner } from '@/data/affiliate-config'
+import type { AffiliatePartner, AffiliateZone } from '@/data/affiliate-config'
 
 interface AffiliatePreviewStripProps {
   partners: AffiliatePartner[]
   city?: string
   country?: string
   isoCountry?: string
+  /** Tracking zone — defaults to 'preview'. Pass 'airport' for airport pages. */
+  zone?: AffiliateZone
+  /** Override the strip label. Defaults to t('affiliate_preview_strip'). */
+  label?: string
 }
 
 export function AffiliatePreviewStrip({
@@ -28,13 +32,15 @@ export function AffiliatePreviewStrip({
   city,
   country,
   isoCountry,
+  zone = 'preview',
+  label,
 }: AffiliatePreviewStripProps) {
   const { t } = useLanguage()
 
   if (partners.length === 0) return null
 
   function buildHref(partner: AffiliatePartner): string {
-    const params = new URLSearchParams({ id: partner.id, zone: 'preview' })
+    const params = new URLSearchParams({ id: partner.id, zone })
     if (city) params.set('city', city)
     if (country) params.set('country', country)
     if (isoCountry) params.set('iso', isoCountry)
@@ -43,7 +49,10 @@ export function AffiliatePreviewStrip({
 
   return (
     <div className="mt-3 px-3 py-2.5 rounded-xl border border-zinc-800/60 bg-zinc-900/40">
-      <p className="text-[10px] text-zinc-600 mb-2">{t('affiliate_preview_strip')}</p>
+      <p className="text-[10px] text-zinc-600 mb-2">
+        {label ?? t('affiliate_preview_strip')}{' '}
+        <span className="text-zinc-700">(affiliate link)</span>
+      </p>
       <div className="flex items-center gap-2 flex-wrap">
         {partners.map(partner => (
           <a
@@ -57,7 +66,7 @@ export function AffiliatePreviewStrip({
               track('affiliate_clicked', {
                 partner: partner.id,
                 partnerName: partner.name,
-                zone: 'preview',
+                zone,
                 city: city ?? country ?? '',
               })
             }

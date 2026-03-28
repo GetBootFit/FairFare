@@ -10,7 +10,6 @@
  * Receives pre-resolved partners from the parent server component.
  */
 
-import Link from 'next/link'
 import { ExternalLink } from 'lucide-react'
 import type { AffiliatePartner } from '@/data/affiliate-config'
 
@@ -80,8 +79,11 @@ export function BlogAffiliateCard({
           </a>
         ))}
       </div>
-      <p className="text-[10px] text-zinc-700 px-4 py-2">
-        Affiliate links — we may earn a small commission at no extra cost to you.
+      <p className="text-[10px] text-zinc-500 px-4 py-2">
+        Affiliate links — we may earn a small commission at no extra cost to you.{' '}
+        <a href="/affiliate-disclosure" className="underline hover:text-zinc-400 transition-colors">
+          Disclosure
+        </a>
       </p>
     </div>
   )

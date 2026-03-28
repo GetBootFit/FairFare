@@ -1,5 +1,5 @@
 ﻿import { NextRequest } from 'next/server'
-import { verifyToken } from '@/lib/tokens'
+import { verifyTokenFromRequest } from '@/lib/server-auth'
 import { getTippingGuide } from '@/lib/claude'
 import { TIPPING_COUNTRIES } from '@/lib/seo-helpers'
 import { isRateLimited, getClientIp } from '@/lib/rate-limit'
@@ -18,16 +18,12 @@ export async function POST(req: NextRequest) {
     return Response.json({ error: 'Too many requests. Please try again later.' }, { status: 429 })
   }
 
-  // Auth
-  const auth = req.headers.get('Authorization')
-  if (!auth?.startsWith('Bearer ')) {
-    return Response.json({ error: 'Payment required' }, { status: 402 })
-  }
-  let tokenPayload: Awaited<ReturnType<typeof verifyToken>>
+  // Auth (httpOnly cookie — no Bearer header)
+  let tokenPayload: Awaited<ReturnType<typeof verifyTokenFromRequest>>
   try {
-    tokenPayload = await verifyToken(auth.slice(7))
+    tokenPayload = await verifyTokenFromRequest(req)
   } catch {
-    return Response.json({ error: 'Invalid or expired token' }, { status: 401 })
+    return Response.json({ error: 'Payment required' }, { status: 402 })
   }
 
   try {

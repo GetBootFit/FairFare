@@ -1,5 +1,5 @@
 import { NextRequest } from 'next/server'
-import { verifyToken } from '@/lib/tokens'
+import { verifyTokenFromRequest } from '@/lib/server-auth'
 import { getRouteInfo, buildRouteMapUrl } from '@/lib/google-maps'
 import { getTaxiAiInfo } from '@/lib/claude'
 import { findCityRate, calculateFareRange } from '@/lib/taxi-rates'
@@ -18,16 +18,12 @@ export async function POST(req: NextRequest) {
     return Response.json({ error: 'Too many requests. Please try again later.' }, { status: 429 })
   }
 
-  // ── Auth ────────────────────────────────────────────────────────────────────
-  const auth = req.headers.get('Authorization')
-  if (!auth?.startsWith('Bearer ')) {
-    return Response.json({ error: 'Payment required' }, { status: 402 })
-  }
-  let tokenPayload: Awaited<ReturnType<typeof verifyToken>>
+  // ── Auth (httpOnly cookie — no Bearer header) ─────────────────────────────
+  let tokenPayload: Awaited<ReturnType<typeof verifyTokenFromRequest>>
   try {
-    tokenPayload = await verifyToken(auth.slice(7))
+    tokenPayload = await verifyTokenFromRequest(req)
   } catch {
-    return Response.json({ error: 'Invalid or expired token' }, { status: 401 })
+    return Response.json({ error: 'Payment required' }, { status: 402 })
   }
 
   // Single-query tokens must be for the taxi feature (undefined = legacy compat)

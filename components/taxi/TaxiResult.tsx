@@ -56,6 +56,10 @@ function SvgIcon({ name, size = 20, className = '' }: { name: string; size?: num
 interface Props {
   result: TaxiFullResult
   onReset?: () => void
+  /** What product the user paid with — used to decide whether to show the country pass upsell */
+  purchasedProduct?: 'single' | 'country_pass' | 'bundle'
+  /** Called when user taps the country pass upsell CTA */
+  onUpgradeToPass?: () => void
 }
 
 const PHRASE_EMOJI: Record<string, string> = {
@@ -79,7 +83,7 @@ const transitLabelKey: Record<TransportOption['mode'], TranslationKey> = {
   bus: 'transit_bus', train: 'transit_train', metro: 'transit_metro', tram: 'transit_tram', ferry: 'transit_ferry',
 }
 
-export function TaxiResult({ result, onReset }: Props) {
+export function TaxiResult({ result, onReset, purchasedProduct, onUpgradeToPass }: Props) {
   const { t } = useLanguage()
   const { fareRange, transitOptions, scamWarnings, distance, duration } = result
   const rates = useExchangeRates(fareRange.currency)
@@ -659,6 +663,40 @@ export function TaxiResult({ result, onReset }: Props) {
             />
           )
         })()}
+
+        {/* Country Pass cross-sell — only shown to single-query buyers.
+            Appears after affiliates but before the tipping link: reader has seen
+            the full result and now sees the highest-value upgrade opportunity. */}
+        {purchasedProduct === 'single' && result.country && (
+          <div className="bg-gradient-to-br from-purple-900/20 to-zinc-900 border border-purple-800/30 rounded-2xl p-4 print-hide">
+            <div className="flex items-start justify-between gap-3">
+              <div className="flex-1 min-w-0">
+                <p className="text-xs text-purple-400 font-semibold uppercase tracking-wider mb-1">
+                  Travelling more in {result.country}?
+                </p>
+                <p className="text-sm text-white font-semibold">
+                  Country Pass — unlimited queries for 24 hours
+                </p>
+                <p className="text-xs text-zinc-500 mt-1 leading-relaxed">
+                  Taxi fares + tipping for any city in {result.country}. From $7.99.
+                </p>
+              </div>
+              <div className="shrink-0 text-right">
+                <span className="text-xs text-zinc-600 line-through block">$2.99×more</span>
+                <span className="text-sm text-purple-300 font-bold">from $7.99</span>
+              </div>
+            </div>
+            <button
+              onClick={() => {
+                track('country_pass_upsell_clicked', { from: 'taxi_result', country: result.country })
+                onUpgradeToPass?.()
+              }}
+              className="mt-3 w-full bg-purple-700 hover:bg-purple-600 text-white text-sm font-semibold py-2.5 rounded-xl transition-colors"
+            >
+              Upgrade to {result.country} Pass →
+            </button>
+          </div>
+        )}
 
         {/* Tipping guide — compact link, below affiliates */}
         <Link

@@ -1,13 +1,15 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ChevronRight } from 'lucide-react'
-import { getAllBlogSlugs, getBlogPost, getFeaturedPost } from '@/lib/blog-posts'
+import { getAllBlogSlugs, getBlogPost, getFeaturedPost, type BlogPost } from '@/lib/blog-posts'
 import { EmailCapture } from '@/components/EmailCapture'
 import { BlogIndexClient } from '@/components/BlogIndexClient'
+import { kvKeys, kvGet } from '@/lib/kv'
 
 const APP_URL = (process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com').replace(/\/$/, '')
 
-export const revalidate = 86400
+// Shorter revalidation so KV-published posts appear within 5 minutes
+export const revalidate = 300
 
 export const metadata: Metadata = {
   title: 'Travel Tips & Taxi Guides — Hootling Blog',
@@ -23,12 +25,22 @@ export const metadata: Metadata = {
 }
 
 
-export default function BlogIndexPage() {
+export default async function BlogIndexPage() {
   const featured = getFeaturedPost()
-  const slugs = getAllBlogSlugs()
-  const sorted = slugs
+
+  // Static posts from TS files
+  const staticSlugs = getAllBlogSlugs()
+  const staticPosts: BlogPost[] = staticSlugs
     .map((s) => getBlogPost(s)!)
     .filter(Boolean)
+
+  // KV-published posts (generated + approved via weekly cron)
+  const kvPublishedKeys = await kvKeys('blog:published:*')
+  const kvPosts = (
+    await Promise.all(kvPublishedKeys.map((k) => kvGet<BlogPost>(k)))
+  ).filter((p): p is BlogPost => !!p && !staticSlugs.includes(p.slug))
+
+  const sorted = [...staticPosts, ...kvPosts]
     .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
     // Exclude the featured post — BlogIndexClient pins it separately
     .filter((p) => p.slug !== featured?.slug)

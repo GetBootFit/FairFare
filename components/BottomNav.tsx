@@ -41,21 +41,24 @@ export function BottomNav() {
             <Link
               key={href}
               href={href}
+              aria-label={label}
+              aria-current={active ? 'page' : undefined}
               className={clsx(
-                'flex-1 flex flex-col items-center gap-1 py-3 text-xs font-medium transition-colors',
+                'flex-1 flex flex-col items-center gap-0.5 py-2.5 text-[10px] font-medium transition-colors',
                 active ? 'text-purple-400' : 'text-zinc-500 hover:text-zinc-300'
               )}
             >
               <span className="relative">
-                <Icon size={22} strokeWidth={active ? 2.2 : 1.8} />
+                <Icon size={21} strokeWidth={active ? 2.2 : 1.8} />
                 {bundleCount > 0 && (href === '/taxi' || href === '/tipping') && (
                   <span className="absolute -top-1 -right-1.5 rtl:-left-1.5 rtl:right-auto min-w-[14px] h-[14px] rounded-full bg-purple-500 text-white text-[9px] font-bold flex items-center justify-center px-0.5">
                     {bundleCount}
                   </span>
                 )}
               </span>
-              {/* Hide label on very narrow screens (< 360px, e.g. iPhone SE 1st gen) — icon only */}
-              <span className="hidden min-[360px]:inline">{label}</span>
+              {/* WCAG 2.4.6 — labels must always be visible, not icon-only.
+                  text-[10px] keeps all four labels readable at 320px viewport width. */}
+              <span>{label}</span>
             </Link>
           )
         })}

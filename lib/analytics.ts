@@ -52,3 +52,8 @@ export function ga4ResultLoaded(params: { feature: 'taxi' | 'tipping'; city?: st
 export function ga4CrosssellClicked(params: { from: 'taxi' | 'tipping'; country: string }) {
   getGtag()?.('event', 'crosssell_clicked', params)
 }
+
+/** Blog post scroll depth milestone reached (25 / 50 / 75 / 100 %). */
+export function ga4ScrollDepth(params: { depth: 25 | 50 | 75 | 100; slug: string; feature?: string }) {
+  getGtag()?.('event', 'scroll_depth', params)
+}

@@ -1,17 +1,22 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import Script from 'next/script'
+import { headers } from 'next/headers'
 import { Analytics } from '@vercel/analytics/next'
 import { BottomNav } from '@/components/BottomNav'
 import { LanguageProvider } from '@/context/LanguageContext'
 import { HtmlLangUpdater } from '@/components/HtmlLangUpdater'
 import { ServiceWorkerRegistration } from '@/components/ServiceWorkerRegistration'
+import { CookieConsent } from '@/components/CookieConsent'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
-const GA4_ID = process.env.NEXT_PUBLIC_GA4_ID
+const GA4_ID     = process.env.NEXT_PUBLIC_GA4_ID
+const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'
+// Use www as the canonical origin — must match NEXT_PUBLIC_APP_URL in .env.
+// All other files use the same pattern: ?? 'https://www.hootling.com'
+const APP_URL = (process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com').replace(/\/$/, '')
 
 export const metadata: Metadata = {
   metadataBase: new URL(APP_URL),
@@ -139,7 +144,11 @@ const jsonLd = {
   ],
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  // Nonce is generated per-request by middleware.ts and forwarded via x-nonce header.
+  // It must be applied to all inline scripts so browsers with a strict CSP allow them.
+  const nonce = (await headers()).get('x-nonce') ?? ''
+
   return (
     <html lang="en" className="bg-black">
       <head>
@@ -150,9 +159,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://maps.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://va.vercel-scripts.com" crossOrigin="anonymous" />
         {GA4_ID && <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />}
-        {/* Travelpayouts — site ownership verification */}
-        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-        <script async src="https://tpembars.com/NTA5OTg1.js?t=509985" />
+        {/* Travelpayouts script is loaded on-demand via CookieConsent component
+            (user must accept before the tracking script is injected). */}
       </head>
       <body className={`${inter.variable} font-sans bg-black text-white antialiased`}>
         {/* Skip-to-main-content — visually hidden until focused by keyboard users.
@@ -165,6 +173,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </a>
         <script
           type="application/ld+json"
+          nonce={nonce}
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <LanguageProvider>
@@ -176,6 +185,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <BottomNav />
         </LanguageProvider>
         <ServiceWorkerRegistration />
+        {/* Consent-gated tracking — loads Travelpayouts + Clarity only after accept */}
+        <CookieConsent publisherId="509985" clarityId={CLARITY_ID} />
         <Analytics />
         {/* Google Analytics 4 — add NEXT_PUBLIC_GA4_ID=G-XXXXXXXXXX to .env.local
             Cookieless mode: client_storage='none' disables _ga/_ga_* cookie writes.
@@ -187,8 +198,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Script
               src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}
               strategy="afterInteractive"
+              nonce={nonce}
             />
-            <Script id="ga4-init" strategy="afterInteractive">{`
+            <Script id="ga4-init" strategy="afterInteractive" nonce={nonce}>{`
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());

@@ -171,7 +171,8 @@
       "Bash(find C:UsersdavidProjectsHootlingpublic -type f \\\\\\(-name *.png -o -name *.jpg -o -name *.webp -o -name *.svg \\\\\\))",
       "Bash(find C:UsersdavidProjectsHootlingpublic -type f \\\\\\(-name *.png -o -name *.jpg -o -name *.svg -o -name *.webp \\\\\\))",
       "Bash(grep -rn \"canonical: ''https://hootling.com\" \"C:\\\\Users\\\\david\\\\Projects\\\\Hootling\\\\app\" --include=\"*.tsx\" --include=\"*.ts\")",
-      "Bash(curl -sI \"https://www.hootling.com/blog/how-much-does-a-taxi-cost-in-sydney\")"
+      "Bash(curl -sI \"https://www.hootling.com/blog/how-much-does-a-taxi-cost-in-sydney\")",
+      "Bash(npm audit:*)"
     ]
   }
 }

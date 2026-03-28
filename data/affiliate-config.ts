@@ -24,7 +24,7 @@
 import type { TranslationKey } from '@/lib/i18n'
 
 export type AffiliateCategory = 'transfer' | 'hotel' | 'tours' | 'esim' | 'car'
-export type AffiliateZone = 'result' | 'preview' | 'blog' | 'success'
+export type AffiliateZone = 'result' | 'preview' | 'blog' | 'success' | 'airport'
 
 export interface AffiliatePartner {
   /** Stable identifier — used as KV key and tracking param */
@@ -72,7 +72,7 @@ export const DEFAULT_AFFILIATE_CONFIG: AffiliatePartner[] = [
     priority: 1,
     // Strong in Eastern Europe, Russia, SE Asia, Middle East
     preferredRegions: ['RU', 'UA', 'PL', 'CZ', 'HU', 'RO', 'TH', 'VN', 'AE', 'TR', 'EG', 'IN'],
-    zones: ['result', 'preview', 'blog', 'success'],
+    zones: ['result', 'preview', 'blog', 'success', 'airport'],
     baseUrl: 'https://kiwitaxi.tpk.lu/r3buLnXk',
   },
   {
@@ -85,7 +85,7 @@ export const DEFAULT_AFFILIATE_CONFIG: AffiliatePartner[] = [
     priority: 2,
     // Strong in Mediterranean, Southern Europe, Middle East
     preferredRegions: ['GR', 'ES', 'PT', 'IT', 'FR', 'HR', 'CY', 'MT', 'IL', 'JO', 'MA', 'TN'],
-    zones: ['result', 'preview', 'blog', 'success'],
+    zones: ['result', 'preview', 'blog', 'success', 'airport'],
     baseUrl: 'https://tpk.lu/uISwgG5I',
   },
   {
@@ -97,7 +97,7 @@ export const DEFAULT_AFFILIATE_CONFIG: AffiliatePartner[] = [
     enabled: true,
     priority: 3,
     // Global coverage — shown everywhere as fallback
-    zones: ['result', 'preview', 'blog'],
+    zones: ['result', 'preview', 'blog', 'airport'],
     baseUrl: 'https://gettransfer.tpk.lu/AoQRdSfe',
   },
   {

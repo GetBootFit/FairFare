@@ -3,6 +3,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ChevronRight, Car, MapPin, AlertTriangle, Info, ArrowRight } from 'lucide-react'
 import { getAirportData, getAllAirportCodes, estimateAirportFare } from '@/lib/airport-data'
+import { getPartnersForZone } from '@/lib/affiliates'
+import { AffiliatePreviewStrip } from '@/components/AffiliatePreviewStrip'
 
 // ── Static generation + ISR ───────────────────────────────────────────────────
 
@@ -61,6 +63,14 @@ export default async function AirportPage(
 
   const year = new Date().getFullYear()
   const sym = airport.currencySymbol
+
+  // Transfer partners for the airport zone — Kiwitaxi, Welcome Pickups, GetTransfer.
+  // Fetched server-side so the strip renders in the initial HTML (no client JS needed).
+  // isoCountry geo-ranks partners with regional strength (e.g. Welcome Pickups for GR/ES/IT).
+  const transferPartners = await getPartnersForZone('airport', {
+    categories: ['transfer'],
+    maxItems: 2,
+  })
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -172,6 +182,20 @@ export default async function AirportPage(
             Fares in {airport.currency}. Tolls, surcharges, and tips may add extra.
           </p>
         </div>
+
+        {/* Pre-arranged transfer strip — highest-intent affiliate placement.
+            Shown between the fare table and tips: reader has just seen the metered
+            fare range and is now deciding how to get to their destination. A fixed-price
+            transfer is the natural next consideration before they read the scam warnings. */}
+        {transferPartners.length > 0 && (
+          <AffiliatePreviewStrip
+            partners={transferPartners}
+            city={airport.city}
+            country={airport.country}
+            zone="airport"
+            label={`Want a fixed price? Book a pre-arranged transfer from ${airport.name}`}
+          />
+        )}
 
         {/* Practical tips */}
         <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-4 space-y-3">

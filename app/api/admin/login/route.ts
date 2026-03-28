@@ -7,6 +7,7 @@
 
 import { type NextRequest, NextResponse } from 'next/server'
 import { SignJWT } from 'jose'
+import { isRateLimited, getClientIp } from '@/lib/rate-limit'
 
 function adminKey(): Uint8Array {
   const s = process.env.ADMIN_SECRET
@@ -15,6 +16,15 @@ function adminKey(): Uint8Array {
 }
 
 export async function POST(req: NextRequest): Promise<NextResponse> {
+  // Rate limit: 5 attempts per IP per 15 minutes — brute-force defence
+  const ip = getClientIp(req)
+  if (await isRateLimited('admin_login', ip, 5, 900)) {
+    return NextResponse.json(
+      { error: 'Too many attempts. Please try again in 15 minutes.' },
+      { status: 429 }
+    )
+  }
+
   const { password } = await req.json()
   const adminSecret = process.env.ADMIN_SECRET
 

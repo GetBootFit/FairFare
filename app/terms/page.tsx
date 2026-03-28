@@ -5,10 +5,10 @@ import Image from 'next/image'
 export const metadata: Metadata = {
   title: 'Terms of Service',
   description: 'Hootling Terms of Service — the rules for using our taxi fare check and tipping guide service.',
-  alternates: { canonical: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'}/terms` },
+  alternates: { canonical: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com'}/terms` },
 }
 
-const EFFECTIVE = '23 March 2026'
+const EFFECTIVE = '28 March 2026'
 const CONTACT = 'legal@hootling.com'
 
 export default function TermsPage() {
@@ -53,7 +53,7 @@ export default function TermsPage() {
           <li>
             <strong className="text-zinc-300">Single Query</strong> — from{' '}
             <strong className="text-white">$2.99 USD</strong> (price varies by currency).
-            Grants a single-use access token valid for 30 minutes for one taxi fare check
+            Grants a single-use access token valid for 8 hours for one taxi fare check
             or one tipping guide.
           </li>
           <li>
@@ -62,8 +62,8 @@ export default function TermsPage() {
             for a single country for 24 hours.
           </li>
           <li>
-            <strong className="text-zinc-300">10-Query Bundle</strong> — from{' '}
-            <strong className="text-white">$19.99 USD</strong>. Grants 10 independent
+            <strong className="text-zinc-300">20-Query Bundle</strong> — from{' '}
+            <strong className="text-white">$19.99 USD</strong>. Grants 20 independent
             access tokens, each valid for 90 days.
           </li>
         </ul>
@@ -203,12 +203,34 @@ export default function TermsPage() {
         </p>
       </Section>
 
-      <Section title="11. Governing Law">
+      <Section title="11. Dispute Resolution">
+        <p>
+          If you have a concern or dispute about the Service, we encourage you to contact us
+          first so we can try to resolve it informally. Please email us at{' '}
+          <a href={`mailto:${CONTACT}`} className="text-purple-400 underline">{CONTACT}</a>{' '}
+          with a description of your issue and the outcome you are seeking. We will respond
+          within 10 business days.
+        </p>
+        <p className="mt-2">
+          If informal resolution is unsuccessful, disputes shall be subject to the governing
+          law and jurisdiction set out in Section 12. Nothing in this section limits any
+          statutory rights you may have as a consumer that cannot be waived by contract.
+        </p>
+        <p className="mt-2">
+          <strong className="text-zinc-300">Australian consumers</strong> may also contact the
+          Australian Competition and Consumer Commission (ACCC) or their state consumer
+          protection agency. <strong className="text-zinc-300">EEA/UK consumers</strong> may
+          refer unresolved disputes to their national alternative dispute resolution (ADR) body
+          or contact their local trading standards authority.
+        </p>
+      </Section>
+
+      <Section title="12. Governing Law">
         <p>
           These Terms shall be governed by and construed in accordance with the laws of{' '}
           <strong className="text-white">Victoria, Australia</strong>, without regard to conflict
-          of law principles. Any disputes shall be subject to the exclusive jurisdiction of the
-          courts of Victoria, Australia.
+          of law principles. Any disputes not resolved under Section 11 shall be subject to the
+          exclusive jurisdiction of the courts of Victoria, Australia.
         </p>
         <p className="mt-2">
           If you are an Australian consumer, you may also have rights and remedies under the
@@ -217,7 +239,7 @@ export default function TermsPage() {
         </p>
       </Section>
 
-      <Section title="12. Contact">
+      <Section title="13. Contact">
         <p>
           Questions about these Terms? Contact us at{' '}
           <a href={`mailto:${CONTACT}`} className="text-purple-400 underline">{CONTACT}</a>.

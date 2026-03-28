@@ -12,6 +12,12 @@ export interface BlogPost {
   countrySlug?: string  // link to /tipping/[country] if it exists
   featured?: boolean    // pin this post at the top of the blog index + home page
   content: BlogSection[]
+  /**
+   * Outbound links to authoritative external sources (tourism boards, transport
+   * authorities, Wikipedia etc.). Rendered at the bottom of every post as
+   * "Sources & Further Reading" — signals topical authority to Google.
+   */
+  references?: Array<{ label: string; url: string }>
 }
 
 export interface BlogSection {
@@ -2240,4 +2246,51 @@ export function getRecentPosts(n: number, excludeSlug?: string): BlogPost[] {
     .filter((p) => p.slug !== excludeSlug)
     .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
     .slice(0, n)
+}
+
+/**
+ * Returns N related posts for a given post, ranked by relevance:
+ *   city match  → 3 pts  (same city = most related)
+ *   country match → 2 pts
+ *   category match → 1 pt
+ * Ties broken by most-recent publishedAt.
+ * Used in the "Related Posts" section at the bottom of every article.
+ */
+export function getRelatedPosts(post: BlogPost, n = 3): BlogPost[] {
+  return ALL_POSTS
+    .filter((p) => p.slug !== post.slug)
+    .map((p) => {
+      let score = 0
+      if (post.city   && p.city    === post.city)    score += 3
+      if (post.country && p.country === post.country) score += 2
+      if (p.category === post.category)               score += 1
+      return { post: p, score }
+    })
+    .sort((a, b) =>
+      b.score - a.score ||
+      new Date(b.post.publishedAt).getTime() - new Date(a.post.publishedAt).getTime()
+    )
+    .slice(0, n)
+    .map((s) => s.post)
+}
+
+/**
+ * Counts words across all text content in a post (headings, body, list items,
+ * FAQ questions + answers, table labels + values).
+ *
+ * Used for:
+ *   1. `wordCount` field in BlogPosting JSON-LD (schema.org requirement)
+ *   2. Thin-content detection — posts below 600 words may struggle to rank
+ *      for competitive head terms. Aim for 800+ on city taxi-cost posts.
+ */
+export function getWordCount(post: BlogPost): number {
+  const texts: string[] = []
+  for (const s of post.content) {
+    if (s.body)    texts.push(s.body)
+    if (s.heading) texts.push(s.heading)
+    if (s.items)   texts.push(...s.items)
+    if (s.faqs)    s.faqs.forEach((f) => texts.push(f.q, f.a))
+    if (s.rows)    s.rows.forEach((r) => texts.push(r.label, r.value))
+  }
+  return texts.join(' ').trim().split(/\s+/).filter(Boolean).length
 }

@@ -109,10 +109,8 @@ export function TippingForm() {
     try {
       const res = await fetch('/api/tipping', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`,
-        },
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'same-origin',
         body: JSON.stringify({ country: c, locale }),
       })
       const data = await res.json()

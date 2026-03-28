@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef, useEffect } from 'react'
-import { useGoogleMaps } from '@/hooks/useGoogleMaps'
+import { useGoogleMaps, preloadGoogleMaps } from '@/hooks/useGoogleMaps'
 import clsx from 'clsx'
 
 interface Props {
@@ -59,6 +59,12 @@ export function PlaceInput({ id, label, placeholder, value, onChange, onSelect, 
     }, 300)
   }
 
+  // Trigger Maps load on the earliest possible user signal (pointer contact).
+  // onPointerDown fires before onFocus, giving ~100–200 ms head-start on the
+  // script fetch before the user reaches the keyboard. This is the LCP fix:
+  // Maps is not fetched until user intent is shown, so it never blocks initial paint.
+  const handlePointerDown = () => preloadGoogleMaps()
+
   return (
     <>
       {/* Render a visually-hidden label when no external <label htmlFor> is provided. */}
@@ -73,7 +79,15 @@ export function PlaceInput({ id, label, placeholder, value, onChange, onSelect, 
         type="text"
         value={value}
         placeholder={placeholder}
+        // Browser autocomplete is disabled because Google Places Autocomplete handles
+        // suggestions via a custom listbox. The role/aria-autocomplete attributes
+        // communicate this combobox pattern to screen readers (WCAG 4.1.2, 1.3.5).
         autoComplete="off"
+        role="combobox"
+        aria-autocomplete="list"
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        onPointerDown={handlePointerDown}
         onFocus={handleFocus}
         onChange={(e) => onChange(e.target.value)}
         aria-describedby={errorId}

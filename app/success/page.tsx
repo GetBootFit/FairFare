@@ -19,6 +19,9 @@ function SuccessInner() {
   const [feature, setFeature] = useState('taxi')
   const [email, setEmail] = useState('')
   const [emailStatus, setEmailStatus] = useState<'idle' | 'submitting' | 'done'>('idle')
+  const [referralSource, setReferralSource] = useState('')
+  const [bundleSessionId, setBundleSessionId] = useState<string | null>(null)
+  const [purchasedProduct, setPurchasedProduct] = useState<string>('single')
 
   useEffect(() => {
     const sessionId = params.get('session_id')
@@ -31,7 +34,13 @@ function SuccessInner() {
       return
     }
 
-    fetch(`/api/payment/verify?session_id=${sessionId}`)
+    // POST so the session_id travels in the body, not the URL query string.
+    // This keeps it out of server logs, browser history, and Referer headers.
+    fetch('/api/payment/verify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ session_id: sessionId }),
+    })
       .then(async (res) => {
         const data = await res.json()
         if (!res.ok) throw new Error(data.error ?? 'Verification failed')
@@ -67,7 +76,7 @@ function SuccessInner() {
               items: [{
                 item_id: data.product ?? 'single',
                 item_name:
-                  data.product === 'query_bundle'   ? 'Hootling 10-Query Bundle' :
+                  data.product === 'query_bundle'   ? 'Hootling 20-Query Bundle' :
                   data.product === 'country_pass'   ? `Hootling Country Pass — ${data.country ?? ''}` :
                   'Hootling Single Query',
                 item_category: data.feature ?? 'taxi',
@@ -92,6 +101,10 @@ function SuccessInner() {
 
         // Capture feature for personalised welcome email subject + content
         setFeature(data.feature ?? 'taxi')
+        setPurchasedProduct(data.product ?? 'single')
+        if (data.product === 'query_bundle' && data.bundleSessionId) {
+          setBundleSessionId(data.bundleSessionId)
+        }
         setStatus('email_capture')
       })
       .catch((err) => {
@@ -108,7 +121,12 @@ function SuccessInner() {
       await fetch('/api/email/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, feature }),
+        body: JSON.stringify({
+          email,
+          feature,
+          referralSource: referralSource || undefined,
+          bundleSessionId: bundleSessionId || undefined,
+        }),
       })
     } catch { /* ignore — non-critical */ }
     setEmailStatus('done')
@@ -169,8 +187,17 @@ function SuccessInner() {
 
         <div className="w-full border border-zinc-800 rounded-2xl p-5 bg-zinc-900/60 text-left space-y-4">
           <div>
-            <p className="text-white text-sm font-medium">Get travel tips by email</p>
-            <p className="text-zinc-500 text-xs mt-0.5">Scam alerts, tipping guides, and local know-how. No spam.</p>
+            {purchasedProduct === 'query_bundle' ? (
+              <>
+                <p className="text-white text-sm font-medium">Get notified when you&apos;re running low</p>
+                <p className="text-zinc-500 text-xs mt-0.5">We&apos;ll email you when you have 2 queries left so you never run out mid-trip.</p>
+              </>
+            ) : (
+              <>
+                <p className="text-white text-sm font-medium">Get travel tips by email</p>
+                <p className="text-zinc-500 text-xs mt-0.5">Scam alerts, tipping guides, and local know-how. No spam.</p>
+              </>
+            )}
           </div>
           <form onSubmit={handleEmailSubmit} className="space-y-3">
             <input
@@ -180,6 +207,40 @@ function SuccessInner() {
               onChange={(e) => setEmail(e.target.value)}
               className="w-full rounded-xl bg-zinc-800 border border-zinc-700 px-4 py-3 text-white placeholder-zinc-500 text-sm focus:border-zinc-500 transition-colors"
             />
+            {/* Attribution survey — one question, no obligation. Data used to understand
+                which channels send paying customers (dark social invisible to GA4). */}
+            <div className="space-y-1.5">
+              <p className="text-xs text-zinc-500">How did you find Hootling? <span className="text-zinc-600">(optional)</span></p>
+              <div className="grid grid-cols-2 gap-1.5">
+                {[
+                  { value: 'google', label: 'Google search' },
+                  { value: 'reddit', label: 'Reddit' },
+                  { value: 'friend', label: 'Friend / colleague' },
+                  { value: 'social', label: 'Social media' },
+                  { value: 'blog', label: 'Blog / article' },
+                  { value: 'other', label: 'Other' },
+                ].map(({ value, label }) => (
+                  <button
+                    key={value}
+                    type="button"
+                    onClick={() => {
+                      const next = referralSource === value ? '' : value
+                      setReferralSource(next)
+                      // Fire immediately — don't wait for email submit. Captures
+                      // attribution even for users who skip the email form.
+                      if (next) track('referral_source', { source: next, feature })
+                    }}
+                    className={`text-left text-xs px-3 py-2 rounded-lg border transition-colors ${
+                      referralSource === value
+                        ? 'border-purple-500 bg-purple-900/30 text-purple-300'
+                        : 'border-zinc-700 bg-zinc-800/50 text-zinc-400 hover:border-zinc-600'
+                    }`}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+            </div>
             <button
               type="submit"
               disabled={!email.trim() || emailStatus !== 'idle'}

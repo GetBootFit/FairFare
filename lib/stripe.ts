@@ -35,12 +35,12 @@ export async function createCheckoutSession(params: CheckoutParams): Promise<str
       description: 'All taxi fare checks + tipping guide for this country · 24 hours',
     },
     query_bundle_taxi: {
-      name: 'Hootling — 10-Query Bundle',
-      description: '10 taxi + tipping queries · stored on your device · 90 days',
+      name: 'Hootling — 20-Query Bundle',
+      description: '20 taxi + tipping queries · stored on your device · 90 days',
     },
     query_bundle_tipping: {
-      name: 'Hootling — 10-Query Bundle',
-      description: '10 taxi + tipping queries · stored on your device · 90 days',
+      name: 'Hootling — 20-Query Bundle',
+      description: '20 taxi + tipping queries · stored on your device · 90 days',
     },
   }
 
