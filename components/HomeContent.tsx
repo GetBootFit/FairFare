@@ -155,8 +155,9 @@ export function HomeContent() {
         />
       </div>
 
-      {/* Example result teaser — evidences the value proposition for cold visitors */}
-      <div className="mt-4 bg-zinc-900/60 border border-zinc-800 rounded-2xl p-4">
+      {/* Example result teaser — evidences the value proposition for cold visitors.
+          The whole card is clickable so the tap target is as large as possible. */}
+      <Link href="/example" className="mt-4 block bg-zinc-900/60 border border-zinc-800 hover:border-zinc-700 rounded-2xl p-4 transition-colors group">
         <p className="text-[10px] text-zinc-600 uppercase tracking-wider mb-2.5 font-medium">{t('home_example_result')}</p>
         <div className="flex items-start justify-between gap-3">
           <div className="space-y-0.5">
@@ -174,17 +175,23 @@ export function HomeContent() {
             <p className="text-[10px] text-zinc-600">{t('home_meter_refusal')}</p>
           </div>
         </div>
-        <p className="text-[10px] text-zinc-700 mt-2.5 pt-2.5 border-t border-zinc-800">{t('home_example_source')}</p>
-      </div>
+        <div className="flex items-center justify-between mt-2.5 pt-2.5 border-t border-zinc-800">
+          <p className="text-[10px] text-zinc-700">{t('home_example_source')}</p>
+          <span className="text-[10px] text-zinc-600 group-hover:text-zinc-400 transition-colors">
+            See full result →
+          </span>
+        </div>
+      </Link>
 
-      {/* Sample result CTA — low-friction entry point */}
+      {/* Sample result CTA — upgraded visual weight to drive example page clicks */}
       <div className="mt-3">
         <Link
           href="/example"
-          className="flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-zinc-800 bg-zinc-900/60 text-sm text-zinc-300 hover:text-white hover:border-zinc-600 hover:bg-zinc-800/80 transition-all duration-200"
+          className="flex items-center justify-center gap-2 w-full py-3 rounded-xl border-l-2 border border-purple-700 border-l-purple-500 bg-zinc-900 text-sm text-zinc-200 hover:text-white hover:bg-zinc-800 transition-all duration-200 group"
         >
           <Sparkles size={14} className="text-purple-400" />
-          {t('home_sample_btn')}
+          See exactly what you get
+          <span className="text-purple-400 group-hover:translate-x-0.5 transition-transform inline-block">→</span>
         </Link>
       </div>
 

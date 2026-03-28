@@ -5,10 +5,49 @@ import { jwtVerify } from 'jose'
  * Edge proxy — runs on every request before it reaches the page/API.
  *
  * Responsibilities:
- * 1. Block /dev in production (dev payment-bypass page must never be public)
- * 2. Enforce HTTP Basic Auth on /admin/* routes
- * 3. IP-based rate limiting on high-value API endpoints
+ * 1. Content Security Policy (nonce-based) — applied to all HTML responses
+ * 2. Block /dev in production (dev payment-bypass page must never be public)
+ * 3. Enforce cookie-based auth on /admin/* routes
+ * 4. IP-based rate limiting on high-value API endpoints
  */
+
+// ── CSP nonce ─────────────────────────────────────────────────────────────────
+
+/**
+ * Static asset extensions that never serve HTML — CSP header not needed.
+ * Kept as a set for O(1) lookup in the hot path.
+ */
+const STATIC_EXT = new Set([
+  'svg', 'png', 'jpg', 'jpeg', 'gif', 'webp', 'ico',
+  'woff', 'woff2', 'ttf', 'otf', 'css', 'map',
+])
+
+function isStaticAsset(pathname: string): boolean {
+  if (pathname.startsWith('/_next/static') || pathname.startsWith('/_next/image')) return true
+  const ext = pathname.split('.').pop()?.toLowerCase()
+  return ext ? STATIC_EXT.has(ext) : false
+}
+
+function buildCsp(nonce: string): string {
+  // React dev mode requires 'unsafe-eval' for hot-module replacement; omit in production
+  const devEval = process.env.NODE_ENV === 'development' ? " 'unsafe-eval'" : ''
+  return [
+    "default-src 'self'",
+    // nonce-{nonce}    — Next.js hydration + our inline scripts
+    // 'strict-dynamic' — scripts loaded by nonced scripts (Maps, GA, Travelpayouts)
+    // host list        — CSP2 fallback for browsers without strict-dynamic
+    `script-src 'nonce-${nonce}' 'strict-dynamic'${devEval} https://maps.googleapis.com https://maps.gstatic.com https://va.vercel-scripts.com https://www.googletagmanager.com https://tpembars.com`,
+    // unsafe-inline retained for Tailwind inline styles; hashing is impractical
+    "style-src 'self' 'unsafe-inline'",
+    "img-src 'self' data: blob: https://maps.googleapis.com https://maps.gstatic.com https://www.google-analytics.com",
+    "font-src 'self'",
+    "connect-src 'self' https://maps.googleapis.com https://maps.gstatic.com https://va.vercel-scripts.com https://vitals.vercel-insights.com https://www.google-analytics.com https://analytics.google.com https://*.sentry.io https://*.ingest.sentry.io https://tpembars.com",
+    "frame-src 'none'",
+    "object-src 'none'",
+    "base-uri 'self'",
+    "upgrade-insecure-requests",
+  ].join('; ')
+}
 
 // ── Rate limiting (edge-compatible via Vercel KV REST API) ────────────────────
 
@@ -135,17 +174,30 @@ export async function proxy(req: NextRequest) {
     }
   }
 
-  return NextResponse.next()
+  // ── 4. CSP nonce — injected on HTML responses only ────────────────────────
+  // Static assets skip nonce generation (no HTML, no script execution context).
+  if (isStaticAsset(pathname)) {
+    return NextResponse.next()
+  }
+
+  const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
+
+  // Forward nonce to Server Components via request header
+  const requestHeaders = new Headers(req.headers)
+  requestHeaders.set('x-nonce', nonce)
+
+  const res = NextResponse.next({ request: { headers: requestHeaders } })
+  res.headers.set('Content-Security-Policy', buildCsp(nonce))
+  return res
 }
 
 export const config = {
   matcher: [
-    '/dev', '/dev/:path*',
-    '/admin', '/admin/:path*',
-    '/api/admin', '/api/admin/:path*',
-    '/api/payment/create-session',
-    '/api/taxi/result',
-    '/api/tipping',
-    '/api/translate',
+    /*
+     * Apply to all routes EXCEPT Next.js internals and static file serving.
+     * The isStaticAsset() check inside the handler is a belt-and-braces guard
+     * for any extensions the regex doesn't catch.
+     */
+    '/((?!_next/static|_next/image|favicon\\.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|woff2?|ttf|otf|css|map)).*)',
   ],
 }

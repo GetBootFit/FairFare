@@ -1089,7 +1089,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       'Barcelona taxi meter rates, airport fares from El Prat, zone tariffs, and when Uber is cheaper — updated for 2026.',
     publishedAt: '2025-09-24',
-    readingMinutes: 5,
+    readingMinutes: 7,
     category: 'taxi',
     city: 'Barcelona',
     country: 'Spain',
@@ -1144,11 +1144,43 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         type: 'h2',
+        heading: 'How to Find and Book a Taxi in Barcelona',
+      },
+      {
+        type: 'p',
+        body: 'Official Barcelona taxis are black and yellow — one of the most recognisable colour schemes in Europe. You can hail them on the street when the green "Lliure / Libre" sign is lit. There are also fixed taxi ranks outside major hotels, at Las Ramblas, Plaça de Catalunya, and the main train stations (Sants and Passeig de Gràcia).',
+      },
+      {
+        type: 'p',
+        body: 'To pre-book, use the FREE NOW app (formerly MyTaxi) which dispatches official metered taxis — the fare is metered, not fixed, but you get an estimated total before confirming. Phone dispatch (Taxi Class, Radio Taxi 033) is also available for early flights or luggage-heavy trips.',
+      },
+      {
+        type: 'h2',
+        heading: 'When T-2 (Night/Weekend) Rates Apply',
+      },
+      {
+        type: 'p',
+        body: 'Barcelona\'s T-2 tariff applies Monday–Friday 21:00–08:00, all day Saturday, all day Sunday, and on public holidays. The difference is meaningful: a €28 daytime airport fare becomes approximately €32–36 under T-2. The meter display will show "T-2" when the higher tariff is running. If in doubt, ask the driver before departing — they are legally required to tell you.',
+      },
+      {
+        type: 'p',
+        body: 'During major events (MWC Mobile World Congress, Primavera Sound, Barcelona FC home games), demand spikes sharply. Uber and Bolt surge prices at these moments can exceed the metered taxi rate, making the regulated taxi the more predictable choice. Book your ride home from the Camp Nou or Palau Sant Jordi at least 20 minutes ahead.',
+      },
+      {
+        type: 'h2',
+        heading: 'Paying for Your Taxi in Barcelona',
+      },
+      {
+        type: 'p',
+        body: 'All licensed Barcelona taxis are required to accept credit and debit cards. A surcharge of €0.30 applies to card payments on some older terminals, but many newer vehicles absorb it. Contactless payment (Apple Pay, Google Pay) is widely accepted. If you prefer cash, euros are the only accepted currency — no drivers accept US dollars or GBP.',
+      },
+      {
+        type: 'h2',
         heading: 'Is Tipping Expected in Barcelona Taxis?',
       },
       {
         type: 'p',
-        body: 'Tipping is not mandatory in Spain. Rounding up to the nearest euro or leaving €1–2 on longer trips is common and appreciated. For a €28 airport fare, rounding to €30 is perfectly normal.',
+        body: 'Tipping is not mandatory in Spain. Rounding up to the nearest euro or leaving €1–2 on longer trips is common and appreciated. For a €28 airport fare, rounding to €30 is perfectly normal. Do not feel obligated to tip if the driver did not use the meter or added unexpected charges.',
       },
       {
         type: 'faq',
@@ -1156,6 +1188,7 @@ export const BLOG_POSTS: BlogPost[] = [
           { q: 'How much is a taxi from Barcelona airport to the city?', a: 'Expect €25–42 depending on traffic and destination, plus a €4.30 airport supplement. Night and weekend rates (T-2) apply after 21:00.' },
           { q: 'Are Barcelona taxis metered?', a: 'Yes — all official taxis use AMB-regulated meters. If the meter is not running, ask the driver to start it.' },
           { q: 'Is Uber available in Barcelona?', a: 'Yes, Uber operates legally in Barcelona as a licensed VTC service. Bolt is also available and often slightly cheaper.' },
+          { q: 'What is the cheapest way from Barcelona airport to the city?', a: 'The AEROBUS coach is €6.75 and takes 35 minutes to Plaça Catalunya — roughly five times cheaper than a taxi for a solo traveller.' },
         ],
       },
     ],
@@ -1168,7 +1201,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       'Sydney taxi rates, airport fares from Kingsford Smith, booking fees, and Uber vs taxi comparison for 2026.',
     publishedAt: '2025-09-13',
-    readingMinutes: 5,
+    readingMinutes: 7,
     category: 'taxi',
     city: 'Sydney',
     country: 'Australia',
@@ -1221,11 +1254,52 @@ export const BLOG_POSTS: BlogPost[] = [
         body: 'The Airport Link train takes 13 minutes to Central Station for A$21.60 — about a third the price of a taxi. Combine with an Opal card for free transfer to buses and ferries.',
       },
       {
+        type: 'h2',
+        heading: 'Finding the Taxi Rank at Sydney Airport',
+      },
+      {
+        type: 'p',
+        body: 'At the International Terminal (T1), the taxi rank is on the ground floor of the arrivals hall — follow the ground transport signs past the customs exit. At the Domestic Terminals (T2/T3), taxis queue on the arrivals kerbside. All licensed Sydney taxis are yellow or white and display a roof light — accept rides only from these marked vehicles.',
+      },
+      {
+        type: 'p',
+        body: 'Rideshare (Uber, DiDi, Ola) pickups require walking to the dedicated rideshare zones, signposted from arrivals. The wait can be 5–15 minutes during peak periods. Rideshares pick up from designated bays, not the main kerbside — following app directions exactly saves time and avoids confusion.',
+      },
+      {
+        type: 'h2',
+        heading: 'Sydney Toll Roads: What to Expect',
+      },
+      {
+        type: 'p',
+        body: 'Sydney has one of the most extensive toll road networks in Australia, and passengers pay tolls on top of the metered fare. The key tolls for airport trips are the Eastern Distributor tunnel (A$8.65 inbound to city, free outbound) and the M5 East motorway to the southern suburbs (A$8.46 each way). The driver should take the most direct route — if you\'re heading somewhere other than the CBD, ask upfront which route they plan to use.',
+      },
+      {
+        type: 'h2',
+        heading: 'Taxi vs Uber vs Train: Which Makes Sense?',
+      },
+      {
+        type: 'p',
+        body: 'For solo travellers to the CBD, the Airport Link train (A$21.60) is unambiguously the best value — it\'s faster than a taxi in traffic and doesn\'t add toll costs. For groups of 3–4, a taxi or Uber splits to A$15–20 per person and door-to-door service offsets the price difference, especially with luggage. For outer suburbs not served by direct rail (Bondi, Manly, the Hills District), taxi or Uber is the practical choice.',
+      },
+      {
+        type: 'p',
+        body: 'Uber and DiDi are 10–20% cheaper than metered taxis on standard routes and both offer upfront pricing. However, during surge periods (Friday evenings, public holidays, New Year\'s Eve) app prices can spike to twice the taxi rate. Having the official taxi rank as a backup means you\'re never stranded.',
+      },
+      {
+        type: 'h2',
+        heading: 'Paying for Your Sydney Taxi',
+      },
+      {
+        type: 'p',
+        body: 'All licensed Sydney taxis accept EFTPOS (debit/credit card) and Visa/Mastercard contactless. A card payment surcharge of 5–10% applies — it\'s visible on the meter display before you tap. Cash is also accepted. If you\'re arriving without Australian dollars, the airport ATMs (pre-customs) offer reasonable exchange rates for small amounts.',
+      },
+      {
         type: 'faq',
         faqs: [
-          { q: 'How much is a taxi from Sydney airport to the CBD?', a: 'Expect A$45–65 including the A$4.40 airport booking fee. The journey takes 20–45 minutes depending on traffic.' },
-          { q: 'Are there toll roads from Sydney airport?', a: 'Yes — the Eastern Distributor tunnel adds A$8.65 (inbound) to most city routes. This is paid by the passenger on top of the meter.' },
+          { q: 'How much is a taxi from Sydney airport to the CBD?', a: 'Expect A$45–65 including the A$4.40 airport booking fee and the Eastern Distributor tunnel toll (A$8.65). The journey takes 20–45 minutes depending on traffic.' },
+          { q: 'Are there toll roads from Sydney airport?', a: 'Yes — the Eastern Distributor tunnel adds A$8.65 (inbound) to most city routes. This is paid by the passenger on top of the meter. M5 East adds A$8.46 for southern suburbs.' },
           { q: 'Is tipping expected in Sydney taxis?', a: 'Tipping is not expected in Australia. Rounding up to the nearest dollar is common but entirely optional.' },
+          { q: 'Is Uber cheaper than taxis in Sydney?', a: 'Usually 10–20% cheaper on standard routes. During surge pricing (events, public holidays) metered taxis can be better value. The Airport Link train is cheapest for solo travellers to the CBD.' },
         ],
       },
     ],
@@ -1238,7 +1312,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       'Amsterdam taxi meter rates, Schiphol airport fares, and why booking a pre-agreed taxi saves money — updated for 2026.',
     publishedAt: '2025-09-04',
-    readingMinutes: 5,
+    readingMinutes: 7,
     category: 'taxi',
     city: 'Amsterdam',
     country: 'Netherlands',
@@ -1293,11 +1367,44 @@ export const BLOG_POSTS: BlogPost[] = [
         body: 'Amsterdam\'s canal ring is compact — most city-centre attractions are walkable or a short tram ride apart. A GVB day pass (€9.50) covers all trams, buses and metro and is almost always better value than a taxi for daytime sightseeing.',
       },
       {
+        type: 'h2',
+        heading: 'Uber and Bolt in Amsterdam',
+      },
+      {
+        type: 'p',
+        body: 'Both Uber and Bolt operate legally in Amsterdam as licensed VTC services. Uber is generally 15–25% cheaper than a licensed TCA taxi for city routes, with upfront pricing — useful if you want certainty before you get in. Bolt often undercuts Uber slightly, particularly on shorter journeys. Neither platform uses the TCA tariff cap, but competition between them keeps prices competitive with metered taxis.',
+      },
+      {
+        type: 'p',
+        body: 'At Schiphol, Uber and Bolt have dedicated pickup zones separate from the official taxi rank. Follow in-app directions to the designated area — it\'s a short walk from the arrivals hall. During peak arrivals (morning rush, summer school holidays), wait times can reach 10–15 minutes. The train remains the quickest option if your destination is on the rail network.',
+      },
+      {
+        type: 'h2',
+        heading: 'When Taxis Are Worth It in Amsterdam',
+      },
+      {
+        type: 'p',
+        body: 'Amsterdam\'s tram network covers most tourist areas, making taxis unnecessary for daytime sightseeing. The cases where taxis genuinely make sense are: late-night journeys after trams stop (midnight weekdays, later weekends), trips with heavy luggage to or from the canal ring where parking is difficult, and groups of 3–4 splitting the cost of a direct airport run.',
+      },
+      {
+        type: 'p',
+        body: 'One scenario where a taxi saves money: Schiphol to a hotel in the De Pijp or Jordaan neighbourhood with 3–4 bags. The train takes you to Centraal Station but then requires a tram or taxi anyway. Door-to-door for €47 split between two people (€23.50 each) competes favourably with train + tram + luggage effort at €5.50 per person.',
+      },
+      {
+        type: 'h2',
+        heading: 'Paying for Your Taxi in Amsterdam',
+      },
+      {
+        type: 'p',
+        body: 'All TCA-licensed taxis are required to accept pin (debit card), Visa, and Mastercard. Contactless is widely supported. Cash (euros) is accepted but not always preferred by drivers. Schiphol pre-booked taxis (through the Schiphol website or Schiphol Travel Taxi) provide a fixed upfront price via card — useful if you want no surprises at drop-off.',
+      },
+      {
         type: 'faq',
         faqs: [
-          { q: 'How much is a taxi from Schiphol to Amsterdam centre?', a: 'The capped rate is approximately €47. Expect €40–50 in practice. The Intercity train takes 17 minutes for €5.50.' },
+          { q: 'How much is a taxi from Schiphol to Amsterdam centre?', a: 'The municipality caps the fare at approximately €47 for Schiphol to Amsterdam city centre. Expect €40–50 in practice. The Intercity train takes 17 minutes for €5.50.' },
           { q: 'Are Amsterdam taxis metered?', a: 'Yes — all licensed TCA taxis use regulated meters. If the meter is not running, ask the driver to start it or leave the vehicle.' },
           { q: 'Is tipping expected in Amsterdam taxis?', a: 'Rounding up to the nearest euro or adding 5–10% is common courtesy. It is not mandatory.' },
+          { q: 'Is Uber safe to use in Amsterdam?', a: 'Yes — Uber operates legally in the Netherlands as a licensed VTC service. All drivers are background-checked. Bolt is an equally safe alternative that is often slightly cheaper.' },
         ],
       },
     ],

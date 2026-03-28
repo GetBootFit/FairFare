@@ -302,9 +302,8 @@ export function TaxiForm() {
         {showUpgradeModal && (
           <PaymentModal
             feature="taxi"
-            initialProduct="country_pass"
             country={result.country}
-            onClose={() => setShowUpgradeModal(false)}
+            onCancel={() => setShowUpgradeModal(false)}
           />
         )}
       </>

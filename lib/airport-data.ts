@@ -22,6 +22,7 @@ export interface AirportData {
   minimumFare: number
   taxiColor?: string     // e.g. "yellow cab", "red metered taxi"
   approxCityFare: string // "~THB 250–350 to city centre" — human summary
+  blogSlug?: string      // matching /blog/[slug] if a city fare guide exists
   routes: AirportRoute[] // specific routes with fares
   tips: string[]         // practical tips for this airport
   scams: string[]        // airport-specific scam warnings
@@ -41,6 +42,7 @@ export const AIRPORT_DATA: Record<string, AirportData> = {
     minimumFare: 35,
     taxiColor: 'metered taxi (any colour)',
     approxCityFare: '฿250–450 to central Bangkok',
+    blogSlug: 'how-much-does-a-taxi-cost-in-bangkok',
     routes: [
       { label: 'Sukhumvit / Asok (city centre)', km: 30, note: 'expressway toll ~฿50–75 extra' },
       { label: 'Silom / Bang Rak', km: 33, note: 'expressway toll ~฿75 extra' },
@@ -80,6 +82,7 @@ export const AIRPORT_DATA: Record<string, AirportData> = {
     minimumFare: 12,
     taxiColor: 'cream/beige Dubai Taxi Corporation',
     approxCityFare: 'AED 50–80 to Downtown Dubai',
+    blogSlug: 'how-much-does-a-taxi-cost-in-dubai',
     routes: [
       { label: 'Downtown Dubai / Burj Khalifa', km: 10 },
       { label: 'Dubai Marina / JBR', km: 35 },
@@ -119,6 +122,7 @@ export const AIRPORT_DATA: Record<string, AirportData> = {
     minimumFare: 3.90,
     taxiColor: 'multiple colours (regulated)',
     approxCityFare: 'S$20–35 to city centre',
+    blogSlug: 'how-much-does-a-taxi-cost-in-singapore',
     routes: [
       { label: 'Orchard Road / city centre', km: 20, note: '+S$5–8 airport surcharge + ERP tolls' },
       { label: 'Marina Bay Sands', km: 18, note: '+S$5–8 airport surcharge + ERP tolls' },
@@ -156,6 +160,7 @@ export const AIRPORT_DATA: Record<string, AirportData> = {
     minimumFare: 3.80,
     taxiColor: 'black London cab (hackney carriage)',
     approxCityFare: '£50–80 to central London',
+    blogSlug: 'how-much-does-a-taxi-cost-in-london',
     routes: [
       { label: 'Central London (Zone 1)', km: 25, note: 'depends heavily on traffic, can exceed £100 in rush hour' },
       { label: 'Paddington / Bayswater', km: 23 },
@@ -195,6 +200,7 @@ export const AIRPORT_DATA: Record<string, AirportData> = {
     minimumFare: 70,
     taxiColor: 'yellow cab',
     approxCityFare: '$70–110 to Manhattan (flat rate + tolls + tip)',
+    blogSlug: 'how-much-does-a-taxi-cost-in-new-york',
     routes: [
       { label: 'Manhattan (all neighbourhoods)', km: 25, note: 'FLAT RATE $70 + tolls ($8.50–19) + tip' },
       { label: 'Brooklyn (not Manhattan flat rate)', km: 18, note: 'metered fare ~$45–60 + tip' },
@@ -235,6 +241,7 @@ export const AIRPORT_DATA: Record<string, AirportData> = {
     minimumFare: 7.30,
     taxiColor: 'white with "TAXI PARISIEN" light',
     approxCityFare: '€55–75 to central Paris (fixed fare zones)',
+    blogSlug: 'how-much-does-a-taxi-cost-in-paris',
     routes: [
       { label: 'Right Bank (1st–8th, 10th–12th arrondissements)', km: 30, note: 'FIXED RATE €56' },
       { label: 'Left Bank (5th–7th, 13th–15th arrondissements)', km: 32, note: 'FIXED RATE €65' },
@@ -275,6 +282,7 @@ export const AIRPORT_DATA: Record<string, AirportData> = {
     minimumFare: 3.19,
     taxiColor: 'black or silver (Schiphol Taxi)',
     approxCityFare: '€40–55 to Amsterdam city centre',
+    blogSlug: 'how-much-does-a-taxi-cost-in-amsterdam',
     routes: [
       { label: 'Amsterdam city centre (Centrum)', km: 17, note: 'Schiphol Taxi fixed rate ~€47' },
       { label: 'Amsterdam Central Station area', km: 18 },
@@ -313,6 +321,7 @@ export const AIRPORT_DATA: Record<string, AirportData> = {
     minimumFare: 500,
     taxiColor: 'black or dark blue (multiple licensed companies)',
     approxCityFare: '¥4,000–7,000 to central Tokyo',
+    blogSlug: 'how-much-does-a-taxi-cost-in-tokyo',
     routes: [
       { label: 'Shinjuku / Shibuya', km: 20, note: 'highway toll extra ~¥500–750' },
       { label: 'Ginza / Tokyo Station', km: 18, note: 'highway toll extra ~¥500' },
@@ -351,6 +360,7 @@ export const AIRPORT_DATA: Record<string, AirportData> = {
     minimumFare: 4.20,
     taxiColor: 'yellow (Silver Service black available)',
     approxCityFare: 'A$45–65 to Sydney CBD',
+    blogSlug: 'how-much-does-a-taxi-cost-in-sydney',
     routes: [
       { label: 'Sydney CBD / Circular Quay', km: 10, note: 'airport access fee A$4.70 + possible tolls' },
       { label: 'Bondi Beach', km: 12, note: 'airport access fee + tunnel toll ~A$8 extra' },
@@ -540,6 +550,7 @@ export const AIRPORT_DATA: Record<string, AirportData> = {
     minimumFare: 4.50,
     taxiColor: 'white (official Rome taxi)',
     approxCityFare: '€50 fixed rate to historic city centre',
+    blogSlug: 'how-much-does-a-taxi-cost-in-rome',
     routes: [
       { label: 'Historic centre (within Aurelian Walls)', km: 32, note: 'FIXED RATE €50' },
       { label: 'Vatican / Prati', km: 30, note: 'FIXED RATE €50' },
@@ -579,6 +590,7 @@ export const AIRPORT_DATA: Record<string, AirportData> = {
     minimumFare: 25,
     taxiColor: 'black & yellow (Kaali-Peeli), AC silver/white (Cool Cab)',
     approxCityFare: '₹400–800 to south Mumbai',
+    blogSlug: 'how-much-does-a-taxi-cost-in-mumbai',
     routes: [
       { label: 'Bandra / Andheri (west)', km: 12, note: 'short trip; Ola/Uber often cheaper' },
       { label: 'Juhu Beach area', km: 8 },
@@ -854,6 +866,47 @@ export function matchAirport(query: string): AirportData | null {
     }
   }
   return null
+}
+
+/**
+ * Related airports by code — 3 suggestions per airport, organised by region proximity.
+ * Shown at the bottom of each airport page to improve crawlability and time-on-site.
+ */
+const RELATED_AIRPORTS: Record<string, string[]> = {
+  // Asia-Pacific
+  BKK: ['SIN', 'HND', 'DXB'],
+  SIN: ['BKK', 'HND', 'DXB'],
+  HND: ['SIN', 'BKK', 'BOM'],
+  SYD: ['BKK', 'SIN', 'LHR'],
+  MEL: ['SYD', 'BKK', 'SIN'],
+  BOM: ['DEL', 'DXB', 'SIN'],
+  DEL: ['BOM', 'DXB', 'SIN'],
+  NRT: ['HND', 'SIN', 'BKK'],
+  ICN: ['HND', 'SIN', 'BKK'],
+  PEK: ['HND', 'SIN', 'DXB'],
+  // Middle East
+  DXB: ['SIN', 'LHR', 'BKK'],
+  // Europe
+  LHR: ['CDG', 'AMS', 'FRA'],
+  CDG: ['LHR', 'AMS', 'MAD'],
+  AMS: ['LHR', 'CDG', 'FRA'],
+  FRA: ['LHR', 'CDG', 'AMS'],
+  MAD: ['CDG', 'LHR', 'FCO'],
+  FCO: ['MAD', 'CDG', 'LHR'],
+  // Americas
+  JFK: ['LAX', 'ORD', 'LHR'],
+  LAX: ['JFK', 'ORD', 'SIN'],
+  ORD: ['JFK', 'LAX', 'LHR'],
+  GRU: ['JFK', 'LHR', 'MAD'],
+}
+
+/**
+ * Returns up to 3 related airports for a given IATA code.
+ * Only returns airports that exist in AIRPORT_DATA (safe to link to).
+ */
+export function getRelatedAirports(code: string): AirportData[] {
+  const codes = RELATED_AIRPORTS[code] ?? []
+  return codes.map((c) => AIRPORT_DATA[c]).filter((a): a is AirportData => !!a)
 }
 
 /**

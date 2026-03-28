@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ChevronRight, Car, MapPin, AlertTriangle, Info, ArrowRight } from 'lucide-react'
-import { getAirportData, getAllAirportCodes, estimateAirportFare } from '@/lib/airport-data'
+import { getAirportData, getAllAirportCodes, estimateAirportFare, getRelatedAirports } from '@/lib/airport-data'
 import { getPartnersForZone } from '@/lib/affiliates'
 import { AffiliatePreviewStrip } from '@/components/AffiliatePreviewStrip'
 
@@ -25,19 +25,20 @@ export async function generateMetadata(
   if (!airport) return { title: 'Airport Not Found' }
 
   const year = new Date().getFullYear()
+  const APP_URL = (process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com').replace(/\/$/, '')
 
   return {
     title: `${airport.code} Taxi Fares — ${airport.name} to ${airport.city} (${year})`,
     description: `Official taxi fares from ${airport.name} to ${airport.city}. ${airport.approxCityFare}. Scam warnings, alternatives and practical tips for ${year}.`,
-    alternates: { canonical: `https://www.hootling.com/taxi/airport/${code}` },
+    alternates: { canonical: `${APP_URL}/taxi/airport/${code}` },
     openGraph: {
       title: `${airport.code} Taxi Fares — ${airport.name} (${year})`,
       description: `${airport.approxCityFare} · Avoid scams · Compare alternatives.`,
-      url: `https://hootling.com/taxi/airport/${code}`,
+      url: `${APP_URL}/taxi/airport/${code}`,
       type: 'website',
       images: [
         {
-          url: `https://hootling.com/api/og/city?city=${encodeURIComponent(airport.city.toLowerCase())}`,
+          url: `${APP_URL}/api/og/city?city=${encodeURIComponent(airport.city.toLowerCase())}`,
           width: 1200,
           height: 630,
           alt: `Taxi fares from ${airport.name} — Hootling`,
@@ -63,6 +64,8 @@ export default async function AirportPage(
 
   const year = new Date().getFullYear()
   const sym = airport.currencySymbol
+  const APP_URL = (process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com').replace(/\/$/, '')
+  const relatedAirports = getRelatedAirports(code)
 
   // Transfer partners for the airport zone — Kiwitaxi, Welcome Pickups, GetTransfer.
   // Fetched server-side so the strip renders in the initial HTML (no client JS needed).
@@ -71,6 +74,16 @@ export default async function AirportPage(
     categories: ['transfer'],
     maxItems: 2,
   })
+
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: APP_URL },
+      { '@type': 'ListItem', position: 2, name: 'Taxi Fare Check', item: `${APP_URL}/taxi` },
+      { '@type': 'ListItem', position: 3, name: `${airport.name} Taxi Fares`, item: `${APP_URL}/taxi/airport/${code}` },
+    ],
+  }
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -107,6 +120,10 @@ export default async function AirportPage(
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -242,6 +259,22 @@ export default async function AirportPage(
           </ul>
         </div>
 
+        {/* Blog cross-link — bidirectional link graph: airport page → city fare guide */}
+        {airport.blogSlug && (
+          <Link
+            href={`/blog/${airport.blogSlug}`}
+            className="flex items-center justify-between gap-3 bg-zinc-900 border border-zinc-800 hover:border-zinc-700 rounded-2xl px-4 py-3 transition-colors group"
+          >
+            <div className="min-w-0">
+              <p className="text-xs text-zinc-500 mb-0.5">Full guide</p>
+              <p className="text-sm text-zinc-300 group-hover:text-white transition-colors leading-snug">
+                Read our complete {airport.city} taxi fare guide →
+              </p>
+            </div>
+            <ChevronRight size={14} className="text-zinc-600 group-hover:text-zinc-400 shrink-0 transition-colors" />
+          </Link>
+        )}
+
         {/* CTA */}
         <div className="bg-gradient-to-br from-purple-900/30 to-zinc-900 border border-purple-800/30 rounded-2xl p-5 text-center space-y-3">
           <p className="text-white font-semibold">Check your exact route fare</p>
@@ -255,6 +288,25 @@ export default async function AirportPage(
             Check Route Fare <ArrowRight size={15} />
           </Link>
         </div>
+
+        {/* Related airports — improves crawlability and keeps users in the airport ecosystem */}
+        {relatedAirports.length > 0 && (
+          <div className="space-y-2">
+            <p className="text-[10px] text-zinc-600 uppercase tracking-widest">More airport guides</p>
+            <div className="grid grid-cols-3 gap-2">
+              {relatedAirports.map((ap) => (
+                <Link
+                  key={ap.code}
+                  href={`/taxi/airport/${ap.code}`}
+                  className="flex flex-col items-center gap-1 bg-zinc-900 border border-zinc-800 hover:border-zinc-700 rounded-xl p-3 transition-colors group text-center"
+                >
+                  <span className="text-sm font-bold text-white">{ap.code}</span>
+                  <span className="text-[10px] text-zinc-500 group-hover:text-zinc-400 leading-tight transition-colors">{ap.city}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </>
   )
