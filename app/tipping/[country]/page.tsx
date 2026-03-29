@@ -92,15 +92,15 @@ export async function generateMetadata(
   return {
     title: `Tipping in ${countryName} (${year}) — How Much & Etiquette`,
     description: `${data.summary.slice(0, 145)}…`,
-    alternates: { canonical: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'}/tipping/${country}` },
+    alternates: { canonical: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com'}/tipping/${country}` },
     openGraph: {
       title: `Tipping in ${countryName} (${year}) — Hootling`,
       description: `Tipping etiquette for restaurants, taxis, hotels & spas in ${countryName}. ${data.expectedLabel}.`,
-      url: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'}/tipping/${country}`,
+      url: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com'}/tipping/${country}`,
       type: 'website',
       images: [
         {
-          url: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'}/api/og/city?city=${encodeURIComponent(country)}`,
+          url: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com'}/api/og/city?city=${encodeURIComponent(country)}`,
           width: 1200,
           height: 630,
           alt: `Tipping guide for ${countryName} — Hootling`,
@@ -111,7 +111,7 @@ export async function generateMetadata(
       card: 'summary_large_image',
       title: `Tipping in ${countryName} — Hootling`,
       description: `${data.expectedLabel} · Restaurant: ${data.restaurant.slice(0, 60)}`,
-      images: [`${process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'}/api/og/city?city=${encodeURIComponent(country)}`],
+      images: [`${process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com'}/api/og/city?city=${encodeURIComponent(country)}`],
     },
   }
 }

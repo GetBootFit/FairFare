@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import SharePageClient from './SharePageClient'
 
-const BASE = process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'
+const BASE = process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com'
 
 interface Props {
   searchParams: Promise<{

@@ -40,15 +40,15 @@ export async function generateMetadata(
   return {
     title: `${cityName} Taxi Fares & Scam Alerts (${year}) | Hootling`,
     description: `${cityName} taxi meter rates for ${year}. Flag fall ${sym}${data.baseRate}, ${sym}${data.ratePerKm}/km. Typical 10 km trip: ${sym}${fare10.min}–${sym}${fare10.max}. Avoid scams — check your route before you ride.`,
-    alternates: { canonical: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'}/taxi/${city}` },
+    alternates: { canonical: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com'}/taxi/${city}` },
     openGraph: {
       title: `${cityName} Taxi Fares (${year}) — Rates & Scam Alerts | Hootling`,
       description: `Real meter rates, fare ranges and AI-powered scam warnings for ${cityName}, ${data.country}. Know the fair price before you get in.`,
-      url: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'}/taxi/${city}`,
+      url: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com'}/taxi/${city}`,
       type: 'website',
       images: [
         {
-          url: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'}/api/og/city?city=${encodeURIComponent(city)}`,
+          url: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com'}/api/og/city?city=${encodeURIComponent(city)}`,
           width: 1200,
           height: 630,
           alt: `Taxi fares in ${cityName} — Hootling`,
@@ -59,7 +59,7 @@ export async function generateMetadata(
       card: 'summary_large_image',
       title: `${cityName} Taxi Fares (${year}) | Hootling`,
       description: `Flag fall ${sym}${data.baseRate} · ${sym}${data.ratePerKm}/km · Typical 10 km: ${sym}${fare10.min}–${sym}${fare10.max} · Know the fair price before you ride.`,
-      images: [`${process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'}/api/og/city?city=${encodeURIComponent(city)}`],
+      images: [`${process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com'}/api/og/city?city=${encodeURIComponent(city)}`],
     },
   }
 }

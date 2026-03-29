@@ -54,6 +54,13 @@ const nextConfig = {
       },
     ]
   },
+
+  async redirects() {
+    return [
+      // /tipping/uae was renamed to /tipping/united-arab-emirates — permanent redirect
+      { source: '/tipping/uae', destination: '/tipping/united-arab-emirates', permanent: true },
+    ]
+  },
 }
 
 module.exports = withSentryConfig(nextConfig, {

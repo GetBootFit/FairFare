@@ -3,7 +3,7 @@ import { FaqContent } from '@/components/pages/FaqContent'
 import { getUSDPrices } from '@/lib/currency'
 import { pageAlternates } from '@/lib/seo-helpers'
 
-const PAGE_URL = `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'}/faq`
+const PAGE_URL = `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com'}/faq`
 
 export const metadata: Metadata = {
   title: 'FAQ',

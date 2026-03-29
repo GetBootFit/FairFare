@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { AboutContent } from '@/components/pages/AboutContent'
 import { pageAlternates } from '@/lib/seo-helpers'
 
-const PAGE_URL = `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://hootling.com'}/about`
+const PAGE_URL = `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com'}/about`
 
 export const metadata: Metadata = {
   title: 'About Hootling | Travel wise.',
