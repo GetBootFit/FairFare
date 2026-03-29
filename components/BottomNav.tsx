@@ -29,7 +29,7 @@ export function BottomNav() {
     { href: '/', label: t('nav_home'), Icon: Home },
     { href: '/taxi', label: t('nav_taxi'), Icon: Car },
     { href: '/tipping', label: t('nav_tipping'), Icon: Banknote },
-    { href: '/example', label: 'Demo', Icon: Sparkles },
+    { href: '/example', label: t('nav_demo'), Icon: Sparkles },
   ]
 
   return (

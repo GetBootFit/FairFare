@@ -16,7 +16,7 @@ function getEnglishContent(): AboutStrings {
     why_heading: 'Why it exists',
     why_para1: "Arriving in a new city after a long flight is stressful enough. Negotiating with a taxi driver when you don't know the local fare, don't speak the language, and can't tell a fair price from a tourist trap is worse. Travellers get ripped off every day in cities all over the world — overcharged fares, rigged meters, unofficial \"taxis\" with no accountability.",
     why_para2: "Hootling was built to fix that. The name combines the wisdom of the owl with the English diminutive \"-ling\" — a baby owl, curious and wide-eyed, exploring the world for the first time, just like every traveller in a new city. Our mascot is Hootling: a baby owl with golden yellow feathers, a teal backpack, and big curious teal eyes. He's been everywhere — and he always knows the fair price.",
-    why_para3: `Hootling solves the taxi problem in under five seconds, from ${single}. Real meter rate data sourced from local taxi authorities. AI-powered scam warnings from Anthropic Claude. 120+ cities, 50+ countries. No subscription.`,
+    why_para3: `Hootling solves the taxi problem in under five seconds, from ${single}. Real meter rate data sourced from local taxi authorities. AI-powered scam warnings from Anthropic Claude. 120+ cities, 50+ countries. No subscription. Built by travellers, for travellers.`,
     what_heading: 'What it does',
     feature_taxi_title: 'Taxi Fare Check',
     feature_taxi_desc: 'Enter your pickup and destination to get a fair price range, city-specific scam warnings, and the local phrase to confirm the fare before you get in.',

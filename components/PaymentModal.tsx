@@ -228,6 +228,7 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
               <p className="text-xs text-zinc-400 mt-0.5">
                 {feature === 'taxi' ? t('payment_single_desc_taxi') : t('payment_single_desc_tipping')}
               </p>
+              <p className="text-xs text-zinc-600 mt-0.5">Perfect for one trip</p>
             </div>
             <div className="flex items-center gap-2 shrink-0 ml-3 rtl:ml-0 rtl:mr-3">
               <span className="text-white font-bold text-sm">{singlePrice}</span>
@@ -263,6 +264,7 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
                   {t('payment_country_pass', { country: countryDisplay })}
                 </p>
                 <p className="text-xs text-zinc-400 mt-0.5">{t('payment_all_features_24h')}</p>
+                <p className="text-xs text-zinc-600 mt-0.5">Spending a week in one country</p>
               </div>
               <div className="flex items-center gap-2 shrink-0">
                 <span className="text-white font-bold text-sm">{passPrice}</span>
@@ -297,8 +299,9 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
               <p className="text-sm font-semibold text-white">{t('payment_bundle')}</p>
               <p className="text-xs text-zinc-400 mt-0.5">{t('payment_bundle_desc')}</p>
               <p className="text-xs text-purple-400 mt-0.5">
-                Save {Math.round((20 * prices.single - prices.bundle) / (20 * prices.single) * 100)}% vs buying one at a time
+                Just {mounted ? formatPrice(currency, Math.round(prices.bundle / 20)) : '—'} per check · save {Math.round((20 * prices.single - prices.bundle) / (20 * prices.single) * 100)}% vs single
               </p>
+              <p className="text-xs text-zinc-600 mt-0.5">For frequent travellers</p>
             </div>
             <div className="flex items-center gap-2 shrink-0">
               <span className="text-white font-bold text-sm">{bundlePrice}</span>
@@ -388,7 +391,7 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
           </p>
           {/* Satisfaction guarantee */}
           <p className="text-center text-[11px] text-zinc-600">
-            Not happy? Email us and we&apos;ll sort it out.
+            Not happy? Email <a href="mailto:hello@hootling.com" className="text-purple-400 hover:text-purple-300">hello@hootling.com</a> — we&apos;ll sort it out.
           </p>
           <button
             onClick={onCancel}

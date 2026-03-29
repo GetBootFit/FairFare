@@ -15,7 +15,7 @@ const KV_TTL = 365 * 24 * 60 * 60
  *
  * Format: 'vYYYYMMDD' — e.g. 'v20260320' for 20 March 2026.
  */
-const CONTENT_VERSION = 'v20260320'
+const CONTENT_VERSION = 'v20260329'
 
 const LOCALE_LANGUAGE: Record<string, string> = {
   ar: 'Arabic',
@@ -34,7 +34,7 @@ function getAboutContent() {
     why_heading: 'Why it exists',
     why_para1: "Arriving in a new city after a long flight is stressful enough. Negotiating with a taxi driver when you don't know the local fare, don't speak the language, and can't tell a fair price from a tourist trap is worse. Travellers get ripped off every day in cities all over the world — overcharged fares, rigged meters, unofficial \"taxis\" with no accountability.",
     why_para2: "Hootling was built to fix that. The name combines the wisdom of the owl with the English diminutive \"-ling\" — a baby owl, curious and wide-eyed, exploring the world for the first time, just like every traveller in a new city. Our mascot is Hootling: a baby owl with golden yellow feathers, a teal backpack, and big curious teal eyes. He's been everywhere — and he always knows the fair price.",
-    why_para3: `Hootling solves the taxi problem in under five seconds, from ${single}. Real meter rate data sourced from local taxi authorities. AI-powered scam warnings from Anthropic Claude. 120+ cities, 50+ countries. No subscription.`,
+    why_para3: `Hootling solves the taxi problem in under five seconds, from ${single}. Real meter rate data sourced from local taxi authorities. AI-powered scam warnings from Anthropic Claude. 120+ cities, 50+ countries. No subscription. Built by travellers, for travellers.`,
     what_heading: 'What it does',
     feature_taxi_title: 'Taxi Fare Check',
     feature_taxi_desc: 'Enter your pickup and destination to get a fair price range, city-specific scam warnings, and the local phrase to confirm the fare before you get in.',
@@ -92,7 +92,7 @@ function getFaqContent() {
     q8: 'Do I need to create an account?',
     a8: 'No. Hootling has no accounts, no sign-up, and no login. Your query result and access token are stored temporarily in your browser only.',
     q9: 'Can I get a refund?',
-    a9: 'Due to the instant digital nature of the service, all sales are final once a result has been delivered. If you experienced a technical failure that prevented delivery, contact legal@hootling.com within 7 days and we will review your case.',
+    a9: 'Because results are delivered instantly, we cannot offer refunds once your result has loaded. If anything went wrong technically and your result was not delivered, email hello@hootling.com within 7 days — we will always make it right.',
     q10: 'Is my payment data stored?',
     a10: 'No. Payment is processed entirely by Stripe. Hootling never sees, handles, or stores your card number, CVC, or banking details. We only receive confirmation that a payment session was completed.',
     q11: 'Does Hootling track my location?',
@@ -104,7 +104,7 @@ function getFaqContent() {
     q14: 'What languages is the app available in?',
     a14: 'Hootling is fully available in 14 languages: English, Spanish, French, German, Portuguese (Brazilian), Italian, Indonesian, Vietnamese, Thai, Chinese (Simplified), Chinese (Traditional), Japanese, Korean, and Hindi. The entire interface, AI-generated scam warnings, tipping advice, and driver phrases all respond in your selected language. Use the language selector in the bottom navigation bar to switch.',
     contact_heading: 'Still have a question?',
-    contact_body: "Reach us at legal@hootling.com and we'll get back to you within 5 business days.",
+    contact_body: "Reach us at hello@hootling.com and we'll get back to you within 2 business days.",
     back: '← Back to Hootling',
   }
 }

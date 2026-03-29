@@ -456,8 +456,8 @@ export function TaxiResult({ result, onReset, purchasedProduct, onUpgradeToPass 
               <p className="text-xs text-amber-700/70 pt-1 border-t border-amber-900/30">
                 {t('ai_fallback_notice')}
                 {' — '}
-                <a href="mailto:legal@hootling.com" className="underline hover:text-amber-500">
-                  legal@hootling.com
+                <a href="mailto:hello@hootling.com" className="underline hover:text-amber-500">
+                  hello@hootling.com
                 </a>
               </p>
             )}

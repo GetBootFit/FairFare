@@ -121,14 +121,18 @@ export function LanguageSelector() {
         aria-label={`Language: ${current.label}`}
         className="flex flex-col items-center gap-1 py-3 px-3 text-xs font-medium text-zinc-500 hover:text-zinc-300 transition-colors min-h-[44px] min-w-[44px] justify-center"
       >
-        <Image
-          src={`/images/flags/${current.flagCode}.svg`}
-          alt={current.label}
-          width={24}
-          height={18}
-          className="rounded-sm"
-          unoptimized
-        />
+        {current.flagCode === 'globe' ? (
+          <span className="text-lg leading-none" aria-hidden="true">🌐</span>
+        ) : (
+          <Image
+            src={`/images/flags/${current.flagCode}.svg`}
+            alt={current.label}
+            width={24}
+            height={18}
+            className="rounded-sm"
+            unoptimized
+          />
+        )}
         <span className="leading-none uppercase">{current.code}</span>
       </button>
 
@@ -164,14 +168,18 @@ export function LanguageSelector() {
                     : 'text-zinc-200 hover:bg-zinc-800'
                 }`}
               >
-                <Image
-                  src={`/images/flags/${l.flagCode}.svg`}
-                  alt=""
-                  width={20}
-                  height={15}
-                  className="rounded-sm shrink-0"
-                  unoptimized
-                />
+                {l.flagCode === 'globe' ? (
+                  <span className="text-base leading-none shrink-0" aria-hidden="true">🌐</span>
+                ) : (
+                  <Image
+                    src={`/images/flags/${l.flagCode}.svg`}
+                    alt=""
+                    width={20}
+                    height={15}
+                    className="rounded-sm shrink-0"
+                    unoptimized
+                  />
+                )}
                 <span>{l.label}</span>
                 {l.code === locale && (
                   <span className="sr-only">(selected)</span>

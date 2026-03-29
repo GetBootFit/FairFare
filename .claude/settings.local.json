@@ -174,7 +174,9 @@
       "Bash(curl -sI \"https://www.hootling.com/blog/how-much-does-a-taxi-cost-in-sydney\")",
       "Bash(npm audit:*)",
       "Bash(ls C:/Users/david/Projects/Hootling/lib/blog-posts*.ts)",
-      "WebFetch(domain:hootling.com)"
+      "WebFetch(domain:hootling.com)",
+      "Bash(ls \"C:\\\\Users\\\\david\\\\Projects\\\\Hootling\\\\public\\\\images\\\\flags\"\" 2>/dev/null || dir \"C:UsersdavidProjectsHootlingpublicimagesflags\"\")",
+      "Bash(dir \"C:\\\\Users\\\\david\\\\Projects\\\\Hootling\\\\public\\\\images\\\\flags\")"
     ]
   }
 }
