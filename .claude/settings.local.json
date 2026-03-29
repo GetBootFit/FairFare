@@ -181,7 +181,8 @@
       "Bash(awk 'NF')",
       "Bash(/tmp/final_report.txt:*)",
       "Bash(__NEW_LINE_fa8474c51b0cabfc__ cat:*)",
-      "Bash(node -e \"const d = require\\(''./data/taxi-rates.json''\\); const cities = [''budapest'',''colombo'',''copenhagen'',''doha'',''hanoi'',''havana'',''osaka'',''phnom_penh'',''stockholm'']; cities.forEach\\(c => { const r = d[c]; if\\(r\\) console.log\\(''✓'', c, ''-'', r.country, r.currency, r.currencySymbol, ''base:'', r.baseRate, ''/km:'', r.ratePerKm\\); else console.log\\(''✗ MISSING:'', c\\); }\\); console.log\\(''\\\\nTotal cities:'', Object.keys\\(d\\).length\\);\")"
+      "Bash(node -e \"const d = require\\(''./data/taxi-rates.json''\\); const cities = [''budapest'',''colombo'',''copenhagen'',''doha'',''hanoi'',''havana'',''osaka'',''phnom_penh'',''stockholm'']; cities.forEach\\(c => { const r = d[c]; if\\(r\\) console.log\\(''✓'', c, ''-'', r.country, r.currency, r.currencySymbol, ''base:'', r.baseRate, ''/km:'', r.ratePerKm\\); else console.log\\(''✗ MISSING:'', c\\); }\\); console.log\\(''\\\\nTotal cities:'', Object.keys\\(d\\).length\\);\")",
+      "Bash(node -e \"const d = require\\(''./data/tipping-seo.json''\\); Object.keys\\(d\\).sort\\(\\).forEach\\(k => console.log\\(k\\)\\)\")"
     ]
   }
 }

@@ -135,6 +135,21 @@
       { "q": "Do you tip in Colombia?", "a": "10% is often listed on the bill as a voluntary service charge. You can choose whether to pay it. For exceptional service, 10–15% is a generous tip." }
     ]
   },
+  "costa-rica": {
+    "displayName": "Costa Rica",
+    "expected": "yes",
+    "expectedLabel": "10% service charge included by law",
+    "summary": "Costa Rican law mandates a 10% service charge (el servicio) on all restaurant bills. Most diners leave a little extra for great service. Uber is widespread and tips on rides are appreciated but never expected.",
+    "restaurant": "10% service is legally included in all restaurant bills. An additional 5–10% in cash for exceptional service is appreciated but optional.",
+    "taxi": "Metered taxis (la maría) don't require tipping — round up if you like. Uber is popular in San José; in-app tips are optional but welcomed.",
+    "hotel": "$1–2 USD per bag for porters. $1–2 USD per night for housekeeping.",
+    "spa": "10–15% for personal treatments unless a service charge is already included.",
+    "keyFact": "The 10% servicio at restaurants is a legal requirement — always check your bill before adding extra.",
+    "faqs": [
+      { "q": "Do restaurants in Costa Rica include a service charge?", "a": "Yes — a 10% servicio is legally required on all restaurant bills. You are not obligated to tip further, but rounding up or adding a few extra colones for excellent service is appreciated." },
+      { "q": "Should you tip taxi drivers in Costa Rica?", "a": "Metered official taxis (red with yellow triangle) don't require a tip — rounding up is fine. Uber drivers appreciate a small in-app tip but it's entirely optional." }
+    ]
+  },
   "croatia": {
     "displayName": "Croatia",
     "expected": "optional",
@@ -394,6 +409,21 @@
     "keyFact": "'++' on Malaysian menus means 10% service and 6% tax will be added on top of listed prices.",
     "faqs": [
       { "q": "Do you tip in Malaysia?", "a": "Often not necessary if a service charge is included. Where service is not included, 10% is appreciated at restaurants. Spa tips of RM 10–20 go directly to staff." }
+    ]
+  },
+  "macau": {
+    "displayName": "Macau",
+    "expected": "optional",
+    "expectedLabel": "Usually included — check your bill",
+    "summary": "A 10% service charge is included in almost all Macau restaurant and hotel bills, so additional tipping is optional. Casinos have specific rules around dealer tips — some prohibit them entirely. Small tips are appreciated by taxi drivers and hotel staff.",
+    "restaurant": "A 10% service charge is almost always added — check before tipping more. If not included, 10% is appropriate.",
+    "taxi": "Round up to the nearest pataca. Tips aren't expected but are welcomed for good service.",
+    "hotel": "MOP 10–20 per bag for porters. MOP 20–50 per night for housekeeping at higher-end properties.",
+    "spa": "MOP 30–60 for personal treatments if not already included in the service charge.",
+    "keyFact": "Casino tipping rules vary widely — some properties prohibit tipping dealers entirely. Always follow the casino's posted policy.",
+    "faqs": [
+      { "q": "Can you tip casino dealers in Macau?", "a": "Rules vary by casino — many prohibit tipping dealers outright. Always check the casino's posted policy. Tip jars for support staff (drinks, cleaning) are more commonly permitted." },
+      { "q": "Is tipping expected at Macau restaurants?", "a": "A 10% service charge is nearly always included in the bill. If it isn't, 10% is appropriate. There's no expectation to tip on top of an included service charge." }
     ]
   },
   "mexico": {
@@ -679,6 +709,21 @@
       { "q": "How much do you tip a massage therapist in Thailand?", "a": "50–100 THB for a 1-hour massage is standard and appreciated. 20–50 THB for foot massages. Tip directly in cash to the therapist." }
     ]
   },
+  "tunisia": {
+    "displayName": "Tunisia",
+    "expected": "yes",
+    "expectedLabel": "10% at restaurants expected",
+    "summary": "Tipping is standard and expected in Tunisia across most service interactions. Restaurant staff, hotel porters, hammam attendants, and tour guides rely on tips as a meaningful part of their income. In medinas and souks, a small gratuity for guides is customary.",
+    "restaurant": "10% is standard at sit-down restaurants. In medina cafes, round up or leave 1–2 TND.",
+    "taxi": "Agree on the fare before boarding — meters are often ignored. Round up to the nearest dinar as a courtesy.",
+    "hotel": "1–2 TND per bag for porters. 2–5 TND per night for housekeeping at mid-range and above properties.",
+    "spa": "5–10 TND for hammam and spa treatments — attendants rely on tips as a significant part of their income.",
+    "keyFact": "At traditional hammams (bath houses), tipping the attendant 5–10 TND at the end is customary and very much expected.",
+    "faqs": [
+      { "q": "Should you tip in Tunisian restaurants?", "a": "Yes — 10% is standard at sit-down restaurants. In casual medina cafes, rounding up or leaving 1–2 TND is sufficient. Tips are meaningful to staff on modest wages." },
+      { "q": "How much should you tip a guide in Tunisia?", "a": "For a half-day tour, 10–15 TND per person is appropriate. Full-day guided tours merit 20–30 TND. For brief medina walk-throughs, 5–10 TND is fair." }
+    ]
+  },
   "turkey": {
     "displayName": "Turkey",
     "expected": "optional",
@@ -693,8 +738,8 @@
       { "q": "Do you tip in Turkey?", "a": "Yes, 10–15% at restaurants is appreciated. Taxi rounding up is common. For hammams, 10–15% is expected." }
     ]
   },
-  "uae": {
-    "displayName": "UAE",
+  "united-arab-emirates": {
+    "displayName": "United Arab Emirates",
     "expected": "optional",
     "expectedLabel": "10–15% appreciated",
     "summary": "Tipping is appreciated in the UAE though not obligatory. Service charges are sometimes added. Staff — many of whom are migrant workers — genuinely appreciate tips.",
