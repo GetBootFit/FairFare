@@ -176,7 +176,11 @@
       "Bash(ls C:/Users/david/Projects/Hootling/lib/blog-posts*.ts)",
       "WebFetch(domain:hootling.com)",
       "Bash(ls \"C:\\\\Users\\\\david\\\\Projects\\\\Hootling\\\\public\\\\images\\\\flags\"\" 2>/dev/null || dir \"C:UsersdavidProjectsHootlingpublicimagesflags\"\")",
-      "Bash(dir \"C:\\\\Users\\\\david\\\\Projects\\\\Hootling\\\\public\\\\images\\\\flags\")"
+      "Bash(dir \"C:\\\\Users\\\\david\\\\Projects\\\\Hootling\\\\public\\\\images\\\\flags\")",
+      "Bash(del \"C:\\\\Users\\\\david\\\\Projects\\\\Hootling\\\\components\\\\AffiliateLinks.tsx\")",
+      "Bash(awk 'NF')",
+      "Bash(/tmp/final_report.txt:*)",
+      "Bash(__NEW_LINE_fa8474c51b0cabfc__ cat:*)"
     ]
   }
 }

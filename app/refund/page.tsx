@@ -60,7 +60,7 @@ export default function RefundPage() {
           </li>
           <li>
             <strong className="text-zinc-300">Incorrect product delivered:</strong> You purchased
-            a Country Pass for one country but the system issued an entitlement for a different
+            a DayPass for one country but the system issued an entitlement for a different
             country.
           </li>
           <li>
@@ -76,7 +76,7 @@ export default function RefundPage() {
         <ul className="mt-1.5 space-y-1 list-disc list-inside">
           <li>The fare estimate differed from the actual fare charged by the driver</li>
           <li>You changed your travel plans after purchase</li>
-          <li>You purchased the wrong product (e.g. Country Pass for the wrong country)</li>
+          <li>You purchased the wrong product (e.g. DayPass for the wrong country)</li>
           <li>The result was generated for a city not in our database (an estimate is still provided)</li>
         </ul>
       </Section>

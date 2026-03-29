@@ -131,6 +131,7 @@ export async function POST(req: NextRequest) {
       duration: { text: route.durationText, minutes: route.durationMinutes },
       city: route.city,
       country: route.country,
+      citySupported: !!findCityRate(`${route.city} ${route.country}`),
       fareRange,
       transitOptions,
       scamWarnings: aiInfo.scamWarnings,

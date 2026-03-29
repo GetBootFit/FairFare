@@ -45,7 +45,7 @@ export const CURRENCIES: {
  *
  * Tiers:
  *   single  — one taxi or tipping query
- *   pass    — Country Pass: all queries for one country, 24h
+ *   pass    — DayPass: all checks for one country, 24h
  *   bundle  — 20-query bundle, device-stored, 90-day expiry
  *
  * Last reviewed: March 2026

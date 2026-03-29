@@ -7,6 +7,7 @@ export interface TaxiPreviewResult {
   duration: { text: string; minutes: number }
   city: string
   country: string
+  citySupported: boolean
 }
 
 export interface TransportOption {

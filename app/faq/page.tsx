@@ -16,7 +16,7 @@ function buildJsonLd() {
   const { single, pass, bundle } = getUSDPrices()
   const p = { single, pass, bundle }
   const faqs = [
-    { q: 'How much does it cost?', a: `From ${p.single} USD per query. Single query: ${p.single}, Country Pass: ${p.pass}, 20-query bundle: ${p.bundle}.` },
+    { q: 'How much does it cost?', a: `From ${p.single} USD per query. Single query: ${p.single}, DayPass: ${p.pass}, 20-query bundle: ${p.bundle}.` },
     { q: 'What payment methods are accepted?', a: 'Stripe — major cards, Apple Pay, Google Pay.' },
     { q: 'How accurate are the fare estimates?', a: 'Calculated from local taxi rates + Google Maps distance. ±15% range applied.' },
     { q: 'Which cities are covered for taxi fares?', a: '120+ cities across every continent.' },

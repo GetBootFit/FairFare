@@ -77,7 +77,7 @@ function SuccessInner() {
                 item_id: data.product ?? 'single',
                 item_name:
                   data.product === 'query_bundle'   ? 'Hootling 20-Query Bundle' :
-                  data.product === 'country_pass'   ? `Hootling Country Pass — ${data.country ?? ''}` :
+                  data.product === 'country_pass'   ? `Hootling DayPass — ${data.country ?? ''}` :
                   'Hootling Single Query',
                 item_category: data.feature ?? 'taxi',
                 price: value,

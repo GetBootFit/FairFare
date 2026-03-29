@@ -101,7 +101,7 @@ export default function PrivacyPage() {
           <li>
             <strong className="text-zinc-300">httpOnly cookies:</strong> JWT access tokens that
             grant access to query results. Tokens expire automatically (8 hours for single
-            queries, 24 hours for country passes, 90 days for bundle tokens). These cookies are
+            queries, 24 hours for DayPass tokens, 90 days for bundle tokens). These cookies are
             inaccessible to JavaScript and are never transmitted to third parties.
           </li>
           <li>

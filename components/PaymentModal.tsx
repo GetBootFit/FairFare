@@ -17,8 +17,10 @@ import {
 
 interface Props {
   feature: 'taxi' | 'tipping'
-  /** When provided, the Country Pass option is shown for this country. */
+  /** When provided, the DayPass option is shown for this country. */
   country?: string
+  /** City name from the preview result — used in the result teaser. */
+  city?: string
   onCancel: () => void
 }
 
@@ -31,7 +33,7 @@ const FOCUSABLE = [
   '[tabindex]:not([tabindex="-1"])',
 ].join(', ')
 
-export function PaymentModal({ feature, country, onCancel }: Props) {
+export function PaymentModal({ feature, country, city, onCancel }: Props) {
   const { t } = useLanguage()
 
   const [currency, setCurrencyState] = useState<CurrencyCode>('USD')
@@ -201,6 +203,53 @@ export function PaymentModal({ feature, country, onCancel }: Props) {
             className="mx-auto drop-shadow-md"
           />
           <p id="payment-modal-title" className="text-white text-lg font-bold mt-2">{t('payment_title')}</p>
+        </div>
+
+        {/* Result teaser — ghost of the actual result, blurred to show shape without revealing content */}
+        <div className="relative rounded-xl overflow-hidden border border-zinc-800 bg-zinc-950 select-none" aria-hidden="true">
+          {feature === 'taxi' ? (
+            <div className="p-3 space-y-2.5">
+              {/* Route label + scam badge — visible, these are the hook */}
+              <div className="flex items-center justify-between gap-2">
+                <p className="text-[10px] text-zinc-500 uppercase tracking-wider truncate">{city ?? 'Your route'}</p>
+                <span className="shrink-0 inline-flex items-center gap-1 bg-amber-900/50 border border-amber-700/40 text-amber-400 text-[10px] font-semibold px-2 py-0.5 rounded-full">⚠ Scam alert</span>
+              </div>
+              {/* Fare range — blurred */}
+              <div className="blur-sm">
+                <p className="text-xl font-bold text-white">฿280 – ฿420</p>
+                <p className="text-[10px] text-zinc-400 mt-0.5">Includes surcharge · official meter rate</p>
+              </div>
+              {/* Driver phrase row — header visible, content blurred */}
+              <div className="pt-1.5 border-t border-zinc-800/60 space-y-1">
+                <p className="text-[10px] text-zinc-500 uppercase tracking-wider">Say to your driver</p>
+                <div className="blur-sm">
+                  <p className="text-sm text-white font-medium">"เปิดมิเตอร์ด้วยครับ"</p>
+                  <p className="text-[10px] text-zinc-400 italic">Please use the meter</p>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="p-3 space-y-1">
+              {/* Country label — visible */}
+              <p className="text-[10px] text-zinc-500 uppercase tracking-wider mb-2">{country ?? 'Your destination'} · tipping guide</p>
+              {/* Scenario rows — blurred */}
+              <div className="blur-sm space-y-0">
+                {[
+                  { icon: '🍽', label: 'Restaurant', value: '10–15%' },
+                  { icon: '🚕', label: 'Taxi', value: 'Round up' },
+                  { icon: '🏨', label: 'Porter', value: '$2 / bag' },
+                ].map(({ icon, label, value }) => (
+                  <div key={label} className="flex items-center justify-between py-1.5 border-b border-zinc-800/50 last:border-0">
+                    <span className="text-xs text-zinc-300">{icon} {label}</span>
+                    <span className="text-xs font-semibold text-white">{value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+          {/* Gradient fade — draws eye to pricing below */}
+          <div className="absolute bottom-0 inset-x-0 h-10 bg-gradient-to-t from-zinc-900 to-transparent" />
+          <p className="absolute bottom-1 inset-x-0 text-center text-[9px] text-zinc-600 uppercase tracking-widest">Unlock your result ↓</p>
         </div>
 
         {/* Pricing options — radiogroup for accessible keyboard navigation */}

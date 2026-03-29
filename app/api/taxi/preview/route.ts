@@ -42,7 +42,9 @@ export async function POST(req: NextRequest) {
 
     // Track cities not in our fare dataset.
     // KV counter per city drives the admin dashboard for prioritising additions.
-    if (!findCityRate(`${route.city} ${route.country}`)) {
+    const citySupported = !!findCityRate(`${route.city} ${route.country}`)
+
+    if (!citySupported) {
       const missKey = `city_miss:${route.city.toLowerCase().replace(/\s+/g, '_')}`
       await kvIncrement(missKey)
       console.warn(`[CITY_MISS:preview] ${route.city}, ${route.country}`)
@@ -55,6 +57,7 @@ export async function POST(req: NextRequest) {
       duration: { text: route.durationText, minutes: route.durationMinutes },
       city: route.city,
       country: route.country,
+      citySupported,
     }
 
     return Response.json(result)

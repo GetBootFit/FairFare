@@ -31,6 +31,7 @@ const SAMPLE_TAXI: TaxiFullResult = {
   duration: { text: '45–65 min', minutes: 52 },
   city: 'Bangkok',
   country: 'Thailand',
+  citySupported: true,
   fareRange: {
     min: 250,
     max: 380,

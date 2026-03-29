@@ -484,6 +484,18 @@ export function TaxiForm() {
             </div>
           ) : (
             <>
+              {/* City not in database — warn before paywall, don't block */}
+              {!preview.citySupported && (
+                <div className="flex items-start gap-2.5 bg-amber-950/30 border border-amber-800/40 rounded-xl px-3.5 py-3">
+                  <span className="text-amber-400 shrink-0 mt-0.5">ℹ️</span>
+                  <div>
+                    <p className="text-xs font-semibold text-amber-300">{preview.city} isn't in our fare database yet</p>
+                    <p className="text-xs text-amber-200/70 mt-0.5 leading-relaxed">
+                      Your result will include AI-powered scam warnings and driver phrases for {preview.city}. Confirm the exact fare with your driver before travel.
+                    </p>
+                  </div>
+                </div>
+              )}
               <button
                 onClick={handleUnlock}
                 className="w-full bg-teal-700 hover:bg-teal-800 text-white font-semibold py-3.5 rounded-xl transition-colors"
@@ -503,10 +515,11 @@ export function TaxiForm() {
         </div>
       )}
 
-      {/* Payment modal — pass country from preview for Country Pass offer */}
+      {/* Payment modal — pass country from preview for DayPass offer */}
       {status === 'paying' && (
         <PaymentModal
           feature="taxi"
+          city={preview?.city}
           country={preview?.country}
           onCancel={handlePaymentCancel}
         />

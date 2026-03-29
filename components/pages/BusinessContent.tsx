@@ -10,7 +10,7 @@ type BusinessStrings = Record<string, string>
 
 function getEnglishContent(): BusinessStrings {
   return {
-    heading: 'Hootling for Business',
+    heading: 'Partner with Hootling',
     subtitle: 'Accurate taxi fare data and tipping guidance for travel platforms, publishers, and corporate tools — via API, white-label, or data licence.',
     why_heading: 'Why it matters',
     why_para1: 'Every hotel booking, flight check-in, and trip itinerary has the same unanswered question: "How much will the taxi cost?" Hootling answers it — 120+ cities, real local meter rates, AI-verified scam warnings, and tipping guidance for 50+ countries.',

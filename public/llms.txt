@@ -18,7 +18,7 @@ Hootling is a travel micropayment utility with two core features:
 ## Pricing
 
 - Single query: from $2.99 USD (one taxi check or one tipping guide, valid 30 minutes)
-- Country Pass: from $7.99 USD (unlimited queries for one country, valid 24 hours)
+- DayPass: from $7.99 USD (unlimited checks for one country, 24 hrs from first use)
 - 20-Query Bundle: from $19.99 USD (20 independent tokens, each valid 90 days)
 - No account or subscription required. Pay once, result unlocks instantly.
 
