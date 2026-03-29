@@ -219,6 +219,33 @@ const ALIASES: Record<string, string> = {
   tangerang:               'jakarta',
   kosambi:                 'jakarta',
 
+  // Budapest — BUD (Ferenc Liszt) is within the city; no alias needed
+
+  // Colombo — BIA (Bandaranaike) is in Katunayake, Gampaha District
+  katunayake:              'colombo',
+  gampaha:                 'colombo',
+
+  // Copenhagen — CPH is in Taarnby municipality
+  taarnby:                 'copenhagen',
+  kastrup:                 'copenhagen',
+
+  // Hanoi — Noi Bai airport is in Soc Son District, Hanoi
+  soc_son:                 'hanoi',
+  noi_bai:                 'hanoi',
+
+  // Havana — José Martí airport is in Boyeros municipality
+  boyeros:                 'havana',
+
+  // Osaka — KIX (Kansai) is in Izumisano; ITM (Itami) is in Itami city
+  izumisano:               'osaka',
+  itami:                   'osaka',
+  sennan:                  'osaka',    // KIX straddles Sennan/Izumisano
+  rinku:                   'osaka',    // Rinku Town near KIX
+
+  // Stockholm — Arlanda (ARN) is in Sigtuna municipality
+  sigtuna:                 'stockholm',
+  marsta:                  'stockholm',  // Märsta — the town at Arlanda
+
   // Buenos Aires — Ezeiza International south of city
   ezeiza:                  'buenos_aires',
 
