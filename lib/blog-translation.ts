@@ -14,6 +14,38 @@ const KV_TTL = 365 * 24 * 60 * 60
  */
 export const BLOG_CONTENT_VERSION = 'v20260328'
 
+/**
+ * Slugs that have been fully translated across all 14 non-English locales.
+ * Only these slugs are included in the locale sitemap and served as translated pages.
+ * Untranslated locale URLs redirect to the English canonical.
+ *
+ * To expand: run `npm run warm-blog-translations` for the next batch of posts,
+ * then add their slugs here. See memory/project_blog_translation_status.md.
+ */
+export const TRANSLATED_SLUGS = new Set([
+  'meet-hootling-the-travel-app-that-keeps-you-from-getting-ripped-off',
+  'why-tipping-is-so-confusing-and-how-to-get-it-right',
+  '5-most-common-taxi-scams-and-how-to-avoid-them',
+  'what-to-say-to-your-taxi-driver-in-15-languages',
+  'how-much-does-a-taxi-cost-in-bangkok',
+  'how-much-does-a-taxi-cost-in-dubai',
+  'how-much-does-a-taxi-cost-in-singapore',
+  'how-much-does-a-taxi-cost-in-london',
+  'how-much-does-a-taxi-cost-in-new-york',
+  'how-much-does-a-taxi-cost-in-tokyo',
+  'how-much-does-a-taxi-cost-in-paris',
+  'how-much-does-a-taxi-cost-in-bali',
+  'how-much-does-a-taxi-cost-in-rome',
+  'how-much-does-a-taxi-cost-in-istanbul',
+  'how-much-does-a-taxi-cost-in-phuket',
+  'how-much-does-a-taxi-cost-in-barcelona',
+  'how-much-does-a-taxi-cost-in-sydney',
+  'how-much-does-a-taxi-cost-in-amsterdam',
+  'how-much-does-a-taxi-cost-in-mumbai',
+  'how-much-does-a-taxi-cost-in-mexico-city',
+  'how-much-does-a-taxi-cost-in-buenos-aires',
+])
+
 const LOCALE_LANGUAGE: Record<string, string> = {
   ar: 'Arabic',
   es: 'Spanish',

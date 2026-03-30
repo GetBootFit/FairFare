@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next'
 import { getAllCitySlugs, getAllCountrySlugs, HREFLANG_LOCALES } from '@/lib/seo-helpers'
 import { getAllAirportCodes } from '@/lib/airport-data'
 import { getAllBlogSlugs } from '@/lib/blog-posts'
+import { TRANSLATED_SLUGS } from '@/lib/blog-translation'
 import { LOCALES } from '@/lib/i18n'
 
 const BASE = (process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com').replace(/\/$/, '')
@@ -112,10 +113,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     alternates: blogIndexHreflang(),
   }))
 
-  // Locale blog article pages — each non-English locale × every blog slug
-  // Priority 0.6 (slightly below English at 0.7 — English is canonical)
+  // Locale blog article pages — only slugs with confirmed translations in KV.
+  // Untranslated locale URLs redirect to English canonical (see app/[locale]/blog/[slug]/page.tsx).
+  // Add slugs to TRANSLATED_SLUGS in lib/blog-translation.ts as more are warmed up.
+  const translatedSlugs = blogSlugs.filter((slug) => TRANSLATED_SLUGS.has(slug))
   const localeBlogArticlePages: MetadataRoute.Sitemap = NON_EN_LOCALES.flatMap((locale) =>
-    blogSlugs.map((slug) => ({
+    translatedSlugs.map((slug) => ({
       url: `${BASE}/${locale}/blog/${slug}`,
       lastModified: DATA_LAST_MODIFIED,
       changeFrequency: 'monthly',

@@ -1,4 +1,4 @@
-import { notFound } from 'next/navigation'
+import { notFound, redirect } from 'next/navigation'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -6,7 +6,7 @@ import { ChevronRight, ArrowRight, Plane, ExternalLink } from 'lucide-react'
 import {
   getBlogPost, getRelatedPosts, getWordCount, type BlogSection, type BlogPost,
 } from '@/lib/blog-posts'
-import { getTranslatedBlogContent } from '@/lib/blog-translation'
+import { getTranslatedBlogContent, TRANSLATED_SLUGS } from '@/lib/blog-translation'
 import { BlogAffiliateCard } from '@/components/BlogAffiliateCard'
 import { RelatedPosts } from '@/components/RelatedPosts'
 import { getPartnersForZone } from '@/lib/affiliates'
@@ -71,6 +71,7 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { locale, slug } = await params
   if (!VALID_LOCALE_SET.has(locale)) return { title: 'Not Found' }
+  if (!TRANSLATED_SLUGS.has(slug)) return { title: 'Not Found' }
 
   const post = await resolvePost(slug)
   if (!post) return { title: 'Article Not Found' }
@@ -184,6 +185,10 @@ export default async function LocaleBlogArticlePage(
 ) {
   const { locale, slug } = await params
   if (!VALID_LOCALE_SET.has(locale)) notFound()
+
+  // If this slug hasn't been translated yet, send Google to the English canonical.
+  // This prevents thin/duplicate content on locale URLs for untranslated posts.
+  if (!TRANSLATED_SLUGS.has(slug)) redirect(`/blog/${slug}`)
 
   const post = await resolvePost(slug)
   if (!post) notFound()
