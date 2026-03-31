@@ -152,6 +152,7 @@ export default async function TaxiCityPage(
           key={i}
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          suppressHydrationWarning
         />
       ))}
 

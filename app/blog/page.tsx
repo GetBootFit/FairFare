@@ -83,6 +83,7 @@ export default async function BlogIndexPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageSchema) }}
+        suppressHydrationWarning
       />
       <div className="space-y-6 pb-8">
       {/* Header */}

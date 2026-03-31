@@ -175,6 +175,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           type="application/ld+json"
           nonce={nonce}
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          suppressHydrationWarning
         />
         <LanguageProvider>
           <HtmlLangUpdater />

@@ -1,3 +1,4 @@
+import React from 'react'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Image from 'next/image'
@@ -58,6 +59,13 @@ const COUNTRY_FLAGS: Record<string, string> = {
   switzerland:      'ch', thailand:       'th', turkey:         'tr',
   uae:              'ae', 'united-kingdom':'gb', usa:            'us',
   vietnam:          'vn',
+}
+
+/** Format a date string deterministically (no ICU dependency = no hydration mismatch). */
+const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December']
+function formatDate(iso: string): string {
+  const d = new Date(iso)
+  return `${d.getUTCDate()} ${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()}`
 }
 
 // ── Static generation + ISR ───────────────────────────────────────────────────
@@ -325,6 +333,7 @@ export default async function BlogArticlePage(
           key={i}
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          suppressHydrationWarning
         />
       ))}
 
@@ -342,7 +351,7 @@ export default async function BlogArticlePage(
         <div className="space-y-3">
           {/* zinc-400 on dark bg ≈ 6.5:1 — passes WCAG AA for small text (needs ≥4.5:1) */}
           <div className="flex items-center gap-3 text-xs text-zinc-400">
-            <span>{new Date(post.publishedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+            <span>{formatDate(post.publishedAt)}</span>
             <span aria-hidden="true">·</span>
             <span>{post.readingMinutes} min read</span>
           </div>
@@ -394,10 +403,41 @@ export default async function BlogArticlePage(
           </div>
         )}
 
-        {/* Main content */}
+        {/* Main content — early CTA injected after intro to catch readers before they bounce */}
         <div className="space-y-4">
           {mainContent.map((section, i) => (
-            <RenderSection key={i} section={section} />
+            <React.Fragment key={i}>
+              <RenderSection section={section} />
+              {/* Inject CTA after the intro section for city/country posts */}
+              {i === 0 && section.type === 'intro' && (post.citySlug || post.countrySlug) && (
+                <div className="flex flex-col gap-2 py-1">
+                  {post.citySlug && post.city && (
+                    <Link
+                      href={`/taxi/${post.citySlug}`}
+                      className="flex items-center justify-between gap-3 bg-purple-950/60 border border-purple-800/50 hover:border-purple-600/70 hover:bg-purple-900/50 rounded-xl px-4 py-3 transition-all group"
+                    >
+                      <div>
+                        <p className="text-sm font-semibold text-white">Check your {post.city} fare</p>
+                        <p className="text-xs text-purple-300/70 mt-0.5">Route + scam warnings in seconds</p>
+                      </div>
+                      <ArrowRight size={16} className="text-purple-400 group-hover:translate-x-0.5 transition-transform shrink-0" />
+                    </Link>
+                  )}
+                  {post.countrySlug && post.country && (
+                    <Link
+                      href={`/tipping/${post.countrySlug}`}
+                      className="flex items-center justify-between gap-3 bg-teal-950/60 border border-teal-800/50 hover:border-teal-600/70 hover:bg-teal-900/50 rounded-xl px-4 py-3 transition-all group"
+                    >
+                      <div>
+                        <p className="text-sm font-semibold text-white">{post.country} tipping guide</p>
+                        <p className="text-xs text-teal-300/70 mt-0.5">Restaurants, taxis, hotels &amp; more</p>
+                      </div>
+                      <ArrowRight size={16} className="text-teal-400 group-hover:translate-x-0.5 transition-transform shrink-0" />
+                    </Link>
+                  )}
+                </div>
+              )}
+            </React.Fragment>
           ))}
         </div>
 

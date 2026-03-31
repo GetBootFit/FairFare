@@ -192,6 +192,7 @@ export default async function TippingCountryPage(
           key={i}
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          suppressHydrationWarning
         />
       ))}
 

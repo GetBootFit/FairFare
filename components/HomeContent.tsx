@@ -122,7 +122,35 @@ export function HomeContent() {
         <p className="text-xs text-zinc-600 mt-3">{t('home_data_source')}</p>
       </div>
 
-      {/* Problem statement — frames the two cards before they appear */}
+      {/* Example result teaser — show output first so cold visitors understand the value
+          before they decide whether to tap a feature card */}
+      <Link href="/example" className="mt-5 block bg-zinc-900/60 border border-zinc-700 hover:border-purple-700/60 rounded-2xl p-4 transition-colors group">
+        <p className="text-[10px] text-purple-400 uppercase tracking-wider mb-2.5 font-semibold">{t('home_example_result')}</p>
+        <div className="flex items-start justify-between gap-3">
+          <div className="space-y-0.5">
+            <p className="text-xs text-zinc-400">
+              <span className="text-zinc-200 font-medium">Bangkok Airport</span>
+              <span className="text-zinc-600 mx-1 inline-block rtl:rotate-180">→</span>
+              Sukhumvit
+            </p>
+            <p className="text-xl font-bold text-white">฿280 <span className="text-zinc-500 font-normal text-base">–</span> ฿420</p>
+          </div>
+          <div className="shrink-0 text-right rtl:text-left space-y-1">
+            <span className="inline-block bg-amber-900/40 border border-amber-700/40 text-amber-400 text-[10px] font-semibold px-2 py-0.5 rounded-full">
+              {t('home_scam_alert')}
+            </span>
+            <p className="text-[10px] text-zinc-600">{t('home_meter_refusal')}</p>
+          </div>
+        </div>
+        <div className="flex items-center justify-between mt-2.5 pt-2.5 border-t border-zinc-800">
+          <p className="text-[10px] text-zinc-700">{t('home_example_source')}</p>
+          <span className="text-xs text-purple-400 font-medium group-hover:translate-x-0.5 transition-transform inline-flex items-center gap-1">
+            <Sparkles size={11} /> See full result →
+          </span>
+        </div>
+      </Link>
+
+      {/* Problem statement — frames the two cards */}
       <p className="text-[11px] text-zinc-600 mt-5 mb-2">{t('home_problem_statement')}</p>
 
       {/* Feature cards */}
@@ -153,46 +181,6 @@ export function HomeContent() {
           hoverCardBg="hover:bg-purple-900/70"
           glowColor="hover:shadow-[0_0_24px_-4px_rgba(147,51,234,0.4)]"
         />
-      </div>
-
-      {/* Example result teaser — evidences the value proposition for cold visitors.
-          The whole card is clickable so the tap target is as large as possible. */}
-      <Link href="/example" className="mt-4 block bg-zinc-900/60 border border-zinc-800 hover:border-zinc-700 rounded-2xl p-4 transition-colors group">
-        <p className="text-[10px] text-zinc-600 uppercase tracking-wider mb-2.5 font-medium">{t('home_example_result')}</p>
-        <div className="flex items-start justify-between gap-3">
-          <div className="space-y-0.5">
-            <p className="text-xs text-zinc-400">
-              <span className="text-zinc-200 font-medium">Bangkok Airport</span>
-              <span className="text-zinc-600 mx-1 inline-block rtl:rotate-180">→</span>
-              Sukhumvit
-            </p>
-            <p className="text-xl font-bold text-white">฿280 <span className="text-zinc-500 font-normal text-base">–</span> ฿420</p>
-          </div>
-          <div className="shrink-0 text-right rtl:text-left space-y-1">
-            <span className="inline-block bg-amber-900/40 border border-amber-700/40 text-amber-400 text-[10px] font-semibold px-2 py-0.5 rounded-full">
-              {t('home_scam_alert')}
-            </span>
-            <p className="text-[10px] text-zinc-600">{t('home_meter_refusal')}</p>
-          </div>
-        </div>
-        <div className="flex items-center justify-between mt-2.5 pt-2.5 border-t border-zinc-800">
-          <p className="text-[10px] text-zinc-700">{t('home_example_source')}</p>
-          <span className="text-[10px] text-zinc-600 group-hover:text-zinc-400 transition-colors">
-            See full result →
-          </span>
-        </div>
-      </Link>
-
-      {/* Sample result CTA — upgraded visual weight to drive example page clicks */}
-      <div className="mt-3">
-        <Link
-          href="/example"
-          className="flex items-center justify-center gap-2 w-full py-3 rounded-xl border-l-2 border border-purple-700 border-l-purple-500 bg-zinc-900 text-sm text-zinc-200 hover:text-white hover:bg-zinc-800 transition-all duration-200 group"
-        >
-          <Sparkles size={14} className="text-purple-400" />
-          See exactly what you get
-          <span className="text-purple-400 group-hover:translate-x-0.5 transition-transform inline-block">→</span>
-        </Link>
       </div>
 
       {/* Blog section */}

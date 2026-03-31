@@ -42,7 +42,7 @@ function buildJsonLd() {
 export default function FaqPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildJsonLd()) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildJsonLd()) }} suppressHydrationWarning />
       <FaqContent />
     </>
   )

@@ -19,6 +19,13 @@ import { LOCALES, getTranslations, interpolate, type Locale } from '@/lib/i18n'
 
 const APP_URL = (process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com').replace(/\/$/, '')
 
+/** Format a date string deterministically (no ICU dependency = no hydration mismatch). */
+const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December']
+function formatDate(iso: string): string {
+  const d = new Date(iso)
+  return `${d.getUTCDate()} ${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()}`
+}
+
 const NON_EN_LOCALES = LOCALES.filter((l) => l.code !== 'en').map((l) => l.code)
 const VALID_LOCALE_SET = new Set<string>(NON_EN_LOCALES)
 
@@ -235,6 +242,7 @@ export default async function LocaleBlogArticlePage(
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        suppressHydrationWarning
       />
 
       <div className="space-y-5 pb-8">
@@ -253,9 +261,7 @@ export default async function LocaleBlogArticlePage(
         <div className="space-y-3">
           <div className="flex items-center gap-3 text-xs text-zinc-400">
             <span>
-              {new Date(post.publishedAt).toLocaleDateString('en-GB', {
-                day: 'numeric', month: 'long', year: 'numeric',
-              })}
+              {formatDate(post.publishedAt)}
             </span>
             <span aria-hidden="true">·</span>
             <span>{interpolate(t.blog_min_read, { n: String(post.readingMinutes) })}</span>
