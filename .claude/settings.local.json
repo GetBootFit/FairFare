@@ -188,7 +188,10 @@
       "Bash(grep -n \"NEXT_PUBLIC_APP_URL\\\\|canonical\\\\|hootling.com\" app/taxi/[city]/page.tsx)",
       "Bash(sed -i \"s|?? ''https://hootling.com''|?? ''https://www.hootling.com''|g\" app/taxi/[city]/page.tsx app/tipping/[country]/page.tsx app/about/page.tsx app/business/page.tsx app/faq/page.tsx app/share/page.tsx)",
       "Bash(grep -n \"''https://hootling.com''\" app/taxi/[city]/page.tsx app/tipping/[country]/page.tsx app/about/page.tsx app/business/page.tsx app/faq/page.tsx app/share/page.tsx)",
-      "Bash(grep -n \"canonical\\\\|citySlug\\\\|redirect\" app/taxi/airport/[code]/page.tsx)"
+      "Bash(grep -n \"canonical\\\\|citySlug\\\\|redirect\" app/taxi/airport/[code]/page.tsx)",
+      "Read(//c/Users/david/Projects/Hootling/data/**)",
+      "Bash(node -e \"const data = require\\(''/c/Users/david/Projects/Hootling/data/taxi-rates.json''\\); console.log\\(''TOTAL CITIES:'', Object.keys\\(data\\).length\\); console.log\\(''\\\\nFIRST 3 CITIES SCHEMA:\\\\n''\\); Object.keys\\(data\\).slice\\(0,3\\).forEach\\(key => { console.log\\(key + '':'', JSON.stringify\\(data[key], null, 2\\).split\\(''\\\\n''\\).slice\\(0,8\\).join\\(''\\\\n''\\)\\); console.log\\(''''\\); }\\);\")",
+      "Bash(node -e \"const data = require\\(''./data/taxi-rates.json''\\); console.log\\(''TOTAL CITIES:'', Object.keys\\(data\\).length\\);\")"
     ]
   }
 }

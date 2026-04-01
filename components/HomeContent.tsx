@@ -265,6 +265,9 @@ export function HomeContent() {
           {/* Nav links */}
           <div className="flex items-center justify-center gap-4 flex-wrap">
             {[
+              { href: '/pricing', label: 'Pricing' },
+              { href: '/taxi/cities', label: 'All Cities' },
+              { href: '/tipping/countries', label: 'All Countries' },
               { href: '/about', label: t('footer_about') },
               { href: '/faq', label: t('footer_faq') },
               { href: '/blog', label: t('footer_blog') },

@@ -39,6 +39,16 @@ export default function TaxiPage() {
 
       <PopularCitiesSection cities={FEATURED_CITIES} />
 
+      {/* Link to all cities */}
+      <Link
+        href="/taxi/cities"
+        className="flex items-center gap-2 px-4 py-3 bg-zinc-900 border border-zinc-800 rounded-xl text-xs text-zinc-400 hover:text-zinc-200 hover:border-zinc-700 transition-colors group"
+      >
+        <span className="text-purple-400 shrink-0">🗺</span>
+        <span className="flex-1 min-w-0 truncate text-[11px]">Browse all {allSlugs.size} cities — taxi fare rates by destination</span>
+        <span className="text-zinc-600 group-hover:text-zinc-400 transition-colors shrink-0 rtl:rotate-180">→</span>
+      </Link>
+
       {/* Link to scam guide */}
       <Link
         href="/taxi/scams"
