@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronRight, ArrowRight, Plane, ExternalLink } from 'lucide-react'
 import { getBlogPost, getAllBlogSlugs, getRelatedPosts, getWordCount, type BlogSection, type BlogPost } from '@/lib/blog-posts'
+import { TRANSLATED_SLUGS } from '@/lib/blog-translation'
 import { LOCALES } from '@/lib/i18n'
 
 const NON_EN_LOCALES_SLUG = LOCALES.filter((l) => l.code !== 'en').map((l) => l.code)
@@ -91,9 +92,14 @@ export async function generateMetadata(
     en: `${APP_URL_META}/blog/${slug}`,
     'x-default': `${APP_URL_META}/blog/${slug}`,
   }
-  NON_EN_LOCALES_SLUG.forEach((l) => {
-    localeLanguages[toBcp47Slug(l)] = `${APP_URL_META}/${l}/blog/${slug}`
-  })
+  // Only emit locale hreflang for slugs that have been translated.
+  // Emitting hreflang for untranslated slugs causes Google to follow locale URLs
+  // that redirect back to English — triggering "Page with redirect" in GSC.
+  if (TRANSLATED_SLUGS.has(slug)) {
+    NON_EN_LOCALES_SLUG.forEach((l) => {
+      localeLanguages[toBcp47Slug(l)] = `${APP_URL_META}/${l}/blog/${slug}`
+    })
+  }
 
   return {
     title: post.title,
