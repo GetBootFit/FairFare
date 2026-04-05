@@ -22,7 +22,7 @@ import { useLanguage } from '@/context/LanguageContext'
 import { useRecentSearches } from '@/hooks/useRecentSearches'
 import { Clock, Plane } from 'lucide-react'
 import { track } from '@vercel/analytics'
-import { ga4PreviewLoaded, ga4ResultLoaded } from '@/lib/analytics'
+import { ga4PreviewLoaded, ga4ResultLoaded, ga4UnlockClicked } from '@/lib/analytics'
 import Link from 'next/link'
 import { matchAirport } from '@/lib/airport-data'
 import type { TaxiPreviewResult, TaxiFullResult } from '@/types'
@@ -227,6 +227,7 @@ export function TaxiForm() {
       city: preview?.city ?? '',
       country: preview?.country ?? '',
     })
+    ga4UnlockClicked({ feature: 'taxi', city: preview?.city ?? '', country: preview?.country ?? '' })
     sessionStorage.setItem(STORAGE_KEY, JSON.stringify(form))
     setStatus('paying')
   }

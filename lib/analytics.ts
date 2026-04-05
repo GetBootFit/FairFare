@@ -53,6 +53,11 @@ export function ga4CrosssellClicked(params: { from: 'taxi' | 'tipping'; country:
   getGtag()?.('event', 'crosssell_clicked', params)
 }
 
+/** User clicked Unlock — highest-intent funnel step before payment modal. */
+export function ga4UnlockClicked(params: { feature: 'taxi' | 'tipping'; city?: string; country?: string }) {
+  getGtag()?.('event', 'unlock_clicked', params)
+}
+
 /** Blog post scroll depth milestone reached (25 / 50 / 75 / 100 %). */
 export function ga4ScrollDepth(params: { depth: 25 | 50 | 75 | 100; slug: string; feature?: string }) {
   getGtag()?.('event', 'scroll_depth', params)

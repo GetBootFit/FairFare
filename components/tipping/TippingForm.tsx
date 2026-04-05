@@ -19,7 +19,7 @@ import {
 import { useLanguage } from '@/context/LanguageContext'
 import { COUNTRY_FLAGS } from '@/lib/flags'
 import { track } from '@vercel/analytics'
-import { ga4ResultLoaded } from '@/lib/analytics'
+import { ga4ResultLoaded, ga4UnlockClicked } from '@/lib/analytics'
 import type { TippingResult as TippingResultType } from '@/types'
 
 const COUNTRIES = [
@@ -95,6 +95,7 @@ export function TippingForm() {
     const token = getStoredToken()
     if (!token || isTokenExpired(token)) {
       track('unlock_clicked', { feature: 'tipping', country: selectedCountry })
+      ga4UnlockClicked({ feature: 'tipping', country: selectedCountry })
       sessionStorage.setItem(STORAGE_KEY, JSON.stringify(selectedCountry))
       setCountry(selectedCountry)
       setStatus('paying')
