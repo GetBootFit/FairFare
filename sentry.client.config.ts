@@ -11,8 +11,8 @@ Sentry.init({
     }),
   ],
 
-  // Performance tracing — sample 10% of transactions
-  tracesSampleRate: 0.1,
+  // Performance tracing — sample 20% of transactions (increased from 10% — low traffic site)
+  tracesSampleRate: 0.2,
 
   // Replay 1% of all sessions, 100% of sessions with errors
   replaysSessionSampleRate: 0.01,
