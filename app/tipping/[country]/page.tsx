@@ -244,6 +244,14 @@ export default async function TippingCountryPage(
           <p className="text-sm text-zinc-300 leading-relaxed">{data.summary}</p>
         </div>
 
+        {/* Key local tip — surfaced from data, signals content depth to Google */}
+        {data.keyFact && (
+          <div className="flex gap-3 bg-teal-900/20 border border-teal-800/40 rounded-xl p-3.5">
+            <span className="text-teal-400 shrink-0 mt-0.5" aria-hidden="true">💡</span>
+            <p className="text-sm text-teal-200 leading-relaxed">{data.keyFact}</p>
+          </div>
+        )}
+
         {/* Scenario breakdown — restaurants + taxis shown; rest locked */}
         <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-4 space-y-1">
           <h2 className="text-sm font-semibold text-zinc-300 uppercase tracking-wider mb-2">By Situation</h2>

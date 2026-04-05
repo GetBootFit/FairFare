@@ -139,15 +139,18 @@
     "displayName": "Costa Rica",
     "expected": "yes",
     "expectedLabel": "10% service charge included by law",
-    "summary": "Costa Rican law mandates a 10% service charge (el servicio) on all restaurant bills. Most diners leave a little extra for great service. Uber is widespread and tips on rides are appreciated but never expected.",
+    "summary": "Costa Rican law mandates a 10% service charge (el servicio) on all restaurant bills. It is not optional — it is automatically added and legally required. Most diners leave a little extra for exceptional service. Outside restaurants, tipping norms are similar to other Central American countries: appreciated, not obligatory.",
     "restaurant": "10% service is legally included in all restaurant bills. An additional 5–10% in cash for exceptional service is appreciated but optional.",
-    "taxi": "Metered taxis (la maría) don't require tipping — round up if you like. Uber is popular in San José; in-app tips are optional but welcomed.",
-    "hotel": "$1–2 USD per bag for porters. $1–2 USD per night for housekeeping.",
+    "taxi": "Metered official taxis (la maría — red with yellow triangle) don't require tipping — round up if you like. Uber is popular in San José; in-app tips are optional but welcomed.",
+    "hotel": "$1–2 USD per bag for porters. $1–2 USD per night for housekeeping is a reasonable daily amount.",
     "spa": "10–15% for personal treatments unless a service charge is already included.",
-    "keyFact": "The 10% servicio at restaurants is a legal requirement — always check your bill before adding extra.",
+    "keyFact": "The 10% servicio at Costa Rican restaurants is a legal requirement, not a suggestion. The confusion arises because it often looks like an optional line item — it is not. Always check your bill before adding extra on top.",
     "faqs": [
-      { "q": "Do restaurants in Costa Rica include a service charge?", "a": "Yes — a 10% servicio is legally required on all restaurant bills. You are not obligated to tip further, but rounding up or adding a few extra colones for excellent service is appreciated." },
-      { "q": "Should you tip taxi drivers in Costa Rica?", "a": "Metered official taxis (red with yellow triangle) don't require a tip — rounding up is fine. Uber drivers appreciate a small in-app tip but it's entirely optional." }
+      { "q": "Do restaurants in Costa Rica include a service charge?", "a": "Yes — a 10% servicio is legally required on all restaurant bills. You are not obligated to tip further, but rounding up or leaving an extra 5% in cash for exceptional service is appreciated and goes directly to the server." },
+      { "q": "Should you tip taxi drivers in Costa Rica?", "a": "Metered official taxis (red with yellow triangle, la maría) don't require a tip — rounding up to the nearest 500 colones is a standard courtesy. Uber drivers appreciate a small in-app tip but it's entirely optional. Avoid unofficial taxis (piratas) — use the official red taxis or Uber for safety and transparent pricing." },
+      { "q": "What currency should I use for tips in Costa Rica?", "a": "Both Costa Rican colones (CRC) and US dollars are accepted for tips throughout the country. USD is particularly common at tourist-facing restaurants, hotels, and tour operators. Colones are more appropriate in local sodas (traditional restaurants) and when taking official taxis." },
+      { "q": "How much should I tip a tour guide in Costa Rica?", "a": "For a half-day tour, $5–10 per person is appropriate. For a full-day guided tour (zip-lining, volcano hiking, wildlife safari), $10–20 per person for the guide is reasonable. Private guides who provide personalised service for a full day merit $15–25+ depending on the experience." },
+      { "q": "Is it safe to pay by card in Costa Rica?", "a": "Cards are widely accepted in tourist areas, larger restaurants, and hotels. Smaller sodas, local markets, and rural areas often prefer cash. For tipping specifically, cash tips always ensure the money reaches the intended recipient — card tips may be handled by management. ATMs (BAC, Scotiabank) are readily available in San José and tourist towns." }
     ]
   },
   "croatia": {
@@ -415,15 +418,18 @@
     "displayName": "Macau",
     "expected": "optional",
     "expectedLabel": "Usually included — check your bill",
-    "summary": "A 10% service charge is included in almost all Macau restaurant and hotel bills, so additional tipping is optional. Casinos have specific rules around dealer tips — some prohibit them entirely. Small tips are appreciated by taxi drivers and hotel staff.",
+    "summary": "A 10% service charge is included in almost all Macau restaurant and hotel bills, so additional tipping is optional. Casinos have specific rules around dealer tips — some prohibit them entirely. Small tips are appreciated by taxi drivers and hotel staff, particularly given the high cost of living relative to wages in the territory.",
     "restaurant": "A 10% service charge is almost always added — check before tipping more. If not included, 10% is appropriate.",
     "taxi": "Round up to the nearest pataca. Tips aren't expected but are welcomed for good service.",
     "hotel": "MOP 10–20 per bag for porters. MOP 20–50 per night for housekeeping at higher-end properties.",
     "spa": "MOP 30–60 for personal treatments if not already included in the service charge.",
-    "keyFact": "Casino tipping rules vary widely — some properties prohibit tipping dealers entirely. Always follow the casino's posted policy.",
+    "keyFact": "Casino tipping rules vary widely in Macau — some properties prohibit tipping dealers entirely while others permit it. Always follow the casino's posted policy before tipping gaming staff.",
     "faqs": [
-      { "q": "Can you tip casino dealers in Macau?", "a": "Rules vary by casino — many prohibit tipping dealers outright. Always check the casino's posted policy. Tip jars for support staff (drinks, cleaning) are more commonly permitted." },
-      { "q": "Is tipping expected at Macau restaurants?", "a": "A 10% service charge is nearly always included in the bill. If it isn't, 10% is appropriate. There's no expectation to tip on top of an included service charge." }
+      { "q": "Can you tip casino dealers in Macau?", "a": "Rules vary by casino — many prohibit tipping dealers outright. Always check the casino's posted policy. Tip jars for support staff (drinks, cleaning) are more commonly permitted. High-end Cotai Strip casinos tend to have stricter no-tipping policies than older Lisboa-area properties." },
+      { "q": "Is tipping expected at Macau restaurants?", "a": "A 10% service charge is nearly always included in the bill. If it isn't, 10% is appropriate. There's no expectation to tip on top of an included service charge — check the bottom line of your bill carefully before adding extra." },
+      { "q": "Should I tip taxi drivers in Macau?", "a": "Rounding up to the nearest pataca is a common courtesy. Macau taxi drivers don't expect tips but appreciate them. Taxi fares are metered and very reasonable by international standards — MOP 19 base fare, roughly €2." },
+      { "q": "How do currencies work for tipping in Macau?", "a": "Macau's official currency is the Macanese Pataca (MOP), but Hong Kong Dollars (HKD) are accepted almost everywhere at roughly 1:1. Major casinos price in HKD. Tips in either currency are equally welcomed." },
+      { "q": "Is there a tipping culture for hotel staff in Macau?", "a": "At luxury Cotai Strip hotels (The Venetian, Galaxy, Morpheus), a tipping culture similar to Las Vegas has developed. MOP 10–20 per bag for porters and MOP 20–50 per night for housekeeping is appreciated. At older, more local hotels in the Macau Peninsula, tipping hotel staff is less common but always warmly received." }
     ]
   },
   "mexico": {
@@ -713,15 +719,18 @@
     "displayName": "Tunisia",
     "expected": "yes",
     "expectedLabel": "10% at restaurants expected",
-    "summary": "Tipping is standard and expected in Tunisia across most service interactions. Restaurant staff, hotel porters, hammam attendants, and tour guides rely on tips as a meaningful part of their income. In medinas and souks, a small gratuity for guides is customary.",
+    "summary": "Tipping is standard and expected in Tunisia across most service interactions. Restaurant staff, hotel porters, hammam attendants, and tour guides rely on tips as a meaningful part of their income. The Tunisian dinar is the local currency and tips in TND are always appropriate — euros are sometimes accepted in tourist areas but local currency is preferred.",
     "restaurant": "10% is standard at sit-down restaurants. In medina cafes, round up or leave 1–2 TND.",
-    "taxi": "Agree on the fare before boarding — meters are often ignored. Round up to the nearest dinar as a courtesy.",
+    "taxi": "Agree on the fare before boarding — meters are often ignored in Tunis and Sousse. Round up to the nearest dinar as a courtesy.",
     "hotel": "1–2 TND per bag for porters. 2–5 TND per night for housekeeping at mid-range and above properties.",
     "spa": "5–10 TND for hammam and spa treatments — attendants rely on tips as a significant part of their income.",
-    "keyFact": "At traditional hammams (bath houses), tipping the attendant 5–10 TND at the end is customary and very much expected.",
+    "keyFact": "At traditional hammams (bath houses), tipping the attendant 5–10 TND at the end is not just appreciated — it is customary and very much expected. This is different from tipping at a Western-style spa.",
     "faqs": [
-      { "q": "Should you tip in Tunisian restaurants?", "a": "Yes — 10% is standard at sit-down restaurants. In casual medina cafes, rounding up or leaving 1–2 TND is sufficient. Tips are meaningful to staff on modest wages." },
-      { "q": "How much should you tip a guide in Tunisia?", "a": "For a half-day tour, 10–15 TND per person is appropriate. Full-day guided tours merit 20–30 TND. For brief medina walk-throughs, 5–10 TND is fair." }
+      { "q": "Should you tip in Tunisian restaurants?", "a": "Yes — 10% is standard at sit-down restaurants. In casual medina cafes, rounding up or leaving 1–2 TND is sufficient. Tips are meaningful to staff on modest wages and are often shared among the team." },
+      { "q": "How much should you tip a guide in Tunisia?", "a": "For a half-day tour, 10–15 TND per person is appropriate. Full-day guided tours of sites like Carthage, El Djem, or the Sahara merit 20–30 TND per person. For brief medina walk-throughs or spontaneous guidance, 5–10 TND is fair." },
+      { "q": "Do Tunisian taxis use meters?", "a": "Official yellow taxis are metered by law, but meters are frequently not used — especially in tourist areas. Agree on the price before getting in, or insist on the meter. Apps like iTaxi or Bolt operate in Tunis and use upfront pricing. Rounding up the agreed fare by 1–2 TND is a standard courtesy." },
+      { "q": "Should you tip souk vendors or shop owners in Tunisia?", "a": "No — tipping in shops and markets is not customary. The expected gesture in souks is bargaining, not tipping. Accept tea or mint if offered during negotiations; this is hospitality, not a prelude to obligation." },
+      { "q": "Is it safe to carry cash for tips in Tunisia?", "a": "Yes — cash is essential in Tunisia. Cards are accepted at larger hotels and some tourist restaurants, but most tipping situations (taxis, hammams, street food, small cafes) are cash-only. Carry small denomination TND notes (1 TND, 5 TND coins and notes) specifically for tips. ATMs are widely available in Tunis, Sousse, and Hammamet." }
     ]
   },
   "turkey": {
@@ -742,14 +751,18 @@
     "displayName": "United Arab Emirates",
     "expected": "optional",
     "expectedLabel": "10–15% appreciated",
-    "summary": "Tipping is appreciated in the UAE though not obligatory. Service charges are sometimes added. Staff — many of whom are migrant workers — genuinely appreciate tips.",
-    "restaurant": "10–15% for good service. Some restaurants include a service charge — check the bill.",
-    "taxi": "Round up. Use Careem or Uber for standard pricing.",
+    "summary": "Tipping is appreciated in the UAE though not obligatory. Service charges are sometimes added. Staff — many of whom are migrant workers on modest wages — genuinely appreciate tips as a meaningful part of their income.",
+    "restaurant": "10–15% for good service. Some restaurants include a service charge — check the bill before adding more.",
+    "taxi": "Round up. Use Careem or Uber for transparent metered pricing. RTA taxis run on meters; tipping is optional.",
     "hotel": "AED 5–20 per bag for porters. AED 10–20 per night for housekeeping.",
-    "spa": "AED 20–50 for personal treatments.",
-    "keyFact": "Many service workers in the UAE are migrant workers on modest wages. Tips are especially meaningful and appreciated.",
+    "spa": "AED 20–50 for personal treatments — tip in cash directly to the therapist.",
+    "keyFact": "Many service workers in the UAE are migrant workers on modest wages. Tips are especially meaningful — far more so than in countries where tipping is built into minimum wage structures.",
     "faqs": [
-      { "q": "Do you tip in Dubai or Abu Dhabi?", "a": "10–15% at restaurants is appreciated. Hotel staff, taxi drivers, and spa workers welcome tips. Many workers are on modest expatriate wages." }
+      { "q": "Do you tip in Dubai or Abu Dhabi?", "a": "10–15% at restaurants is appreciated. Hotel staff, taxi drivers, and spa workers welcome tips. Many workers in the hospitality sector are migrant workers on relatively modest base wages." },
+      { "q": "Is tipping expected at UAE restaurants?", "a": "Not legally required, but 10–15% is the accepted norm in mid-range and upscale restaurants. Many international hotel restaurants include a 10% service charge — check the bill before adding extra. At casual cafes and food courts, tipping is not expected." },
+      { "q": "Should I tip Careem or Uber drivers in the UAE?", "a": "An in-app tip of AED 5–10 is appreciated but not expected. Both apps have a tip feature. For longer journeys or airport runs, a small cash tip is a kind gesture." },
+      { "q": "How much do you tip hotel staff in Dubai?", "a": "AED 5–20 per bag for porters depending on the property level. AED 10–20 per night for housekeeping is reasonable at mid-range hotels; AED 20–50 at luxury properties. Concierge staff who arrange special requests appreciate AED 20–50 for meaningful assistance." },
+      { "q": "Is tipping legal in the UAE?", "a": "Yes — tipping is entirely legal and practised widely. There are no restrictions on gratuities. The UAE's tax-free environment means the full AED amount reaches the recipient without income tax deductions." }
     ]
   },
   "ukraine": {

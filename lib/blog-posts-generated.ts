@@ -5741,14 +5741,20 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
     "title": "Tipping in Indonesia (Bali, Jakarta & Beyond): 2026 Guide",
     "description": "Tipping isn't traditional in Indonesia, but it's now expected in tourist areas of Bali. Here's how much to tip at restaurants, spas, and with drivers in Indonesia.",
     "publishedAt": "2026-03-08",
-    "readingMinutes": 5,
+    "updatedAt": "2026-04-05",
+    "readingMinutes": 7,
     "category": "tipping",
     "country": "Indonesia",
     "countrySlug": "indonesia",
+    "references": [
+      { "label": "Bank Indonesia — Currency & Exchange Information", "url": "https://www.bi.go.id/en/beranda.aspx" },
+      { "label": "Bali Tourism Board — Visitor Guide", "url": "https://www.balitourismboard.org/" },
+      { "label": "Gojek — Official App Information", "url": "https://www.gojek.com/en-id/" }
+    ],
     "content": [
       {
         "type": "intro",
-        "body": "Indonesia doesn't have a deep-rooted tipping culture, but decades of tourism — particularly in Bali — have changed expectations significantly. In tourist areas, tipping is appreciated and increasingly expected. In local areas, it's a pleasant surprise."
+        "body": "Indonesia doesn't have a deep-rooted tipping culture — in most of the archipelago, tipping simply isn't part of everyday transactions. But decades of international tourism, particularly in Bali, have shifted expectations considerably. In Bali's tourist hotspots, tips are now genuinely expected. In Jakarta, Yogyakarta, Lombok, or any local establishment, tipping remains a pleasant surprise rather than an obligation. Knowing the difference saves awkwardness and ensures your money reaches people who value it most."
       },
       {
         "type": "h2",
@@ -5756,7 +5762,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
       },
       {
         "type": "p",
-        "body": "Bali operates on different norms to the rest of Indonesia. In Seminyak, Ubud, Canggu, and Kuta, staff at restaurants, spas, and hotels have come to expect tips from international visitors. In Jakarta, Yogyakarta, Lombok, or more local establishments, tipping is genuinely optional and not expected."
+        "body": "Bali operates on different norms to the rest of Indonesia. In Seminyak, Ubud, Canggu, and Kuta, staff at restaurants, spas, and hotels have come to expect tips from international visitors — it has effectively become part of the service economy. In Jakarta, Yogyakarta, Surabaya, Lombok, or any local establishment away from the tourist trail, tipping is genuinely optional. You won't cause offence by not tipping, but a gesture of appreciation is warmly received."
       },
       {
         "type": "h2",
@@ -5765,18 +5771,19 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
       {
         "type": "table",
         "rows": [
-          { "label": "Restaurants (tourist areas)", "value": "10–15% or 20,000–50,000 IDR" },
-          { "label": "Restaurants (local warungs)", "value": "Not expected, small change appreciated" },
-          { "label": "Spa / massage", "value": "20,000–50,000 IDR (10–15%)" },
-          { "label": "Private driver (day hire)", "value": "50,000–100,000 IDR per day" },
+          { "label": "Restaurants (tourist areas, Bali)", "value": "10–15% or 20,000–50,000 IDR" },
+          { "label": "Restaurants (local warungs)", "value": "Not expected; small change appreciated" },
+          { "label": "Spa / massage (tourist area)", "value": "20,000–50,000 IDR (10–15%)" },
+          { "label": "Private driver (full day, 8 hrs)", "value": "50,000–100,000 IDR" },
           { "label": "Hotel porter", "value": "10,000–20,000 IDR per bag" },
-          { "label": "Tour guide", "value": "50,000–100,000 IDR per person" },
-          { "label": "Taxis (Blue Bird)", "value": "Round up, optional" }
+          { "label": "Tour guide (half or full day)", "value": "50,000–100,000 IDR per person" },
+          { "label": "Taxis (Blue Bird, metered)", "value": "Round up, optional" },
+          { "label": "Grab / Gojek drivers", "value": "In-app tip optional; 5,000–10,000 IDR appreciated" }
         ]
       },
       {
         "type": "tip",
-        "body": "In Bali, many restaurants include a 10% government tax and a 5–10% service charge. Always check the bill — the bottom line may already include a significant service component."
+        "body": "Many tourist-area restaurants in Bali include a 10% government tax (PPN) and a 5–10% service charge — making your bill 15–21% above the menu price before any additional tip. Always check the bottom line of the bill before adding more. If a service charge is listed, a small extra cash tip directly to your server is still appreciated but not obligatory."
       },
       {
         "type": "h2",
@@ -5784,14 +5791,40 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
       },
       {
         "type": "p",
-        "body": "Hiring a private driver for a day tour (typically 400,000–600,000 IDR for 8 hours) is extremely common in Bali. A tip of 50,000–100,000 IDR for good service is appreciated and represents meaningful income. If your driver was exceptional — navigated traffic, suggested good spots, waited patiently — 100,000–150,000 IDR is generous without being excessive."
+        "body": "Hiring a private driver for a day tour — typically 400,000–600,000 IDR for 8 hours — is one of the best ways to see Bali's temples, rice terraces, and volcanic scenery. A tip of 50,000–100,000 IDR for good service is appreciated and represents meaningful income relative to the base rate. If your driver was exceptional — navigating traffic creatively, suggesting hidden spots, waiting patiently, or helping carry bags at a temple — 100,000–150,000 IDR is generous without being excessive. Pay the tip directly at the end of the day, in cash, in a way that makes the gesture personal."
+      },
+      {
+        "type": "h2",
+        "heading": "Lombok and the Gili Islands"
+      },
+      {
+        "type": "p",
+        "body": "Lombok and the Gili Islands attract fewer mass-market tourists than Bali, and tipping norms sit somewhere between Bali and the rest of Indonesia. At resort hotels and upscale restaurants on the Gili Islands, tips of 15,000–30,000 IDR at a beachside bar or 30,000–50,000 IDR for a restaurant meal are appropriate and appreciated. In Lombok's local towns — Mataram, Senggigi — tipping is not expected. Diving instructors and snorkelling guides on the Gilis appreciate 50,000–100,000 IDR for a half-day trip; it directly supplements their relatively modest dive school income."
+      },
+      {
+        "type": "h2",
+        "heading": "Using Grab and Gojek"
+      },
+      {
+        "type": "p",
+        "body": "Grab and Gojek are Indonesia's dominant ride-hailing apps and are significantly safer and more transparent than unmetered street taxis in cities like Jakarta, Surabaya, and Medan. Fares are agreed in-app before you ride, eliminating price negotiation. Both apps offer an in-app tip feature — 5,000–10,000 IDR is a kind gesture for a good ride, but most Indonesian passengers do not tip, so drivers don't expect it. In Bali, where tourism wages are supplemented by gratuities more broadly, small cash tips to ride-hailing drivers are more common."
+      },
+      {
+        "type": "h2",
+        "heading": "Cash Is Preferred for Tips"
+      },
+      {
+        "type": "p",
+        "body": "Indonesia remains heavily cash-based for tipping. Card payments — even where accepted — often don't have a tip line, and any card tip may go to the establishment rather than the individual server or therapist. Carry small denomination IDR notes (5,000, 10,000, 20,000, and 50,000 IDR) for tips. ATMs throughout Bali and other tourist areas dispense large notes (50,000 and 100,000 IDR); ask a convenience store or minimarket to break them into smaller denominations early in your stay."
       },
       {
         "type": "faq",
         "faqs": [
-          { "q": "Should I tip at a warung (local food stall) in Bali?", "a": "Not expected. Warungs are informal local eateries and tipping isn't part of the culture. Rounding up or leaving small change (a few thousand IDR) is a kind gesture but entirely optional." },
-          { "q": "Is it safe to use Grab or Gojek in Indonesia?", "a": "Yes — both are widely used, reliable, and significantly safer than unmetered street taxis in major cities. The in-app tip option is appreciated but not required." },
-          { "q": "Do Balinese spa workers expect tips?", "a": "In tourist-area spas, yes. A 10–15% tip or 20,000–50,000 IDR for a full-body massage is standard practice and makes a meaningful difference to therapists earning modest wages." }
+          { "q": "Should I tip at a warung (local food stall) in Bali?", "a": "Not expected. Warungs are informal local eateries and tipping isn't part of the culture. Rounding up or leaving a few thousand IDR (the equivalent of cents) is a kind gesture, but don't feel any obligation — the locals eating next to you certainly aren't tipping." },
+          { "q": "Do Balinese spa workers expect tips?", "a": "In tourist-area spas, yes. A 10–15% tip or 20,000–50,000 IDR for a full-body massage is standard practice and makes a meaningful difference to therapists earning modest base wages. At local-facing spas in Denpasar or quieter neighbourhoods, tipping norms are more relaxed." },
+          { "q": "Is it safe to use Grab or Gojek in Indonesia?", "a": "Yes — both are widely used, reliable, and significantly safer than unmetered street taxis in major Indonesian cities. Driver details, route tracking, and upfront pricing make them the preferred choice for most travellers. In Bali, local transport apps (Bluebird, Kura-Kura) also operate, though Grab and Gojek are generally cheaper." },
+          { "q": "How much should I tip a wedding or event photographer in Bali?", "a": "Bali has become a major destination for international weddings and professional photography. A tip of 200,000–500,000 IDR (roughly $12–30 USD) for a photographer or videographer is appropriate if you're genuinely happy with their work and service. This is not expected — it's a discretionary gesture for exceptional creative work." },
+          { "q": "Do I need to tip at all-inclusive resorts in Bali?", "a": "Most all-inclusive resorts add a service charge to room rates, which is distributed among staff. Additional tipping is at your discretion — regular housekeeping tips of 10,000–20,000 IDR per day and 20,000–50,000 IDR for spa treatments are appreciated even when included in the all-in rate, as they ensure the specific individual who served you benefits." }
         ]
       }
     ]
