@@ -44,6 +44,10 @@ export const TRANSLATED_SLUGS = new Set([
   'how-much-does-a-taxi-cost-in-mumbai',
   'how-much-does-a-taxi-cost-in-mexico-city',
   'how-much-does-a-taxi-cost-in-buenos-aires',
+  // ── Added based on GSC data: high impressions on locale URLs currently redirecting to EN ──
+  'tipping-in-mexico',      // /es/ = 1,175 impressions + /th/ = 577 redirecting to EN
+  'tipping-in-malaysia',    // 660 EN impressions — high locale translation potential
+  'taxi-fiumicino-to-rome', // 615 EN impressions — Italian + French translation high value
 ])
 
 const LOCALE_LANGUAGE: Record<string, string> = {

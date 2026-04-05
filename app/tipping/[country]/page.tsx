@@ -89,9 +89,20 @@ export async function generateMetadata(
   const year = new Date().getFullYear()
   const countryName = data.displayName
 
+  // Extract tip percentage from expectedLabel (e.g. "Expected — 10–15%" → "10–15%")
+  // Appended to title to match high-volume "average tip in [country]" query pattern
+  const pctMatch = data.expectedLabel.match(/\d+(?:–\d+)?%/)
+  const titlePct = pctMatch ? ` (${pctMatch[0]})` : ''
+
+  // Description: lead with the restaurant rate (most specific answer) then sell the full guide
+  const restaurantHint = data.restaurant.length > 100
+    ? data.restaurant.slice(0, 97) + '…'
+    : data.restaurant
+  const metaDescription = `${restaurantHint} Hotels, spas & taxis also covered — ${countryName} tipping guide ${year}.`
+
   return {
-    title: `Tipping in ${countryName} (${year}) — How Much & Etiquette`,
-    description: `${data.summary.slice(0, 145)}…`,
+    title: `Average Tip in ${countryName}${titlePct} — ${year} Tipping Guide`,
+    description: metaDescription,
     alternates: { canonical: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com'}/tipping/${country}` },
     openGraph: {
       title: `Tipping in ${countryName} (${year}) — Hootling`,

@@ -808,6 +808,48 @@ export const AIRPORT_DATA: Record<string, AirportData> = {
       'KakaoTaxi — app-based, same licensed taxis, English support',
     ],
   },
+  CAI: {
+    code: 'CAI',
+    name: 'Cairo International Airport',
+    city: 'Cairo',
+    country: 'Egypt',
+    currency: 'EGP',
+    currencySymbol: 'E£',
+    baseRate: 10,
+    ratePerKm: 8,
+    minimumFare: 25,
+    taxiColor: 'white (official airport taxis)',
+    approxCityFare: 'E£200–400 to downtown Cairo (negotiated)',
+    blogSlug: 'taxi-scams-in-cairo',
+    routes: [
+      { label: 'Downtown Cairo / Tahrir Square', km: 22, note: 'negotiate fare before boarding; E£200–350 typical' },
+      { label: 'Giza / Pyramids area', km: 30, note: 'E£300–450; heavy traffic via Ring Road' },
+      { label: 'Zamalek / Garden City', km: 26, note: 'E£250–380; riverside neighbourhoods' },
+      { label: 'Heliopolis (adjacent)', km: 6, note: 'E£60–100; closest major district' },
+      { label: 'New Cairo / Fifth Settlement', km: 38, note: 'E£350–550; use Careem/Uber for fixed price' },
+      { label: 'Maadi', km: 35, note: 'E£300–480; expat district south of downtown' },
+    ],
+    tips: [
+      'Meters exist but are almost never used — always agree on a price before you get in the taxi.',
+      'Careem and Uber both operate from Cairo Airport and offer upfront fixed pricing — strongly recommended over street taxis.',
+      'Official white airport taxis are licensed and generally more reliable than unmetered kerb taxis.',
+      'Night surcharges (25%) apply on metered fares if the driver agrees to use the meter.',
+      'Egyptian pounds have fluctuated significantly — check the current exchange rate before arriving.',
+    ],
+    scams: [
+      'Driver claims Uber/Careem is unavailable or banned — it is not; both apps work throughout Cairo.',
+      'Unofficial drivers approach arrivals inside the terminal before the official taxi rank — always exit to the kerb rank.',
+      'Driver "helps with luggage" then demands payment for the assistance on top of the fare.',
+      'Sudden detours claiming road closures that extend the journey and the negotiated fare.',
+      'Quoting fares in USD at unfavourable rates — insist on paying in Egyptian pounds.',
+    ],
+    alternatives: [
+      'Careem — preferred app-based option, upfront pricing, Arabic + English, widely used',
+      'Uber — available throughout Cairo, similar pricing to Careem',
+      'Cairo Metro — no direct airport connection; take a taxi/Careem to nearest metro station',
+      'Airport Bus — limited public bus routes; not recommended with luggage',
+    ],
+  },
 }
 
 export function getAirportData(code: string): AirportData | null {
@@ -844,6 +886,7 @@ const AIRPORT_KEYWORDS: Record<string, string[]> = {
   NRT: ['narita'],
   GRU: ['guarulhos'],
   ICN: ['incheon'],
+  CAI: ['cairo international'],
 }
 
 /**
@@ -927,8 +970,9 @@ const CITY_TO_AIRPORT_CODE: Record<string, string> = {
   Seoul: 'ICN',
   Mumbai: 'BOM', Bombay: 'BOM',
   Delhi: 'DEL', 'New Delhi': 'DEL',
-  // Middle East
+  // Middle East & Africa
   Dubai: 'DXB',
+  Cairo: 'CAI',
   // Europe
   London: 'LHR',
   Paris: 'CDG',
