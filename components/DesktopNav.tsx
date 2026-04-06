@@ -83,9 +83,9 @@ export function DesktopNav() {
           })}
         </nav>
 
-        {/* Language selector */}
+        {/* Language selector — direction="down" so dropdown opens below the top nav bar */}
         <div className="shrink-0 ml-auto">
-          <LanguageSelector />
+          <LanguageSelector direction="down" />
         </div>
       </div>
     </header>
