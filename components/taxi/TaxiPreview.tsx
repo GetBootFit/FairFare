@@ -71,64 +71,55 @@ export function TaxiPreview({ preview }: Props) {
         )
       })()}
 
-      {/* Fare range — shown free as anchor; exact breakdown locked */}
-      {preview.fareRange ? (
-        <div className="bg-zinc-900 border border-zinc-800 rounded-2xl divide-y divide-zinc-800 overflow-hidden">
-          {/* Real fare range visible — loss aversion kicks in once user sees the number */}
-          <div className="flex items-center justify-between px-4 py-3.5">
-            <div>
-              <p className="text-sm text-zinc-400">Estimated fare</p>
-              <p className="text-xs text-zinc-600">Typical range · unlock for exact estimate</p>
-            </div>
-            <span className="text-base font-bold text-white">
-              {preview.fareRange.currencySymbol}{preview.fareRange.min}–{preview.fareRange.currencySymbol}{preview.fareRange.max}
-            </span>
-          </div>
+      {/* Local knowledge card — free row at top, three locked rows below */}
+      <div className="bg-zinc-900 border border-zinc-800 rounded-2xl divide-y divide-zinc-800 overflow-hidden">
 
-          {/* Scam alert teaser — city-specific to feel credible */}
-          <div className="flex items-center justify-between px-4 py-3.5">
-            <div>
-              <p className="text-sm text-amber-400">⚠️ Scam warnings for {preview.city}</p>
-              <p className="text-xs text-zinc-600">Known risks on this route — unlock to see</p>
-            </div>
-            <Lock size={16} className="text-zinc-600" />
+        {/* Free: general city taxi context — builds credibility, no route-specific numbers */}
+        {preview.cityContext ? (
+          <div className="px-4 py-3.5 flex items-start gap-3">
+            <span className="text-teal-400 shrink-0 mt-0.5 text-base" aria-hidden="true">💡</span>
+            <p className="text-sm text-teal-200 leading-relaxed">{preview.cityContext.note}</p>
           </div>
+        ) : (
+          <div className="px-4 py-3.5 flex items-start gap-3">
+            <span className="text-zinc-600 shrink-0 mt-0.5 text-base" aria-hidden="true">🌍</span>
+            <p className="text-sm text-zinc-500 leading-relaxed">
+              Fare estimate, scam warnings and driver phrases available — unlock below.
+            </p>
+          </div>
+        )}
 
-          {/* Driver phrase locked */}
-          <div className="flex items-center justify-between px-4 py-3.5">
-            <div>
-              <p className="text-sm text-zinc-400">Phrase for driver</p>
-              <p className="text-xs text-zinc-600">In local language</p>
-            </div>
-            <Lock size={16} className="text-zinc-600" />
+        {/* Locked: route-specific fare estimate */}
+        <div className="flex items-center justify-between px-4 py-3.5">
+          <div>
+            <p className="text-sm text-zinc-400">
+              Fare estimate
+              {preview.cityContext ? ` · ${preview.cityContext.currencySymbol} ${preview.cityContext.currency}` : ''}
+            </p>
+            <p className="text-xs text-zinc-600">Route-specific · ±15% for traffic &amp; variation</p>
           </div>
+          <Lock size={16} className="text-zinc-600" />
         </div>
-      ) : (
-        /* Fallback when city not in fare dataset */
-        <div className="bg-zinc-900 border border-zinc-800 rounded-2xl divide-y divide-zinc-800 overflow-hidden">
-          <div className="flex items-center justify-between px-4 py-3.5">
-            <div>
-              <p className="text-sm text-zinc-400">Estimated fare</p>
-              <p className="text-xs text-zinc-600">With local currency conversion</p>
-            </div>
-            <Lock size={16} className="text-zinc-600" />
+
+        {/* Locked: scam warnings — city-specific label maintains urgency */}
+        <div className="flex items-center justify-between px-4 py-3.5">
+          <div>
+            <p className="text-sm text-amber-400/90">⚠️ Scam warnings · {preview.city}</p>
+            <p className="text-xs text-zinc-600">Known risks on this route</p>
           </div>
-          <div className="flex items-center justify-between px-4 py-3.5">
-            <div>
-              <p className="text-sm text-amber-400">⚠️ Scam warnings for {preview.city}</p>
-              <p className="text-xs text-zinc-600">Known risks on this route — unlock to see</p>
-            </div>
-            <Lock size={16} className="text-zinc-600" />
-          </div>
-          <div className="flex items-center justify-between px-4 py-3.5">
-            <div>
-              <p className="text-sm text-zinc-400">Phrase for driver</p>
-              <p className="text-xs text-zinc-600">In local language</p>
-            </div>
-            <Lock size={16} className="text-zinc-600" />
-          </div>
+          <Lock size={16} className="text-zinc-600" />
         </div>
-      )}
+
+        {/* Locked: driver phrase */}
+        <div className="flex items-center justify-between px-4 py-3.5">
+          <div>
+            <p className="text-sm text-zinc-400">Phrase for driver</p>
+            <p className="text-xs text-zinc-600">In local language</p>
+          </div>
+          <Lock size={16} className="text-zinc-600" />
+        </div>
+
+      </div>
     </div>
   )
 }

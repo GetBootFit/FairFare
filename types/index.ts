@@ -8,13 +8,15 @@ export interface TaxiPreviewResult {
   city: string
   country: string
   citySupported: boolean
-  /** Fare range calculated from static rates + distance. Undefined when city is unsupported. */
-  fareRange?: {
-    min: number
-    max: number
+  /**
+   * General city context shown free in the preview — currency + local taxi note.
+   * Deliberately no route-specific numbers: those are paid-only (TaxiFullResult.fareRange).
+   */
+  cityContext?: {
     currency: string
     currencySymbol: string
-    note?: string
+    /** One-sentence local taxi tip, e.g. "Insist on meter. Airport toll paid by passenger." */
+    note: string
   }
 }
 

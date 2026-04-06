@@ -1,6 +1,6 @@
 ﻿import { NextRequest } from 'next/server'
 import { getRouteInfo } from '@/lib/google-maps'
-import { findCityRate, calculateFareRange } from '@/lib/taxi-rates'
+import { findCityRate } from '@/lib/taxi-rates'
 import { isRateLimited, getClientIp } from '@/lib/rate-limit'
 import { kvIncrement } from '@/lib/kv'
 import type { TaxiPreviewResult } from '@/types'
@@ -51,8 +51,10 @@ export async function POST(req: NextRequest) {
       console.warn(`[CITY_MISS:preview] ${route.city}, ${route.country}`)
     }
 
-    const fareRange = rateData
-      ? calculateFareRange(rateData, route.distanceKm)
+    // General city context for free preview — currency + local taxi note only.
+    // No route-specific fare numbers: those belong exclusively in the paid TaxiFullResult.
+    const cityContext = rateData?.note
+      ? { currency: rateData.currency, currencySymbol: rateData.currencySymbol, note: rateData.note }
       : undefined
 
     const result: TaxiPreviewResult = {
@@ -63,7 +65,7 @@ export async function POST(req: NextRequest) {
       city: route.city,
       country: route.country,
       citySupported,
-      fareRange,
+      cityContext,
     }
 
     return Response.json(result)
