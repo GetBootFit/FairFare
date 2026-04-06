@@ -1,6 +1,6 @@
 ﻿import { NextRequest } from 'next/server'
 import { getRouteInfo } from '@/lib/google-maps'
-import { findCityRate } from '@/lib/taxi-rates'
+import { findCityRate, calculateFareRange } from '@/lib/taxi-rates'
 import { isRateLimited, getClientIp } from '@/lib/rate-limit'
 import { kvIncrement } from '@/lib/kv'
 import type { TaxiPreviewResult } from '@/types'
@@ -42,13 +42,18 @@ export async function POST(req: NextRequest) {
 
     // Track cities not in our fare dataset.
     // KV counter per city drives the admin dashboard for prioritising additions.
-    const citySupported = !!findCityRate(`${route.city} ${route.country}`)
+    const rateData = findCityRate(`${route.city} ${route.country}`)
+    const citySupported = !!rateData
 
     if (!citySupported) {
       const missKey = `city_miss:${route.city.toLowerCase().replace(/\s+/g, '_')}`
       await kvIncrement(missKey)
       console.warn(`[CITY_MISS:preview] ${route.city}, ${route.country}`)
     }
+
+    const fareRange = rateData
+      ? calculateFareRange(rateData, route.distanceKm)
+      : undefined
 
     const result: TaxiPreviewResult = {
       pickup,
@@ -58,6 +63,7 @@ export async function POST(req: NextRequest) {
       city: route.city,
       country: route.country,
       citySupported,
+      fareRange,
     }
 
     return Response.json(result)

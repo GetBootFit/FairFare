@@ -8,6 +8,14 @@ export interface TaxiPreviewResult {
   city: string
   country: string
   citySupported: boolean
+  /** Fare range calculated from static rates + distance. Undefined when city is unsupported. */
+  fareRange?: {
+    min: number
+    max: number
+    currency: string
+    currencySymbol: string
+    note?: string
+  }
 }
 
 export interface TransportOption {

@@ -71,32 +71,64 @@ export function TaxiPreview({ preview }: Props) {
         )
       })()}
 
-      {/* Locked sections teaser */}
-      <div className="bg-zinc-900 border border-zinc-800 rounded-2xl divide-y divide-zinc-800 overflow-hidden">
-        {[
-          // Blurred fare placeholder triggers loss-aversion — user sees there IS a number
-          { label: 'Estimated fare', sublabel: 'With local currency conversion', blurred: '฿280 – ฿420' },
-          { label: 'Scam alerts', sublabel: '3 warnings found' },
-          { label: 'Phrase for driver', sublabel: 'In local language' },
-        ].map(({ label, sublabel, blurred }) => (
-          <div key={label} className="flex items-center justify-between px-4 py-3.5">
+      {/* Fare range — shown free as anchor; exact breakdown locked */}
+      {preview.fareRange ? (
+        <div className="bg-zinc-900 border border-zinc-800 rounded-2xl divide-y divide-zinc-800 overflow-hidden">
+          {/* Real fare range visible — loss aversion kicks in once user sees the number */}
+          <div className="flex items-center justify-between px-4 py-3.5">
             <div>
-              <p className="text-sm text-zinc-400">{label}</p>
-              <p className="text-xs text-zinc-600">{sublabel}</p>
+              <p className="text-sm text-zinc-400">Estimated fare</p>
+              <p className="text-xs text-zinc-600">Typical range · unlock for exact estimate</p>
             </div>
-            {blurred ? (
-              <span
-                className="text-base font-bold text-white blur-sm select-none pointer-events-none"
-                aria-hidden="true"
-              >
-                {blurred}
-              </span>
-            ) : (
-              <Lock size={16} className="text-zinc-600" />
-            )}
+            <span className="text-base font-bold text-white">
+              {preview.fareRange.currencySymbol}{preview.fareRange.min}–{preview.fareRange.currencySymbol}{preview.fareRange.max}
+            </span>
           </div>
-        ))}
-      </div>
+
+          {/* Scam alert teaser — city-specific to feel credible */}
+          <div className="flex items-center justify-between px-4 py-3.5">
+            <div>
+              <p className="text-sm text-amber-400">⚠️ Scam warnings for {preview.city}</p>
+              <p className="text-xs text-zinc-600">Known risks on this route — unlock to see</p>
+            </div>
+            <Lock size={16} className="text-zinc-600" />
+          </div>
+
+          {/* Driver phrase locked */}
+          <div className="flex items-center justify-between px-4 py-3.5">
+            <div>
+              <p className="text-sm text-zinc-400">Phrase for driver</p>
+              <p className="text-xs text-zinc-600">In local language</p>
+            </div>
+            <Lock size={16} className="text-zinc-600" />
+          </div>
+        </div>
+      ) : (
+        /* Fallback when city not in fare dataset */
+        <div className="bg-zinc-900 border border-zinc-800 rounded-2xl divide-y divide-zinc-800 overflow-hidden">
+          <div className="flex items-center justify-between px-4 py-3.5">
+            <div>
+              <p className="text-sm text-zinc-400">Estimated fare</p>
+              <p className="text-xs text-zinc-600">With local currency conversion</p>
+            </div>
+            <Lock size={16} className="text-zinc-600" />
+          </div>
+          <div className="flex items-center justify-between px-4 py-3.5">
+            <div>
+              <p className="text-sm text-amber-400">⚠️ Scam warnings for {preview.city}</p>
+              <p className="text-xs text-zinc-600">Known risks on this route — unlock to see</p>
+            </div>
+            <Lock size={16} className="text-zinc-600" />
+          </div>
+          <div className="flex items-center justify-between px-4 py-3.5">
+            <div>
+              <p className="text-sm text-zinc-400">Phrase for driver</p>
+              <p className="text-xs text-zinc-600">In local language</p>
+            </div>
+            <Lock size={16} className="text-zinc-600" />
+          </div>
+        </div>
+      )}
     </div>
   )
 }

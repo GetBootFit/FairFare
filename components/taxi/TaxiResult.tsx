@@ -26,6 +26,7 @@ import { track } from '@vercel/analytics'
 import { useLanguage } from '@/context/LanguageContext'
 import type { TranslationKey } from '@/lib/i18n'
 import { InstallPrompt } from '@/components/InstallPrompt'
+import { SaveAccessPrompt } from '@/components/SaveAccessPrompt'
 
 // ── Custom SVG icon helper ────────────────────────────────────────────────────
 // The icon set has two native colour families:
@@ -717,6 +718,9 @@ export function TaxiResult({ result, onReset, purchasedProduct, onUpgradeToPass 
         <p className="text-[10px] text-zinc-600 text-center leading-relaxed px-2">
           {t('example_ai_disclosure')}
         </p>
+
+        {/* Save access — cross-device JWT persistence via email magic link */}
+        <SaveAccessPrompt />
 
         {/* PWA install — shown post-result (highest-conversion moment) */}
         <InstallPrompt variant="card" />
