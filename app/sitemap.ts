@@ -96,14 +96,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return { url, lastModified: DATA_LAST_MODIFIED, changeFrequency: 'monthly', priority: 0.85, alternates: hreflang(url) }
   })
 
-  // Blog pages — English canonical with locale-specific hreflang alternates
+  // Blog pages — English canonical only.
+  // Locale hreflang alternates are emitted ONLY for translated slugs; untranslated
+  // slugs must NOT advertise locale variants because those URLs redirect to English,
+  // causing Google to discover and queue redirect-only pages ("Discovered - not indexed").
   const blogPages: MetadataRoute.Sitemap = blogSlugs.map((slug) => {
+    const enUrl = `${BASE}/blog/${slug}`
+    // Build a minimal hreflang for untranslated posts (English + x-default only)
+    const languages: Record<string, string> = { en: enUrl, 'x-default': enUrl }
+    if (TRANSLATED_SLUGS.has(slug)) {
+      // Full locale alternates — actual translated content exists at these URLs
+      NON_EN_LOCALES.forEach((l) => {
+        languages[toBcp47(l)] = `${BASE}/${l}/blog/${slug}`
+      })
+    }
     return {
-      url: `${BASE}/blog/${slug}`,
+      url: enUrl,
       lastModified: DATA_LAST_MODIFIED,
       changeFrequency: 'monthly',
       priority: 0.7,
-      alternates: blogHreflang(slug),
+      alternates: { languages },
     }
   })
 

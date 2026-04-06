@@ -782,6 +782,7 @@ export const AIRPORT_DATA: Record<string, AirportData> = {
     minimumFare: 4800,
     taxiColor: 'silver (general), black (deluxe), yellow (international)',
     approxCityFare: '₩60,000–80,000 to central Seoul',
+    blogSlug: 'taxi-fares-in-south-korea',
     routes: [
       { label: 'Gangnam / COEX (Seoul)', km: 60, note: 'expressway toll ~₩7,700 extra' },
       { label: 'Myeongdong / Jung-gu (Seoul CBD)', km: 65, note: 'expressway toll ~₩7,700 extra' },
@@ -797,9 +798,11 @@ export const AIRPORT_DATA: Record<string, AirportData> = {
       'Tipping is not customary in South Korea — do not tip.',
     ],
     scams: [
-      'Driver takes the slower city road instead of the expressway to increase the metered fare.',
-      'Unlicensed drivers outside the airport — always use the official taxi rank on Level 1.',
-      'Overcharging tourists by switching to the deluxe tariff without consent.',
+      'Driver takes the slower city road instead of the expressway to increase the metered fare — always confirm you want the expressway (고속도로, gosokdoro) before setting off.',
+      'Unlicensed drivers outside the airport — always use the official taxi rank on Level 1 of the arrivals hall, marked with a taxi sign.',
+      'Overcharging tourists by silently switching to the Deluxe (black) tariff instead of the standard silver meter rate without disclosure.',
+      'Fake "fixed airport fare" quotes from touts in the arrivals hall — licensed ICN taxis always use the meter plus the expressway toll, never a pre-negotiated flat rate.',
+      'Running the meter before departure while loading luggage — the meter should only start when the taxi begins moving.',
     ],
     alternatives: [
       'AREX (Airport Railroad Express) — ₩9,500 direct to Seoul Station, 43 min',

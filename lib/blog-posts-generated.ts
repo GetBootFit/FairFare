@@ -1407,15 +1407,21 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
     "title": "Taxi Fares in Dublin: What You'll Pay in 2026",
     "description": "Planning a taxi in Dublin? Fares start at €4.10 with a 10 km trip costing around €15. Get the full fare breakdown, airport costs, and tips for first-time visitors.",
     "publishedAt": "2025-11-05",
-    "readingMinutes": 6,
+    "updatedAt": "2026-03-31",
+    "readingMinutes": 7,
     "category": "taxi",
     "city": "Dublin",
     "country": "Ireland",
     "citySlug": "dublin",
+    "references": [
+      { "label": "National Transport Authority — Taxi Fare Information", "url": "https://www.nationaltransport.ie/taxi/fare-information/" },
+      { "label": "NTA Taxi Licensing & Regulation", "url": "https://www.nationaltransport.ie/taxi/" },
+      { "label": "Transport for Ireland — Getting Around Dublin", "url": "https://www.transportforireland.ie" }
+    ],
     "content": [
       {
         "type": "intro",
-        "body": "Dublin is one of Europe's most walkable capitals — but when you're hauling luggage from the airport or heading home after a late night in Temple Bar, a taxi is often the smartest move. Fares are regulated, meters are mandatory, and the city's taxi network is reliable. Here's exactly what you'll pay, how the system works, and how to avoid getting ripped off."
+        "body": "Ireland's National Transport Authority sets taxi fares by law — which means every licensed Dublin cab charges the same metered rate, regardless of which driver or which company you hail. There's no negotiating, no surge pricing, and no ambiguity. What there is: a base fare of €4.10, a per-km rate of €1.14, and a small number of known scams that exploit tourists who don't know the rules. This guide tells you exactly what a Dublin taxi should cost, what the airport run looks like, and what to watch for on a night out in the city."
       },
       {
         "type": "h2",
@@ -1536,6 +1542,14 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
           {
             "q": "What's the best time to take a taxi to avoid traffic in Dublin?",
             "a": "Avoid travelling by taxi between 07:30–09:30 and 16:30–18:30 on weekdays — these are peak commute windows when city-centre traffic can double your journey time and fare. For airport runs, aim to leave outside these windows. Weekend mornings are generally the smoothest time to travel across the city."
+          },
+          {
+            "q": "What is the night rate for Dublin taxis?",
+            "a": "Dublin taxis switch to a higher tariff after 20:00 on weekdays and all day on Sundays and public holidays. The per-km rate increases, so a journey that costs €15 during the day may cost €18–€20 at night. Your meter will display 'T2' or 'T3' when the higher rate is active — this is legal, NTA-regulated, and applies equally to all licensed taxis."
+          },
+          {
+            "q": "Is Free Now better than Uber in Dublin?",
+            "a": "For most visitors, Free Now is the stronger choice — it hails licensed local taxis on the regulated meter, has broader driver availability across the city, and is what most Dubliners use. Uber also operates in Dublin but uses licensed taxi drivers rather than private drivers, so fares are metered and broadly similar. Having both apps installed is useful as a backup during peak demand."
           }
         ]
       }
@@ -2669,15 +2683,21 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
     "title": "Taxi Costs in Munich: Fares, Tips & Airport Runs",
     "description": "Plan your Munich taxi budget with confidence. Fares start at €4.50, a 10 km ride costs €25, and an airport transfer runs €65–80. Here's everything you need to know.",
     "publishedAt": "2025-12-19",
-    "readingMinutes": 6,
+    "updatedAt": "2026-03-31",
+    "readingMinutes": 7,
     "category": "taxi",
     "city": "Munich",
     "country": "Germany",
     "citySlug": "munich",
+    "references": [
+      { "label": "Kreisverwaltungsreferat München — Taxi Licensing", "url": "https://www.muenchen.de/rathaus/Stadtverwaltung/Kreisverwaltungsreferat/Verkehr/Taxi.html" },
+      { "label": "MVV Munich Transport Network — Airport Connections", "url": "https://www.mvv-muenchen.de/en/tickets-and-fares/tickets-daytickets/airport-city-day-ticket/index.html" },
+      { "label": "FreeNow Germany — Taxi App", "url": "https://free-now.com/de/" }
+    ],
     "content": [
       {
         "type": "intro",
-        "body": "Munich is one of Europe's most visited cities, and getting around by taxi is straightforward — but only if you know what to expect. Fares are metered, drivers are generally professional, and the city is well-regulated. Here's a no-nonsense breakdown of exactly what you'll pay, where the pitfalls are, and how to avoid overpaying."
+        "body": "Munich taxis are metered, licensed, and strictly regulated — but they're also among the most expensive in Germany. A 10 km ride through the city costs around €25, and the 40 km run from Munich Airport (MUC) into the centre will set you back €65–80. Whether that's worth it depends on when you're travelling, how many people are in your group, and whether the S-Bahn is a realistic alternative. This guide breaks down every fare, explains the Oktoberfest effect on taxi availability, and names the specific scam patterns that catch out airport arrivals."
       },
       {
         "type": "h2",
@@ -2798,6 +2818,14 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
           {
             "q": "What's the best time to take a taxi to avoid traffic in Munich?",
             "a": "Avoid hailing a taxi during weekday rush hours — roughly 07:30–09:00 and 17:00–19:00. Traffic around the Mittlerer Ring and routes leading to the Hauptbahnhof can add considerable time and cost to your fare. Mid-morning and early afternoon are generally the smoothest times to travel by road."
+          },
+          {
+            "q": "Does Oktoberfest affect taxi prices or availability in Munich?",
+            "a": "Oktoberfest doesn't change the regulated meter rates — a taxi in Munich charges the same per-km rate during the festival as any other time of year. What does change is availability and wait times. During the festival weeks (late September to early October), demand for taxis around the Theresienwiese and the Hauptbahnhof surges dramatically. Any driver quoting a flat 'festival rate' is acting illegally. Book via FreeNow in advance to avoid long rank queues."
+          },
+          {
+            "q": "Is there a fixed fare from Munich Airport (MUC) to the city?",
+            "a": "No — Munich airport taxis always use the meter. There is no officially sanctioned fixed fare. The meter typically runs to €65–€80 depending on your exact city-centre destination and traffic conditions. Be wary of drivers outside the arrivals hall offering a flat 'deal' — in most cases it will be more than the metered fare would have been. Always use the official taxi rank and ensure the meter is running within the first minute of the journey."
           }
         ]
       }
@@ -2946,15 +2974,21 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
     "title": "Taxi Fares in Jakarta: What You'll Pay in 2026",
     "description": "Planning a trip to Jakarta? Discover exact taxi fares from Rp15,000 to Rp97,500+, how meters work, airport transfers, and how to avoid tourist scams.",
     "publishedAt": "2026-01-05",
-    "readingMinutes": 6,
+    "updatedAt": "2026-03-31",
+    "readingMinutes": 7,
     "category": "taxi",
     "city": "Jakarta",
     "country": "Indonesia",
     "citySlug": "jakarta",
+    "references": [
+      { "label": "Blue Bird Group — Official Jakarta Taxi Operator", "url": "https://www.bluebirdgroup.com" },
+      { "label": "Railink Airport Train — Jakarta Fares & Schedule", "url": "https://www.railink.co.id" },
+      { "label": "Grab Indonesia — Ride-Hailing in Jakarta", "url": "https://www.grab.com/id/" }
+    ],
     "content": [
       {
         "type": "intro",
-        "body": "Jakarta is one of Southeast Asia's most electrifying cities — and one of its most traffic-choked. Getting around by taxi is easy and affordable if you know the rules, but the wrong cab can cost you double what you should pay. Here's everything you need to know about taxi fares in Jakarta before you step off the plane."
+        "body": "Jakarta's taxi market operates on a two-tier system: metered Blue Bird cabs with transparent, regulated fares, and an informal layer of unlicensed vehicles that charge whatever tourists will accept. The difference between the two can be Rp50,000 or Rp150,000 on the same route. Knowing the meter rate (Rp4,500/km), recognising the genuine Blue Bird fleet, and understanding when Grab or Gojek is the smarter call will save you money on every journey — and avoid the scams that catch out most first-time visitors to Soekarno-Hatta."
       },
       {
         "type": "h2",
@@ -3083,6 +3117,14 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
           {
             "q": "What is the best time of day to take a taxi in Jakarta to avoid traffic?",
             "a": "Jakarta's traffic is notoriously severe, particularly on weekdays between 7am–9am and 5pm–8pm. The best times to travel by taxi are before 7am, between 10am–3pm, or after 8:30pm. Weekends are generally easier, though Saturday afternoons around major malls can still be congested. Always allow extra travel time as a buffer, especially for airport runs."
+          },
+          {
+            "q": "Why is Blue Bird the recommended taxi company in Jakarta?",
+            "a": "Blue Bird has operated in Jakarta since 1972 and built its reputation on tamper-proof meters, mandatory driver background checks, and clean, air-conditioned vehicles. Unlike many independent taxi operators, Blue Bird meters run at the legal rate (Rp4,500/km) and cannot be rigged. The biggest practical advantage: booking via the Blue Bird app guarantees you a genuine Blue Bird vehicle, eliminating the risk of copycat cabs painted in similar colours that have no accountability."
+          },
+          {
+            "q": "Do I need to pay tolls separately in Jakarta taxis?",
+            "a": "Yes — Jakarta's toll roads (jalan tol) are charged to passengers on top of the metered fare. Your driver will ask for the toll amount at each booth, typically Rp5,000–Rp25,000 depending on which roads are used. Keep small IDR notes accessible for this purpose. Grab and Gojek factor estimated tolls into their upfront price quote, which is one reason many locals prefer ride-hailing apps for cross-city trips where toll roads are unavoidable."
           }
         ]
       }

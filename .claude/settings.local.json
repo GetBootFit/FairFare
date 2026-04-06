@@ -194,7 +194,10 @@
       "Bash(node -e \"const data = require\\(''./data/taxi-rates.json''\\); console.log\\(''TOTAL CITIES:'', Object.keys\\(data\\).length\\);\")",
       "Bash(grep -A 30 \"best-time-to-visit-vietnam\\\\|tipping-in-indonesia\" lib/blog-posts*.ts)",
       "Bash(node -e \"const d = require\\(''./data/taxi-rates.json''\\); const notes = Object.entries\\(d\\).filter\\(\\([,v]\\) => v.note\\).slice\\(0,15\\).map\\(\\([k,v]\\) => k + '': '' + v.note\\); console.log\\(notes.join\\(''\\\\n''\\)\\)\")",
-      "Bash(powershell -Command \"cd ''C:\\\\Users\\\\david\\\\Projects\\\\Hootling''; node -e \"\"const d = require\\(''./data/taxi-rates.json''\\); const notes = Object.entries\\(d\\).filter\\(\\([,v]\\) => v.note\\).slice\\(0,15\\).map\\(\\([k,v]\\) => k + '': '' + v.note\\); console.log\\(notes.join\\(''\\\\n''\\)\\)\"\"\")"
+      "Bash(powershell -Command \"cd ''C:\\\\Users\\\\david\\\\Projects\\\\Hootling''; node -e \"\"const d = require\\(''./data/taxi-rates.json''\\); const notes = Object.entries\\(d\\).filter\\(\\([,v]\\) => v.note\\).slice\\(0,15\\).map\\(\\([k,v]\\) => k + '': '' + v.note\\); console.log\\(notes.join\\(''\\\\n''\\)\\)\"\"\")",
+      "Bash(grep -l \"how-much-does-a-taxi-cost-in-munich\\\\|how-much-does-a-taxi-cost-in-dublin\\\\|how-much-does-a-taxi-cost-in-jakarta\" /c/Users/david/Projects/Hootling/lib/blog-posts*.ts)",
+      "Bash(node -e \"const d = require\\(''./data/taxi-rates.json''\\); const keys = Object.keys\\(d\\).filter\\(k => k.includes\\(''london''\\) || k.includes\\(''heathrow''\\)\\); console.log\\(keys\\)\")",
+      "Bash(node -e \"const d = require\\(''./data/taxi-rates.json''\\); const l = d[''london'']; console.log\\(JSON.stringify\\(l, null, 2\\)\\)\")"
     ]
   }
 }

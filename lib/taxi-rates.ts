@@ -77,8 +77,11 @@ const ALIASES: Record<string, string> = {
   racha_thewa:             'bangkok',
   don_mueang:              'bangkok',
 
-  // London — Heathrow → Hillingdon; Gatwick → Crawley; Stansted → Uttlesford
+  // London — Heathrow → Hillingdon AND Hounslow (airport spans both boroughs);
+  // Gatwick → Crawley; Stansted → Uttlesford
   hillingdon:              'london',
+  hounslow:                'london',  // Heathrow spans Hillingdon & Hounslow — Google often returns Hounslow
+  heathrow:                'london',  // direct match if Google returns "Heathrow" as locality
   crawley:                 'london',
   gatwick:                 'london',
   uttlesford:              'london',
@@ -210,6 +213,17 @@ const ALIASES: Record<string, string> = {
   spata:                   'athens',
   markopoulo:              'athens',
   koropi:                  'athens',
+
+  // Cairo — Cairo International (CAI) is in the Heliopolis district (مصر الجديدة)
+  heliopolis:              'cairo',
+  masr_el_gedida:          'cairo',  // official Arabic name of Heliopolis, transliterated
+
+  // Mumbai — Chhatrapati Shivaji Maharaj Airport (BOM) is in Andheri East
+  andheri:                 'mumbai',
+  sahar:                   'mumbai',  // Sahar village where BOM is actually located
+
+  // Madrid — Adolfo Suárez Barajas Airport (MAD) is in the Barajas district of Madrid
+  barajas:                 'madrid',
 
   // Manila — NAIA terminals in Pasay and Parañaque
   pasay:                   'manila',

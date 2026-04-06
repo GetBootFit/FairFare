@@ -32,9 +32,9 @@ const AIRPORT_RE = /airport|aéroport|aeropuerto|aeroporto|flughafen|luchthaven|
 const STORAGE_KEY = 'ff_taxi_form'
 
 const POPULAR_ROUTES = [
-  { pickup: 'Suvarnabhumi Airport, Bangkok', destination: 'Sukhumvit, Bangkok', pickupPlaceId: '', destPlaceId: '', label: '🇹🇭 Bangkok' },
-  { pickup: 'Dubai International Airport', destination: 'Downtown Dubai', pickupPlaceId: '', destPlaceId: '', label: '🇦🇪 Dubai' },
-  { pickup: 'Heathrow Airport, London', destination: 'Victoria Station, London', pickupPlaceId: '', destPlaceId: '', label: '🇬🇧 London' },
+  { pickup: 'Suvarnabhumi International Airport, Samut Prakan, Thailand', destination: 'Asok BTS Station, Sukhumvit, Bangkok, Thailand', pickupPlaceId: '', destPlaceId: '', label: '🇹🇭 Bangkok' },
+  { pickup: 'Dubai International Airport, Dubai, UAE', destination: 'Burj Khalifa, Downtown Dubai, UAE', pickupPlaceId: '', destPlaceId: '', label: '🇦🇪 Dubai' },
+  { pickup: 'Heathrow Airport, Hounslow, London, UK', destination: 'Victoria Station, London, UK', pickupPlaceId: '', destPlaceId: '', label: '🇬🇧 London' },
 ]
 
 interface TokenEventDetail {
