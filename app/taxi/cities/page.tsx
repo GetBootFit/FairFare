@@ -3,9 +3,12 @@ import { MapPin, ArrowRight } from 'lucide-react'
 import { getAllCitySlugs, getCityData, slugToDisplayName } from '@/lib/seo-helpers'
 import type { Metadata } from 'next'
 
+const APP_URL = (process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com').replace(/\/$/, '')
+
 export const metadata: Metadata = {
   title: 'Taxi Fares by City — All 160+ Cities | Hootling',
   description: 'Taxi fare rates for 160+ cities worldwide. Find official meter rates, airport transfer costs, and scam warnings for your destination.',
+  alternates: { canonical: `${APP_URL}/taxi/cities` },
 }
 
 const REGIONS: Record<string, string[]> = {

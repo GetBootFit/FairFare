@@ -147,6 +147,17 @@ export function GET(req: NextRequest) {
         </div>
       </div>
     ),
-    { width: 1200, height: 630 }
+    {
+      width: 1200,
+      height: 630,
+      headers: {
+        // City OG images are fully deterministic (slug → fixed pixels).
+        // Cache at CDN + browser for 1 year — no need to regenerate.
+        'Cache-Control': 'public, max-age=31536000, immutable',
+        // Prevent GSC from treating this image API endpoint as an indexable page.
+        // Social crawlers (Twitterbot, facebookexternalhit) still fetch the image fine.
+        'X-Robots-Tag': 'noindex',
+      },
+    }
   )
 }

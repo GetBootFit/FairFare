@@ -162,6 +162,15 @@ export function GET(req: NextRequest) {
         </div>
       </div>
     ),
-    { width: 1200, height: 630 }
+    {
+      width: 1200,
+      height: 630,
+      headers: {
+        // Share cards are deterministic for a given set of params.
+        // Cache at CDN for 24 hours — short enough to be safe, long enough to stop repeated renders.
+        'Cache-Control': 'public, s-maxage=86400, stale-while-revalidate=3600',
+        'X-Robots-Tag': 'noindex',
+      },
+    }
   )
 }

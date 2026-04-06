@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
 import { AlertTriangle } from 'lucide-react'
 import { TaxiForm } from '@/components/taxi/TaxiForm'
 import { TaxiPageHeader } from '@/components/taxi/TaxiPageHeader'
@@ -6,7 +7,12 @@ import { ErrorBoundary } from '@/components/ErrorBoundary'
 import { getAllCitySlugs } from '@/lib/seo-helpers'
 import { PopularCitiesSection } from '@/components/PopularCitiesSection'
 
-export const metadata = { title: 'Taxi Fare Check — Hootling' }
+const APP_URL = (process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com').replace(/\/$/, '')
+
+export const metadata: Metadata = {
+  title: 'Taxi Fare Check — Hootling',
+  alternates: { canonical: `${APP_URL}/taxi` },
+}
 
 // Hand-curated list of high-traffic tourist cities — ordered by global search volume.
 // Must exist in data/taxi-rates.json; validated against the live slug set at build time.

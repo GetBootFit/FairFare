@@ -15,6 +15,7 @@ import {
   taxiServiceJsonLd,
   taxiPriceJsonLd,
   countryToSlug,
+  TIPPING_COUNTRIES,
 } from '@/lib/seo-helpers'
 
 // ── Static generation ────────────────────────────────────────────────────────
@@ -298,17 +299,19 @@ export default async function TaxiCityPage(
           </div>
         </div>
 
-        {/* Cross-link to tipping */}
-        <div className="border-t border-zinc-800 pt-4">
-          <p className="text-xs text-zinc-600 mb-2">Also useful in {data.country}:</p>
-          <Link
-            href={`/tipping/${countrySlug}`}
-            className="flex items-center gap-2 text-teal-400 text-sm hover:text-teal-300 transition-colors"
-          >
-            Tipping guide for {data.country}
-            <ChevronRight size={14} />
-          </Link>
-        </div>
+        {/* Cross-link to tipping — only shown when a tipping page exists for this country */}
+        {TIPPING_COUNTRIES.includes(data.country) && (
+          <div className="border-t border-zinc-800 pt-4">
+            <p className="text-xs text-zinc-600 mb-2">Also useful in {data.country}:</p>
+            <Link
+              href={`/tipping/${countrySlug}`}
+              className="flex items-center gap-2 text-teal-400 text-sm hover:text-teal-300 transition-colors"
+            >
+              Tipping guide for {data.country}
+              <ChevronRight size={14} />
+            </Link>
+          </div>
+        )}
       </div>
     </>
   )

@@ -3,9 +3,12 @@ import { Globe, ArrowRight } from 'lucide-react'
 import { TIPPING_COUNTRIES, getAllCountrySlugs, countryToSlug } from '@/lib/seo-helpers'
 import type { Metadata } from 'next'
 
+const APP_URL = (process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com').replace(/\/$/, '')
+
 export const metadata: Metadata = {
   title: 'Tipping by Country — 56 Countries | Hootling',
   description: 'Tipping customs and expected amounts for 56 countries worldwide. Restaurants, taxis, hotels, spas and more — know before you go.',
+  alternates: { canonical: `${APP_URL}/tipping/countries` },
 }
 
 const REGION_MAP: Record<string, string> = {

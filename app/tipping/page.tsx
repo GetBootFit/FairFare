@@ -1,10 +1,16 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
 import { Globe } from 'lucide-react'
 import { TippingForm } from '@/components/tipping/TippingForm'
 import { TippingPageHeader } from '@/components/tipping/TippingPageHeader'
 import { ErrorBoundary } from '@/components/ErrorBoundary'
 
-export const metadata = { title: 'Tipping Guide — Hootling' }
+const APP_URL = (process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com').replace(/\/$/, '')
+
+export const metadata: Metadata = {
+  title: 'Tipping Guide — Hootling',
+  alternates: { canonical: `${APP_URL}/tipping` },
+}
 
 export default function TippingPage() {
   return (

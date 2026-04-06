@@ -185,12 +185,23 @@ export async function GET(req: NextRequest) {
         </div>
       </div>
     ),
-    { width: 1080, height: 1080 }
+    {
+      width: 1080,
+      height: 1080,
+      headers: {
+        // Tipping cards are deterministic per country + params.
+        // Cache at CDN for 1 year — content only changes if tipping data changes.
+        'Cache-Control': 'public, max-age=31536000, immutable',
+        'X-Robots-Tag': 'noindex',
+      },
+    }
   )
 
   if (isDownload) {
+    // Download path overrides Cache-Control with Content-Disposition for file save.
     const headers = new Headers(image.headers)
     headers.set('Content-Disposition', `attachment; filename="hootling-tipping-${iso2}.png"`)
+    headers.set('Cache-Control', 'no-store')  // don't cache file downloads
     return new Response(image.body, { status: 200, headers })
   }
 
