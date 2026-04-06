@@ -119,33 +119,6 @@ export function HomeContent() {
             <p className="text-xs text-zinc-600 mt-3">{t('home_data_source')}</p>
           </div>
 
-          {/* Example result teaser — mobile only (desktop shows it in the right sidebar) */}
-          <Link href="/example" className="md:hidden mt-5 block bg-zinc-900/60 border border-zinc-700 hover:border-purple-700/60 rounded-2xl p-4 transition-colors group">
-            <p className="text-[10px] text-purple-400 uppercase tracking-wider mb-2.5 font-semibold">{t('home_example_result')}</p>
-            <div className="flex items-start justify-between gap-3">
-              <div className="space-y-0.5">
-                <p className="text-xs text-zinc-400">
-                  <span className="text-zinc-200 font-medium">Bangkok Airport</span>
-                  <span className="text-zinc-600 mx-1 inline-block rtl:rotate-180">→</span>
-                  Sukhumvit
-                </p>
-                <p className="text-xl font-bold text-white">฿280 <span className="text-zinc-500 font-normal text-base">–</span> ฿420</p>
-              </div>
-              <div className="shrink-0 text-right rtl:text-left space-y-1">
-                <span className="inline-block bg-amber-900/40 border border-amber-700/40 text-amber-400 text-[10px] font-semibold px-2 py-0.5 rounded-full">
-                  {t('home_scam_alert')}
-                </span>
-                <p className="text-[10px] text-zinc-600">{t('home_meter_refusal')}</p>
-              </div>
-            </div>
-            <div className="flex items-center justify-between mt-2.5 pt-2.5 border-t border-zinc-800">
-              <p className="text-[10px] text-zinc-700">{t('home_example_source')}</p>
-              <span className="text-xs text-purple-400 font-medium group-hover:translate-x-0.5 transition-transform inline-flex items-center gap-1">
-                <Sparkles size={11} /> See full result →
-              </span>
-            </div>
-          </Link>
-
           {/* Problem statement */}
           <p className="text-[11px] text-zinc-600 mt-5 mb-2">{t('home_problem_statement')}</p>
 
@@ -177,6 +150,49 @@ export function HomeContent() {
               hoverCardBg="hover:bg-purple-900/70"
               glowColor="hover:shadow-[0_0_24px_-4px_rgba(147,51,234,0.4)]"
             />
+          </div>
+
+          {/* Example results — mobile only; shown AFTER feature cards so the user
+              understands the service before seeing output. Two cards balance both features. */}
+          <div className="md:hidden mt-4 space-y-2">
+            <p className="text-[10px] text-zinc-600 uppercase tracking-widest">{t('home_example_result')}</p>
+            <div className="grid grid-cols-2 gap-2">
+
+              {/* Taxi example */}
+              <Link
+                href="/example"
+                className="block bg-teal-950/40 border border-teal-900/50 hover:border-teal-600/60 rounded-2xl p-3 transition-colors group"
+              >
+                <p className="text-[9px] text-teal-400 uppercase tracking-wider font-semibold mb-1.5">Taxi fare</p>
+                <p className="text-[10px] text-zinc-400 leading-snug mb-1">
+                  <span className="text-zinc-200">Bangkok Airport</span>
+                  <span className="text-zinc-600 mx-1 inline-block rtl:rotate-180">→</span>
+                  Sukhumvit
+                </p>
+                <p className="text-lg font-bold text-white leading-none mb-1.5">฿280–420</p>
+                <span className="inline-block bg-amber-900/40 border border-amber-700/40 text-amber-400 text-[9px] font-semibold px-1.5 py-0.5 rounded-full">
+                  ⚠️ {t('home_scam_alert')}
+                </span>
+                <p className="text-[9px] text-teal-400 mt-2 group-hover:translate-x-0.5 transition-transform">
+                  Full example →
+                </p>
+              </Link>
+
+              {/* Tipping example */}
+              <Link
+                href="/tipping"
+                className="block bg-purple-950/40 border border-purple-900/50 hover:border-purple-600/60 rounded-2xl p-3 transition-colors group"
+              >
+                <p className="text-[9px] text-purple-400 uppercase tracking-wider font-semibold mb-1.5">Tipping guide</p>
+                <p className="text-[10px] text-zinc-200 font-medium mb-0.5">🇯🇵 Japan</p>
+                <p className="text-sm font-bold text-white leading-snug mb-1">Not expected</p>
+                <p className="text-[10px] text-zinc-500 leading-snug">Tipping can cause offence — exceptional service is already included</p>
+                <p className="text-[9px] text-purple-400 mt-2 group-hover:translate-x-0.5 transition-transform">
+                  Check your country →
+                </p>
+              </Link>
+
+            </div>
           </div>
 
           {/* Blog section */}
@@ -265,6 +281,31 @@ export function HomeContent() {
                 <Sparkles size={11} /> See full result →
               </span>
             </div>
+          </Link>
+
+          {/* Tipping example — balances the taxi example above */}
+          <Link
+            href="/tipping"
+            className="block bg-purple-950/40 border border-purple-900/40 hover:border-purple-700/60 rounded-2xl p-4 transition-colors group"
+          >
+            <p className="text-[10px] text-purple-400 uppercase tracking-wider mb-2 font-semibold">Tipping guide</p>
+            <div className="flex items-start justify-between gap-2">
+              <div>
+                <p className="text-xs text-zinc-300 font-medium mb-0.5">🇯🇵 Japan</p>
+                <p className="text-lg font-bold text-white leading-none">Not expected</p>
+                <p className="text-[10px] text-zinc-500 mt-1 leading-snug max-w-[140px]">
+                  Tipping can cause offence — exceptional service is already included
+                </p>
+              </div>
+              <div className="shrink-0 text-right rtl:text-left">
+                <span className="inline-block bg-purple-900/40 border border-purple-700/40 text-purple-300 text-[10px] font-semibold px-2 py-0.5 rounded-full">
+                  6 scenarios
+                </span>
+              </div>
+            </div>
+            <p className="text-[10px] text-purple-400 mt-3 group-hover:translate-x-0.5 transition-transform">
+              Check your country →
+            </p>
           </Link>
 
           {/* Pricing quick-look */}
