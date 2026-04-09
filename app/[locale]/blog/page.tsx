@@ -7,6 +7,7 @@ import { BlogIndexClient } from '@/components/BlogIndexClient'
 import { EmailCapture } from '@/components/EmailCapture'
 import { kvKeys, kvGet } from '@/lib/kv'
 import { LOCALES, getTranslations, type Locale } from '@/lib/i18n'
+import { TRANSLATED_SLUGS } from '@/lib/blog-translation'
 
 const APP_URL = (process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com').replace(/\/$/, '')
 
@@ -66,9 +67,13 @@ export default async function LocaleBlogIndexPage(
   const t = getTranslations(locale as Locale)
   const featured = getFeaturedPost()
 
-  // Static posts
+  // Static posts — only include slugs that have translated content to avoid
+  // generating locale-prefixed links to untranslated posts (prevents redirect crawl waste)
   const staticSlugs = getAllBlogSlugs()
-  const staticPosts: BlogPost[] = staticSlugs.map((s) => getBlogPost(s)!).filter(Boolean)
+  const staticPosts: BlogPost[] = staticSlugs
+    .filter((s) => TRANSLATED_SLUGS.has(s))
+    .map((s) => getBlogPost(s)!)
+    .filter(Boolean)
 
   // KV-published posts
   const kvPublishedKeys = await kvKeys('blog:published:*')

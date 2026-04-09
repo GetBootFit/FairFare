@@ -419,7 +419,7 @@ export default async function BlogArticlePage(
                 <div className="flex flex-col gap-2 py-1">
                   {post.citySlug && post.city && (
                     <Link
-                      href={`/taxi/${post.citySlug}`}
+                      href="/taxi"
                       className="flex items-center justify-between gap-3 bg-purple-950/60 border border-purple-800/50 hover:border-purple-600/70 hover:bg-purple-900/50 rounded-xl px-4 py-3 transition-all group"
                     >
                       <div>
@@ -431,7 +431,7 @@ export default async function BlogArticlePage(
                   )}
                   {post.countrySlug && post.country && (
                     <Link
-                      href={`/tipping/${post.countrySlug}`}
+                      href="/tipping"
                       className="flex items-center justify-between gap-3 bg-teal-950/60 border border-teal-800/50 hover:border-teal-600/70 hover:bg-teal-900/50 rounded-xl px-4 py-3 transition-all group"
                     >
                       <div>
