@@ -7,6 +7,7 @@ import { useLanguage } from '@/context/LanguageContext'
 import { InstallPrompt } from '@/components/InstallPrompt'
 import { getFeaturedPost, getRecentPosts } from '@/lib/blog-posts'
 import { HomeTaxiForm } from '@/components/HomeTaxiForm'
+import { type CurrencyCode, PRICES, formatPrice, getStoredCurrency } from '@/lib/currency'
 
 // Social handles — update URLs when accounts are created
 const SOCIAL_LINKS = [
@@ -85,6 +86,23 @@ function FeatureCard({ href, icon, title, description, bgColor, hoverBgColor, ca
 
 export function HomeContent() {
   const { t } = useLanguage()
+
+  // Currency — mirrors PaymentModal pattern: detect on mount, react to manual changes
+  const [currency, setCurrency] = useState<CurrencyCode>('USD')
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+    setCurrency(getStoredCurrency())
+  }, [])
+
+  useEffect(() => {
+    const handler = (e: StorageEvent) => {
+      if (e.key === 'ff_currency') setCurrency(getStoredCurrency())
+    }
+    window.addEventListener('storage', handler)
+    return () => window.removeEventListener('storage', handler)
+  }, [])
 
   // Animated price counter for the sidebar example result
   const [priceMin, setPriceMin] = useState(0)
@@ -347,18 +365,33 @@ export function HomeContent() {
           >
             <p className="text-[10px] text-zinc-500 uppercase tracking-wider mb-3">Pricing</p>
             <div className="space-y-2">
-              {[
-                { label: 'Single query', price: 'from $2.99', note: 'One fare check or tipping guide' },
-                { label: '20-query bundle', price: '$19.99', note: 'Best value for frequent travellers' },
-              ].map(({ label, price, note }) => (
-                <div key={label} className="flex items-center justify-between gap-2">
-                  <div>
-                    <p className="text-xs font-medium text-zinc-300">{label}</p>
-                    <p className="text-[10px] text-zinc-600">{note}</p>
-                  </div>
-                  <p className="text-sm font-bold text-white shrink-0">{price}</p>
+              {/* Free tier — shown first to reduce "will I be charged?" anxiety */}
+              <div className="flex items-center justify-between gap-2 pb-2 border-b border-zinc-800">
+                <div>
+                  <p className="text-xs font-medium text-zinc-300">Route preview</p>
+                  <p className="text-[10px] text-zinc-600">Distance, time &amp; route info</p>
                 </div>
-              ))}
+                <p className="text-sm font-bold text-teal-400 shrink-0">Free</p>
+              </div>
+              {/* Paid tiers — prices in user's local currency */}
+              <div className="flex items-center justify-between gap-2">
+                <div>
+                  <p className="text-xs font-medium text-zinc-300">Single query</p>
+                  <p className="text-[10px] text-zinc-600">Full fare + scam warnings + phrases</p>
+                </div>
+                <p className="text-sm font-bold text-white shrink-0">
+                  {mounted ? `from ${formatPrice(currency, PRICES[currency].single)}` : '—'}
+                </p>
+              </div>
+              <div className="flex items-center justify-between gap-2">
+                <div>
+                  <p className="text-xs font-medium text-zinc-300">20-query bundle</p>
+                  <p className="text-[10px] text-zinc-600">Best value for frequent travellers</p>
+                </div>
+                <p className="text-sm font-bold text-white shrink-0">
+                  {mounted ? formatPrice(currency, PRICES[currency].bundle) : '—'}
+                </p>
+              </div>
             </div>
             <p className="text-[10px] text-purple-400 mt-3 group-hover:translate-x-0.5 transition-transform">
               View all plans →
