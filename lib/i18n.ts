@@ -440,7 +440,7 @@ const translations: Record<Locale, Translations> = {
     error_tipping_body: 'The tipping guide encountered an unexpected error.',
     error_try_again: 'Try again',
     home_data_source: 'Official meter rate data · local taxi authorities · 14 languages',
-    home_problem_statement: 'Two things every smart traveller checks first:',
+    home_problem_statement: 'Everything a smart traveller checks first:',
     home_example_source: 'From official Bangkok meter rates',
     ai_fallback_warning_1: 'Insist on the meter — do not accept flat rates from drivers.',
     ai_fallback_warning_2: 'Use official taxi ranks or verified ride-hailing apps.',

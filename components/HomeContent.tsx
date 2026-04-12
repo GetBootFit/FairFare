@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { ChevronRight, Sparkles, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react'
+import { ChevronRight, Sparkles, Facebook, Instagram, Linkedin, Youtube, Car, ShieldAlert, MessageCircle, Banknote } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 import { InstallPrompt } from '@/components/InstallPrompt'
 import { getFeaturedPost, getRecentPosts } from '@/lib/blog-posts'
@@ -84,10 +84,10 @@ function FeatureCard({ href, icon, title, description, bgColor, hoverBgColor, ca
 
 // Compact feature highlights shown on desktop instead of the large FeatureCards
 const DESKTOP_FEATURES = [
-  { icon: '🚕', title: 'Fare range — 160+ cities', desc: 'Official meter rate data' },
-  { icon: '⚠️', title: 'Scam warnings', desc: 'AI-detected patterns by city & route' },
-  { icon: '🗣️', title: 'Driver phrases', desc: 'Local language to prevent overcharging' },
-  { icon: '💰', title: 'Tipping — 56 countries', desc: 'Restaurants, taxis, hotels & more' },
+  { icon: <Car size={15} className="text-teal-400" />,        title: 'Fare range — 160+ cities', desc: 'Official meter rate data' },
+  { icon: <ShieldAlert size={15} className="text-amber-400" />, title: 'Scam warnings',           desc: 'AI-detected patterns by city & route' },
+  { icon: <MessageCircle size={15} className="text-blue-400" />, title: 'Driver phrases',          desc: 'Local language to prevent overcharging' },
+  { icon: <Banknote size={15} className="text-purple-400" />, title: 'Tipping — 56 countries',   desc: 'Restaurants, taxis, hotels & more' },
 ]
 
 export function HomeContent() {
@@ -118,7 +118,7 @@ export function HomeContent() {
     <div className="flex flex-col min-h-[calc(100vh-6rem)] md:min-h-0">
 
       {/* ── Desktop 2-column grid ────────────────────────────────────────────── */}
-      <div className="md:grid md:grid-cols-[1fr_288px] md:gap-10 md:items-start">
+      <div className="md:grid md:grid-cols-[1fr_288px] xl:grid-cols-[1fr_320px] md:gap-10 md:items-start">
 
         {/* ── LEFT COLUMN ────────────────────────────────────────────────────── */}
         <div>
@@ -130,9 +130,9 @@ export function HomeContent() {
                 <img src="/images/brand/hootling-logo-wordmark-transparent.svg" alt="Hootling" className="h-9 w-auto" />
               </Link>
             </div>
-            <p className="text-zinc-400 text-sm leading-relaxed mt-3 md:mt-0 md:text-base max-w-xs md:max-w-sm">
+            <h1 className="text-xl font-bold text-white leading-snug mt-3 md:mt-0 md:text-3xl max-w-xs md:max-w-lg">
               {t('home_tagline')}
-            </p>
+            </h1>
             {/* Coverage stats */}
             <div className="flex items-center gap-2 mt-3 flex-wrap">
               <span className="inline-flex items-center gap-1 text-xs text-zinc-600 bg-zinc-900 border border-zinc-800 rounded-full px-2.5 py-1">
@@ -189,9 +189,9 @@ export function HomeContent() {
               {DESKTOP_FEATURES.map(({ icon, title, desc }) => (
                 <div
                   key={title}
-                  className="flex items-center gap-3 bg-zinc-900/50 border border-zinc-800/80 rounded-xl px-3 py-2.5"
+                  className="flex items-center gap-3 bg-zinc-900/50 border border-zinc-700 hover:border-zinc-600 rounded-xl px-3 py-2.5 transition-colors"
                 >
-                  <span className="text-xl shrink-0" aria-hidden="true">{icon}</span>
+                  <span className="shrink-0" aria-hidden="true">{icon}</span>
                   <div className="min-w-0">
                     <p className="text-xs font-semibold text-white leading-snug">{title}</p>
                     <p className="text-[11px] text-zinc-500 mt-0.5 leading-snug">{desc}</p>
