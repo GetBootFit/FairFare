@@ -1,11 +1,12 @@
 'use client'
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { ChevronRight, Sparkles, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 import { InstallPrompt } from '@/components/InstallPrompt'
 import { getFeaturedPost, getRecentPosts } from '@/lib/blog-posts'
+import { HomeTaxiForm } from '@/components/HomeTaxiForm'
 
 // Social handles — update URLs when accounts are created
 const SOCIAL_LINKS = [
@@ -81,14 +82,42 @@ function FeatureCard({ href, icon, title, description, bgColor, hoverBgColor, ca
   )
 }
 
+// Compact feature highlights shown on desktop instead of the large FeatureCards
+const DESKTOP_FEATURES = [
+  { icon: '🚕', title: 'Fare range — 160+ cities', desc: 'Official meter rate data' },
+  { icon: '⚠️', title: 'Scam warnings', desc: 'AI-detected patterns by city & route' },
+  { icon: '🗣️', title: 'Driver phrases', desc: 'Local language to prevent overcharging' },
+  { icon: '💰', title: 'Tipping — 56 countries', desc: 'Restaurants, taxis, hotels & more' },
+]
+
 export function HomeContent() {
   const { t } = useLanguage()
+
+  // Animated price counter for the sidebar example result
+  const [priceMin, setPriceMin] = useState(0)
+  const [priceMax, setPriceMax] = useState(0)
+
+  useEffect(() => {
+    const TARGET_MIN = 280
+    const TARGET_MAX = 420
+    const DURATION = 1400
+    const STEPS = 48
+    let step = 0
+    const id = setInterval(() => {
+      step++
+      const t = step / STEPS
+      const ease = 1 - Math.pow(1 - t, 3) // ease-out cubic
+      setPriceMin(Math.round(ease * TARGET_MIN))
+      setPriceMax(Math.round(ease * TARGET_MAX))
+      if (step >= STEPS) clearInterval(id)
+    }, DURATION / STEPS)
+    return () => clearInterval(id)
+  }, [])
 
   return (
     <div className="flex flex-col min-h-[calc(100vh-6rem)] md:min-h-0">
 
       {/* ── Desktop 2-column grid ────────────────────────────────────────────── */}
-      {/* Mobile: natural single-column flow. Desktop (md+): left content / right sidebar. */}
       <div className="md:grid md:grid-cols-[1fr_288px] md:gap-10 md:items-start">
 
         {/* ── LEFT COLUMN ────────────────────────────────────────────────────── */}
@@ -104,7 +133,7 @@ export function HomeContent() {
             <p className="text-zinc-400 text-sm leading-relaxed mt-3 md:mt-0 md:text-base max-w-xs md:max-w-sm">
               {t('home_tagline')}
             </p>
-            {/* Coverage stats — social proof + SEO signal */}
+            {/* Coverage stats */}
             <div className="flex items-center gap-2 mt-3 flex-wrap">
               <span className="inline-flex items-center gap-1 text-xs text-zinc-600 bg-zinc-900 border border-zinc-800 rounded-full px-2.5 py-1">
                 <span className="text-purple-400 font-semibold">160+</span> {t('home_stat_cities')}
@@ -120,10 +149,10 @@ export function HomeContent() {
           </div>
 
           {/* Problem statement */}
-          <p className="text-[11px] text-zinc-600 mt-5 mb-2">{t('home_problem_statement')}</p>
+          <p className="text-[11px] text-zinc-600 mt-5 mb-2 md:hidden">{t('home_problem_statement')}</p>
 
-          {/* Feature cards — stacked on mobile, side-by-side on desktop */}
-          <div className="space-y-3 md:space-y-0 md:grid md:grid-cols-2 md:gap-3">
+          {/* ── MOBILE: large feature cards ─────────────────────────────────── */}
+          <div className="md:hidden space-y-3">
             <FeatureCard
               href="/taxi"
               icon={<img src="/icons/SVG/taxi-car.svg" alt="" width={38} height={38} aria-hidden="true" style={{ filter: 'brightness(0) invert(1)' }} />}
@@ -152,8 +181,29 @@ export function HomeContent() {
             />
           </div>
 
-          {/* Example results — mobile only; shown AFTER feature cards so the user
-              understands the service before seeing output. Two cards balance both features. */}
+          {/* ── DESKTOP: compact feature highlights + inline form ────────────── */}
+          <div className="hidden md:block mt-2 space-y-4">
+            <p className="text-[11px] text-zinc-600">{t('home_problem_statement')}</p>
+            {/* 2×2 compact feature grid */}
+            <div className="grid grid-cols-2 gap-2">
+              {DESKTOP_FEATURES.map(({ icon, title, desc }) => (
+                <div
+                  key={title}
+                  className="flex items-center gap-3 bg-zinc-900/50 border border-zinc-800/80 rounded-xl px-3 py-2.5"
+                >
+                  <span className="text-xl shrink-0" aria-hidden="true">{icon}</span>
+                  <div className="min-w-0">
+                    <p className="text-xs font-semibold text-white leading-snug">{title}</p>
+                    <p className="text-[11px] text-zinc-500 mt-0.5 leading-snug">{desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            {/* Inline taxi / tipping form */}
+            <HomeTaxiForm />
+          </div>
+
+          {/* ── MOBILE ONLY: example result cards ───────────────────────────── */}
           <div className="md:hidden mt-4 space-y-2">
             <p className="text-[10px] text-zinc-600 uppercase tracking-widest">{t('home_example_result')}</p>
             <div className="grid grid-cols-2 gap-2">
@@ -195,10 +245,10 @@ export function HomeContent() {
             </div>
           </div>
 
-          {/* Blog section */}
+          {/* ── Blog section ─────────────────────────────────────────────────── */}
           {(() => {
             const featured = getFeaturedPost()
-            const recent = getRecentPosts(2, featured?.slug)
+            const recent = getRecentPosts(4, featured?.slug)
             const categoryColour: Record<string, string> = {
               taxi: 'text-purple-400',
               tipping: 'text-teal-400',
@@ -212,21 +262,25 @@ export function HomeContent() {
                     {t('home_blog_view_all')} <span className="inline-block rtl:rotate-180">→</span>
                   </Link>
                 </div>
-                <div className="space-y-1">
-                  {featured && (
-                    <Link
-                      href={`/blog/${featured.slug}`}
-                      className="flex items-start gap-3 px-2.5 py-2 rounded-xl bg-purple-950/30 border border-purple-900/30 group mb-1"
-                    >
-                      <span className={`text-[9px] uppercase tracking-wider font-semibold shrink-0 mt-0.5 w-10 ${categoryColour[featured.category] ?? 'text-zinc-500'}`}>
-                        {featured.category}
-                      </span>
-                      <span className="text-xs text-zinc-400 group-hover:text-zinc-200 transition-colors leading-snug flex-1 line-clamp-2">
-                        {featured.title}
-                      </span>
-                      <ChevronRight size={12} className="text-purple-700 group-hover:text-purple-400 shrink-0 mt-0.5 transition-colors rtl:rotate-180" />
-                    </Link>
-                  )}
+
+                {/* Featured post — full width */}
+                {featured && (
+                  <Link
+                    href={`/blog/${featured.slug}`}
+                    className="flex items-start gap-3 px-2.5 py-2 rounded-xl bg-purple-950/30 border border-purple-900/30 group mb-2"
+                  >
+                    <span className={`text-[9px] uppercase tracking-wider font-semibold shrink-0 mt-0.5 w-10 ${categoryColour[featured.category] ?? 'text-zinc-500'}`}>
+                      {featured.category}
+                    </span>
+                    <span className="text-xs text-zinc-400 group-hover:text-zinc-200 transition-colors leading-snug flex-1 line-clamp-2">
+                      {featured.title}
+                    </span>
+                    <ChevronRight size={12} className="text-purple-700 group-hover:text-purple-400 shrink-0 mt-0.5 transition-colors rtl:rotate-180" />
+                  </Link>
+                )}
+
+                {/* Regular posts — single col on mobile, 2-col on desktop */}
+                <div className="space-y-1 md:grid md:grid-cols-2 md:gap-x-4 md:gap-y-0 md:space-y-0">
                   {recent.map(post => (
                     <Link
                       key={post.slug}
@@ -251,7 +305,7 @@ export function HomeContent() {
         {/* ── RIGHT SIDEBAR — desktop only ───────────────────────────────────── */}
         <div className="hidden md:flex md:flex-col md:gap-4 md:sticky md:top-20 md:pt-4">
 
-          {/* Example result — prominent card */}
+          {/* Animated example result card */}
           <Link
             href="/example"
             className="block bg-zinc-900/60 border border-zinc-700 hover:border-purple-700/60 rounded-2xl p-5 transition-colors group"
@@ -263,8 +317,10 @@ export function HomeContent() {
               <span className="text-zinc-500 mx-1">→</span>
               Sukhumvit
             </p>
-            {/* Fare range */}
-            <p className="text-3xl font-bold text-white mb-1">฿280 <span className="text-zinc-500 font-normal text-xl">–</span> ฿420</p>
+            {/* Animated fare range */}
+            <p className="text-3xl font-bold text-white mb-1 tabular-nums">
+              ฿{priceMin} <span className="text-zinc-500 font-normal text-xl">–</span> ฿{priceMax}
+            </p>
             {/* Scam badge */}
             <span className="inline-block bg-amber-900/40 border border-amber-700/40 text-amber-400 text-[10px] font-semibold px-2 py-0.5 rounded-full mb-3">
               {t('home_scam_alert')}
@@ -283,7 +339,7 @@ export function HomeContent() {
             </div>
           </Link>
 
-          {/* Tipping example — balances the taxi example above */}
+          {/* Tipping example */}
           <Link
             href="/tipping"
             className="block bg-purple-950/40 border border-purple-900/40 hover:border-purple-700/60 rounded-2xl p-4 transition-colors group"
@@ -341,9 +397,8 @@ export function HomeContent() {
 
       </div>{/* end desktop grid */}
 
-      {/* Footer — full width, pushed to bottom on mobile */}
+      {/* Footer */}
       <div className="mt-auto pt-8 pb-2 space-y-3">
-        {/* Install prompt as quiet micro copy — sits just above the divider */}
         <InstallPrompt variant="micro" />
         <div className="border-t border-zinc-900 pt-4 space-y-4">
 

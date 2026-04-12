@@ -185,7 +185,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           {/* id + tabIndex={-1} allows the skip link to move focus here programmatically.
               md:pt-20 clears the fixed DesktopNav (h-14 = 56px + buffer).
               md:max-w-3xl widens from mobile card width to a comfortable desktop reading width. */}
-          <main id="main-content" tabIndex={-1} className="max-w-md md:max-w-3xl mx-auto min-h-screen pb-24 md:pb-12 px-4 md:px-8 pt-6 md:pt-20 focus:outline-none">
+          <main id="main-content" tabIndex={-1} className="max-w-md md:max-w-4xl xl:max-w-5xl mx-auto min-h-screen pb-24 md:pb-12 px-4 md:px-8 pt-6 md:pt-20 focus:outline-none">
             {children}
           </main>
           <BottomNav />
