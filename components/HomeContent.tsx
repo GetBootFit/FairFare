@@ -56,6 +56,7 @@ interface FeatureCardProps {
   icon: React.ReactNode
   title: string
   description: string
+  hint?: React.ReactNode
   bgColor: string
   hoverBgColor: string
   cardBg: string
@@ -65,7 +66,7 @@ interface FeatureCardProps {
   glowColor: string
 }
 
-function FeatureCard({ href, icon, title, description, bgColor, hoverBgColor, cardBg, borderColor, hoverBorderColor, hoverCardBg, glowColor }: FeatureCardProps) {
+function FeatureCard({ href, icon, title, description, hint, bgColor, hoverBgColor, cardBg, borderColor, hoverBorderColor, hoverCardBg, glowColor }: FeatureCardProps) {
   return (
     <Link
       href={href}
@@ -77,6 +78,7 @@ function FeatureCard({ href, icon, title, description, bgColor, hoverBgColor, ca
       <div className="flex-1 min-w-0">
         <p className="text-base font-semibold text-white">{title}</p>
         <p className="text-xs text-zinc-400 group-hover:text-zinc-300 leading-relaxed mt-0.5 transition-colors duration-200">{description}</p>
+        {hint && <p className="text-[10px] text-zinc-600 mt-1">{hint}</p>}
       </div>
       <ChevronRight size={18} className="text-zinc-400 group-hover:text-white shrink-0 transition-colors duration-200 rtl:rotate-180" />
     </Link>
@@ -182,6 +184,7 @@ export function HomeContent() {
               icon={<img src="/icons/SVG/money-notes.svg" alt="" width={38} height={38} aria-hidden="true" style={{ filter: 'brightness(0) invert(1)' }} />}
               title={t('home_tipping_title')}
               description={t('home_tipping_desc')}
+              hint="🇺🇸 🇯🇵 🇦🇺 🇬🇧 🇹🇭 🇦🇪 +50 countries"
               bgColor="bg-purple-900/50"
               hoverBgColor="group-hover:bg-purple-700/60"
               cardBg="bg-purple-950/60"
@@ -190,6 +193,19 @@ export function HomeContent() {
               hoverCardBg="hover:bg-purple-900/70"
               glowColor="hover:shadow-[0_0_24px_-4px_rgba(147,51,234,0.4)]"
             />
+          </div>
+
+          {/* Mobile only: trust + pricing hint — mirrors desktop sidebar info */}
+          <div className="md:hidden mt-3 flex flex-col items-center gap-1.5">
+            <p className="text-[10px] text-zinc-600">
+              🔒 Stripe · Apple Pay &amp; Google Pay · No account needed
+            </p>
+            <p className="text-[10px] text-zinc-700">
+              Preview free · Full result from{' '}
+              <span className="text-zinc-500">
+                {mounted ? formatPrice(currency, PRICES[currency].single) : '$2.99'}
+              </span>
+            </p>
           </div>
 
           {/* ── DESKTOP: inline form — appears immediately after hero stats ─── */}
