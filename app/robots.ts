@@ -16,6 +16,9 @@ const DISALLOW = [
   '/api/admin/',
   '/admin',
   '/success',
+  // Static assets — not pages, keep out of GSC "crawled not indexed" noise
+  '/favicon.ico',
+  '/manifest.json',
 ]
 
 export default function robots(): MetadataRoute.Robots {

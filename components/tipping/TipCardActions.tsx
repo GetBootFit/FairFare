@@ -47,6 +47,7 @@ export function TipCardActions({ country, iso2, restaurant, taxi, hotel, highlig
       <a
         href={downloadUrl}
         download={`hootling-tipping-${iso2}.png`}
+        rel="nofollow"
         onClick={(e) => e.stopPropagation()}
         title="Download tipping card"
         className="flex items-center justify-center w-7 h-7 rounded-lg text-zinc-600 hover:text-teal-400 hover:bg-teal-900/20 transition-colors"

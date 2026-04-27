@@ -71,8 +71,8 @@ function formatDate(iso: string): string {
 
 // ── Static generation + ISR ───────────────────────────────────────────────────
 
-// Regenerate at most once every 24 h (blog content changes infrequently)
-export const revalidate = 86400
+// Regenerate at most once every 7 days (was 24h) — reduces Fluid CPU from daily ISR crawl triggers.
+export const revalidate = 604800
 
 export function generateStaticParams() {
   return getAllBlogSlugs().map((slug) => ({ slug }))
