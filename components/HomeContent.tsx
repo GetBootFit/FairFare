@@ -205,6 +205,10 @@ export function HomeContent() {
               <span className="text-zinc-500">
                 {mounted ? formatPrice(currency, PRICES[currency].single) : '$2.99'}
               </span>
+              {' '}·{' '}
+              <Link href="/example" className="text-purple-400 hover:text-purple-300 transition-colors">
+                See example
+              </Link>
             </p>
           </div>
 

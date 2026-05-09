@@ -251,6 +251,19 @@ export function PaymentModal({ feature, country, city, onCancel }: Props) {
           <p className="absolute bottom-1 inset-x-0 text-center text-[9px] text-zinc-600 uppercase tracking-widest">Unlock your result ↓</p>
         </div>
 
+        {/* Example link — for users not sure what they'll get before paying */}
+        <p className="text-center text-[11px] text-zinc-600">
+          Not sure what you get?{' '}
+          <a
+            href="/example"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-purple-400 hover:text-purple-300 underline underline-offset-2 transition-colors"
+          >
+            See a full example →
+          </a>
+        </p>
+
         {/* Pricing options — radiogroup for accessible keyboard navigation */}
         <div
           ref={radioGroupRef}

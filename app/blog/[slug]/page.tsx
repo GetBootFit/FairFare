@@ -441,6 +441,15 @@ export default async function BlogArticlePage(
                       <ArrowRight size={16} className="text-teal-400 group-hover:translate-x-0.5 transition-transform shrink-0" />
                     </Link>
                   )}
+                  {/* Example link — only for taxi posts; /example shows a full Bangkok taxi result */}
+                  {post.citySlug && (
+                    <p className="text-center text-[11px] text-zinc-600">
+                      Not sure what you get?{' '}
+                      <Link href="/example" className="text-purple-400 hover:text-purple-300 underline underline-offset-2 transition-colors">
+                        See a full sample result →
+                      </Link>
+                    </p>
+                  )}
                 </div>
               )}
             </React.Fragment>
@@ -481,6 +490,12 @@ export default async function BlogArticlePage(
             >
               Check My Exact Fare <ArrowRight size={15} />
             </Link>
+            <p className="text-zinc-600 text-xs">
+              First time?{' '}
+              <Link href="/example" className="text-purple-400 hover:text-purple-300 underline underline-offset-2 transition-colors">
+                See a full sample result →
+              </Link>
+            </p>
           </div>
         )}
 
