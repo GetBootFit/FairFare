@@ -77,7 +77,7 @@ function FeatureCard({ href, icon, title, description, hint, bgColor, hoverBgCol
       </div>
       <div className="flex-1 min-w-0">
         <p className="text-base font-semibold text-white">{title}</p>
-        <p className="text-xs text-zinc-400 group-hover:text-zinc-300 leading-relaxed mt-0.5 transition-colors duration-200">{description}</p>
+        <p className="text-[11px] text-zinc-400 group-hover:text-zinc-300 leading-relaxed mt-0.5 transition-colors duration-200">{description}</p>
         {hint && <p className="text-[10px] text-zinc-600 mt-1">{hint}</p>}
       </div>
       <ChevronRight size={18} className="text-zinc-400 group-hover:text-white shrink-0 transition-colors duration-200 rtl:rotate-180" />
