@@ -147,14 +147,14 @@ export function HomeContent() {
               {t('home_tagline')}
             </h1>
             {/* Coverage stats */}
-            <div className="flex items-center gap-2 mt-3 flex-wrap">
-              <span className="inline-flex items-center gap-1 text-xs text-zinc-600 bg-zinc-900 border border-zinc-800 rounded-full px-2.5 py-1">
+            <div className="flex items-center gap-1.5 mt-3 flex-wrap">
+              <span className="inline-flex items-center gap-1 text-xs text-zinc-600 bg-zinc-900 border border-zinc-800 rounded-full px-2 py-1">
                 <span className="text-purple-400 font-semibold">160+</span> {t('home_stat_cities')}
               </span>
-              <span className="inline-flex items-center gap-1 text-xs text-zinc-600 bg-zinc-900 border border-zinc-800 rounded-full px-2.5 py-1">
+              <span className="inline-flex items-center gap-1 text-xs text-zinc-600 bg-zinc-900 border border-zinc-800 rounded-full px-2 py-1">
                 <span className="text-teal-400 font-semibold">56</span> {t('home_stat_tipping')}
               </span>
-              <span className="inline-flex items-center gap-1 text-xs text-zinc-600 bg-zinc-900 border border-zinc-800 rounded-full px-2.5 py-1">
+              <span className="inline-flex items-center gap-1 text-xs text-zinc-600 bg-zinc-900 border border-zinc-800 rounded-full px-2 py-1">
                 {t('home_no_account')}
               </span>
             </div>
