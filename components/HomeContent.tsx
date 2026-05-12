@@ -262,7 +262,7 @@ export function HomeContent() {
           {/* ── Blog section ─────────────────────────────────────────────────── */}
           {(() => {
             const featured = getFeaturedPost()
-            const recent = getRecentPosts(4, featured?.slug)
+            const recent = getRecentPosts(2, featured?.slug)
             const categoryColour: Record<string, string> = {
               taxi: 'text-purple-400',
               tipping: 'text-teal-400',
