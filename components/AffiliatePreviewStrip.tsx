@@ -59,7 +59,7 @@ export function AffiliatePreviewStrip({
             key={partner.id}
             href={buildHref(partner)}
             target="_blank"
-            rel="noopener noreferrer sponsored"
+            rel="nofollow noopener noreferrer sponsored"
             aria-label={`${partner.name} — book a transfer (opens in new tab)`}
             className="flex items-center gap-1.5 text-[11px] text-zinc-500 hover:text-zinc-400 transition-colors"
             onClick={() =>

@@ -212,10 +212,24 @@ export default async function LocaleBlogArticlePage(
     post.category === 'travel' ? ['transfer', 'hotel'] :
     ['transfer']
 
-  const affiliatePartners = await getPartnersForZone('blog', {
+  let affiliatePartners = await getPartnersForZone('blog', {
     categories: blogCategories,
     maxItems: 3,
   })
+
+  // Tipping posts: fall back to transfer partners until a tours programme is live
+  let affiliateBlogCategory: 'taxi' | 'tipping' | 'travel' =
+    post.category === 'travel' ? 'travel' :
+    post.category === 'tipping' ? 'tipping' :
+    'taxi'
+
+  if (post.category === 'tipping' && affiliatePartners.length === 0) {
+    affiliatePartners = await getPartnersForZone('blog', {
+      categories: ['transfer'],
+      maxItems: 3,
+    })
+    affiliateBlogCategory = 'taxi'
+  }
 
   const airportData = post.category === 'taxi' && post.city
     ? getAirportForCity(post.city)
@@ -336,7 +350,7 @@ export default async function LocaleBlogArticlePage(
 
         <BlogAffiliateCard
           partners={affiliatePartners}
-          category={post.category}
+          category={affiliateBlogCategory}
           city={post.city}
           country={post.country}
         />

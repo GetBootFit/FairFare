@@ -19,7 +19,7 @@ import { type NextRequest, NextResponse } from 'next/server'
 import { getAffiliateConfig, incrementClickCount } from '@/lib/affiliates'
 import type { AffiliateZone } from '@/data/affiliate-config'
 
-const VALID_ZONES: AffiliateZone[] = ['result', 'preview', 'blog', 'success']
+const VALID_ZONES: AffiliateZone[] = ['result', 'preview', 'blog', 'success', 'airport']
 
 export async function GET(req: NextRequest): Promise<NextResponse> {
   const { searchParams } = new URL(req.url)

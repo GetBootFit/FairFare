@@ -4,6 +4,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ChevronRight, Car, MapPin, ArrowRight } from 'lucide-react'
 import { getUSDPrices } from '@/lib/currency'
+import { getPartnersForZone } from '@/lib/affiliates'
+import { BlogAffiliateCard } from '@/components/BlogAffiliateCard'
 import {
   getAllCitySlugs,
   getCityData,
@@ -137,6 +139,11 @@ export default async function TaxiCityPage(
   const faqs = buildFaqs(cityName, data.country, data)
   const year = new Date().getFullYear()
   const { single } = getUSDPrices()
+
+  const affiliatePartners = await getPartnersForZone('blog', {
+    categories: ['transfer'],
+    maxItems: 3,
+  })
 
   const jsonLd = [
     taxiBreadcrumbJsonLd(city, cityName),
@@ -285,6 +292,15 @@ export default async function TaxiCityPage(
           </Link>
           <p className="text-xs text-zinc-600">From {single} · No account required</p>
         </div>
+
+        {/* Transfer affiliate — shown between CTA and FAQ; user has seen the fare range
+            and is weighing whether to book a metered taxi or a fixed-price transfer */}
+        <BlogAffiliateCard
+          partners={affiliatePartners}
+          category="taxi"
+          city={cityName}
+          country={data.country}
+        />
 
         {/* FAQ */}
         <div className="space-y-3">

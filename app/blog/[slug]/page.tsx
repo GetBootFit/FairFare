@@ -319,10 +319,26 @@ export default async function BlogArticlePage(
     post.category === 'travel' ? ['transfer', 'hotel'] :
     ['transfer']
 
-  const affiliatePartners = await getPartnersForZone('blog', {
+  let affiliatePartners = await getPartnersForZone('blog', {
     categories: blogCategories,
     maxItems: 3,
   })
+
+  // Tipping posts: GetYourGuide / Viator are not yet live — fall back to transfer
+  // partners so tipping posts still show affiliate options. Remove this block once
+  // a tours partner is enabled.
+  let affiliateBlogCategory: 'taxi' | 'tipping' | 'travel' =
+    post.category === 'travel' ? 'travel' :
+    post.category === 'tipping' ? 'tipping' :
+    'taxi'
+
+  if (post.category === 'tipping' && affiliatePartners.length === 0) {
+    affiliatePartners = await getPartnersForZone('blog', {
+      categories: ['transfer'],
+      maxItems: 3,
+    })
+    affiliateBlogCategory = 'taxi'
+  }
 
   // Airport CTA — only for taxi-category posts about cities with an airport page
   const airportData = post.category === 'taxi' && post.city
@@ -468,7 +484,7 @@ export default async function BlogArticlePage(
 
         <BlogAffiliateCard
           partners={affiliatePartners}
-          category={post.category}
+          category={affiliateBlogCategory}
           city={post.city}
           country={post.country}
         />

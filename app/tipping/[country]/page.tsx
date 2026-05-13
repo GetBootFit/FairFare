@@ -4,6 +4,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ChevronRight, Banknote, ArrowRight, UtensilsCrossed, Car, Hotel, Sparkles } from 'lucide-react'
 import { getUSDPrices } from '@/lib/currency'
+import { getPartnersForZone } from '@/lib/affiliates'
+import { BlogAffiliateCard } from '@/components/BlogAffiliateCard'
 import {
   getAllCountrySlugs,
   slugToDisplayName,
@@ -189,6 +191,11 @@ export default async function TippingCountryPage(
   const { single } = getUSDPrices()
   const citySticker = COUNTRY_STICKER[country] ?? null
 
+  const affiliatePartners = await getPartnersForZone('blog', {
+    categories: ['transfer'],
+    maxItems: 3,
+  })
+
   const jsonLd = [
     tippingBreadcrumbJsonLd(country, countryName),
     tippingServiceJsonLd(countryName, country),
@@ -297,6 +304,14 @@ export default async function TippingCountryPage(
           </Link>
           <p className="text-xs text-zinc-600">From {single} · No account required</p>
         </div>
+
+        {/* Transfer affiliate — travellers checking tipping guides are planning a trip;
+            transfer partners are highly relevant as a fixed-price airport option */}
+        <BlogAffiliateCard
+          partners={affiliatePartners}
+          category="taxi"
+          country={countryName}
+        />
 
         {/* FAQ */}
         <div className="space-y-3">

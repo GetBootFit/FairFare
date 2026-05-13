@@ -174,14 +174,26 @@ export const DEFAULT_AFFILIATE_CONFIG: AffiliatePartner[] = [
   // eSIM — result and success pages
   // ─────────────────────────────────────────
   {
+    id: 'holafly',
+    name: 'Holafly',
+    category: 'esim',
+    icon: 'mobile',
+    labelKey: 'affiliate_esim',
+    // Enable once Holafly affiliate programme is approved (apply at holafly.com/en/affiliates)
+    enabled: false,
+    priority: 9,
+    zones: ['result', 'success'],
+    baseUrl: 'HOLAFLY_AFFILIATE_URL',
+  },
+  {
     id: 'airalo',
     name: 'Airalo',
     category: 'esim',
     icon: 'mobile',
     labelKey: 'affiliate_esim',
-    // Enable once Impact.com Airalo programme is approved
+    // Application DECLINED by Impact.com (low reach). Re-apply when site has more traffic.
     enabled: false,
-    priority: 9,
+    priority: 10,
     zones: ['result', 'success'],
     baseUrl: 'IMPACT_AIRALO_URL',
   },
@@ -197,7 +209,7 @@ export const DEFAULT_AFFILIATE_CONFIG: AffiliatePartner[] = [
     labelKey: 'affiliate_car_hire',
     // Enable once Travelpayouts DiscoverCars programme is approved
     enabled: false,
-    priority: 10,
+    priority: 11,
     zones: ['result'],
     baseUrl: 'TRAVELPAYOUTS_DISCOVERCARS_URL',
   },
