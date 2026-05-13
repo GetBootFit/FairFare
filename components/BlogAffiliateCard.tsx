@@ -61,7 +61,7 @@ export function BlogAffiliateCard({
             key={partner.id}
             href={buildHref(partner)}
             target="_blank"
-            rel="noopener noreferrer sponsored"
+            rel="nofollow noopener noreferrer sponsored"
             className="flex items-center gap-3 px-4 py-3 hover:bg-zinc-800 transition-colors group"
           >
             <img
