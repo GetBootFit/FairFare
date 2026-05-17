@@ -51,6 +51,7 @@ export function PaymentModal({ feature, country, city, onCancel }: Props) {
 
   // Fire begin_checkout once when modal opens
   useEffect(() => {
+    track('modal_open', { feature, country: country ?? '' })
     ga4BeginCheckout({ feature, country })
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -144,6 +145,7 @@ export function PaymentModal({ feature, country, city, onCancel }: Props) {
   const handlePay = async () => {
     setLoading(true)
     setError('')
+    track('payment_started', { feature, product: selectedProduct, currency })
     ga4PaymentStarted({
       feature,
       product: selectedProduct,
