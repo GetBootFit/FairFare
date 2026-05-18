@@ -108,7 +108,7 @@ export default function PricingPage() {
           <ul className="space-y-1.5">
             {[
               'Fare estimate with ±15% range',
-              'AI scam warnings for your route',
+              'City-specific scam alerts for your route',
               'Local driver phrases',
               'Valid for 30 minutes',
               'Works for taxi or tipping',
@@ -251,7 +251,7 @@ export default function PricingPage() {
           },
           {
             q: 'What if my city isn\'t listed?',
-            a: 'We cover 160+ cities. For unlisted destinations, our AI still generates scam warnings and driver phrases — you\'ll just see a note to verify the fare with your driver.',
+            a: 'We cover 160+ cities. For unlisted destinations, you\'ll still get scam alerts and local driver phrases — with a note to verify the fare directly with your driver.',
           },
           {
             q: 'Can I use the bundle across multiple countries?',

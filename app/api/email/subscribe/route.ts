@@ -94,7 +94,7 @@ function email1Html(email: string, feature: string): string {
                 </td></tr>
                 <tr><td style="padding-bottom:16px;">
                   <p style="margin:0 0 4px;font-size:13px;font-weight:600;color:#d4d4d8;">⚠️ &nbsp;Scam alerts by city</p>
-                  <p style="margin:0;font-size:13px;color:#71717a;line-height:1.5;">AI-generated, city-specific warnings for the most common driver scams.</p>
+                  <p style="margin:0;font-size:13px;color:#71717a;line-height:1.5;">City-specific alerts covering the most common driver scams at your destination.</p>
                 </td></tr>
                 <tr><td>
                   <p style="margin:0 0 4px;font-size:13px;font-weight:600;color:#d4d4d8;">💰 &nbsp;Tipping customs for 50+ countries</p>

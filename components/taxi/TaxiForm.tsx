@@ -492,7 +492,7 @@ export function TaxiForm() {
                   <div>
                     <p className="text-xs font-semibold text-amber-300">{preview.city} isn't in our fare database yet</p>
                     <p className="text-xs text-amber-200/70 mt-0.5 leading-relaxed">
-                      Your result will include AI-powered scam warnings and driver phrases for {preview.city}. Confirm the exact fare with your driver before travel.
+                      Your result will include city-specific scam alerts and local driver phrases for {preview.city}. Confirm the exact fare with your driver before travel.
                     </p>
                   </div>
                 </div>

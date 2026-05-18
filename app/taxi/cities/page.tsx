@@ -153,7 +153,7 @@ export default function TaxiCitiesPage() {
         <div className="bg-purple-950/40 border border-purple-800/40 rounded-xl p-4 space-y-2">
           <p className="text-sm font-semibold text-white">Don&apos;t see your city?</p>
           <p className="text-xs text-zinc-400">
-            Our taxi fare checker works for hundreds of destinations — even unlisted cities get AI scam warnings and local driver phrases.
+            Our taxi fare checker works for hundreds of destinations — even unlisted cities get city-specific scam alerts and local driver phrases.
           </p>
           <Link
             href="/taxi"

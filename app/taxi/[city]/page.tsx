@@ -46,7 +46,7 @@ export async function generateMetadata(
     alternates: { canonical: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com'}/taxi/${city}` },
     openGraph: {
       title: `${cityName} Taxi Fares (${year}) — Rates & Scam Alerts | Hootling`,
-      description: `Real meter rates, fare ranges and AI-powered scam warnings for ${cityName}, ${data.country}. Know the fair price before you get in.`,
+      description: `Real meter rates, fare ranges and city-specific scam alerts for ${cityName}, ${data.country}. Know the fair price before you get in.`,
       url: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com'}/taxi/${city}`,
       type: 'website',
       images: [
@@ -274,7 +274,7 @@ export default async function TaxiCityPage(
             ))}
           </ul>
           <div className="pt-1 border-t border-amber-900/30">
-            <p className="text-xs text-amber-700/80">These are worldwide patterns. Your paid result includes AI-generated warnings specific to {cityName} and your exact route.</p>
+            <p className="text-xs text-amber-700/80">These are worldwide patterns. Your paid result includes scam alerts researched specifically for {cityName} and your exact route.</p>
           </div>
         </div>
 
