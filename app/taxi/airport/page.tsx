@@ -6,9 +6,9 @@ import { AIRPORT_DATA } from '@/lib/airport-data'
 export const revalidate = 86400
 
 export const metadata: Metadata = {
-  title: 'Airport Taxi Fares — Fare Guides for Major International Airports',
+  title: 'Airport Taxi Fares — 30 International Airport Guides',
   description:
-    'Taxi fare guides for the world\'s busiest airports: Bangkok BKK, Dubai DXB, Singapore SIN, London LHR, New York JFK. Know the real cost before you land.',
+    'Taxi fare guides for 30 major airports: BKK, DXB, SIN, LHR, JFK, CDG, BCN, IST, HKG, MEL, YYZ and more. Meter rates, scam warnings, alternatives — know the real cost before you land.',
   alternates: { canonical: 'https://www.hootling.com/taxi/airport' },
 }
 

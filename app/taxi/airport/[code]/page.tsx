@@ -5,6 +5,7 @@ import { ChevronRight, Car, MapPin, AlertTriangle, Info, ArrowRight } from 'luci
 import { getAirportData, getAllAirportCodes, estimateAirportFare, getRelatedAirports } from '@/lib/airport-data'
 import { getPartnersForZone } from '@/lib/affiliates'
 import { AffiliatePreviewStrip } from '@/components/AffiliatePreviewStrip'
+import { BlogAffiliateCard } from '@/components/BlogAffiliateCard'
 
 // ── Static generation + ISR ───────────────────────────────────────────────────
 
@@ -26,14 +27,19 @@ export async function generateMetadata(
 
   const year = new Date().getFullYear()
   const APP_URL = (process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com').replace(/\/$/, '')
+  // Top 3 destinations for long-tail keyword targeting
+  // Strip sub-labels after "/" or "(" to keep destination names short
+  const topDests = airport.routes
+    .slice(0, 3)
+    .map((r) => r.label.split('/')[0].split('(')[0].trim())
 
   return {
-    title: `${airport.code} Taxi Fares — ${airport.name} to ${airport.city} (${year})`,
-    description: `Official taxi fares from ${airport.name} to ${airport.city}. ${airport.approxCityFare}. Scam warnings, alternatives and practical tips for ${year}.`,
+    title: `${airport.code} Taxi to ${topDests.join(', ')} — Fares & Scam Warnings (${year})`,
+    description: `Taxi from ${airport.name}: ${airport.approxCityFare}. Routes to ${topDests.slice(0, 2).join(', ')} and more. Meter rates, scam alerts and alternatives for ${year}.`,
     alternates: { canonical: `${APP_URL}/taxi/airport/${code}` },
     openGraph: {
-      title: `${airport.code} Taxi Fares — ${airport.name} (${year})`,
-      description: `${airport.approxCityFare} · Avoid scams · Compare alternatives.`,
+      title: `${airport.code} Taxi Fares to ${topDests.slice(0, 2).join(' & ')} (${year}) | Hootling`,
+      description: `${airport.approxCityFare} · Scam warnings · Compare taxi vs transfer vs transit · ${airport.city} ${year}.`,
       url: `${APP_URL}/taxi/airport/${code}`,
       type: 'website',
       images: [
@@ -47,8 +53,8 @@ export async function generateMetadata(
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${airport.code} Taxi Fares — ${airport.name}`,
-      description: `${airport.approxCityFare} · Know what's fair before you ride.`,
+      title: `${airport.code} Taxi to ${topDests.slice(0, 2).join(' & ')} | Hootling`,
+      description: `${airport.approxCityFare} · Know the real price before you ride.`,
     },
   }
 }
@@ -69,10 +75,10 @@ export default async function AirportPage(
 
   // Transfer partners for the airport zone — Kiwitaxi, Welcome Pickups, GetTransfer.
   // Fetched server-side so the strip renders in the initial HTML (no client JS needed).
-  // isoCountry geo-ranks partners with regional strength (e.g. Welcome Pickups for GR/ES/IT).
+  // 3 partners: 2 used for the mid-page AffiliatePreviewStrip, all 3 for the CTA-area card.
   const transferPartners = await getPartnersForZone('airport', {
     categories: ['transfer'],
-    maxItems: 2,
+    maxItems: 3,
   })
 
   const breadcrumbLd = {
@@ -84,6 +90,21 @@ export default async function AirportPage(
       { '@type': 'ListItem', position: 3, name: `${airport.name} Taxi Fares`, item: `${APP_URL}/taxi/airport/${code}` },
     ],
   }
+
+  // Per-route FAQ entries — targets "taxi from [airport] to [district]" long-tail queries
+  const routeFaqs = airport.routes.slice(0, 4).map((route) => {
+    const isFlat = airport.code === 'JFK' && route.label.includes('Manhattan')
+    const est = isFlat ? { min: 70, max: 90 } : estimateAirportFare(airport, route.km)
+    const destName = route.label.split('/')[0].split('(')[0].trim()
+    return {
+      '@type': 'Question',
+      name: `How much is a taxi from ${airport.name} to ${destName}?`,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: `A taxi from ${airport.name} to ${route.label} costs approximately ${sym}${est.min}–${sym}${est.max} in ${year}${route.note ? `. Note: ${route.note}` : ''}. Fare is in ${airport.currency}.`,
+      },
+    }
+  })
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -115,6 +136,7 @@ export default async function AirportPage(
           text: airport.alternatives.join('. '),
         },
       },
+      ...routeFaqs,
     ],
   }
 
@@ -208,7 +230,7 @@ export default async function AirportPage(
             transfer is the natural next consideration before they read the scam warnings. */}
         {transferPartners.length > 0 && (
           <AffiliatePreviewStrip
-            partners={transferPartners}
+            partners={transferPartners.slice(0, 2)}
             city={airport.city}
             country={airport.country}
             zone="airport"
@@ -290,6 +312,16 @@ export default async function AirportPage(
             Check Route Fare <ArrowRight size={15} />
           </Link>
         </div>
+
+        {/* Transfer affiliate card — prominent placement after CTA.
+            High-intent audience: user just read the fare range and scam risks;
+            a fixed-price pre-booked transfer is the natural next consideration. */}
+        <BlogAffiliateCard
+          partners={transferPartners}
+          category="taxi"
+          city={airport.city}
+          country={airport.country}
+        />
 
         {/* Related airports — improves crawlability and keeps users in the airport ecosystem */}
         {relatedAirports.length > 0 && (
