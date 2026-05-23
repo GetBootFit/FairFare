@@ -65,27 +65,39 @@ function SuccessInner() {
         // GA4 e-commerce purchase event — attributes revenue to the acquisition source.
         // gtag is available only when NEXT_PUBLIC_GA4_ID is configured.
         // amount_total from Stripe is in the smallest currency unit (cents) — divide by 100.
-        try {
-          const g = (window as Window & { gtag?: (...a: unknown[]) => void }).gtag
-          if (typeof g === 'function' && data.amountTotal) {
-            const value = data.amountTotal / 100
-            g('event', 'purchase', {
-              transaction_id: params.get('session_id') ?? undefined,
-              value,
-              currency: data.currency ?? 'USD',
-              items: [{
-                item_id: data.product ?? 'single',
-                item_name:
-                  data.product === 'query_bundle'   ? 'Hootling 20-Query Bundle' :
-                  data.product === 'country_pass'   ? `Hootling DayPass — ${data.country ?? ''}` :
-                  'Hootling Single Query',
-                item_category: data.feature ?? 'taxi',
-                price: value,
-                quantity: 1,
-              }],
-            })
+        // Poll for gtag readiness: on a fresh Stripe redirect, afterInteractive scripts and
+        // the verify fetch race. If verify resolves before gtag loads the event would be
+        // silently dropped — retry up to 10 × 300 ms = 3 s before giving up.
+        if (data.amountTotal) {
+          const value = data.amountTotal / 100
+          const payload = {
+            transaction_id: params.get('session_id') ?? undefined,
+            value,
+            currency: data.currency ?? 'USD',
+            items: [{
+              item_id: data.product ?? 'single',
+              item_name:
+                data.product === 'query_bundle'   ? 'Hootling 20-Query Bundle' :
+                data.product === 'country_pass'   ? `Hootling DayPass — ${data.country ?? ''}` :
+                'Hootling Single Query',
+              item_category: data.feature ?? 'taxi',
+              price: value,
+              quantity: 1,
+            }],
           }
-        } catch { /* gtag unavailable */ }
+          let attempts = 0
+          const fireGtag = () => {
+            try {
+              const g = (window as Window & { gtag?: (...a: unknown[]) => void }).gtag
+              if (typeof g === 'function') {
+                g('event', 'purchase', payload)
+              } else if (attempts++ < 10) {
+                setTimeout(fireGtag, 300)
+              }
+            } catch { /* gtag unavailable */ }
+          }
+          fireGtag()
+        }
 
         // Fire event so open TaxiForm/TippingForm can auto-submit
         window.dispatchEvent(
