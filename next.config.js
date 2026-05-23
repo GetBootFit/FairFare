@@ -78,7 +78,10 @@ module.exports = withSentryConfig(nextConfig, {
   },
 
   // Automatically instrument Next.js data fetching
-  autoInstrumentServerFunctions: true,
+  // (moved from top-level to webpack sub-key — top-level is deprecated in @sentry/nextjs)
+  webpack: {
+    autoInstrumentServerFunctions: true,
+  },
 
   // Tunnel Sentry requests through /api/monitoring to avoid ad-blockers
   tunnelRoute: '/api/monitoring',
