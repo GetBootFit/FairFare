@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import Script from 'next/script'
 import { headers } from 'next/headers'
 import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { BottomNav } from '@/components/BottomNav'
 import { DesktopNav } from '@/components/DesktopNav'
 import { LanguageProvider } from '@/context/LanguageContext'
@@ -194,6 +195,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         {/* Consent-gated tracking — loads Travelpayouts + Clarity only after accept */}
         <CookieConsent publisherId="509985" clarityId={CLARITY_ID} />
         <Analytics />
+        <SpeedInsights />
         {/* Google Analytics 4 — add NEXT_PUBLIC_GA4_ID=G-XXXXXXXXXX to .env.local
             Cookieless mode: client_storage='none' disables _ga/_ga_* cookie writes.
             Page-view events are still sent. No cookie consent banner required under GDPR
