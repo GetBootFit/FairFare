@@ -2,7 +2,7 @@
 
 import type { TippingResult, TippingScenario, ScenarioTip, TippingRating } from '@/types'
 import { useState, useEffect, useCallback } from 'react'
-import { RotateCcw, Volume2, VolumeX, Copy, Check, Maximize2, ChevronRight } from 'lucide-react'
+import { RotateCcw, Volume2, VolumeX, Copy, Check, Maximize2, ChevronRight, Calculator } from 'lucide-react'
 
 // SVGs are already purple (#9333ea) + white by design — no filter needed.
 function SvgIcon({ name, size = 20, className = '' }: { name: string; size?: number; className?: string }) {
@@ -27,6 +27,7 @@ import { track } from '@vercel/analytics'
 import { AffiliateBlock } from '@/components/AffiliateBlock'
 import { getPartnersForZoneSync } from '@/lib/affiliates'
 import { PhraseTranslator } from '@/components/ui/PhraseTranslator'
+import { TipCalculator } from '@/components/tipping/TipCalculator'
 import { InstallPrompt } from '@/components/InstallPrompt'
 import { useLanguage } from '@/context/LanguageContext'
 import type { TranslationKey } from '@/lib/i18n'
@@ -94,6 +95,8 @@ export function TippingResult({ result, onReset }: Props) {
   const [playingIdx, setPlayingIdx] = useState<number | null>(null)
   const [copiedIdx, setCopiedIdx] = useState<number | null>(null)
   const [showPhraseIdx, setShowPhraseIdx] = useState<number | null>(null)
+  /** Which scenario's tip calculator is currently open (null = all closed). */
+  const [openCalc, setOpenCalc] = useState<string | null>(null)
 
   useEffect(() => {
     setAudioAvail('speechSynthesis' in window)
@@ -166,6 +169,31 @@ export function TippingResult({ result, onReset }: Props) {
                     </div>
                   </div>
                   <p className="text-xs text-zinc-500 leading-relaxed pl-[38px] rtl:pl-0 rtl:pr-[38px]">{tip.notes}</p>
+
+                  {/* Calculator toggle — only for scenarios with a percentage basis */}
+                  {tip.percentageMin !== null && tip.percentageMin > 0 && tip.rating !== 'avoid' && (
+                    <>
+                      <button
+                        type="button"
+                        onClick={() => setOpenCalc(openCalc === key ? null : key)}
+                        className="flex items-center gap-1.5 pl-[38px] rtl:pl-0 rtl:pr-[38px] text-[11px] text-zinc-600 hover:text-teal-400 transition-colors mt-0.5"
+                        aria-expanded={openCalc === key}
+                      >
+                        <Calculator size={11} />
+                        {openCalc === key ? 'Close calculator' : 'Calculate tip'}
+                      </button>
+                      {openCalc === key && (
+                        <TipCalculator
+                          scenarioKey={key}
+                          percentageMin={tip.percentageMin}
+                          percentageMax={tip.percentageMax}
+                          localCurrency={result.currency}
+                          localSymbol={result.currencySymbol}
+                          rates={rates}
+                        />
+                      )}
+                    </>
+                  )}
                 </div>
               )
             })}
