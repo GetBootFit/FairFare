@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import Script from 'next/script'
-import { headers } from 'next/headers'
 import { Analytics } from '@vercel/analytics/next'
 import { BottomNav } from '@/components/BottomNav'
 import { DesktopNav } from '@/components/DesktopNav'
@@ -145,10 +144,11 @@ const jsonLd = {
   ],
 }
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  // Nonce is generated per-request by middleware.ts and forwarded via x-nonce header.
-  // It must be applied to all inline scripts so browsers with a strict CSP allow them.
-  const nonce = (await headers()).get('x-nonce') ?? ''
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  // NOTE: No middleware nonce — CSP is enforced via next.config.js static headers.
+  // Calling headers() here would opt the entire app into dynamic rendering on every
+  // request (killing ISR / static generation for ALL pages). Do not add it back
+  // without also adding Edge middleware to set x-nonce per-request.
 
   return (
     <html lang="en" className="bg-black">
@@ -174,7 +174,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         </a>
         <script
           type="application/ld+json"
-          nonce={nonce}
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
           suppressHydrationWarning
         />
@@ -204,9 +203,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <Script
               src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}
               strategy="afterInteractive"
-              nonce={nonce}
             />
-            <Script id="ga4-init" strategy="afterInteractive" nonce={nonce}>{`
+            <Script id="ga4-init" strategy="afterInteractive">{`
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());

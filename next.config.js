@@ -1,11 +1,13 @@
 /** @type {import('next').NextConfig} */
 const { withSentryConfig } = require('@sentry/nextjs')
 
-// Content-Security-Policy is handled by middleware.ts (nonce-based, per-request).
-// The static CSP previously set here has been removed — middleware.ts sets a
-// stricter `nonce + strict-dynamic` policy on every response, eliminating
-// `unsafe-inline` from script-src. style-src still uses `unsafe-inline`
-// because Tailwind utility classes are applied inline and hashing is impractical.
+// Content-Security-Policy: currently not enforced (no middleware).
+// If a nonce-based CSP is added in future, it requires an Edge middleware that:
+//   1. Generates a crypto.randomUUID() nonce per request
+//   2. Sets x-nonce response header for layout.tsx to read
+//   3. Sets the CSP header with script-src 'nonce-...' strict-dynamic
+// WARNING: reading headers() in layout.tsx opts the ENTIRE app into dynamic
+// rendering — only add it back with a real middleware generating the nonce.
 
 const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com'
 

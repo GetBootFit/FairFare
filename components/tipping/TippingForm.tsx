@@ -26,13 +26,13 @@ import type { TippingResult as TippingResultType } from '@/types'
 
 const COUNTRIES = [
   'Argentina', 'Australia', 'Austria', 'Belgium', 'Brazil', 'Canada', 'Chile',
-  'China', 'Colombia', 'Croatia', 'Czech Republic', 'Denmark', 'Egypt',
+  'China', 'Colombia', 'Costa Rica', 'Croatia', 'Czech Republic', 'Denmark', 'Egypt',
   'Finland', 'France', 'Germany', 'Greece', 'Hong Kong', 'Hungary', 'India',
   'Indonesia', 'Ireland', 'Israel', 'Italy', 'Japan', 'Jordan', 'Malaysia',
-  'Mexico', 'Morocco', 'Netherlands', 'New Zealand', 'Norway', 'Peru',
+  'Macau', 'Mexico', 'Morocco', 'Netherlands', 'New Zealand', 'Norway', 'Peru',
   'Philippines', 'Poland', 'Portugal', 'Romania', 'Russia', 'Saudi Arabia',
   'Singapore', 'South Africa', 'South Korea', 'Spain', 'Sweden', 'Switzerland',
-  'Taiwan', 'Thailand', 'Turkey', 'UAE', 'Ukraine', 'United Kingdom',
+  'Taiwan', 'Thailand', 'Tunisia', 'Turkey', 'UAE', 'Ukraine', 'United Kingdom',
   'United States', 'Vietnam',
 ]
 
