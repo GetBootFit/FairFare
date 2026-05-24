@@ -39,7 +39,7 @@ function getAboutContent() {
     feature_taxi_title: 'Taxi Fare Check',
     feature_taxi_desc: 'Enter your pickup and destination to get a fair price range, city-specific scam warnings, and the local phrase to confirm the fare before you get in.',
     feature_tipping_title: 'Tipping Guide',
-    feature_tipping_desc: "Choose a country to see tipping norms for restaurants, taxis, hotel porters, bars, tour guides, and delivery — with clear 'expected / optional / avoid' ratings.",
+    feature_tipping_desc: "Choose a country to see tipping norms across 10 scenarios — restaurants, taxis, hotel porters, bars, tour guides, food delivery, spa & massage, room service, hair & beauty, and airport porters — with clear 'expected / optional / avoid' ratings.",
     how_heading: 'How it works',
     step1_title: 'Enter your route or country',
     step1_desc: 'Type your pickup and destination for a taxi check, or pick a country for a tipping guide. Autocomplete makes it fast.',

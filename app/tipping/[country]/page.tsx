@@ -100,7 +100,7 @@ export async function generateMetadata(
   const restaurantHint = data.restaurant.length > 100
     ? data.restaurant.slice(0, 97) + '…'
     : data.restaurant
-  const metaDescription = `${restaurantHint} Hotels, spas & taxis also covered — ${countryName} tipping guide ${year}.`
+  const metaDescription = `${restaurantHint} 10 scenarios covered: hotels, spas, room service, hair & beauty, airport porters and more — ${countryName} tipping guide ${year}.`
 
   return {
     title: `Average Tip in ${countryName}${titlePct} — ${year} Tipping Guide`,

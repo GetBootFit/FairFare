@@ -63,7 +63,7 @@ Taxi fares are calculated from official local meter rates (flag fall + per km ra
 
 ## Tipping Guide Data
 
-Tipping guides cover the expected tipping level (expected / optional / not expected), amounts for restaurants, taxis, hotels, and spas, the local currency, and cultural context that explains *why* the custom exists.
+Tipping guides cover the expected tipping level (expected / optional / not expected) across 10 scenarios: restaurants, taxis, hotel porters, bars, tour guides, food delivery, spa & massage, room service, hair & beauty, and airport porters. Each includes local currency amounts and cultural context that explains *why* the custom exists.
 
 ## Coverage
 

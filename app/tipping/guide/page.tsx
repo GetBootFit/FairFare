@@ -176,7 +176,7 @@ export default function TippingGuidePage() {
           <span className="block text-lg font-normal text-zinc-400 mt-1">Country-by-Country Reference</span>
         </h1>
         <p className="text-zinc-400 text-sm leading-relaxed">
-          Where tipping is expected, optional, or considered impolite — covering restaurants, taxis, hotels, and spas in 50+ countries. Use the full country guides for scenario-specific advice and cultural context.
+          Where tipping is expected, optional, or considered impolite — covering 10 scenarios including restaurants, taxis, spas, room service, and more across 50+ countries. Use the full country guides for scenario-specific amounts and cultural context.
         </p>
       </div>
 
@@ -361,7 +361,7 @@ export default function TippingGuidePage() {
           <h2 className="text-sm font-semibold text-white">Get the Full Guide for Your Destination</h2>
         </div>
         <p className="text-xs text-zinc-400 leading-relaxed">
-          This overview covers the basics. Hootling&apos;s full tipping guide gives you scenario-by-scenario advice — restaurants, taxis, hotels, spas, tour guides — with local cultural context generated specifically for the country you&apos;re visiting.
+          This overview covers the basics. Hootling&apos;s full tipping guide gives you 10 scenario-by-scenario answers — restaurants, taxis, hotel porters, bars, tour guides, food delivery, spa &amp; massage, room service, hair &amp; beauty, and airport porters — with cultural context generated specifically for your destination.
         </p>
         <Link
           href="/tipping"

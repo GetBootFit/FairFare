@@ -165,7 +165,7 @@ export default function TippingCountriesPage() {
         <div className="bg-teal-950/40 border border-teal-800/40 rounded-xl p-4 space-y-2">
           <p className="text-sm font-semibold text-white">Get the full guide for your destination</p>
           <p className="text-xs text-zinc-400">
-            Our full tipping guides cover 6 scenarios — restaurants, taxis, hotels, spas, bars, and food delivery — with local context and exact amounts.
+            Our full tipping guides cover 10 scenarios — restaurants, taxis, hotel porters, bars, tour guides, food delivery, spa &amp; massage, room service, hair &amp; beauty, and airport porters — with local context and exact amounts.
           </p>
           <Link
             href="/tipping"
