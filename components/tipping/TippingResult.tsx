@@ -135,7 +135,12 @@ export function TippingResult({ result, onReset }: Props) {
         {/* Header */}
         <div className="flex items-start justify-between">
           <div>
-            <h2 className="text-lg font-bold text-white">{result.country}</h2>
+            <h2 className="text-lg font-bold text-white">
+              {result.city ? result.city : result.country}
+            </h2>
+            {result.city && (
+              <p className="text-xs text-zinc-500 mb-0.5">{result.country}</p>
+            )}
             <p className="text-xs text-zinc-500">
               {t('result_currency', { currency: result.currency, symbol: result.currencySymbol })}
             </p>

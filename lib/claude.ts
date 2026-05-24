@@ -222,14 +222,17 @@ Rules:
   }
 }
 
-// ─── Tipping guide (cached per country) ──────────────────────────────────────
+// ─── Tipping guide (cached per country or city) ──────────────────────────────
 
-export async function getTippingGuide(country: string, locale = 'en'): Promise<TippingAiResult> {
+export async function getTippingGuide(country: string, locale = 'en', city?: string): Promise<TippingAiResult> {
   // v3 key: bumped to force regeneration after adding spa_massage, room_service,
   // hair_beauty, airport_porter scenarios. v2 entries are intentionally abandoned.
-  const cacheKey = locale === 'en'
-    ? `tipping_v3:${country.toLowerCase()}`
-    : `tipping_v3:${country.toLowerCase()}:${locale}`
+  // City-level entries use an additive key segment so national and city caches coexist.
+  const countryKey = country.toLowerCase()
+  const cityKey = city ? `:${city.toLowerCase().replace(/\s+/g, '-')}` : ''
+  const localeKey = locale === 'en' ? '' : `:${locale}`
+  const cacheKey = `tipping_v3:${countryKey}${cityKey}${localeKey}`
+
   const cached = await cacheGet<TippingAiResult>(cacheKey)
   if (cached) return cached
 
@@ -242,7 +245,11 @@ LANGUAGE: Respond entirely in ${lang}. Two exceptions that must always stay in t
 All other text (scenario notes, context labels, english fields) must be in ${lang}.
 `
 
-  const prompt = `${langInstruction}You are a concise travel etiquette assistant. Provide tipping customs for ${country}.
+  const subjectLine = city
+    ? `You are a concise travel etiquette assistant. Provide tipping customs specifically for ${city}, ${country}. Focus on what is typical in ${city} — tourist districts, hotel zones, local restaurants, and upscale vs. casual venues. Note concisely where ${city} differs from the typical ${country} norm.`
+    : `You are a concise travel etiquette assistant. Provide tipping customs for ${country}.`
+
+  const prompt = `${langInstruction}${subjectLine}
 
 Return ONLY valid JSON with this exact structure (no markdown, no explanation):
 {
@@ -276,7 +283,10 @@ Rating guide:
 - "optional" = uncommon, never inappropriate
 - "avoid" = tipping can cause offence
 
-Regional variation: If there is meaningful variation within ${country} (e.g. tourist areas vs local neighbourhoods, specific major cities, urban vs rural), mention it concisely in the relevant scenario's notes field. Keep each notes field under 20 words total.
+${city
+    ? `City context: Keep notes focused on ${city}-specific nuances — tourist areas, resort zones, service charges. Under 20 words per notes field.`
+    : `Regional variation: If there is meaningful variation within ${country} (e.g. tourist areas vs local neighbourhoods, specific major cities, urban vs rural), mention it concisely in the relevant scenario's notes field. Keep each notes field under 20 words total.`
+  }
 
 Also include a "servicePhrases" array with exactly 5 entries — useful phrases for tipping and appreciation moments, in the primary local language of ${country}:
 
@@ -314,7 +324,7 @@ Also include a "servicePhrases" array with exactly 5 entries — useful phrases 
   ]
 
 Phrase rules:
-- Use the primary local language of ${country} (e.g. Thai in Thailand, Arabic in Egypt, French in France)
+- Use the primary local language of ${city ? `${city}, ` : ''}${country} (e.g. Thai in Bangkok, Arabic in Cairo, French in Paris)
 - Keep phrases warm, genuine, and natural — not stiff or formal
 - Include transliteration for non-Latin scripts; set to null for Latin-script languages`
 
@@ -349,12 +359,16 @@ function TIPPING_AI_FALLBACK(country: string): TippingAiResult {
     currency: 'USD',
     currencySymbol: '$',
     scenarios: {
-      restaurant:   fallbackScenario,
-      taxi:         fallbackScenario,
-      hotel_porter: fallbackScenario,
-      bar:          fallbackScenario,
-      tour_guide:   fallbackScenario,
-      delivery:     fallbackScenario,
+      restaurant:    fallbackScenario,
+      taxi:          fallbackScenario,
+      hotel_porter:  fallbackScenario,
+      bar:           fallbackScenario,
+      tour_guide:    fallbackScenario,
+      delivery:      fallbackScenario,
+      spa_massage:   fallbackScenario,
+      room_service:  fallbackScenario,
+      hair_beauty:   fallbackScenario,
+      airport_porter: fallbackScenario,
     },
     servicePhrases: [
       { context: 'Thank you', localLanguage: 'Thank you', transliteration: null, english: 'Thank you' },

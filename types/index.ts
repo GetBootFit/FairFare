@@ -93,6 +93,8 @@ export interface ScenarioTip {
 
 export interface TippingResult {
   country: string
+  /** Present when the user requested a city-specific guide (e.g. "Bangkok"). */
+  city?: string
   currency: string
   currencySymbol: string
   scenarios: Record<TippingScenario, ScenarioTip>
@@ -119,4 +121,6 @@ export interface TaxiPreviewInput {
 
 export interface TippingInput {
   country: string
+  /** Optional city for city-specific tipping guide. */
+  city?: string
 }

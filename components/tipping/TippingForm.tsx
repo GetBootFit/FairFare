@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import { ChevronLeft, MapPin } from 'lucide-react'
 import { Spinner } from '@/components/ui/Spinner'
 import { PaymentModal } from '@/components/PaymentModal'
 import { TippingResult } from '@/components/tipping/TippingResult'
@@ -18,6 +19,7 @@ import {
 } from '@/lib/tokens'
 import { useLanguage } from '@/context/LanguageContext'
 import { COUNTRY_FLAGS } from '@/lib/flags'
+import { TIPPING_CITIES } from '@/lib/tipping-cities'
 import { track } from '@vercel/analytics'
 import { ga4ResultLoaded, ga4UnlockClicked } from '@/lib/analytics'
 import type { TippingResult as TippingResultType } from '@/types'
@@ -42,6 +44,11 @@ const POPULAR_COUNTRIES = [
 
 const STORAGE_KEY = 'ff_tipping_form'
 
+interface StoredFormState {
+  country: string
+  city?: string
+}
+
 interface TokenEventDetail {
   token: string
   tokens?: string[]   // present for query_bundle
@@ -52,7 +59,10 @@ interface TokenEventDetail {
 export function TippingForm() {
   const { t, locale } = useLanguage()
   const [country, setCountry] = useState('')
+  const [city, setCity] = useState<string | undefined>(undefined)
   const [query, setQuery] = useState('')
+  /** 'country' = first step (pick a country); 'city' = second step (pick a city or national guide) */
+  const [step, setStep] = useState<'country' | 'city'>('country')
   const [status, setStatus] = useState<'idle' | 'paying' | 'loading' | 'done' | 'error'>('idle')
   const [result, setResult] = useState<TippingResultType | null>(null)
   const [errorMsg, setErrorMsg] = useState('')
@@ -61,33 +71,63 @@ export function TippingForm() {
     c.toLowerCase().includes(query.toLowerCase())
   )
 
-  // Restore after Stripe redirect
+  // Restore after Stripe redirect — handles both legacy (string) and new ({country,city}) format
   useEffect(() => {
     const saved = sessionStorage.getItem(STORAGE_KEY)
     if (saved) {
-      try { setCountry(JSON.parse(saved)); sessionStorage.removeItem(STORAGE_KEY) } catch { /* ignore */ }
+      try {
+        const parsed = JSON.parse(saved) as StoredFormState | string
+        if (typeof parsed === 'string') {
+          setCountry(parsed)
+        } else {
+          setCountry(parsed.country)
+          setCity(parsed.city)
+        }
+        sessionStorage.removeItem(STORAGE_KEY)
+      } catch { /* ignore */ }
     }
   }, [])
 
-  const handleSubmit = async (selectedCountry: string) => {
+  /** Called when user clicks a country button. Decides whether to show city pills or submit directly. */
+  const handleCountrySelect = (selectedCountry: string) => {
+    const cities = TIPPING_CITIES[selectedCountry]
+    if (cities && cities.length > 0) {
+      // Has city data — show city selector step
+      setCountry(selectedCountry)
+      setStep('city')
+      setQuery('')
+    } else {
+      // City-state or no city data — submit directly with national guide
+      handleSubmit(selectedCountry, undefined)
+    }
+  }
+
+  /** Called when user confirms a city pill (or "National guide"). */
+  const handleCitySelect = (selectedCity: string | undefined) => {
+    handleSubmit(country, selectedCity)
+  }
+
+  const handleSubmit = async (selectedCountry: string, selectedCity: string | undefined) => {
     if (!selectedCountry) return
 
-    track('tipping_country_selected', { country: selectedCountry })
+    track('tipping_country_selected', { country: selectedCountry, city: selectedCity ?? 'national' })
 
     // Priority: country pass → bundle queue → single token → payment modal
     if (isCountryPassValid(selectedCountry)) {
       const passToken = getCountryPassToken(selectedCountry)!
       setCountry(selectedCountry)
+      setCity(selectedCity)
       setStatus('loading')
-      await fetchResult(passToken, selectedCountry)
+      await fetchResult(passToken, selectedCountry, selectedCity)
       return
     }
 
     const bundleToken = popBundleToken()
     if (bundleToken) {
       setCountry(selectedCountry)
+      setCity(selectedCity)
       setStatus('loading')
-      await fetchResult(bundleToken, selectedCountry)
+      await fetchResult(bundleToken, selectedCountry, selectedCity)
       return
     }
 
@@ -96,23 +136,26 @@ export function TippingForm() {
     if (!token || isTokenExpired(token)) {
       track('unlock_clicked', { feature: 'tipping', country: selectedCountry })
       ga4UnlockClicked({ feature: 'tipping', country: selectedCountry })
-      sessionStorage.setItem(STORAGE_KEY, JSON.stringify(selectedCountry))
+      const stored: StoredFormState = { country: selectedCountry, city: selectedCity }
+      sessionStorage.setItem(STORAGE_KEY, JSON.stringify(stored))
       setCountry(selectedCountry)
+      setCity(selectedCity)
       setStatus('paying')
       return
     }
     setCountry(selectedCountry)
+    setCity(selectedCity)
     setStatus('loading')
-    await fetchResult(token, selectedCountry)
+    await fetchResult(token, selectedCountry, selectedCity)
   }
 
-  const fetchResult = async (token: string, c: string) => {
+  const fetchResult = async (token: string, c: string, selectedCity: string | undefined) => {
     try {
       const res = await fetch('/api/tipping', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'same-origin',
-        body: JSON.stringify({ country: c, locale }),
+        body: JSON.stringify({ country: c, city: selectedCity, locale }),
       })
       const data = await res.json()
       if (!res.ok) {
@@ -121,7 +164,7 @@ export function TippingForm() {
       }
       setResult(data as TippingResultType)
       setStatus('done')
-      track('result_loaded', { feature: 'tipping', country: c })
+      track('result_loaded', { feature: 'tipping', country: c, city: selectedCity ?? 'national' })
       ga4ResultLoaded({ feature: 'tipping', country: c })
     } catch (err) {
       setStatus('error')
@@ -139,12 +182,20 @@ export function TippingForm() {
         storeBundleTokens(detail.tokens)
         const token = popBundleToken()
         const saved = sessionStorage.getItem(STORAGE_KEY)
-        const c = saved ? JSON.parse(saved) : country
+        let c = country
+        let savedCity = city
+        if (saved) {
+          try {
+            const parsed = JSON.parse(saved) as StoredFormState | string
+            if (typeof parsed === 'string') { c = parsed } else { c = parsed.country; savedCity = parsed.city }
+          } catch { /* ignore */ }
+        }
         if (token && c) {
           sessionStorage.removeItem(STORAGE_KEY)
           setCountry(c)
+          setCity(savedCity)
           setStatus('loading')
-          await fetchResult(token, c)
+          await fetchResult(token, c, savedCity)
         }
         return
       }
@@ -158,29 +209,44 @@ export function TippingForm() {
       }
 
       const saved = sessionStorage.getItem(STORAGE_KEY)
-      const c = saved ? JSON.parse(saved) : country
+      let c = country
+      let savedCity = city
+      if (saved) {
+        try {
+          const parsed = JSON.parse(saved) as StoredFormState | string
+          if (typeof parsed === 'string') { c = parsed } else { c = parsed.country; savedCity = parsed.city }
+        } catch { /* ignore */ }
+      }
       if (c) {
         sessionStorage.removeItem(STORAGE_KEY)
         setCountry(c)
+        setCity(savedCity)
         setStatus('loading')
-        await fetchResult(token, c)
+        await fetchResult(token, c, savedCity)
       }
     }
     window.addEventListener('ff:token', handler)
     return () => window.removeEventListener('ff:token', handler)
-  }, [country]) // eslint-disable-line react-hooks/exhaustive-deps
+  }, [country, city]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleReset = () => {
-    setCountry(''); setQuery(''); setResult(null); setStatus('idle'); setErrorMsg('')
+    setCountry(''); setCity(undefined); setQuery(''); setResult(null)
+    setStatus('idle'); setErrorMsg(''); setStep('country')
     clearStoredToken()
+  }
+
+  const handleBackToCountries = () => {
+    setStep('country')
+    setCountry('')
+    setErrorMsg('')
   }
 
   if (status === 'done' && result) {
     return <TippingResult result={result} onReset={handleReset} />
   }
 
-  // Screen reader announcements for dynamic state changes
-  const srLoadingAnnouncement = status === 'loading' ? t('tipping_loading', { country }) : ''
+  const loadingLabel = city ? `${city}, ${country}` : country
+  const srLoadingAnnouncement = status === 'loading' ? t('tipping_loading', { country: loadingLabel }) : ''
 
   return (
     <div className="space-y-4">
@@ -194,7 +260,9 @@ export function TippingForm() {
           {errorMsg}
         </div>
       )}
-      {(status === 'idle' || status === 'error') && (
+
+      {/* ── Step 1: Country picker ─────────────────────────────────────────── */}
+      {step === 'country' && (status === 'idle' || status === 'error') && (
         <>
           <p className="text-zinc-400 text-sm">{t('tipping_description')}</p>
           <label htmlFor="tipping-country-search" className="sr-only">
@@ -225,7 +293,7 @@ export function TippingForm() {
                   return (
                     <button
                       key={c}
-                      onClick={() => handleSubmit(c)}
+                      onClick={() => handleCountrySelect(c)}
                       className="flex items-center gap-2.5 text-left rtl:text-right px-3.5 py-3 rounded-xl bg-zinc-900 border border-zinc-800 text-sm text-zinc-200 hover:bg-zinc-800 hover:border-teal-800/50 hover:text-teal-300 transition-colors min-w-0"
                     >
                       {iso2 && (
@@ -244,7 +312,7 @@ export function TippingForm() {
                 })}
               </div>
               <p className="text-[11px] text-zinc-600 pt-1">
-                Don't see your destination? Search above for all 54 countries.
+                Don&apos;t see your destination? Search above for all 54 countries.
               </p>
             </div>
           )}
@@ -257,7 +325,7 @@ export function TippingForm() {
                 return (
                   <button
                     key={c}
-                    onClick={() => handleSubmit(c)}
+                    onClick={() => handleCountrySelect(c)}
                     className="flex items-center gap-2.5 text-left rtl:text-right px-3.5 py-3 rounded-xl bg-zinc-900 border border-zinc-800 text-sm text-zinc-200 hover:bg-zinc-800 hover:border-teal-800/50 hover:text-teal-300 transition-colors min-w-0"
                   >
                     {iso2 && (
@@ -283,10 +351,61 @@ export function TippingForm() {
         </>
       )}
 
+      {/* ── Step 2: City picker ────────────────────────────────────────────── */}
+      {step === 'city' && (status === 'idle' || status === 'error') && (
+        <div className="space-y-3">
+          {/* Back button */}
+          <button
+            onClick={handleBackToCountries}
+            className="flex items-center gap-1.5 text-xs text-zinc-500 hover:text-zinc-300 transition-colors"
+          >
+            <ChevronLeft size={14} />
+            {country}
+          </button>
+
+          <div>
+            <p className="text-sm text-zinc-300 font-medium mb-0.5">Select a city</p>
+            <p className="text-xs text-zinc-600">City guides include local tipping context specific to that destination.</p>
+          </div>
+
+          {errorMsg && (
+            <p role="alert" className="text-red-400 text-sm">
+              {errorMsg}
+            </p>
+          )}
+
+          <div className="flex flex-wrap gap-2">
+            {/* National guide always first */}
+            <button
+              onClick={() => handleCitySelect(undefined)}
+              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-zinc-800 border border-zinc-700 text-sm text-zinc-300 hover:bg-purple-900/30 hover:border-purple-700/50 hover:text-purple-300 transition-all"
+            >
+              <MapPin size={13} className="shrink-0 opacity-60" />
+              National guide
+            </button>
+
+            {/* City pills */}
+            {(TIPPING_CITIES[country] ?? []).map((c) => (
+              <button
+                key={c}
+                onClick={() => handleCitySelect(c)}
+                className="px-3.5 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-sm text-zinc-200 hover:bg-purple-900/30 hover:border-purple-700/50 hover:text-purple-300 transition-all"
+              >
+                {c}
+              </button>
+            ))}
+          </div>
+
+          <p className="text-[11px] text-zinc-600 pt-1">
+            National guide covers all regions. City guides highlight local customs and tourist-area specifics.
+          </p>
+        </div>
+      )}
+
       {status === 'loading' && (
         <div aria-busy="true" className="flex flex-col items-center gap-3 py-12 text-zinc-400">
           <Spinner className="h-7 w-7 text-teal-400" />
-          <span className="text-sm" aria-hidden="true">{t('tipping_loading', { country })}</span>
+          <span className="text-sm" aria-hidden="true">{t('tipping_loading', { country: loadingLabel })}</span>
         </div>
       )}
 

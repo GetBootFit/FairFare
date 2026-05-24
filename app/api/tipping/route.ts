@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    const { country, locale = 'en' } = await req.json()
+    const { country, city, locale = 'en' } = await req.json()
     if (!country || typeof country !== 'string') {
       return Response.json({ error: 'Country is required' }, { status: 400 })
     }
@@ -47,12 +47,18 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    const result = await getTippingGuide(country, locale)
+    // Optional city — validated as non-empty string; reject anything suspicious
+    const cityParam = typeof city === 'string' && city.trim().length > 0 && city.trim().length < 80
+      ? city.trim()
+      : undefined
+
+    const result = await getTippingGuide(country, locale, cityParam)
 
     // Increment global query counter for social proof (non-fatal)
     void kvIncrement('total_queries')
 
-    return Response.json(result)
+    // Echo city back in response so the UI can display it in the result header
+    return Response.json(cityParam ? { ...result, city: cityParam } : result)
   } catch (err) {
     console.error('[tipping]', err)
     return Response.json({ error: 'Failed to fetch tipping guide' }, { status: 500 })
