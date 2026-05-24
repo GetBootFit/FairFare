@@ -3,6 +3,7 @@
 import { useState, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 import { PlaceInput } from '@/components/ui/PlaceInput'
 
@@ -10,12 +11,12 @@ const STORAGE_KEY = 'ff_taxi_form'
 
 // Popular tipping destinations — covers the top search markets
 const TIPPING_QUICK_LINKS = [
-  { flag: '🇺🇸', label: 'USA',       slug: 'united-states' },
-  { flag: '🇯🇵', label: 'Japan',     slug: 'japan' },
-  { flag: '🇦🇺', label: 'Australia', slug: 'australia' },
-  { flag: '🇬🇧', label: 'UK',        slug: 'united-kingdom' },
-  { flag: '🇹🇭', label: 'Thailand',  slug: 'thailand' },
-  { flag: '🇦🇪', label: 'UAE',       slug: 'united-arab-emirates' },
+  { iso2: 'us', label: 'USA',       slug: 'united-states' },
+  { iso2: 'jp', label: 'Japan',     slug: 'japan' },
+  { iso2: 'au', label: 'Australia', slug: 'australia' },
+  { iso2: 'gb', label: 'UK',        slug: 'united-kingdom' },
+  { iso2: 'th', label: 'Thailand',  slug: 'thailand' },
+  { iso2: 'ae', label: 'UAE',       slug: 'united-arab-emirates' },
 ]
 
 export function HomeTaxiForm() {
@@ -119,17 +120,24 @@ export function HomeTaxiForm() {
       {tab === 'tipping' && (
         <div className="space-y-3">
           <p className="text-sm text-zinc-400 leading-relaxed">
-            Full tipping breakdown for restaurants, taxis, hotels, spas &amp; tour guides — 56 countries.
+            10-scenario tipping guide — 56 countries worldwide.
           </p>
           {/* Popular country quick-links */}
           <div className="grid grid-cols-3 gap-1.5">
-            {TIPPING_QUICK_LINKS.map(({ flag, label, slug }) => (
+            {TIPPING_QUICK_LINKS.map(({ iso2, label, slug }) => (
               <Link
                 key={slug}
                 href={`/tipping/${slug}`}
                 className="flex items-center gap-1.5 bg-zinc-800/60 hover:bg-purple-900/40 border border-zinc-700 hover:border-purple-700/60 rounded-xl px-2.5 py-2 transition-all group"
               >
-                <span className="text-sm shrink-0">{flag}</span>
+                <Image
+                  src={`/images/flags/${iso2}.svg`}
+                  alt=""
+                  width={20}
+                  height={15}
+                  className="rounded-sm shrink-0"
+                  unoptimized
+                />
                 <span className="text-xs font-medium text-zinc-300 group-hover:text-white transition-colors truncate">{label}</span>
               </Link>
             ))}
