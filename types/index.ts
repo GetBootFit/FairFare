@@ -75,6 +75,10 @@ export type TippingScenario =
   | 'bar'
   | 'tour_guide'
   | 'delivery'
+  | 'spa_massage'
+  | 'room_service'
+  | 'hair_beauty'
+  | 'airport_porter'
 
 export type TippingRating = 'expected' | 'appreciated' | 'optional' | 'avoid'
 

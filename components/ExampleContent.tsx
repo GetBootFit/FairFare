@@ -167,6 +167,38 @@ const SAMPLE_TIPPING: TippingResultType = {
       typicalAmount: '฿20–50',
       notes: 'Not expected but ฿20–50 for food delivery riders is always a welcome gesture.',
     },
+    spa_massage: {
+      isExpected: true,
+      rating: 'expected',
+      percentageMin: null,
+      percentageMax: null,
+      typicalAmount: '฿50–200',
+      notes: 'Tip the therapist directly in cash — ฿50–100 for a foot massage, ฿100–200 for a full-body or oil massage.',
+    },
+    room_service: {
+      isExpected: false,
+      rating: 'optional',
+      percentageMin: null,
+      percentageMax: null,
+      typicalAmount: '฿20–50',
+      notes: 'Check the bill — many hotels add a service charge. If not included, ฿20–50 for the delivery staff is appreciated.',
+    },
+    hair_beauty: {
+      isExpected: false,
+      rating: 'optional',
+      percentageMin: null,
+      percentageMax: null,
+      typicalAmount: '฿20–50',
+      notes: 'Not a strong tipping culture in local salons. A small gesture of ฿20–50 is welcomed at tourist-area salons.',
+    },
+    airport_porter: {
+      isExpected: true,
+      rating: 'appreciated',
+      percentageMin: null,
+      percentageMax: null,
+      typicalAmount: '฿20–40 / bag',
+      notes: 'Airport porters expect ฿20–40 per bag. Have small notes ready — they rarely have change.',
+    },
   },
 }
 

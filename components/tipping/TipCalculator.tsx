@@ -43,11 +43,15 @@ const LEVEL_LABELS: Record<ServiceLevel, string> = {
 
 /** Human-readable placeholder for the bill input, per scenario. */
 const BILL_PLACEHOLDER: Record<string, string> = {
-  restaurant: 'Bill amount',
-  bar:        'Tab amount',
-  taxi:       'Fare amount',
-  tour_guide: 'Tour cost',
-  delivery:   'Order total',
+  restaurant:     'Bill amount',
+  bar:            'Tab amount',
+  taxi:           'Fare amount',
+  tour_guide:     'Tour cost',
+  delivery:       'Order total',
+  spa_massage:    'Treatment cost',
+  room_service:   'Bill amount',
+  hair_beauty:    'Service cost',
+  airport_porter: 'Tip amount',
 }
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────

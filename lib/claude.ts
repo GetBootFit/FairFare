@@ -225,10 +225,11 @@ Rules:
 // ─── Tipping guide (cached per country) ──────────────────────────────────────
 
 export async function getTippingGuide(country: string, locale = 'en'): Promise<TippingAiResult> {
-  // English uses the legacy key for backward-compat with existing cache entries.
+  // v3 key: bumped to force regeneration after adding spa_massage, room_service,
+  // hair_beauty, airport_porter scenarios. v2 entries are intentionally abandoned.
   const cacheKey = locale === 'en'
-    ? `tipping_v2:${country.toLowerCase()}`
-    : `tipping_v2:${country.toLowerCase()}:${locale}`
+    ? `tipping_v3:${country.toLowerCase()}`
+    : `tipping_v3:${country.toLowerCase()}:${locale}`
   const cached = await cacheGet<TippingAiResult>(cacheKey)
   if (cached) return cached
 
@@ -261,7 +262,11 @@ Return ONLY valid JSON with this exact structure (no markdown, no explanation):
     "hotel_porter": { "isExpected": <true|false>, "rating": "...", "percentageMin": null, "percentageMax": null, "typicalAmount": "<per bag amount>", "notes": "..." },
     "bar": { "isExpected": <true|false>, "rating": "...", "percentageMin": ..., "percentageMax": ..., "typicalAmount": ..., "notes": "..." },
     "tour_guide": { "isExpected": <true|false>, "rating": "...", "percentageMin": ..., "percentageMax": ..., "typicalAmount": ..., "notes": "..." },
-    "delivery": { "isExpected": <true|false>, "rating": "...", "percentageMin": ..., "percentageMax": ..., "typicalAmount": ..., "notes": "..." }
+    "delivery": { "isExpected": <true|false>, "rating": "...", "percentageMin": ..., "percentageMax": ..., "typicalAmount": ..., "notes": "..." },
+    "spa_massage": { "isExpected": <true|false>, "rating": "...", "percentageMin": ..., "percentageMax": ..., "typicalAmount": "<fixed amount if no % norm, e.g. '฿50–100'>", "notes": "<one sentence, e.g. whether to tip the therapist directly vs the desk>" },
+    "room_service": { "isExpected": <true|false>, "rating": "...", "percentageMin": ..., "percentageMax": ..., "typicalAmount": ..., "notes": "<note if a service charge is commonly pre-added to room service bills>" },
+    "hair_beauty": { "isExpected": <true|false>, "rating": "...", "percentageMin": ..., "percentageMax": ..., "typicalAmount": ..., "notes": "<one sentence covering both hair salons and nail salons if relevant>" },
+    "airport_porter": { "isExpected": <true|false>, "rating": "...", "percentageMin": null, "percentageMax": null, "typicalAmount": "<per bag or per trolley amount>", "notes": "<note if airport porters are common or rare in this country>" }
   }
 }
 
@@ -316,7 +321,7 @@ Phrase rules:
   try {
     const message = await anthropic.messages.create({
       model: MODEL,
-      max_tokens: 1600,
+      max_tokens: 2000,
       messages: [{ role: 'user', content: prompt }],
     })
 

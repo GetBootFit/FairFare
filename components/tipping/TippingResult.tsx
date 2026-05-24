@@ -38,12 +38,16 @@ interface Props {
 }
 
 const SCENARIOS: { key: TippingScenario; labelKey: TranslationKey; icon: string; svgName?: string; iconSize?: number }[] = [
-  { key: 'restaurant',   labelKey: 'scenario_restaurant', icon: '🍴', svgName: 'restaurant', iconSize: 22 },
-  { key: 'taxi',         labelKey: 'scenario_taxi',        icon: '🚕', svgName: 'taxi-car'               },
-  { key: 'hotel_porter', labelKey: 'scenario_porter',      icon: '🧳', svgName: 'conceirge'              },
-  { key: 'bar',          labelKey: 'scenario_bar',         icon: '🍺', svgName: 'beer'                   },
-  { key: 'tour_guide',   labelKey: 'scenario_tour_guide',  icon: '🧭', svgName: 'person',    iconSize: 22 },
-  { key: 'delivery',     labelKey: 'scenario_delivery',    icon: '🛵', svgName: 'trolley'                },
+  { key: 'restaurant',    labelKey: 'scenario_restaurant',    icon: '🍴', svgName: 'restaurant',        iconSize: 22 },
+  { key: 'taxi',          labelKey: 'scenario_taxi',          icon: '🚕', svgName: 'taxi-car'                          },
+  { key: 'hotel_porter',  labelKey: 'scenario_porter',        icon: '🧳', svgName: 'conceirge'                         },
+  { key: 'bar',           labelKey: 'scenario_bar',           icon: '🍺', svgName: 'beer'                              },
+  { key: 'tour_guide',    labelKey: 'scenario_tour_guide',    icon: '🧭', svgName: 'person',            iconSize: 22 },
+  { key: 'delivery',      labelKey: 'scenario_delivery',      icon: '🛵', svgName: 'trolley'                           },
+  { key: 'spa_massage',   labelKey: 'scenario_spa',           icon: '🧖', svgName: 'money-coins'                       },
+  { key: 'room_service',  labelKey: 'scenario_room_service',  icon: '🍽️', svgName: 'restaurant-meal',    iconSize: 22 },
+  { key: 'hair_beauty',   labelKey: 'scenario_hair',          icon: '💇', svgName: 'person',            iconSize: 22 },
+  { key: 'airport_porter',labelKey: 'scenario_airport_porter',icon: '✈️', svgName: 'transport-airport', iconSize: 22 },
 ]
 
 const RATING_KEY: Record<TippingRating, TranslationKey> = {
