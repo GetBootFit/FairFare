@@ -15,7 +15,7 @@ const KV_TTL = 365 * 24 * 60 * 60
  *
  * Format: 'vYYYYMMDD' — e.g. 'v20260320' for 20 March 2026.
  */
-const CONTENT_VERSION = 'v20260329'
+const CONTENT_VERSION = 'v20260524'
 
 const LOCALE_LANGUAGE: Record<string, string> = {
   ar: 'Arabic',
