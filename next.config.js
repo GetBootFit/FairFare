@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 const { withSentryConfig } = require('@sentry/nextjs')
 
-// Content-Security-Policy is handled by middleware.ts (nonce-based, per-request).
-// The middleware generates a fresh nonce on every request and sets the CSP header.
-// layout.tsx reads the nonce via the x-nonce request header and applies it to
-// inline scripts so browsers with strict-dynamic allow them.
+// Content-Security-Policy is set by middleware.ts on every response.
+// CSP uses 'unsafe-inline' (not nonce-based) so the root layout can remain a
+// synchronous Server Component — keeping all static pages truly static and
+// avoiding excessive Vercel Function Invocations / Fluid CPU usage.
 
 const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com'
 

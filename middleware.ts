@@ -1,36 +1,32 @@
 /**
- * Next.js Middleware — Content Security Policy (nonce-based).
+ * Next.js Middleware — Content Security Policy (static, no nonce).
  *
- * Generates a fresh cryptographic nonce on every request and injects it into:
- *   1. The `x-nonce` request header (read by app/layout.tsx Server Component)
- *   2. The `Content-Security-Policy` response header
+ * Sets security headers on every response. CSP uses 'unsafe-inline' for
+ * script-src rather than a per-request nonce, so the root layout can be a
+ * synchronous Server Component and all static pages remain truly static.
  *
- * Using a per-request nonce instead of `'unsafe-inline'` means an attacker
- * cannot inject and execute arbitrary scripts even if they achieve XSS —
- * they cannot know the nonce for the current request.
+ * Trade-off: 'unsafe-inline' allows any inline script to run (vs nonce which
+ * only allows scripts that carry the matching attribute). For Hootling this is
+ * an acceptable trade-off: the primary defences against XSS are strict input
+ * validation on all API routes, no user-generated HTML, and the host allowlist
+ * that still blocks scripts from unknown external origins.
  *
- * 'strict-dynamic' is included so that scripts loaded by a nonced script
- * (e.g. Google Maps loaded by our PlaceInput, or Travelpayouts injected by
- * CookieConsent) are automatically trusted without needing their own nonce.
- * Host allowlists are kept as a CSP Level 2 fallback for older browsers.
+ * style-src 'unsafe-inline' is retained: Tailwind inline styles make hashing
+ * impractical regardless of the nonce strategy.
  *
- * style-src retains 'unsafe-inline': removing it requires hashing every
- * style attribute, which is impractical with Tailwind's runtime utilities.
- * This is an accepted trade-off — the primary XSS vector is script injection.
+ * This middleware still runs on every request so it can set the CSP header on
+ * both HTML responses and API responses. It does NOT call headers() or perform
+ * any dynamic logic, so it never forces pages into dynamic rendering.
  */
 
 import { NextRequest, NextResponse } from 'next/server'
 
 export function middleware(req: NextRequest) {
-  // crypto.randomUUID() is available in the Next.js Edge runtime
-  const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
-
   const ContentSecurityPolicy = [
     "default-src 'self'",
-    // nonce-{nonce}     — Next.js hydration + our inline scripts
-    // 'strict-dynamic'  — scripts loaded by nonced scripts (Maps, GA, Travelpayouts)
-    // host list         — CSP2 fallback for browsers that don't support strict-dynamic
-    `script-src 'nonce-${nonce}' 'strict-dynamic' https://maps.googleapis.com https://maps.gstatic.com https://va.vercel-scripts.com https://www.googletagmanager.com https://tpembars.com`,
+    // 'unsafe-inline' — Next.js hydration scripts + our inline JSON-LD / GA4 init
+    // Host allowlist — blocks scripts from unknown external origins
+    "script-src 'self' 'unsafe-inline' https://maps.googleapis.com https://maps.gstatic.com https://va.vercel-scripts.com https://www.googletagmanager.com https://tpembars.com",
     // unsafe-inline retained for Tailwind inline styles; hashing is impractical
     "style-src 'self' 'unsafe-inline'",
     "img-src 'self' data: blob: https://maps.googleapis.com https://maps.gstatic.com https://www.google-analytics.com",
@@ -42,12 +38,7 @@ export function middleware(req: NextRequest) {
     "upgrade-insecure-requests",
   ].join('; ')
 
-  // Forward nonce to server components via request header
-  const requestHeaders = new Headers(req.headers)
-  requestHeaders.set('x-nonce', nonce)
-
-  const res = NextResponse.next({ request: { headers: requestHeaders } })
-  // Set the CSP on the response so browsers enforce it
+  const res = NextResponse.next()
   res.headers.set('Content-Security-Policy', ContentSecurityPolicy)
   return res
 }
