@@ -5,13 +5,13 @@ import { jwtVerify } from 'jose'
  * Edge proxy — runs on every request before it reaches the page/API.
  *
  * Responsibilities:
- * 1. Content Security Policy (nonce-based) — applied to all HTML responses
+ * 1. Content Security Policy (static, unsafe-inline) — applied to all HTML responses
  * 2. Block /dev in production (dev payment-bypass page must never be public)
  * 3. Enforce cookie-based auth on /admin/* routes
  * 4. IP-based rate limiting on high-value API endpoints
  */
 
-// ── CSP nonce ─────────────────────────────────────────────────────────────────
+// ── CSP ───────────────────────────────────────────────────────────────────────
 
 /**
  * Static asset extensions that never serve HTML — CSP header not needed.
@@ -28,15 +28,16 @@ function isStaticAsset(pathname: string): boolean {
   return ext ? STATIC_EXT.has(ext) : false
 }
 
-function buildCsp(nonce: string): string {
+function buildCsp(): string {
   // React dev mode requires 'unsafe-eval' for hot-module replacement; omit in production
   const devEval = process.env.NODE_ENV === 'development' ? " 'unsafe-eval'" : ''
   return [
     "default-src 'self'",
-    // nonce-{nonce}    — Next.js hydration + our inline scripts
-    // 'strict-dynamic' — scripts loaded by nonced scripts (Maps, GA, Travelpayouts)
-    // host list        — CSP2 fallback for browsers without strict-dynamic
-    `script-src 'nonce-${nonce}' 'strict-dynamic'${devEval} https://maps.googleapis.com https://maps.gstatic.com https://va.vercel-scripts.com https://www.googletagmanager.com https://tpembars.com`,
+    // 'unsafe-inline' — Next.js hydration + our inline JSON-LD / GA4 init scripts.
+    // No nonce: the root layout is a synchronous Server Component so static pages
+    // are served from Vercel's edge cache without spawning a Function per request.
+    // Host allowlist still blocks scripts from unknown external origins.
+    `script-src 'self' 'unsafe-inline'${devEval} https://maps.googleapis.com https://maps.gstatic.com https://va.vercel-scripts.com https://www.googletagmanager.com https://tpembars.com`,
     // unsafe-inline retained for Tailwind inline styles; hashing is impractical
     "style-src 'self' 'unsafe-inline'",
     "img-src 'self' data: blob: https://maps.googleapis.com https://maps.gstatic.com https://www.google-analytics.com",
@@ -174,20 +175,14 @@ export async function proxy(req: NextRequest) {
     }
   }
 
-  // ── 4. CSP nonce — injected on HTML responses only ────────────────────────
-  // Static assets skip nonce generation (no HTML, no script execution context).
+  // ── 4. CSP — injected on HTML responses only ─────────────────────────────
+  // Static assets skip CSP (no HTML, no script execution context).
   if (isStaticAsset(pathname)) {
     return NextResponse.next()
   }
 
-  const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
-
-  // Forward nonce to Server Components via request header
-  const requestHeaders = new Headers(req.headers)
-  requestHeaders.set('x-nonce', nonce)
-
-  const res = NextResponse.next({ request: { headers: requestHeaders } })
-  res.headers.set('Content-Security-Policy', buildCsp(nonce))
+  const res = NextResponse.next()
+  res.headers.set('Content-Security-Policy', buildCsp())
   return res
 }
 
