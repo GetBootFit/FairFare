@@ -51,7 +51,7 @@ export async function GET(req: NextRequest) {
     for await (const key of taxiCursor) taxiCacheKeys.push(key as string)
 
     const tippingCacheKeys: string[] = []
-    const tippingCursor = kv.scanIterator({ match: 'tipping_v2:*', count: 500 })
+    const tippingCursor = kv.scanIterator({ match: 'tipping_v3:*', count: 500 })
     for await (const key of tippingCursor) tippingCacheKeys.push(key as string)
 
     return Response.json({

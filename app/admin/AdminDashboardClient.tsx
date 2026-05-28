@@ -1,20 +1,14 @@
 'use client'
 
 import { useState, useEffect, useCallback } from 'react'
-import { BarChart3, Settings, RefreshCw, Save, RotateCcw, ChevronDown, ChevronUp, ExternalLink, Eye, Car, Banknote, CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
+import {
+  BarChart3, Settings, RefreshCw, Save, RotateCcw,
+  ChevronDown, ChevronUp, ExternalLink, Eye, Car, Banknote,
+  CheckCircle, AlertCircle, Loader2, TrendingUp, TrendingDown,
+  Database, MapPin,
+} from 'lucide-react'
 import type { AffiliatePartner } from '@/data/affiliate-config'
-
-interface MetricsData {
-  affiliateClicks: Record<string, number>
-  stripe: {
-    grandTotal: number
-    currency: string
-    chargeCount: number
-    byProduct: Record<string, { count: number; total: number; currency: string }>
-    recent: Array<{ id: string; amount: number; currency: string; product: string; feature: string; date: string }>
-  } | null
-  generatedAt: string
-}
+import type { MetricsResponse } from '@/app/api/admin/metrics/route'
 
 interface Props {
   initialConfig: AffiliatePartner[]
@@ -22,7 +16,7 @@ interface Props {
 
 export function AdminDashboardClient({ initialConfig }: Props) {
   const [activeTab, setActiveTab] = useState<'metrics' | 'config' | 'preview'>('metrics')
-  const [metrics, setMetrics] = useState<MetricsData | null>(null)
+  const [metrics, setMetrics] = useState<MetricsResponse | null>(null)
   const [metricsLoading, setMetricsLoading] = useState(false)
   const [config, setConfig] = useState<AffiliatePartner[]>(initialConfig)
   const [configDirty, setConfigDirty] = useState(false)
@@ -47,7 +41,7 @@ export function AdminDashboardClient({ initialConfig }: Props) {
     if (activeTab === 'metrics' && !metrics) loadMetrics()
   }, [activeTab, metrics, loadMetrics])
 
-  // ─── Config editing helpers ────────────────────────────────────
+  // ─── Config helpers ────────────────────────────────────────────────
 
   function updatePartner(id: string, changes: Partial<AffiliatePartner>) {
     setConfig(prev => prev.map(p => p.id === id ? { ...p, ...changes } : p))
@@ -88,7 +82,7 @@ export function AdminDashboardClient({ initialConfig }: Props) {
     setSaveMsg('✓ Reset to defaults')
   }
 
-  // ─── Metrics helpers ───────────────────────────────────────────
+  // ─── Affiliate helpers ─────────────────────────────────────────────
 
   function parseClicks(clicks: Record<string, number>) {
     const byPartner: Record<string, { total: number; byZone: Record<string, number> }> = {}
@@ -96,7 +90,7 @@ export function AdminDashboardClient({ initialConfig }: Props) {
       const parts = key.replace('affiliate:clicks:', '').split(':')
       if (parts.length < 2) continue
       const [partner, zone] = parts
-      if (!zone || zone.match(/^\d{4}-\d{2}-\d{2}$/)) continue // skip daily keys and totals
+      if (!zone || zone.match(/^\d{4}-\d{2}-\d{2}$/)) continue
       if (!byPartner[partner]) byPartner[partner] = { total: 0, byZone: {} }
       byPartner[partner].total += val
       byPartner[partner].byZone[zone] = (byPartner[partner].byZone[zone] ?? 0) + val
@@ -106,11 +100,13 @@ export function AdminDashboardClient({ initialConfig }: Props) {
 
   const categoryColour: Record<string, string> = {
     transfer: 'text-teal-400',
-    hotel: 'text-blue-400',
-    tours: 'text-purple-400',
-    esim: 'text-green-400',
-    car: 'text-orange-400',
+    hotel:    'text-blue-400',
+    tours:    'text-purple-400',
+    esim:     'text-green-400',
+    car:      'text-orange-400',
   }
+
+  // ── Render ─────────────────────────────────────────────────────────
 
   return (
     <div className="space-y-4">
@@ -124,13 +120,15 @@ export function AdminDashboardClient({ initialConfig }: Props) {
               activeTab === tab ? 'bg-zinc-700 text-white' : 'text-zinc-500 hover:text-zinc-300'
             }`}
           >
-            {tab === 'metrics' ? <BarChart3 size={13} /> : tab === 'config' ? <Settings size={13} /> : <Eye size={13} />}
+            {tab === 'metrics' ? <BarChart3 size={13} />
+              : tab === 'config' ? <Settings size={13} />
+              : <Eye size={13} />}
             {tab === 'metrics' ? 'Metrics' : tab === 'config' ? 'Affiliate Config' : 'Preview'}
           </button>
         ))}
       </div>
 
-      {/* ── METRICS TAB ── */}
+      {/* ── METRICS TAB ─────────────────────────────────────────────── */}
       {activeTab === 'metrics' && (
         <div className="space-y-4">
           <div className="flex items-center justify-between">
@@ -151,36 +149,75 @@ export function AdminDashboardClient({ initialConfig }: Props) {
 
           {metrics && (
             <>
-              {/* Stripe Revenue */}
+              {/* ── Revenue overview ── */}
               {metrics.stripe && (
-                <div className="rounded-xl border border-zinc-800 bg-zinc-900 p-4">
-                  <p className="text-[10px] text-zinc-500 uppercase tracking-wider mb-3">Revenue (last 50 charges)</p>
-                  <div className="flex items-baseline gap-2 mb-3">
-                    <span className="text-2xl font-bold text-white">
-                      ${metrics.stripe.grandTotal.toFixed(2)}
-                    </span>
-                    <span className="text-xs text-zinc-500">{metrics.stripe.chargeCount} charges</span>
+                <div className="rounded-xl border border-zinc-800 bg-zinc-900 p-4 space-y-4">
+                  <p className="text-[10px] text-zinc-500 uppercase tracking-wider">Revenue</p>
+
+                  {/* KPI row */}
+                  <div className="grid grid-cols-3 gap-3">
+                    <div>
+                      <p className="text-[10px] text-zinc-600 mb-1">All-time</p>
+                      <p className="text-xl font-bold text-white">
+                        ${metrics.stripe.grandTotal.toFixed(2)}
+                      </p>
+                      <p className="text-[10px] text-zinc-600">{metrics.stripe.chargeCount} charges</p>
+                    </div>
+                    <div>
+                      <p className="text-[10px] text-zinc-600 mb-1">This month</p>
+                      <p className="text-xl font-bold text-white">
+                        ${metrics.stripe.thisMonth.toFixed(2)}
+                      </p>
+                      {metrics.stripe.lastMonth > 0 && (
+                        <MoMBadge current={metrics.stripe.thisMonth} previous={metrics.stripe.lastMonth} />
+                      )}
+                    </div>
+                    <div>
+                      <p className="text-[10px] text-zinc-600 mb-1">Last month</p>
+                      <p className="text-xl font-bold text-zinc-400">
+                        ${metrics.stripe.lastMonth.toFixed(2)}
+                      </p>
+                    </div>
                   </div>
-                  <div className="space-y-1.5">
-                    {Object.entries(metrics.stripe.byProduct).map(([product, data]) => (
-                      <div key={product} className="flex items-center justify-between text-xs">
-                        <span className="text-zinc-400 capitalize">{product.replace('_', ' ')}</span>
-                        <div className="flex items-center gap-3">
-                          <span className="text-zinc-600">{data.count}×</span>
-                          <span className="text-zinc-300">${data.total.toFixed(2)}</span>
+
+                  {/* Monthly bar chart */}
+                  {metrics.stripe.byMonth.length > 0 && (
+                    <div>
+                      <p className="text-[10px] text-zinc-600 uppercase tracking-wider mb-2">Last 6 months</p>
+                      <MonthlyBar months={metrics.stripe.byMonth} />
+                    </div>
+                  )}
+
+                  {/* By product */}
+                  <div>
+                    <p className="text-[10px] text-zinc-600 uppercase tracking-wider mb-2">By product</p>
+                    <div className="space-y-1.5">
+                      {Object.entries(metrics.stripe.byProduct).map(([product, data]) => (
+                        <div key={product} className="flex items-center justify-between text-xs">
+                          <span className="text-zinc-400 capitalize">{product.replace(/_/g, ' ')}</span>
+                          <div className="flex items-center gap-3">
+                            <span className="text-zinc-600">{data.count}×</span>
+                            <span className="text-zinc-300 font-medium">${data.total.toFixed(2)}</span>
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
+
+                  {/* Recent charges */}
                   {metrics.stripe.recent.length > 0 && (
-                    <div className="mt-4 border-t border-zinc-800 pt-3">
-                      <p className="text-[10px] text-zinc-600 uppercase tracking-wider mb-2">Recent</p>
-                      <div className="space-y-1">
-                        {metrics.stripe.recent.slice(0, 5).map(charge => (
+                    <div className="border-t border-zinc-800 pt-3">
+                      <p className="text-[10px] text-zinc-600 uppercase tracking-wider mb-2">Recent charges</p>
+                      <div className="space-y-1.5">
+                        {metrics.stripe.recent.slice(0, 8).map(charge => (
                           <div key={charge.id} className="flex items-center justify-between text-[11px]">
-                            <span className="text-zinc-500">{new Date(charge.date).toLocaleDateString()}</span>
-                            <span className="text-zinc-500 capitalize">{charge.product} · {charge.feature}</span>
-                            <span className="text-zinc-400">${charge.amount.toFixed(2)}</span>
+                            <span className="text-zinc-600 w-20 shrink-0">
+                              {new Date(charge.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+                            </span>
+                            <span className="text-zinc-500 flex-1 capitalize">
+                              {charge.product.replace(/_/g, ' ')} · {charge.feature}
+                            </span>
+                            <span className="text-zinc-300 font-medium">${charge.amount.toFixed(2)}</span>
                           </div>
                         ))}
                       </div>
@@ -189,13 +226,23 @@ export function AdminDashboardClient({ initialConfig }: Props) {
                 </div>
               )}
 
-              {/* Affiliate Clicks */}
-              <div className="rounded-xl border border-zinc-800 bg-zinc-900 p-4">
-                <p className="text-[10px] text-zinc-500 uppercase tracking-wider mb-3">Affiliate Clicks</p>
+              {/* ── Affiliate clicks ── */}
+              <div className="rounded-xl border border-zinc-800 bg-zinc-900 p-4 space-y-3">
+                <p className="text-[10px] text-zinc-500 uppercase tracking-wider">Affiliate Clicks</p>
+
+                {/* 7-day sparkline */}
+                {Object.keys(metrics.last7DayClicks).length > 0 && (
+                  <div>
+                    <p className="text-[10px] text-zinc-600 mb-2">Last 7 days</p>
+                    <SevenDayBar data={metrics.last7DayClicks} />
+                  </div>
+                )}
+
+                {/* By partner */}
                 {Object.keys(metrics.affiliateClicks).length === 0 ? (
                   <p className="text-xs text-zinc-600">No clicks tracked yet.</p>
                 ) : (
-                  <div className="space-y-2">
+                  <div className="space-y-2 pt-1">
                     {parseClicks(metrics.affiliateClicks).map(([partner, data]) => (
                       <div key={partner} className="flex items-center justify-between text-xs">
                         <span className="text-zinc-400 capitalize">{partner.replace(/_/g, ' ')}</span>
@@ -211,6 +258,46 @@ export function AdminDashboardClient({ initialConfig }: Props) {
                 )}
               </div>
 
+              {/* ── KV cache stats ── */}
+              {metrics.kv && (
+                <div className="rounded-xl border border-zinc-800 bg-zinc-900 p-4 space-y-3">
+                  <div className="flex items-center gap-2">
+                    <Database size={13} className="text-zinc-600" />
+                    <p className="text-[10px] text-zinc-500 uppercase tracking-wider">KV Cache</p>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="bg-zinc-800/60 rounded-lg px-3 py-2">
+                      <p className="text-[10px] text-zinc-600 mb-0.5">Taxi guides cached</p>
+                      <p className="text-lg font-bold text-white">{metrics.kv.cacheEntries.taxi}</p>
+                    </div>
+                    <div className="bg-zinc-800/60 rounded-lg px-3 py-2">
+                      <p className="text-[10px] text-zinc-600 mb-0.5">Tipping guides cached</p>
+                      <p className="text-lg font-bold text-white">{metrics.kv.cacheEntries.tipping}</p>
+                    </div>
+                  </div>
+
+                  {/* City misses */}
+                  {metrics.kv.cityMisses.length > 0 && (
+                    <div className="border-t border-zinc-800 pt-3">
+                      <div className="flex items-center gap-1.5 mb-2">
+                        <MapPin size={11} className="text-amber-500" />
+                        <p className="text-[10px] text-zinc-500 uppercase tracking-wider">
+                          City misses — searched but not in taxi-rates.json
+                        </p>
+                      </div>
+                      <div className="space-y-1">
+                        {metrics.kv.cityMisses.slice(0, 10).map(({ city, count }) => (
+                          <div key={city} className="flex items-center justify-between text-xs">
+                            <span className="text-zinc-400">{city}</span>
+                            <span className="text-amber-500/80">{count}×</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+
               <p className="text-[10px] text-zinc-700">
                 Generated {new Date(metrics.generatedAt).toLocaleString()}
               </p>
@@ -219,10 +306,10 @@ export function AdminDashboardClient({ initialConfig }: Props) {
         </div>
       )}
 
-      {/* ── PREVIEW TAB ── */}
+      {/* ── PREVIEW TAB ─────────────────────────────────────────────── */}
       {activeTab === 'preview' && <AdminPreviewTab />}
 
-      {/* ── CONFIG TAB ── */}
+      {/* ── CONFIG TAB ──────────────────────────────────────────────── */}
       {activeTab === 'config' && (
         <div className="space-y-3">
           <div className="flex items-center justify-between">
@@ -262,9 +349,7 @@ export function AdminDashboardClient({ initialConfig }: Props) {
                 key={partner.id}
                 className={`rounded-xl border ${partner.enabled ? 'border-zinc-800' : 'border-zinc-900'} bg-zinc-900 overflow-hidden`}
               >
-                {/* Partner header row */}
                 <div className="flex items-center gap-3 px-4 py-3">
-                  {/* Enable toggle */}
                   <button
                     onClick={() => updatePartner(partner.id, { enabled: !partner.enabled })}
                     className={`w-8 h-4.5 rounded-full transition-colors relative shrink-0 ${
@@ -279,7 +364,6 @@ export function AdminDashboardClient({ initialConfig }: Props) {
                     />
                   </button>
 
-                  {/* Name + category */}
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2">
                       <span className={`text-sm font-medium ${partner.enabled ? 'text-zinc-200' : 'text-zinc-600'}`}>
@@ -300,7 +384,6 @@ export function AdminDashboardClient({ initialConfig }: Props) {
                     </div>
                   </div>
 
-                  {/* Expand toggle */}
                   <button
                     onClick={() => setExpandedPartner(expandedPartner === partner.id ? null : partner.id)}
                     className="text-zinc-600 hover:text-zinc-400 transition-colors"
@@ -309,10 +392,8 @@ export function AdminDashboardClient({ initialConfig }: Props) {
                   </button>
                 </div>
 
-                {/* Expanded editor */}
                 {expandedPartner === partner.id && (
                   <div className="border-t border-zinc-800 px-4 py-4 space-y-3">
-                    {/* Affiliate URL */}
                     <div>
                       <label className="block text-[10px] text-zinc-500 uppercase tracking-wider mb-1">
                         Affiliate URL
@@ -338,7 +419,6 @@ export function AdminDashboardClient({ initialConfig }: Props) {
                       </div>
                     </div>
 
-                    {/* Priority */}
                     <div>
                       <label className="block text-[10px] text-zinc-500 uppercase tracking-wider mb-1">
                         Priority (lower = shown first)
@@ -353,7 +433,6 @@ export function AdminDashboardClient({ initialConfig }: Props) {
                       />
                     </div>
 
-                    {/* Zones */}
                     <div>
                       <label className="block text-[10px] text-zinc-500 uppercase tracking-wider mb-1">
                         Zones
@@ -388,7 +467,81 @@ export function AdminDashboardClient({ initialConfig }: Props) {
   )
 }
 
-// ─── Admin Preview Tab ──────────────────────────────────────────────────────────
+// ── Sub-components ──────────────────────────────────────────────────────────────
+
+/** Month-over-month change badge */
+function MoMBadge({ current, previous }: { current: number; previous: number }) {
+  const pct = previous === 0 ? 0 : ((current - previous) / previous) * 100
+  const up = pct >= 0
+  return (
+    <div className={`flex items-center gap-0.5 text-[10px] ${up ? 'text-green-400' : 'text-red-400'}`}>
+      {up ? <TrendingUp size={10} /> : <TrendingDown size={10} />}
+      {Math.abs(pct).toFixed(0)}% vs last mo.
+    </div>
+  )
+}
+
+/** Simple bar chart for last 6 months revenue */
+function MonthlyBar({ months }: { months: Array<{ month: string; total: number; count: number }> }) {
+  const max = Math.max(...months.map(m => m.total), 1)
+  return (
+    <div className="flex items-end gap-1.5 h-16">
+      {[...months].reverse().map(m => {
+        const pct = (m.total / max) * 100
+        const label = new Date(m.month + '-01').toLocaleDateString('en-US', { month: 'short' })
+        return (
+          <div key={m.month} className="flex-1 flex flex-col items-center gap-1 group relative">
+            <div className="w-full flex items-end" style={{ height: '44px' }}>
+              <div
+                className="w-full rounded-t bg-purple-600/70 group-hover:bg-purple-500 transition-colors"
+                style={{ height: `${Math.max(pct, 4)}%` }}
+              />
+            </div>
+            <span className="text-[9px] text-zinc-600">{label}</span>
+            {/* Tooltip */}
+            <div className="absolute bottom-full mb-1 left-1/2 -translate-x-1/2 bg-zinc-800 text-white text-[10px] px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10">
+              ${m.total.toFixed(2)} · {m.count} charges
+            </div>
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
+/** Bar chart for last 7 days affiliate clicks */
+function SevenDayBar({ data }: { data: Record<string, number> }) {
+  const sorted = Object.entries(data).sort(([a], [b]) => a.localeCompare(b))
+  const max = Math.max(...sorted.map(([, v]) => v), 1)
+  const total = sorted.reduce((s, [, v]) => s + v, 0)
+  if (total === 0) {
+    return <p className="text-xs text-zinc-600">No clicks in the last 7 days.</p>
+  }
+  return (
+    <div className="flex items-end gap-1 h-10">
+      {sorted.map(([date, count]) => {
+        const pct = (count / max) * 100
+        const label = new Date(date).toLocaleDateString('en-US', { weekday: 'short' }).slice(0, 2)
+        return (
+          <div key={date} className="flex-1 flex flex-col items-center gap-0.5 group relative">
+            <div className="w-full flex items-end" style={{ height: '28px' }}>
+              <div
+                className="w-full rounded-t bg-teal-600/70 group-hover:bg-teal-500 transition-colors"
+                style={{ height: `${Math.max(pct, 8)}%` }}
+              />
+            </div>
+            <span className="text-[9px] text-zinc-600">{label}</span>
+            <div className="absolute bottom-full mb-1 left-1/2 -translate-x-1/2 bg-zinc-800 text-white text-[10px] px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10">
+              {count} clicks
+            </div>
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
+// ── Preview tab ─────────────────────────────────────────────────────────────────
 
 type PreviewStatus = 'idle' | 'loading' | 'success' | 'error'
 
@@ -399,16 +552,13 @@ function AdminPreviewTab() {
   async function getPreviewToken(feature: 'taxi' | 'tipping') {
     const setter = feature === 'taxi' ? setTaxi : setTipping
     setter({ status: 'loading', message: '' })
-
     try {
       const res = await fetch(`/api/admin/preview-token?feature=${feature}`)
       const data = await res.json()
-
       if (!res.ok || !data.token) {
         setter({ status: 'error', message: data.error ?? 'Unknown error' })
         return
       }
-
       localStorage.setItem('ff_token', data.token)
       setter({ status: 'success', message: `✓ Token stored (7 days). Opening /${feature}…` })
       setTimeout(() => window.open(`/${feature}`, '_blank'), 800)
@@ -434,12 +584,10 @@ function AdminPreviewTab() {
         <h2 className="text-sm font-semibold text-zinc-300">Preview Paid Pages</h2>
         <p className="text-xs text-zinc-600 mt-1">
           Issue a 7-day admin token to review paid features on the live site without going through Stripe.
-          Token opens in a new tab.
         </p>
       </div>
 
       <div className="space-y-3">
-        {/* Taxi */}
         <button
           onClick={() => getPreviewToken('taxi')}
           disabled={taxi.status === 'loading' || taxi.status === 'success'}
@@ -461,7 +609,6 @@ function AdminPreviewTab() {
           </div>
         </button>
 
-        {/* Tipping */}
         <button
           onClick={() => getPreviewToken('tipping')}
           disabled={tipping.status === 'loading' || tipping.status === 'success'}
@@ -491,16 +638,6 @@ function AdminPreviewTab() {
         >
           Clear all tokens from localStorage
         </button>
-      </div>
-
-      <div className="rounded-xl bg-zinc-900 border border-zinc-800 p-4 space-y-1.5">
-        <p className="text-xs font-semibold text-zinc-400">How this works</p>
-        <ul className="text-xs text-zinc-600 space-y-1 list-disc list-inside">
-          <li>Calls <code className="text-zinc-500">/api/admin/preview-token</code> (admin cookie required)</li>
-          <li>Issues a JWT signed with <code className="text-zinc-500">ENTITLEMENT_SECRET</code></li>
-          <li>Stores token as <code className="text-zinc-500">ff_token</code> in localStorage</li>
-          <li>Valid for 7 days — no payment needed</li>
-        </ul>
       </div>
     </div>
   )
