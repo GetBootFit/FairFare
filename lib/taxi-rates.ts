@@ -43,6 +43,9 @@ const ALIASES: Record<string, string> = {
   ha_long_city:            'halong',
   new_york_city:           'new_york',
   nyc:                     'new_york',
+  brooklyn:                'new_york',  // NYC borough searches (city_miss hit)
+  bronx:                   'new_york',
+  staten_island:           'new_york',
   los_angeles:             'los_angeles',
   la:                      'los_angeles',
   dc:                      'washington_dc',
@@ -69,19 +72,40 @@ const ALIASES: Record<string, string> = {
   bombay:                  'mumbai',
   cape_town:               'cape_town',
   buenos_aires:            'buenos_aires',
+  // Italian city names (common when Google Maps returns locality in local language)
+  roma:                    'rome',
+  roma_capitale:           'rome',
+  citta_metropolitana_di_roma_capitale: 'rome',
+  venezia:                 'venice',
+  firenze:                 'florence',
+  napoli:                  'naples',
+  milano:                  'milan',
+  torino:                  'turin',
 
   // ── Airport → city mappings ───────────────────────────────────────────────
   // Bangkok — Suvarnabhumi is in Samut Prakan Province; Don Mueang is its own district
+  // Khet (district) names Google sometimes returns instead of "Bangkok"
   samut_prakan:            'bangkok',
   bang_phli:               'bangkok',
   racha_thewa:             'bangkok',
   don_mueang:              'bangkok',
+  khet_bang_rak:           'bangkok',  // Bang Rak district (city_miss hit)
+  bang_rak:                'bangkok',
+  khet_pathum_wan:         'bangkok',
+  khet_watthana:           'bangkok',
+  khet_khlong_toei:        'bangkok',
+  khet_sathon:             'bangkok',
+  khet_bang_sue:           'bangkok',
+  khet_chatuchak:          'bangkok',
+  khet_lat_krabang:        'bangkok',  // Suvarnabhumi area
 
   // London — Heathrow → Hillingdon AND Hounslow (airport spans both boroughs);
   // Gatwick → Crawley; Stansted → Uttlesford
   hillingdon:              'london',
   hounslow:                'london',  // Heathrow spans Hillingdon & Hounslow — Google often returns Hounslow
   heathrow:                'london',  // direct match if Google returns "Heathrow" as locality
+  heathrow_airport:        'london',  // explicit "Heathrow Airport" form
+  heathrow_airport_lhr:    'london',  // IATA code variant (city_miss hit)
   crawley:                 'london',
   gatwick:                 'london',
   uttlesford:              'london',
@@ -111,6 +135,7 @@ const ALIASES: Record<string, string> = {
 
   // Rome — Fiumicino airport in Fiumicino municipality
   fiumicino:               'rome',
+  '00054_fiumicino':       'rome',  // postal code prefix variant (city_miss hit)
   ciampino:                'rome',
 
   // Barcelona — El Prat de Llobregat
