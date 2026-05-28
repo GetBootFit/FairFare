@@ -12,8 +12,10 @@ const APP_URL = (process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com').
 const NON_EN_LOCALES = LOCALES.filter((l) => l.code !== 'en').map((l) => l.code)
 function toBcp47(locale: string): string { return locale === 'tw' ? 'zh-TW' : locale }
 
-// Shorter revalidation so KV-published posts appear within 5 minutes
-export const revalidate = 300
+// ISR: 1-hour revalidation — new KV-published posts appear within an hour.
+// Was 300s (5 min) which generated ~288 ISR writes/day for a single page;
+// blog publishes at most a few times per week so hourly is sufficient.
+export const revalidate = 3600
 
 export const metadata: Metadata = {
   title: 'Travel Tips & Taxi Guides — Hootling Blog',
