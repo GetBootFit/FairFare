@@ -180,6 +180,12 @@ const ALIASES: Record<string, string> = {
   // Kuala Lumpur — KLIA is in Sepang
   sepang:                  'kuala_lumpur',
 
+  // Taoyuan — TPE airport is in Dayuan District, Taoyuan City
+  dayuan:                  'taoyuan',
+  dayuan_district:         'taoyuan',  // city_miss hit
+  taoyuan_district:        'taoyuan',
+  zhongli:                 'taoyuan',  // Zhongli District (major Taoyuan area)
+
   // Seoul — Incheon International is a separate city from Seoul
   incheon:                 'seoul',
   jung_gu:                 'seoul',
