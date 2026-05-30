@@ -10,6 +10,7 @@ import { LOCALES } from '@/lib/i18n'
 
 const NON_EN_LOCALES_SLUG = LOCALES.filter((l) => l.code !== 'en').map((l) => l.code)
 function toBcp47Slug(locale: string): string { return locale === 'tw' ? 'zh-TW' : locale }
+import { BlogCtaWidget } from '@/components/BlogCtaWidget'
 import { BlogAffiliateCard } from '@/components/BlogAffiliateCard'
 import { RelatedPosts } from '@/components/RelatedPosts'
 import { getPartnersForZone } from '@/lib/affiliates'
@@ -425,48 +426,44 @@ export default async function BlogArticlePage(
           </div>
         )}
 
-        {/* Main content — early CTA injected after intro to catch readers before they bounce */}
+        {/* Main content — CTA widget injected after intro and mid-article */}
         <div className="space-y-4">
           {mainContent.map((section, i) => (
             <React.Fragment key={i}>
               <RenderSection section={section} />
-              {/* Inject CTA after the intro section for city/country posts */}
+
+              {/* After intro: full BlogCtaWidget */}
               {i === 0 && section.type === 'intro' && (post.citySlug || post.countrySlug) && (
-                <div className="flex flex-col gap-2 py-1">
-                  {post.citySlug && post.city && (
-                    <Link
-                      href="/taxi"
-                      className="flex items-center justify-between gap-3 bg-purple-950/60 border border-purple-800/50 hover:border-purple-600/70 hover:bg-purple-900/50 rounded-xl px-4 py-3 transition-all group"
-                    >
-                      <div>
-                        <p className="text-sm font-semibold text-white">Check your {post.city} fare</p>
-                        <p className="text-xs text-purple-300/70 mt-0.5">Route + scam warnings in seconds</p>
-                      </div>
-                      <ArrowRight size={16} className="text-purple-400 group-hover:translate-x-0.5 transition-transform shrink-0" />
-                    </Link>
-                  )}
-                  {post.countrySlug && post.country && (
-                    <Link
-                      href="/tipping"
-                      className="flex items-center justify-between gap-3 bg-teal-950/60 border border-teal-800/50 hover:border-teal-600/70 hover:bg-teal-900/50 rounded-xl px-4 py-3 transition-all group"
-                    >
-                      <div>
-                        <p className="text-sm font-semibold text-white">{post.country} tipping guide</p>
-                        <p className="text-xs text-teal-300/70 mt-0.5">Restaurants, taxis, hotels &amp; more</p>
-                      </div>
-                      <ArrowRight size={16} className="text-teal-400 group-hover:translate-x-0.5 transition-transform shrink-0" />
-                    </Link>
-                  )}
-                  {/* Example link — only for taxi posts; /example shows a full Bangkok taxi result */}
+                <>
+                  <BlogCtaWidget
+                    city={post.city}
+                    citySlug={post.citySlug}
+                    country={post.country}
+                    countrySlug={post.countrySlug}
+                    flagCode={post.countrySlug ? COUNTRY_FLAGS[post.countrySlug] : undefined}
+                    category={post.category as 'taxi' | 'tipping' | 'travel'}
+                  />
                   {post.citySlug && (
-                    <p className="text-center text-[11px] text-zinc-600">
+                    <p className="text-center text-[11px] text-zinc-600 -mt-1">
                       Not sure what you get?{' '}
                       <Link href="/example" className="text-purple-400 hover:text-purple-300 underline underline-offset-2 transition-colors">
                         See a full sample result →
                       </Link>
                     </p>
                   )}
-                </div>
+                </>
+              )}
+
+              {/* Mid-article: inject a second widget after the 4th section (index 3) */}
+              {i === 3 && (post.citySlug || post.countrySlug) && (
+                <BlogCtaWidget
+                  city={post.city}
+                  citySlug={post.citySlug}
+                  country={post.country}
+                  countrySlug={post.countrySlug}
+                  flagCode={post.countrySlug ? COUNTRY_FLAGS[post.countrySlug] : undefined}
+                  category={post.category as 'taxi' | 'tipping' | 'travel'}
+                />
               )}
             </React.Fragment>
           ))}

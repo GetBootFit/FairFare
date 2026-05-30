@@ -34,13 +34,22 @@ const FEATURED_CITY_SLUGS = [
 const allSlugs = new Set(getAllCitySlugs())
 const FEATURED_CITIES = FEATURED_CITY_SLUGS.filter((s) => allSlugs.has(s))
 
-export default function TaxiPage() {
+export default async function TaxiPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ city?: string }>
+}) {
+  const { city } = await searchParams
+  const initialCity = city && city.trim().length > 0 && city.trim().length < 80
+    ? city.trim()
+    : undefined
+
   return (
     <div className="space-y-5">
       <TaxiPageHeader />
 
       <ErrorBoundary>
-        <TaxiForm />
+        <TaxiForm initialCity={initialCity} />
       </ErrorBoundary>
 
       <PopularCitiesSection cities={FEATURED_CITIES} />

@@ -51,7 +51,13 @@ interface FormState {
   destPlaceId: string
 }
 
-export function TaxiForm() {
+interface TaxiFormProps {
+  /** City name passed from a blog post CTA (e.g. "Bangkok").
+   *  Pre-fills the destination field so the user only needs to enter pickup. */
+  initialCity?: string
+}
+
+export function TaxiForm({ initialCity }: TaxiFormProps = {}) {
   const { t, locale } = useLanguage()
   const { recent, addSearch } = useRecentSearches()
   const [form, setForm] = useState<FormState>({
@@ -77,6 +83,8 @@ export function TaxiForm() {
   // set pendingAutoSubmit so the next effect auto-triggers the result fetch.
   // The ff:token window event fires on the SUCCESS page — it never reaches this
   // page after a full navigation, so we must poll localStorage instead.
+  // Falls back to pre-filling destination from the blog CTA city param if no
+  // sessionStorage restore is needed.
   useEffect(() => {
     const saved = sessionStorage.getItem(STORAGE_KEY)
     if (saved) {
@@ -88,9 +96,14 @@ export function TaxiForm() {
         if ((token && !isTokenExpired(token)) || getBundleCount() > 0) {
           setPendingAutoSubmit(true)
         }
+        return // sessionStorage restore takes priority over initialCity
       } catch { /* ignore */ }
     }
-  }, [])
+    // Pre-fill destination from blog CTA when no saved form exists
+    if (initialCity) {
+      setForm((f) => ({ ...f, destination: initialCity }))
+    }
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   // Auto-submit once form values are populated after a post-payment redirect.
   useEffect(() => {
@@ -336,6 +349,15 @@ export function TaxiForm() {
           onSubmit={(e) => { e.preventDefault(); handlePreview() }}
           className="space-y-3"
         >
+          {/* City pre-fill banner — shown when arriving from a blog post CTA */}
+          {initialCity && !form.pickup && (
+            <div className="flex items-center gap-2 bg-purple-950/50 border border-purple-800/40 rounded-xl px-3.5 py-2.5">
+              <span className="text-purple-400 text-sm">📍</span>
+              <p className="text-xs text-purple-200/80">
+                Destination pre-filled: <span className="font-semibold text-white">{initialCity}</span>. Just enter your pickup above.
+              </p>
+            </div>
+          )}
           <div>
             <label htmlFor="pickup" className="block text-xs text-zinc-400 mb-1.5 uppercase tracking-wider">{t('taxi_from')}</label>
             <PlaceInput
