@@ -163,9 +163,12 @@ export async function incrementClickCount(
 ): Promise<void> {
   const daily = new Date().toISOString().slice(0, 10) // YYYY-MM-DD
   await Promise.allSettled([
+    // All-time total per partner+zone (no date) — used for admin dashboard lifetime view
     kvIncrement(`${KV_CLICKS_PREFIX}:${partnerId}:${zone}`),
+    // Daily bucket — used for 7-day trend chart and date-range analysis
     kvIncrement(`${KV_CLICKS_PREFIX}:${partnerId}:${zone}:${daily}`),
-    kvIncrement(`${KV_CLICKS_PREFIX}:total`),
+    // NOTE: do NOT write affiliate:clicks:total — it has no zone/date and
+    // pollutes the key scan, appearing as a phantom partner="total" in metrics.
   ])
 }
 
