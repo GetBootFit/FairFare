@@ -27,12 +27,12 @@ export async function createCheckoutSession(params: CheckoutParams): Promise<str
       description: 'Full tipping etiquette for all service scenarios — one query',
     },
     country_pass_taxi: {
-      name: `Hootling — ${country ? country.charAt(0).toUpperCase() + country.slice(1) : ''} DayPass`,
-      description: 'All taxi + tipping checks for this country · 24 hrs from first use',
+      name: `Hootling — ${country ? country.charAt(0).toUpperCase() + country.slice(1) : ''} Day Pass`,
+      description: 'Unlimited taxi & tipping checks for this country · valid 24 hours · instant access',
     },
     country_pass_tipping: {
-      name: `Hootling — ${country ? country.charAt(0).toUpperCase() + country.slice(1) : ''} DayPass`,
-      description: 'All taxi + tipping checks for this country · 24 hrs from first use',
+      name: `Hootling — ${country ? country.charAt(0).toUpperCase() + country.slice(1) : ''} Day Pass`,
+      description: 'Unlimited taxi & tipping checks for this country · valid 24 hours · instant access',
     },
     query_bundle_taxi: {
       name: 'Hootling — 20-Query Bundle',

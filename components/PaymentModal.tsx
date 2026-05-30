@@ -38,9 +38,10 @@ export function PaymentModal({ feature, country, city, onCancel }: Props) {
 
   const [currency, setCurrencyState] = useState<CurrencyCode>('USD')
   const [showCurrencyPicker, setShowCurrencyPicker] = useState(false)
-  const [selectedProduct, setSelectedProduct] = useState<Product>(
-    country ? 'country_pass' : 'single'
-  )
+  // Always default to single — leading with the cheapest option reduces sticker shock.
+  // Users who want the country pass or bundle can select it; upselling works better
+  // than pre-selecting the most expensive tier.
+  const [selectedProduct, setSelectedProduct] = useState<Product>('single')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   // Suppress price display until localStorage is read to prevent currency flash
