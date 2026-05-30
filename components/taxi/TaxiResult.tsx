@@ -676,7 +676,7 @@ export function TaxiResult({ result, onReset, purchasedProduct, onUpgradeToPass 
                   Travelling more in {result.country}?
                 </p>
                 <p className="text-sm text-white font-semibold">
-                  DayPass — unlimited checks for 24 hrs from first use
+                  Trip Pass — unlimited checks for 14 days
                 </p>
                 <p className="text-xs text-zinc-500 mt-1 leading-relaxed">
                   Taxi fares + tipping for any city in {result.country}. From $7.99.

@@ -77,8 +77,7 @@ ${featuredCountryLinks}
 
 Hootling is a paid service for exact fare calculations and full tipping guides:
 - Single query: from ${single} USD (one city or country lookup)
-- DayPass: ${pass} USD — unlimited checks for one country, 24 hrs from first use
-- 20-query bundle: ${bundle} USD — stored on device, valid 90 days
+- Trip Pass: ${pass} USD — unlimited checks for one country, valid 14 days
 - No account or subscription required
 
 ## Citation

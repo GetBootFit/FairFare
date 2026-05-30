@@ -57,14 +57,9 @@ export default function TermsPage() {
             or one tipping guide.
           </li>
           <li>
-            <strong className="text-zinc-300">DayPass</strong> — from{' '}
+            <strong className="text-zinc-300">Trip Pass</strong> — from{' '}
             <strong className="text-white">$7.99 USD</strong>. Grants unlimited checks
-            for a single country for 24 hours from first use.
-          </li>
-          <li>
-            <strong className="text-zinc-300">20-Check Bundle</strong> — from{' '}
-            <strong className="text-white">$19.99 USD</strong>. Grants 20 independent
-            access tokens, each valid for 90 days.
+            for a single country for 14 days from first use.
           </li>
         </ul>
         <p className="mt-2">

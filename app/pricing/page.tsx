@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
-import { Check, Zap, Globe, Package, ArrowRight, ChevronDown } from 'lucide-react'
+import { Check, Zap, Globe, ArrowRight, ChevronDown } from 'lucide-react'
 import {
   CURRENCIES,
   PRICES,
@@ -32,9 +32,6 @@ export default function PricingPage() {
 
   const singlePrice = fmt(prices.single)
   const passPrice   = fmt(prices.pass)
-  const bundlePrice = fmt(prices.bundle)
-  const perCheck    = fmt(Math.round(prices.bundle / 20))
-  const savePct     = Math.round((20 * prices.single - prices.bundle) / (20 * prices.single) * 100)
 
   const handleCurrency = (c: CurrencyCode) => {
     setCurrency(c)
@@ -127,11 +124,11 @@ export default function PricingPage() {
           </Link>
         </div>
 
-        {/* Country Pass — highlighted */}
+        {/* Trip Pass — highlighted */}
         <div className="bg-purple-950/40 border border-purple-700/60 rounded-2xl p-5 space-y-4 relative">
           <div className="absolute -top-2.5 left-1/2 -translate-x-1/2">
             <span className="bg-purple-600 text-white text-[10px] font-bold px-3 py-1 rounded-full whitespace-nowrap">
-              FOR THIS TRIP
+              MOST POPULAR
             </span>
           </div>
           <div className="flex items-start justify-between gap-3">
@@ -140,22 +137,22 @@ export default function PricingPage() {
                 <Globe size={15} className="text-purple-400" />
               </div>
               <div>
-                <p className="font-semibold text-white">Country Day Pass</p>
-                <p className="text-xs text-purple-300/70">Unlimited checks · one country · 24h</p>
+                <p className="font-semibold text-white">Trip Pass</p>
+                <p className="text-xs text-purple-300/70">Unlimited checks · one country · 14 days</p>
               </div>
             </div>
             <div className="text-right shrink-0">
               <p className="text-2xl font-bold text-white">{passPrice}</p>
-              <p className="text-xs text-zinc-500">per day</p>
+              <p className="text-xs text-zinc-500">per trip</p>
             </div>
           </div>
           <ul className="space-y-1.5">
             {[
               'Unlimited taxi + tipping checks',
-              'One country for 24 hours',
-              'All scam warnings + phrases',
-              'Perfect for a city trip or weekend away',
-              'Works across both features',
+              'One country for up to 14 days',
+              'All scam warnings + driver phrases',
+              'Perfect for any trip up to 2 weeks',
+              'Works across both taxi and tipping',
             ].map((f) => (
               <li key={f} className="flex items-center gap-2 text-xs text-zinc-400">
                 <Check size={11} className="text-purple-500 shrink-0" />
@@ -168,50 +165,6 @@ export default function PricingPage() {
             className="flex items-center justify-center gap-2 w-full bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold py-3 rounded-xl transition-colors"
           >
             Start your trip <ArrowRight size={14} />
-          </Link>
-        </div>
-
-        {/* Bundle */}
-        <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5 space-y-4 relative">
-          <div className="absolute -top-2.5 right-4">
-            <span className="bg-zinc-700 text-white text-[10px] font-bold px-3 py-1 rounded-full whitespace-nowrap">
-              BEST VALUE
-            </span>
-          </div>
-          <div className="flex items-start justify-between gap-3">
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center shrink-0">
-                <Package size={15} className="text-zinc-300" />
-              </div>
-              <div>
-                <p className="font-semibold text-white">20-Query Bundle</p>
-                <p className="text-xs text-zinc-500">Device-stored · 90-day expiry</p>
-              </div>
-            </div>
-            <div className="text-right shrink-0">
-              <p className="text-2xl font-bold text-white">{bundlePrice}</p>
-              <p className="text-xs text-purple-400">{perCheck}/check · save {savePct}%</p>
-            </div>
-          </div>
-          <ul className="space-y-1.5">
-            {[
-              '20 independent checks',
-              'Use across any city or country',
-              'Mix taxi + tipping checks freely',
-              'Stored on your device — no account needed',
-              '90 days to use them all',
-            ].map((f) => (
-              <li key={f} className="flex items-center gap-2 text-xs text-zinc-400">
-                <Check size={11} className="text-zinc-500 shrink-0" />
-                {f}
-              </li>
-            ))}
-          </ul>
-          <Link
-            href="/taxi"
-            className="flex items-center justify-center gap-2 w-full bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 text-white text-sm font-semibold py-3 rounded-xl transition-colors"
-          >
-            Buy bundle <ArrowRight size={14} />
           </Link>
         </div>
       </div>
@@ -247,19 +200,19 @@ export default function PricingPage() {
         {[
           {
             q: 'Do queries expire?',
-            a: 'Single queries last 30 minutes — long enough to check before boarding. Day Passes last 24 hours from first use. Bundle tokens last 90 days each from purchase.',
+            a: 'Single queries are valid for 8 hours — long enough to check before boarding and use the result. Trip Pass is valid for 14 days from first use, covering any trip up to 2 weeks.',
           },
           {
             q: 'What if my city isn\'t listed?',
             a: 'We cover 160+ cities. For unlisted destinations, you\'ll still get scam alerts and local driver phrases — with a note to verify the fare directly with your driver.',
           },
           {
-            q: 'Can I use the bundle across multiple countries?',
-            a: 'Yes — bundle tokens work for any city (taxi) or country (tipping) globally. Mix and match freely.',
+            q: 'Does the Trip Pass work for both taxi and tipping?',
+            a: 'Yes — a Trip Pass for Thailand covers unlimited taxi fare checks and unlimited tipping guides for the full 14 days. Both features, one pass.',
           },
           {
             q: 'Do I need to create an account?',
-            a: 'Never. Tokens are stored in your browser. If you clear your browser data or switch devices, you can contact us to transfer your bundle.',
+            a: 'Never. Your entitlement is stored securely in your browser. No sign-up, no email required.',
           },
         ].map(({ q, a }) => (
           <div key={q} className="bg-zinc-900 border border-zinc-800 rounded-xl p-4 space-y-1.5">

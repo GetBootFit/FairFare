@@ -405,11 +405,11 @@ export function HomeContent() {
               </div>
               <div className="flex items-center justify-between gap-2">
                 <div>
-                  <p className="text-xs font-medium text-zinc-300">20-query bundle</p>
-                  <p className="text-[10px] text-zinc-600">Best value for frequent travellers</p>
+                  <p className="text-xs font-medium text-zinc-300">Trip Pass</p>
+                  <p className="text-[10px] text-zinc-600">Unlimited checks · one country · 14 days</p>
                 </div>
                 <p className="text-sm font-bold text-white shrink-0">
-                  {mounted ? formatPrice(currency, PRICES[currency].bundle) : '—'}
+                  {mounted ? formatPrice(currency, PRICES[currency].pass) : '—'}
                 </p>
               </div>
             </div>
