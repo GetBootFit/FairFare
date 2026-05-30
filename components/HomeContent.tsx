@@ -369,7 +369,7 @@ export function HomeContent() {
               </div>
               <div className="shrink-0 text-right rtl:text-left">
                 <span className="inline-block bg-purple-900/40 border border-purple-700/40 text-purple-300 text-[10px] font-semibold px-2 py-0.5 rounded-full">
-                  6 scenarios
+                  10 scenarios
                 </span>
               </div>
             </div>
