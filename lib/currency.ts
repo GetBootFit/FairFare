@@ -19,6 +19,7 @@ export type CurrencyCode =
   | 'JPY'
   | 'CHF'
   | 'HKD'
+  | 'TWD'
 
 export const CURRENCIES: {
   code: CurrencyCode
@@ -36,6 +37,7 @@ export const CURRENCIES: {
   { code: 'JPY', symbol: '¥',    label: 'JPY — Japanese Yen',         zeroDecimal: true  },
   { code: 'CHF', symbol: 'Fr ',  label: 'CHF — Swiss Franc',          zeroDecimal: false },
   { code: 'HKD', symbol: 'HK$',  label: 'HKD — Hong Kong Dollar',     zeroDecimal: false },
+  { code: 'TWD', symbol: 'NT$',  label: 'TWD — Taiwan Dollar',         zeroDecimal: true  },
 ]
 
 /**
@@ -61,6 +63,7 @@ export const PRICES: Record<CurrencyCode, { single: number; pass: number; bundle
   JPY: { single: 449,  pass: 1199, bundle: 2999 },
   CHF: { single: 279,  pass: 699,  bundle: 1799 },
   HKD: { single: 2399, pass: 5999, bundle: 14999 },
+  TWD: { single:   99, pass:  249, bundle:    649 },
 }
 
 // navigator.language → CurrencyCode
@@ -88,7 +91,7 @@ const LOCALE_TO_CURRENCY: Record<string, CurrencyCode> = {
   'el':    'EUR',
   'ja':    'JPY',
   'zh-HK': 'HKD',
-  'zh-TW': 'HKD',  // TWD not in list — HKD close enough
+  'zh-TW': 'TWD',
 }
 
 /** Detect from browser locale — does NOT use geolocation */
@@ -117,7 +120,7 @@ const APP_LOCALE_TO_CURRENCY: Partial<Record<string, CurrencyCode>> = {
   it: 'EUR',
   es: 'EUR',
   zh: 'HKD',  // Simplified Chinese — HK proxy
-  tw: 'HKD',  // Traditional Chinese — HK proxy
+  tw: 'TWD',
   // Arabic speakers come from many countries; USD is the most universally understood
   // fallback for travellers. UAE users will see AED at checkout via Stripe geolocation.
 }

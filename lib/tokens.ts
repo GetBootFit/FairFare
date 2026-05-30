@@ -11,7 +11,7 @@ function secret(): Uint8Array {
 export interface TokenPayload {
   sessionId: string
   /** 'single' = one taxi OR tipping query (30 min).
-   *  'country_pass' = all features for one country (24h).
+   *  'country_pass' = all features for one country (14 days — Trip Pass).
    *  'bundle' = one query from a 20-pack, device-stored (90 days).
    *  Undefined = legacy single-query token (backward compat). */
   tokenType?: 'single' | 'country_pass' | 'bundle'
@@ -58,7 +58,7 @@ export async function createCountryPassToken(
   return new SignJWT({ tokenType: 'country_pass', sessionId, country } as Record<string, unknown>)
     .setProtectedHeader({ alg: 'HS256' })
     .setIssuedAt()
-    .setExpirationTime('24h')
+    .setExpirationTime('14d')
     .sign(secret())
 }
 

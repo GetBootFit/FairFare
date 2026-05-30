@@ -110,7 +110,6 @@ export function PaymentModal({ feature, country, city, onCancel }: Props) {
     const available: Product[] = [
       'single',
       ...(country ? (['country_pass'] as Product[]) : []),
-      'query_bundle',
     ]
     const idx = available.indexOf(product)
     let nextIdx: number | null = null
@@ -328,7 +327,7 @@ export function PaymentModal({ feature, country, city, onCancel }: Props) {
                   {t('payment_country_pass', { country: countryDisplay })}
                 </p>
                 <p className="text-xs text-zinc-400 mt-0.5">{t('payment_all_features_24h')}</p>
-                <p className="text-xs text-zinc-600 mt-0.5">Spending a week in one country</p>
+                <p className="text-xs text-zinc-600 mt-0.5">Covers your whole trip — up to 14 days</p>
               </div>
               <div className="flex items-center gap-2 shrink-0">
                 <span className="text-white font-bold text-sm">{passPrice}</span>
@@ -343,41 +342,7 @@ export function PaymentModal({ feature, country, city, onCancel }: Props) {
             </button>
           )}
 
-          {/* 20-Query Bundle — always shown */}
-          <button
-            role="radio"
-            aria-checked={selectedProduct === 'query_bundle'}
-            onClick={() => { setSelectedProduct('query_bundle'); track('tier_selected', { tier: 'bundle', feature }); ga4TierSelected({ tier: 'bundle', feature }) }}
-            onKeyDown={(e) => handleRadioKeyDown(e, 'query_bundle')}
-            className={`w-full text-left flex items-center justify-between p-3.5 rounded-xl border transition-colors relative ${
-              selectedProduct === 'query_bundle'
-                ? 'border-purple-500 bg-purple-900/20'
-                : 'border-zinc-700 bg-zinc-800 hover:border-zinc-600'
-            }`}
-          >
-            {/* Best value badge */}
-            <span aria-hidden="true" className="absolute -top-2 right-3 rtl:right-auto rtl:left-3 bg-purple-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">
-              {t('payment_best_value')}
-            </span>
-            <div className="pr-2 rtl:pr-0 rtl:pl-2">
-              <p className="text-sm font-semibold text-white">{t('payment_bundle')}</p>
-              <p className="text-xs text-zinc-400 mt-0.5">{t('payment_bundle_desc')}</p>
-              <p className="text-xs text-purple-400 mt-0.5">
-                Just {mounted ? formatPrice(currency, Math.round(prices.bundle / 20)) : '—'} per check · save {Math.round((20 * prices.single - prices.bundle) / (20 * prices.single) * 100)}% vs single
-              </p>
-              <p className="text-xs text-zinc-600 mt-0.5">For frequent travellers</p>
-            </div>
-            <div className="flex items-center gap-2 shrink-0">
-              <span className="text-white font-bold text-sm">{bundlePrice}</span>
-              <div aria-hidden="true" className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
-                selectedProduct === 'query_bundle' ? 'border-purple-400' : 'border-zinc-600'
-              }`}>
-                {selectedProduct === 'query_bundle' && (
-                  <div className="w-2 h-2 rounded-full bg-purple-400" />
-                )}
-              </div>
-            </div>
-          </button>
+          {/* Bundle hidden — zero conversions; can re-introduce later with clearer positioning */}
 
         </div>
 

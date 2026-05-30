@@ -86,10 +86,10 @@ export async function POST(req: NextRequest) {
     if (product === 'country_pass' && country) {
       const token = await createCountryPassToken(sessionId, country)
       const res = NextResponse.json({ token, feature, product: 'country_pass', country, amountTotal, currency })
-      // 24-hour TTL matches the country-pass JWT expiry
+      // 14-day TTL matches the Trip Pass JWT expiry
       res.cookies.set('hootling_token', token, {
         ...ENTITLEMENT_COOKIE_OPTS,
-        maxAge: 24 * 60 * 60,
+        maxAge: 14 * 24 * 60 * 60,
       })
       return res
     }
