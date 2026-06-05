@@ -2680,8 +2680,8 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "how-much-does-a-taxi-cost-in-munich",
-    "title": "Taxi Costs in Munich: Fares, Tips & Airport Runs",
-    "description": "Plan your Munich taxi budget with confidence. Fares start at €4.50, a 10 km ride costs €25, and an airport transfer runs €65–80. Here's everything you need to know.",
+    "title": "Taxi Costs in Munich: Fares, Tips & Airport Runs (2026)",
+    "description": "Munich airport (MUC) to the city centre costs €65–85 by taxi. City rides start at €4.50 flag-fall. Here's the full 2026 fare guide — including night rates, tip customs, and when the U-Bahn beats a cab.",
     "publishedAt": "2025-12-19",
     "updatedAt": "2026-03-31",
     "readingMinutes": 7,
@@ -2833,8 +2833,8 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "how-much-does-a-taxi-cost-in-berlin",
-    "title": "Taxi Fares in Berlin: What You'll Pay in 2026",
-    "description": "Plan your Berlin taxi budget with real fare data. Rides start at €3.90, with a 10 km trip costing around €24. Learn about night surcharges, airport transfers, and scams to avoid.",
+    "title": "Taxi Fares in Berlin: What You'll Actually Pay in 2026",
+    "description": "BER Airport to Berlin Mitte costs €55–75. City rides start at €3.90. Here's what Berlin taxis actually cost in 2026 — night surcharges, Bolt vs metered cab, and the one zone where tourists overpay.",
     "publishedAt": "2025-12-29",
     "readingMinutes": 6,
     "category": "taxi",

@@ -3,7 +3,7 @@ import type { BlogPost } from './blog-posts'
 export const BATCH3C_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'best-time-to-visit-marrakech',
-    title: 'Best Time to Visit Marrakech: Heat, Crowds & Hidden Season (2025)',
+    title: 'Best Time to Visit Marrakech: Heat, Crowds & Hidden Season (2026)',
     description: 'The best time to visit Marrakech is March to May or October to November — comfortable at 18–28°C before summer heat pushes 45°C in the Medina.',
     publishedAt: '2025-06-01',
     readingMinutes: 4,
@@ -34,8 +34,8 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'uber-vs-taxi-rome',
-    title: 'Uber vs Taxi in Rome: Which Is Better in 2025?',
-    description: 'In Rome, official white taxis are metered and honest — but Uber also operates (as UberBlack, not UberX). Here\'s the full comparison for 2025.',
+    title: 'Uber vs Taxi in Rome: Which Is Better in 2026?',
+    description: 'In Rome, official white taxis are metered and honest — but Uber also operates (as UberBlack, not UberX). Here\'s the full comparison for 2026.',
     publishedAt: '2025-06-04',
     readingMinutes: 4,
     category: 'taxi',
@@ -43,14 +43,14 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
     country: 'Italy',
     content: [
       { type: 'intro', body: 'Rome\'s official white taxis are metered, licensed, and generally honest — the main risk is boarding an unlicensed "abusive" taxi outside airports and train stations. Uber operates in Rome but only as UberBlack (licensed private hire vehicles), which is typically 40–60% more expensive than a metered white cab.' },
-      { type: 'h2', heading: 'Rome Taxi Options Compared (2025)' },
+      { type: 'h2', heading: 'Rome Taxi Options Compared (2026)' },
       { type: 'table', rows: [
         { label: 'Official white taxi (metered)', value: '€3.50 flag fall (daytime), €6.50 (nights/holidays), €1.10/km; honest and regulated' },
         { label: 'Uber Black / Van', value: 'Set price upfront; typically 40–60% above metered taxi; professional cars; no cheaper option' },
         { label: 'itTaxi / eCab (apps)', value: 'Books a licensed white taxi via app — same metered fare, safer than street-hailing near tourist sites' },
         { label: 'Fixed fares (from airports)', value: 'FCO (Fiumicino) to city centre ring road: €50 flat; Ciampino (CIA): €31 flat' },
       ]},
-      { type: 'h2', heading: 'Typical Rome Taxi Fares (2025)' },
+      { type: 'h2', heading: 'Typical Rome Taxi Fares (2026)' },
       { type: 'ul', items: [
         'Termini Station → Colosseum: ~€10–14 (2.5km, 10–15 min)',
         'Termini → Vatican (St Peter\'s Square): ~€12–17 (4km, 15–20 min)',
@@ -67,8 +67,8 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'getting-around-amsterdam',
-    title: 'Getting Around Amsterdam: Tram, Metro, Canal Bus & Bike Guide (2025)',
-    description: 'Amsterdam\'s tram network covers the whole inner city for €2.00/trip. Cycling is faster for most journeys. Here\'s the complete 2025 transport guide.',
+    title: 'Getting Around Amsterdam: Tram, Metro, Canal Bus & Bike Guide (2026)',
+    description: 'Amsterdam\'s tram network covers the whole inner city for €2.00/trip. Cycling is faster for most journeys. Here\'s the complete 2026 transport guide.',
     publishedAt: '2025-06-07',
     readingMinutes: 5,
     category: 'travel',
@@ -76,7 +76,7 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
     country: 'Netherlands',
     content: [
       { type: 'intro', body: 'Amsterdam is small enough to walk across in 40 minutes — but the tram network (15 lines, 80 stops) and city bikes cover the entire metro area cheaply and efficiently. An OV-chipkaart handles trams, buses, metros, and national trains on one card.' },
-      { type: 'h2', heading: 'Amsterdam Transport Options (2025)' },
+      { type: 'h2', heading: 'Amsterdam Transport Options (2026)' },
       { type: 'table', rows: [
         { label: 'Tram (GVB)', value: '€2.00/trip with OV-chipkaart or contactless; 1-hour transfer included; day pass €8.50' },
         { label: 'Metro (4 lines)', value: '€2.00/trip; North/South line (M52) connects Central Station to De Pijp and Amstelveen' },
@@ -102,7 +102,7 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'is-mexico-city-safe',
-    title: 'Is Mexico City Safe for Tourists? Honest Safety Guide (2025)',
+    title: 'Is Mexico City Safe for Tourists? Honest Safety Guide (2026)',
     description: 'Mexico City\'s tourist neighbourhoods (Roma, Condesa, Polanco, Coyoacán) are as safe as many European cities. Specific zones and behaviours carry higher risk — here\'s what to know.',
     publishedAt: '2025-06-10',
     readingMinutes: 5,
@@ -111,7 +111,7 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
     country: 'Mexico',
     content: [
       { type: 'intro', body: 'Mexico City (CDMX) is significantly safer for tourists than its reputation suggests — the upscale neighbourhoods of Roma Norte, Condesa, Polanco, and Coyoacán are comparable to most European city centres. Express kidnapping and street robbery do occur, particularly in certain districts and at night, but millions of visitors have positive experiences each year.' },
-      { type: 'h2', heading: 'CDMX Safety Overview (2025)' },
+      { type: 'h2', heading: 'CDMX Safety Overview (2026)' },
       { type: 'table', rows: [
         { label: 'Tourist neighbourhoods', value: 'Roma Norte, Condesa, Polanco, Coyoacán, San Ángel — generally safe, active street life' },
         { label: 'Express kidnapping (secuestro express)', value: 'Primary risk via fake taxis — always use Uber, DiDi, or Cabify; never hail street taxis' },
@@ -132,7 +132,7 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'taxi-costs-nairobi',
-    title: 'How Much Does a Taxi Cost in Nairobi? (2025 Fare Guide)',
+    title: 'How Much Does a Taxi Cost in Nairobi? (2026 Fare Guide)',
     description: 'Nairobi taxis are mostly unmetered. Bolt is the recommended option — most city trips cost KES 300–700 ($2.30–5.40). Here\'s the full guide.',
     publishedAt: '2025-06-13',
     readingMinutes: 4,
@@ -141,7 +141,7 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
     country: 'Kenya',
     content: [
       { type: 'intro', body: 'Nairobi taxis are unmetered — prices must be negotiated before entering, making app-based services essential. Bolt is the dominant app in Nairobi and the safest, most price-transparent option for tourists. Most city trips cost KES 300–700 ($2.30–5.40) via Bolt.' },
-      { type: 'h2', heading: 'Nairobi Taxi Fares (2025)' },
+      { type: 'h2', heading: 'Nairobi Taxi Fares (2026)' },
       { type: 'table', rows: [
         { label: 'JKIA Airport → Westlands / Karen', value: 'KES 1,200–1,800 (~$9–14) via Bolt; negotiated taxi KES 2,000–3,000' },
         { label: 'CBD → Westlands (5km)', value: 'KES 350–550 via Bolt (~$2.70–4.20)' },
@@ -161,8 +161,8 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'daily-budget-guide-prague',
-    title: 'Prague Daily Budget: How Much Does Prague Cost Per Day? (2025)',
-    description: 'Prague costs €40–60/day on a budget, €100–150 mid-range, and €350+ for luxury. It remains one of Europe\'s best-value city break destinations in 2025.',
+    title: 'Prague Daily Budget: How Much Does Prague Cost Per Day? (2026)',
+    description: 'Prague costs €40–60/day on a budget, €100–150 mid-range, and €350+ for luxury. It remains one of Europe\'s best-value city break destinations in 2026.',
     publishedAt: '2025-06-16',
     readingMinutes: 5,
     category: 'travel',
@@ -170,7 +170,7 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
     country: 'Czech Republic',
     content: [
       { type: 'intro', body: 'Prague is one of Europe\'s most affordable city break destinations — a beautiful budget meal costs €5–9, Czech craft beer is €1.50–2.50 per 500ml, and world-class museums charge €5–12. Even mid-range travellers can eat and drink extraordinarily well for under €40/day on food and drink alone.' },
-      { type: 'h2', heading: 'Prague Daily Budget Breakdown (2025)' },
+      { type: 'h2', heading: 'Prague Daily Budget Breakdown (2026)' },
       { type: 'table', rows: [
         { label: 'Budget (€40–60/day)', value: 'Hostel €15–25, svíčková lunch menu €6–9, 24-hour transit pass €4.80, free Old Town walk' },
         { label: 'Mid-range (€100–150/day)', value: '3-star hotel €55–90, sit-down restaurant €12–25, 1–2 attractions (Prague Castle €15)' },
@@ -193,7 +193,7 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'getting-around-barcelona',
-    title: 'Getting Around Barcelona: Metro, Bus, Tram & Taxi Guide (2025)',
+    title: 'Getting Around Barcelona: Metro, Bus, Tram & Taxi Guide (2026)',
     description: 'Barcelona\'s Metro (8 lines, 181 stations) covers the whole city for €2.55/trip. The T-Casual 10-trip card (€12.15) is the best value for tourists.',
     publishedAt: '2025-06-19',
     readingMinutes: 5,
@@ -202,7 +202,7 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
     country: 'Spain',
     content: [
       { type: 'intro', body: 'Barcelona has one of Europe\'s best urban transport networks — the Metro, FGC trains, Renfe commuter rail, trams, night buses, and Barcelona Bus Turístic all integrate under the T-Casual card. Most tourist sights are within 500m of a Metro stop.' },
-      { type: 'h2', heading: 'Barcelona Transport Options (2025)' },
+      { type: 'h2', heading: 'Barcelona Transport Options (2026)' },
       { type: 'table', rows: [
         { label: 'Metro (single trip)', value: '€2.55; T-Casual 10 trips: €12.15 (best value); 24h unlimited: €11.35' },
         { label: 'Bus', value: '€2.55/trip; same T-Casual card; useful for beach areas (Bus 59 from Diagonal to Barceloneta)' },
@@ -228,7 +228,7 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'uber-vs-taxi-dubai',
-    title: 'Uber vs Taxi in Dubai: Careem, RTA Cabs & Which to Use (2025)',
+    title: 'Uber vs Taxi in Dubai: Careem, RTA Cabs & Which to Use (2026)',
     description: 'In Dubai, official RTA taxis and Careem (owned by Uber) are both excellent. RTA taxis have no surge pricing; Careem offers upfront pricing. Here\'s the full comparison.',
     publishedAt: '2025-06-22',
     readingMinutes: 4,
@@ -237,7 +237,7 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
     country: 'UAE',
     content: [
       { type: 'intro', body: 'Dubai has one of the world\'s most reliable taxi systems — RTA (Roads and Transport Authority) metered white cabs are clean, air-conditioned, metered, and plentiful. Careem (Uber\'s Middle East subsidiary) offers app-based booking with upfront pricing. Both are excellent; the choice depends on your situation.' },
-      { type: 'h2', heading: 'Dubai RTA Taxi vs Careem (2025)' },
+      { type: 'h2', heading: 'Dubai RTA Taxi vs Careem (2026)' },
       { type: 'table', rows: [
         { label: 'RTA metered taxi', value: 'AED 12 minimum, AED 1.97/km; no surge pricing ever; airport surcharge AED 20; hailable on street' },
         { label: 'Careem (Uber ME)', value: 'Upfront price; no surge on standard routes; app tracking; card/wallet payment' },
@@ -262,7 +262,7 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'taxi-costs-doha',
-    title: 'How Much Does a Taxi Cost in Doha? (2025 Fare Guide)',
+    title: 'How Much Does a Taxi Cost in Doha? (2026 Fare Guide)',
     description: 'Doha taxis use meters: QAR 3 flag fall + QAR 1.60/km. Airport to city costs QAR 45–70 (~$12–19). Karwa is the official operator; Uber also available.',
     publishedAt: '2025-06-25',
     readingMinutes: 4,
@@ -271,7 +271,7 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
     country: 'Qatar',
     content: [
       { type: 'intro', body: 'Doha\'s official taxis (Karwa, operated by Mowasalat) are metered, air-conditioned, and reliable: QAR 3 flag fall + QAR 1.60/km. A typical city centre trip costs QAR 15–35 (~$4–9.50). The Doha Metro is the cheapest option for many journeys.' },
-      { type: 'h2', heading: 'Doha Taxi & Transport Fares (2025)' },
+      { type: 'h2', heading: 'Doha Taxi & Transport Fares (2026)' },
       { type: 'table', rows: [
         { label: 'Hamad International Airport (DOH) → West Bay/Souq Waqif', value: 'QAR 45–70 (~$12–19), 20–30 min' },
         { label: 'Souq Waqif → The Pearl', value: 'QAR 25–40 (~$7–11), 15 min' },
@@ -291,7 +291,7 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'best-time-to-visit-istanbul',
-    title: 'Best Time to Visit Istanbul: When to Visit the City on Two Continents (2025)',
+    title: 'Best Time to Visit Istanbul: When to Visit the City on Two Continents (2026)',
     description: 'The best time to visit Istanbul is April to June or September to October — comfortable at 18–25°C with clear skies for Bosphorus views and shorter queues at Hagia Sophia.',
     publishedAt: '2025-06-28',
     readingMinutes: 5,
@@ -323,7 +323,7 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'daily-budget-guide-lisbon',
-    title: 'Lisbon Daily Budget: How Much Does Lisbon Cost Per Day? (2025)',
+    title: 'Lisbon Daily Budget: How Much Does Lisbon Cost Per Day? (2026)',
     description: 'Lisbon costs €50–75/day on a tight budget, €130–200 mid-range, and €400+ for luxury. Here\'s the complete spending guide for Portugal\'s sun-drenched capital.',
     publishedAt: '2025-07-01',
     readingMinutes: 5,
@@ -332,7 +332,7 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
     country: 'Portugal',
     content: [
       { type: 'intro', body: 'Lisbon is one of Western Europe\'s most affordable capitals — a pastel de nata costs €1.10, a glass of house wine at a traditional tasca is €1.50, and a prego (steak sandwich) at a local café runs €4–7. Mid-range travellers can eat and drink as well as almost anywhere in Europe for a fraction of the cost.' },
-      { type: 'h2', heading: 'Lisbon Daily Budget Breakdown (2025)' },
+      { type: 'h2', heading: 'Lisbon Daily Budget Breakdown (2026)' },
       { type: 'table', rows: [
         { label: 'Budget (€50–75/day)', value: 'Hostel €20–35, prego lunch €5–8, 24h Carris transport pass €6.80, free miradouros' },
         { label: 'Mid-range (€130–200/day)', value: 'Guesthouse €65–110, restaurant meals €14–30, Museu do Azulejo + Jerónimos Monastery €12 each' },
@@ -355,7 +355,7 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'getting-around-berlin',
-    title: 'Getting Around Berlin: U-Bahn, S-Bahn, Tram & Bike Guide (2025)',
+    title: 'Getting Around Berlin: U-Bahn, S-Bahn, Tram & Bike Guide (2026)',
     description: 'Berlin\'s BVG public transport network covers the entire city for €3.80/trip or €41/week. The U-Bahn and S-Bahn integrate seamlessly with one ticket.',
     publishedAt: '2025-07-04',
     readingMinutes: 5,
@@ -364,7 +364,7 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
     country: 'Germany',
     content: [
       { type: 'intro', body: 'Berlin\'s public transport network (BVG) — U-Bahn, S-Bahn, trams, and buses — covers 892km² of city for €3.80 per trip on a standard single ticket. The Deutschlandticket (€49/month) covers all local and regional transport across Germany and is valid in Berlin.' },
-      { type: 'h2', heading: 'Berlin Transport Options (2025)' },
+      { type: 'h2', heading: 'Berlin Transport Options (2026)' },
       { type: 'table', rows: [
         { label: 'Single ticket (Zones AB)', value: '€3.80; valid 2h on all U-Bahn, S-Bahn, tram, bus within zones A+B' },
         { label: '24-hour ticket', value: '€10.00 zones AB; €10.80 ABC (includes Potsdam)' },
@@ -390,7 +390,7 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'is-jakarta-safe',
-    title: 'Is Jakarta Safe for Tourists? Honest Safety Guide (2025)',
+    title: 'Is Jakarta Safe for Tourists? Honest Safety Guide (2026)',
     description: 'Jakarta is generally safe for tourists who use ride-hailing apps, avoid specific flood-prone areas, and exercise normal big-city awareness. Here\'s the full picture.',
     publishedAt: '2025-07-07',
     readingMinutes: 4,
@@ -399,7 +399,7 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
     country: 'Indonesia',
     content: [
       { type: 'intro', body: 'Jakarta is a megacity of 11 million people with the safety challenges that entails — but violent crime targeting foreign tourists is rare. The main concerns are traffic accidents (genuinely dangerous), petty theft in crowded areas, and flooding during the wet season. Grab and Gojek app transport eliminate most risks for visitors.' },
-      { type: 'h2', heading: 'Jakarta Safety Overview (2025)' },
+      { type: 'h2', heading: 'Jakarta Safety Overview (2026)' },
       { type: 'table', rows: [
         { label: 'Violent crime', value: 'Low risk in tourist areas — Jakarta is safer than its regional reputation suggests' },
         { label: 'Traffic', value: 'Significant risk — Jakarta has some of the world\'s worst traffic and road safety; always use seatbelts' },
@@ -419,7 +419,7 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'taxi-costs-abu-dhabi',
-    title: 'How Much Does a Taxi Cost in Abu Dhabi? (2025 Fare Guide)',
+    title: 'How Much Does a Taxi Cost in Abu Dhabi? (2026 Fare Guide)',
     description: 'Abu Dhabi taxis: AED 5 flag fall + AED 1.82/km. Airport to city costs AED 60–90 (~$16–25). TransAD is the official metered operator — safe and reliable.',
     publishedAt: '2025-07-10',
     readingMinutes: 4,
@@ -428,7 +428,7 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
     country: 'UAE',
     content: [
       { type: 'intro', body: 'Abu Dhabi taxis are operated by TransAD — clean, metered, and reliable. Flag fall AED 5, then AED 1.82/km. Abu Dhabi International Airport to downtown costs AED 60–90 (~$16–25). Careem and Uber also operate and offer comparable prices with upfront booking.' },
-      { type: 'h2', heading: 'Abu Dhabi Taxi Fares (2025)' },
+      { type: 'h2', heading: 'Abu Dhabi Taxi Fares (2026)' },
       { type: 'table', rows: [
         { label: 'AUH Airport → Downtown / Corniche', value: 'AED 60–90 (~$16–25), 30–40 min' },
         { label: 'Corniche → Sheikh Zayed Grand Mosque', value: 'AED 25–40 (~$7–11), 15 min' },
@@ -448,7 +448,7 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'best-time-to-visit-prague',
-    title: 'Best Time to Visit Prague: Fairy-Tale City in Every Season (2025)',
+    title: 'Best Time to Visit Prague: Fairy-Tale City in Every Season (2026)',
     description: 'The best time to visit Prague is May to June or September — comfortable at 18–24°C, manageable crowds, and the city at its most beautiful before or after summer peak.',
     publishedAt: '2025-07-13',
     readingMinutes: 4,
@@ -482,8 +482,8 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'daily-budget-guide-budapest',
-    title: 'Budapest Daily Budget: How Much Does Budapest Cost Per Day? (2025)',
-    description: 'Budapest costs €35–55/day on a budget, €95–150 mid-range, and €350+ for luxury. It\'s one of Europe\'s great underpriced capital cities in 2025.',
+    title: 'Budapest Daily Budget: How Much Does Budapest Cost Per Day? (2026)',
+    description: 'Budapest costs €35–55/day on a budget, €95–150 mid-range, and €350+ for luxury. It\'s one of Europe\'s great underpriced capital cities in 2026.',
     publishedAt: '2025-07-16',
     readingMinutes: 5,
     category: 'travel',
@@ -491,7 +491,7 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
     country: 'Hungary',
     content: [
       { type: 'intro', body: 'Budapest is extraordinary value for a European capital — a thermal bath costs €18–25, a full goulash and a craft beer dinner runs €12–18, and a week-long public transport pass is under €17. Budget travellers can live remarkably well for €50/day; mid-range visitors enjoy one of Europe\'s great dining and nightlife scenes for €100–150.' },
-      { type: 'h2', heading: 'Budapest Daily Budget Breakdown (2025)' },
+      { type: 'h2', heading: 'Budapest Daily Budget Breakdown (2026)' },
       { type: 'table', rows: [
         { label: 'Budget (€35–55/day)', value: 'Hostel HUF 4,500–8,000 (~€11–20), lángos €2–4, 24h BKK pass HUF 1,650 (~€4.15)' },
         { label: 'Mid-range (€95–150/day)', value: '3-star Pest hotel €55–90, restaurant meals €10–20, Széchenyi baths €20 + one attraction' },
@@ -514,8 +514,8 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'tipping-airport-porters',
-    title: 'Airport Porter Tipping Guide: How Much to Tip Worldwide (2025)',
-    description: 'Airport porter tipping ranges from $1–2 per bag in the USA to nothing expected in Japan. Here\'s exactly what to tip at airports worldwide in 2025.',
+    title: 'Airport Porter Tipping Guide: How Much to Tip Worldwide (2026)',
+    description: 'Airport porter tipping ranges from $1–2 per bag in the USA to nothing expected in Japan. Here\'s exactly what to tip at airports worldwide in 2026.',
     publishedAt: '2025-07-19',
     readingMinutes: 4,
     category: 'tipping',
@@ -548,7 +548,7 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'best-time-to-visit-lisbon',
-    title: 'Best Time to Visit Lisbon: Sun, Sardines & the Right Season (2025)',
+    title: 'Best Time to Visit Lisbon: Sun, Sardines & the Right Season (2026)',
     description: 'The best time to visit Lisbon is April to June or September to October — warm at 20–27°C, vibrant street life, and before July\'s heat and tourist saturation.',
     publishedAt: '2025-07-22',
     readingMinutes: 4,
@@ -581,8 +581,8 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'getting-around-seoul',
-    title: 'Getting Around Seoul: Metro, Bus, KakaoTaxi & T-Money Guide (2025)',
-    description: 'Seoul\'s Metro (9 lines, 327 stations) is one of Asia\'s best — cheap at KRW 1,400/trip, air-conditioned, and bilingual. Here\'s the complete 2025 guide.',
+    title: 'Getting Around Seoul: Metro, Bus, KakaoTaxi & T-Money Guide (2026)',
+    description: 'Seoul\'s Metro (9 lines, 327 stations) is one of Asia\'s best — cheap at KRW 1,400/trip, air-conditioned, and bilingual. Here\'s the complete 2026 guide.',
     publishedAt: '2025-07-25',
     readingMinutes: 5,
     category: 'travel',
@@ -590,7 +590,7 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
     country: 'South Korea',
     content: [
       { type: 'intro', body: 'Seoul\'s metropolitan subway system is one of the world\'s finest — 9 lines, 327 stations, all announcements in Korean and English, and fares starting at KRW 1,400 (~$1.05). A T-money card handles Metro, city buses, and some taxis on a single rechargeable card.' },
-      { type: 'h2', heading: 'Seoul Transport Options (2025)' },
+      { type: 'h2', heading: 'Seoul Transport Options (2026)' },
       { type: 'table', rows: [
         { label: 'Metro (single trip)', value: 'KRW 1,400–1,950 with T-money; AREX Airport Express to city: KRW 9,500 (43 min)' },
         { label: 'Bus (city)', value: 'KRW 1,400 with T-money; free transfer within 30 min when combined with Metro' },
@@ -610,8 +610,8 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'daily-budget-guide-kuala-lumpur',
-    title: 'Kuala Lumpur Daily Budget: How Much Does KL Cost Per Day? (2025)',
-    description: 'Kuala Lumpur costs MYR 80–130 ($17–28) per day on a budget, MYR 200–350 mid-range, and MYR 600+ for luxury. Here\'s the full 2025 spending guide.',
+    title: 'Kuala Lumpur Daily Budget: How Much Does KL Cost Per Day? (2026)',
+    description: 'Kuala Lumpur costs MYR 80–130 ($17–28) per day on a budget, MYR 200–350 mid-range, and MYR 600+ for luxury. Here\'s the full 2026 spending guide.',
     publishedAt: '2025-07-28',
     readingMinutes: 5,
     category: 'travel',
@@ -619,7 +619,7 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
     country: 'Malaysia',
     content: [
       { type: 'intro', body: 'Kuala Lumpur is one of Asia\'s best-value major cities — exceptional Malaysian food for MYR 5–15 ($1–3.20), world-class attractions like the Petronas Towers for MYR 89 ($19), and budget accommodation from MYR 35/night in Bukit Bintang. The city is clean, safe, and English-speaking throughout.' },
-      { type: 'h2', heading: 'Kuala Lumpur Daily Budget Breakdown (2025)' },
+      { type: 'h2', heading: 'Kuala Lumpur Daily Budget Breakdown (2026)' },
       { type: 'table', rows: [
         { label: 'Budget (MYR 80–130 / $17–28/day)', value: 'Guesthouse MYR 35–60, hawker stall meals MYR 5–10, MRT MYR 1.20–3.50/trip' },
         { label: 'Mid-range (MYR 200–350 / $43–75/day)', value: '3-star hotel MYR 100–180, restaurant meals MYR 20–45, Petronas Towers + KLCC park' },
@@ -642,8 +642,8 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'uber-vs-taxi-amsterdam',
-    title: 'Uber vs Taxi in Amsterdam: Bolt, TCA Cab & Which to Use (2025)',
-    description: 'In Amsterdam, Bolt is generally cheaper and more convenient than metered taxis. Uber also operates. Here\'s the full comparison including typical fares.',
+    title: 'Uber vs Taxi in Amsterdam: Bolt, TCA Cab & Which to Use (2026)',
+    description: 'Bolt is 20–30% cheaper than Amsterdam metered taxis and available on your phone in seconds. Uber runs as UberTaxi (same price as cabs). Here\'s which to use and when — with actual 2026 fare examples.',
     publishedAt: '2025-07-31',
     readingMinutes: 4,
     category: 'taxi',
@@ -651,7 +651,7 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
     country: 'Netherlands',
     content: [
       { type: 'intro', body: 'Amsterdam taxi pricing is deregulated — metered taxis set their own rates within regulated caps. Bolt and Uber both operate and are typically 15–25% cheaper than metered cabs for the same journey. For most city trips, a bike or the GVB tram is still the better option.' },
-      { type: 'h2', heading: 'Amsterdam Taxi Options Compared (2025)' },
+      { type: 'h2', heading: 'Amsterdam Taxi Options Compared (2026)' },
       { type: 'table', rows: [
         { label: 'TCA / Taxi Centrale (metered)', value: '€3.19 flag fall + €2.17/km; reputable; bookable via app or phone' },
         { label: 'Bolt', value: 'Upfront price; typically €2–5 cheaper than TCA on same route; widely used' },
@@ -671,7 +671,7 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'is-marrakech-safe',
-    title: 'Is Marrakech Safe for Tourists? Honest Safety Guide (2025)',
+    title: 'Is Marrakech Safe for Tourists? Honest Safety Guide (2026)',
     description: 'Marrakech is safe for tourists with awareness — the Medina souks can feel overwhelming, but violent crime is rare. Here\'s what actually requires caution.',
     publishedAt: '2025-08-03',
     readingMinutes: 5,
@@ -680,7 +680,7 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
     country: 'Morocco',
     content: [
       { type: 'intro', body: 'Marrakech is generally safe for tourists — violent crime targeting visitors is rare and Morocco has a strong police presence in tourist areas. The real challenges are aggressive touts, fake guides, commission-driven scams, and disorientation in the Medina\'s labyrinthine lanes. Being scam-aware rather than crime-wary is the right mindset.' },
-      { type: 'h2', heading: 'Marrakech Safety Overview (2025)' },
+      { type: 'h2', heading: 'Marrakech Safety Overview (2026)' },
       { type: 'table', rows: [
         { label: 'Violent crime', value: 'Low — Marrakech has a good record; tourist police (Brigade Touristique) patrol the Medina' },
         { label: 'Fake guide scams', value: 'Common — men offer to "show you the tanneries" and lead you into a carpet shop for commission; decline firmly' },
@@ -706,7 +706,7 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'taxi-costs-hanoi',
-    title: 'How Much Does a Taxi Cost in Hanoi? (2025 Fare Guide)',
+    title: 'How Much Does a Taxi Cost in Hanoi? (2026 Fare Guide)',
     description: 'Hanoi taxis start at VND 12,000–15,000 and cost VND 11,000–16,000/km. Noi Bai Airport to the Old Quarter costs VND 350,000–450,000 (~$14–18). Grab is the safest option.',
     publishedAt: '2025-08-06',
     readingMinutes: 4,
@@ -715,7 +715,7 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
     country: 'Vietnam',
     content: [
       { type: 'intro', body: 'Hanoi taxis: flag fall VND 12,000–15,000 (~$0.50–0.60), then VND 11,000–16,000/km (~$0.45–0.65/km). A typical Old Quarter trip costs VND 40,000–100,000 ($1.60–4). Grab is strongly recommended over street-hailed cabs — it offers fixed pricing, route tracking, and eliminates meter manipulation.' },
-      { type: 'h2', heading: 'Hanoi Taxi Fares (2025)' },
+      { type: 'h2', heading: 'Hanoi Taxi Fares (2026)' },
       { type: 'table', rows: [
         { label: 'Noi Bai Airport → Old Quarter', value: 'VND 350,000–450,000 (~$14–18) via Grab; metered cab VND 400,000–500,000' },
         { label: 'Hoan Kiem Lake → Temple of Literature', value: 'VND 35,000–60,000 (~$1.40–2.40) via Grab' },
@@ -782,14 +782,14 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'tipping-on-cruises',
-    title: 'Cruise Ship Tipping Guide: Auto-Gratuities, Who Gets What & How Much (2025)',
+    title: 'Cruise Ship Tipping Guide: Auto-Gratuities, Who Gets What & How Much (2026)',
     description: 'Most cruise lines add $16–20 per person per day in automatic gratuities. Here\'s exactly where it goes, when to tip extra, and which lines include tips already.',
     publishedAt: '2025-08-12',
     readingMinutes: 5,
     category: 'tipping',
     content: [
       { type: 'intro', body: 'Cruise ship tipping is structured differently from land-based travel — most major lines add automatic daily gratuities ($16–20/day per person) that are shared among cabin stewards, dining staff, and behind-the-scenes crew. Understanding what\'s included, who benefits, and when extra tipping is appropriate saves confusion and ensures the right people are recognised.' },
-      { type: 'h2', heading: 'Cruise Line Auto-Gratuity Rates (2025)' },
+      { type: 'h2', heading: 'Cruise Line Auto-Gratuity Rates (2026)' },
       { type: 'table', rows: [
         { label: 'Royal Caribbean', value: '$18.50/day per person (standard); $21/day (suites)' },
         { label: 'Carnival Cruise Line', value: '$16/day (standard); $18/day (premium cabins)' },

@@ -3,7 +3,7 @@ import type { BlogPost } from './blog-posts'
 export const BATCH3D_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'best-time-to-visit-mexico-city',
-    title: 'Best Time to Visit Mexico City: CDMX Season Guide (2025)',
+    title: 'Best Time to Visit Mexico City: CDMX Season Guide (2026)',
     description: 'The best time to visit Mexico City is March to May — dry, warm at 18–26°C, and jacaranda trees in bloom. Here\'s what each season brings.',
     publishedAt: '2025-07-17',
     readingMinutes: 4,
@@ -28,14 +28,14 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
       ]},
       { type: 'tip', body: 'Altitude sickness (soroche) affects roughly 1 in 4 visitors arriving at 2,240m. Rest for your first 24 hours, avoid alcohol, drink extra water, and keep paracetamol handy. Most people acclimatise by day two. If symptoms persist, pharmacies stock acetazolamide (Diamox) over the counter.' },
       { type: 'faq', faqs: [
-        { q: 'Is Mexico City safe for tourists in 2025?', a: 'Tourist neighbourhoods — Roma Norte, Condesa, Polanco, Coyoacán, Xochimilco, and the historic centre — are generally safe during daylight and early evenings with normal precautions. Avoid isolated streets at night, use Uber or DiDi rather than street taxis, and keep valuables discreet. CDMX has improved significantly in tourist areas over the past five years.' },
+        { q: 'Is Mexico City safe for tourists in 2026?', a: 'Tourist neighbourhoods — Roma Norte, Condesa, Polanco, Coyoacán, Xochimilco, and the historic centre — are generally safe during daylight and early evenings with normal precautions. Avoid isolated streets at night, use Uber or DiDi rather than street taxis, and keep valuables discreet. CDMX has improved significantly in tourist areas over the past five years.' },
         { q: 'How many days do you need in Mexico City?', a: 'Four to five days covers the essentials: Zócalo and historic centre, Teotihuacán pyramids day trip, Coyoacán and Frida Kahlo Museum, Chapultepec Park and castle, Mercado de Jamaica, and a Lucha Libre evening. A week allows Xochimilco floating gardens and deeper neighbourhood exploration.' },
       ]},
     ],
   },
   {
     slug: 'best-time-to-visit-greece',
-    title: 'Best Time to Visit Greece: Islands, Athens & the Perfect Season (2025)',
+    title: 'Best Time to Visit Greece: Islands, Athens & the Perfect Season (2026)',
     description: 'The best time to visit Greece is May–June or September–October — warm sea, fewer crowds than July–August, and 25–30°C temperatures. Here\'s the full guide.',
     publishedAt: '2025-07-20',
     readingMinutes: 5,
@@ -69,7 +69,7 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'best-time-to-visit-amsterdam',
-    title: 'Best Time to Visit Amsterdam: Tulips, Canals & Finding Good Weather (2025)',
+    title: 'Best Time to Visit Amsterdam: Tulips, Canals & Finding Good Weather (2026)',
     description: 'The best time to visit Amsterdam is April–May for tulip season or June–August for warmest weather. Here\'s what each season brings to the Dutch capital.',
     publishedAt: '2025-07-23',
     readingMinutes: 4,
@@ -101,8 +101,8 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'daily-budget-guide-ho-chi-minh-city',
-    title: 'Ho Chi Minh City Daily Budget: How Much Does HCMC Cost Per Day? (2025)',
-    description: 'Ho Chi Minh City costs $18–30/day on a budget, $50–80 mid-range, and $200+ for luxury. It\'s one of Southeast Asia\'s best-value destinations in 2025.',
+    title: 'Ho Chi Minh City Daily Budget: How Much Does HCMC Cost Per Day? (2026)',
+    description: 'Ho Chi Minh City costs $18–30/day on a budget, $50–80 mid-range, and $200+ for luxury. It\'s one of Southeast Asia\'s best-value destinations in 2026.',
     publishedAt: '2025-07-26',
     readingMinutes: 4,
     category: 'travel',
@@ -110,7 +110,7 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
     country: 'Vietnam',
     content: [
       { type: 'intro', body: 'Ho Chi Minh City (Saigon) is exceptional value — a budget traveller can eat, drink, and get around on $25/day. A pho bo from a street cart costs VND 40,000 (~$1.60); a Grab bike across the city costs VND 20,000 (~$0.80); a beer at a backpacker bar on Bui Vien costs VND 15,000 (~$0.60).' },
-      { type: 'h2', heading: 'HCMC Daily Budget Breakdown (2025)' },
+      { type: 'h2', heading: 'HCMC Daily Budget Breakdown (2026)' },
       { type: 'table', rows: [
         { label: 'Budget ($18–30/day)', value: 'Guesthouse $8–15, street food $1–3/meal, Grab bike $0.50–2, local bia hoi beer $0.50–1' },
         { label: 'Mid-range ($50–80/day)', value: '3-star hotel $25–45, sit-down restaurant $5–15, Grab Car $2–5, rooftop bar' },
@@ -133,8 +133,8 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'daily-budget-guide-cairo',
-    title: 'Cairo Daily Budget: How Much Does Cairo Cost Per Day? (2025)',
-    description: 'Cairo costs $25–40/day on a budget, $70–110 mid-range. With Egypt\'s recent currency changes, it\'s one of the best-value destinations for USD/EUR holders in 2025.',
+    title: 'Cairo Daily Budget: How Much Does Cairo Cost Per Day? (2026)',
+    description: 'Cairo costs $25–40/day on a budget, $70–110 mid-range. With Egypt\'s recent currency changes, it\'s one of the best-value destinations for USD/EUR holders in 2026.',
     publishedAt: '2025-07-29',
     readingMinutes: 4,
     category: 'travel',
@@ -142,13 +142,13 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
     country: 'Egypt',
     content: [
       { type: 'intro', body: 'Cairo is outstanding value for USD and EUR holders following the Egyptian pound\'s significant devaluation. Entrance to the Giza pyramids costs EGP 450 (~$9); a full meal at a local restaurant runs EGP 80–200 (~$1.60–4); and an air-conditioned Metro ride costs EGP 7–10 ($0.14–0.20). Mid-range comfort is achievable for $70/day.' },
-      { type: 'h2', heading: 'Cairo Daily Budget Breakdown (2025)' },
+      { type: 'h2', heading: 'Cairo Daily Budget Breakdown (2026)' },
       { type: 'table', rows: [
         { label: 'Budget ($25–40/day)', value: 'Guesthouse $10–18, fuul/ta\'ameya street food $1–3, Metro EGP 7–10' },
         { label: 'Mid-range ($70–110/day)', value: '3-star hotel $35–65, restaurant meals EGP 400–1,000 ($8–20), Uber/Careem for transport' },
         { label: 'Luxury ($250+/day)', value: 'Nile view 5-star $120–250+, fine dining $30–60pp, private guide pyramid tours' },
       ]},
-      { type: 'h2', heading: 'Essential Cairo Costs (2025)' },
+      { type: 'h2', heading: 'Essential Cairo Costs (2026)' },
       { type: 'ul', items: [
         '**Giza Plateau (pyramids)**: EGP 450 (~$9) general entry; Great Pyramid interior: EGP 700 extra (~$14); book online at egy.gov.eg',
         '**Egyptian Museum (Tahrir)**: EGP 400 (~$8) — Tutankhamun mask, Royal Mummies Room EGP 300 extra (~$6)',
@@ -158,14 +158,14 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
       ]},
       { type: 'tip', body: 'Cairo\'s Cairo Metro is one of Africa\'s best — just EGP 7–10 (~$0.14–0.20) per trip with air conditioning. Lines 1, 2, and 3 cover Tahrir Square, Old Cairo (Coptic churches), and connect to major transit hubs. Far faster than a taxi in Cairo\'s legendary traffic, and genuinely safe.' },
       { type: 'faq', faqs: [
-        { q: 'Is Cairo safe for tourists in 2025?', a: 'The tourist areas of Cairo (Giza, Islamic Cairo, Coptic Cairo, Downtown, Khan el-Khalili) are generally safe with normal awareness. Tourist police are visible at all major sites. The main risks are persistent but non-violent hustle (guides, camel rides, souvenir sellers) and petty theft in very crowded areas. Use Uber or Careem rather than street taxis.' },
+        { q: 'Is Cairo safe for tourists in 2026?', a: 'The tourist areas of Cairo (Giza, Islamic Cairo, Coptic Cairo, Downtown, Khan el-Khalili) are generally safe with normal awareness. Tourist police are visible at all major sites. The main risks are persistent but non-violent hustle (guides, camel rides, souvenir sellers) and petty theft in very crowded areas. Use Uber or Careem rather than street taxis.' },
         { q: 'What currency should I use in Cairo?', a: 'Egyptian pounds (EGP) for all local transactions. USD is widely understood at tourist sites. ATMs dispense EGP at fair rates. Credit cards accepted at hotels and upmarket restaurants. Carry EGP cash for bazaars, street food, and small tips.' },
       ]},
     ],
   },
   {
     slug: 'daily-budget-guide-buenos-aires',
-    title: 'Buenos Aires Daily Budget: How Much Does BA Cost Per Day? (2025)',
+    title: 'Buenos Aires Daily Budget: How Much Does BA Cost Per Day? (2026)',
     description: 'Buenos Aires costs $30–50/day on a budget using the blue-dollar rate, $80–120 mid-range. World-class steak and Malbec for a fraction of European prices.',
     publishedAt: '2025-08-01',
     readingMinutes: 4,
@@ -174,7 +174,7 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
     country: 'Argentina',
     content: [
       { type: 'intro', body: 'Buenos Aires is one of the world\'s great bargain capitals for foreign visitors — thanks to Argentina\'s persistent currency pressures, USD cash gets you far more than card transactions. A world-class parrilla (steakhouse) meal with Malbec runs $15–25; a hostel in Palermo costs $12–20/night; and the Subte (Metro) costs ARS 1,000 per trip ($0.80–1.00).' },
-      { type: 'h2', heading: 'Buenos Aires Daily Budget (2025)' },
+      { type: 'h2', heading: 'Buenos Aires Daily Budget (2026)' },
       { type: 'table', rows: [
         { label: 'Budget ($30–50/day)', value: 'Hostel ARS 12,000–20,000, medialunas + cafe ARS 1,500–3,000, Subte ARS 1,000/trip' },
         { label: 'Mid-range ($80–120/day)', value: 'B&B in Palermo $30–60, neighbourhood parrilla dinner $15–30pp including wine' },
@@ -190,14 +190,14 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
       ]},
       { type: 'tip', body: 'Always carry USD cash in Buenos Aires and exchange it at a cueva (informal exchange house) in the financial district (Florida Street/Lavalle) or your accommodation. The blue-dollar rate consistently outperforms ATM rates and official exchange by a significant margin. USD $100 bills get the best rates; smaller denominations receive slightly less.' },
       { type: 'faq', faqs: [
-        { q: 'Is Buenos Aires still cheap in 2025?', a: 'Yes — for USD, EUR, and GBP holders, Buenos Aires remains one of South America\'s best value destinations despite local inflation. Restaurant meals, taxis, accommodation, and cultural experiences are all dramatically cheaper than European equivalents. The caveat: peso inflation means any price in ARS quoted online may be outdated by the time you arrive.' },
+        { q: 'Is Buenos Aires still cheap in 2026?', a: 'Yes — for USD, EUR, and GBP holders, Buenos Aires remains one of South America\'s best value destinations despite local inflation. Restaurant meals, taxis, accommodation, and cultural experiences are all dramatically cheaper than European equivalents. The caveat: peso inflation means any price in ARS quoted online may be outdated by the time you arrive.' },
         { q: 'What is the best neighbourhood to stay in Buenos Aires?', a: 'Palermo (especially Palermo Soho and Palermo Hollywood) is the traveller favourite — parks, designer boutiques, excellent restaurants and bars, bike-friendly. San Telmo is more characterful (tango, antiques, cobblestones) but rougher at night. Puerto Madero is expensive and sterile. Recoleta is elegant and quiet.' },
       ]},
     ],
   },
   {
     slug: 'daily-budget-guide-mexico-city',
-    title: 'Mexico City Daily Budget: How Much Does CDMX Cost Per Day? (2025)',
+    title: 'Mexico City Daily Budget: How Much Does CDMX Cost Per Day? (2026)',
     description: 'Mexico City costs $35–55/day on a budget, $90–140 mid-range, and $300+ for luxury. The Metro costs MXN 7 ($0.35) — one of the world\'s best transport deals.',
     publishedAt: '2025-08-04',
     readingMinutes: 4,
@@ -206,7 +206,7 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
     country: 'Mexico',
     content: [
       { type: 'intro', body: 'Mexico City is an extraordinary value proposition for a world capital — world-class museums (many free), outstanding street food from $1, and the world\'s cheapest urban metro at MXN 7 ($0.35) per trip. A budget traveller can live very well on $50/day.' },
-      { type: 'h2', heading: 'Mexico City Daily Budget (2025)' },
+      { type: 'h2', heading: 'Mexico City Daily Budget (2026)' },
       { type: 'table', rows: [
         { label: 'Budget ($35–55/day)', value: 'Hostel $12–22, tacos al pastor MXN 15–25 each, Metro MXN 7/trip' },
         { label: 'Mid-range ($90–140/day)', value: 'Boutique hotel in Roma Norte $40–75, restaurant meals $10–25pp, Uber for longer trips' },
@@ -229,8 +229,8 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'daily-budget-guide-cape-town',
-    title: 'Cape Town Daily Budget: How Much Does Cape Town Cost Per Day? (2025)',
-    description: 'Cape Town costs ZAR 600–900 ($33–50) per day on a budget, ZAR 1,500–2,500 mid-range. Here\'s the full breakdown for 2025.',
+    title: 'Cape Town Daily Budget: How Much Does Cape Town Cost Per Day? (2026)',
+    description: 'Cape Town costs ZAR 600–900 ($33–50) per day on a budget, ZAR 1,500–2,500 mid-range. Here\'s the full breakdown for 2026.',
     publishedAt: '2025-08-07',
     readingMinutes: 4,
     category: 'travel',
@@ -238,13 +238,13 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
     country: 'South Africa',
     content: [
       { type: 'intro', body: 'Cape Town is affordable by European and North American standards — the South African rand gives USD and EUR holders strong purchasing power. Meals at local restaurants run ZAR 80–200 ($4.50–11), Uber rides across the city cost ZAR 60–150 ($3.50–8), and Table Mountain cable car entry is ZAR 430 ($24) return.' },
-      { type: 'h2', heading: 'Cape Town Daily Budget (2025)' },
+      { type: 'h2', heading: 'Cape Town Daily Budget (2026)' },
       { type: 'table', rows: [
         { label: 'Budget (ZAR 600–900 / $33–50/day)', value: 'Hostel ZAR 200–350, Woolworths Food meal ZAR 50–120, Uber for transport' },
         { label: 'Mid-range (ZAR 1,500–2,500 / $83–139/day)', value: '3-star guesthouse ZAR 700–1,200, restaurant meals ZAR 200–450, paid attractions' },
         { label: 'Luxury (ZAR 5,000+ / $280+/day)', value: 'Camps Bay boutique ZAR 2,500–5,000+, La Colombe or The Test Kitchen $60–120pp' },
       ]},
-      { type: 'h2', heading: 'What Things Cost in Cape Town (2025)' },
+      { type: 'h2', heading: 'What Things Cost in Cape Town (2026)' },
       { type: 'ul', items: [
         '**Table Mountain cable car**: ZAR 430 ($24) return adult — book online, check weather first',
         '**Cape of Good Hope + Boulders Penguin**: ZAR 400 ($22) combined SANParks entry — day trip, best with a car or tour',
@@ -261,7 +261,7 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'uber-vs-taxi-kuala-lumpur',
-    title: 'Grab vs Taxi in Kuala Lumpur: Which Is Better in 2025?',
+    title: 'Grab vs Taxi in Kuala Lumpur: Which Is Better in 2026?',
     description: 'Grab dominates Kuala Lumpur — metered taxis frequently refuse fares or overcharge tourists. Here\'s why Grab is almost always the better choice in KL.',
     publishedAt: '2025-08-10',
     readingMinutes: 4,
@@ -270,7 +270,7 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
     country: 'Malaysia',
     content: [
       { type: 'intro', body: 'In Kuala Lumpur, Grab is overwhelmingly the better option for tourists. Metered taxis in KL have a long history of meter refusal, demanding flat tourist rates, and taking unnecessarily long routes. Grab eliminates all of this — fixed price upfront, route tracked, cashless payment.' },
-      { type: 'h2', heading: 'Grab vs Metered Taxi in KL (2025)' },
+      { type: 'h2', heading: 'Grab vs Metered Taxi in KL (2026)' },
       { type: 'table', rows: [
         { label: 'KLIA Airport → KLCC', value: 'Grab: MYR 80–110 ($17–23) | Taxi: MYR 90–130 negotiated ($19–28) | KLIA Ekspres: MYR 55 ($12)' },
         { label: '5km city trip (eg. KLCC → Bukit Bintang)', value: 'Grab: MYR 8–15 ($1.70–3.20) | Metered taxi: MYR 12–20 (if meter used) | Walk: 15 min' },
@@ -293,7 +293,7 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'uber-vs-taxi-beijing',
-    title: 'DiDi vs Taxi in Beijing: Which Is Better for Tourists? (2025)',
+    title: 'DiDi vs Taxi in Beijing: Which Is Better for Tourists? (2026)',
     description: 'Uber left China in 2016. DiDi is now Beijing\'s dominant ride-hailing app. Here\'s how DiDi compares to metered taxis — and how to set both up before you arrive.',
     publishedAt: '2025-08-13',
     readingMinutes: 4,
@@ -302,7 +302,7 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
     country: 'China',
     content: [
       { type: 'intro', body: 'Uber exited China in 2016, selling to DiDi Chuxing. Today, Beijing tourists choose between DiDi (China\'s dominant ride-hailing app, requires WeChat Pay or Alipay), metered taxis (honest meters, but language barrier is significant), and the excellent Beijing Metro (CNY 4–10 for most trips).' },
-      { type: 'h2', heading: 'DiDi vs Metered Taxi in Beijing (2025)' },
+      { type: 'h2', heading: 'DiDi vs Metered Taxi in Beijing (2026)' },
       { type: 'table', rows: [
         { label: 'Standard city trip (5km)', value: 'DiDi: CNY 20–35 ($2.75–5) | Taxi: CNY 20–35 (similar, meter honest)' },
         { label: 'PEK Airport → Sanlitun', value: 'DiDi: CNY 130–180 ($18–25) | Taxi: CNY 140–200 ($19–28) | Metro: CNY 30 ($4.10)' },
@@ -328,7 +328,7 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'getting-around-sydney',
-    title: 'Getting Around Sydney: Trains, Ferries, Buses & Taxis (2025)',
+    title: 'Getting Around Sydney: Trains, Ferries, Buses & Taxis (2026)',
     description: 'Sydney\'s Opal card covers trains, buses, ferries, and light rail for $3.61–$9.20 per trip. Here\'s everything you need to get around Australia\'s most beautiful city.',
     publishedAt: '2025-08-16',
     readingMinutes: 5,
@@ -337,7 +337,7 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
     country: 'Australia',
     content: [
       { type: 'intro', body: 'Sydney\'s Opal card (load at any 7-Eleven or train station) covers all public transport: trains, buses, light rail, and ferries — including the Manly Ferry, one of the world\'s great harbour commutes. Tap on and tap off; daily cap of AUD $18.60 means all-day travel at a fixed maximum.' },
-      { type: 'h2', heading: 'Sydney Transport Options (2025)' },
+      { type: 'h2', heading: 'Sydney Transport Options (2026)' },
       { type: 'table', rows: [
         { label: 'Train (City network)', value: 'AUD $3.61–6.89 with Opal; Airport Line: AUD $21.80 with airport station fee' },
         { label: 'Ferry (Manly)', value: 'AUD $9.20 one-way; 30 min from Circular Quay; one of the world\'s great harbour journeys' },
@@ -363,7 +363,7 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'getting-around-mumbai',
-    title: 'Getting Around Mumbai: Local Train, Metro, Auto & Taxi Guide (2025)',
+    title: 'Getting Around Mumbai: Local Train, Metro, Auto & Taxi Guide (2026)',
     description: 'Mumbai\'s suburban rail carries 7 million passengers daily. Here\'s how to navigate the local train, Metro, auto-rickshaws, and app-based taxis in India\'s largest city.',
     publishedAt: '2025-08-19',
     readingMinutes: 5,
@@ -372,7 +372,7 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
     country: 'India',
     content: [
       { type: 'intro', body: 'Mumbai\'s suburban railway (the "local") is the fastest way to travel the city\'s north-south spine — but during rush hour it\'s so overcrowded that travellers with luggage or unfamiliar with the system should use Ola or Uber instead. The Metro network is expanding rapidly and provides a more comfortable alternative.' },
-      { type: 'h2', heading: 'Mumbai Transport Options (2025)' },
+      { type: 'h2', heading: 'Mumbai Transport Options (2026)' },
       { type: 'table', rows: [
         { label: 'Suburban train (local)', value: 'INR 10–30/trip; 3 lines (Western, Central, Harbour); incredibly fast north-south' },
         { label: 'Mumbai Metro (expanding)', value: 'INR 10–40/trip; Aqua Line (Line 3) now connects BKC to SEEPZ; more lines opening 2025' },
@@ -398,8 +398,8 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'getting-around-hong-kong',
-    title: 'Getting Around Hong Kong: MTR, Tram, Ferry & Taxi Guide (2025)',
-    description: 'Hong Kong\'s Octopus card covers the MTR, buses, ferries, trams, and mini-buses. Here\'s how to navigate one of Asia\'s most efficient transport networks in 2025.',
+    title: 'Getting Around Hong Kong: MTR, Tram, Ferry & Taxi Guide (2026)',
+    description: 'Hong Kong\'s Octopus card covers the MTR, buses, ferries, trams, and mini-buses. Here\'s how to navigate one of Asia\'s most efficient transport networks in 2026.',
     publishedAt: '2025-08-22',
     readingMinutes: 4,
     category: 'travel',
@@ -407,7 +407,7 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
     country: 'China',
     content: [
       { type: 'intro', body: 'Hong Kong\'s public transport is a masterclass in urban mobility. The MTR (Mass Transit Railway) is fast, clean, and covers all major areas; the iconic Ding Ding (double-decker tram) costs HKD $3 flat; and the Star Ferry (HKD $3.40) is one of the world\'s great harbour crossings — all payable with a single Octopus card.' },
-      { type: 'h2', heading: 'Hong Kong Transport Options (2025)' },
+      { type: 'h2', heading: 'Hong Kong Transport Options (2026)' },
       { type: 'table', rows: [
         { label: 'MTR (any line)', value: 'HKD $4.60–52.60 with Octopus; Airport Express: HKD $115 (24 min from HKIA to Hong Kong station)' },
         { label: 'Star Ferry (Tsim Sha Tsui ↔ Central)', value: 'HKD $3.40 (upper deck); one of the world\'s iconic harbour crossings' },
@@ -427,7 +427,7 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'getting-around-kuala-lumpur',
-    title: 'Getting Around Kuala Lumpur: MRT, LRT, Monorail, Grab & Bus (2025)',
+    title: 'Getting Around Kuala Lumpur: MRT, LRT, Monorail, Grab & Bus (2026)',
     description: 'Kuala Lumpur\'s rail network covers most tourist areas for MYR 1.20–7.10 per trip. Here\'s how to combine the MRT, LRT, Monorail, and Grab to navigate KL efficiently.',
     publishedAt: '2025-08-25',
     readingMinutes: 4,
@@ -436,7 +436,7 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
     country: 'Malaysia',
     content: [
       { type: 'intro', body: 'Kuala Lumpur\'s rail network — MRT, LRT, Monorail, and KTM commuter rail — is extensive but can be confusing with multiple operators and card systems. The key: a Touch\'n Go card (one card, all rail lines) loaded at any station, plus Grab for the gaps the rail doesn\'t cover.' },
-      { type: 'h2', heading: 'KL Transport Options (2025)' },
+      { type: 'h2', heading: 'KL Transport Options (2026)' },
       { type: 'table', rows: [
         { label: 'MRT Putrajaya Line', value: 'MYR 1.20–7.10 with Touch\'n Go; covers KLCC, Bukit Bintang, Chinatown (Pasar Seni)' },
         { label: 'LRT Kelana Jaya Line', value: 'MYR 1.20–6.80; Masjid Jamek, KLCC, Ampang Park' },
@@ -462,7 +462,7 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'is-johannesburg-safe',
-    title: 'Is Johannesburg Safe for Tourists? Honest Guide (2025)',
+    title: 'Is Johannesburg Safe for Tourists? Honest Guide (2026)',
     description: 'Johannesburg has real safety challenges but millions visit safely each year by staying in the right areas and following straightforward precautions. Here\'s the honest picture.',
     publishedAt: '2025-08-28',
     readingMinutes: 5,
@@ -471,7 +471,7 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
     country: 'South Africa',
     content: [
       { type: 'intro', body: 'Johannesburg has one of the highest violent crime rates of any major city in the world — but the tourist areas (Sandton, Rosebank, Maboneng, Soweto with a guide, the Apartheid Museum) are managed environments visited by millions each year. The key is staying in the right areas and avoiding behaviour that increases risk.' },
-      { type: 'h2', heading: 'Johannesburg Safety Overview (2025)' },
+      { type: 'h2', heading: 'Johannesburg Safety Overview (2026)' },
       { type: 'table', rows: [
         { label: 'Violent crime (general city)', value: 'High — Joburg has significant violent crime, particularly in the inner city and townships' },
         { label: 'Tourist zone safety', value: 'Manageable — Sandton, Rosebank, Melville, Maboneng with awareness are viable' },
@@ -496,7 +496,7 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'taxi-costs-phnom-penh',
-    title: 'How Much Does a Taxi Cost in Phnom Penh? (2025 Fare Guide)',
+    title: 'How Much Does a Taxi Cost in Phnom Penh? (2026 Fare Guide)',
     description: 'Phnom Penh taxis are mostly unmetered. PassApp and Grab charge $2–5 for most city trips. Airport to city costs $10–15. Here\'s everything you need to know.',
     publishedAt: '2025-08-31',
     readingMinutes: 4,
@@ -505,7 +505,7 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
     country: 'Cambodia',
     content: [
       { type: 'intro', body: 'Phnom Penh has no standardised metered taxis. PassApp (Cambodia\'s dominant ride-hailing app) and Grab both offer app-based rides with upfront pricing — the strongly recommended option for tourists. Traditional tuk-tuks are fun and cheap for short trips but require price negotiation.' },
-      { type: 'h2', heading: 'Typical Phnom Penh Transport Fares (2025)' },
+      { type: 'h2', heading: 'Typical Phnom Penh Transport Fares (2026)' },
       { type: 'table', rows: [
         { label: 'PNH Airport → Riverside/BKK1', value: 'PassApp/Grab: $8–12 | Tuk-tuk (negotiated): $10–18 | Hotel shuttle: $15–25' },
         { label: 'Short city trip (2–3km)', value: 'PassApp: $2–4 | Tuk-tuk: $3–6 (negotiate) | Moto (Grab Bike): $1–2' },
@@ -530,7 +530,7 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'taxi-costs-colombo',
-    title: 'How Much Does a Taxi Cost in Colombo? (2025 Fare Guide)',
+    title: 'How Much Does a Taxi Cost in Colombo? (2026 Fare Guide)',
     description: 'Colombo taxis cost LKR 100 flag fall + LKR 60–100/km. PickMe and Uber are the recommended apps. Airport to city runs LKR 2,500–3,500 (~$8–11).',
     publishedAt: '2025-09-01',
     readingMinutes: 4,
@@ -539,7 +539,7 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
     country: 'Sri Lanka',
     content: [
       { type: 'intro', body: 'Colombo taxis vary widely: air-conditioned app-based cars via PickMe or Uber cost LKR 1,500–3,000 ($5–10) for most city trips, while traditional three-wheelers (tuk-tuks) are cheaper but prone to meter refusal. PickMe is Sri Lanka\'s dominant app and offers both car and tuk-tuk options with upfront pricing.' },
-      { type: 'h2', heading: 'Typical Colombo Taxi Fares (2025)' },
+      { type: 'h2', heading: 'Typical Colombo Taxi Fares (2026)' },
       { type: 'table', rows: [
         { label: 'CMB Airport → Fort/Pettah', value: 'PickMe/Uber: LKR 2,500–3,500 ($8–11) | Traditional taxi: LKR 3,000–5,000 (negotiated)' },
         { label: 'Fort → Pettah Market', value: 'PickMe: LKR 300–600 ($1–2) | Tuk-tuk: LKR 150–300 negotiated' },
@@ -558,7 +558,7 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'taxi-costs-bogota',
-    title: 'How Much Does a Taxi Cost in Bogotá? (2025 Fare Guide)',
+    title: 'How Much Does a Taxi Cost in Bogotá? (2026 Fare Guide)',
     description: 'Bogotá taxis are metered but tourist safety requires using apps. InDriver and Cabify are recommended. Airport to Zona Rosa costs COL $45,000–65,000 (~$11–16).',
     publishedAt: '2025-09-03',
     readingMinutes: 4,
@@ -567,7 +567,7 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
     country: 'Colombia',
     content: [
       { type: 'intro', body: 'Bogotá has metered taxis but street-hailing carries genuine security risk — "paseo millonario" (express kidnapping via fake taxis) is a documented threat. Always use InDriver, Cabify, or Uber instead of hailing on the street. App rides give you driver details, route tracking, and cashless payment — dramatically reducing risk.' },
-      { type: 'h2', heading: 'Typical Bogotá Taxi Fares (2025)' },
+      { type: 'h2', heading: 'Typical Bogotá Taxi Fares (2026)' },
       { type: 'table', rows: [
         { label: 'El Dorado Airport (BOG) → Zona Rosa/Chapinero', value: 'App: COL $45,000–65,000 ($11–16); 30–50 min via Autopista Norte' },
         { label: 'Zona Rosa → La Candelaria (historic centre)', value: 'App: COL $15,000–25,000 ($3.70–6.20); 20–35 min depending on traffic' },
@@ -585,14 +585,14 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
       ]},
       { type: 'tip', body: 'Bogotá has TransMilenio — an extensive Bus Rapid Transit system (COL $2,950 per trip, ~$0.73) covering most of the city north-south on Caracas and Autopista Norte. It\'s crowded but fast, and the main trunk lines connect the airport area to La Candelaria and Chapinero. Add a Tullave card (similar to a transit card) to avoid carrying exact change.' },
       { type: 'faq', faqs: [
-        { q: 'Is Bogotá safe for tourists in 2025?', a: 'Bogotá\'s tourist neighbourhoods — Zona Rosa, Parque 93, Usaquén, and La Candelaria (daytime) — are increasingly safe with normal precautions. The city has invested heavily in security infrastructure. Avoid Parque Tercer Milenio, Bronx area, and south Bogotá. Never walk on the street while distracted by a phone, especially near La Candelaria at night.' },
+        { q: 'Is Bogotá safe for tourists in 2026?', a: 'Bogotá\'s tourist neighbourhoods — Zona Rosa, Parque 93, Usaquén, and La Candelaria (daytime) — are increasingly safe with normal precautions. The city has invested heavily in security infrastructure. Avoid Parque Tercer Milenio, Bronx area, and south Bogotá. Never walk on the street while distracted by a phone, especially near La Candelaria at night.' },
         { q: 'How is Bogotá\'s altitude for travellers?', a: 'Bogotá sits at 2,640m — higher than Mexico City. Mild altitude symptoms (headache, fatigue, shortness of breath) are common on day one. Rest, drink water, avoid alcohol on arrival. Acclimatise before attempting hikes around the city (eg. Monserrate). Altitude sickness medication (acetazolamide) is available at Colombian pharmacies.' },
       ]},
     ],
   },
   {
     slug: 'taxi-costs-lima',
-    title: 'How Much Does a Taxi Cost in Lima? (2025 Fare Guide)',
+    title: 'How Much Does a Taxi Cost in Lima? (2026 Fare Guide)',
     description: 'Lima taxis are unmetered — all prices are negotiated. Beat and InDriver are strongly recommended for safety. Miraflores to airport costs $20–30 via app.',
     publishedAt: '2025-09-05',
     readingMinutes: 4,
@@ -601,7 +601,7 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
     country: 'Peru',
     content: [
       { type: 'intro', body: 'Lima has no metered taxis — every fare is negotiated. More critically, Lima has a significant express kidnapping risk from informal street taxis. Beat (formerly Taxibeat Peru) and InDriver are the strongly recommended options: set price before booking, driver details tracked, safe pickup.' },
-      { type: 'h2', heading: 'Typical Lima Taxi Fares (2025)' },
+      { type: 'h2', heading: 'Typical Lima Taxi Fares (2026)' },
       { type: 'table', rows: [
         { label: 'Jorge Chávez Airport (LIM) → Miraflores', value: 'Beat/Uber: $20–28 | Negotiated taxi: $25–40 | Travel time: 30–60 min (traffic-dependent)' },
         { label: 'Miraflores → Barranco', value: 'Beat: $5–8 | Negotiated: $8–15; 3km coastal drive' },
@@ -626,7 +626,7 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'taxi-costs-havana',
-    title: 'How Much Does a Taxi Cost in Havana? (2025 Fare Guide)',
+    title: 'How Much Does a Taxi Cost in Havana? (2026 Fare Guide)',
     description: 'Havana has official metered taxis and tourist taxis (classic American cars). There are no app-based rides in Cuba. Most airport-to-centre trips cost $25–35 negotiated.',
     publishedAt: '2025-09-07',
     readingMinutes: 4,
@@ -635,7 +635,7 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
     country: 'Cuba',
     content: [
       { type: 'intro', body: 'Havana\'s taxi system is unique — no Uber, no Grab, no apps. You choose between official metered taxis (yellow state taxis), classic American car tourist taxis, colectivos (shared taxis on fixed routes), and coco-taxis (three-wheeled yellow vehicles). All prices are negotiated or metered in CUP.' },
-      { type: 'h2', heading: 'Havana Taxi Types and Fares (2025)' },
+      { type: 'h2', heading: 'Havana Taxi Types and Fares (2026)' },
       { type: 'table', rows: [
         { label: 'Classic American car (tourist taxi)', value: '$20–35 negotiated for airport (HAV/HAV-1) to Old Havana or Vedado; agree price before entering' },
         { label: 'Yellow state taxi (metered)', value: 'CUP 50/km metered; most honest option; harder to find outside hotels' },
@@ -644,7 +644,7 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
         { label: 'Havana airport → Old Havana', value: '$25–40 negotiated classic car; $20–30 metered state taxi' },
       ]},
       { type: 'h2', heading: 'Navigating Cuba\'s Currency System' },
-      { type: 'p', body: 'Cuba operates with a complex currency reality in 2025. The Cuban peso (CUP) is the local currency; USD, EUR, and CAD cash are widely accepted in tourist contexts at informal exchange rates. Credit cards from US-linked banks do not work in Cuba (including Mastercard/Visa processed through US intermediaries). Bring sufficient cash for your entire stay — ATMs exist but are unreliable. Tourist taxis typically price in USD; colectivos and local services price in CUP.' },
+      { type: 'p', body: 'Cuba operates with a complex currency reality in 2026. The Cuban peso (CUP) is the local currency; USD, EUR, and CAD cash are widely accepted in tourist contexts at informal exchange rates. Credit cards from US-linked banks do not work in Cuba (including Mastercard/Visa processed through US intermediaries). Bring sufficient cash for your entire stay — ATMs exist but are unreliable. Tourist taxis typically price in USD; colectivos and local services price in CUP.' },
       { type: 'tip', body: 'Negotiating with classic car drivers: start the conversation, let them name a price, counter at 60–70%, and settle around 75–80% of their opening offer. This is standard and expected — drivers aren\'t offended by negotiation. For return trips (airport at end of stay), arrange the car the day before through your casa particular host for a pre-agreed price.' },
       { type: 'faq', faqs: [
         { q: 'Can I use Uber or any app in Cuba?', a: 'No — Uber does not operate in Cuba and no equivalent app-based service exists. Cuba\'s internet limitations and the US embargo both contribute to this gap. All taxi booking is done in person: at your hotel, casa particular, or by approaching drivers on the street. WhatsApp is sometimes used to reach specific drivers by phone number — ask your accommodation to recommend one.' },
@@ -654,14 +654,14 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'tipping-in-cash-only-countries',
-    title: 'Tipping in Cash-Only Countries: What to Carry & How Much (2025)',
+    title: 'Tipping in Cash-Only Countries: What to Carry & How Much (2026)',
     description: 'Cuba, Myanmar, and parts of Africa require cash tips — cards won\'t work. Here\'s what currencies to carry and how to tip effectively in cash-dependent destinations.',
     publishedAt: '2025-09-10',
     readingMinutes: 4,
     category: 'tipping',
     content: [
       { type: 'intro', body: 'In several destinations, digital tipping is simply not possible — cards don\'t work, apps don\'t exist, and the local currency may not even be widely accepted. Cuba, Myanmar, North Korea, rural Cambodia, and parts of East Africa require you to plan your cash tipping strategy before arrival.' },
-      { type: 'h2', heading: 'Cash-Only Tipping Countries (2025)' },
+      { type: 'h2', heading: 'Cash-Only Tipping Countries (2026)' },
       { type: 'table', rows: [
         { label: 'Cuba', value: 'USD or EUR; $1–2 for restaurant staff, $5–10 for music performers, $20–30 for guides. CUP impractical for tourists to accumulate in right denominations.' },
         { label: 'Myanmar', value: 'USD (clean, unfolded notes essential) or Kyat; $1–5 range for most tips; ATMs present but international cards often declined' },
@@ -680,21 +680,21 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
       ]},
       { type: 'tip', body: 'When departing a cash-only country, use remaining local currency for airport food, last taxi, or tips — you\'ll get poor exchange rates for leftover cash at home airports. In Cuba specifically, any CUP you hold at departure cannot be exchanged outside the country. Spend it all before you fly.' },
       { type: 'faq', faqs: [
-        { q: 'Do I need to tip in Myanmar in 2025?', a: 'Yes — tipping is appreciated and important given the economic disruption since 2021. Restaurant staff, hotel housekeeping ($1–2/day), guides ($5–10/day), and drivers ($5–8/day) all rely on tips as a significant income supplement. USD is universally preferred; Kyat is also appropriate for small restaurant tips.' },
+        { q: 'Do I need to tip in Myanmar in 2026?', a: 'Yes — tipping is appreciated and important given the economic disruption since 2021. Restaurant staff, hotel housekeeping ($1–2/day), guides ($5–10/day), and drivers ($5–8/day) all rely on tips as a significant income supplement. USD is universally preferred; Kyat is also appropriate for small restaurant tips.' },
         { q: 'What denominations should I bring for Cuba?', a: 'Bring a mix of USD $1, $5, $10, and $20 bills. Larger bills ($50, $100) are used for accommodation and larger purchases. $1 bills are essential for small tips (musicians, cocktail waiters, parking helpers). Cuba\'s own currency situation is complex — your accommodation will advise on current CUP exchange rates on arrival.' },
       ]},
     ],
   },
   {
     slug: 'tipping-in-muslim-countries',
-    title: 'Tipping in Muslim Countries: What\'s Expected Across the Muslim World (2025)',
+    title: 'Tipping in Muslim Countries: What\'s Expected Across the Muslim World (2026)',
     description: 'Tipping norms vary widely across Muslim countries — from Egypt\'s bakshish culture to the UAE\'s optional-but-appreciated gratuities. Here\'s the full guide.',
     publishedAt: '2025-09-13',
     readingMinutes: 5,
     category: 'tipping',
     content: [
       { type: 'intro', body: 'There is no single "Muslim" tipping culture — practices vary enormously by country, from Egypt where small tips (bakshish) are embedded in daily life to Japan-adjacent Singapore where Islam is practiced but tipping isn\'t expected. Here\'s country-by-country guidance for the world\'s most-visited Muslim-majority destinations.' },
-      { type: 'h2', heading: 'Tipping in Muslim Countries (2025)' },
+      { type: 'h2', heading: 'Tipping in Muslim Countries (2026)' },
       { type: 'table', rows: [
         { label: 'UAE (Dubai/Abu Dhabi)', value: '10–15% restaurants appreciated; not mandatory; no tipping culture pressure' },
         { label: 'Qatar (Doha)', value: 'Service charge often on bill; 10% extra welcomed; not obligatory' },
@@ -723,7 +723,7 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'when-not-to-tip',
-    title: 'When NOT to Tip: Countries & Situations Where Tipping Is Wrong (2025)',
+    title: 'When NOT to Tip: Countries & Situations Where Tipping Is Wrong (2026)',
     description: 'In Japan, South Korea, and Iceland tipping can be offensive. In Singapore, the service charge is already included. Here\'s a complete guide to when not to tip.',
     publishedAt: '2025-09-16',
     readingMinutes: 4,
@@ -758,8 +758,8 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'digital-tipping-guide',
-    title: 'Digital Tipping Guide: How to Tip When You Have No Cash (2025)',
-    description: 'Most major apps now include in-app tipping. Here\'s how to tip Uber drivers, hotel staff, restaurant servers, and tour guides without cash in 2025.',
+    title: 'Digital Tipping Guide: How to Tip When You Have No Cash (2026)',
+    description: 'Most major apps now include in-app tipping. Here\'s how to tip Uber drivers, hotel staff, restaurant servers, and tour guides without cash in 2026.',
     publishedAt: '2025-09-19',
     readingMinutes: 4,
     category: 'tipping',
@@ -790,7 +790,7 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'tipping-guide-for-solo-female-travellers',
-    title: 'Tipping Guide for Solo Female Travellers: Safety, Culture & Etiquette (2025)',
+    title: 'Tipping Guide for Solo Female Travellers: Safety, Culture & Etiquette (2026)',
     description: 'Solo female travellers face unique dynamics around tipping. Here\'s how to tip safely, avoid unwanted attention, and navigate service interactions confidently worldwide.',
     publishedAt: '2025-09-22',
     readingMinutes: 5,

@@ -4,7 +4,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
   // ── Best Time to Visit ─────────────────────────────────────────────────────
   {
     slug: 'best-time-to-visit-bangkok',
-    title: 'Best Time to Visit Bangkok: Weather, Crowds & Costs (2025)',
+    title: 'Best Time to Visit Bangkok: Weather, Crowds & Costs (2026)',
     description: 'The best time to visit Bangkok is November to February — cool, dry, and comfortable at 25–32°C. Here\'s the full seasonal breakdown.',
     publishedAt: '2025-01-03',
     readingMinutes: 5,
@@ -36,7 +36,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'daily-budget-guide-bangkok',
-    title: 'Bangkok Daily Budget: How Much Does Bangkok Cost Per Day? (2025)',
+    title: 'Bangkok Daily Budget: How Much Does Bangkok Cost Per Day? (2026)',
     description: 'Bangkok costs $25–35/day on a budget, $70–120 mid-range, and $250+ for luxury. Here\'s exactly where your money goes.',
     publishedAt: '2025-01-06',
     readingMinutes: 5,
@@ -68,7 +68,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'uber-vs-taxi-bangkok',
-    title: 'Uber vs Taxi in Bangkok: Grab, Bolt & Metered Cabs Compared (2025)',
+    title: 'Uber vs Taxi in Bangkok: Grab, Bolt & Metered Cabs Compared (2026)',
     description: 'Uber doesn\'t operate in Bangkok — Grab is the app-based alternative. Here\'s how Grab compares to Bangkok\'s metered taxis in price, safety, and convenience.',
     publishedAt: '2025-01-09',
     readingMinutes: 4,
@@ -102,7 +102,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'best-time-to-visit-tokyo',
-    title: 'Best Time to Visit Tokyo: Cherry Blossoms, Autumn Leaves & Beyond (2025)',
+    title: 'Best Time to Visit Tokyo: Cherry Blossoms, Autumn Leaves & Beyond (2026)',
     description: 'The best times to visit Tokyo are late March to April (cherry blossom season) and October to November (autumn foliage). Both periods offer perfect weather and spectacular scenery.',
     publishedAt: '2025-01-12',
     readingMinutes: 5,
@@ -132,7 +132,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'daily-budget-guide-tokyo',
-    title: 'Tokyo Daily Budget: How Much Does Tokyo Cost Per Day? (2025)',
+    title: 'Tokyo Daily Budget: How Much Does Tokyo Cost Per Day? (2026)',
     description: 'Tokyo costs ¥8,000–12,000 ($53–80) per day on a budget, ¥20,000–35,000 mid-range, and ¥80,000+ for luxury. It\'s more affordable than most visitors expect.',
     publishedAt: '2025-01-15',
     readingMinutes: 5,
@@ -164,7 +164,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'getting-around-tokyo',
-    title: 'Getting Around Tokyo: Metro, JR Lines, Taxis & IC Cards Explained (2025)',
+    title: 'Getting Around Tokyo: Metro, JR Lines, Taxis & IC Cards Explained (2026)',
     description: 'Tokyo\'s train network is the world\'s most complex — but also its most reliable. This guide cuts through the confusion so you can navigate like a local.',
     publishedAt: '2025-01-18',
     readingMinutes: 5,
@@ -194,7 +194,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'is-bangkok-safe',
-    title: 'Is Bangkok Safe? Honest Safety Guide for Tourists (2025)',
+    title: 'Is Bangkok Safe? Honest Safety Guide for Tourists (2026)',
     description: 'Bangkok is generally safe for tourists — violent crime against visitors is rare. The real risks are scams, traffic, and street food hygiene. Here\'s what to watch for.',
     publishedAt: '2025-01-21',
     readingMinutes: 5,
@@ -229,7 +229,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'taxi-costs-osaka',
-    title: 'How Much Does a Taxi Cost in Osaka? (2025 Fare Guide)',
+    title: 'How Much Does a Taxi Cost in Osaka? (2026 Fare Guide)',
     description: 'Osaka taxis start at ¥680 and cost approximately ¥80 every 266 metres. Most city trips cost ¥900–2,500, but trains are almost always the better choice.',
     publishedAt: '2025-01-24',
     readingMinutes: 4,
@@ -238,7 +238,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
     country: 'Japan',
     content: [
       { type: 'intro', body: 'Osaka taxis charge a ¥680 flag fall, then ¥80 per 266 metres (approximately ¥300/km). A night surcharge of 20% applies between 22:00 and 05:00. Most trips within Osaka\'s tourist core cost ¥900–2,500 — but the city\'s excellent Osaka Metro makes taxis largely unnecessary for daytime travel.' },
-      { type: 'h2', heading: 'Typical Osaka Taxi Fares (2025)' },
+      { type: 'h2', heading: 'Typical Osaka Taxi Fares (2026)' },
       { type: 'table', rows: [
         { label: 'Osaka Station → Dotonbori', value: '¥900–1,200 (3km, ~12 min)' },
         { label: 'Osaka Station → Namba', value: '¥1,100–1,400 (4km, ~15 min)' },
@@ -261,7 +261,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'best-time-to-visit-bali',
-    title: 'Best Time to Visit Bali: Dry Season, Crowds & Surf Windows (2025)',
+    title: 'Best Time to Visit Bali: Dry Season, Crowds & Surf Windows (2026)',
     description: 'The best time to visit Bali is April to October — the dry season brings sunny days, calmer seas, and cooler evenings. July and August are peak tourist months.',
     publishedAt: '2025-01-27',
     readingMinutes: 5,
@@ -295,7 +295,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'daily-budget-guide-bali',
-    title: 'Bali Daily Budget: How Much Does Bali Cost Per Day? (2025)',
+    title: 'Bali Daily Budget: How Much Does Bali Cost Per Day? (2026)',
     description: 'Bali costs $25–40/day on a budget, $70–120 mid-range, and $200+ for a luxury villa experience. Here\'s how to spend wisely.',
     publishedAt: '2025-01-30',
     readingMinutes: 5,
@@ -320,7 +320,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
       ]},
       { type: 'warning', body: 'Bali is introducing a tourist levy of IDR 150,000 ($10) per arrival from 2024 — paid online before landing at ngurahrai.bpd.id. This is separate from your visa. Failure to pay may cause delays at immigration.' },
       { type: 'faq', faqs: [
-        { q: 'Is Bali expensive in 2025?', a: 'Bali has increased in price since 2020 — accommodation in Seminyak and Canggu is pricier than before, and some tourist-area restaurants charge European prices. But local warungs, scooter travel, and inland areas (Ubud, Sidemen) remain excellent value.' },
+        { q: 'Is Bali expensive in 2026?', a: 'Bali has increased in price since 2020 — accommodation in Seminyak and Canggu is pricier than before, and some tourist-area restaurants charge European prices. But local warungs, scooter travel, and inland areas (Ubud, Sidemen) remain excellent value.' },
         { q: 'Should I hire a private driver or rent a scooter in Bali?', a: 'Depends on where you\'re going. For day trips to temples, waterfalls, and mountain areas, a private driver ($40–60/day) is worth every cent — roads are challenging and parking is chaotic. For short local trips in flat areas, a scooter is great if you\'re comfortable riding one.' },
       ]},
     ],
@@ -328,7 +328,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
   // ── Best Time to Visit Paris ───────────────────────────────────────────────
   {
     slug: 'best-time-to-visit-paris',
-    title: 'Best Time to Visit Paris: Seasons, Crowds & What to Expect (2025)',
+    title: 'Best Time to Visit Paris: Seasons, Crowds & What to Expect (2026)',
     description: 'The best time to visit Paris is April to June or September to October — mild weather, manageable crowds, and the city at its most photogenic.',
     publishedAt: '2025-02-02',
     readingMinutes: 5,
@@ -362,7 +362,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'daily-budget-guide-paris',
-    title: 'Paris Daily Budget: How Much Does Paris Cost Per Day? (2025)',
+    title: 'Paris Daily Budget: How Much Does Paris Cost Per Day? (2026)',
     description: 'Paris costs €80–120/day on a tight budget, €180–280 mid-range, and €500+ for luxury. Here\'s exactly where your euros go.',
     publishedAt: '2025-02-05',
     readingMinutes: 5,
@@ -394,7 +394,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'getting-around-london',
-    title: 'Getting Around London: Tube, Bus, Elizabeth Line & Taxi Guide (2025)',
+    title: 'Getting Around London: Tube, Bus, Elizabeth Line & Taxi Guide (2026)',
     description: 'London\'s public transport is extensive and contactless-card-friendly. The Elizabeth Line has transformed cross-city travel. Here\'s everything you need to navigate London efficiently.',
     publishedAt: '2025-02-08',
     readingMinutes: 5,
@@ -403,7 +403,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
     country: 'United Kingdom',
     content: [
       { type: 'intro', body: 'London\'s public transport network — the Tube (Underground), Elizabeth Line, Overground, buses, and DLR — is the most comprehensive way to get around the city. Tap your contactless card or phone directly at every barrier and bus reader; no Oyster card needed if you have contactless.' },
-      { type: 'h2', heading: 'London Transport Options & Costs (2025)' },
+      { type: 'h2', heading: 'London Transport Options & Costs (2026)' },
       { type: 'table', rows: [
         { label: 'Tube / Elizabeth Line (zones 1–2)', value: '£2.80 peak / £2.80 off-peak with contactless; daily cap £8.10' },
         { label: 'Bus (any route)', value: '£1.75 per journey; free transfers within 1 hour ("Hopper fare")' },
@@ -424,7 +424,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'uber-vs-taxi-london',
-    title: 'Uber vs Black Cab in London: Price, Speed & When to Use Each (2025)',
+    title: 'Uber vs Black Cab in London: Price, Speed & When to Use Each (2026)',
     description: 'Uber is typically 30–50% cheaper than London black cabs. But black cabs have legal access to bus lanes, instant availability, and no surge pricing. Here\'s the full comparison.',
     publishedAt: '2025-02-11',
     readingMinutes: 4,
@@ -459,7 +459,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'is-cairo-safe',
-    title: 'Is Cairo Safe for Tourists? Honest Guide to Visiting in 2025',
+    title: 'Is Cairo Safe for Tourists? Honest Guide to Visiting in 2026',
     description: 'Cairo is generally safe for tourists visiting the main attractions. Petty crime, aggressive touts, and traffic are the main risks. Here\'s what you need to know.',
     publishedAt: '2025-02-14',
     readingMinutes: 5,
@@ -468,7 +468,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
     country: 'Egypt',
     content: [
       { type: 'intro', body: 'Cairo is safer for tourists than its reputation suggests — violent crime against foreigners is rare, and millions of visitors explore the Pyramids, Egyptian Museum, and Khan el-Khalili bazaar each year without incident. The real challenges are aggressive touts near tourist sites, taxi scams, and the genuinely chaotic traffic.' },
-      { type: 'h2', heading: 'Cairo Safety Overview (2025)' },
+      { type: 'h2', heading: 'Cairo Safety Overview (2026)' },
       { type: 'table', rows: [
         { label: 'Violent crime', value: 'Low risk for tourists; avoid large political gatherings' },
         { label: 'Petty theft', value: 'Moderate — pickpocketing in bazaars and crowded sites; use a money belt' },
@@ -494,7 +494,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'taxi-costs-budapest',
-    title: 'How Much Does a Taxi Cost in Budapest? (2025 Fare Guide)',
+    title: 'How Much Does a Taxi Cost in Budapest? (2026 Fare Guide)',
     description: 'Budapest taxis start at HUF 1,100 and charge HUF 450/km. A city centre trip costs HUF 1,500–3,000. Always book via app — never hail from the street.',
     publishedAt: '2025-02-17',
     readingMinutes: 4,
@@ -503,7 +503,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
     country: 'Hungary',
     content: [
       { type: 'intro', body: 'Budapest taxi fares: HUF 1,100 flag fall, then HUF 450/km, with a waiting charge of HUF 75/minute. A typical 5km city centre journey costs HUF 3,500–4,500 (~€8.50–11). App-based taxis (Bolt, Főtaxi) are strongly recommended over street hailing.' },
-      { type: 'h2', heading: 'Typical Budapest Taxi Fares (2025)' },
+      { type: 'h2', heading: 'Typical Budapest Taxi Fares (2026)' },
       { type: 'table', rows: [
         { label: 'Ferenc Liszt Airport → city centre', value: 'Fixed rate: HUF 12,900 (~€31.50) — mandatory fixed price for airport pickups' },
         { label: 'Keleti Station → Buda Castle', value: 'HUF 3,000–4,200 (~€7.30–10.25) via Bolt' },
@@ -523,7 +523,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'best-time-to-visit-barcelona',
-    title: 'Best Time to Visit Barcelona: Sun, Festivals & Fewer Crowds (2025)',
+    title: 'Best Time to Visit Barcelona: Sun, Festivals & Fewer Crowds (2026)',
     description: 'The best time to visit Barcelona is May to June or September to October — warm, sunny, and less crowded than the July–August peak. Here\'s the full seasonal guide.',
     publishedAt: '2025-02-20',
     readingMinutes: 5,
@@ -556,8 +556,8 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'daily-budget-guide-barcelona',
-    title: 'Barcelona Daily Budget: How Much Does Barcelona Cost Per Day? (2025)',
-    description: 'Barcelona costs €70–100/day on a budget, €160–240 mid-range, and €400+ for luxury. Here\'s exactly what things cost in 2025.',
+    title: 'Barcelona Daily Budget: How Much Does Barcelona Cost Per Day? (2026)',
+    description: 'Barcelona costs €70–100/day on a budget, €160–240 mid-range, and €400+ for luxury. Here\'s exactly what things cost in 2026.',
     publishedAt: '2025-02-23',
     readingMinutes: 5,
     category: 'travel',
@@ -582,14 +582,14 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
       { type: 'tip', body: 'The Barcelona Card (€30 for 2 days) gives unlimited Metro/bus travel plus discounts at 70+ attractions. It\'s worthwhile if you plan to use the Metro 4+ times per day and visit 2–3 museums. Otherwise, the T-Casual card + individual museum tickets may be cheaper.' },
       { type: 'faq', faqs: [
         { q: 'Is Barcelona more expensive than Madrid?', a: 'Generally yes — accommodation in Barcelona is typically 15–25% pricier than equivalent hotels in Madrid. Food and transport costs are similar. Barcelona\'s tourist attractions are also more expensive (Sagrada Família €26–40 vs Prado Museum €15).' },
-        { q: 'How much does Sagrada Família cost in 2025?', a: 'Basic entry with audio guide is €26. Tower access (Nativity or Passion tower) adds €10–15. Book the full combined ticket (€40–54) well in advance online at sagradafamilia.org — discounts are not available at the door.' },
+        { q: 'How much does Sagrada Família cost in 2026?', a: 'Basic entry with audio guide is €26. Tower access (Nativity or Passion tower) adds €10–15. Book the full combined ticket (€40–54) well in advance online at sagradafamilia.org — discounts are not available at the door.' },
       ]},
     ],
   },
   {
     slug: 'uber-vs-taxi-singapore',
-    title: 'Uber vs Taxi in Singapore: Grab, ComfortDelGro & Which to Choose (2025)',
-    description: 'In Singapore, Grab has replaced Uber (which exited in 2018). Standard metered taxis remain competitive. Here\'s a complete comparison for 2025.',
+    title: 'Uber vs Taxi in Singapore: Grab, ComfortDelGro & Which to Choose (2026)',
+    description: 'In Singapore, Grab has replaced Uber (which exited in 2018). Standard metered taxis remain competitive. Here\'s a complete comparison for 2026.',
     publishedAt: '2025-02-26',
     readingMinutes: 4,
     category: 'taxi',
@@ -622,7 +622,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'getting-around-bangkok',
-    title: 'Getting Around Bangkok: BTS, MRT, Boat, Grab & Taxi Guide (2025)',
+    title: 'Getting Around Bangkok: BTS, MRT, Boat, Grab & Taxi Guide (2026)',
     description: 'Bangkok has a growing rail network, scenic river boats, and the best app-based taxis in Southeast Asia. Here\'s how to navigate the city efficiently.',
     publishedAt: '2025-03-01',
     readingMinutes: 5,
@@ -631,7 +631,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
     country: 'Thailand',
     content: [
       { type: 'intro', body: 'Bangkok\'s transport system has transformed in the last decade — the BTS Skytrain, MRT subway, Airport Rail Link, and river ferry cover most tourist areas, while Grab provides a reliable fallback for anywhere rail doesn\'t reach.' },
-      { type: 'h2', heading: 'Bangkok Transport Options (2025)' },
+      { type: 'h2', heading: 'Bangkok Transport Options (2026)' },
       { type: 'table', rows: [
         { label: 'BTS Skytrain (elevated rail)', value: 'THB 17–59/trip; Rabbit Card for convenience; covers Sukhumvit, Silom, Chatuchak' },
         { label: 'MRT Subway', value: 'THB 17–42/trip; connects Chatuchak, Lumphini, Democracy Monument area' },
@@ -653,7 +653,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'tipping-at-hotels-worldwide',
-    title: 'Hotel Tipping Guide: Who to Tip, How Much & When (2025)',
+    title: 'Hotel Tipping Guide: Who to Tip, How Much & When (2026)',
     description: 'Hotel tipping rules differ by country — from $1/bag in the US to nothing expected in Japan. Here\'s a complete guide to hotel gratuities worldwide.',
     publishedAt: '2025-03-04',
     readingMinutes: 5,
@@ -689,7 +689,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'best-time-to-visit-dubai',
-    title: 'Best Time to Visit Dubai: Desert Weather & the Tourist Sweet Spot (2025)',
+    title: 'Best Time to Visit Dubai: Desert Weather & the Tourist Sweet Spot (2026)',
     description: 'The best time to visit Dubai is November to March — mild at 20–28°C, with zero chance of rain and all outdoor attractions fully enjoyable.',
     publishedAt: '2025-03-07',
     readingMinutes: 5,
@@ -722,7 +722,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'taxi-costs-zurich',
-    title: 'How Much Does a Taxi Cost in Zurich? (2025 Fare Guide)',
+    title: 'How Much Does a Taxi Cost in Zurich? (2026 Fare Guide)',
     description: 'Zurich is one of Europe\'s most expensive taxi cities — flag fall CHF 6.50, then CHF 3.80–4.50/km. Airport to city centre costs CHF 55–75.',
     publishedAt: '2025-03-10',
     readingMinutes: 4,
@@ -731,7 +731,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
     country: 'Switzerland',
     content: [
       { type: 'intro', body: 'Zurich taxi fares: CHF 6.50 flag fall, then CHF 3.80/km (daytime, Mon–Sat) and CHF 4.50/km (nights, Sundays, and holidays). A typical 5km city trip costs CHF 25–35. Zurich\'s taxis are honest and metered, but the city\'s S-Bahn train network makes them rarely necessary for most journeys.' },
-      { type: 'h2', heading: 'Typical Zurich Taxi Fares (2025)' },
+      { type: 'h2', heading: 'Typical Zurich Taxi Fares (2026)' },
       { type: 'table', rows: [
         { label: 'Zurich Airport (ZRH) → city centre (HB)', value: 'CHF 55–75 (~30 min, 12km) — or S-Bahn in 10 min for CHF 6.80' },
         { label: 'Zurich HB → Zurich Zoo', value: 'CHF 25–35 (5km, ~15 min)' },
@@ -751,8 +751,8 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'is-istanbul-safe',
-    title: 'Is Istanbul Safe for Tourists? Complete Safety Guide (2025)',
-    description: 'Istanbul is generally safe for tourists in 2025. Petty crime, taxi scams, and rare political unrest are the main risks — here\'s what to know.',
+    title: 'Is Istanbul Safe for Tourists? Complete Safety Guide (2026)',
+    description: 'Istanbul is generally safe for tourists in 2026. Petty crime, taxi scams, and rare political unrest are the main risks — here\'s what to know.',
     publishedAt: '2025-03-13',
     readingMinutes: 5,
     category: 'travel',
@@ -760,7 +760,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
     country: 'Turkey',
     content: [
       { type: 'intro', body: 'Istanbul is safe for the vast majority of the 17 million tourists who visit each year. Violent crime against foreigners is rare; the main risks are taxi overcharging, carpet shop pressure tactics, and the busy, chaotic traffic. The 2016 coup attempt and subsequent political shifts have not materially affected tourist safety in the city\'s main areas.' },
-      { type: 'h2', heading: 'Istanbul Safety Overview (2025)' },
+      { type: 'h2', heading: 'Istanbul Safety Overview (2026)' },
       { type: 'table', rows: [
         { label: 'Violent crime', value: 'Low risk in tourist areas; avoid large political demonstrations' },
         { label: 'Taxi scams', value: 'High risk — rigged meters, night rate during day, long routes. Use BiTaksi or Uber.' },
@@ -780,14 +780,14 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
       { type: 'tip', body: 'Download BiTaksi (Turkish taxi booking app) before arriving. It works like Uber, shows your driver\'s info and plate number, uses the metered fare, and dramatically reduces your chance of being overcharged. Many Istanbul taxi drivers speak minimal English, which makes app booking doubly useful.' },
       { type: 'faq', faqs: [
         { q: 'Is the Grand Bazaar safe?', a: 'The Grand Bazaar is safe — there are security checkpoints at entrances and a significant police presence. The risk is petty pickpocketing in crowded aisles. Keep valuables in a front pocket or money belt and you\'ll be fine. Bargaining is expected — start at 40–50% of the asking price.' },
-        { q: 'Is Istanbul safe in 2025 given Turkey\'s political situation?', a: 'Yes for tourists. Turkey\'s political tensions (relations with neighbours, Kurdish political issues) rarely affect tourism in Istanbul. The Foreign Office and State Department currently advise standard travel precautions for Istanbul — significantly safer than several other major destinations in the region.' },
+        { q: 'Is Istanbul safe in 2026 given Turkey\'s political situation?', a: 'Yes for tourists. Turkey\'s political tensions (relations with neighbours, Kurdish political issues) rarely affect tourism in Istanbul. The Foreign Office and State Department currently advise standard travel precautions for Istanbul — significantly safer than several other major destinations in the region.' },
         { q: 'Is the Asian side of Istanbul (Kadıköy) safe?', a: 'The Asian side is generally considered even more relaxed than the European side for tourists. Kadıköy is a young, creative neighbourhood with excellent food and nightlife. Getting there is part of the experience — a Bosphorus ferry from Eminönü or Karaköy costs about TRY 30.' },
       ]},
     ],
   },
   {
     slug: 'daily-budget-guide-dubai',
-    title: 'Dubai Daily Budget: How Much Does Dubai Cost Per Day? (2025)',
+    title: 'Dubai Daily Budget: How Much Does Dubai Cost Per Day? (2026)',
     description: 'Dubai costs $80–120/day on a budget, $200–350 mid-range, and $600+ for luxury. Here\'s a realistic breakdown of what things cost.',
     publishedAt: '2025-03-16',
     readingMinutes: 5,
@@ -802,7 +802,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
         { label: 'Mid-range ($200–350/day)', value: '4-star hotel near JBR or Downtown $100–200, restaurant meals $20–45, Uber/taxi for some trips' },
         { label: 'Luxury ($600+/day)', value: 'Burj Al Arab / DIFC boutique hotel $450–2,000+, fine dining $80–200pp, private transfers' },
       ]},
-      { type: 'h2', heading: 'What Things Actually Cost in Dubai (2025)' },
+      { type: 'h2', heading: 'What Things Actually Cost in Dubai (2026)' },
       { type: 'ul', items: [
         '**Burj Khalifa observation deck (Levels 124/125)**: AED 149–329 ($40–90); At the Top Sky (Level 148): AED 699+ — book online for the lowest price',
         '**Desert safari (half-day, shared)**: AED 150–250 ($41–68); private jeep safari: AED 600–1,200',

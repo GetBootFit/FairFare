@@ -1515,7 +1515,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'taxi-mumbai-airport-to-city',
     title: 'Taxi from Mumbai Airport to City: Cost & What to Know (2026)',
-    description: 'Mumbai airport has metered, prepaid, and app-based taxis. Here\'s what each costs and which is safest for new visitors.',
+    description: 'Mumbai airport (BOM) to South Mumbai costs ₹600–900 by prepaid taxi; to Bandra or Juhu ₹300–500. Here\'s which taxi type to take, how to book safely, and why Ola beats the prepaid booth for most routes.',
     publishedAt: '2026-03-11',
     readingMinutes: 8,
     category: 'taxi',

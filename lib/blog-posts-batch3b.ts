@@ -3,7 +3,7 @@ import type { BlogPost } from './blog-posts'
 export const BATCH3B_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'best-time-to-visit-new-york-city',
-    title: 'Best Time to Visit New York City: Season Guide for 2025',
+    title: 'Best Time to Visit New York City: Season Guide for 2026',
     description: 'The best time to visit New York City is April to June or September to November — mild weather, fewer crowds than summer, and the city at its most walkable.',
     publishedAt: '2025-03-19',
     readingMinutes: 5,
@@ -37,8 +37,8 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'daily-budget-guide-new-york-city',
-    title: 'New York City Daily Budget: How Much Does NYC Cost Per Day? (2025)',
-    description: 'New York costs $100–150/day on a tight budget, $250–400 mid-range, and $700+ for luxury. Here\'s exactly where your dollars go in 2025.',
+    title: 'New York City Daily Budget: How Much Does NYC Cost Per Day? (2026)',
+    description: 'New York costs $100–150/day on a tight budget, $250–400 mid-range, and $700+ for luxury. Here\'s exactly where your dollars go in 2026.',
     publishedAt: '2025-03-22',
     readingMinutes: 5,
     category: 'travel',
@@ -70,7 +70,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'uber-vs-taxi-new-york-city',
-    title: 'Uber vs Yellow Cab in New York City: Which Is Cheaper in 2025?',
+    title: 'Uber vs Yellow Cab in New York City: Which Is Cheaper in 2026?',
     description: 'In NYC, Uber and Lyft are often cheaper than yellow cabs outside Manhattan — but yellow cabs win in heavy rain and for flat-rate airport runs. Here\'s the full comparison.',
     publishedAt: '2025-03-25',
     readingMinutes: 4,
@@ -79,7 +79,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
     country: 'USA',
     content: [
       { type: 'intro', body: 'New York City has two parallel taxi systems: the iconic yellow medallion cabs (metered, hailable on the street, best in Manhattan) and app-based services (Uber, Lyft, Via — often cheaper in outer boroughs and for airport runs). Both are safe and regulated.' },
-      { type: 'h2', heading: 'Yellow Cab vs Uber: Head-to-Head (2025)' },
+      { type: 'h2', heading: 'Yellow Cab vs Uber: Head-to-Head (2026)' },
       { type: 'table', rows: [
         { label: '5km Midtown trip', value: 'Yellow cab: $15–22 + tip | Uber X: $18–28 (surge possible)' },
         { label: 'JFK Airport to Midtown', value: 'Yellow cab: $70 flat rate (no tip needed on flat, but customary) | Uber: $55–90 (surge during peak)' },
@@ -105,8 +105,8 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'getting-around-new-york-city',
-    title: 'Getting Around New York City: Subway, Bus, Taxi & Bike Guide (2025)',
-    description: 'The NYC subway is the fastest and cheapest way to get around New York. Here\'s a complete guide to the subway, buses, taxis, ferries, and Citi Bike in 2025.',
+    title: 'Getting Around New York City: Subway, Bus, Taxi & Bike Guide (2026)',
+    description: 'The NYC subway is the fastest and cheapest way to get around New York. Here\'s a complete guide to the subway, buses, taxis, ferries, and Citi Bike in 2026.',
     publishedAt: '2025-03-28',
     readingMinutes: 5,
     category: 'travel',
@@ -114,7 +114,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
     country: 'USA',
     content: [
       { type: 'intro', body: 'The New York City subway is the backbone of the city — 472 stations, 24/7 operation, and just $2.90 per ride. For most Manhattan journeys, it\'s faster than any taxi or Uber. The outer boroughs (Brooklyn, Queens) are equally well-served.' },
-      { type: 'h2', heading: 'NYC Transport Options & Costs (2025)' },
+      { type: 'h2', heading: 'NYC Transport Options & Costs (2026)' },
       { type: 'table', rows: [
         { label: 'Subway (any distance)', value: '$2.90/ride with OMNY tap or MetroCard; $34/week unlimited' },
         { label: 'Bus (any route)', value: '$2.90/ride; transfers free within 2 hours of first swipe' },
@@ -135,7 +135,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'is-mumbai-safe',
-    title: 'Is Mumbai Safe for Tourists? Honest Safety Guide (2025)',
+    title: 'Is Mumbai Safe for Tourists? Honest Safety Guide (2026)',
     description: 'Mumbai is one of India\'s safer cities for tourists — but traffic, petty theft, and accommodation scams require awareness. Here\'s what you need to know.',
     publishedAt: '2025-03-31',
     readingMinutes: 5,
@@ -144,7 +144,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
     country: 'India',
     content: [
       { type: 'intro', body: 'Mumbai is generally safe for tourists — violent crime targeting foreigners is rare, and the city has a large, cosmopolitan population accustomed to international visitors. The primary risks are road traffic (genuinely dangerous), petty theft in crowded areas, and transport overcharging.' },
-      { type: 'h2', heading: 'Mumbai Safety Overview (2025)' },
+      { type: 'h2', heading: 'Mumbai Safety Overview (2026)' },
       { type: 'table', rows: [
         { label: 'Violent crime', value: 'Low in tourist areas — Mumbai has lower violent crime than many Indian cities' },
         { label: 'Traffic accidents', value: 'Significant risk — Mumbai road deaths exceed 400/year; always use seatbelts' },
@@ -170,7 +170,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'best-time-to-visit-singapore',
-    title: 'Best Time to Visit Singapore: Weather, Events & Avoiding the Rain (2025)',
+    title: 'Best Time to Visit Singapore: Weather, Events & Avoiding the Rain (2026)',
     description: 'Singapore is hot and humid year-round (27–33°C), but February and June–July see less rainfall. Here\'s the full seasonal guide.',
     publishedAt: '2025-04-03',
     readingMinutes: 4,
@@ -203,7 +203,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'daily-budget-guide-singapore',
-    title: 'Singapore Daily Budget: How Much Does Singapore Cost Per Day? (2025)',
+    title: 'Singapore Daily Budget: How Much Does Singapore Cost Per Day? (2026)',
     description: 'Singapore costs SGD $70–100 ($52–74) per day on a budget, $200–350 mid-range, and $600+ for luxury. Here\'s how to make the most of every dollar.',
     publishedAt: '2025-04-06',
     readingMinutes: 5,
@@ -235,7 +235,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'getting-around-singapore',
-    title: 'Getting Around Singapore: MRT, Bus, Grab & Taxi Guide (2025)',
+    title: 'Getting Around Singapore: MRT, Bus, Grab & Taxi Guide (2026)',
     description: 'Singapore\'s MRT and bus network is one of Asia\'s best — fast, air-conditioned, and cheap. Here\'s everything you need to get around the island.',
     publishedAt: '2025-04-09',
     readingMinutes: 4,
@@ -244,7 +244,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
     country: 'Singapore',
     content: [
       { type: 'intro', body: 'Singapore\'s Mass Rapid Transit (MRT) is one of the world\'s most reliable and clean rail systems — covering the entire island from Changi Airport in the east to Jurong in the west, and from Woodlands in the north to Sentosa in the south. An EZ-Link card handles everything.' },
-      { type: 'h2', heading: 'Singapore Transport Options (2025)' },
+      { type: 'h2', heading: 'Singapore Transport Options (2026)' },
       { type: 'table', rows: [
         { label: 'MRT (any line)', value: 'SGD $1.20–2.50/trip with EZ-Link; Changi Airport to city: SGD $2.10, 29 min' },
         { label: 'Bus', value: 'SGD $1.00–2.10/trip; covers areas the MRT misses; real-time via SG Bus app' },
@@ -264,7 +264,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'taxi-costs-copenhagen',
-    title: 'How Much Does a Taxi Cost in Copenhagen? (2025 Fare Guide)',
+    title: 'How Much Does a Taxi Cost in Copenhagen? (2026 Fare Guide)',
     description: 'Copenhagen taxis start at DKK 51 and charge DKK 15.50–20/km. Airport to city centre costs DKK 260–320 (~€35–43). The Metro is almost always better value.',
     publishedAt: '2025-04-12',
     readingMinutes: 4,
@@ -273,7 +273,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
     country: 'Denmark',
     content: [
       { type: 'intro', body: 'Copenhagen taxi fares: DKK 51 flag fall (daytime), DKK 63 (nights and weekends), then DKK 15.50/km (daytime) or DKK 20/km (nights/weekends). A typical 5km city trip costs DKK 130–180 (~€17–24). The city\'s Metro and excellent cycling infrastructure make taxis unnecessary for most journeys.' },
-      { type: 'h2', heading: 'Typical Copenhagen Taxi Fares (2025)' },
+      { type: 'h2', heading: 'Typical Copenhagen Taxi Fares (2026)' },
       { type: 'table', rows: [
         { label: 'CPH Airport → city centre (Nørreport)', value: 'DKK 260–320 (~€35–43), 20–30 min | Metro: DKK 36, 15 min' },
         { label: 'Tivoli → The Little Mermaid', value: 'DKK 100–140 (~€13–19), 10 min' },
@@ -293,7 +293,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'best-time-to-visit-rome',
-    title: 'Best Time to Visit Rome: Ancient City, Modern Crowds (2025)',
+    title: 'Best Time to Visit Rome: Ancient City, Modern Crowds (2026)',
     description: 'The best time to visit Rome is April to June or September to October — mild at 20–26°C, before the July–August heat and tourist peak.',
     publishedAt: '2025-04-15',
     readingMinutes: 5,
@@ -327,7 +327,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'daily-budget-guide-rome',
-    title: 'Rome Daily Budget: How Much Does Rome Cost Per Day? (2025)',
+    title: 'Rome Daily Budget: How Much Does Rome Cost Per Day? (2026)',
     description: 'Rome costs €70–100/day on a budget, €180–280 mid-range, and €500+ for luxury. Here\'s exactly how to budget for the Eternal City.',
     publishedAt: '2025-04-18',
     readingMinutes: 5,
@@ -359,7 +359,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'uber-vs-taxi-istanbul',
-    title: 'Uber vs Taxi in Istanbul: BiTaksi, Cab, or App? (2025)',
+    title: 'Uber vs Taxi in Istanbul: BiTaksi, Cab, or App? (2026)',
     description: 'Uber operates in Istanbul but is more expensive than metered taxis. BiTaksi (the local app) is the best option — it books a metered cab via app, combining safety and fair pricing.',
     publishedAt: '2025-04-21',
     readingMinutes: 4,
@@ -368,7 +368,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
     country: 'Turkey',
     content: [
       { type: 'intro', body: 'Istanbul taxis have a justified reputation for tourist overcharging — rigged meters, night-rate fraud, and unnecessary detours are common. The safest approach: use BiTaksi (the Turkish taxi app that books official metered taxis via app) or Uber, which both eliminate most scam risks by tracking your route and showing the upfront price.' },
-      { type: 'h2', heading: 'Istanbul Taxi Options Compared (2025)' },
+      { type: 'h2', heading: 'Istanbul Taxi Options Compared (2026)' },
       { type: 'table', rows: [
         { label: 'Metered taxi (street-hailed)', value: 'TRY 71 flag fall + TRY 29.50/km; risk of meter fraud if not using app' },
         { label: 'BiTaksi (app)', value: 'Books a licensed metered taxi via app; same metered fare but route tracked; recommended' },
@@ -393,8 +393,8 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'getting-around-paris',
-    title: 'Getting Around Paris: Métro, RER, Vélib & Taxi Guide (2025)',
-    description: 'Paris\'s Métro is the fastest way to navigate the city — 16 lines, 302 stations, and €2.15 per trip. Here\'s the complete transport guide for 2025.',
+    title: 'Getting Around Paris: Métro, RER, Vélib & Taxi Guide (2026)',
+    description: 'Paris\'s Métro is the fastest way to navigate the city — 16 lines, 302 stations, and €2.15 per trip. Here\'s the complete transport guide for 2026.',
     publishedAt: '2025-04-24',
     readingMinutes: 5,
     category: 'travel',
@@ -402,7 +402,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
     country: 'France',
     content: [
       { type: 'intro', body: 'Paris\'s public transport network — the Métro, RER (suburban rail), buses, and Vélib\' bike-share — covers virtually every corner of the city affordably. The contactless payment system (introduced 2021) means no Navigo card is needed if you have a contactless bank card.' },
-      { type: 'h2', heading: 'Paris Transport Options & Costs (2025)' },
+      { type: 'h2', heading: 'Paris Transport Options & Costs (2026)' },
       { type: 'table', rows: [
         { label: 'Métro (zones 1–2)', value: '€2.15/trip with contactless or carnet; daily cap from €7.50 (Navigo Liberté+)' },
         { label: 'RER B to CDG Airport', value: '€11.80 single; 35 min from Châtelet–Les Halles' },
@@ -423,7 +423,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'best-time-to-visit-london',
-    title: 'Best Time to Visit London: Weather, Events & What Each Season Brings (2025)',
+    title: 'Best Time to Visit London: Weather, Events & What Each Season Brings (2026)',
     description: 'London is a year-round city, but June to August offers the best weather and longest days. September to November and April to May are excellent for fewer crowds.',
     publishedAt: '2025-04-27',
     readingMinutes: 5,
@@ -457,7 +457,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'daily-budget-guide-london',
-    title: 'London Daily Budget: How Much Does London Cost Per Day? (2025)',
+    title: 'London Daily Budget: How Much Does London Cost Per Day? (2026)',
     description: 'London costs £80–120/day on a tight budget, £200–320 mid-range, and £600+ for luxury. Here\'s a realistic 2025 breakdown of what things cost.',
     publishedAt: '2025-04-30',
     readingMinutes: 5,
@@ -466,7 +466,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
     country: 'United Kingdom',
     content: [
       { type: 'intro', body: 'London is one of Europe\'s most expensive capitals — but it\'s also packed with world-class free attractions and a food scene that ranges from £4 wraps at Borough Market to £300 tasting menus at Alain Ducasse. The gap between budget and luxury is as wide as anywhere on earth.' },
-      { type: 'h2', heading: 'London Daily Budget Breakdown (2025)' },
+      { type: 'h2', heading: 'London Daily Budget Breakdown (2026)' },
       { type: 'table', rows: [
         { label: 'Budget (£80–120/day)', value: 'Hostel £25–45, meal deal supermarket lunch £4–5, Tube daily cap £8.10, free museums' },
         { label: 'Mid-range (£200–320/day)', value: '3-star hotel £120–200, restaurant meals £18–40pp, West End show from £30 (TKTS)' },
@@ -482,7 +482,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
       ]},
       { type: 'tip', body: 'Eating and drinking in London can be expensive — but Wetherspoons pubs offer a full cooked breakfast for £5.89 and pints from £2.50, which is genuinely extraordinary value in Central London. Not glamorous, but every budget traveller eventually ends up there.' },
       { type: 'faq', faqs: [
-        { q: 'How much does a pint of beer cost in London?', a: 'Central London pub pints average £6.50–8.50 for standard lager or bitter in 2025. Craft beer bars and venues near tourist sites charge £8–12. Wetherspoons: £2.50–3.50. Off-licence (bottle shop) beer: £1.50–3.50 to drink in a park.' },
+        { q: 'How much does a pint of beer cost in London?', a: 'Central London pub pints average £6.50–8.50 for standard lager or bitter in 2026. Craft beer bars and venues near tourist sites charge £8–12. Wetherspoons: £2.50–3.50. Off-licence (bottle shop) beer: £1.50–3.50 to drink in a park.' },
         { q: 'Is London more expensive than New York?', a: 'Hotels and meals are roughly comparable (London slightly cheaper in £ terms once you factor in US tipping requirements). London\'s public transport (daily cap £8.10) is cheaper than NYC\'s unlimited MetroCard for short stays. Both cities\'s free cultural offerings are extraordinary — the British Museum is arguably ahead of the Met.' },
         { q: 'How much spending money do I need for London?', a: 'A realistic all-in budget for a comfortable, experience-rich week in London (not backpacker, not luxury): £1,500–2,000 for 7 nights including accommodation, food, transport, 2–3 paid experiences, and a West End show. Budget harder: £900–1,200 with hostels, market food, and free attractions.' },
       ]},
@@ -490,7 +490,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'taxi-costs-stockholm',
-    title: 'How Much Does a Taxi Cost in Stockholm? (2025 Fare Guide)',
+    title: 'How Much Does a Taxi Cost in Stockholm? (2026 Fare Guide)',
     description: 'Stockholm taxis are deregulated and prices vary widely — always check the per-km rate on the window. Airport to city runs SEK 550–750 (~€48–66). Here\'s what to know.',
     publishedAt: '2025-05-03',
     readingMinutes: 4,
@@ -499,7 +499,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
     country: 'Sweden',
     content: [
       { type: 'intro', body: 'Stockholm has a deregulated taxi market — prices are set by individual companies, not a government rate. Always check the displayed per-km rate on the vehicle window before boarding. Reputable companies charge SEK 11–21/km; some tourist-trap operators charge SEK 70–100/km.' },
-      { type: 'h2', heading: 'Stockholm Taxi Fares by Company (2025)' },
+      { type: 'h2', heading: 'Stockholm Taxi Fares by Company (2026)' },
       { type: 'table', rows: [
         { label: 'Taxi Stockholm (reputable)', value: 'SEK 50 flag fall + SEK 11–21/km depending on time of day' },
         { label: 'Taxi Kurir (reputable)', value: 'SEK 65 flag fall + SEK 15–22/km' },
@@ -520,7 +520,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'best-time-to-visit-sydney',
-    title: 'Best Time to Visit Sydney: Beach, Weather & Events Guide (2025)',
+    title: 'Best Time to Visit Sydney: Beach, Weather & Events Guide (2026)',
     description: 'The best time to visit Sydney is September to November (spring) or March to May (autumn) — warm, less crowded than summer, and perfect weather for beaches and the harbour.',
     publishedAt: '2025-05-06',
     readingMinutes: 5,
@@ -554,8 +554,8 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'daily-budget-guide-amsterdam',
-    title: 'Amsterdam Daily Budget: How Much Does Amsterdam Cost Per Day? (2025)',
-    description: 'Amsterdam costs €80–120/day on a budget, €200–300 mid-range, and €500+ for luxury. Here\'s the full breakdown for 2025.',
+    title: 'Amsterdam Daily Budget: How Much Does Amsterdam Cost Per Day? (2026)',
+    description: 'Amsterdam costs €80–120/day on a budget, €200–300 mid-range, and €500+ for luxury. Here\'s the full breakdown for 2026.',
     publishedAt: '2025-05-09',
     readingMinutes: 5,
     category: 'travel',
@@ -586,7 +586,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'is-rio-de-janeiro-safe',
-    title: 'Is Rio de Janeiro Safe for Tourists? Honest Guide (2025)',
+    title: 'Is Rio de Janeiro Safe for Tourists? Honest Guide (2026)',
     description: 'Rio is beautiful but requires meaningful safety precautions — flash robbery (arrastão) and phone theft are the key risks. With awareness, millions visit safely each year.',
     publishedAt: '2025-05-12',
     readingMinutes: 5,
@@ -595,7 +595,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
     country: 'Brazil',
     content: [
       { type: 'intro', body: 'Rio de Janeiro is a genuinely stunning city with significant safety challenges. Violent crime rates in parts of Rio are among the highest in South America — but the tourist areas (Ipanema, Leblon, Copacabana, Santa Teresa, Lapa on weekends) are visited by millions each year with appropriate precautions.' },
-      { type: 'h2', heading: 'Rio Safety Overview (2025)' },
+      { type: 'h2', heading: 'Rio Safety Overview (2026)' },
       { type: 'table', rows: [
         { label: 'Phone theft', value: 'Very high risk on beaches, at Carnival, near favelas — use a cheap burner phone or turn off tracking and leave in hotel' },
         { label: 'Flash robbery (arrastão)', value: 'Groups target beaches in off-peak hours and tourists in isolated spots — stay near crowds' },
@@ -621,7 +621,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'how-to-tip-tour-guides',
-    title: 'How Much to Tip a Tour Guide: Country-by-Country Guide (2025)',
+    title: 'How Much to Tip a Tour Guide: Country-by-Country Guide (2026)',
     description: 'Tour guide tipping varies from $5–10 per person for a walking tour to $30+ for a private full-day guide. Here\'s exactly what to tip by region and tour type.',
     publishedAt: '2025-05-15',
     readingMinutes: 5,
@@ -657,7 +657,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'taxi-costs-warsaw',
-    title: 'How Much Does a Taxi Cost in Warsaw? (2025 Fare Guide)',
+    title: 'How Much Does a Taxi Cost in Warsaw? (2026 Fare Guide)',
     description: 'Warsaw is one of Europe\'s most affordable taxi cities — flag fall PLN 8, then PLN 3/km. Airport to city centre costs PLN 45–65 (~€10–15). Bolt is the best option.',
     publishedAt: '2025-05-18',
     readingMinutes: 4,
@@ -666,7 +666,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
     country: 'Poland',
     content: [
       { type: 'intro', body: 'Warsaw taxis are among the cheapest in Europe: PLN 8 flag fall, then PLN 3/km daytime and PLN 4.50/km nights and weekends. A typical 5km city centre trip costs PLN 24–42 (~€5.50–10). Bolt is the dominant app and is the safest way to book.' },
-      { type: 'h2', heading: 'Typical Warsaw Taxi Fares (2025)' },
+      { type: 'h2', heading: 'Typical Warsaw Taxi Fares (2026)' },
       { type: 'table', rows: [
         { label: 'Warsaw Chopin Airport (WAW) → Old Town', value: 'PLN 45–65 (~€10–15, 30–45 min depending on traffic)' },
         { label: 'Old Town → Warsaw Uprising Museum', value: 'PLN 18–28 (~€4–6.50, 5km)' },
@@ -686,7 +686,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'best-time-to-visit-cape-town',
-    title: 'Best Time to Visit Cape Town: When to Visit for Sun, Whales & Wine (2025)',
+    title: 'Best Time to Visit Cape Town: When to Visit for Sun, Whales & Wine (2026)',
     description: 'The best time to visit Cape Town is November to March — Southern Hemisphere summer brings 25–30°C, clear skies, and Table Mountain visibility at its best.',
     publishedAt: '2025-05-21',
     readingMinutes: 5,
@@ -719,7 +719,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'getting-around-dubai',
-    title: 'Getting Around Dubai: Metro, Bus, Tram, Taxi & Ride-App Guide (2025)',
+    title: 'Getting Around Dubai: Metro, Bus, Tram, Taxi & Ride-App Guide (2026)',
     description: 'Dubai\'s Metro is the cleanest and most efficient way to get around the city. Here\'s a complete guide to Dubai transport including taxis, Careem, and the Palm Monorail.',
     publishedAt: '2025-05-24',
     readingMinutes: 5,
@@ -728,7 +728,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
     country: 'UAE',
     content: [
       { type: 'intro', body: 'Dubai\'s Red and Green Metro lines connect the airport to the city\'s major attractions for AED 3–8.50 per trip — covering Dubai Mall, the Burj Khalifa area, Marina, and JBR. A Nol Card handles all public transport and eliminates the need for cash on buses and the Metro.' },
-      { type: 'h2', heading: 'Dubai Transport Options (2025)' },
+      { type: 'h2', heading: 'Dubai Transport Options (2026)' },
       { type: 'table', rows: [
         { label: 'Metro (Red Line, DXB to Marina)', value: 'AED 3–8.50 with Nol Card; DXB airport to Dubai Mall: AED 6, 35 min' },
         { label: 'Bus', value: 'AED 3–5.80; covers areas Metro misses; air-conditioned; Nol Card accepted' },
@@ -749,7 +749,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'is-nairobi-safe',
-    title: 'Is Nairobi Safe for Tourists? Honest Safety Guide (2025)',
+    title: 'Is Nairobi Safe for Tourists? Honest Safety Guide (2026)',
     description: 'Nairobi has a mixed safety record — certain areas and times carry significant risk, while the tourist areas and safari departure zones are increasingly secure. Here\'s what to know.',
     publishedAt: '2025-05-27',
     readingMinutes: 5,
@@ -758,7 +758,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
     country: 'Kenya',
     content: [
       { type: 'intro', body: 'Nairobi earned the unfortunate nickname "Nairobbery" — but the city has significantly improved security in tourist-facing areas in recent years. Westlands, Karen, Gigiri (UN area), and the city\'s premium neighbourhoods are reasonably safe for aware travellers. Certain areas — especially at night — require serious caution.' },
-      { type: 'h2', heading: 'Nairobi Safety Overview (2025)' },
+      { type: 'h2', heading: 'Nairobi Safety Overview (2026)' },
       { type: 'table', rows: [
         { label: 'Street crime / mugging', value: 'High risk in CBD at night and in transition zones; use Bolt or Little Cab for all transport' },
         { label: 'Vehicle theft', value: 'Significant — never leave valuables visible in a parked car; carjacking in outer suburbs' },
@@ -783,8 +783,8 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'tipping-at-spas-worldwide',
-    title: 'Spa Tipping Guide: How Much to Tip After a Massage Worldwide (2025)',
-    description: 'Spa tipping ranges from 15–20% in the USA to nothing expected in Japan. Here\'s exactly what to tip after a massage, facial, or treatment in 2025.',
+    title: 'Spa Tipping Guide: How Much to Tip After a Massage Worldwide (2026)',
+    description: 'Spa tipping ranges from 15–20% in the USA to nothing expected in Japan. Here\'s exactly what to tip after a massage, facial, or treatment in 2026.',
     publishedAt: '2025-05-29',
     readingMinutes: 4,
     category: 'tipping',
