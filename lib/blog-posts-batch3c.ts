@@ -35,7 +35,7 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'uber-vs-taxi-rome',
     title: 'Uber vs Taxi in Rome: Which Is Better in 2026?',
-    description: 'In Rome, official white taxis are metered and honest — but Uber also operates (as UberBlack, not UberX). Here\'s the full comparison for 2026.',
+    description: "In Rome, Uber only operates as UberBlack — typically 40–60% pricier than a metered white taxi (€3.50 flag fall, €1.10/km). Here's the full 2026 comparison, plus the €50 Fiumicino flat-rate scam every tourist should know.",
     publishedAt: '2025-06-04',
     readingMinutes: 4,
     category: 'taxi',
