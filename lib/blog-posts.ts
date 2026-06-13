@@ -280,7 +280,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'how-much-does-a-taxi-cost-in-bangkok',
     title: 'How Much Does a Taxi Cost in Bangkok? (2026 Fare Guide)',
     description:
-      'Real Bangkok taxi meter rates, sample fares from Suvarnabhumi Airport, scam warnings, and Grab vs taxi comparison for 2026.',
+      "Suvarnabhumi Airport (BKK) to Sukhumvit costs ฿400–500 all-in by metered taxi — the Airport Rail Link does the same trip in 15 minutes for ฿150. Here's the full 2026 fare breakdown, the 'meter's broken' scam to dodge, and when Grab beats a street taxi.",
     publishedAt: '2026-01-28',
     readingMinutes: 8,
     category: 'taxi',
@@ -427,7 +427,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'how-much-does-a-taxi-cost-in-dubai',
     title: 'How Much Does a Taxi Cost in Dubai? (2026 Rates)',
     description:
-      'Dubai taxi meter rates, airport fares, tipping customs, and Uber vs Careem comparison for 2026.',
+      "Dubai Airport (DXB) to Downtown costs AED 50–75 on the meter — Careem and Uber often undercut that by AED 5–15. Here's the full 2026 RTA rate breakdown, plus when the AED 3–8.50 Metro is the smarter call.",
     publishedAt: '2026-01-17',
     readingMinutes: 8,
     category: 'taxi',
@@ -577,7 +577,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'how-much-does-a-taxi-cost-in-singapore',
     title: 'How Much Does a Taxi Cost in Singapore? (2026 Guide)',
     description:
-      'Singapore taxi fare structure, airport surcharges, ERP tolls explained, and when to use Grab instead for 2026.',
+      "Changi Airport to Orchard Road runs S$28–42 once surcharges and ERP tolls stack up — Grab usually quotes S$3–8 less, upfront. Here's the full 2026 breakdown of every surcharge, and why a midnight fare can hit S$50–60.",
     publishedAt: '2026-01-06',
     readingMinutes: 8,
     category: 'taxi',
@@ -718,7 +718,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'how-much-does-a-taxi-cost-in-london',
     title: 'How Much Does a Taxi Cost in London? (2026 Black Cab Fares)',
     description:
-      'London black cab meter rates, Heathrow taxi fares, Uber vs black cab comparison, and how to avoid unlicensed minicabs in 2026.',
+      "A Heathrow black cab to central London costs £55–85 — Uber or Bolt typically do the same run for £35–55. Here's the full 2026 tariff breakdown, why the meter shows three different rates, and how to spot an illegal minicab tout.",
     publishedAt: '2025-12-26',
     readingMinutes: 8,
     category: 'taxi',
@@ -855,7 +855,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'how-much-does-a-taxi-cost-in-new-york',
     title: 'How Much Does a Taxi Cost in New York? (2026 Yellow Cab Guide)',
     description:
-      'New York yellow cab rates, JFK flat rate explained, tips and surcharges breakdown, and when Uber is cheaper in 2026.',
+      "The JFK flat rate is $70 to Manhattan — but tolls, surcharges and a 20% tip push the real cost to $90–110. Here's the full 2026 yellow cab breakdown, and why Uber's $65–85 fixed price from JFK often wins.",
     publishedAt: '2025-12-14',
     readingMinutes: 8,
     category: 'taxi',
@@ -981,7 +981,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'how-much-does-a-taxi-cost-in-tokyo',
     title: 'How Much Does a Taxi Cost in Tokyo? (2026 Fare Guide)',
     description:
-      'Tokyo taxi prices, Narita and Haneda airport fares, why taxis are expensive at night, and cheaper alternatives for 2026.',
+      "A taxi from Narita Airport to central Tokyo runs ¥20,000–30,000 ($130–200) — the Narita Express covers the same 60 km in 50 minutes for ¥3,070. Here's the full 2026 fare breakdown and exactly when a taxi is still worth it.",
     publishedAt: '2025-12-03',
     readingMinutes: 8,
     category: 'taxi',
@@ -1111,7 +1111,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'how-much-does-a-taxi-cost-in-paris',
     title: 'How Much Does a Taxi Cost in Paris? (2026 Rates)',
     description:
-      'Paris taxi tariffs A, B, and C explained, CDG and Orly airport fixed fares, and Bolt vs G7 vs Uber comparison for 2026.',
+      "CDG to central Paris is a fixed €56–65; Orly is €35–41 — running the meter instead is illegal. Here's the full 2026 tariff breakdown (Tariffs A, B and C), and when Bolt or Uber beats a licensed G7 taxi.",
     publishedAt: '2025-11-21',
     readingMinutes: 8,
     category: 'taxi',
@@ -1282,7 +1282,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'how-much-does-a-taxi-cost-in-bali',
     title: 'How Much Does a Taxi Cost in Bali? (2026 Guide)',
     description:
-      'Bali taxi prices, Ngurah Rai airport fares, Blue Bird vs Gojek vs Grab comparison, and the biggest taxi scams tourists face.',
+      "Unmetered tourist taxis in Bali charge 3–5× the metered rate — a Kuta–Seminyak ride that's IDR 30,000–45,000 on the Blue Bird meter gets quoted at IDR 100,000–200,000 by touts. Here's the full 2026 fare guide for airport transfers, Gojek vs Grab, and avoiding the markup.",
     publishedAt: '2025-11-09',
     readingMinutes: 8,
     category: 'taxi',
@@ -1429,7 +1429,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'how-much-does-a-taxi-cost-in-rome',
     title: 'How Much Does a Taxi Cost in Rome? (2026 Fixed & Metered Fares)',
     description:
-      'Rome taxi rates, Fiumicino airport fixed fare, the classic tourist overcharge scams, and how to book a legal taxi in 2026.',
+      "Fiumicino Airport to central Rome is a fixed €50; Ciampino is €30 — both all-inclusive, no extras. Here's the full 2026 metered-fare breakdown for getting around the city, and how unlicensed drivers try to inflate that flat rate.",
     publishedAt: '2025-10-29',
     readingMinutes: 8,
     category: 'taxi',
@@ -1585,7 +1585,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'how-much-does-a-taxi-cost-in-istanbul',
     title: 'How Much Does a Taxi Cost in Istanbul? (2026 Guide)',
     description:
-      'Istanbul taxi meter rates, airport fares, the change-scam to know about, and BiTaksi vs Uber alternatives for 2026.',
+      "Istanbul Airport to Taksim costs ₺550–750 by metered taxi — the M11 metro does it for ₺60. Here's the full 2026 fare breakdown, the banknote-switch scam every visitor should know, and when BiTaksi is the safer call.",
     publishedAt: '2025-10-17',
     readingMinutes: 8,
     category: 'taxi',
@@ -1880,7 +1880,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'how-much-does-a-taxi-cost-in-barcelona',
     title: 'How Much Does a Taxi Cost in Barcelona? (2026 Guide)',
     description:
-      'Barcelona taxi meter rates, airport fares from El Prat, zone tariffs, and when Uber is cheaper — updated for 2026.',
+      "El Prat Airport to Las Ramblas costs €25–35 by metered taxi, or €6.75 on the Aerobus. Here's the full 2026 fare breakdown — night tariffs, luggage fees, and when Uber beats a metered cab.",
     publishedAt: '2025-09-24',
     readingMinutes: 7,
     category: 'taxi',
@@ -1992,7 +1992,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'how-much-does-a-taxi-cost-in-sydney',
     title: 'How Much Does a Taxi Cost in Sydney? (2026 Fare Guide)',
     description:
-      'Sydney taxi rates, airport fares from Kingsford Smith, booking fees, and Uber vs taxi comparison for 2026.',
+      "Sydney Airport to the CBD costs A$45–60 by taxi — the Airport Link train does the same trip in 13 minutes for A$21.60. Here's the full 2026 fare breakdown and when Uber's 10–20% discount actually holds up.",
     publishedAt: '2025-09-13',
     readingMinutes: 7,
     category: 'taxi',
