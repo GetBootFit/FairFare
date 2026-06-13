@@ -71,7 +71,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'uber-vs-taxi-new-york-city',
     title: 'Uber vs Yellow Cab in New York City: Which Is Cheaper in 2026?',
-    description: 'In NYC, Uber and Lyft are often cheaper than yellow cabs outside Manhattan — but yellow cabs win in heavy rain and for flat-rate airport runs. Here\'s the full comparison.',
+    description: "The JFK flat rate is $70 by yellow cab — Uber runs $55–90 depending on surge, so it's often cheaper off-peak but pricier during rush hour. Here's the full 2026 comparison, plus the NYC congestion surcharge ($2.50–2.75) that now hits every ride into Manhattan.",
     publishedAt: '2025-03-25',
     readingMinutes: 4,
     category: 'taxi',
@@ -360,7 +360,7 @@ export const BATCH3B_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'uber-vs-taxi-istanbul',
     title: 'Uber vs Taxi in Istanbul: BiTaksi, Cab, or App? (2026)',
-    description: 'Uber operates in Istanbul but is more expensive than metered taxis. BiTaksi (the local app) is the best option — it books a metered cab via app, combining safety and fair pricing.',
+    description: "Uber in Istanbul runs 20–30% above the metered rate (TRY 71 flag fall + TRY 29.50/km) — BiTaksi books the same metered taxi via app with zero markup. Here's the full 2026 comparison, plus the daytime-to-nighttime meter switch scam that overcharges tourists by 50%.",
     publishedAt: '2025-04-21',
     readingMinutes: 4,
     category: 'taxi',

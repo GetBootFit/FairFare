@@ -262,7 +262,7 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'uber-vs-taxi-kuala-lumpur',
     title: 'Grab vs Taxi in Kuala Lumpur: Which Is Better in 2026?',
-    description: 'Grab dominates Kuala Lumpur — metered taxis frequently refuse fares or overcharge tourists. Here\'s why Grab is almost always the better choice in KL.',
+    description: "KLIA Airport to KLCC costs MYR 80–110 by Grab, or MYR 90–130 if a metered taxi driver negotiates a flat tourist rate (many refuse the meter entirely). Here's the full 2026 Grab vs taxi breakdown — and why the MYR 55 KLIA Ekspres train often beats both.",
     publishedAt: '2025-08-10',
     readingMinutes: 4,
     category: 'taxi',
@@ -294,7 +294,7 @@ export const BATCH3D_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'uber-vs-taxi-beijing',
     title: 'DiDi vs Taxi in Beijing: Which Is Better for Tourists? (2026)',
-    description: 'Uber left China in 2016. DiDi is now Beijing\'s dominant ride-hailing app. Here\'s how DiDi compares to metered taxis — and how to set both up before you arrive.',
+    description: "Beijing's PEK Airport to Sanlitun costs CNY 130–180 by DiDi or CNY 140–200 by metered taxi — both honest, both far pricier than the CNY 30 Airport Express. Here's the full 2026 DiDi vs taxi setup guide, since Uber hasn't worked in China since 2016.",
     publishedAt: '2025-08-13',
     readingMinutes: 4,
     category: 'taxi',

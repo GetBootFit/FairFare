@@ -229,7 +229,7 @@ export const BATCH3C_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'uber-vs-taxi-dubai',
     title: 'Uber vs Taxi in Dubai: Careem, RTA Cabs & Which to Use (2026)',
-    description: 'In Dubai, official RTA taxis and Careem (owned by Uber) are both excellent. RTA taxis have no surge pricing; Careem offers upfront pricing. Here\'s the full comparison.',
+    description: "DXB Airport to Downtown Dubai costs AED 50–70 plus a AED 20 airport surcharge by RTA taxi — Careem often quotes AED 45–65 all-in, no surcharge. Here's the full 2026 RTA vs Careem comparison, and why tipping isn't expected in either.",
     publishedAt: '2025-06-22',
     readingMinutes: 4,
     category: 'taxi',

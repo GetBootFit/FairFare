@@ -69,7 +69,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'uber-vs-taxi-bangkok',
     title: 'Uber vs Taxi in Bangkok: Grab, Bolt & Metered Cabs Compared (2026)',
-    description: 'Uber doesn\'t operate in Bangkok — Grab is the app-based alternative. Here\'s how Grab compares to Bangkok\'s metered taxis in price, safety, and convenience.',
+    description: "Uber exited Thailand in 2018 — Grab is now the default, and a Suvarnabhumi Airport run to Sukhumvit costs ฿280–380 by Grab vs ฿250–350 + ฿75 tolls by metered taxi. Here's the full 2026 comparison, plus the meter-refusal scam every tourist should know.",
     publishedAt: '2025-01-09',
     readingMinutes: 4,
     category: 'taxi',
@@ -425,7 +425,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'uber-vs-taxi-london',
     title: 'Uber vs Black Cab in London: Price, Speed & When to Use Each (2026)',
-    description: 'Uber is typically 30–50% cheaper than London black cabs. But black cabs have legal access to bus lanes, instant availability, and no surge pricing. Here\'s the full comparison.',
+    description: "A Heathrow black cab to central London costs £55–85 — Uber typically does it for £45–65, and a 5km city trip is £12–18 vs £18–28 by cab. Here's the full 2026 comparison, plus when New Year's Eve surge makes Uber 3–4× pricier than the meter.",
     publishedAt: '2025-02-11',
     readingMinutes: 4,
     category: 'taxi',
@@ -589,7 +589,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'uber-vs-taxi-singapore',
     title: 'Uber vs Taxi in Singapore: Grab, ComfortDelGro & Which to Choose (2026)',
-    description: 'In Singapore, Grab has replaced Uber (which exited in 2018). Standard metered taxis remain competitive. Here\'s a complete comparison for 2026.',
+    description: "Changi Airport to the city costs S$25–40 by Grab or S$25–45 by metered taxi, but a midnight taxi ride adds a 50% surcharge on top. Here's the full 2026 Grab vs taxi breakdown — every surcharge explained, and when the MRT at S$1.20–2.50 beats both.",
     publishedAt: '2025-02-26',
     readingMinutes: 4,
     category: 'taxi',
