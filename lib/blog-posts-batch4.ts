@@ -660,7 +660,7 @@ export const BATCH4_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'tipping-in-thailand',
     title: 'Tipping in Thailand: How Much & When (2026)',
-    description: 'Tipping is not traditional in Thailand — but the tourism industry has changed expectations. Here\'s what to give at restaurants, spas, and taxis.',
+    description: "Thai massage workers are the most tip-dependent category — THB 50–100 is expected after a 60-minute session costing THB 250–500. Here's the full 2026 guide: local street food never tips, tourist restaurants 10%, and metered taxis just round up to the nearest THB 10.",
     publishedAt: '2026-04-28',
     readingMinutes: 8,
     category: 'tipping',
@@ -709,7 +709,7 @@ export const BATCH4_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'tipping-in-japan',
     title: 'Tipping in Japan: Why You Should Never Tip (2026)',
-    description: 'Tipping in Japan is not just unnecessary — it can cause offence. Here\'s the complete guide to Japanese tipping etiquette and what to do instead.',
+    description: "In Japan, a Tokyo taxi driver may chase you down the street to return money they think you forgot — tipping is that unwelcome. Here's the full 2026 guide, including the one exception: ryokan attendants accept ¥2,000–5,000 in an envelope, presented at arrival, not checkout.",
     publishedAt: '2026-05-01',
     readingMinutes: 8,
     category: 'tipping',
@@ -756,7 +756,7 @@ export const BATCH4_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'tipping-in-italy',
     title: 'Tipping in Italy: How Much & When (2026)',
-    description: 'Italians tip modestly — and the coperto charge on restaurant bills confuses many visitors. Here\'s the clear guide to every situation.',
+    description: "The coperto (€1–4 per person on Italian restaurant bills) is a table cover charge, not a service tip — it goes to the restaurant, not your server. Here's the full 2026 guide: €1–2 per person extra is the genuine Italian tip, and the café gesture is just €0.10–0.20 left on the bar.",
     publishedAt: '2026-05-05',
     readingMinutes: 8,
     category: 'tipping',

@@ -4,7 +4,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'tipping-in-china',
     title: 'Tipping in China: Do You Tip & How Much? (2026)',
-    description: 'Tipping in China is not expected — and in some settings can cause awkwardness. Here\'s what to know before you visit.',
+    description: "At a local Beijing or Shanghai restaurant, staff may chase you down the street to return money they think you forgot — tipping is that unfamiliar. Here's the full 2026 guide: private tour guides (CNY 50–100/day) and resort spa workers do appreciate tips; local restaurants and DiDi drivers don't.",
     publishedAt: '2025-09-06',
     readingMinutes: 8,
     category: 'tipping',
@@ -53,7 +53,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'tipping-in-new-zealand',
     title: 'Tipping in New Zealand: Is It Expected? (2026)',
-    description: 'New Zealand has no tipping obligation — but the rules are more nuanced than a simple no. Here\'s the full picture.',
+    description: "NZ hospitality staff earn NZD $23.15/hour minimum wage — tipping is genuinely optional and no one expects it. Here's the full 2026 guide: 10% for exceptional service is a lovely gesture, café tip jars are common, and card readers rarely have a tip screen (unlike Australia).",
     publishedAt: '2025-09-14',
     readingMinutes: 8,
     category: 'tipping',
@@ -99,7 +99,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'tipping-in-netherlands',
     title: 'Tipping in the Netherlands: How Much & When (2026)',
-    description: 'Tipping in the Netherlands is appreciated but never obligatory. A round-up or 5–10% says "great service" without any awkwardness.',
+    description: "Dutch restaurants don't include a service charge, and most card terminals don't have a tip prompt — say the full total you want to pay before they process the card. Here's the full 2026 guide: 5–10% is appreciated, 0% causes no offence.",
     publishedAt: '2025-09-21',
     readingMinutes: 8,
     category: 'tipping',
@@ -145,7 +145,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'tipping-in-switzerland',
     title: 'Tipping in Switzerland: How Much to Tip (2026)',
-    description: 'Switzerland is expensive — and tipping is mercifully optional. Here\'s what locals actually do and what visitors should know.',
+    description: "Tipping is optional in Switzerland — but ski instructors at Zermatt or Verbier expect CHF 10–20 per day, and 'stimmt so' is the phrase that handles every restaurant tip without counting change. Here's the full 2026 guide for restaurants, taxis, ski resorts, and mountain guides.",
     publishedAt: '2025-10-02',
     readingMinutes: 8,
     category: 'tipping',
@@ -191,7 +191,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'tipping-in-sweden',
     title: 'Tipping in Sweden: What Visitors Need to Know (2026)',
-    description: 'Sweden has no tipping norm — but the rules have shifted in tourist areas. Here\'s what to do and what to skip.',
+    description: "Swedish card readers now routinely prompt for a tip — pressing 0% is completely normal and causes no reaction. Here's the full 2026 guide: 5–10% is increasingly expected at Stockholm restaurants, but Sweden remains a no-obligation-to-tip country.",
     publishedAt: '2025-10-09',
     readingMinutes: 8,
     category: 'tipping',
@@ -231,7 +231,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'tipping-in-norway',
     title: 'Tipping in Norway: Is It Expected? (2026)',
-    description: 'Norway is one of the world\'s most expensive countries — tipping is optional, but here\'s how locals handle it.',
+    description: "Norway is one of Europe's most expensive countries and tipping is genuinely optional — but Northern Lights guides in Tromsø and fjord operators appreciate NOK 100–200 for an exceptional experience. Here's the full 2026 guide to when and how much Oslo locals actually tip.",
     publishedAt: '2025-10-16',
     readingMinutes: 8,
     category: 'tipping',
@@ -277,7 +277,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'tipping-in-denmark',
     title: 'Tipping in Denmark: How Much & When (2026)',
-    description: 'Denmark\'s strong wage laws mean tipping is optional — but here\'s what Copenhagen visitors actually do.',
+    description: "Copenhagen free walking tours are fully tip-based — DKK 50–100 per person is the expected contribution at the end, since it's the guide's entire income for that walk. Here's the full 2026 guide: tipping is optional at Danish restaurants, but 5–10% for good service is warmly received.",
     publishedAt: '2025-10-23',
     readingMinutes: 8,
     category: 'tipping',
@@ -323,7 +323,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'tipping-in-austria',
     title: 'Tipping in Austria: How Much to Tip (2026)',
-    description: 'Austria has a clear but relaxed tipping culture — 5–10% is the standard and expected in sit-down restaurants. Here\'s the full guide.',
+    description: "Vienna coffee houses have a specific ritual: say the total you want to pay ('neun Euro' for €9) when settling up — not the tip amount. Here's the full 2026 guide: 5–10% is standard at Austrian restaurants, and ski instructors at Kitzbühel or St. Anton expect €10–20 per day.",
     publishedAt: '2025-10-30',
     readingMinutes: 8,
     category: 'tipping',
@@ -369,7 +369,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'tipping-in-poland',
     title: 'Tipping in Poland: How Much & When (2026)',
-    description: 'Poland\'s tipping culture is growing — 10% is now common in Polish restaurants. Here\'s what visitors should know.',
+    description: "Poland is 40–60% cheaper than Western Europe, making 10% at a Kraków or Warsaw restaurant genuinely impactful for staff — and it's now the standard. Here's the full 2026 guide, including Auschwitz tour guides (PLN 30–60 per person — difficult, emotionally demanding work).",
     publishedAt: '2025-11-06',
     readingMinutes: 8,
     category: 'tipping',
@@ -415,7 +415,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'tipping-in-czech-republic',
     title: 'Tipping in Czech Republic: Prague & Beyond (2026)',
-    description: 'Prague\'s tipping culture is stronger than you might expect. 10% is standard at restaurants — here\'s the full guide.',
+    description: "Prague restaurants expect 10%, and free walking tours of the Old Town and Jewish Quarter are tip-based — CZK 100–200 per person is the guide's full income for the walk. Here's the full 2026 guide, plus the Old Town Square taxi scam (CZK 700 Bolt ride vs CZK 1,500+ street quote).",
     publishedAt: '2025-11-13',
     readingMinutes: 8,
     category: 'tipping',
@@ -461,7 +461,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'tipping-in-israel',
     title: 'Tipping in Israel: How Much to Tip (2026)',
-    description: 'Tipping in Israel is expected at restaurants and is a meaningful part of workers\' income. Here\'s exactly what to give.',
+    description: "Tipping in Israel is expected, not optional — 10–15% at Tel Aviv and Jerusalem restaurants is the local norm. Here's the full 2026 guide, including card terminals with a built-in tip screen (the טיפ prompt) and private heritage tour guides (ILS 50–100+ per person per day).",
     publishedAt: '2025-11-20',
     readingMinutes: 8,
     category: 'tipping',
@@ -506,7 +506,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'tipping-in-egypt',
     title: 'Tipping in Egypt: Baksheesh & How Much to Give (2026)',
-    description: 'In Egypt, tipping (baksheesh) is deeply embedded in daily life. Here\'s who to tip, how much, and how to navigate it.',
+    description: "In Egypt, baksheesh is a critical part of service workers' income — budget USD $10–20 per person per day in small notes for guides, site guards, and porters alone. Here's the full 2026 guide, including Nile cruise staff norms (USD $10–15/day for the guide, USD $5/day for crew).",
     publishedAt: '2025-11-27',
     readingMinutes: 8,
     category: 'tipping',
@@ -547,7 +547,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'tipping-in-south-africa',
     title: 'Tipping in South Africa: Rand, Rates & Who to Tip (2026)',
-    description: 'South Africa has a strong tipping culture — 10–15% at restaurants is expected. Plus: what about car guards and petrol attendants?',
+    description: "South Africa has full-service petrol stations — the attendant fills your tank and expects ZAR 5–10. Car guards outside restaurants also expect ZAR 5–10 when you return. Here's the full 2026 guide: 10–15% at restaurants is expected, and safari guides earn ZAR 200–500 per day.",
     publishedAt: '2025-12-04',
     readingMinutes: 8,
     category: 'tipping',
@@ -596,7 +596,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'tipping-in-philippines',
     title: 'Tipping in the Philippines: How Much & When (2026)',
-    description: 'Service charge is common in Philippine restaurants — but personal tipping still matters. Here\'s what to know.',
+    description: "Philippine restaurants often add a 10% service charge that goes to the establishment, not your server — a PHP 50–100 cash tip directly to them makes the real difference. Here's the full 2026 guide, plus island-hopping boat crews (PHP 200–500 per person for a full-day trip).",
     publishedAt: '2025-12-11',
     readingMinutes: 8,
     category: 'tipping',
@@ -643,7 +643,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'tipping-in-vietnam',
     title: 'Tipping in Vietnam: How Much & Who to Tip (2026)',
-    description: 'Tipping in Vietnam is not traditional — but in tourist areas it\'s increasingly expected. Here\'s the real guide for 2026.',
+    description: "Local phở and bánh mì stalls expect no tip — but tourist restaurants in Hanoi's Old Quarter and Hội An expect VND 30,000–70,000 per person, and Ha Long Bay cruise guides earn USD $5–10 per person for 2-night trips. Here's the full 2026 guide.",
     publishedAt: '2025-12-18',
     readingMinutes: 8,
     category: 'tipping',
@@ -691,7 +691,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'tipping-in-malaysia',
     title: 'Tipping in Malaysia: What\'s Expected in 2026',
-    description: 'Malaysia often adds a service charge automatically — but personal cash tips are still appreciated. Here\'s how to navigate it.',
+    description: "Malaysian menus show '++' — a 10% service charge plus 6% GST that turns a MYR 50 dish into ~MYR 58. Hawker stalls and mamak restaurants never expect tips. Here's the full 2026 guide to when a MYR 5–10 cash tip to the server still makes a meaningful difference.",
     publishedAt: '2025-12-22',
     readingMinutes: 8,
     category: 'tipping',
@@ -742,7 +742,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'tipping-in-sri-lanka',
     title: 'Tipping in Sri Lanka: How Much & Who to Tip (2026)',
-    description: 'Sri Lanka\'s tipping culture is well-established in tourism areas. Here\'s who to tip, how much, and what\'s genuinely expected.',
+    description: "Tourist restaurants in Galle and Colombo expect 10% or LKR 200–500 — and USD $5 that feels small to a visitor is worth LKR 1,500–1,800 to a Sri Lankan guide. Here's the full 2026 guide, including Yala safari drivers (USD $5–10) and Cultural Triangle drivers (USD $3–5/day).",
     publishedAt: '2025-12-29',
     readingMinutes: 8,
     category: 'tipping',
@@ -790,7 +790,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'tipping-in-peru',
     title: 'Tipping in Peru: How Much to Tip in Lima & Beyond (2026)',
-    description: 'Peru\'s tipping norms vary by venue — tourist restaurants expect 10%, while local spots don\'t. Here\'s the full breakdown.',
+    description: "Tourist restaurants in Lima and Cusco expect 10% if servicio isn't on the bill — but Inca Trail porters are where it really counts: USD $15–25 per porter for the 4-day trek is considered a moral obligation. Here's the full 2026 guide for Lima, Cusco, and Machu Picchu.",
     publishedAt: '2026-01-06',
     readingMinutes: 8,
     category: 'tipping',
@@ -837,7 +837,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'tipping-in-colombia',
     title: 'Tipping in Colombia: How Much & When (2026)',
-    description: 'Colombia has a unique "voluntary service charge" system at restaurants. Here\'s how it works and what visitors should do.',
+    description: "At the end of every Colombian restaurant meal, the server asks '¿Desea agregar la propina?' — a voluntary 10% you can decline without any social pressure. Here's the full 2026 guide, including coffee farm guides in the Eje Cafetero (COP 20,000–50,000 per person, about USD $5).",
     publishedAt: '2026-01-12',
     readingMinutes: 8,
     category: 'tipping',
@@ -887,7 +887,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'tipping-in-argentina',
     title: 'Tipping in Argentina: Pesos, Tips & the USD Reality (2026)',
-    description: 'Argentina\'s economic situation makes tipping genuinely impactful. Here\'s what to tip, in which currency, and why it matters.',
+    description: "Argentine restaurants expect 10% in pesos — but for Patagonia trek guides and multi-day tour crew, USD $5–10 bills are warmly preferred over ARS as a hedge against inflation. Here's the full 2026 guide, including Buenos Aires tango shows and Mendoza wine tour tipping.",
     publishedAt: '2026-01-17',
     readingMinutes: 8,
     category: 'tipping',
@@ -1251,7 +1251,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'taxi-fiumicino-to-rome',
     title: 'Taxi from Fiumicino (FCO) to Rome: Flat Rate & What to Know (2026)',
-    description: 'Rome has a €50 flat rate taxi from Fiumicino to the city centre. Here\'s how it works, where to find official cabs, and the alternatives.',
+    description: "The official Fiumicino to Rome flat rate is €50 for any destination inside the Aurelian Walls — all passengers, all luggage, no surcharges. Illegal touts at arrivals quote €80–150 for the same run. Here's the full 2026 guide to finding the right cab, and when the €14 Leonardo Express wins.",
     publishedAt: '2026-02-13',
     readingMinutes: 8,
     category: 'taxi',
