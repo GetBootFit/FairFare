@@ -22,8 +22,8 @@ function toBcp47(locale: string): string {
 
 // Locale blog index pages are built on demand (ISR) — no static params pre-built.
 // This avoids any build-time API cost. Pages are cached after first request.
-// 1-hour revalidation: was 300s which generated excessive ISR writes.
-export const revalidate = 3600
+// 24-hour revalidation: reduces ISR writes 24× vs hourly; daily is sufficient.
+export const revalidate = 86400
 export const dynamicParams = true
 
 export async function generateMetadata(

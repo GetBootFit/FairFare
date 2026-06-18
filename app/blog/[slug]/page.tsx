@@ -72,8 +72,9 @@ function formatDate(iso: string): string {
 
 // ── Static generation + ISR ───────────────────────────────────────────────────
 
-// Regenerate at most once every 7 days (was 24h) — reduces Fluid CPU from daily ISR crawl triggers.
-export const revalidate = 604800
+// No revalidation period: pre-built slugs (from generateStaticParams) are truly
+// static files with zero ISR. KV-based posts are generated once on first request
+// and cached indefinitely — no periodic Fluid CPU or ISR write cost.
 
 export function generateStaticParams() {
   return getAllBlogSlugs().map((slug) => ({ slug }))

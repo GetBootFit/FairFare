@@ -68,10 +68,11 @@ const COUNTRY_FLAGS: Record<string, string> = {
   'united-kingdom': 'gb', usa: 'us', vietnam: 'vn',
 }
 
-// No static params — pages are built on demand (ISR) to avoid pre-building
+// No static params — pages are built on demand to avoid pre-building
 // 100 posts × 14 locales = 1,400 pages and incurring ~$40-80 Claude cost.
-// 7-day revalidation (was 24h) — translations rarely change; reduces Fluid CPU consumption.
-export const revalidate = 604800
+// revalidate=false: each locale translation is generated once on first request
+// and cached permanently. No periodic regeneration = zero scheduled Fluid CPU cost.
+export const revalidate = false
 export const dynamicParams = true
 
 export async function generateMetadata(
