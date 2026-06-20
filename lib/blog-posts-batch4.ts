@@ -7,7 +7,7 @@ export const BATCH4_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'taxi-dxb-to-dubai',
     title: 'Taxi from Dubai Airport (DXB) to Dubai City: Cost & Guide (2026)',
-    description: 'Dubai Airport taxis are metered, clean, and regulated — but the airport surcharge surprises first-timers. Here\'s exactly what to pay.',
+    description: "A taxi from Dubai Airport to Downtown costs AED 60–80 all-in, including the mandatory AED 20 airport surcharge that catches first-timers off guard. Here's the full 2026 guide to RTA fares, Careem, and why the AED 3–7 Metro is the better deal.",
     publishedAt: '2026-03-22',
     readingMinutes: 8,
     category: 'taxi',
@@ -65,7 +65,7 @@ export const BATCH4_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'taxi-hkg-to-hong-kong',
     title: 'Taxi from Hong Kong Airport (HKG) to the City: Cost & Guide (2026)',
-    description: 'HKG taxis come in three colours with different zones — and tunnel charges add significantly to the fare. Here\'s the full breakdown.',
+    description: "A taxi from Hong Kong Airport to Central costs HK$380–450 once the HK$110 Cross-Harbour Tunnel toll is added — sometimes doubled if the driver charges the return toll too. Here's the full 2026 guide to HK's three taxi colours, and when the HK$115 Airport Express wins.",
     publishedAt: '2026-03-25',
     readingMinutes: 8,
     category: 'taxi',
@@ -238,7 +238,7 @@ export const BATCH4_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'taxi-jfk-to-new-york',
     title: 'Taxi from JFK Airport to Manhattan: Fixed Fare Guide (2026)',
-    description: 'JFK taxis to Manhattan use a flat rate — not the meter. Here\'s the exact cost, what tolls add, and the smarter alternatives.',
+    description: "The JFK to Manhattan flat rate is $70 — add tolls and a 15–20% tip and the real cost is $90–110. Unlicensed black cars inside the terminal quote $100–150 for the same ride. Here's the full 2026 guide to the legitimate taxi queue, and when the $8.25 AirTrain + subway wins.",
     publishedAt: '2026-04-04',
     readingMinutes: 8,
     category: 'taxi',
@@ -285,7 +285,7 @@ export const BATCH4_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'taxi-istanbul-airport-to-city',
     title: 'Taxi from Istanbul Airport (IST) to the City: Cost & Guide (2026)',
-    description: 'Istanbul\'s new airport is 35–45km from the city centre. Here\'s what taxis cost, what to watch for, and the faster alternatives.',
+    description: "A taxi from Istanbul Airport to Taksim costs ₺1,880–2,200 for the 40km ride — the Havaist bus covers it for ₺100–200, and the M11 metro connects in about 35 minutes. Here's the full 2026 guide, including the fixed-price scam to avoid (always insist on the meter).",
     publishedAt: '2026-04-07',
     readingMinutes: 8,
     category: 'taxi',
@@ -341,7 +341,7 @@ export const BATCH4_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'taxi-ngurah-rai-to-bali',
     title: 'Taxi from Bali Airport (DPS) to Seminyak, Kuta & Ubud: Cost Guide (2026)',
-    description: 'Bali Airport taxis are fixed-price, not metered — and Grab is banned from the terminal. Here\'s what to pay and how to avoid the common traps.',
+    description: "Bali Airport runs a fixed-price taxi system, not metered — IDR 100,000–140,000 to Seminyak — and Grab is banned from the pickup zone entirely (walk 500m to the public road to book one). Here's the full 2026 guide to the official Kosti Bali counter and avoiding the tout zone outside.",
     publishedAt: '2026-04-10',
     readingMinutes: 8,
     category: 'taxi',

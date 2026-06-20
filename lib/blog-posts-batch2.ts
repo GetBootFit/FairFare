@@ -942,7 +942,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'taxi-heathrow-to-london',
     title: 'Taxi from Heathrow to London: Cost, Time & Tips (2026)',
-    description: 'How much does a taxi from Heathrow to central London cost? Here\'s what to pay, how to book, and how to avoid overcharging.',
+    description: "A black cab from Heathrow to central London costs £55–90 metered — Uber or a pre-booked minicab runs £40–75. Touts in the arrivals hall quote £120–200 for the same ride. Here's the full 2026 guide to the official taxi ranks, and when the £11.80 Elizabeth Line wins.",
     publishedAt: '2026-01-22',
     readingMinutes: 8,
     category: 'taxi',
@@ -997,7 +997,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'taxi-cdg-to-paris',
     title: 'Taxi from CDG Airport to Paris: Cost & What to Expect (2026)',
-    description: 'Paris taxis from Charles de Gaulle use fixed flat fares. Here\'s exactly what you\'ll pay, where to queue, and what to watch out for.',
+    description: "CDG to Paris is a fixed €56 to the Right Bank or €65 to the Left Bank — but unlicensed touts inside the terminal quote €120–200 for the same ride. Here's the full 2026 guide to the official taxi queue, which bank your hotel is on, and when the €11.80 RER B wins.",
     publishedAt: '2026-01-26',
     readingMinutes: 8,
     category: 'taxi',
@@ -1045,7 +1045,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'taxi-changi-to-singapore',
     title: 'Taxi from Changi Airport to Singapore City: Cost & Guide (2026)',
-    description: 'Changi Airport taxis are metered, reliable, and well-regulated. Here\'s what to pay, where to find them, and smarter alternatives.',
+    description: "Changi to the city centre costs SGD $28–45 all-in by metered taxi during the day, or SGD $35–55 after midnight — Grab runs $22–45 but can surge above that. Here's the full 2026 guide, and why the SGD $2.50 MRT beats both for solo travellers.",
     publishedAt: '2026-01-30',
     readingMinutes: 8,
     category: 'taxi',
@@ -1099,7 +1099,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'taxi-suvarnabhumi-to-bangkok',
     title: 'Taxi from Bangkok Airport (BKK) to City: Cost & Tips (2026)',
-    description: 'Bangkok airport taxis are cheap — but the process has traps. Here\'s how to use the metered taxi correctly and what to pay.',
+    description: "A metered taxi from Suvarnabhumi to central Bangkok costs THB 300–500 all-in — but touts outside arrivals charge THB 1,000–2,000 for the same ride. Here's the full 2026 guide to the correct ticket-queue process, and when the THB 15–45 Airport Rail Link wins.",
     publishedAt: '2026-02-03',
     readingMinutes: 8,
     category: 'taxi',
@@ -1153,7 +1153,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'taxi-incheon-to-seoul',
     title: 'Taxi from Incheon Airport to Seoul: Cost & Options (2026)',
-    description: 'Incheon Airport taxis to Seoul come in multiple tiers. Here\'s exactly what each costs and the smarter alternatives.',
+    description: "A standard taxi from Incheon to Seoul costs KRW 65,000–100,000 — the AREX Express train covers the same route in 43 minutes for KRW 9,500. Here's the full 2026 guide to choosing between standard, deluxe, and jumbo taxis, and when splitting a cab beats the train.",
     publishedAt: '2026-02-07',
     readingMinutes: 8,
     category: 'taxi',
@@ -1205,7 +1205,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'taxi-narita-haneda-to-tokyo',
     title: 'Taxi from Tokyo Airports to City: Narita & Haneda Costs (2026)',
-    description: 'Narita taxis to Tokyo are eye-wateringly expensive. Haneda is much better. Here\'s what each costs and the smarter alternatives.',
+    description: "A taxi from Narita to Tokyo costs JPY 20,000–30,000 — the Narita Express does the same trip for JPY 3,070 in under an hour. Haneda is the opposite story: JPY 4,000–8,000 by taxi is genuinely practical. Here's the full 2026 guide to both airports.",
     publishedAt: '2026-02-10',
     readingMinutes: 8,
     category: 'taxi',
@@ -1364,7 +1364,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'taxi-schiphol-to-amsterdam',
     title: 'Taxi from Schiphol Airport to Amsterdam: Cost & Guide (2026)',
-    description: 'Schiphol taxis are metered but unregulated — fares vary widely. Here\'s how to get a fair price and the best alternatives.',
+    description: "A legitimate taxi from Schiphol to central Amsterdam costs €40–55 — but unofficial drivers outside the official zone charge €80–130 for the same ride. Here's the full 2026 guide to finding the right taxi, and why the €5.30 train under the airport beats both.",
     publishedAt: '2026-02-21',
     readingMinutes: 8,
     category: 'taxi',
@@ -1409,7 +1409,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'taxi-sydney-airport-to-city',
     title: 'Taxi from Sydney Airport to the CBD: Cost & Guide (2026)',
-    description: 'Sydney airport taxis are metered and reliable. Here\'s the fare, tunnel toll, and whether Uber or the train is smarter.',
+    description: "Sydney Airport to the CBD costs AUD $45–65 by taxi — the Airport Link train is faster at 13 minutes but its $16.48 station surcharge makes it worse value than a taxi for any group of two or more. Here's the full 2026 fare breakdown.",
     publishedAt: '2026-02-24',
     readingMinutes: 8,
     category: 'taxi',
@@ -1462,7 +1462,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'taxi-melbourne-airport-to-city',
     title: 'Taxi from Melbourne Airport to CBD: Cost & Guide (2026)',
-    description: 'Melbourne airport taxis cost AUD $55–80 to the CBD — here\'s what\'s fair, what to watch for, and if the SkyBus is better.',
+    description: "Melbourne Airport to the CBD costs AUD $55–80 by taxi — and unlike Sydney or Brisbane, Melbourne still has no airport rail link, so the $22.50 SkyBus is the only mass-transit alternative. Here's the full 2026 guide to fares, tolls, and which option wins for your group size.",
     publishedAt: '2026-02-27',
     readingMinutes: 8,
     category: 'taxi',
@@ -1562,7 +1562,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'taxi-hamad-to-doha',
     title: 'Taxi from Hamad Airport to Doha: Cost & Tips (2026)',
-    description: 'Hamad International Airport taxis and the Karwa taxi app are your main options. Here\'s what to pay and how to get the right cab.',
+    description: "A Karwa taxi from Hamad Airport to West Bay costs QAR 30–50 — but the Doha Metro Red Line covers the same route in 25 minutes for just QAR 2–3. Here's the full 2026 guide to Karwa fares, Uber, and why the metro is one of the best-value airport links in the Gulf.",
     publishedAt: '2026-03-15',
     readingMinutes: 8,
     category: 'taxi',
@@ -1618,7 +1618,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
     slug: 'taxi-ben-gurion-to-tel-aviv',
     title: 'Taxi from Ben Gurion Airport to Tel Aviv: Cost & Guide (2026)',
-    description: 'Ben Gurion taxis to Tel Aviv are metered and regulated. Here\'s the fare, the sherut shared taxi option, and what to watch for.',
+    description: "A taxi from Ben Gurion to Tel Aviv costs ILS 120–180 — the train covers the same 20km in 15 minutes for ILS 16.50, except it doesn't run on Shabbat. Here's the full 2026 guide, including the sherut shared-taxi option (ILS 35–50 per person) for Friday and Saturday arrivals.",
     publishedAt: '2026-03-18',
     readingMinutes: 8,
     category: 'taxi',
