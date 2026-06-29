@@ -186,6 +186,8 @@ export async function proxy(req: NextRequest) {
   return res
 }
 
+export const runtime = 'edge'
+
 export const config = {
   matcher: [
     /*
