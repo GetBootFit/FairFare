@@ -1,12 +1,24 @@
 /** @type {import('next').NextConfig} */
 const { withSentryConfig } = require('@sentry/nextjs')
 
-// Content-Security-Policy is set by middleware.ts on every response.
-// CSP uses 'unsafe-inline' (not nonce-based) so the root layout can remain a
-// synchronous Server Component — keeping all static pages truly static and
-// avoiding excessive Vercel Function Invocations / Fluid CPU usage.
-
 const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com'
+
+// Static CSP — 'unsafe-inline' is intentional (no nonce) so the root layout stays a
+// synchronous Server Component and static pages are served from Vercel's edge cache.
+// Previously injected per-request by proxy.ts; moved here so the proxy only runs on
+// admin/rate-limited routes and doesn't burn Fluid CPU on every page load.
+const CSP = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline' https://maps.googleapis.com https://maps.gstatic.com https://va.vercel-scripts.com https://www.googletagmanager.com https://tpembars.com",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: blob: https://maps.googleapis.com https://maps.gstatic.com https://www.google-analytics.com",
+  "font-src 'self'",
+  "connect-src 'self' https://maps.googleapis.com https://maps.gstatic.com https://va.vercel-scripts.com https://vitals.vercel-insights.com https://www.google-analytics.com https://analytics.google.com https://*.sentry.io https://*.ingest.sentry.io https://tpembars.com",
+  "frame-src 'none'",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "upgrade-insecure-requests",
+].join('; ')
 
 const nextConfig = {
   // Next.js 15+ uses serverExternalPackages (was experimental.serverComponentsExternalPackages)
@@ -29,7 +41,7 @@ const nextConfig = {
           { key: 'Permissions-Policy', value: 'geolocation=(), microphone=(), camera=(), payment=()' },
           { key: 'X-XSS-Protection', value: '1; mode=block' },
           { key: 'X-DNS-Prefetch-Control', value: 'on' },
-          // CSP is set per-request by middleware.ts (nonce-based); not set here.
+          { key: 'Content-Security-Policy', value: CSP },
         ],
       },
       {
