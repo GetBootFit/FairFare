@@ -191,11 +191,10 @@ export const DEFAULT_AFFILIATE_CONFIG: AffiliatePartner[] = [
     category: 'esim',
     icon: 'mobile',
     labelKey: 'affiliate_esim',
-    // Application DECLINED by Impact.com (low reach). Re-apply when site has more traffic.
-    enabled: false,
+    enabled: true,
     priority: 10,
     zones: ['result', 'success'],
-    baseUrl: 'IMPACT_AIRALO_URL',
+    baseUrl: 'https://airalo.tpk.lu/J2MC5xC8',
   },
 
   // ─────────────────────────────────────────
