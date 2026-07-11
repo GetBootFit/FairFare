@@ -174,6 +174,17 @@ export const DEFAULT_AFFILIATE_CONFIG: AffiliatePartner[] = [
   // eSIM — result and success pages
   // ─────────────────────────────────────────
   {
+    id: 'yesim',
+    name: 'Yesim',
+    category: 'esim',
+    icon: 'mobile',
+    labelKey: 'affiliate_esim',
+    enabled: true,
+    priority: 9,
+    zones: ['result', 'success'],
+    baseUrl: 'https://yesim.tpk.lu/ne37lfSe',
+  },
+  {
     id: 'holafly',
     name: 'Holafly',
     category: 'esim',
@@ -181,7 +192,7 @@ export const DEFAULT_AFFILIATE_CONFIG: AffiliatePartner[] = [
     labelKey: 'affiliate_esim',
     // Enable once Holafly affiliate programme is approved (apply at holafly.com/en/affiliates)
     enabled: false,
-    priority: 9,
+    priority: 10,
     zones: ['result', 'success'],
     baseUrl: 'HOLAFLY_AFFILIATE_URL',
   },
@@ -192,7 +203,7 @@ export const DEFAULT_AFFILIATE_CONFIG: AffiliatePartner[] = [
     icon: 'mobile',
     labelKey: 'affiliate_esim',
     enabled: true,
-    priority: 10,
+    priority: 11,
     zones: ['result', 'success'],
     baseUrl: 'https://airalo.tpk.lu/J2MC5xC8',
   },
