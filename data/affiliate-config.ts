@@ -122,11 +122,10 @@ export const DEFAULT_AFFILIATE_CONFIG: AffiliatePartner[] = [
     category: 'hotel',
     icon: 'buildings',
     labelKey: 'affiliate_hotels',
-    // Enable once Travelpayouts Booking.com programme is approved
-    enabled: false,
+    enabled: true,
     priority: 5,
     zones: ['result', 'blog', 'success'],
-    baseUrl: 'TRAVELPAYOUTS_BOOKING_URL',
+    baseUrl: 'https://booking.tpk.lu/B57stj4j',
   },
   {
     id: 'agoda',
@@ -152,11 +151,10 @@ export const DEFAULT_AFFILIATE_CONFIG: AffiliatePartner[] = [
     category: 'tours',
     icon: 'tickets',
     labelKey: 'affiliate_tours',
-    // Enable once Travelpayouts GetYourGuide programme is approved
-    enabled: false,
+    enabled: true,
     priority: 7,
     zones: ['result', 'blog', 'success'],
-    baseUrl: 'TRAVELPAYOUTS_GYG_URL',
+    baseUrl: 'https://getyourguide.tpk.lu/8UTYxuSN',
   },
   {
     id: 'viator',
@@ -164,10 +162,10 @@ export const DEFAULT_AFFILIATE_CONFIG: AffiliatePartner[] = [
     category: 'tours',
     icon: 'tickets',
     labelKey: 'affiliate_tours',
-    enabled: false,
+    enabled: true,
     priority: 8,
     zones: ['result', 'blog'],
-    baseUrl: 'TRAVELPAYOUTS_VIATOR_URL',
+    baseUrl: 'https://viator.tpk.lu/xg21g48s',
   },
 
   // ─────────────────────────────────────────
@@ -217,10 +215,39 @@ export const DEFAULT_AFFILIATE_CONFIG: AffiliatePartner[] = [
     category: 'car',
     icon: 'transport-car-rental',
     labelKey: 'affiliate_car_hire',
-    // Enable once Travelpayouts DiscoverCars programme is approved
-    enabled: false,
-    priority: 11,
-    zones: ['result'],
-    baseUrl: 'TRAVELPAYOUTS_DISCOVERCARS_URL',
+    enabled: true,
+    priority: 12,
+    zones: ['result', 'blog'],
+    baseUrl: 'https://discovercars.tpk.lu/t6WhltJd',
+  },
+
+  // ─────────────────────────────────────────
+  // TRAINS & BUSES — blog and result pages (alternatives to taxi)
+  // ─────────────────────────────────────────
+  {
+    id: '12go',
+    name: '12Go',
+    category: 'transfer',
+    icon: 'transport-train',
+    labelKey: 'affiliate_transfers',
+    enabled: true,
+    priority: 13,
+    // Trains & buses across Asia
+    preferredRegions: ['TH', 'JP', 'KR', 'SG', 'VN', 'ID', 'MY', 'IN', 'TW', 'HK', 'PH'],
+    zones: ['result', 'blog'],
+    baseUrl: 'https://12go.tpk.lu/f87UzcqN',
+  },
+  {
+    id: 'omio',
+    name: 'Omio',
+    category: 'transfer',
+    icon: 'transport-train',
+    labelKey: 'affiliate_transfers',
+    enabled: true,
+    priority: 14,
+    // Trains & buses across Europe
+    preferredRegions: ['DE', 'FR', 'ES', 'IT', 'NL', 'GB', 'AT', 'CH', 'BE', 'PL', 'PT', 'SE', 'DK', 'CZ'],
+    zones: ['result', 'blog'],
+    baseUrl: 'https://omio.tpk.lu/iMgI3eHU',
   },
 ]
