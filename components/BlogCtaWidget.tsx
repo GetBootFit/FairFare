@@ -84,7 +84,9 @@ function TaxiCtaCard({ city, flagCode }: { city: string; flagCode?: string | nul
         </div>
 
         <p className="text-[10px] text-purple-400/50 leading-none">
-          Route preview free · Full result from $2.99 · No account needed
+          {process.env.NEXT_PUBLIC_PAYWALL_ENABLED !== 'false'
+            ? 'Route preview free · Full result from $2.99 · No account needed'
+            : 'Free · Fares for 163+ cities · No account needed'}
         </p>
       </div>
     </Link>
@@ -144,7 +146,9 @@ function TippingCtaCard({
         </div>
 
         <p className="text-[10px] text-teal-400/50 leading-none">
-          10 scenarios · From $2.99 · No account needed
+          {process.env.NEXT_PUBLIC_PAYWALL_ENABLED !== 'false'
+            ? '10 scenarios · From $2.99 · No account needed'
+            : '10 tipping scenarios · Free · No account needed'}
         </p>
       </div>
     </Link>

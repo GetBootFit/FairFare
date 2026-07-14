@@ -112,7 +112,9 @@ export function HomeTaxiForm() {
             Check Fare <ArrowRight size={15} />
           </button>
           <p className="text-center text-[10px] text-zinc-600 pt-0.5">
-            Free preview · Unlock full result from $2.99
+            {process.env.NEXT_PUBLIC_PAYWALL_ENABLED !== 'false'
+              ? 'Free preview · Unlock full result from $2.99'
+              : 'Free · No account needed'}
           </p>
         </form>
       )}
@@ -150,7 +152,9 @@ export function HomeTaxiForm() {
             <ArrowRight size={13} className="text-purple-400 group-hover:translate-x-0.5 transition-transform shrink-0" />
           </Link>
           <p className="text-center text-[10px] text-zinc-600">
-            Unlock from $2.99 · No account needed
+            {process.env.NEXT_PUBLIC_PAYWALL_ENABLED !== 'false'
+              ? 'Unlock from $2.99 · No account needed'
+              : 'Free · No account needed'}
           </p>
         </div>
       )}
