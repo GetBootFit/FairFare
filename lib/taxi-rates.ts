@@ -153,9 +153,10 @@ const ALIASES: Record<string, string> = {
   botany_bay:              'sydney',
   wolli_creek:             'sydney',
 
-  // Melbourne — Tullamarine in Hume City
+  // Melbourne — Tullamarine in Hume City; Google Maps often returns "Melbourne Airport" as locality
   tullamarine:             'melbourne',
   hume:                    'melbourne',
+  melbourne_airport:       'melbourne',
 
   // Toronto — Pearson is in Mississauga
   mississauga:             'toronto',

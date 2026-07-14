@@ -648,8 +648,7 @@ export function TaxiResult({ result, onReset, purchasedProduct, onUpgradeToPass 
         {/* Affiliate links — transferNote appears as microcopy under the heading */}
         {(() => {
           const partners = getPartnersForZoneSync('result', {
-            categories: ['transfer', 'hotel', 'esim'],
-            maxItems: 4,
+            maxItems: 6,
           })
           return (
             <AffiliateBlock
@@ -668,7 +667,7 @@ export function TaxiResult({ result, onReset, purchasedProduct, onUpgradeToPass 
         {/* Country Pass cross-sell — only shown to single-query buyers.
             Appears after affiliates but before the tipping link: reader has seen
             the full result and now sees the highest-value upgrade opportunity. */}
-        {purchasedProduct === 'single' && result.country && (
+        {purchasedProduct === 'single' && result.country && process.env.NEXT_PUBLIC_PAYWALL_ENABLED !== 'false' && (
           <div className="bg-gradient-to-br from-purple-900/20 to-zinc-900 border border-purple-800/30 rounded-2xl p-4 print-hide">
             <div className="flex items-start justify-between gap-3">
               <div className="flex-1 min-w-0">
@@ -720,7 +719,7 @@ export function TaxiResult({ result, onReset, purchasedProduct, onUpgradeToPass 
         </p>
 
         {/* Save access — cross-device JWT persistence via email magic link */}
-        <SaveAccessPrompt />
+        {process.env.NEXT_PUBLIC_PAYWALL_ENABLED !== 'false' && <SaveAccessPrompt />}
 
         {/* PWA install — shown post-result (highest-conversion moment) */}
         <InstallPrompt variant="card" />
