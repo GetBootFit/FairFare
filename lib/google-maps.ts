@@ -134,11 +134,19 @@ export async function getRouteInfo(
       ''
     country = findComponent('country')?.long_name ?? ''
   } catch {
-    // Last-resort fallback: split the formatted start address string.
-    // Format is typically "Street, District, City, PostCode, Country"
-    const parts = (drivingLeg.start_address ?? pickup).split(',')
-    city = parts[parts.length - 3]?.trim() ?? ''
-    country = parts[parts.length - 1]?.trim() ?? ''
+    // Geocoding / Place Details API unavailable — parse the Directions API start_address.
+    // Addresses vary by country but always end with the country name, so strip that first,
+    // then use the middle segments (suburb/district/city). Skip the first segment when
+    // there are 3+ parts — it's usually a street name like "Arrival Dr".
+    // findCityRate's strip + partial matching handles "Tullamarine VIC 3043" → melbourne etc.
+    const parts = (drivingLeg.start_address ?? pickup)
+      .split(',')
+      .map(p => p.trim())
+      .filter(Boolean)
+    country = parts[parts.length - 1] ?? ''
+    city = parts.length >= 3
+      ? parts.slice(1, -1).join(' ')   // skip street + country
+      : parts.slice(0, -1).join(' ')   // no street segment — skip only country
   }
 
   // ── Transit alternatives (best-effort) ───────────────────────────────────
