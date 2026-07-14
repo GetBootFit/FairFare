@@ -19,11 +19,14 @@ export async function POST(req: NextRequest) {
   }
 
   // Auth (httpOnly cookie — no Bearer header)
-  let tokenPayload: Awaited<ReturnType<typeof verifyTokenFromRequest>>
-  try {
-    tokenPayload = await verifyTokenFromRequest(req)
-  } catch {
-    return Response.json({ error: 'Payment required' }, { status: 402 })
+  // When NEXT_PUBLIC_PAYWALL_ENABLED=false the paywall is dormant — skip JWT check.
+  let tokenPayload: Awaited<ReturnType<typeof verifyTokenFromRequest>> | null = null
+  if (process.env.NEXT_PUBLIC_PAYWALL_ENABLED !== 'false') {
+    try {
+      tokenPayload = await verifyTokenFromRequest(req)
+    } catch {
+      return Response.json({ error: 'Payment required' }, { status: 402 })
+    }
   }
 
   try {
@@ -38,7 +41,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Country pass: validate token country matches requested country
-    if (tokenPayload.tokenType === 'country_pass') {
+    if (tokenPayload?.tokenType === 'country_pass') {
       if (norm(tokenPayload.country ?? '') !== norm(country)) {
         return Response.json(
           { error: `Country pass is for ${tokenPayload.country}, not ${country}` },

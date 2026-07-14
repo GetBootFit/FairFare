@@ -133,7 +133,7 @@ export function TippingForm() {
 
     // Then check single-query token
     const token = getStoredToken()
-    if (!token || isTokenExpired(token)) {
+    if ((!token || isTokenExpired(token)) && process.env.NEXT_PUBLIC_PAYWALL_ENABLED !== 'false') {
       track('unlock_clicked', { feature: 'tipping', country: selectedCountry })
       ga4UnlockClicked({ feature: 'tipping', country: selectedCountry })
       const stored: StoredFormState = { country: selectedCountry, city: selectedCity }
@@ -146,7 +146,7 @@ export function TippingForm() {
     setCountry(selectedCountry)
     setCity(selectedCity)
     setStatus('loading')
-    await fetchResult(token, selectedCountry, selectedCity)
+    await fetchResult(token ?? '', selectedCountry, selectedCity)
   }
 
   const fetchResult = async (token: string, c: string, selectedCity: string | undefined) => {

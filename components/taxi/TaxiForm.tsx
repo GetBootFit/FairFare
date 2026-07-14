@@ -177,6 +177,9 @@ export function TaxiForm({ initialCity }: TaxiFormProps = {}) {
           if (token && !isTokenExpired(token)) {
             setStatus('loading')
             await fetchFullResult(token, currentForm, 'single')
+          } else if (process.env.NEXT_PUBLIC_PAYWALL_ENABLED === 'false') {
+            setStatus('loading')
+            await fetchFullResult('', currentForm, 'single')
           } else {
             // User must pay — fire preview_loaded so we can measure free→paid conversion
             track('preview_loaded', {

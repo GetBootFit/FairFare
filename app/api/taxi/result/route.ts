@@ -19,19 +19,22 @@ export async function POST(req: NextRequest) {
   }
 
   // ── Auth (httpOnly cookie — no Bearer header) ─────────────────────────────
-  let tokenPayload: Awaited<ReturnType<typeof verifyTokenFromRequest>>
-  try {
-    tokenPayload = await verifyTokenFromRequest(req)
-  } catch {
-    return Response.json({ error: 'Payment required' }, { status: 402 })
-  }
-
-  // Single-query tokens must be for the taxi feature (undefined = legacy compat)
-  if (
-    (!tokenPayload.tokenType || tokenPayload.tokenType === 'single') &&
-    tokenPayload.feature !== 'taxi'
-  ) {
-    return Response.json({ error: 'Token not valid for taxi' }, { status: 403 })
+  // When NEXT_PUBLIC_PAYWALL_ENABLED=false the paywall is dormant — skip JWT
+  // verification entirely. All other protections (rate limiting, input validation)
+  // remain active. Re-enable by setting the var back to 'true' in Vercel.
+  let tokenPayload: Awaited<ReturnType<typeof verifyTokenFromRequest>> | null = null
+  if (process.env.NEXT_PUBLIC_PAYWALL_ENABLED !== 'false') {
+    try {
+      tokenPayload = await verifyTokenFromRequest(req)
+    } catch {
+      return Response.json({ error: 'Payment required' }, { status: 402 })
+    }
+    if (
+      (!tokenPayload.tokenType || tokenPayload.tokenType === 'single') &&
+      tokenPayload.feature !== 'taxi'
+    ) {
+      return Response.json({ error: 'Token not valid for taxi' }, { status: 403 })
+    }
   }
 
   try {
@@ -45,7 +48,7 @@ export async function POST(req: NextRequest) {
     const route = await getRouteInfo(pickup, destination, pickupPlaceId, destPlaceId)
 
     // Country pass: validate token country matches route country
-    if (tokenPayload.tokenType === 'country_pass') {
+    if (tokenPayload?.tokenType === 'country_pass') {
       const norm = (s: string) =>
         s.toLowerCase().trim().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '_')
       if (norm(tokenPayload.country ?? '') !== norm(route.country)) {
