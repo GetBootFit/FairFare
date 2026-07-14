@@ -379,7 +379,7 @@ export function HomeContent() {
           </Link>
 
           {/* Pricing quick-look */}
-          <Link
+          {process.env.NEXT_PUBLIC_PAYWALL_ENABLED !== 'false' && <Link
             href="/pricing"
             className="block bg-zinc-900/40 border border-zinc-800 hover:border-zinc-700 rounded-2xl p-4 transition-colors group"
           >
@@ -416,7 +416,7 @@ export function HomeContent() {
             <p className="text-[10px] text-purple-400 mt-3 group-hover:translate-x-0.5 transition-transform">
               View all plans →
             </p>
-          </Link>
+          </Link>}
 
           {/* Trust strip */}
           <p className="text-center text-[11px] text-zinc-700 leading-relaxed px-2">
@@ -453,7 +453,7 @@ export function HomeContent() {
           {/* Nav links */}
           <div className="flex items-center justify-center gap-4 flex-wrap">
             {[
-              { href: '/pricing', label: 'Pricing' },
+              ...(process.env.NEXT_PUBLIC_PAYWALL_ENABLED !== 'false' ? [{ href: '/pricing', label: 'Pricing' }] : []),
               { href: '/taxi/cities', label: 'All Cities' },
               { href: '/tipping/countries', label: 'All Countries' },
               { href: '/about', label: t('footer_about') },

@@ -25,12 +25,14 @@ export function DesktopNav() {
     }
   }, [])
 
+  const paywallOn = process.env.NEXT_PUBLIC_PAYWALL_ENABLED !== 'false'
+
   const links = [
     { href: '/taxi',    label: t('nav_taxi'),    Icon: Car      },
     { href: '/tipping', label: t('nav_tipping'), Icon: Banknote },
     { href: '/example', label: t('nav_demo'),    Icon: Sparkles },
     { href: '/blog',    label: 'Blog',           Icon: BookOpen },
-    { href: '/pricing', label: 'Pricing',        Icon: Tag      },
+    ...(paywallOn ? [{ href: '/pricing', label: 'Pricing', Icon: Tag }] : []),
   ]
 
   return (
