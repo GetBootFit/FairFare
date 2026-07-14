@@ -3,7 +3,7 @@ import { kvGet, kvSet } from '@/lib/kv'
 
 const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY })
 const MODEL = 'claude-sonnet-4-6'
-const KV_TTL = 90 * 24 * 60 * 60 // 90 days — taxi scams / tipping customs change over years, not weeks
+const KV_TTL = 365 * 24 * 60 * 60 // 365 days — taxi scams / tipping customs change over years, not months
 
 /** Strip markdown code fences Claude occasionally adds despite being told not to. */
 function stripJson(raw: string): string {
@@ -12,7 +12,7 @@ function stripJson(raw: string): string {
 
 // ─── In-memory cache (fast, resets on cold start) ─────────────────────────────
 const memCache = new Map<string, { data: unknown; cachedAt: number }>()
-const MEM_TTL_MS = 90 * 24 * 60 * 60 * 1000
+const MEM_TTL_MS = 365 * 24 * 60 * 60 * 1000
 
 function memGet<T>(key: string): T | null {
   const entry = memCache.get(key)
