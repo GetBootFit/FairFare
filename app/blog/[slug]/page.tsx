@@ -16,6 +16,7 @@ import { RelatedPosts } from '@/components/RelatedPosts'
 import { getPartnersForZone } from '@/lib/affiliates'
 import { getAirportForCity } from '@/lib/airport-data'
 import type { AffiliateCategory } from '@/data/affiliate-config'
+import { AmazonProductWidget } from '@/components/AmazonProductWidget'
 import { EmailCapture } from '@/components/EmailCapture'
 import { ScrollDepthTracker } from '@/components/ScrollDepthTracker'
 import { kvGet } from '@/lib/kv'
@@ -486,6 +487,8 @@ export default async function BlogArticlePage(
           city={post.city}
           country={post.country}
         />
+
+        <AmazonProductWidget category={post.category as 'taxi' | 'tipping' | 'travel'} />
 
         {/* CTA — category-specific */}
         {post.category === 'taxi' && (

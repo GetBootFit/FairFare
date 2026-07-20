@@ -93,7 +93,7 @@ export function TaxiForm({ initialCity }: TaxiFormProps = {}) {
         setForm(data)
         sessionStorage.removeItem(STORAGE_KEY)
         const token = getStoredToken()
-        if ((token && !isTokenExpired(token)) || getBundleCount() > 0) {
+        if ((token && !isTokenExpired(token)) || getBundleCount() > 0 || process.env.NEXT_PUBLIC_PAYWALL_ENABLED === 'false') {
           setPendingAutoSubmit(true)
         }
         return // sessionStorage restore takes priority over initialCity
@@ -119,6 +119,8 @@ export function TaxiForm({ initialCity }: TaxiFormProps = {}) {
           const token = getStoredToken()
           if (token && !isTokenExpired(token)) {
             await fetchFullResult(token, form, 'single')
+          } else if (process.env.NEXT_PUBLIC_PAYWALL_ENABLED === 'false') {
+            await fetchFullResult('', form, 'single')
           }
         }
       } catch (err) {

@@ -8,7 +8,7 @@ import type { BlogPost } from './blog-posts'
 export const GENERATED_BLOG_POSTS: BlogPost[] = [
   {
     "slug": "how-much-does-a-taxi-cost-in-hong-kong",
-    "title": "Taxi Costs in Hong Kong: Fares, Tips & Scams (2026)",
+    "title": "How Much Does a Taxi Cost in Hong Kong? (2026 Fare Guide)",
     "description": "How much does a taxi cost in Hong Kong? Fares start at HK$27, with a 10 km ride costing HK$120. Here's everything you need to know before you ride.",
     "publishedAt": "2025-09-04",
     "readingMinutes": 6,
@@ -147,7 +147,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "how-much-does-a-taxi-cost-in-prague",
-    "title": "Taxi Fares in Prague: What You'll Pay in 2026",
+    "title": "How Much Does a Taxi Cost in Prague? (2026 Fare Guide)",
     "description": "Find out exactly what taxis cost in Prague, Czech Republic. Fares start at Kč60, with a 10 km ride costing Kč340. Beat tourist traps with our guide.",
     "publishedAt": "2025-09-12",
     "readingMinutes": 6,
@@ -287,7 +287,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "how-much-does-a-taxi-cost-in-vienna",
-    "title": "Taxi Fares in Vienna: What You'll Pay in 2026",
+    "title": "How Much Does a Taxi Cost in Vienna? (2026 Fare Guide)",
     "description": "Planning a trip to Vienna? Taxi fares start at €5.80 with a 10 km ride costing €19. Here's everything you need to know before you hail a cab.",
     "publishedAt": "2025-09-19",
     "readingMinutes": 6,
@@ -426,7 +426,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "how-much-does-a-taxi-cost-in-athens",
-    "title": "Taxi Costs in Athens: Fares, Tips & Airport Rates",
+    "title": "How Much Does a Taxi Cost in Athens? (2026 Fare Guide)",
     "description": "Planning a trip to Athens? Taxi fares start at €3.84 with a 10 km ride costing around €9. Here's everything you need to know before you hail a cab.",
     "publishedAt": "2025-09-26",
     "readingMinutes": 6,
@@ -565,7 +565,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "how-much-does-a-taxi-cost-in-seoul",
-    "title": "Taxi Fares in Seoul: What You'll Pay in 2026",
+    "title": "How Much Does a Taxi Cost in Seoul? (2026 Fare Guide)",
     "description": "Planning a trip to Seoul? Discover exact taxi fares from ₩4,800 base rate, airport transfer costs, scam warnings, and the best apps for getting around.",
     "publishedAt": "2025-10-03",
     "readingMinutes": 6,
@@ -705,7 +705,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "how-much-does-a-taxi-cost-in-rio-de-janeiro",
-    "title": "Taxi Costs in Rio De Janeiro: 2026 Fare Guide",
+    "title": "How Much Does a Taxi Cost in Rio de Janeiro? (2026 Fare Guide)",
     "description": "Plan your Rio De Janeiro taxi budget with real 2026 fares. From R$5.50 base rate to R$80–120 airport runs, here's what every traveller needs to know.",
     "publishedAt": "2025-10-08",
     "readingMinutes": 6,
@@ -844,7 +844,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "how-much-does-a-taxi-cost-in-taipei",
-    "title": "Taipei Taxi Fares 2026: What You'll Actually Pay",
+    "title": "How Much Does a Taxi Cost in Taipei? (2026 Fare Guide)",
     "description": "Plan your Taipei taxi budget with confidence. Fares start at NT$85, with a 10 km ride costing NT$235. Full fare guide, airport tips, and scam warnings inside.",
     "publishedAt": "2025-10-14",
     "readingMinutes": 6,
@@ -983,7 +983,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "how-much-does-a-taxi-cost-in-beijing",
-    "title": "Taxi Fares in Beijing: What You'll Pay in 2026",
+    "title": "How Much Does a Taxi Cost in Beijing? (2026 Fare Guide)",
     "description": "Plan your Beijing trip with confidence. Taxi fares start at ¥13 and a 20 km ride costs around ¥59. Full fare breakdown, scam tips, and app advice inside.",
     "publishedAt": "2025-10-20",
     "readingMinutes": 6,
@@ -1121,7 +1121,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "how-much-does-a-taxi-cost-in-milan",
-    "title": "Taxi Costs in Milan: Fares, Tips & Airport Rides",
+    "title": "How Much Does a Taxi Cost in Milan? (2026 Fare Guide)",
     "description": "Planning a taxi in Milan? Fares start at €5.40 and a 10 km ride costs around €15. Our guide covers airport transfers, scams to avoid, and tipping norms.",
     "publishedAt": "2025-10-24",
     "readingMinutes": 6,
@@ -1265,7 +1265,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "how-much-does-a-taxi-cost-in-madrid",
-    "title": "Taxi Fares in Madrid: What You'll Pay in 2026",
+    "title": "How Much Does a Taxi Cost in Madrid? (2026 Fare Guide)",
     "description": "Plan your Madrid taxi budget with confidence. Fares start at €4.05, a 10 km ride costs €14, and airport transfers add a €6.70 supplement. Here's everything you need to know.",
     "publishedAt": "2025-10-30",
     "readingMinutes": 6,
@@ -1404,7 +1404,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "how-much-does-a-taxi-cost-in-dublin",
-    "title": "Taxi Fares in Dublin: What You'll Pay in 2026",
+    "title": "How Much Does a Taxi Cost in Dublin? (2026 Fare Guide)",
     "description": "Planning a taxi in Dublin? Fares start at €4.10 with a 10 km trip costing around €15. Get the full fare breakdown, airport costs, and tips for first-time visitors.",
     "publishedAt": "2025-11-05",
     "updatedAt": "2026-03-31",
@@ -1557,7 +1557,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "how-much-does-a-taxi-cost-in-cape-town",
-    "title": "Taxi Fares in Cape Town: What You'll Pay in 2026",
+    "title": "How Much Does a Taxi Cost in Cape Town? (2026 Fare Guide)",
     "description": "Planning a trip to Cape Town? Discover exact taxi fares, airport transfer costs (R200–350), tipping tips, and how to avoid scams with our 2026 guide.",
     "publishedAt": "2025-11-10",
     "readingMinutes": 6,
@@ -1695,7 +1695,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "how-much-does-a-taxi-cost-in-los-angeles",
-    "title": "Taxi Fares in Los Angeles: What You'll Pay in 2026",
+    "title": "How Much Does a Taxi Cost in Los Angeles? (2026 Fare Guide)",
     "description": "Planning a trip to Los Angeles? Taxi fares start at $2.85 with rides typically costing $16–$57 depending on distance. Here's everything you need to know.",
     "publishedAt": "2025-11-14",
     "readingMinutes": 6,
@@ -1835,7 +1835,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "how-much-does-a-taxi-cost-in-chicago",
-    "title": "Taxi Costs in Chicago: Fares, Tips & Airport Runs",
+    "title": "How Much Does a Taxi Cost in Chicago? (2026 Fare Guide)",
     "description": "Find out how much taxis cost in Chicago, from a $13 short hop to a $41 cross-city ride. Includes airport fares, tipping advice, and money-saving alternatives.",
     "publishedAt": "2025-11-19",
     "readingMinutes": 6,
@@ -1976,7 +1976,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "how-much-does-a-taxi-cost-in-miami",
-    "title": "Taxi Fares in Miami: What You'll Pay in 2026",
+    "title": "How Much Does a Taxi Cost in Miami? (2026 Fare Guide)",
     "description": "Planning a trip to Miami? Discover exact taxi fares, airport transfer costs ($25–40), tipping norms, and scam tips for first-time visitors.",
     "publishedAt": "2025-11-24",
     "readingMinutes": 6,
@@ -2115,7 +2115,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "how-much-does-a-taxi-cost-in-san-francisco",
-    "title": "Taxi Costs in San Francisco: Fares, Tips & Tricks",
+    "title": "How Much Does a Taxi Cost in San Francisco? (2026 Fare Guide)",
     "description": "Planning a trip to San Francisco? Taxi fares start at $3.50, with a 10 km ride costing around $32. Here's everything you need to know before you ride.",
     "publishedAt": "2025-11-28",
     "readingMinutes": 6,
@@ -2254,7 +2254,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "how-much-does-a-taxi-cost-in-toronto",
-    "title": "Taxi Fares in Toronto: What You'll Pay in 2026",
+    "title": "How Much Does a Taxi Cost in Toronto? (2026 Fare Guide)",
     "description": "Planning a taxi in Toronto? Fares start at CA$4.25 with a 10 km ride costing around CA$22. Here's everything you need to budget your trip.",
     "publishedAt": "2025-12-03",
     "readingMinutes": 6,
@@ -2394,7 +2394,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "how-much-does-a-taxi-cost-in-venice",
-    "title": "Taxi Fares in Venice: Water Taxis, Costs & Tips",
+    "title": "How Much Does a Taxi Cost in Venice? Water Taxis & Vaporettos (2026 Guide)",
     "description": "Planning a trip to Venice? Water taxis start at €50 for short routes and up to €120 for longer journeys. Here's everything you need to know before you travel.",
     "publishedAt": "2025-12-09",
     "readingMinutes": 6,
@@ -2539,7 +2539,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "how-much-does-a-taxi-cost-in-florence",
-    "title": "Taxi Costs in Florence: Fares, Tips & What to Know",
+    "title": "How Much Does a Taxi Cost in Florence? (2026 Fare Guide)",
     "description": "Planning a trip to Florence? Taxi fares start at €5 and a typical 10 km ride costs €13. Here's everything you need to know before you hail a cab.",
     "publishedAt": "2025-12-15",
     "readingMinutes": 6,
@@ -2680,7 +2680,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "how-much-does-a-taxi-cost-in-munich",
-    "title": "Taxi Costs in Munich: Fares, Tips & Airport Runs (2026)",
+    "title": "How Much Does a Taxi Cost in Munich? (2026 Fare Guide)",
     "description": "Munich airport (MUC) to the city centre costs €65–85 by taxi. City rides start at €4.50 flag-fall. Here's the full 2026 fare guide — including night rates, tip customs, and when the U-Bahn beats a cab.",
     "publishedAt": "2025-12-19",
     "updatedAt": "2026-03-31",
@@ -2833,7 +2833,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "how-much-does-a-taxi-cost-in-berlin",
-    "title": "Taxi Fares in Berlin: What You'll Actually Pay in 2026",
+    "title": "How Much Does a Taxi Cost in Berlin? (2026 Fare Guide)",
     "description": "BER Airport to Berlin Mitte costs €55–75. City rides start at €3.90. Here's what Berlin taxis actually cost in 2026 — night surcharges, Bolt vs metered cab, and the one zone where tourists overpay.",
     "publishedAt": "2025-12-29",
     "readingMinutes": 6,
@@ -2971,7 +2971,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "how-much-does-a-taxi-cost-in-jakarta",
-    "title": "Taxi Fares in Jakarta: What You'll Pay in 2026",
+    "title": "How Much Does a Taxi Cost in Jakarta? (2026 Fare Guide)",
     "description": "Planning a trip to Jakarta? Discover exact taxi fares from Rp15,000 to Rp97,500+, how meters work, airport transfers, and how to avoid tourist scams.",
     "publishedAt": "2026-01-05",
     "updatedAt": "2026-03-31",
@@ -3132,7 +3132,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "how-much-does-a-taxi-cost-in-chiang-mai",
-    "title": "Taxi Fares in Chiang Mai: What You'll Really Pay",
+    "title": "How Much Does a Taxi Cost in Chiang Mai? (2026 Fare Guide)",
     "description": "Planning a trip to Chiang Mai? Here's exactly what taxis cost, from ฿60 minimum fares to ฿550 for 20 km, plus airport transfer tips and scam warnings.",
     "publishedAt": "2026-01-09",
     "readingMinutes": 6,
@@ -3272,7 +3272,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "how-much-does-a-taxi-cost-in-cancun",
-    "title": "Taxi Fares in Cancun: What You'll Actually Pay in 2026",
+    "title": "How Much Does a Taxi Cost in Cancún? (2026 Fare Guide)",
     "description": "Planning a trip to Cancun? Expect taxi fares from $40 MXN minimum to $325 MXN for 20 km. Here's everything you need to know before you ride.",
     "publishedAt": "2026-01-14",
     "readingMinutes": 6,
@@ -3411,7 +3411,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "how-much-does-a-taxi-cost-in-delhi",
-    "title": "Taxi Fares in Delhi: What You'll Pay in 2026",
+    "title": "How Much Does a Taxi Cost in Delhi? (2026 Fare Guide)",
     "description": "Planning a taxi ride in Delhi? Fares start at ₹25 and a 10 km trip costs around ₹175. Here's everything you need to know before you travel.",
     "publishedAt": "2026-01-19",
     "readingMinutes": 6,
@@ -3550,7 +3550,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "tipping-in-united-states",
-    "title": "Tipping in the United States: How Much, When & Who",
+    "title": "Tipping in the USA: How Much to Tip & When (2026 Guide)",
     "description": "First time in the US? Tipping is expected — not optional. Here's exactly how much to tip at restaurants, taxis, hotels and more.",
     "publishedAt": "2026-01-23",
     "readingMinutes": 5,
@@ -3679,7 +3679,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "tipping-in-japan",
-    "title": "Tipping in Japan: How Much, When & Who",
+    "title": "Tipping in Japan: Is It Rude? What to Do in 2026",
     "description": "Tipping in Japan is not just unnecessary — it can cause offence. Here's exactly what to do (and avoid) to show respect as a visitor.",
     "publishedAt": "2026-01-28",
     "readingMinutes": 5,
@@ -3789,7 +3789,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "tipping-in-france",
-    "title": "Tipping in France: How Much, When & Who",
+    "title": "Tipping in France: Is Service Included? (2026 Guide)",
     "description": "Tipping in France is optional — service is included by law. Here's exactly what to tip at restaurants, taxis, hotels and more in France.",
     "publishedAt": "2026-02-02",
     "readingMinutes": 5,
@@ -3899,7 +3899,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "tipping-in-italy",
-    "title": "Tipping in Italy: How Much, When & Who",
+    "title": "Tipping in Italy: Coperto, Service & What's Expected (2026)",
     "description": "Tipping in Italy is low-key and optional. Learn when to leave a euro, what the coperto means, and how to tip taxis, hotels, and guides.",
     "publishedAt": "2026-02-06",
     "readingMinutes": 5,
@@ -4009,7 +4009,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "tipping-in-spain",
-    "title": "Tipping in Spain: How Much, When & Who",
+    "title": "Tipping in Spain: What's Expected in Restaurants & Taxis (2026)",
     "description": "Tipping in Spain is optional and modest. Learn when to tip, how much to leave, and what locals actually do — practical advice for every traveller.",
     "publishedAt": "2026-02-11",
     "readingMinutes": 5,
@@ -4123,7 +4123,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "tipping-in-thailand",
-    "title": "Tipping in Thailand: How Much, When & Who to Tip",
+    "title": "Tipping in Thailand: Bangkok, Phuket & How Much (2026 Guide)",
     "description": "Not sure how much to tip in Thailand? This practical guide covers restaurants, taxis, hotels and more for first-time visitors.",
     "publishedAt": "2026-02-16",
     "readingMinutes": 5,
@@ -4234,7 +4234,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "tipping-in-australia",
-    "title": "Tipping in Australia: How Much, When & Who",
+    "title": "Tipping in Australia: Is It Expected? (2026 Guide)",
     "description": "Tipping in Australia is optional, not expected. Here's exactly when to tip, how much to give, and who actually appreciates it.",
     "publishedAt": "2026-02-20",
     "readingMinutes": 5,
@@ -4356,7 +4356,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "tipping-in-uae",
-    "title": "Tipping in UAE: How Much, When & Who",
+    "title": "Tipping in UAE: Dubai, Abu Dhabi & How Much (2026 Guide)",
     "description": "Not sure how much to tip in the UAE? This practical guide covers restaurants, taxis, hotels and more for first-time visitors.",
     "publishedAt": "2026-02-25",
     "readingMinutes": 5,
@@ -4467,7 +4467,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "tipping-in-united-kingdom",
-    "title": "Tipping in United Kingdom: How Much, When & Who",
+    "title": "Tipping in the UK: When It's Expected & How Much (2026)",
     "description": "Everything you need to know about tipping in the UK — restaurants, taxis, hotels and more. Practical advice for first-time visitors.",
     "publishedAt": "2026-03-02",
     "readingMinutes": 5,
@@ -4581,7 +4581,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "tipping-in-india",
-    "title": "Tipping in India: How Much, When & Who to Tip",
+    "title": "Tipping in India: Delhi, Mumbai & What's Expected (2026)",
     "description": "A practical guide to tipping in India — from restaurants and taxis to hotels and tour guides. Know what's expected before you arrive.",
     "publishedAt": "2026-03-05",
     "readingMinutes": 5,
@@ -4690,7 +4690,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "tipping-in-south-korea",
-    "title": "Tipping in South Korea: How Much, When & Who",
+    "title": "Tipping in South Korea: Is It Rude? (2026 Guide)",
     "description": "Tipping is not expected in South Korea. Learn why skipping the tip is the right move, and how to navigate service culture as a visitor.",
     "publishedAt": "2026-03-09",
     "readingMinutes": 5,
@@ -4800,7 +4800,7 @@ export const GENERATED_BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "tipping-in-greece",
-    "title": "Tipping in Greece: How Much, When & Who",
+    "title": "Tipping in Greece: Athens, Islands & Tavernas (2026 Guide)",
     "description": "Not sure how much to tip in Greece? This practical guide covers restaurants, taxis, hotels and more — so you tip right every time.",
     "publishedAt": "2026-03-12",
     "readingMinutes": 5,

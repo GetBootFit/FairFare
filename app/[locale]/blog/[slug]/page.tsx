@@ -12,6 +12,7 @@ import { RelatedPosts } from '@/components/RelatedPosts'
 import { getPartnersForZone } from '@/lib/affiliates'
 import { getAirportForCity } from '@/lib/airport-data'
 import type { AffiliateCategory } from '@/data/affiliate-config'
+import { AmazonProductWidget } from '@/components/AmazonProductWidget'
 import { EmailCapture } from '@/components/EmailCapture'
 import { ScrollDepthTracker } from '@/components/ScrollDepthTracker'
 import { kvGet } from '@/lib/kv'
@@ -355,6 +356,8 @@ export default async function LocaleBlogArticlePage(
           city={post.city}
           country={post.country}
         />
+
+        <AmazonProductWidget category={post.category as 'taxi' | 'tipping' | 'travel'} />
 
         {/* CTA — category-specific (English links — taxi/tipping tools are English-only for now) */}
         {post.category === 'taxi' && (
