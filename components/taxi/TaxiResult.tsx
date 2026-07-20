@@ -645,24 +645,49 @@ export function TaxiResult({ result, onReset, purchasedProduct, onUpgradeToPass 
           </div>
         )}
 
-        {/* Affiliate links — transferNote appears as microcopy under the heading */}
-        {(() => {
-          const partners = getPartnersForZoneSync('result', {
-            maxItems: 6,
-          })
-          return (
-            <AffiliateBlock
-              partners={partners}
-              zone="result"
-              city={result.city}
-              country={result.country}
-              tint="teal"
-              headingKey="affiliate_book_transfer"
-              headingDestination={result.city ?? result.country}
-              subtitle={result.transferNote}
-            />
-          )
-        })()}
+        {/* Affiliate: Transfers — pre-arranged ride options */}
+        <AffiliateBlock
+          partners={getPartnersForZoneSync('result', { categories: ['transfer'], maxItems: 4 })}
+          zone="result"
+          city={result.city}
+          country={result.country}
+          tint="teal"
+          headingKey="affiliate_book_transfer"
+          headingDestination={result.city ?? result.country}
+          subtitle={result.transferNote}
+        />
+
+        {/* Affiliate: Hotels */}
+        <AffiliateBlock
+          partners={getPartnersForZoneSync('result', { categories: ['hotel'] })}
+          zone="result"
+          city={result.city}
+          country={result.country}
+          tint="teal"
+          headingKey="affiliate_hotels"
+          headingDestination={result.city ?? result.country}
+        />
+
+        {/* Affiliate: Tours & experiences */}
+        <AffiliateBlock
+          partners={getPartnersForZoneSync('result', { categories: ['tours'] })}
+          zone="result"
+          city={result.city}
+          country={result.country}
+          tint="teal"
+          headingKey="affiliate_plan_trip"
+          headingDestination={result.city ?? result.country}
+        />
+
+        {/* Affiliate: eSIM — connectivity for the trip */}
+        <AffiliateBlock
+          partners={getPartnersForZoneSync('result', { categories: ['esim'] })}
+          zone="result"
+          city={result.city}
+          country={result.country}
+          tint="teal"
+          headingKey="affiliate_esim"
+        />
 
         {/* Country Pass cross-sell — only shown to single-query buyers.
             Appears after affiliates but before the tipping link: reader has seen
