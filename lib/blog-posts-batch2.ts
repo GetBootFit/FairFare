@@ -1044,7 +1044,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'taxi-changi-to-singapore',
-    title: 'Taxi from Changi Airport to Singapore City: Cost & Guide (2026)',
+    title: 'Changi Airport Taxi Fare to Singapore City: Cost & Surcharges (2026)',
     description: "Changi to the city centre costs SGD $28–45 all-in by metered taxi during the day, or SGD $35–55 after midnight — Grab runs $22–45 but can surge above that. Here's the full 2026 guide, and why the SGD $2.50 MRT beats both for solo travellers.",
     publishedAt: '2026-01-30',
     readingMinutes: 8,

@@ -202,4 +202,112 @@ export const BATCH6_BLOG_POSTS: BlogPost[] = [
     ],
   },
 
+  // ── Colombo / Sri Lanka Taxi Fares ─────────────────────────────────────────
+
+  {
+    slug: 'how-much-does-a-taxi-cost-in-colombo',
+    title: 'How Much Does a Taxi Cost in Colombo? Sri Lanka Meter Rates (2026)',
+    description: 'Sri Lanka metered taxis charge Rs80 flag-fall then Rs80/km — a 10km Colombo city ride costs Rs880. But most tuk-tuks are unmetered. Here\'s the full 2026 guide: PickMe vs Uber, airport fares from BIA, and three-wheeler vs sedan.',
+    publishedAt: '2026-07-20',
+    readingMinutes: 7,
+    category: 'taxi',
+    city: 'Colombo',
+    country: 'Sri Lanka',
+    citySlug: 'colombo',
+    content: [
+      {
+        type: 'intro',
+        body: 'Sri Lanka has a proper metered taxi system — Rs80 flag-fall, then Rs80 per kilometre — but only a fraction of the vehicles you\'ll be offered actually use it. Air-conditioned sedans booked through PickMe or Uber run on the meter and charge those regulated rates. The three-wheelers (tuk-tuks) that dominate Colombo\'s streets are almost always unmetered and require negotiation. Understanding which vehicle you\'re in — and insisting on the meter or agreeing a price first — is the difference between paying Rs300 and Rs900 for the same 5km journey.',
+      },
+      { type: 'h2', heading: 'Sri Lanka Taxi Meter Rates at a Glance' },
+      {
+        type: 'table',
+        rows: [
+          { label: 'Metered taxi flag-fall', value: 'Rs80' },
+          { label: 'Rate per km (metered sedan)', value: 'Rs80' },
+          { label: 'Minimum fare', value: 'Rs100' },
+          { label: '5 km journey (e.g. Fort → Pettah)', value: 'Rs480' },
+          { label: '10 km journey (e.g. Fort → Nugegoda)', value: 'Rs880' },
+          { label: '15 km journey (e.g. Fort → Dehiwala)', value: 'Rs1,280' },
+          { label: 'Tuk-tuk (negotiated, 5 km)', value: 'Rs300–500 — tourist-facing rates' },
+          { label: 'BIA Airport (CMB) → Colombo city centre', value: 'Rs2,500–4,000 by metered taxi' },
+          { label: 'Night surcharge (after 22:00)', value: '+30–50% on negotiated tuk-tuk fares' },
+        ],
+      },
+      { type: 'h2', heading: 'PickMe vs Uber — Use One of These' },
+      {
+        type: 'p',
+        body: 'The single most useful advice for any visitor to Colombo: download PickMe before you land. PickMe is Sri Lanka\'s dominant ride-hailing platform, built locally, and used by the vast majority of residents. It offers both tuk-tuks and air-conditioned sedans, shows the fare upfront, and charges metered rates — no negotiation, no surprises. Uber also operates in Colombo and connects you to licensed taxi sedans at similar fares. Between the two, PickMe has higher driver density in Colombo and shorter wait times; Uber is useful as a backup when PickMe shows no cars nearby. Both apps accept card payment and keep a trip record.',
+      },
+      {
+        type: 'ul',
+        items: [
+          'PickMe sedan: metered rate (Rs80/km), air-conditioned, app-tracked — the safest and most consistent option',
+          'PickMe tuk-tuk: slightly cheaper than sedan, open-air, good for short daytime hops under 5km',
+          'Uber: metered sedan rates comparable to PickMe — useful backup, slightly fewer drivers',
+          'Street-hailed tuk-tuk: always negotiate first; Rs50–80/km is a fair local rate if you can achieve it',
+          'Hotel taxi desks: convenient but typically 50–100% more expensive than app rates — ask the price before committing',
+          'Radio cabs (CABS, Quick Cabs): metered, reliable, bookable by phone — good for pre-scheduled airport runs',
+        ],
+      },
+      { type: 'h2', heading: 'Bandaranaike International Airport (CMB) to Colombo' },
+      {
+        type: 'p',
+        body: 'Bandaranaike International Airport (BIA/CMB), also known as Katunayake Airport, sits 35km north of Colombo city centre. In normal traffic the drive takes 45–60 minutes; during rush hour (7–9am, 5–8pm) on the Colombo–Katunayake Expressway it can stretch to 90 minutes or more. Official metered taxis at the BIA taxi rank charge Rs2,500–4,000 depending on your Colombo destination — Fort, Kollupitiya, and Bambalapitiya at the lower end; Mount Lavinia or Rajagiriya at the higher. Pre-book a PickMe or radio cab from the arrivals hall for the most transparent pricing. Avoid drivers who approach you before you exit arrivals — quoted prices will be Rs5,000–8,000 for the same journey.',
+      },
+      {
+        type: 'tip',
+        body: 'Negombo, the beach resort town 8km north of the airport, is a popular first stop for visitors arriving on evening flights. A tuk-tuk or PickMe tuk-tuk from BIA to Negombo beach hotels costs Rs400–700 and takes 15–25 minutes — far cheaper and closer than making the full Colombo run after a long flight.',
+      },
+      { type: 'h2', heading: 'Tuk-Tuks — The Street Reality' },
+      {
+        type: 'p',
+        body: 'Three-wheelers (locally called three-wheelers or tuk-tuks) are the most visible form of transport in Colombo and the most likely to cause fare confusion. The vast majority operate without meters — the driver quotes a price, you counter, you agree. For residents, the going rate is Rs50–70 per km. For tourists in the Pettah, Fort, and Galle Face areas, opening quotes of Rs500–800 for a 3km journey are common. Use PickMe tuk-tuk to see the fair market price before negotiating with a street driver — it anchors the conversation. At major tourist sites (the Galle Face promenade, Gangaramaya Temple), a polite but firm counter-offer of 40–50% of the opening quote will usually succeed.',
+      },
+      {
+        type: 'warning',
+        body: 'Four common Colombo taxi scams: (1) Gem shop detour — tuk-tuk drivers in Fort and Pettah offer sightseeing tours that "happen" to stop at a gem or batik shop where they earn commission. State your destination clearly and refuse diversions. (2) Off-meter sedan — a metered taxi that starts driving without turning on the meter, then invents a flat rate at the destination. Watch for the meter to click on before you leave the kerb. (3) Airport tout pricing — drivers outside arrivals quoting Rs6,000–10,000 for a Colombo run that should be Rs2,500–4,000; walk to the official metered rank or use PickMe. (4) Currency confusion — quoting in USD then converting at an unfavourable rate; all local fares are in Sri Lankan Rupees.',
+      },
+      { type: 'h2', heading: 'Getting Around Beyond Colombo' },
+      {
+        type: 'p',
+        body: 'For long-distance travel — Colombo to Kandy (115km), Galle (130km), or Mirissa (175km) — metered taxis become impractical. The meter would run Rs9,200–14,000 one-way to Kandy. For these journeys, negotiate a fixed intercity rate with a radio cab or app-based driver: Rs5,000–8,000 Colombo–Kandy, Rs6,000–10,000 Colombo–Galle depending on vehicle and driver. Sri Lanka Railways is often the better choice — the Colombo–Kandy train (Rs3 hours, Rs300–800 depending on class) is one of the most scenic rail journeys in Asia.',
+      },
+      { type: 'h2', heading: 'Frequently Asked Questions' },
+      {
+        type: 'faq',
+        faqs: [
+          {
+            q: 'What are the taxi meter rates in Sri Lanka?',
+            a: 'Licensed metered taxis (sedans) in Colombo charge Rs80 flag-fall and Rs80 per kilometre. A 5km city journey costs approximately Rs480; 10km costs Rs880. These rates apply to app-booked PickMe and Uber sedans. Three-wheelers (tuk-tuks) are almost always unmetered — negotiate before boarding.',
+          },
+          {
+            q: 'How much is a taxi from Colombo Airport (BIA) to the city?',
+            a: 'A metered taxi from Bandaranaike International Airport (CMB/BIA) to central Colombo costs Rs2,500–4,000 depending on your destination, covering 35km in 45–90 minutes. Pre-book via PickMe or a radio cab for transparent pricing. Avoid touts at arrivals who quote Rs5,000–8,000.',
+          },
+          {
+            q: 'Is PickMe better than Uber in Sri Lanka?',
+            a: 'For most journeys in Colombo, yes — PickMe has higher driver density, faster pickup times, and was built specifically for Sri Lanka\'s road conditions. Uber is a reliable backup. Fares on both platforms are comparable. Download PickMe before you land.',
+          },
+          {
+            q: 'How do I negotiate a fair tuk-tuk fare in Colombo?',
+            a: 'Open PickMe and check the tuk-tuk estimate for your journey — this gives you the honest market rate. Then negotiate with the street driver starting from that number. In tourist areas, expect to start at 40–50% of the driver\'s opening quote. Always agree the price before getting in.',
+          },
+          {
+            q: 'Do taxis in Sri Lanka take card payment?',
+            a: 'App-booked PickMe and Uber rides accept card through the app. Street-hailed tuk-tuks and metered sedans are cash only — Sri Lankan Rupees. ATMs are widely available in Colombo; Hatton National Bank (HNB) and Commercial Bank ATMs reliably accept foreign cards.',
+          },
+          {
+            q: 'How much does a taxi from Colombo to Kandy cost?',
+            a: 'A metered taxi would run Rs9,000–14,000 at meter rates — impractical. Negotiate a fixed intercity rate: Rs5,000–8,000 is the going range for a private air-conditioned sedan (3–4 hour journey, 115km). The train (Rs300–800 depending on class) is cheaper and more scenic.',
+          },
+        ],
+      },
+    ],
+    references: [
+      { label: 'PickMe — Sri Lanka\'s leading ride-hailing app', url: 'https://pickme.lk' },
+      { label: 'National Transport Commission Sri Lanka', url: 'https://www.ntc.gov.lk' },
+    ],
+  },
+
 ]
