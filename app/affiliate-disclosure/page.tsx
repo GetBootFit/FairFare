@@ -1,22 +1,30 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import Image from 'next/image'
+import type { Metadata } from "next";
+import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: 'Affiliate Disclosure',
-  description: 'Hootling Affiliate Disclosure — how we earn commissions from partner links on our travel information service.',
-  alternates: { canonical: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com'}/affiliate-disclosure` },
-}
+  title: "Affiliate Disclosure",
+  description:
+    "Hootling Affiliate Disclosure — how we earn commissions from partner links on our travel information service.",
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_APP_URL ?? "https://www.hootling.com"}/affiliate-disclosure`,
+  },
+};
 
-const EFFECTIVE = '28 March 2026'
-const CONTACT = 'legal@hootling.com'
+const EFFECTIVE = "28 March 2026";
+const CONTACT = "legal@hootling.com";
 
 export default function AffiliateDisclosurePage() {
   return (
     <div className="space-y-6 pb-4">
       <div className="flex items-center gap-3">
         <Link href="/" className="shrink-0 hover:opacity-80 transition-opacity">
-          <Image src="/images/owl/expressions/owl-curious.svg" alt="Hootling" width={40} height={40} />
+          <Image
+            src="/images/owl/expressions/owl-curious.svg"
+            alt="Hootling"
+            width={40}
+            height={40}
+          />
         </Link>
         <div>
           <h1 className="text-xl font-bold text-white">Affiliate Disclosure</h1>
@@ -25,20 +33,23 @@ export default function AffiliateDisclosurePage() {
       </div>
 
       <p className="text-sm text-zinc-400 leading-relaxed">
-        Hootling participates in affiliate marketing programmes. This page discloses our
-        affiliate relationships in compliance with the US Federal Trade Commission (FTC){' '}
-        guidelines (<em>16 CFR Part 255</em>), the Australian Competition and Consumer
-        Commission (ACCC) guidelines on testimonials and endorsements, and the UK Advertising
-        Standards Authority (ASA) requirements.
+        Hootling participates in affiliate marketing programmes. This page
+        discloses our affiliate relationships in compliance with the US Federal
+        Trade Commission (FTC) guidelines (<em>16 CFR Part 255</em>), the
+        Australian Competition and Consumer Commission (ACCC) guidelines on
+        testimonials and endorsements, and the UK Advertising Standards
+        Authority (ASA) requirements.
       </p>
 
       <Section title="1. What Is an Affiliate Link?">
         <p>
-          An affiliate link is a specially tracked URL. When you click an affiliate link on
-          Hootling and subsequently make a purchase on the linked partner&apos;s website,
-          Hootling may receive a commission from that partner — at{' '}
-          <strong className="text-white">no additional cost to you</strong>. The price you pay
-          for any product or service is the same whether or not you arrive via an affiliate link.
+          An affiliate link is a specially tracked URL. When you click an
+          affiliate link on Hootling and subsequently make a purchase on the
+          linked partner&apos;s website, Hootling may receive a commission from
+          that partner — at{" "}
+          <strong className="text-white">no additional cost to you</strong>. The
+          price you pay for any product or service is the same whether or not
+          you arrive via an affiliate link.
         </p>
       </Section>
 
@@ -48,113 +59,176 @@ export default function AffiliateDisclosurePage() {
         </p>
         <ul className="mt-2 space-y-2 list-disc list-inside">
           <li>
-            <strong className="text-zinc-300">Travelpayouts</strong> — a travel affiliate
-            network (publisher ID: 509985) through which we promote the following partners:
+            <strong className="text-zinc-300">Travelpayouts</strong> — a travel
+            affiliate network (publisher ID: 509985) through which we promote
+            the following partners:
             <ul className="mt-1.5 ml-4 space-y-1 list-[circle] list-inside text-zinc-500">
-              <li><strong className="text-zinc-400">Kiwitaxi</strong> — fixed-price airport transfers</li>
-              <li><strong className="text-zinc-400">Welcome Pickups</strong> — pre-arranged airport transfers</li>
-              <li><strong className="text-zinc-400">GetTransfer</strong> — private transfer bookings</li>
-              <li><strong className="text-zinc-400">intui.travel</strong> — airport transfer services</li>
-              <li><strong className="text-zinc-400">Booking.com</strong> — hotel and accommodation bookings</li>
-              <li><strong className="text-zinc-400">GetYourGuide</strong> — tours and experiences</li>
-              <li><strong className="text-zinc-400">Viator</strong> — tours and experiences</li>
-              <li><strong className="text-zinc-400">Yesim</strong> — eSIM mobile data for travellers</li>
-              <li><strong className="text-zinc-400">Airalo</strong> — eSIM mobile data for travellers</li>
-              <li><strong className="text-zinc-400">DiscoverCars</strong> — car hire bookings</li>
-              <li><strong className="text-zinc-400">12Go</strong> — trains, buses, and transfers in Asia</li>
-              <li><strong className="text-zinc-400">Omio</strong> — trains and intercity transport in Europe</li>
+              <li>
+                <strong className="text-zinc-400">Kiwitaxi</strong> —
+                fixed-price airport transfers
+              </li>
+              <li>
+                <strong className="text-zinc-400">Welcome Pickups</strong> —
+                pre-arranged airport transfers
+              </li>
+              <li>
+                <strong className="text-zinc-400">GetTransfer</strong> — private
+                transfer bookings
+              </li>
+              <li>
+                <strong className="text-zinc-400">intui.travel</strong> —
+                airport transfer services
+              </li>
+              <li>
+                <strong className="text-zinc-400">Booking.com</strong> — hotel
+                and accommodation bookings
+              </li>
+              <li>
+                <strong className="text-zinc-400">GetYourGuide</strong> — tours
+                and experiences
+              </li>
+              <li>
+                <strong className="text-zinc-400">Viator</strong> — tours and
+                experiences
+              </li>
+              <li>
+                <strong className="text-zinc-400">Yesim</strong> — eSIM mobile
+                data for travellers
+              </li>
+              <li>
+                <strong className="text-zinc-400">Airalo</strong> — eSIM mobile
+                data for travellers
+              </li>
+              <li>
+                <strong className="text-zinc-400">DiscoverCars</strong> — car
+                hire bookings
+              </li>
+              <li>
+                <strong className="text-zinc-400">12Go</strong> — trains, buses,
+                and transfers in Asia
+              </li>
+              <li>
+                <strong className="text-zinc-400">Omio</strong> — trains and
+                intercity transport in Europe
+              </li>
             </ul>
           </li>
           <li>
-            <strong className="text-zinc-300">Amazon Associates</strong> — the Amazon affiliate
-            programme through which we earn commissions on travel product recommendations in blog
-            articles. We participate in the US, AU, UK, and CA programmes.
+            <strong className="text-zinc-300">Amazon Associates</strong> — the
+            Amazon affiliate programme through which we earn commissions on
+            travel product recommendations in blog articles. We participate in
+            the US, AU, UK, and CA programmes.
           </li>
         </ul>
         <p className="mt-2">
-          We may add further affiliate programmes in the future and will update this page
-          accordingly. Partners shown on the site are subject to availability and programme approval.
+          We may add further affiliate programmes in the future and will update
+          this page accordingly. Partners shown on the site are subject to
+          availability and programme approval.
         </p>
       </Section>
 
       <Section title="3. How Affiliate Links Are Identified">
-        <p>
-          Affiliate links on Hootling are:
-        </p>
+        <p>Affiliate links on Hootling are:</p>
         <ul className="mt-2 space-y-1.5 list-disc list-inside">
           <li>
-            Routed through our own tracking endpoint (<code className="text-zinc-500">/api/affiliate/redirect</code>),
-            which records the click and then redirects you to the partner&apos;s website
+            Routed through our own tracking endpoint (
+            <code className="text-zinc-500">/api/affiliate/redirect</code>),
+            which records the click and then redirects you to the partner&apos;s
+            website
           </li>
           <li>
-            Marked with <code className="text-zinc-500">rel=&quot;sponsored&quot;</code> in the
-            HTML to signal their commercial nature to search engines and browsers
+            Marked with{" "}
+            <code className="text-zinc-500">rel=&quot;sponsored&quot;</code> in
+            the HTML to signal their commercial nature to search engines and
+            browsers
           </li>
           <li>
-            Accompanied by a disclosure note stating &ldquo;Affiliate links — we may earn a
-            small commission at no extra cost to you&rdquo; in the same section as the links
+            Accompanied by a disclosure note stating &ldquo;Affiliate links — we
+            may earn a small commission at no extra cost to you&rdquo; in the
+            same section as the links
           </li>
         </ul>
       </Section>
 
       <Section title="4. Editorial Independence">
         <p>
-          Affiliate relationships do <strong className="text-white">not</strong> influence the
-          content of Hootling&apos;s taxi fare estimates, tipping guides, scam warnings, or
-          blog articles. Fare estimates are calculated from independently maintained rate data
-          and Google Maps routing. AI-generated safety content is produced without reference to
-          which affiliate partners are shown. We do not accept payment to feature, rank, or
-          positively review any partner.
+          Affiliate relationships do <strong className="text-white">not</strong>{" "}
+          influence the content of Hootling&apos;s taxi fare estimates, tipping
+          guides, scam warnings, or blog articles. Fare estimates are calculated
+          from independently maintained rate data and Google Maps routing.
+          AI-generated safety content is produced without reference to which
+          affiliate partners are shown. We do not accept payment to feature,
+          rank, or positively review any partner.
         </p>
         <p className="mt-2">
-          Partner selection is based on relevance to the traveller&apos;s query (e.g. airport
-          transfer services are shown in the context of a taxi fare result). Partners may be
-          enabled or disabled based on service quality, programme terms, and regional relevance
-          — not commission rates.
+          Partner selection is based on relevance to the traveller&apos;s query
+          (e.g. airport transfer services are shown in the context of a taxi
+          fare result). Partners may be enabled or disabled based on service
+          quality, programme terms, and regional relevance — not commission
+          rates.
         </p>
       </Section>
 
       <Section title="5. Your Rights and Choices">
         <p>
-          You are under no obligation to click any affiliate link. Clicking a partner link
-          simply means you are visiting that partner&apos;s website; no purchase is required
-          and no commitment is made on your behalf.
+          You are under no obligation to click any affiliate link. Clicking a
+          partner link simply means you are visiting that partner&apos;s
+          website; no purchase is required and no commitment is made on your
+          behalf.
         </p>
         <p className="mt-2">
-          If you have declined cookies via our consent banner, the Travelpayouts tracking
-          script is not loaded and no affiliate tracking cookies are set in your browser.
-          Clicks through our redirect endpoint are still counted in our own server-side
-          analytics (partner ID + zone only — no personal data).
+          If you have declined cookies via our consent banner, the Travelpayouts
+          tracking script is not loaded and no affiliate tracking cookies are
+          set in your browser. Clicks through our redirect endpoint are still
+          counted in our own server-side analytics (partner ID + zone only — no
+          personal data).
         </p>
       </Section>
 
       <Section title="6. Contact">
         <p>
-          Questions about our affiliate relationships:{' '}
-          <a href={`mailto:${CONTACT}`} className="text-purple-400 underline">{CONTACT}</a>
+          Questions about our affiliate relationships:{" "}
+          <a href={`mailto:${CONTACT}`} className="text-purple-400 underline">
+            {CONTACT}
+          </a>
         </p>
       </Section>
 
       <div className="pt-2 border-t border-zinc-800 flex gap-4">
-        <Link href="/terms#affiliate" className="text-sm text-zinc-600 hover:text-zinc-400 transition-colors">
+        <Link
+          href="/terms#affiliate"
+          className="text-sm text-zinc-600 hover:text-zinc-400 transition-colors"
+        >
           Terms of Service
         </Link>
-        <Link href="/privacy" className="text-sm text-zinc-600 hover:text-zinc-400 transition-colors">
+        <Link
+          href="/privacy"
+          className="text-sm text-zinc-600 hover:text-zinc-400 transition-colors"
+        >
           Privacy Policy
         </Link>
-        <Link href="/" className="text-sm text-zinc-600 hover:text-zinc-400 transition-colors">
+        <Link
+          href="/"
+          className="text-sm text-zinc-600 hover:text-zinc-400 transition-colors"
+        >
           ← Back to Hootling
         </Link>
       </div>
     </div>
-  )
+  );
 }
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
+function Section({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
   return (
     <div className="space-y-2">
       <h2 className="text-sm font-semibold text-white">{title}</h2>
       <div className="text-sm text-zinc-400 leading-relaxed">{children}</div>
     </div>
-  )
+  );
 }

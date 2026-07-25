@@ -1,88 +1,141 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
-import { ChevronRight } from 'lucide-react'
-import { useLanguage } from '@/context/LanguageContext'
-import { getUSDPrices } from '@/lib/currency'
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { ChevronRight } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
+import { getUSDPrices } from "@/lib/currency";
 
-type FaqStrings = Record<string, string>
+type FaqStrings = Record<string, string>;
 
 interface FaqItem {
-  qKey: string
-  aKey: string
-  bullets?: readonly string[]
-  cta?: { label: string; href: string }
+  qKey: string;
+  aKey: string;
+  bullets?: readonly string[];
+  cta?: { label: string; href: string };
 }
 
 function getEnglishContent(): FaqStrings {
-  const { single, pass, bundle } = getUSDPrices()
+  const { single, pass, bundle } = getUSDPrices();
   return {
-    heading: 'Frequently Asked Questions',
-    subheading: 'Everything you need to know about Hootling',
-    q1: 'Is Hootling free to use?', a1: 'Yes — Hootling is currently free. No payment, account, or sign-up required. Enter your route or destination and get your result instantly.',
-    q2: 'How does Hootling make money?', a2: "Hootling earns small commissions from optional affiliate links — partner services like airport transfers, hotels, and eSIMs shown after your result. Clicking is entirely optional; your fare estimate, tipping guide, and all travel information are free regardless.",
-    q3: 'How accurate are the fare estimates?', a3: 'Fare ranges are calculated from a curated dataset of local taxi rates combined with real route distances from Google Maps. A ±15% range is applied to account for traffic, surcharges, and driver discretion. Always confirm the fare with your driver before the journey — Hootling is a reference tool, not a metered guarantee.',
-    q4: 'Which cities are covered for taxi fares?', a4: 'Hootling covers 120+ cities across every continent, including major tourist destinations in Asia, Europe, the Americas, Africa, and the Middle East. If your city is not in our dataset, the result will include a note to verify the fare directly with your driver.',
-    q5: 'Which countries are covered for tipping?', a5: 'Tipping guides are available for 50+ countries including all major travel destinations. The guide covers six scenarios: restaurants, taxis, hotel porters, bars, tour guides, and delivery.',
-    q6: 'What are the scam warnings based on?', a6: "Scam warnings are researched and tailored to each city — covering well-known issues like meter tampering, unofficial taxis, and fixed-price scams. They reflect patterns specific to your destination and are updated every 90 days. They are a starting point for awareness, not a guarantee of current conditions.",
-    q7: 'Is there a limit to how many searches I can do?', a7: 'No — searches are unlimited and free. Run as many taxi fare checks and tipping guides as you need, for any destination.',
-    q8: 'Do I need to create an account?', a8: 'No. Hootling has no accounts, no sign-up, and no login. Your query result and access token are stored temporarily in your browser only.',
-    q9: 'Is my data private?', a9: 'Hootling does not create user accounts or store personal profiles. No GPS or location tracking is used — you type addresses manually. Only the city and country name are sent to our AI provider to generate scam warnings and tipping advice.',
-    q10: 'Is my payment data stored?', a10: 'No. Payment is processed entirely by Stripe. Hootling never sees, handles, or stores your card number, CVC, or banking details. We only receive confirmation that a payment session was completed.',
-    q11: 'Does Hootling track my location?', a11: 'No. Hootling does not use GPS or request location permission. You type addresses manually. Those addresses are sent to Google Maps to calculate the route distance — that is the only data sent.',
-    q12: 'What data is sent to Anthropic?', a12: 'Only the city and country name of your pickup location (e.g. "Bangkok, Thailand") is sent to the Claude API to generate scam warnings, tipping notes, and driver phrases. No address-level detail is included.',
-    q13: 'Is Hootling affiliated with any taxi company?', a13: 'No. Hootling is an independent travel reference tool with no affiliation with any taxi company, driver, dispatch service, or transportation authority.',
-    q14: 'What languages is the app available in?', a14: 'Hootling is fully available in 14 languages: English, Spanish, French, German, Portuguese (Brazilian), Italian, Indonesian, Vietnamese, Thai, Chinese (Simplified), Chinese (Traditional), Japanese, Korean, and Hindi. Scam warnings, tipping advice, and driver phrases all respond in your selected language. Use the language selector in the bottom navigation bar to switch.',
-    contact_heading: 'Still have a question?',
-    contact_body: "Reach us at hello@hootling.com and we'll get back to you within 2 business days.",
-    back: '← Back to Hootling',
-  }
+    heading: "Frequently Asked Questions",
+    subheading: "Everything you need to know about Hootling",
+    q1: "Is Hootling free to use?",
+    a1: "Yes — Hootling is currently free. No payment, account, or sign-up required. Enter your route or destination and get your result instantly.",
+    q2: "How does Hootling make money?",
+    a2: "Hootling earns small commissions from optional affiliate links — partner services like airport transfers, hotels, and eSIMs shown after your result. Clicking is entirely optional; your fare estimate, tipping guide, and all travel information are free regardless.",
+    q3: "How accurate are the fare estimates?",
+    a3: "Fare ranges are calculated from a curated dataset of local taxi rates combined with real route distances from Google Maps. A ±15% range is applied to account for traffic, surcharges, and driver discretion. Always confirm the fare with your driver before the journey — Hootling is a reference tool, not a metered guarantee.",
+    q4: "Which cities are covered for taxi fares?",
+    a4: "Hootling covers 120+ cities across every continent, including major tourist destinations in Asia, Europe, the Americas, Africa, and the Middle East. If your city is not in our dataset, the result will include a note to verify the fare directly with your driver.",
+    q5: "Which countries are covered for tipping?",
+    a5: "Tipping guides are available for 50+ countries including all major travel destinations. The guide covers six scenarios: restaurants, taxis, hotel porters, bars, tour guides, and delivery.",
+    q6: "What are the scam warnings based on?",
+    a6: "Scam warnings are researched and tailored to each city — covering well-known issues like meter tampering, unofficial taxis, and fixed-price scams. They reflect patterns specific to your destination and are updated every 90 days. They are a starting point for awareness, not a guarantee of current conditions.",
+    q7: "Is there a limit to how many searches I can do?",
+    a7: "No — searches are unlimited and free. Run as many taxi fare checks and tipping guides as you need, for any destination.",
+    q8: "Do I need to create an account?",
+    a8: "No. Hootling has no accounts, no sign-up, and no login. Your query result and access token are stored temporarily in your browser only.",
+    q9: "Is my data private?",
+    a9: "Hootling does not create user accounts or store personal profiles. No GPS or location tracking is used — you type addresses manually. Only the city and country name are sent to our AI provider to generate scam warnings and tipping advice.",
+    q10: "Is my payment data stored?",
+    a10: "No. Payment is processed entirely by Stripe. Hootling never sees, handles, or stores your card number, CVC, or banking details. We only receive confirmation that a payment session was completed.",
+    q11: "Does Hootling track my location?",
+    a11: "No. Hootling does not use GPS or request location permission. You type addresses manually. Those addresses are sent to Google Maps to calculate the route distance — that is the only data sent.",
+    q12: "What data is sent to Anthropic?",
+    a12: 'Only the city and country name of your pickup location (e.g. "Bangkok, Thailand") is sent to the Claude API to generate scam warnings, tipping notes, and driver phrases. No address-level detail is included.',
+    q13: "Is Hootling affiliated with any taxi company?",
+    a13: "No. Hootling is an independent travel reference tool with no affiliation with any taxi company, driver, dispatch service, or transportation authority.",
+    q14: "What languages is the app available in?",
+    a14: "Hootling is fully available in 14 languages: English, Spanish, French, German, Portuguese (Brazilian), Italian, Indonesian, Vietnamese, Thai, Chinese (Simplified), Chinese (Traditional), Japanese, Korean, and Hindi. Scam warnings, tipping advice, and driver phrases all respond in your selected language. Use the language selector in the bottom navigation bar to switch.",
+    contact_heading: "Still have a question?",
+    contact_body:
+      "Reach us at hello@hootling.com and we'll get back to you within 2 business days.",
+    back: "← Back to Hootling",
+  };
 }
 
 const FAQ_ITEMS: FaqItem[] = [
-  { qKey: 'q1', aKey: 'a1', cta: { label: 'Try taxi fare check', href: '/taxi' } },
-  { qKey: 'q2', aKey: 'a2' },
-  { qKey: 'q3', aKey: 'a3', cta: { label: 'See an example result', href: '/example' } },
-  { qKey: 'q4', aKey: 'a4', cta: { label: 'Check your city', href: '/taxi' } },
-  { qKey: 'q5', aKey: 'a5', cta: { label: 'Browse tipping guides', href: '/tipping' } },
-  { qKey: 'q6', aKey: 'a6', cta: { label: 'Taxi scam guide by country', href: '/taxi/scams' } },
-  { qKey: 'q7', aKey: 'a7' },
-  { qKey: 'q8', aKey: 'a8' },
-  { qKey: 'q9', aKey: 'a9' },
-  { qKey: 'q10', aKey: 'a10' },
-  { qKey: 'q11', aKey: 'a11' },
-  { qKey: 'q12', aKey: 'a12' },
-  { qKey: 'q13', aKey: 'a13' },
-  { qKey: 'q14', aKey: 'a14' },
-] as const
+  {
+    qKey: "q1",
+    aKey: "a1",
+    cta: { label: "Try taxi fare check", href: "/taxi" },
+  },
+  { qKey: "q2", aKey: "a2" },
+  {
+    qKey: "q3",
+    aKey: "a3",
+    cta: { label: "See an example result", href: "/example" },
+  },
+  { qKey: "q4", aKey: "a4", cta: { label: "Check your city", href: "/taxi" } },
+  {
+    qKey: "q5",
+    aKey: "a5",
+    cta: { label: "Browse tipping guides", href: "/tipping" },
+  },
+  {
+    qKey: "q6",
+    aKey: "a6",
+    cta: { label: "Taxi scam guide by country", href: "/taxi/scams" },
+  },
+  { qKey: "q7", aKey: "a7" },
+  { qKey: "q8", aKey: "a8" },
+  { qKey: "q9", aKey: "a9" },
+  { qKey: "q10", aKey: "a10" },
+  { qKey: "q11", aKey: "a11" },
+  { qKey: "q12", aKey: "a12" },
+  { qKey: "q13", aKey: "a13" },
+  { qKey: "q14", aKey: "a14" },
+] as const;
 
 export function FaqContent() {
-  const { locale } = useLanguage()
-  const [s, setS] = useState<FaqStrings>(getEnglishContent)
+  const { locale } = useLanguage();
+  const [s, setS] = useState<FaqStrings>(getEnglishContent);
 
   useEffect(() => {
-    if (locale === 'en') { setS(getEnglishContent()); return }
-    const cacheKey = `page_translation:faq:${locale}`
+    if (locale === "en") {
+      setS(getEnglishContent());
+      return;
+    }
+    const cacheKey = `page_translation:faq:${locale}`;
     try {
-      const cached = sessionStorage.getItem(cacheKey)
-      if (cached) { setS(JSON.parse(cached)); return }
-    } catch { /* sessionStorage unavailable */ }
+      const cached = sessionStorage.getItem(cacheKey);
+      if (cached) {
+        setS(JSON.parse(cached));
+        return;
+      }
+    } catch {
+      /* sessionStorage unavailable */
+    }
 
     fetch(`/api/translate/page?slug=faq&locale=${locale}`)
-      .then(r => r.json())
+      .then((r) => r.json())
       .then((data: FaqStrings) => {
-        setS(data)
-        try { sessionStorage.setItem(cacheKey, JSON.stringify(data)) } catch { /* ignore */ }
+        setS(data);
+        try {
+          sessionStorage.setItem(cacheKey, JSON.stringify(data));
+        } catch {
+          /* ignore */
+        }
       })
-      .catch(() => { /* keep English */ })
-  }, [locale])
+      .catch(() => {
+        /* keep English */
+      });
+  }, [locale]);
 
   return (
     <div className="space-y-6 pb-4">
       <div className="flex items-center gap-3">
-        <Link href="/" className="w-10 h-10 shrink-0 hover:opacity-90 transition-opacity">
-          <img src="/images/owl/expressions/owl-confused.svg" alt="" aria-hidden="true" className="w-full h-full object-contain" />
+        <Link
+          href="/"
+          className="w-10 h-10 shrink-0 hover:opacity-90 transition-opacity"
+        >
+          <img
+            src="/images/owl/expressions/owl-confused.svg"
+            alt=""
+            aria-hidden="true"
+            className="w-full h-full object-contain"
+          />
         </Link>
         <div>
           <h1 className="text-xl font-bold text-white">{s.heading}</h1>
@@ -92,13 +145,21 @@ export function FaqContent() {
 
       <div className="space-y-3">
         {FAQ_ITEMS.map(({ qKey, aKey, bullets, cta }) => (
-          <div key={qKey} className="rounded-2xl bg-zinc-900 border border-zinc-800 p-4 space-y-1.5">
-            <p className="text-sm font-medium text-white leading-snug">{s[qKey]}</p>
+          <div
+            key={qKey}
+            className="rounded-2xl bg-zinc-900 border border-zinc-800 p-4 space-y-1.5"
+          >
+            <p className="text-sm font-medium text-white leading-snug">
+              {s[qKey]}
+            </p>
             <p className="text-sm text-zinc-400 leading-relaxed">{s[aKey]}</p>
             {bullets && (
               <ul className="space-y-1 pt-0.5">
                 {bullets.map((bKey: string) => (
-                  <li key={bKey} className="flex items-start gap-2 text-sm text-zinc-400">
+                  <li
+                    key={bKey}
+                    className="flex items-start gap-2 text-sm text-zinc-400"
+                  >
                     <span className="text-purple-400 shrink-0 mt-0.5">•</span>
                     <span>{s[bKey]}</span>
                   </li>
@@ -106,7 +167,10 @@ export function FaqContent() {
               </ul>
             )}
             {cta && (
-              <Link href={cta.href} className="inline-flex items-center gap-1 text-xs text-purple-400 hover:text-purple-300 transition-colors pt-0.5">
+              <Link
+                href={cta.href}
+                className="inline-flex items-center gap-1 text-xs text-purple-400 hover:text-purple-300 transition-colors pt-0.5"
+              >
                 {cta.label}
                 <ChevronRight size={11} />
               </Link>
@@ -118,15 +182,25 @@ export function FaqContent() {
       <div className="rounded-2xl bg-zinc-900 border border-zinc-800 p-4 space-y-2">
         <p className="text-sm font-medium text-white">{s.contact_heading}</p>
         <p className="text-sm text-zinc-400">
-          {s.contact_body.split('hello@hootling.com')[0]}
-          <a href="mailto:hello@hootling.com" className="text-purple-400 underline">hello@hootling.com</a>
-          {s.contact_body.split('hello@hootling.com')[1]}
+          {s.contact_body.split("hello@hootling.com")[0]}
+          <a
+            href="mailto:hello@hootling.com"
+            className="text-purple-400 underline"
+          >
+            hello@hootling.com
+          </a>
+          {s.contact_body.split("hello@hootling.com")[1]}
         </p>
       </div>
 
       <div className="pt-2 border-t border-zinc-800">
-        <Link href="/" className="text-sm text-zinc-600 hover:text-zinc-400 transition-colors">{s.back}</Link>
+        <Link
+          href="/"
+          className="text-sm text-zinc-600 hover:text-zinc-400 transition-colors"
+        >
+          {s.back}
+        </Link>
       </div>
     </div>
-  )
+  );
 }

@@ -1,164 +1,200 @@
-import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
-import Script from 'next/script'
-import { Analytics } from '@vercel/analytics/next'
-import { BottomNav } from '@/components/BottomNav'
-import { DesktopNav } from '@/components/DesktopNav'
-import { LanguageProvider } from '@/context/LanguageContext'
-import { HtmlLangUpdater } from '@/components/HtmlLangUpdater'
-import { ServiceWorkerRegistration } from '@/components/ServiceWorkerRegistration'
-import { CookieConsent } from '@/components/CookieConsent'
-import './globals.css'
+import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
+import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
+import { BottomNav } from "@/components/BottomNav";
+import { DesktopNav } from "@/components/DesktopNav";
+import { LanguageProvider } from "@/context/LanguageContext";
+import { HtmlLangUpdater } from "@/components/HtmlLangUpdater";
+import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
+import { CookieConsent } from "@/components/CookieConsent";
+import "./globals.css";
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
-const GA4_ID     = process.env.NEXT_PUBLIC_GA4_ID
-const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const GA4_ID = process.env.NEXT_PUBLIC_GA4_ID;
+const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID;
 
 // Use www as the canonical origin — must match NEXT_PUBLIC_APP_URL in .env.
 // All other files use the same pattern: ?? 'https://www.hootling.com'
-const APP_URL = (process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com').replace(/\/$/, '')
+const APP_URL = (
+  process.env.NEXT_PUBLIC_APP_URL ?? "https://www.hootling.com"
+).replace(/\/$/, "");
 
 export const metadata: Metadata = {
   metadataBase: new URL(APP_URL),
   verification: {
-    google: ['xJfxOnrLLvnzqbWsRLpZ6cVhXWILBYwc7bX9T9Mu7L0', 'NhttHQAZ1GPfbbxxhEpxqxZ015Xai0PjN60zDGDnuvc'],
+    google: [
+      "xJfxOnrLLvnzqbWsRLpZ6cVhXWILBYwc7bX9T9Mu7L0",
+      "NhttHQAZ1GPfbbxxhEpxqxZ015Xai0PjN60zDGDnuvc",
+    ],
   },
   title: {
-    default: 'Hootling — Travel wise.',
-    template: '%s | Hootling',
+    default: "Hootling — Travel wise.",
+    template: "%s | Hootling",
   },
   description:
-    'Instant taxi fare checks and tipping guides for international travellers. Know the fair price, avoid scams, and tip correctly — anywhere in the world.',
+    "Instant taxi fare checks and tipping guides for international travellers. Know the fair price, avoid scams, and tip correctly — anywhere in the world.",
   keywords: [
-    'taxi fare',
-    'tipping guide',
-    'travel',
-    'taxi price estimate',
-    'international travel',
-    'taxi scam warning',
-    'tip calculator',
-    'travel app',
-    'hootling',
-    'how much does a taxi cost',
-    'tipping etiquette',
+    "taxi fare",
+    "tipping guide",
+    "travel",
+    "taxi price estimate",
+    "international travel",
+    "taxi scam warning",
+    "tip calculator",
+    "travel app",
+    "hootling",
+    "how much does a taxi cost",
+    "tipping etiquette",
   ],
   alternates: {
     canonical: APP_URL,
     languages: {
-      'en': APP_URL,
-      'ar': APP_URL,
-      'es': APP_URL,
-      'fr': APP_URL,
-      'de': APP_URL,
-      'pt': APP_URL,
-      'it': APP_URL,
-      'id': APP_URL,
-      'vi': APP_URL,
-      'th': APP_URL,
-      'zh': APP_URL,
-      'zh-TW': APP_URL,
-      'ja': APP_URL,
-      'ko': APP_URL,
-      'hi': APP_URL,
-      'x-default': APP_URL,
+      en: APP_URL,
+      ar: APP_URL,
+      es: APP_URL,
+      fr: APP_URL,
+      de: APP_URL,
+      pt: APP_URL,
+      it: APP_URL,
+      id: APP_URL,
+      vi: APP_URL,
+      th: APP_URL,
+      zh: APP_URL,
+      "zh-TW": APP_URL,
+      ja: APP_URL,
+      ko: APP_URL,
+      hi: APP_URL,
+      "x-default": APP_URL,
     },
   },
-  manifest: '/manifest.json',
+  manifest: "/manifest.json",
   icons: {
     icon: [
-      { url: '/images/brand/hootling-logo-icon.svg', type: 'image/svg+xml' },
-      { url: '/icons/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/icons/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/icons/favicon-48x48.png', sizes: '48x48', type: 'image/png' },
-      { url: '/favicon.ico', sizes: 'any' },
+      { url: "/images/brand/hootling-logo-icon.svg", type: "image/svg+xml" },
+      { url: "/icons/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/icons/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icons/favicon-48x48.png", sizes: "48x48", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
     ],
     apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
   },
-  appleWebApp: { capable: true, statusBarStyle: 'black-translucent', title: 'Hootling' },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "Hootling",
+  },
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
+    type: "website",
+    locale: "en_US",
     url: APP_URL,
-    siteName: 'Hootling',
-    title: 'Hootling — Travel wise.',
-    description: 'Instant taxi fare checks and tipping guides for international travellers.',
+    siteName: "Hootling",
+    title: "Hootling — Travel wise.",
+    description:
+      "Instant taxi fare checks and tipping guides for international travellers.",
     images: [
       {
-        url: '/images/og/hootling-og-1200x630.png',
+        url: "/images/og/hootling-og-1200x630.png",
         width: 1200,
         height: 630,
-        alt: 'Hootling — Instant taxi fare checks and tipping guides',
+        alt: "Hootling — Instant taxi fare checks and tipping guides",
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    site: '@TheHootling',
-    title: 'Hootling — Travel wise.',
-    description: 'Instant taxi fare checks and tipping guides for international travellers.',
-    images: ['/images/og/hootling-og-1200x630.png'],
+    card: "summary_large_image",
+    site: "@TheHootling",
+    title: "Hootling — Travel wise.",
+    description:
+      "Instant taxi fare checks and tipping guides for international travellers.",
+    images: ["/images/og/hootling-og-1200x630.png"],
   },
   robots: {
     index: true,
     follow: true,
     googleBot: { index: true, follow: true },
   },
-}
+};
 
 export const viewport: Viewport = {
-  width: 'device-width',
+  width: "device-width",
   initialScale: 1,
   // maximumScale and userScalable intentionally omitted — pinch-to-zoom must
   // remain available for accessibility (WCAG 1.4.4 Resize Text, Level AA).
-  themeColor: '#18181b',
-}
+  themeColor: "#18181b",
+};
 
 const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebApplication',
-  name: 'Hootling',
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Hootling",
   url: APP_URL,
-  description: 'Instant taxi fare checks and tipping guides for international travellers. Know the fair price, avoid scams, and tip correctly — anywhere in the world.',
-  applicationCategory: 'TravelApplication',
-  operatingSystem: 'Any',
+  description:
+    "Instant taxi fare checks and tipping guides for international travellers. Know the fair price, avoid scams, and tip correctly — anywhere in the world.",
+  applicationCategory: "TravelApplication",
+  operatingSystem: "Any",
   offers: {
-    '@type': 'Offer',
-    price: '0',
-    priceCurrency: 'USD',
-    description: 'Free — no account or payment required',
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+    description: "Free — no account or payment required",
   },
   creator: {
-    '@type': 'Organization',
-    name: 'Hootling',
+    "@type": "Organization",
+    name: "Hootling",
     url: APP_URL,
   },
   sameAs: [
-    'https://twitter.com/TheHootling',
-    'https://www.instagram.com/TheHootling',
-    'https://www.facebook.com/TheHootling',
-    'https://www.tiktok.com/@thehootling',
-    'https://www.linkedin.com/company/hootling',
-    'https://www.youtube.com/@TheHootling',
+    "https://twitter.com/TheHootling",
+    "https://www.instagram.com/TheHootling",
+    "https://www.facebook.com/TheHootling",
+    "https://www.tiktok.com/@thehootling",
+    "https://www.linkedin.com/company/hootling",
+    "https://www.youtube.com/@TheHootling",
   ],
-}
+};
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" className="bg-black">
       <head>
         {/* Safari Pinned Tab / mask-icon — must be a single-colour SVG */}
-        <link rel="mask-icon" href="/images/brand/hootling-logo-icon-mono.svg" color="#7c3aed" />
+        <link
+          rel="mask-icon"
+          href="/images/brand/hootling-logo-icon-mono.svg"
+          color="#7c3aed"
+        />
         {/* Preconnect to external domains to reduce DNS + TLS handshake latency */}
         <link rel="preconnect" href="https://maps.googleapis.com" />
-        <link rel="preconnect" href="https://maps.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://va.vercel-scripts.com" crossOrigin="anonymous" />
-        {GA4_ID && <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />}
+        <link
+          rel="preconnect"
+          href="https://maps.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preconnect"
+          href="https://va.vercel-scripts.com"
+          crossOrigin="anonymous"
+        />
+        {GA4_ID && (
+          <link
+            rel="preconnect"
+            href="https://www.googletagmanager.com"
+            crossOrigin="anonymous"
+          />
+        )}
         {/* Travelpayouts script is loaded on-demand via CookieConsent component
             (user must accept before the tracking script is injected). */}
       </head>
-      <body className={`${inter.variable} font-sans bg-black text-white antialiased`}>
+      <body
+        className={`${inter.variable} font-sans bg-black text-white antialiased`}
+      >
         {/* Skip-to-main-content — visually hidden until focused by keyboard users.
             Satisfies WCAG 2.4.1 (Bypass Blocks) Level A. */}
         <a
@@ -179,7 +215,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {/* id + tabIndex={-1} allows the skip link to move focus here programmatically.
               md:pt-20 clears the fixed DesktopNav (h-14 = 56px + buffer).
               md:max-w-3xl widens from mobile card width to a comfortable desktop reading width. */}
-          <main id="main-content" tabIndex={-1} className="max-w-md md:max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto min-h-screen pb-24 md:pb-12 px-4 md:px-8 pt-6 md:pt-20 focus:outline-none">
+          <main
+            id="main-content"
+            tabIndex={-1}
+            className="max-w-md md:max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto min-h-screen pb-24 md:pb-12 px-4 md:px-8 pt-6 md:pt-20 focus:outline-none"
+          >
             {children}
           </main>
           <BottomNav />
@@ -213,5 +253,5 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         )}
       </body>
     </html>
-  )
+  );
 }
