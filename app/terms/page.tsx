@@ -46,8 +46,13 @@ export default function TermsPage() {
 
       <Section title="2. Payments and Refunds">
         <p>
-          Access to full query results requires a one-time payment processed securely by Stripe.
-          We offer three pricing options:
+          As of June 2026, Hootling is free to use — no payment is required to access taxi fare
+          estimates or tipping guides. The pricing structure below applies if and when premium
+          paid features are reintroduced.
+        </p>
+        <p className="mt-2">
+          When paid features are active, access is provided via a one-time payment processed
+          securely by Stripe. We offer the following pricing options:
         </p>
         <ul className="mt-2 space-y-1.5 list-disc list-inside text-zinc-400">
           <li>

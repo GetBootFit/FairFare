@@ -49,14 +49,31 @@ export default function AffiliateDisclosurePage() {
         <ul className="mt-2 space-y-2 list-disc list-inside">
           <li>
             <strong className="text-zinc-300">Travelpayouts</strong> — a travel affiliate
-            network through which we promote airport transfer and travel services including
-            Kiwitaxi, Welcome Pickups, GetTransfer, and intui.travel. Publisher ID: 509985.
+            network (publisher ID: 509985) through which we promote the following partners:
+            <ul className="mt-1.5 ml-4 space-y-1 list-[circle] list-inside text-zinc-500">
+              <li><strong className="text-zinc-400">Kiwitaxi</strong> — fixed-price airport transfers</li>
+              <li><strong className="text-zinc-400">Welcome Pickups</strong> — pre-arranged airport transfers</li>
+              <li><strong className="text-zinc-400">GetTransfer</strong> — private transfer bookings</li>
+              <li><strong className="text-zinc-400">intui.travel</strong> — airport transfer services</li>
+              <li><strong className="text-zinc-400">Booking.com</strong> — hotel and accommodation bookings</li>
+              <li><strong className="text-zinc-400">GetYourGuide</strong> — tours and experiences</li>
+              <li><strong className="text-zinc-400">Viator</strong> — tours and experiences</li>
+              <li><strong className="text-zinc-400">Yesim</strong> — eSIM mobile data for travellers</li>
+              <li><strong className="text-zinc-400">Airalo</strong> — eSIM mobile data for travellers</li>
+              <li><strong className="text-zinc-400">DiscoverCars</strong> — car hire bookings</li>
+              <li><strong className="text-zinc-400">12Go</strong> — trains, buses, and transfers in Asia</li>
+              <li><strong className="text-zinc-400">Omio</strong> — trains and intercity transport in Europe</li>
+            </ul>
+          </li>
+          <li>
+            <strong className="text-zinc-300">Amazon Associates</strong> — the Amazon affiliate
+            programme through which we earn commissions on travel product recommendations in blog
+            articles. We participate in the US, AU, UK, and CA programmes.
           </li>
         </ul>
         <p className="mt-2">
           We may add further affiliate programmes in the future and will update this page
-          accordingly. Programmes pending approval are not yet active and are not currently
-          generating commissions.
+          accordingly. Partners shown on the site are subject to availability and programme approval.
         </p>
       </Section>
 

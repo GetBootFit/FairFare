@@ -125,9 +125,9 @@ const jsonLd = {
   operatingSystem: 'Any',
   offers: {
     '@type': 'Offer',
-    price: '2.99',
+    price: '0',
     priceCurrency: 'USD',
-    description: 'Single query — no subscription required',
+    description: 'Free — no account or payment required',
   },
   creator: {
     '@type': 'Organization',

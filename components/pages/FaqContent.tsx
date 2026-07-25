@@ -20,19 +20,15 @@ function getEnglishContent(): FaqStrings {
   return {
     heading: 'Frequently Asked Questions',
     subheading: 'Everything you need to know about Hootling',
-    q1: 'How much does it cost?', a1: `From ${single} USD per query — no subscriptions, no monthly fees, no account required:`,
-    a1_b1: `Single query — ${single}: one taxi fare check or tipping guide`,
-    a1_b2: `Trip Pass — ${pass}: unlimited checks for one country, valid 14 days`,
-    a1_b3: 'No subscription, no account required — pay only when you need it',
-    a1_b4: 'Prices shown in your local currency at checkout',
-    q2: 'What payment methods are accepted?', a2: 'Payment is handled by Stripe. You can pay with any major credit or debit card. Apple Pay and Google Pay are supported automatically on compatible devices and browsers.',
+    q1: 'Is Hootling free to use?', a1: 'Yes — Hootling is currently free. No payment, account, or sign-up required. Enter your route or destination and get your result instantly.',
+    q2: 'How does Hootling make money?', a2: "Hootling earns small commissions from optional affiliate links — partner services like airport transfers, hotels, and eSIMs shown after your result. Clicking is entirely optional; your fare estimate, tipping guide, and all travel information are free regardless.",
     q3: 'How accurate are the fare estimates?', a3: 'Fare ranges are calculated from a curated dataset of local taxi rates combined with real route distances from Google Maps. A ±15% range is applied to account for traffic, surcharges, and driver discretion. Always confirm the fare with your driver before the journey — Hootling is a reference tool, not a metered guarantee.',
     q4: 'Which cities are covered for taxi fares?', a4: 'Hootling covers 120+ cities across every continent, including major tourist destinations in Asia, Europe, the Americas, Africa, and the Middle East. If your city is not in our dataset, the result will include a note to verify the fare directly with your driver.',
     q5: 'Which countries are covered for tipping?', a5: 'Tipping guides are available for 50+ countries including all major travel destinations. The guide covers six scenarios: restaurants, taxis, hotel porters, bars, tour guides, and delivery.',
     q6: 'What are the scam warnings based on?', a6: "Scam warnings are researched and tailored to each city — covering well-known issues like meter tampering, unofficial taxis, and fixed-price scams. They reflect patterns specific to your destination and are updated every 90 days. They are a starting point for awareness, not a guarantee of current conditions.",
-    q7: 'Can I use my payment for multiple searches?', a7: `It depends on the option chosen. A single query (${single}) covers one result, valid for 8 hours. A Trip Pass (${pass}) gives you unlimited taxi and tipping checks for one country for 14 days — ideal for any trip up to 2 weeks.`,
+    q7: 'Is there a limit to how many searches I can do?', a7: 'No — searches are unlimited and free. Run as many taxi fare checks and tipping guides as you need, for any destination.',
     q8: 'Do I need to create an account?', a8: 'No. Hootling has no accounts, no sign-up, and no login. Your query result and access token are stored temporarily in your browser only.',
-    q9: 'Can I get a refund?', a9: 'Because results are delivered instantly, we cannot offer refunds once your result has loaded. If anything went wrong technically and your result was not delivered, email hello@hootling.com within 7 days — we will always make it right.',
+    q9: 'Is my data private?', a9: 'Hootling does not create user accounts or store personal profiles. No GPS or location tracking is used — you type addresses manually. Only the city and country name are sent to our AI provider to generate scam warnings and tipping advice.',
     q10: 'Is my payment data stored?', a10: 'No. Payment is processed entirely by Stripe. Hootling never sees, handles, or stores your card number, CVC, or banking details. We only receive confirmation that a payment session was completed.',
     q11: 'Does Hootling track my location?', a11: 'No. Hootling does not use GPS or request location permission. You type addresses manually. Those addresses are sent to Google Maps to calculate the route distance — that is the only data sent.',
     q12: 'What data is sent to Anthropic?', a12: 'Only the city and country name of your pickup location (e.g. "Bangkok, Thailand") is sent to the Claude API to generate scam warnings, tipping notes, and driver phrases. No address-level detail is included.',
@@ -45,7 +41,7 @@ function getEnglishContent(): FaqStrings {
 }
 
 const FAQ_ITEMS: FaqItem[] = [
-  { qKey: 'q1', aKey: 'a1', bullets: ['a1_b1', 'a1_b2', 'a1_b3', 'a1_b4'], cta: { label: 'Try taxi fare check', href: '/taxi' } },
+  { qKey: 'q1', aKey: 'a1', cta: { label: 'Try taxi fare check', href: '/taxi' } },
   { qKey: 'q2', aKey: 'a2' },
   { qKey: 'q3', aKey: 'a3', cta: { label: 'See an example result', href: '/example' } },
   { qKey: 'q4', aKey: 'a4', cta: { label: 'Check your city', href: '/taxi' } },

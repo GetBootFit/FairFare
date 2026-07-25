@@ -7,7 +7,7 @@ const PAGE_URL = `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com
 
 export const metadata: Metadata = {
   title: 'FAQ',
-  description: 'Frequently asked questions about Hootling — pricing, accuracy, coverage, privacy, and how to get a refund.',
+  description: 'Frequently asked questions about Hootling — free taxi fare checks, accuracy, city coverage, tipping guides, and privacy.',
   alternates: { canonical: PAGE_URL, ...pageAlternates(PAGE_URL) },
 }
 
@@ -16,15 +16,15 @@ function buildJsonLd() {
   const { single, pass, bundle } = getUSDPrices()
   const p = { single, pass, bundle }
   const faqs = [
-    { q: 'How much does it cost?', a: `From ${p.single} USD. Single query: ${p.single}. Trip Pass (14 days, one country): ${p.pass}.` },
-    { q: 'What payment methods are accepted?', a: 'Stripe — major cards, Apple Pay, Google Pay.' },
+    { q: 'Is Hootling free to use?', a: 'Yes — Hootling is currently free. No payment, account, or sign-up required.' },
+    { q: 'How does Hootling make money?', a: 'Hootling earns small commissions from optional affiliate links — partner services like airport transfers, hotels, and eSIMs shown after your result. Clicking is entirely optional.' },
     { q: 'How accurate are the fare estimates?', a: 'Calculated from local taxi rates + Google Maps distance. ±15% range applied.' },
-    { q: 'Which cities are covered for taxi fares?', a: '120+ cities across every continent.' },
+    { q: 'Which cities are covered for taxi fares?', a: '160+ cities across every continent.' },
     { q: 'Which countries are covered for tipping?', a: '50+ countries, 6 scenarios each.' },
     { q: 'What are the scam warnings based on?', a: 'Researched and tailored to each city, covering destination-specific patterns. Updated every 90 days.' },
+    { q: 'Is there a limit to how many searches I can do?', a: 'No — searches are unlimited and free.' },
     { q: 'Do I need to create an account?', a: 'No accounts, no sign-up, no login.' },
-    { q: 'Can I get a refund?', a: 'Results are delivered instantly — email hello@hootling.com within 7 days if your result was not delivered due to a technical failure.' },
-    { q: 'Is my payment data stored?', a: 'No. Stripe handles all card data.' },
+    { q: 'Is my data private?', a: 'No accounts or personal profiles. No GPS tracking. Only the city and country name are sent to our AI provider for scam warnings and tipping advice.' },
     { q: 'Does Hootling track my location?', a: 'No GPS used. Addresses typed manually.' },
     { q: 'What languages is the app available in?', a: '14 languages: English, Spanish, French, German, Portuguese, Italian, Indonesian, Vietnamese, Thai, Simplified Chinese, Traditional Chinese, Japanese, Korean, Hindi.' },
   ]

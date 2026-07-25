@@ -25,6 +25,12 @@ export default function RefundPage() {
       </div>
 
       <p className="text-sm text-zinc-400 leading-relaxed">
+        <strong className="text-zinc-300">As of June 2026, Hootling is free to use.</strong>{' '}
+        No payment is required to access taxi fare estimates or tipping guides, so this policy
+        does not currently apply to most users. It is published for completeness and will apply
+        if paid features are reintroduced.
+      </p>
+      <p className="text-sm text-zinc-400 leading-relaxed mt-2">
         This Refund Policy supplements our{' '}
         <Link href="/terms" className="text-purple-400 underline">Terms of Service</Link> and
         explains the circumstances under which Hootling may provide a refund or remedy for
