@@ -26,6 +26,8 @@ async function rlIncrement(ip: string, route: string, windowSecs: number): Promi
   const bucket = Math.floor(Date.now() / (windowSecs * 1000))
   const key    = `rl:${route}:${ip}:${bucket}`
 
+  const abort = new AbortController()
+  const timer = setTimeout(() => abort.abort(), 500) // fail-open after 500ms
   try {
     const res = await fetch(`${kvUrl}/pipeline`, {
       method: 'POST',
@@ -38,12 +40,15 @@ async function rlIncrement(ip: string, route: string, windowSecs: number): Promi
         ['INCR', key],
         ['EXPIRE', key, windowSecs + 30],
       ]),
+      signal: abort.signal,
     })
     if (!res.ok) return null
     const data = await res.json() as Array<{ result: number }>
     return data[0]?.result ?? null
   } catch {
-    return null // Network error — fail open, never block legitimate traffic
+    return null // Network error or timeout — fail open, never block legitimate traffic
+  } finally {
+    clearTimeout(timer)
   }
 }
 
