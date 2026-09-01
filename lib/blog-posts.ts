@@ -4475,6 +4475,7 @@ import { BATCH5_BLOG_POSTS } from "./blog-posts-batch5";
 import { BATCH6_BLOG_POSTS } from "./blog-posts-batch6";
 import { BATCH7_BLOG_POSTS } from "./blog-posts-batch7";
 import { BATCH8_BLOG_POSTS } from "./blog-posts-batch8";
+import { BATCH9_BLOG_POSTS } from "./blog-posts-batch9";
 
 /** All posts: hand-written + AI-generated. */
 const ALL_POSTS: BlogPost[] = [
@@ -4490,6 +4491,7 @@ const ALL_POSTS: BlogPost[] = [
   ...BATCH6_BLOG_POSTS,
   ...BATCH7_BLOG_POSTS,
   ...BATCH8_BLOG_POSTS,
+  ...BATCH9_BLOG_POSTS,
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {

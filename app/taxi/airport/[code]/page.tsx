@@ -1,47 +1,64 @@
-import { notFound } from 'next/navigation'
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import { ChevronRight, Car, MapPin, AlertTriangle, Info, ArrowRight } from 'lucide-react'
-import { getAirportData, getAllAirportCodes, estimateAirportFare, getRelatedAirports } from '@/lib/airport-data'
-import { getPartnersForZone } from '@/lib/affiliates'
-import { AffiliatePreviewStrip } from '@/components/AffiliatePreviewStrip'
-import { BlogAffiliateCard } from '@/components/BlogAffiliateCard'
+import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+import Link from "next/link";
+import {
+  ChevronRight,
+  Car,
+  MapPin,
+  AlertTriangle,
+  Info,
+  ArrowRight,
+} from "lucide-react";
+import {
+  getAirportData,
+  getAllAirportCodes,
+  estimateAirportFare,
+  getRelatedAirports,
+} from "@/lib/airport-data";
+import { getPartnersForZone } from "@/lib/affiliates";
+import { AffiliatePreviewStrip } from "@/components/AffiliatePreviewStrip";
+import { BlogAffiliateCard } from "@/components/BlogAffiliateCard";
 
 // ── Static generation + ISR ───────────────────────────────────────────────────
 
 // Regenerate at most once every 24 h (airport rate data changes infrequently)
-export const revalidate = 86400
+export const revalidate = 86400;
 
 export function generateStaticParams() {
-  return getAllAirportCodes().map((code) => ({ code }))
+  return getAllAirportCodes().map((code) => ({ code }));
 }
 
 // ── Metadata ──────────────────────────────────────────────────────────────────
 
-export async function generateMetadata(
-  { params }: { params: Promise<{ code: string }> }
-): Promise<Metadata> {
-  const { code } = await params
-  const airport = getAirportData(code)
-  if (!airport) return { title: 'Airport Not Found' }
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ code: string }>;
+}): Promise<Metadata> {
+  const { code } = await params;
+  const airport = getAirportData(code);
+  if (!airport) return { title: "Airport Not Found" };
 
-  const year = new Date().getFullYear()
-  const APP_URL = (process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com').replace(/\/$/, '')
+  const year = new Date().getFullYear();
+  const APP_URL = (
+    process.env.NEXT_PUBLIC_APP_URL ?? "https://www.hootling.com"
+  ).replace(/\/$/, "");
   // Top 3 destinations for long-tail keyword targeting
   // Strip sub-labels after "/" or "(" to keep destination names short
   const topDests = airport.routes
     .slice(0, 3)
-    .map((r) => r.label.split('/')[0].split('(')[0].trim())
+    .map((r) => r.label.split("/")[0].split("(")[0].trim());
 
   return {
-    title: `${airport.code} Taxi to ${topDests.join(', ')} — Fares & Scam Warnings (${year})`,
-    description: `Taxi from ${airport.name}: ${airport.approxCityFare}. Routes to ${topDests.slice(0, 2).join(', ')} and more. Meter rates, scam alerts and alternatives for ${year}.`,
+    title: `${airport.code} Taxi to ${topDests.join(", ")} — Fares & Scam Warnings (${year})`,
+    description: `Taxi from ${airport.name}: ${airport.approxCityFare}. Routes to ${topDests.slice(0, 2).join(", ")} and more. Meter rates, scam alerts and alternatives for ${year}.`,
+    robots: { index: false, follow: false },
     alternates: { canonical: `${APP_URL}/taxi/airport/${code}` },
     openGraph: {
-      title: `${airport.code} Taxi Fares to ${topDests.slice(0, 2).join(' & ')} (${year}) | Hootling`,
+      title: `${airport.code} Taxi Fares to ${topDests.slice(0, 2).join(" & ")} (${year}) | Hootling`,
       description: `${airport.approxCityFare} · Scam warnings · Compare taxi vs transfer vs transit · ${airport.city} ${year}.`,
       url: `${APP_URL}/taxi/airport/${code}`,
-      type: 'website',
+      type: "website",
       images: [
         {
           url: `${APP_URL}/api/og/city?city=${encodeURIComponent(airport.city.toLowerCase())}`,
@@ -52,93 +69,110 @@ export async function generateMetadata(
       ],
     },
     twitter: {
-      card: 'summary_large_image',
-      title: `${airport.code} Taxi to ${topDests.slice(0, 2).join(' & ')} | Hootling`,
+      card: "summary_large_image",
+      title: `${airport.code} Taxi to ${topDests.slice(0, 2).join(" & ")} | Hootling`,
       description: `${airport.approxCityFare} · Know the real price before you ride.`,
     },
-  }
+  };
 }
 
 // ── Page ──────────────────────────────────────────────────────────────────────
 
-export default async function AirportPage(
-  { params }: { params: Promise<{ code: string }> }
-) {
-  const { code } = await params
-  const airport = getAirportData(code)
-  if (!airport) notFound()
+export default async function AirportPage({
+  params,
+}: {
+  params: Promise<{ code: string }>;
+}) {
+  const { code } = await params;
+  const airport = getAirportData(code);
+  if (!airport) notFound();
 
-  const year = new Date().getFullYear()
-  const sym = airport.currencySymbol
-  const APP_URL = (process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com').replace(/\/$/, '')
-  const relatedAirports = getRelatedAirports(code)
+  const year = new Date().getFullYear();
+  const sym = airport.currencySymbol;
+  const APP_URL = (
+    process.env.NEXT_PUBLIC_APP_URL ?? "https://www.hootling.com"
+  ).replace(/\/$/, "");
+  const relatedAirports = getRelatedAirports(code);
 
   // Transfer partners for the airport zone — Kiwitaxi, Welcome Pickups, GetTransfer.
   // Fetched server-side so the strip renders in the initial HTML (no client JS needed).
   // 3 partners: 2 used for the mid-page AffiliatePreviewStrip, all 3 for the CTA-area card.
-  const transferPartners = await getPartnersForZone('airport', {
-    categories: ['transfer'],
+  const transferPartners = await getPartnersForZone("airport", {
+    categories: ["transfer"],
     maxItems: 3,
-  })
+  });
 
   const breadcrumbLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: APP_URL },
-      { '@type': 'ListItem', position: 2, name: 'Taxi Fare Check', item: `${APP_URL}/taxi` },
-      { '@type': 'ListItem', position: 3, name: `${airport.name} Taxi Fares`, item: `${APP_URL}/taxi/airport/${code}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: APP_URL },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Taxi Fare Check",
+        item: `${APP_URL}/taxi`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: `${airport.name} Taxi Fares`,
+        item: `${APP_URL}/taxi/airport/${code}`,
+      },
     ],
-  }
+  };
 
   // Per-route FAQ entries — targets "taxi from [airport] to [district]" long-tail queries
   const routeFaqs = airport.routes.slice(0, 4).map((route) => {
-    const isFlat = airport.code === 'JFK' && route.label.includes('Manhattan')
-    const est = isFlat ? { min: 70, max: 90 } : estimateAirportFare(airport, route.km)
-    const destName = route.label.split('/')[0].split('(')[0].trim()
+    const isFlat = airport.code === "JFK" && route.label.includes("Manhattan");
+    const est = isFlat
+      ? { min: 70, max: 90 }
+      : estimateAirportFare(airport, route.km);
+    const destName = route.label.split("/")[0].split("(")[0].trim();
     return {
-      '@type': 'Question',
+      "@type": "Question",
       name: `How much is a taxi from ${airport.name} to ${destName}?`,
       acceptedAnswer: {
-        '@type': 'Answer',
-        text: `A taxi from ${airport.name} to ${route.label} costs approximately ${sym}${est.min}–${sym}${est.max} in ${year}${route.note ? `. Note: ${route.note}` : ''}. Fare is in ${airport.currency}.`,
+        "@type": "Answer",
+        text: `A taxi from ${airport.name} to ${route.label} costs approximately ${sym}${est.min}–${sym}${est.max} in ${year}${route.note ? `. Note: ${route.note}` : ""}. Fare is in ${airport.currency}.`,
       },
-    }
-  })
+    };
+  });
 
   const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
     mainEntity: [
       {
-        '@type': 'Question',
+        "@type": "Question",
         name: `How much does a taxi from ${airport.name} to ${airport.city} cost?`,
         acceptedAnswer: {
-          '@type': 'Answer',
+          "@type": "Answer",
           text: `${airport.approxCityFare} in ${year}. Exact fare depends on your destination and traffic conditions.`,
         },
       },
       {
-        '@type': 'Question',
+        "@type": "Question",
         name: `Is there a flat rate taxi from ${airport.code}?`,
         acceptedAnswer: {
-          '@type': 'Answer',
-          text: airport.code === 'JFK'
-            ? `Yes — yellow cabs charge a flat $70 to any Manhattan destination, plus tolls and tip.`
-            : `${airport.name} taxis use a metered fare. Always insist the driver uses the meter.`,
+          "@type": "Answer",
+          text:
+            airport.code === "JFK"
+              ? `Yes — yellow cabs charge a flat $70 to any Manhattan destination, plus tolls and tip.`
+              : `${airport.name} taxis use a metered fare. Always insist the driver uses the meter.`,
         },
       },
       {
-        '@type': 'Question',
+        "@type": "Question",
         name: `What are the taxi alternatives at ${airport.code}?`,
         acceptedAnswer: {
-          '@type': 'Answer',
-          text: airport.alternatives.join('. '),
+          "@type": "Answer",
+          text: airport.alternatives.join(". "),
         },
       },
       ...routeFaqs,
     ],
-  }
+  };
 
   return (
     <>
@@ -155,10 +189,17 @@ export default async function AirportPage(
 
       <div className="space-y-6 pb-8">
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-1.5 text-xs text-zinc-500" aria-label="Breadcrumb">
-          <Link href="/" className="hover:text-zinc-300 transition-colors">Home</Link>
+        <nav
+          className="flex items-center gap-1.5 text-xs text-zinc-500"
+          aria-label="Breadcrumb"
+        >
+          <Link href="/" className="hover:text-zinc-300 transition-colors">
+            Home
+          </Link>
           <ChevronRight size={12} />
-          <Link href="/taxi" className="hover:text-zinc-300 transition-colors">Taxi Fare Check</Link>
+          <Link href="/taxi" className="hover:text-zinc-300 transition-colors">
+            Taxi Fare Check
+          </Link>
           <ChevronRight size={12} />
           <span className="text-zinc-400">{airport.code}</span>
         </nav>
@@ -182,25 +223,36 @@ export default async function AirportPage(
 
           {/* Summary badge */}
           <div className="bg-purple-900/20 border border-purple-800/40 rounded-2xl p-4">
-            <p className="text-xs text-purple-400 uppercase tracking-wider mb-1">Typical fare</p>
-            <p className="text-white font-bold text-lg">{airport.approxCityFare}</p>
+            <p className="text-xs text-purple-400 uppercase tracking-wider mb-1">
+              Typical fare
+            </p>
+            <p className="text-white font-bold text-lg">
+              {airport.approxCityFare}
+            </p>
             {airport.taxiColor && (
-              <p className="text-zinc-500 text-xs mt-1">Look for: {airport.taxiColor}</p>
+              <p className="text-zinc-500 text-xs mt-1">
+                Look for: {airport.taxiColor}
+              </p>
             )}
           </div>
         </div>
 
         {/* Fare table */}
         <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-4 space-y-3">
-          <h2 className="text-sm font-semibold text-zinc-300 uppercase tracking-wider">Fare Estimates by Destination</h2>
-          <p className="text-xs text-zinc-500">Based on official meter rates ± 15%</p>
+          <h2 className="text-sm font-semibold text-zinc-300 uppercase tracking-wider">
+            Fare Estimates by Destination
+          </h2>
+          <p className="text-xs text-zinc-500">
+            Based on official meter rates ± 15%
+          </p>
           <div className="space-y-1">
             {airport.routes.map((route) => {
               // JFK Manhattan is a special flat rate
-              const isFlat = airport.code === 'JFK' && route.label.includes('Manhattan')
+              const isFlat =
+                airport.code === "JFK" && route.label.includes("Manhattan");
               const est = isFlat
                 ? { min: 70, max: 90 }
-                : estimateAirportFare(airport, route.km)
+                : estimateAirportFare(airport, route.km);
               return (
                 <div
                   key={route.label}
@@ -209,18 +261,21 @@ export default async function AirportPage(
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-zinc-300">{route.label}</span>
                     <span className="text-sm font-semibold text-white whitespace-nowrap ml-2">
-                      {sym}{est.min}–{sym}{est.max}
+                      {sym}
+                      {est.min}–{sym}
+                      {est.max}
                     </span>
                   </div>
                   {route.note && (
                     <p className="text-xs text-zinc-500">{route.note}</p>
                   )}
                 </div>
-              )
+              );
             })}
           </div>
           <p className="text-xs text-zinc-600 pt-1">
-            Fares in {airport.currency}. Tolls, surcharges, and tips may add extra.
+            Fares in {airport.currency}. Tolls, surcharges, and tips may add
+            extra.
           </p>
         </div>
 
@@ -242,11 +297,16 @@ export default async function AirportPage(
         <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-4 space-y-3">
           <div className="flex items-center gap-2">
             <Info size={14} className="text-teal-400 shrink-0" />
-            <h2 className="text-sm font-semibold text-zinc-300 uppercase tracking-wider">Practical Tips</h2>
+            <h2 className="text-sm font-semibold text-zinc-300 uppercase tracking-wider">
+              Practical Tips
+            </h2>
           </div>
           <ul className="space-y-2">
             {airport.tips.map((tip, i) => (
-              <li key={i} className="flex items-start gap-2 text-sm text-zinc-400">
+              <li
+                key={i}
+                className="flex items-start gap-2 text-sm text-zinc-400"
+              >
                 <span className="text-teal-500 mt-0.5 shrink-0">✓</span>
                 {tip}
               </li>
@@ -258,11 +318,16 @@ export default async function AirportPage(
         <div className="bg-zinc-900 border border-red-900/30 rounded-2xl p-4 space-y-3">
           <div className="flex items-center gap-2">
             <AlertTriangle size={14} className="text-red-400 shrink-0" />
-            <h2 className="text-sm font-semibold text-zinc-300 uppercase tracking-wider">Scam Warnings</h2>
+            <h2 className="text-sm font-semibold text-zinc-300 uppercase tracking-wider">
+              Scam Warnings
+            </h2>
           </div>
           <ul className="space-y-2">
             {airport.scams.map((scam, i) => (
-              <li key={i} className="flex items-start gap-2 text-sm text-zinc-400">
+              <li
+                key={i}
+                className="flex items-start gap-2 text-sm text-zinc-400"
+              >
                 <span className="text-red-500 mt-0.5 shrink-0">⚠</span>
                 {scam}
               </li>
@@ -272,10 +337,15 @@ export default async function AirportPage(
 
         {/* Alternatives */}
         <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-4 space-y-3">
-          <h2 className="text-sm font-semibold text-zinc-300 uppercase tracking-wider">Cheaper Alternatives</h2>
+          <h2 className="text-sm font-semibold text-zinc-300 uppercase tracking-wider">
+            Cheaper Alternatives
+          </h2>
           <ul className="space-y-2">
             {airport.alternatives.map((alt, i) => (
-              <li key={i} className="flex items-start gap-2 text-sm text-zinc-400">
+              <li
+                key={i}
+                className="flex items-start gap-2 text-sm text-zinc-400"
+              >
                 <span className="text-purple-400 mt-0.5 shrink-0">→</span>
                 {alt}
               </li>
@@ -295,15 +365,21 @@ export default async function AirportPage(
                 Read our complete {airport.city} taxi fare guide →
               </p>
             </div>
-            <ChevronRight size={14} className="text-zinc-600 group-hover:text-zinc-400 shrink-0 transition-colors" />
+            <ChevronRight
+              size={14}
+              className="text-zinc-600 group-hover:text-zinc-400 shrink-0 transition-colors"
+            />
           </Link>
         )}
 
         {/* CTA */}
         <div className="bg-gradient-to-br from-purple-900/30 to-zinc-900 border border-purple-800/30 rounded-2xl p-5 text-center space-y-3">
-          <p className="text-white font-semibold">Check your exact route fare</p>
+          <p className="text-white font-semibold">
+            Check your exact route fare
+          </p>
           <p className="text-zinc-500 text-sm">
-            Enter your pickup and destination for a precise estimate with scam warnings in real time.
+            Enter your pickup and destination for a precise estimate with scam
+            warnings in real time.
           </p>
           <Link
             href="/taxi"
@@ -326,7 +402,9 @@ export default async function AirportPage(
         {/* Related airports — improves crawlability and keeps users in the airport ecosystem */}
         {relatedAirports.length > 0 && (
           <div className="space-y-2">
-            <p className="text-[10px] text-zinc-600 uppercase tracking-widest">More airport guides</p>
+            <p className="text-[10px] text-zinc-600 uppercase tracking-widest">
+              More airport guides
+            </p>
             <div className="grid grid-cols-3 gap-2">
               {relatedAirports.map((ap) => (
                 <Link
@@ -334,8 +412,12 @@ export default async function AirportPage(
                   href={`/taxi/airport/${ap.code}`}
                   className="flex flex-col items-center gap-1 bg-zinc-900 border border-zinc-800 hover:border-zinc-700 rounded-xl p-3 transition-colors group text-center"
                 >
-                  <span className="text-sm font-bold text-white">{ap.code}</span>
-                  <span className="text-[10px] text-zinc-500 group-hover:text-zinc-400 leading-tight transition-colors">{ap.city}</span>
+                  <span className="text-sm font-bold text-white">
+                    {ap.code}
+                  </span>
+                  <span className="text-[10px] text-zinc-500 group-hover:text-zinc-400 leading-tight transition-colors">
+                    {ap.city}
+                  </span>
                 </Link>
               ))}
             </div>
@@ -343,5 +425,5 @@ export default async function AirportPage(
         )}
       </div>
     </>
-  )
+  );
 }

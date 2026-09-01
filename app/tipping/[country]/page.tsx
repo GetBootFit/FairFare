@@ -1,119 +1,148 @@
-import { notFound } from 'next/navigation'
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import Image from 'next/image'
-import { ChevronRight, Banknote, ArrowRight, UtensilsCrossed, Car, Hotel, Sparkles } from 'lucide-react'
-import { getUSDPrices } from '@/lib/currency'
-import { getPartnersForZone } from '@/lib/affiliates'
-import { BlogAffiliateCard } from '@/components/BlogAffiliateCard'
+import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+import Link from "next/link";
+import Image from "next/image";
+import {
+  ChevronRight,
+  Banknote,
+  ArrowRight,
+  UtensilsCrossed,
+  Car,
+  Hotel,
+  Sparkles,
+} from "lucide-react";
+import { getUSDPrices } from "@/lib/currency";
+import { getPartnersForZone } from "@/lib/affiliates";
+import { BlogAffiliateCard } from "@/components/BlogAffiliateCard";
 import {
   getAllCountrySlugs,
   slugToDisplayName,
   faqJsonLd,
   tippingBreadcrumbJsonLd,
   tippingServiceJsonLd,
-} from '@/lib/seo-helpers'
-import tippingData from '@/data/tipping-seo.json'
+} from "@/lib/seo-helpers";
+import tippingData from "@/data/tipping-seo.json";
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
 interface TippingEntry {
-  displayName: string
-  expected: 'yes' | 'optional' | 'no' | 'context'
-  expectedLabel: string
-  summary: string
-  restaurant: string
-  taxi: string
-  hotel: string
-  spa: string
-  keyFact: string
-  faqs: Array<{ q: string; a: string }>
+  displayName: string;
+  expected: "yes" | "optional" | "no" | "context";
+  expectedLabel: string;
+  summary: string;
+  restaurant: string;
+  taxi: string;
+  hotel: string;
+  spa: string;
+  keyFact: string;
+  faqs: Array<{ q: string; a: string }>;
 }
 
-const allTipping = tippingData as Record<string, TippingEntry>
+const allTipping = tippingData as Record<string, TippingEntry>;
 
 // ── City sticker helper ───────────────────────────────────────────────────────
 
 /** Converts a city slug to the PascalCase SVG filename, e.g. 'new-york' → 'NewYork' */
 const slugToStickerSvg = (slug: string) =>
-  slug.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join('')
+  slug
+    .split("-")
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join("");
 
 // ── Country → city sticker map ────────────────────────────────────────────────
 
 const COUNTRY_STICKER: Record<string, string> = {
-  'netherlands': 'amsterdam',
-  'spain': 'barcelona',
-  'united-arab-emirates': 'dubai',
-  'turkey': 'istanbul',
-  'united-kingdom': 'london',
-  'australia': 'sydney',
-  'france': 'paris',
-  'italy': 'rome',
-  'singapore': 'singapore',
-  'japan': 'tokyo',
-  'united-states': 'new-york',
-}
+  netherlands: "amsterdam",
+  spain: "barcelona",
+  "united-arab-emirates": "dubai",
+  turkey: "istanbul",
+  "united-kingdom": "london",
+  australia: "sydney",
+  france: "paris",
+  italy: "rome",
+  singapore: "singapore",
+  japan: "tokyo",
+  "united-states": "new-york",
+};
 
 // ── Static generation ────────────────────────────────────────────────────────
 
 export function generateStaticParams() {
-  return getAllCountrySlugs().map((country) => ({ country }))
+  return getAllCountrySlugs().map((country) => ({ country }));
 }
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
 function getCountryData(slug: string): TippingEntry | null {
-  return allTipping[slug] ?? null
+  return allTipping[slug] ?? null;
 }
 
-function expectedBadge(expected: TippingEntry['expected']) {
+function expectedBadge(expected: TippingEntry["expected"]) {
   switch (expected) {
-    case 'yes':
-      return { label: 'Expected', color: 'bg-amber-900/40 text-amber-400 border-amber-900/60' }
-    case 'no':
-      return { label: 'Not Expected', color: 'bg-teal-900/40 text-teal-400 border-teal-900/60' }
-    case 'optional':
-      return { label: 'Optional', color: 'bg-blue-900/40 text-blue-400 border-blue-900/60' }
+    case "yes":
+      return {
+        label: "Expected",
+        color: "bg-amber-900/40 text-amber-400 border-amber-900/60",
+      };
+    case "no":
+      return {
+        label: "Not Expected",
+        color: "bg-teal-900/40 text-teal-400 border-teal-900/60",
+      };
+    case "optional":
+      return {
+        label: "Optional",
+        color: "bg-blue-900/40 text-blue-400 border-blue-900/60",
+      };
     default:
-      return { label: 'Context-Dependent', color: 'bg-zinc-800 text-zinc-400 border-zinc-700' }
+      return {
+        label: "Context-Dependent",
+        color: "bg-zinc-800 text-zinc-400 border-zinc-700",
+      };
   }
 }
 
 // ── Metadata ──────────────────────────────────────────────────────────────────
 
-export async function generateMetadata(
-  { params }: { params: Promise<{ country: string }> }
-): Promise<Metadata> {
-  const { country } = await params
-  const data = getCountryData(country)
-  if (!data) return { title: 'Country Not Found' }
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ country: string }>;
+}): Promise<Metadata> {
+  const { country } = await params;
+  const data = getCountryData(country);
+  if (!data) return { title: "Country Not Found" };
 
-  const year = new Date().getFullYear()
-  const countryName = data.displayName
+  const year = new Date().getFullYear();
+  const countryName = data.displayName;
 
   // Extract tip percentage from expectedLabel (e.g. "Expected — 10–15%" → "10–15%")
   // Appended to title to match high-volume "average tip in [country]" query pattern
-  const pctMatch = data.expectedLabel.match(/\d+(?:–\d+)?%/)
-  const titlePct = pctMatch ? ` (${pctMatch[0]})` : ''
+  const pctMatch = data.expectedLabel.match(/\d+(?:–\d+)?%/);
+  const titlePct = pctMatch ? ` (${pctMatch[0]})` : "";
 
   // Description: lead with the restaurant rate (most specific answer) then sell the full guide
-  const restaurantHint = data.restaurant.length > 100
-    ? data.restaurant.slice(0, 97) + '…'
-    : data.restaurant
-  const metaDescription = `${restaurantHint} 10 scenarios covered: hotels, spas, room service, hair & beauty, airport porters and more — ${countryName} tipping guide ${year}.`
+  const restaurantHint =
+    data.restaurant.length > 100
+      ? data.restaurant.slice(0, 97) + "…"
+      : data.restaurant;
+  const metaDescription = `${restaurantHint} 10 scenarios covered: hotels, spas, room service, hair & beauty, airport porters and more — ${countryName} tipping guide ${year}.`;
 
   return {
     title: `Average Tip in ${countryName}${titlePct} — ${year} Tipping Guide`,
     description: metaDescription,
-    alternates: { canonical: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com'}/tipping/${country}` },
+    robots: { index: false, follow: false },
+    alternates: {
+      canonical: `${process.env.NEXT_PUBLIC_APP_URL ?? "https://www.hootling.com"}/tipping/${country}`,
+    },
     openGraph: {
       title: `Tipping in ${countryName} (${year}) — Hootling`,
       description: `Tipping etiquette for restaurants, taxis, hotels & spas in ${countryName}. ${data.expectedLabel}.`,
-      url: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com'}/tipping/${country}`,
-      type: 'website',
+      url: `${process.env.NEXT_PUBLIC_APP_URL ?? "https://www.hootling.com"}/tipping/${country}`,
+      type: "website",
       images: [
         {
-          url: `${process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com'}/api/og/city?city=${encodeURIComponent(country)}`,
+          url: `${process.env.NEXT_PUBLIC_APP_URL ?? "https://www.hootling.com"}/api/og/city?city=${encodeURIComponent(country)}`,
           width: 1200,
           height: 630,
           alt: `Tipping guide for ${countryName} — Hootling`,
@@ -121,12 +150,14 @@ export async function generateMetadata(
       ],
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title: `Tipping in ${countryName} — Hootling`,
       description: `${data.expectedLabel} · Restaurant: ${data.restaurant.slice(0, 60)}`,
-      images: [`${process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com'}/api/og/city?city=${encodeURIComponent(country)}`],
+      images: [
+        `${process.env.NEXT_PUBLIC_APP_URL ?? "https://www.hootling.com"}/api/og/city?city=${encodeURIComponent(country)}`,
+      ],
     },
-  }
+  };
 }
 
 // ── Scenario rows ─────────────────────────────────────────────────────────────
@@ -136,9 +167,9 @@ function ScenarioRow({
   label,
   description,
 }: {
-  icon: React.ReactNode
-  label: string
-  description: string
+  icon: React.ReactNode;
+  label: string;
+  description: string;
 }) {
   return (
     <div className="flex items-start gap-3 py-3 border-b border-zinc-800 last:border-0">
@@ -146,19 +177,21 @@ function ScenarioRow({
         {icon}
       </div>
       <div className="flex-1 min-w-0">
-        <p className="text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-0.5">{label}</p>
+        <p className="text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-0.5">
+          {label}
+        </p>
         <p className="text-sm text-zinc-300 leading-relaxed">{description}</p>
       </div>
     </div>
-  )
+  );
 }
 
 function LockedScenarioRow({
   icon,
   label,
 }: {
-  icon: React.ReactNode
-  label: string
+  icon: React.ReactNode;
+  label: string;
 }) {
   return (
     <div className="flex items-start gap-3 py-3 border-b border-zinc-800 last:border-0 opacity-50">
@@ -166,41 +199,45 @@ function LockedScenarioRow({
         {icon}
       </div>
       <div className="flex-1 min-w-0">
-        <p className="text-xs font-semibold text-zinc-600 uppercase tracking-wider mb-0.5">{label}</p>
+        <p className="text-xs font-semibold text-zinc-600 uppercase tracking-wider mb-0.5">
+          {label}
+        </p>
         <div className="flex items-center gap-1.5">
           <div className="h-3 bg-zinc-800 rounded w-3/4" />
           <span className="text-zinc-700 text-xs">🔒</span>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 // ── Page component ────────────────────────────────────────────────────────────
 
-export default async function TippingCountryPage(
-  { params }: { params: Promise<{ country: string }> }
-) {
-  const { country } = await params
-  const data = getCountryData(country)
-  if (!data) notFound()
+export default async function TippingCountryPage({
+  params,
+}: {
+  params: Promise<{ country: string }>;
+}) {
+  const { country } = await params;
+  const data = getCountryData(country);
+  if (!data) notFound();
 
-  const year = new Date().getFullYear()
-  const countryName = data.displayName
-  const badge = expectedBadge(data.expected)
-  const { single } = getUSDPrices()
-  const citySticker = COUNTRY_STICKER[country] ?? null
+  const year = new Date().getFullYear();
+  const countryName = data.displayName;
+  const badge = expectedBadge(data.expected);
+  const { single } = getUSDPrices();
+  const citySticker = COUNTRY_STICKER[country] ?? null;
 
-  const affiliatePartners = await getPartnersForZone('blog', {
-    categories: ['transfer'],
+  const affiliatePartners = await getPartnersForZone("blog", {
+    categories: ["transfer"],
     maxItems: 3,
-  })
+  });
 
   const jsonLd = [
     tippingBreadcrumbJsonLd(country, countryName),
     tippingServiceJsonLd(countryName, country),
     faqJsonLd(data.faqs),
-  ]
+  ];
 
   return (
     <>
@@ -216,10 +253,20 @@ export default async function TippingCountryPage(
 
       <div className="space-y-6 pb-8">
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-1.5 text-xs text-zinc-500" aria-label="Breadcrumb">
-          <Link href="/" className="hover:text-zinc-300 transition-colors">Home</Link>
+        <nav
+          className="flex items-center gap-1.5 text-xs text-zinc-500"
+          aria-label="Breadcrumb"
+        >
+          <Link href="/" className="hover:text-zinc-300 transition-colors">
+            Home
+          </Link>
           <ChevronRight size={12} />
-          <Link href="/tipping" className="hover:text-zinc-300 transition-colors">Tipping Guide</Link>
+          <Link
+            href="/tipping"
+            className="hover:text-zinc-300 transition-colors"
+          >
+            Tipping Guide
+          </Link>
           <ChevronRight size={12} />
           <span className="text-zinc-400">{countryName}</span>
         </nav>
@@ -252,27 +299,37 @@ export default async function TippingCountryPage(
           </div>
 
           {/* Tipping expectation badge */}
-          <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-semibold ${badge.color}`}>
+          <div
+            className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-semibold ${badge.color}`}
+          >
             {data.expectedLabel}
           </div>
         </div>
 
         {/* Summary */}
         <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-4">
-          <p className="text-sm text-zinc-300 leading-relaxed">{data.summary}</p>
+          <p className="text-sm text-zinc-300 leading-relaxed">
+            {data.summary}
+          </p>
         </div>
 
         {/* Key local tip — surfaced from data, signals content depth to Google */}
         {data.keyFact && (
           <div className="flex gap-3 bg-teal-900/20 border border-teal-800/40 rounded-xl p-3.5">
-            <span className="text-teal-400 shrink-0 mt-0.5" aria-hidden="true">💡</span>
-            <p className="text-sm text-teal-200 leading-relaxed">{data.keyFact}</p>
+            <span className="text-teal-400 shrink-0 mt-0.5" aria-hidden="true">
+              💡
+            </span>
+            <p className="text-sm text-teal-200 leading-relaxed">
+              {data.keyFact}
+            </p>
           </div>
         )}
 
         {/* Scenario breakdown — restaurants + taxis shown; rest locked */}
         <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-4 space-y-1">
-          <h2 className="text-sm font-semibold text-zinc-300 uppercase tracking-wider mb-2">By Situation</h2>
+          <h2 className="text-sm font-semibold text-zinc-300 uppercase tracking-wider mb-2">
+            By Situation
+          </h2>
           <ScenarioRow
             icon={<UtensilsCrossed size={15} />}
             label="Restaurants"
@@ -283,18 +340,30 @@ export default async function TippingCountryPage(
             label="Taxis & Rideshares"
             description={data.taxi}
           />
-          <LockedScenarioRow icon={<Hotel size={15} />} label="Hotels & Porters" />
-          <LockedScenarioRow icon={<Sparkles size={15} />} label="Spa & Massage" />
+          <LockedScenarioRow
+            icon={<Hotel size={15} />}
+            label="Hotels & Porters"
+          />
+          <LockedScenarioRow
+            icon={<Sparkles size={15} />}
+            label="Spa & Massage"
+          />
           <div className="pt-2">
-            <p className="text-xs text-zinc-600">Full guide includes hotels, spa, bars, tour guides & delivery — plus useful phrases in the local language.</p>
+            <p className="text-xs text-zinc-600">
+              Full guide includes hotels, spa, bars, tour guides & delivery —
+              plus useful phrases in the local language.
+            </p>
           </div>
         </div>
 
         {/* CTA */}
         <div className="bg-purple-950/40 border border-purple-900/50 rounded-2xl p-5 text-center space-y-3">
-          <h2 className="text-base font-bold text-white">Get the Complete {countryName} Tipping Guide</h2>
+          <h2 className="text-base font-bold text-white">
+            Get the Complete {countryName} Tipping Guide
+          </h2>
           <p className="text-sm text-zinc-400">
-            All 6 scenarios with exact amounts, cultural context, useful phrases in the local language, and a currency reference.
+            All 6 scenarios with exact amounts, cultural context, useful phrases
+            in the local language, and a currency reference.
           </p>
           <Link
             href="/tipping"
@@ -302,7 +371,9 @@ export default async function TippingCountryPage(
           >
             Get Full Guide <ArrowRight size={16} />
           </Link>
-          <p className="text-xs text-zinc-600">From {single} · No account required</p>
+          <p className="text-xs text-zinc-600">
+            From {single} · No account required
+          </p>
         </div>
 
         {/* Transfer affiliate — travellers checking tipping guides are planning a trip;
@@ -315,10 +386,15 @@ export default async function TippingCountryPage(
 
         {/* FAQ */}
         <div className="space-y-3">
-          <h2 className="text-sm font-semibold text-zinc-300 uppercase tracking-wider">Frequently Asked Questions</h2>
+          <h2 className="text-sm font-semibold text-zinc-300 uppercase tracking-wider">
+            Frequently Asked Questions
+          </h2>
           <div className="space-y-3">
             {data.faqs.map(({ q, a }) => (
-              <div key={q} className="bg-zinc-900 border border-zinc-800 rounded-xl p-4 space-y-1.5">
+              <div
+                key={q}
+                className="bg-zinc-900 border border-zinc-800 rounded-xl p-4 space-y-1.5"
+              >
                 <h3 className="text-sm font-semibold text-white">{q}</h3>
                 <p className="text-sm text-zinc-400 leading-relaxed">{a}</p>
               </div>
@@ -328,7 +404,9 @@ export default async function TippingCountryPage(
 
         {/* Cross-link to taxi */}
         <div className="border-t border-zinc-800 pt-4">
-          <p className="text-xs text-zinc-600 mb-2">Planning a taxi ride in {countryName}?</p>
+          <p className="text-xs text-zinc-600 mb-2">
+            Planning a taxi ride in {countryName}?
+          </p>
           <Link
             href="/taxi"
             className="flex items-center gap-2 text-purple-400 text-sm hover:text-purple-300 transition-colors"
@@ -339,5 +417,5 @@ export default async function TippingCountryPage(
         </div>
       </div>
     </>
-  )
+  );
 }
