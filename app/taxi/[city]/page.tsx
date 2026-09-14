@@ -6,6 +6,7 @@ import { ChevronRight, Car, MapPin, ArrowRight } from "lucide-react";
 import { getUSDPrices } from "@/lib/currency";
 import { getPartnersForZone } from "@/lib/affiliates";
 import { BlogAffiliateCard } from "@/components/BlogAffiliateCard";
+import { BLOG_POSTS } from "@/lib/blog-posts";
 import {
   getAllCitySlugs,
   getCityData,
@@ -45,7 +46,6 @@ export async function generateMetadata({
   return {
     title: `${cityName} Taxi Fares & Scam Alerts (${year}) | Hootling`,
     description: `${cityName} taxi meter rates for ${year}. Flag fall ${sym}${data.baseRate}, ${sym}${data.ratePerKm}/km. Typical 10 km trip: ${sym}${fare10.min}–${sym}${fare10.max}. Avoid scams — check your route before you ride.`,
-    robots: { index: false, follow: false },
     alternates: {
       canonical: `${process.env.NEXT_PUBLIC_APP_URL ?? "https://www.hootling.com"}/taxi/${city}`,
     },
@@ -101,7 +101,7 @@ const slugToStickerSvg = (slug: string) =>
 
 // ── Sample distances to show ─────────────────────────────────────────────────
 
-const SAMPLE_KM = [5, 10];
+const SAMPLE_KM = [3, 5, 10, 20];
 
 // ── Scam warnings common to most cities ─────────────────────────────────────
 
@@ -162,6 +162,11 @@ export default async function TaxiCityPage({
   const faqs = buildFaqs(cityName, data.country, data);
   const year = new Date().getFullYear();
   const { single } = getUSDPrices();
+
+  const relatedPosts = BLOG_POSTS.filter((p) => p.citySlug === city).slice(
+    0,
+    3,
+  );
 
   const affiliatePartners = await getPartnersForZone("blog", {
     categories: ["transfer"],
@@ -387,6 +392,37 @@ export default async function TaxiCityPage({
             ))}
           </div>
         </div>
+
+        {/* Related blog guides for this city */}
+        {relatedPosts.length > 0 && (
+          <div className="space-y-3">
+            <h2 className="text-sm font-semibold text-zinc-300 uppercase tracking-wider">
+              {cityName} Travel Guides
+            </h2>
+            <div className="space-y-2">
+              {relatedPosts.map((post) => (
+                <Link
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  className="flex items-center justify-between gap-3 bg-zinc-900 border border-zinc-800 rounded-xl p-4 hover:border-zinc-700 transition-colors group"
+                >
+                  <div>
+                    <p className="text-sm font-medium text-white group-hover:text-teal-400 transition-colors leading-snug">
+                      {post.title}
+                    </p>
+                    <p className="text-xs text-zinc-500 mt-0.5">
+                      {post.readingMinutes} min read
+                    </p>
+                  </div>
+                  <ChevronRight
+                    size={16}
+                    className="text-zinc-600 group-hover:text-teal-400 shrink-0 transition-colors"
+                  />
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Cross-link to tipping — only shown when a tipping page exists for this country */}
         {TIPPING_COUNTRIES.includes(data.country) && (

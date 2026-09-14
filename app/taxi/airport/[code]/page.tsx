@@ -52,7 +52,6 @@ export async function generateMetadata({
   return {
     title: `${airport.code} Taxi to ${topDests.join(", ")} — Fares & Scam Warnings (${year})`,
     description: `Taxi from ${airport.name}: ${airport.approxCityFare}. Routes to ${topDests.slice(0, 2).join(", ")} and more. Meter rates, scam alerts and alternatives for ${year}.`,
-    robots: { index: false, follow: false },
     alternates: { canonical: `${APP_URL}/taxi/airport/${code}` },
     openGraph: {
       title: `${airport.code} Taxi Fares to ${topDests.slice(0, 2).join(" & ")} (${year}) | Hootling`,

@@ -131,7 +131,6 @@ export async function generateMetadata({
   return {
     title: `Average Tip in ${countryName}${titlePct} — ${year} Tipping Guide`,
     description: metaDescription,
-    robots: { index: false, follow: false },
     alternates: {
       canonical: `${process.env.NEXT_PUBLIC_APP_URL ?? "https://www.hootling.com"}/tipping/${country}`,
     },
