@@ -1,36 +1,36 @@
-import {
-  Client,
-  TravelMode,
-} from '@googlemaps/google-maps-services-js'
+import { Client, TravelMode } from "@googlemaps/google-maps-services-js";
 
-const client = new Client({})
+const client = new Client({});
 
 function apiKey(): string {
-  const key = process.env.GOOGLE_MAPS_API_KEY ?? process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
-  if (!key) throw new Error('GOOGLE_MAPS_API_KEY is not set')
-  return key
+  const key =
+    process.env.GOOGLE_MAPS_API_KEY ??
+    process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+  if (!key) throw new Error("GOOGLE_MAPS_API_KEY is not set");
+  return key;
 }
 
 export interface RouteStep {
-  instruction: string  // Plain text (HTML stripped)
-  distance: string     // e.g. "1.2 km"
-  maneuver: string     // e.g. "turn-left", "straight", ""
+  instruction: string; // Plain text (HTML stripped)
+  distance: string; // e.g. "1.2 km"
+  maneuver: string; // e.g. "turn-left", "straight", ""
 }
 
 export interface RouteInfo {
-  distanceMeters: number
-  distanceKm: number
-  distanceMi: number
-  durationSeconds: number
-  durationMinutes: number
-  durationText: string
-  city: string
-  country: string
-  transitOptions: TransitRouteOption[]
-  overviewPolyline: string | null
-  startLocation: { lat: number; lng: number } | null
-  endLocation: { lat: number; lng: number } | null
-  routeSteps: RouteStep[]
+  distanceMeters: number;
+  distanceKm: number;
+  distanceMi: number;
+  durationSeconds: number;
+  durationMinutes: number;
+  durationText: string;
+  city: string;
+  cityCandidates: string[];
+  country: string;
+  transitOptions: TransitRouteOption[];
+  overviewPolyline: string | null;
+  startLocation: { lat: number; lng: number } | null;
+  endLocation: { lat: number; lng: number } | null;
+  routeSteps: RouteStep[];
 }
 
 /**
@@ -51,88 +51,101 @@ export function buildRouteMapUrl(
     slng: String(startLng),
     elat: String(endLat),
     elng: String(endLng),
-  })
-  return `/api/maps/static?${params.toString()}`
+  });
+  return `/api/maps/static?${params.toString()}`;
 }
 
 export interface TransitRouteOption {
-  duration: string
-  durationMinutes: number
-  modes: string[]
-  lines: string[]
+  duration: string;
+  durationMinutes: number;
+  modes: string[];
+  lines: string[];
 }
 
 export async function getRouteInfo(
   pickup: string,
   destination: string,
   pickupPlaceId?: string,
-  destPlaceId?: string
+  destPlaceId?: string,
 ): Promise<RouteInfo> {
-  const origin = pickupPlaceId ? `place_id:${pickupPlaceId}` : pickup
-  const dest = destPlaceId ? `place_id:${destPlaceId}` : destination
-  const key = apiKey()
+  const origin = pickupPlaceId ? `place_id:${pickupPlaceId}` : pickup;
+  const dest = destPlaceId ? `place_id:${destPlaceId}` : destination;
+  const key = apiKey();
 
   // ── Driving directions — gives distance, duration, AND route polyline ─────
   // Using Directions API instead of Distance Matrix so we get overview_polyline
   // for the static route map at the same cost tier ($5/1000 calls).
   const drivingRes = await client.directions({
     params: { origin, destination: dest, mode: TravelMode.driving, key },
-  })
+  });
 
-  if (!drivingRes.data.routes?.length || !drivingRes.data.routes[0]?.legs?.length) {
-    throw new Error('Could not calculate route. Check that the locations are valid.')
+  if (
+    !drivingRes.data.routes?.length ||
+    !drivingRes.data.routes[0]?.legs?.length
+  ) {
+    throw new Error(
+      "Could not calculate route. Check that the locations are valid.",
+    );
   }
 
-  const drivingRoute = drivingRes.data.routes[0]
-  const drivingLeg = drivingRoute.legs[0]
+  const drivingRoute = drivingRes.data.routes[0];
+  const drivingLeg = drivingRoute.legs[0];
 
-  const distanceMeters = drivingLeg.distance.value
-  const durationSeconds = drivingLeg.duration.value
-  const overviewPolyline = drivingRoute.overview_polyline?.points ?? null
+  const distanceMeters = drivingLeg.distance.value;
+  const durationSeconds = drivingLeg.duration.value;
+  const overviewPolyline = drivingRoute.overview_polyline?.points ?? null;
   const startLocation = drivingLeg.start_location
     ? { lat: drivingLeg.start_location.lat, lng: drivingLeg.start_location.lng }
-    : null
+    : null;
   const endLocation = drivingLeg.end_location
     ? { lat: drivingLeg.end_location.lat, lng: drivingLeg.end_location.lng }
-    : null
+    : null;
 
   // ── Get city/country from place details or geocoding ─────────────────────
   // NOTE: reverseGeocode requires lat/lng coordinates, not a text address.
   // We use placeDetails when a placeId is available (autocomplete path),
   // otherwise fall back to geocode() which accepts a text address directly.
-  let city = ''
-  let country = ''
+  let city = "";
+  let cityCandidates: string[] = [];
+  let country = "";
   try {
-    let components: Array<{ types: string[]; long_name: string }> = []
+    let components: Array<{ types: string[]; long_name: string }> = [];
 
     if (pickupPlaceId) {
       const placeRes = await client.placeDetails({
-        params: { place_id: pickupPlaceId, fields: ['address_component'], key },
-      })
+        params: { place_id: pickupPlaceId, fields: ["address_component"], key },
+      });
       components = (placeRes.data.result.address_components ?? []) as Array<{
-        types: string[]
-        long_name: string
-      }>
+        types: string[];
+        long_name: string;
+      }>;
     } else {
       const geocodeRes = await client.geocode({
         params: { address: drivingLeg.start_address ?? pickup, key },
-      })
-      components = (geocodeRes.data.results[0]?.address_components ?? []) as Array<{
-        types: string[]
-        long_name: string
-      }>
+      });
+      components = (geocodeRes.data.results[0]?.address_components ??
+        []) as Array<{
+        types: string[];
+        long_name: string;
+      }>;
     }
 
     const findComponent = (type: string) =>
-      components.find((c) => (c.types as string[]).includes(type))
+      components.find((c) => (c.types as string[]).includes(type));
 
-    city =
-      findComponent('locality')?.long_name ??
-      findComponent('postal_town')?.long_name ??       // UK cities (e.g. London boroughs)
-      findComponent('administrative_area_level_2')?.long_name ??
-      findComponent('administrative_area_level_1')?.long_name ??
-      ''
-    country = findComponent('country')?.long_name ?? ''
+    // Collect every level of the address hierarchy as candidates.
+    // The fare lookup will try each in order — most specific first — so a suburb
+    // like "Southbank" is tried first, then "Melbourne City Council" (which contains
+    // "melbourne" and hits via partial matching), then "Victoria" as last resort.
+    cityCandidates = [
+      findComponent("locality")?.long_name,
+      findComponent("postal_town")?.long_name, // UK cities (postal_town > locality)
+      findComponent("administrative_area_level_2")?.long_name,
+      findComponent("administrative_area_level_1")?.long_name,
+    ].filter((v): v is string => Boolean(v));
+
+    city = cityCandidates[0] ?? "";
+    country = findComponent("country")?.long_name ?? "";
   } catch {
     // Geocoding / Place Details API unavailable — parse the Directions API start_address.
     // Addresses vary by country but always end with the country name, so strip that first,
@@ -140,38 +153,55 @@ export async function getRouteInfo(
     // there are 3+ parts — it's usually a street name like "Arrival Dr".
     // findCityRate's strip + partial matching handles "Tullamarine VIC 3043" → melbourne etc.
     const parts = (drivingLeg.start_address ?? pickup)
-      .split(',')
-      .map(p => p.trim())
-      .filter(Boolean)
-    country = parts[parts.length - 1] ?? ''
-    city = parts.length >= 3
-      ? parts.slice(1, -1).join(' ')   // skip street + country
-      : parts.slice(0, -1).join(' ')   // no street segment — skip only country
+      .split(",")
+      .map((p) => p.trim())
+      .filter(Boolean);
+    country = parts[parts.length - 1] ?? "";
+    city =
+      parts.length >= 3
+        ? parts.slice(1, -1).join(" ") // skip street + country
+        : parts.slice(0, -1).join(" "); // no street segment — skip only country
+    cityCandidates = city ? [city] : [];
   }
 
   // ── Transit alternatives (best-effort) ───────────────────────────────────
-  const transitOptions: TransitRouteOption[] = []
+  const transitOptions: TransitRouteOption[] = [];
   try {
     const transitRes = await client.directions({
-      params: { origin, destination: dest, mode: TravelMode.transit, alternatives: true, key },
-    })
+      params: {
+        origin,
+        destination: dest,
+        mode: TravelMode.transit,
+        alternatives: true,
+        key,
+      },
+    });
     for (const route of transitRes.data.routes.slice(0, 3)) {
-      const leg = route.legs[0]
-      const transitSteps = leg.steps.filter((s) => (s.travel_mode as string) === 'TRANSIT')
+      const leg = route.legs[0];
+      const transitSteps = leg.steps.filter(
+        (s) => (s.travel_mode as string) === "TRANSIT",
+      );
       const modes = [
         ...new Set(
-          transitSteps.map((s) => s.transit_details?.line.vehicle.type ?? 'BUS')
+          transitSteps.map(
+            (s) => s.transit_details?.line.vehicle.type ?? "BUS",
+          ),
         ),
-      ]
+      ];
       const lines = transitSteps
-        .map((s) => s.transit_details?.line.short_name ?? s.transit_details?.line.name ?? '')
-        .filter(Boolean)
+        .map(
+          (s) =>
+            s.transit_details?.line.short_name ??
+            s.transit_details?.line.name ??
+            "",
+        )
+        .filter(Boolean);
       transitOptions.push({
         duration: leg.duration.text,
         durationMinutes: Math.round(leg.duration.value / 60),
         modes,
         lines: [...new Set(lines)],
-      })
+      });
     }
   } catch {
     // Transit data unavailable for this route — that's fine
@@ -182,15 +212,15 @@ export async function getRouteInfo(
     .map((step) => ({
       instruction: step.html_instructions
         // Strip HTML tags, collapse whitespace
-        .replace(/<[^>]+>/g, ' ')
-        .replace(/\s+/g, ' ')
+        .replace(/<[^>]+>/g, " ")
+        .replace(/\s+/g, " ")
         .trim(),
-      distance: step.distance?.text ?? '',
-      maneuver: (step.maneuver as string) ?? '',
+      distance: step.distance?.text ?? "",
+      maneuver: (step.maneuver as string) ?? "",
     }))
     .filter((s) => s.instruction.length > 0)
     // Cap at 40 steps to keep response size reasonable
-    .slice(0, 40)
+    .slice(0, 40);
 
   return {
     distanceMeters,
@@ -200,11 +230,12 @@ export async function getRouteInfo(
     durationMinutes: Math.round(durationSeconds / 60),
     durationText: drivingLeg.duration.text,
     city,
+    cityCandidates,
     country,
     transitOptions,
     overviewPolyline,
     startLocation,
     endLocation,
     routeSteps,
-  }
+  };
 }
