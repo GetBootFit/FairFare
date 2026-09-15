@@ -4063,6 +4063,521 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
 
+  // ── Miami ──────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-miami",
+    title: "How Much Does a Taxi Cost in Miami? (2026 Fare Guide)",
+    description:
+      "Miami Airport to South Beach costs $28–42 by taxi. Here's the full 2026 fare breakdown — yellow cab vs rideshare, Port of Miami rates, and the airport zone pricing explained.",
+    publishedAt: "2026-09-15",
+    readingMinutes: 7,
+    category: "taxi",
+    city: "Miami",
+    country: "United States",
+    citySlug: "miami",
+    countrySlug: "united-states",
+    content: [
+      {
+        type: "intro",
+        body: "Miami's taxis are metered and regulated by Miami-Dade County, with a flag fall of $2.50 and a per-mile rate of $3.00. Uber and Lyft are competitive and popular — but knowing when the meter beats the app (and vice versa) is the first step to not overpaying.",
+      },
+      {
+        type: "h2",
+        heading: "Miami Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "$2.50" },
+          { label: "Per mile", value: "$3.00" },
+          { label: "Per minute (wait/slow traffic)", value: "$0.60" },
+          { label: "Minimum fare", value: "$3.50" },
+          { label: "MIA Airport surcharge", value: "$2.00" },
+          { label: "Port of Miami surcharge", value: "$2.00" },
+          { label: "Toll roads", value: "Passenger pays" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Miami Airport (MIA)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "MIA → South Beach (Ocean Drive)", value: "$28–42" },
+          { label: "MIA → Downtown Miami / Brickell", value: "$22–30" },
+          { label: "MIA → Wynwood / Design District", value: "$26–35" },
+          { label: "MIA → Port of Miami (cruise terminal)", value: "$20–26" },
+          { label: "MIA → Coral Gables", value: "$16–22" },
+          { label: "South Beach → Downtown", value: "$18–28" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Uber and Lyft vs Yellow Cab in Miami",
+      },
+      {
+        type: "p",
+        body: "Uber and Lyft are legal and popular across Miami-Dade County. For most city trips, rideshare and metered taxis are priced within a few dollars of each other. The key differences:",
+      },
+      {
+        type: "ul",
+        items: [
+          "**Uber/Lyft at the airport** — rideshare pickups are in a dedicated TNE (Transportation Network Entity) lot, a short walk from the arrivals hall. Yellow cabs depart from the front kerb. Rideshare is often slightly cheaper for airport runs outside peak times.",
+          "**Surge pricing** — during Art Basel, Ultra Music Festival, and Heat playoff games, rideshare prices can spike 2–3×. A metered yellow cab cannot surge — it always runs the regulated meter.",
+          "**South Beach nightlife** — 2–4 AM pickups from Washington Avenue or Ocean Drive often see extreme Uber/Lyft surges. A yellow cab or Bolt is your best backup.",
+          "**Port of Miami** — rideshare pickups from the cruise terminal require accessing the designated TNE area. Yellow cabs queue at the kerb and are often faster for large groups.",
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Miami Beach Trolley is free and runs along Washington Avenue and Collins Avenue. For short hops within South Beach, it saves the minimum fare entirely.",
+      },
+      {
+        type: "h2",
+        heading: "Miami Airport Taxi Zone System",
+      },
+      {
+        type: "p",
+        body: "Miami International Airport (MIA) uses flat-rate zones for taxi fares to select destinations inside Miami Beach. These flat rates are posted at the taxi dispatcher stand and are metered-or-flat at the driver's option — the passenger chooses which method. The flat zone rates are typically competitive with the metered fare and give you certainty before you start moving.",
+      },
+      {
+        type: "p",
+        body: "For destinations outside the zone map (Brickell, Wynwood, Coral Gables, Fort Lauderdale), the meter applies from the moment you depart the airport. Always ask the dispatcher to confirm the flat rate if you're travelling to Miami Beach.",
+      },
+      {
+        type: "h2",
+        heading: "Fort Lauderdale Airport (FLL) to Miami",
+      },
+      {
+        type: "p",
+        body: "Many Miami-bound flights actually arrive at Fort Lauderdale-Hollywood International (FLL), 45 km north of South Beach. A taxi from FLL to South Beach runs $65–85 and takes 40–60 minutes depending on I-95 traffic. The Broward County Transit 595 Express bus is $3.50 and connects to Aventura for onward travel, though it is impractical with luggage. For groups, a pre-arranged fixed-price transfer from FLL to Miami is often the most economical and predictable option.",
+      },
+      {
+        type: "h2",
+        heading: "Is Tipping Expected in Miami Taxis?",
+      },
+      {
+        type: "p",
+        body: "Yes — tipping is expected in Miami. 15–20% of the metered fare is standard. For a $30 airport run, $4–6 is appropriate. Most taxi card readers prompt for a tip selection; you can enter a custom amount if the percentages offered seem high.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Miami Airport to South Beach?",
+            a: "Expect $28–42 on the meter, plus a $2.00 airport surcharge and any tolls. The trip takes 20–35 minutes depending on traffic on the 836/I-195 expressways.",
+          },
+          {
+            q: "Is Uber or taxi cheaper in Miami?",
+            a: "Outside peak times, Uber is usually within $3–5 of the metered taxi rate. During major events (Art Basel, Ultra), metered taxis are cheaper because they cannot surge.",
+          },
+          {
+            q: "What is the flat rate from MIA to Miami Beach?",
+            a: "Miami Airport posts flat-rate zone fares to Miami Beach destinations. These are competitive with the meter and are displayed at the taxi dispatcher stand on the arrivals level.",
+          },
+          {
+            q: "Can I pay by card in a Miami taxi?",
+            a: "Yes — all Miami-Dade licensed taxis are required to accept credit and debit cards. Contactless payment is available on newer terminals.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Miami-Dade Taxi Rates — Official County Schedule",
+        url: "https://www.miamidade.gov/global/government/regulatory-and-economic-resources/for-hire-transportation/taxicabs.page",
+      },
+    ],
+  },
+
+  // ── Las Vegas ─────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-las-vegas",
+    title: "How Much Does a Taxi Cost in Las Vegas? (2026 Guide)",
+    description:
+      "Harry Reid Airport to the Strip costs $18–28 by taxi. Here's the full 2026 fare breakdown — the long tunnel scam explained, rideshare pickup changes, and when to pre-book a transfer.",
+    publishedAt: "2026-09-15",
+    readingMinutes: 7,
+    category: "taxi",
+    city: "Las Vegas",
+    country: "United States",
+    citySlug: "las-vegas",
+    countrySlug: "united-states",
+    content: [
+      {
+        type: "intro",
+        body: "Las Vegas taxis are metered and regulated by the Nevada Taxicab Authority. Fares are fixed by law, but a notorious airport scam — the 'long tunnel' route — has cost tourists millions. Knowing the approved routes before you get in the cab is your first defence.",
+      },
+      {
+        type: "h2",
+        heading: "Las Vegas Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "$3.50" },
+          { label: "Per mile", value: "$2.92" },
+          { label: "Per minute (wait/slow traffic)", value: "$0.55" },
+          { label: "Minimum fare", value: "$5.50" },
+          { label: "Airport departure fee", value: "$2.00" },
+          { label: "Fuel surcharge", value: "$0.40" },
+          { label: "Toll roads", value: "Passenger pays" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Harry Reid Airport (LAS)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "LAS Airport → Mid-Strip (Bellagio, MGM, Caesar's)",
+            value: "$18–24",
+          },
+          {
+            label: "LAS Airport → South Strip (Mandalay Bay, Luxor)",
+            value: "$14–20",
+          },
+          {
+            label: "LAS Airport → North Strip (Stratosphere, Wynn)",
+            value: "$22–30",
+          },
+          { label: "LAS Airport → Downtown Fremont Street", value: "$22–30" },
+          { label: "Strip to Fremont Street", value: "$18–28" },
+          { label: "Resort to resort (mid-Strip)", value: "$10–18" },
+        ],
+      },
+      {
+        type: "warning",
+        body: "The 'long tunnel' scam: some unscrupulous taxi drivers route through the airport tunnel (adding ~2 miles and $6–8) instead of taking the freeway exit. The approved short route is via Swenson St or Koval Lane. If you see the driver heading into the tunnel from the departures level, say 'please take the surface road' before you exit the terminal.",
+      },
+      {
+        type: "h2",
+        heading: "Rideshare at Harry Reid Airport",
+      },
+      {
+        type: "p",
+        body: "Uber and Lyft operate at Harry Reid International but from a separate Transportation Network Company (TNC) facility — not from the arrivals kerb. After collecting your luggage, follow signs to the TNE rideshare area (currently in the parking structure). The walk adds 5–8 minutes versus taking a taxi from the kerb.",
+      },
+      {
+        type: "p",
+        body: "For most airport runs, rideshare is priced similarly to a metered taxi. During CES, March Madness, major boxing events, and New Year's Eve weekend, Uber and Lyft surge to 3–5× base. A metered taxi cannot surge — it runs the regulated rate regardless of demand. Keep a taxi dispatcher's number saved for New Year's Eve.",
+      },
+      {
+        type: "tip",
+        body: "The Las Vegas Monorail runs the length of the Strip from MGM Grand to the Sahara for $5 per ride. It doesn't reach the airport or Fremont Street, but for Strip-to-Strip movement it's faster than a taxi during busy periods.",
+      },
+      {
+        type: "h2",
+        heading: "When a Pre-Booked Transfer Makes Sense",
+      },
+      {
+        type: "p",
+        body: "If you are arriving late at night, travelling with a large group, or have an early-morning flight, a pre-arranged fixed-price transfer eliminates the surge uncertainty and the tunnel-route risk entirely. The price is locked before you travel and includes meet-and-greet at arrivals. For groups of 3–4 splitting the cost, a fixed transfer is often comparable to a metered taxi.",
+      },
+      {
+        type: "h2",
+        heading: "Tipping in Las Vegas Taxis",
+      },
+      {
+        type: "p",
+        body: "Tipping is strongly expected in Las Vegas — the service culture here runs on gratuity. 15–20% of the fare is standard. For a $20 airport run, $3–4 is appropriate. Most Las Vegas taxi card terminals include tip prompts.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Las Vegas airport to the Strip?",
+            a: "Typically $18–28 depending on your destination along the Strip, plus a $2.00 airport departure fee. Mid-Strip hotels (Bellagio, Caesar's, MGM) are closest to the airport.",
+          },
+          {
+            q: "What is the long tunnel taxi scam in Las Vegas?",
+            a: "Some drivers route through the airport tunnel instead of the surface road, adding $6–8 to the fare. Ask for the 'surface road via Swenson' before leaving the terminal.",
+          },
+          {
+            q: "Is Uber allowed at Las Vegas airport?",
+            a: "Yes — Uber and Lyft operate from a dedicated TNC facility in the airport parking structure. It's a 5-minute walk from arrivals. Rideshare is not permitted at the main arrivals kerb.",
+          },
+          {
+            q: "Is there a cheaper alternative to a taxi from Las Vegas airport?",
+            a: "The airport shuttle services (like Superway) offer shared rides to Strip hotels for $8–10 per person but can involve 30–40 minutes of stops. For groups, splitting a taxi or booking a fixed-price transfer is usually better value.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Nevada Taxicab Authority — Official Fare Schedule",
+        url: "https://taxi.nv.gov/",
+      },
+    ],
+  },
+
+  // ── Prague ────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-prague",
+    title: "How Much Does a Taxi Cost in Prague? (2026 Guide)",
+    description:
+      "Prague Airport to Old Town costs 600–700 Kč by taxi. Prague has a reputation for taxi scams — now mostly fixed by Bolt and Uber. Here's the 2026 fare breakdown and how to avoid the remaining risks.",
+    publishedAt: "2026-09-15",
+    readingMinutes: 7,
+    category: "taxi",
+    city: "Prague",
+    country: "Czech Republic",
+    citySlug: "prague",
+    countrySlug: "czech-republic",
+    content: [
+      {
+        type: "intro",
+        body: "Prague taxis have a complicated history. For decades, overcharging tourists was common — a 5-km ride could cost 10× the fair price. Since Bolt and Uber arrived and the city tightened regulations, the situation has dramatically improved. Street hailing is still risky; app-based taxis are safe and cheap.",
+      },
+      {
+        type: "h2",
+        heading: "Prague Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (city taxis)", value: "60 Kč" },
+          { label: "Per kilometre", value: "28 Kč" },
+          { label: "Per minute (wait)", value: "6 Kč" },
+          { label: "Minimum fare", value: "60 Kč" },
+          { label: "Night surcharge (22:00–06:00)", value: "None — same rate" },
+          { label: "Airport surcharge", value: "None — meter only" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Prague Airport (PRG / Václav Havel)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "PRG Airport → Old Town Square (Staré Město)",
+            value: "600–750 Kč",
+          },
+          {
+            label: "PRG Airport → Wenceslas Square (Václavské náměstí)",
+            value: "550–700 Kč",
+          },
+          { label: "PRG Airport → Vinohrady", value: "620–760 Kč" },
+          { label: "PRG Airport → Žižkov", value: "640–780 Kč" },
+          {
+            label: "PRG Airport → Dejvice (nearest neighbourhood)",
+            value: "300–380 Kč",
+          },
+          {
+            label: "Old Town → Malá Strana (Charles Bridge area)",
+            value: "80–120 Kč",
+          },
+          { label: "Old Town → Žižkov", value: "120–180 Kč" },
+        ],
+      },
+      {
+        type: "warning",
+        body: "Do NOT hail a taxi on the street in Prague, especially outside tourist areas (Old Town Square, Wenceslas Square, airport arrivals hall). Unlicensed 'pirates' and overcharging metered cabs both exist. Use Bolt or Uber — the app locks the price and tracks the route.",
+      },
+      {
+        type: "h2",
+        heading: "Bolt and Uber in Prague",
+      },
+      {
+        type: "p",
+        body: "Bolt is the most popular ride-hailing app in Prague and typically 20–30% cheaper than metered taxis. Uber is also widely available. Both apps show the price upfront, route the driver correctly, and have in-app payment — no cash needed. This combination of price transparency and accountability has largely solved Prague's taxi scam problem for app-savvy users.",
+      },
+      {
+        type: "p",
+        body: "At Prague Airport (Václav Havel), Bolt and Uber pick up from the designated rideshare area outside Terminal 1 and Terminal 2 arrivals. Follow signs for 'Taxi / Rideshare' — do not accept unsolicited approaches from drivers inside the terminal or on the pavement.",
+      },
+      {
+        type: "tip",
+        body: "The Airport Express (AE) bus runs from Václav Havel Airport to Praha hlavní nádraží (main train station) in 35–40 minutes for 100 Kč. It connects to the Metro for onward travel. For solo travellers, it's the fastest and cheapest option to the centre.",
+      },
+      {
+        type: "h2",
+        heading: "How Far is Prague Airport from the City?",
+      },
+      {
+        type: "p",
+        body: "Prague Airport is about 17–20 km from Old Town, making it one of Europe's further airports from its city centre (for comparison, Amsterdam Schiphol is 20 km, Paris CDG is 25 km). The drive takes 25–40 minutes without traffic, and 45–60 minutes during morning and evening rush hours on the D0 ring road and Evropská boulevard.",
+      },
+      {
+        type: "h2",
+        heading: "How to Pay for Taxis in Prague",
+      },
+      {
+        type: "p",
+        body: "Cash (Czech Koruna, CZK) is still widely used in Prague taxis. Bolt and Uber use in-app card payment, which is simpler. For metered taxis, most accept cards but some older vehicles are cash-only — confirm before the journey. The Czech Koruna is the official currency; Euros are occasionally accepted at a very unfavourable rate, so always pay in CZK if using cash.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Prague Airport to Old Town?",
+            a: "Expect 600–750 Kč on a metered city taxi or a similar Bolt/Uber price. The journey takes 30–50 minutes depending on traffic.",
+          },
+          {
+            q: "Are Prague taxis safe?",
+            a: "App-based taxis (Bolt, Uber) are safe and fairly priced. Street hailing is risky — unlicensed drivers and overcharging still occur in tourist areas. Always book via app.",
+          },
+          {
+            q: "Is Bolt or Uber cheaper in Prague?",
+            a: "Bolt is typically 10–20% cheaper than Uber in Prague and is the most widely used app. Both are considerably cheaper than hailing a street taxi.",
+          },
+          {
+            q: "Can I pay by card in Prague taxis?",
+            a: "Most metered taxis accept cards, but not all older vehicles do. Bolt and Uber use in-app payment — no cash required. Confirm with metered taxi drivers before starting the journey.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Prague City Hall — Taxi Regulations",
+        url: "https://www.praha.eu/en/",
+      },
+    ],
+  },
+
+  // ── Seoul ─────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-seoul",
+    title: "How Much Does a Taxi Cost in Seoul? (2026 Guide)",
+    description:
+      "Incheon Airport to central Seoul costs ₩75,000–85,000 by taxi. Here's the full 2026 fare breakdown — regular vs premium taxis, Kakao T explained, and why the AREX train often beats a cab.",
+    publishedAt: "2026-09-15",
+    readingMinutes: 7,
+    category: "taxi",
+    city: "Seoul",
+    country: "South Korea",
+    citySlug: "seoul",
+    countrySlug: "south-korea",
+    content: [
+      {
+        type: "intro",
+        body: "Seoul has one of Asia's most organised taxi systems — colour-coded, metered, and honest. Regular silver taxis are affordable. Premium black cabs are bookable via app. And Incheon Airport's AREX train, at ₩9,500, makes the taxi optional for many travellers.",
+      },
+      {
+        type: "h2",
+        heading: "Seoul Taxi Types and Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Regular taxi (silver/white) — flag fall", value: "₩4,800" },
+          { label: "Regular taxi — per km", value: "₩100 per 132m" },
+          {
+            label: "Jumbo/medium taxi (yellow/orange) — flag fall",
+            value: "₩6,500",
+          },
+          { label: "Mobeom (premium black) — flag fall", value: "₩8,000" },
+          { label: "Night surcharge (midnight–04:00)", value: "+20% on meter" },
+          {
+            label: "Gimpo/Incheon Airport surcharge",
+            value: "Included in meter",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Incheon Airport (ICN)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "ICN Airport → Hongdae / Mapo", value: "₩65,000–75,000" },
+          {
+            label: "ICN Airport → Myeongdong / Jung-gu (city centre)",
+            value: "₩70,000–80,000",
+          },
+          {
+            label: "ICN Airport → Gangnam / Apgujeong",
+            value: "₩75,000–90,000",
+          },
+          { label: "ICN Airport → Itaewon", value: "₩70,000–82,000" },
+          {
+            label: "Gimpo Airport (GMP) → Myeongdong",
+            value: "₩22,000–28,000",
+          },
+          {
+            label: "Myeongdong → Gangnam (city trip)",
+            value: "₩18,000–25,000",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The AREX (Airport Railroad Express) runs from Incheon Airport to Seoul Station in 43 minutes for ₩9,500. From Seoul Station you can catch the Metro to almost anywhere in the city. For solo travellers, it's by far the cheapest option. For 3–4 people with luggage, splitting a taxi is competitive.",
+      },
+      {
+        type: "h2",
+        heading: "How to Hail a Taxi in Seoul",
+      },
+      {
+        type: "p",
+        body: "Regular silver taxis can be hailed anywhere on the street — look for the illuminated sign on the roof. Orange or yellow jumbo taxis hold up to 6–8 passengers and are ideal for groups. Black Mobeom taxis are the premium tier — English-speaking drivers, fixed-price options, and bookable via Kakao T.",
+      },
+      {
+        type: "p",
+        body: "The best way to book any Seoul taxi is through **Kakao T** — South Korea's dominant ride-hailing app (owned by Kakao, the messaging giant). Kakao T dispatches regular taxis, jumbo taxis, and Mobeom cabs. The app is available in English and accepts card payment. Uber operates in Seoul only via a partnership with Kakao T — the Uber app in Seoul routes bookings through Kakao drivers.",
+      },
+      {
+        type: "h2",
+        heading: "Night Rate and Midnight Surcharge",
+      },
+      {
+        type: "p",
+        body: "A 20% surcharge applies to all Seoul taxis between midnight and 04:00. This is the period when nightlife areas (Hongdae, Itaewon, Gangnam) see peak demand, and waits can stretch 20–30 minutes for app bookings. The surcharge is automatic and appears on the meter — no negotiation is needed or expected.",
+      },
+      {
+        type: "p",
+        body: "During major K-pop concerts (at KSPO Dome, Jamsil Olympic Stadium) and Chuseok and Lunar New Year public holidays, demand spikes sharply. Book via Kakao T at least 10 minutes early during these periods.",
+      },
+      {
+        type: "h2",
+        heading: "Communication in Seoul Taxis",
+      },
+      {
+        type: "p",
+        body: "English proficiency among Seoul taxi drivers varies. The safest approach is to show the driver a Korean-language address on your phone — every hotel, restaurant, and attraction in Seoul has a Korean address (도로명주소, road name address). Naver Maps (the Korean equivalent of Google Maps) provides Korean addresses and can be shared with drivers directly. Most taxi GPS units are set to Korean input.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Incheon Airport to Seoul city centre?",
+            a: "A regular (silver) taxi to Myeongdong or Hongdae costs ₩70,000–80,000 and takes 60–80 minutes. The AREX train costs ₩9,500 and takes 43 minutes to Seoul Station.",
+          },
+          {
+            q: "What is Kakao T and is it like Uber?",
+            a: "Kakao T is South Korea's dominant ride-hailing app — more popular than Uber (which operates via Kakao T anyway). Download Kakao T for the best taxi availability in Seoul.",
+          },
+          {
+            q: "Are Seoul taxis honest?",
+            a: "Yes — Seoul taxis are metered and generally honest. Overcharging tourists is rare and drivers can face heavy fines. The main issue is communication, not pricing.",
+          },
+          {
+            q: "What is a Mobeom taxi in Seoul?",
+            a: "Mobeom (모범택시) are premium black taxis driven by licensed drivers with higher training requirements. They cost about 60% more than regular taxis but offer English communication and guaranteed service quality. Book via Kakao T.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Seoul Metropolitan Government — Transport Information",
+        url: "https://english.seoul.go.kr/",
+      },
+      {
+        label: "AREX Airport Railroad — Fares and Schedules",
+        url: "https://www.arex.or.kr/",
+      },
+    ],
+  },
+
   // ── Taxi Driver Phrases (Tier 2 — Linkable / Shareable) ───────────────────
   {
     slug: "what-to-say-to-your-taxi-driver-in-15-languages",
