@@ -4578,6 +4578,647 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
 
+  // ── Athens ────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-athens",
+    title: "How Much Does a Taxi Cost in Athens? (2026 Guide)",
+    description:
+      "Athens Airport to Syntagma Square costs €38–42 by taxi (day fixed rate). Here's the 2026 fare breakdown — night tariffs, Piraeus routes, and when Welcome Pickups beats a street cab.",
+    publishedAt: "2026-09-16",
+    readingMinutes: 7,
+    category: "taxi",
+    city: "Athens",
+    country: "Greece",
+    citySlug: "athens",
+    countrySlug: "greece",
+    content: [
+      {
+        type: "intro",
+        body: "Athens taxis are metered, regulated, and colour-coded yellow. There is a fixed flat rate from the airport to central Athens — one of the better-organised flat-rate systems in southern Europe. Night tariffs are significantly higher, so your arrival time materially affects the price.",
+      },
+      {
+        type: "h2",
+        heading: "Athens Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (Tariff 1 — day, 05:00–24:00)", value: "€1.29" },
+          { label: "Per km (Tariff 1 — within city limits)", value: "€0.74" },
+          {
+            label: "Flag fall (Tariff 2 — night/outside city)",
+            value: "€1.29",
+          },
+          {
+            label: "Per km (Tariff 2 — 00:00–05:00 or outside Athens)",
+            value: "€1.40",
+          },
+          { label: "Minimum fare", value: "€3.84" },
+          {
+            label: "Airport fixed rate (day — to central Athens)",
+            value: "€38",
+          },
+          { label: "Airport fixed rate (night / holidays)", value: "€54" },
+          { label: "Port of Piraeus supplement", value: "€1.08" },
+        ],
+      },
+      {
+        type: "h2",
+        heading:
+          "Sample Fares from Athens Airport (ATH / Eleftherios Venizelos)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "ATH Airport → Syntagma Square (city centre)",
+            value: "€38 (day) / €54 (night)",
+          },
+          { label: "ATH Airport → Monastiraki / Plaka", value: "€38–42 (day)" },
+          { label: "ATH Airport → Piraeus port", value: "€52–60 (metered)" },
+          {
+            label: "ATH Airport → Glyfada / Vouliagmeni (south coast)",
+            value: "€35–45 (metered)",
+          },
+          { label: "Syntagma → Acropolis", value: "€5–9" },
+          { label: "Syntagma → Piraeus (port)", value: "€22–30" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Athens Metro Line 3 runs directly from the airport to Syntagma Square in 40 minutes for €10 (or €18 return). It is air-conditioned, reliable, and significantly cheaper than a taxi for solo travellers. For groups of 3–4 splitting a taxi, the fixed rate of €38 is often comparable.",
+      },
+      {
+        type: "h2",
+        heading: "The Airport Fixed Rate Explained",
+      },
+      {
+        type: "p",
+        body: "Athens has a well-established fixed-rate system for airport journeys: €38 during the day (05:00–24:00) and €54 at night and on public holidays. This rate applies to destinations within the Athens city limits (the Attica region boundary). If your hotel is in Glyfada, Voula, or other southern suburbs outside the designated zone, the meter applies and fares can be similar or higher.",
+      },
+      {
+        type: "p",
+        body: "Confirm the fixed rate with the driver before entering the taxi. If a driver refuses to honour the official rate and insists on the meter for a within-zone destination, decline and take the next cab — the fixed rate is legally mandated.",
+      },
+      {
+        type: "h2",
+        heading: "Pre-Booked Transfers in Athens",
+      },
+      {
+        type: "p",
+        body: "Welcome Pickups, which originated in Athens and operates across Greece, offers fixed-price airport transfers with English-speaking drivers, meet-and-greet service, and flight tracking. For visitors arriving late or managing luggage-heavy group travel, a pre-booked transfer is often more practical than navigating the taxi rank at 02:00.",
+      },
+      {
+        type: "h2",
+        heading: "Practical Tips for Athens Taxis",
+      },
+      {
+        type: "ul",
+        items: [
+          "**Use the meter always** — insist on it for city trips. If the driver claims the meter is broken, find another cab.",
+          "**Night tariff (Tariff 2)** — applies between midnight and 05:00 and on public holidays. The meter display will show '2' for night rate.",
+          "**Luggage** — drivers may charge €0.40 per large bag placed in the boot.",
+          "**Cruise port** — taxis from Piraeus port to the Acropolis cost €22–30 on the meter. Pre-book if arriving on a cruise.",
+          "**Payment** — most taxis are cash-only; newer vehicles may accept card. Confirm before departure.",
+        ],
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is the taxi from Athens Airport to the city?",
+            a: "The official fixed rate is €38 during the day (05:00–24:00) and €54 at night and on public holidays. This covers destinations within central Athens.",
+          },
+          {
+            q: "Is there a cheaper option than a taxi from Athens Airport?",
+            a: "Yes — the Metro Line 3 runs directly to Syntagma Square in 40 minutes for €10. For 3–4 people sharing a taxi at €38, the taxi is often faster and competitive in cost.",
+          },
+          {
+            q: "Do Athens taxis accept card payment?",
+            a: "Many Athens taxis are cash-only. Carry euros — ATMs are available in the airport arrivals hall. Some newer taxis accept card but confirm before the journey.",
+          },
+          {
+            q: "What are Athens taxi scams to watch for?",
+            a: "The main risk is a driver refusing the fixed airport rate and using the meter instead. The metered fare can easily reach €60–80 with traffic. Insist on the official fixed rate of €38 (day) before entering the cab.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Athens International Airport — Ground Transport",
+        url: "https://www.aia.gr/traveler/getting-around/ground-transport/",
+      },
+    ],
+  },
+
+  // ── Vienna ────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-vienna",
+    title: "How Much Does a Taxi Cost in Vienna? (2026 Guide)",
+    description:
+      "Vienna Airport to the city centre costs €36–45 by taxi. Here's the 2026 fare breakdown — flat-rate taxis vs the CAT express train, night surcharges, and how Bolt undercuts the yellow cabs.",
+    publishedAt: "2026-09-16",
+    readingMinutes: 6,
+    category: "taxi",
+    city: "Vienna",
+    country: "Austria",
+    citySlug: "vienna",
+    countrySlug: "austria",
+    content: [
+      {
+        type: "intro",
+        body: "Vienna's taxis are metered, well-regulated, and punctual — exactly what you'd expect from Austrian public services. Fares are set by the Vienna Taxi and Mietwagen Verordnung. The City Airport Train (CAT) is the fastest option for solo travellers, but a fixed-price airport taxi is straightforward for groups.",
+      },
+      {
+        type: "h2",
+        heading: "Vienna Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (day)", value: "€4.30" },
+          { label: "Per km (day)", value: "€1.42" },
+          { label: "Night surcharge (23:00–06:00)", value: "+10–15% on meter" },
+          { label: "Minimum fare", value: "€5.80" },
+          { label: "Phone/app booking fee", value: "€2.00–3.00" },
+          { label: "Airport flat rate (to inner districts)", value: "€36–40" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Vienna Airport (VIE)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "VIE Airport → 1st District (Innere Stadt / Stephansplatz)",
+            value: "€36–44",
+          },
+          {
+            label: "VIE Airport → 7th District (Neubau / Museumsquartier)",
+            value: "€38–46",
+          },
+          { label: "VIE Airport → 4th District (Wieden)", value: "€36–42" },
+          { label: "VIE Airport → Prater / 2nd District", value: "€34–40" },
+          { label: "Stephansplatz → Schönbrunn Palace", value: "€10–15" },
+          {
+            label: "Stephansplatz → Vienna Hauptbahnhof (train station)",
+            value: "€8–12",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "City Airport Train (CAT) vs Taxi",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "CAT (City Airport Train)",
+            value: "€14.90 one-way · 16 min · Wien Mitte",
+          },
+          {
+            label: "S-Bahn S7",
+            value: "€4.40 · 25 min · Wien Mitte (via Praterstern)",
+          },
+          { label: "Taxi (1 person)", value: "€36–44 · 25–40 min" },
+          { label: "Taxi (4 people sharing)", value: "€9–11 per person" },
+          {
+            label: "Vienna Airport Lines bus",
+            value: "€8.00 · 20–40 min (3 routes)",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The S-Bahn S7 at €4.40 is by far the cheapest way from the airport to central Vienna (valid on all Wien Linien public transport once in the city). The CAT is faster and more comfortable but costs 3× more. For a group of 3–4, a taxi becomes competitive per person.",
+      },
+      {
+        type: "h2",
+        heading: "Bolt and Uber in Vienna",
+      },
+      {
+        type: "p",
+        body: "Bolt and Uber both operate in Vienna and are typically 15–25% cheaper than a metered yellow cab. Both apps offer upfront pricing and card payment. For airport runs, they are a practical alternative to the official taxi rank — pickup is from the rideshare area in the airport parking structure.",
+      },
+      {
+        type: "p",
+        body: "Traditional Vienna taxis (the yellow Taxi 31300, Taxi 40100 fleets) can also be pre-booked via app at fixed prices for airport routes. These fixed-price bookings are reliable and eliminate the metered uncertainty.",
+      },
+      {
+        type: "h2",
+        heading: "Is Tipping Expected in Vienna Taxis?",
+      },
+      {
+        type: "p",
+        body: "Rounding up to the nearest euro is standard in Vienna — for a €37 fare, leaving €40 is appropriate. A 10% tip is generous and appreciated for longer or luggage-heavy trips. Tipping is not mandatory but is part of the local service culture.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Vienna Airport to the city?",
+            a: "A metered taxi to the 1st district costs €36–44 depending on traffic. Pre-booked fixed-rate taxis and Bolt/Uber run €32–38. The journey takes 25–40 minutes.",
+          },
+          {
+            q: "What is the cheapest way from Vienna Airport to the centre?",
+            a: "The S-Bahn S7 costs €4.40 and takes 25 minutes to Wien Mitte (city centre). The CAT is faster (16 min) but costs €14.90. Both are significantly cheaper than a taxi for solo travellers.",
+          },
+          {
+            q: "Are Vienna taxis metered?",
+            a: "Yes — all licensed Vienna taxis use regulated meters. For airport trips, pre-booked flat-rate taxis are also available and often more convenient.",
+          },
+          {
+            q: "Is Uber available in Vienna?",
+            a: "Yes — Uber and Bolt both operate in Vienna. They are generally 15–25% cheaper than metered yellow cabs and offer upfront pricing.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Vienna Airport — Ground Transport Options",
+        url: "https://www.viennaairport.com/en/passengers/arrival/getting_to_vienna",
+      },
+    ],
+  },
+
+  // ── Cancún ────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-cancun",
+    title: "How Much Does a Taxi Cost in Cancún? (2026 Guide)",
+    description:
+      "Cancún Airport to the Hotel Zone costs MXN 300–500 by taxi. Here's the 2026 fare breakdown — zone pricing explained, why there's no Uber at the airport, and the ADO bus alternative.",
+    publishedAt: "2026-09-16",
+    readingMinutes: 7,
+    category: "taxi",
+    city: "Cancún",
+    country: "Mexico",
+    citySlug: "cancun",
+    countrySlug: "mexico",
+    content: [
+      {
+        type: "intro",
+        body: "Cancún taxis do not use meters. Instead, fares are set by a zone-pricing system authorised by Quintana Roo state transport. Prices are published and posted — but that doesn't mean every driver quotes the official rate. Knowing the published zone prices before you negotiate is essential.",
+      },
+      {
+        type: "h2",
+        heading: "Cancún Airport Taxi Zone Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label:
+              "CUN Airport → Hotel Zone (Zona Hotelera) — northern section",
+            value: "MXN 350–420",
+          },
+          {
+            label: "CUN Airport → Hotel Zone — southern section (Punta Cancún)",
+            value: "MXN 450–550",
+          },
+          {
+            label: "CUN Airport → Downtown Cancún (Centro)",
+            value: "MXN 200–280",
+          },
+          { label: "CUN Airport → Puerto Morelos", value: "MXN 550–700" },
+          { label: "Hotel Zone to Hotel Zone (internal)", value: "MXN 80–150" },
+          { label: "Hotel Zone → Downtown Centro", value: "MXN 150–200" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Zone Pricing Inside the Hotel Zone",
+      },
+      {
+        type: "p",
+        body: "Within the Hotel Zone (Zona Hotelera / Kukulcán Boulevard), taxis operate on fixed zone fares rather than meters. The boulevard is divided into numbered zones — your hotel's location determines the zone. Fares are displayed on a posted rate card that drivers are required to carry. The northern end of the Hotel Zone (near Playa Gaviota Azul, km 8–10) is cheaper from the airport than the southern end (km 20–25, near Westin/Hyatt).",
+      },
+      {
+        type: "warning",
+        body: "Uber is not permitted at Cancún International Airport (CUN). Uber does operate in downtown Cancún and some Hotel Zone areas, but taxis have a legal monopoly on airport pickups — drivers have been known to report Uber passengers. Use the official airport taxi booths inside the terminal.",
+      },
+      {
+        type: "h2",
+        heading: "How the Airport Taxi System Works",
+      },
+      {
+        type: "p",
+        body: "Inside Cancún Airport arrivals, walk past the time-share sales booths (do not stop) and look for the official taxi and transfer counters near the exit. You pay at the counter and receive a voucher — the driver collects payment from the counter, not you directly. This pre-payment system reduces negotiation and overcharging significantly compared to hailing outside.",
+      },
+      {
+        type: "p",
+        body: "Collective shared vans (collectivos) are also sold at the airport for a lower per-person price (~MXN 200–280 to Hotel Zone). The trade-off is multiple stops and a longer journey time. For solo travellers on a budget, the ADO bus is the cheapest option.",
+      },
+      {
+        type: "tip",
+        body: "The ADO bus runs from Cancún Airport to the Hotel Zone (Playa Caracol) and downtown Cancún for MXN 95. The journey takes 30–60 minutes depending on traffic. For budget travellers without heavy luggage, it's by far the cheapest option.",
+      },
+      {
+        type: "h2",
+        heading: "Uber and Indriver in Cancún",
+      },
+      {
+        type: "p",
+        body: "Away from the airport, Uber operates in Cancún's Hotel Zone and downtown. However, coverage is patchy compared to a city like Mexico City, and drivers sometimes cancel when they see the pickup is in a taxi-dominated zone. InDriver (a negotiated-fare app) is popular among locals and often cheaper than Uber in Cancún. For airport journeys, stick to the official taxi vouchers.",
+      },
+      {
+        type: "h2",
+        heading: "Tipping in Cancún Taxis",
+      },
+      {
+        type: "p",
+        body: "Tipping is appreciated but not mandatory. Rounding up MXN 20–30 on a hotel zone ride is a standard practice for tourist-area taxis. For airport drivers who handled luggage, MXN 30–50 is appropriate.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Cancún Airport to the Hotel Zone?",
+            a: "Expect MXN 350–550 depending on which part of the Hotel Zone. Pay at the official taxi counter inside the terminal — you receive a voucher and a fixed price before you walk out.",
+          },
+          {
+            q: "Is there Uber at Cancún Airport?",
+            a: "No — Uber is not permitted at Cancún Airport. Official taxis have a legal monopoly on airport pickups. Uber is available in other parts of the Hotel Zone and downtown.",
+          },
+          {
+            q: "What is the cheapest way from Cancún Airport to the Hotel Zone?",
+            a: "The ADO bus costs MXN 95 and takes 30–60 minutes. Collective shared vans cost MXN 200–280 per person. Both are significantly cheaper than a private taxi.",
+          },
+          {
+            q: "Are Cancún taxis metered?",
+            a: "No — Cancún taxis use zone-based fixed prices set by state regulation. There are no meters. Always agree the price before getting in and insist the driver shows the rate card if unsure.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Cancún Airport — Official Transport Information",
+        url: "https://www.cancun-airport.net/transportation.php",
+      },
+    ],
+  },
+
+  // ── Hong Kong ─────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-hong-kong",
+    title: "How Much Does a Taxi Cost in Hong Kong? (2026 Guide)",
+    description:
+      "Hong Kong Airport to Kowloon costs HK$280–360 by red taxi. Here's the 2026 fare breakdown — the three taxi colours explained, tunnel surcharges, and why the Airport Express is almost always better.",
+    publishedAt: "2026-09-16",
+    readingMinutes: 7,
+    category: "taxi",
+    city: "Hong Kong",
+    country: "Hong Kong",
+    citySlug: "hong-kong",
+    content: [
+      {
+        type: "intro",
+        body: "Hong Kong taxis are metered, regulated, and colour-coded by territory. Red taxis cover urban Hong Kong and Kowloon. Green taxis serve the New Territories. Blue taxis serve Lantau Island (where the airport is). Tunnel surcharges are added to the meter and can add HK$50–110 to a fare — understanding these before you depart prevents surprises.",
+      },
+      {
+        type: "h2",
+        heading: "Hong Kong Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Red taxi — flag fall (first 2 km)", value: "HK$27.00" },
+          { label: "Red taxi — per 200m (after 2 km)", value: "HK$1.90" },
+          { label: "Red taxi — effective per km", value: "~HK$9.50" },
+          {
+            label: "Green taxi (New Territories)",
+            value: "HK$23.50 flag fall",
+          },
+          { label: "Blue taxi (Lantau)", value: "HK$23.00 flag fall" },
+          {
+            label: "Western Harbour Tunnel surcharge",
+            value: "HK$55 (each way)",
+          },
+          {
+            label: "Cross-Harbour Tunnel surcharge",
+            value: "HK$35 (each way)",
+          },
+          { label: "Eastern Harbour Crossing", value: "HK$35 (each way)" },
+          { label: "Luggage (per large item)", value: "HK$6" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Hong Kong Airport (HKIA)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "HKIA → Tsim Sha Tsui (Kowloon)", value: "HK$280–340" },
+          { label: "HKIA → Mong Kok (Kowloon)", value: "HK$290–350" },
+          {
+            label: "HKIA → Central (HK Island via Western Harbour Tunnel)",
+            value: "HK$330–390",
+          },
+          { label: "HKIA → Wan Chai / Causeway Bay", value: "HK$340–400" },
+          {
+            label: "HKIA → Tung Chung (Lantau — blue taxi)",
+            value: "HK$50–70",
+          },
+          {
+            label: "Tsim Sha Tsui → Central (via Star Ferry area)",
+            value: "HK$40–60 (+ tunnel if via tunnel)",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Airport Express train runs from HKIA to Kowloon (8 min) and Hong Kong Station/Central (24 min) for HK$115. It is air-conditioned, reliable, and operates every 10 minutes from 05:50 to 00:48. For almost all travellers, the Airport Express is faster and significantly cheaper than a taxi.",
+      },
+      {
+        type: "h2",
+        heading: "Tunnel Surcharges Explained",
+      },
+      {
+        type: "p",
+        body: "Hong Kong's harbour tunnels charge tolls. The taxi driver pays at the booth and adds the surcharge to your fare — legally, one-way for tunnels the driver must use to return (the law requires the driver to pay the return toll themselves, but in practice both directions are usually charged). This can add HK$55–110 to a cross-harbour fare. Always confirm which tunnel the driver intends to use before departing.",
+      },
+      {
+        type: "p",
+        body: "From the airport, red taxis travel via the Tsing Ma Bridge and then the tunnel of their choice into Kowloon or Hong Kong Island. The Western Harbour Tunnel (HK$55) and the Cross-Harbour Tunnel (HK$35) are the two main options — ask for the cheaper Cross-Harbour Tunnel unless you are going to the western part of HK Island.",
+      },
+      {
+        type: "h2",
+        heading: "Uber and Ride-Hailing in Hong Kong",
+      },
+      {
+        type: "p",
+        body: "Uber operates in Hong Kong but is technically in a legal grey area — licensed private hire vehicles are used, and Uber has faced regulatory challenges. In practice, Uber is widely used and available. HKTaxi is the official app for booking licensed red, green, and blue taxis in Hong Kong. For airport pickups, the official Airport Authority taxi rank is the most straightforward option.",
+      },
+      {
+        type: "h2",
+        heading: "Payment and Tipping",
+      },
+      {
+        type: "p",
+        body: "Most Hong Kong taxis accept cash (HKD only). An increasing number accept Octopus card — look for the Octopus reader near the driver. Card payment is still not universal. Tipping is not mandatory in Hong Kong but rounding up HK$5–10 on a longer fare is appreciated and common.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Hong Kong Airport to Kowloon?",
+            a: "A red taxi to Tsim Sha Tsui or Mong Kok typically costs HK$280–350, including the airport and tunnel surcharges. The journey takes 30–50 minutes depending on traffic.",
+          },
+          {
+            q: "What are the different taxi colours in Hong Kong?",
+            a: "Red taxis cover urban Kowloon and Hong Kong Island. Green taxis serve the New Territories. Blue taxis serve Lantau Island (including the airport area and Tung Chung). For HKIA to the city, you need a red taxi.",
+          },
+          {
+            q: "Why is my Hong Kong taxi fare higher than expected?",
+            a: "Tunnel surcharges are added to the meter and can add HK$35–110 per trip. Luggage charges (HK$6/large item) and the HK$5 airport surcharge also apply. These are all legally mandated additions.",
+          },
+          {
+            q: "Is the Airport Express worth it in Hong Kong?",
+            a: "Almost always yes. At HK$115 for 24 minutes to Central, it is significantly cheaper and faster than a red taxi (HK$330–390, 45–60 minutes). The only exception is when you have a large group splitting the taxi cost.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Hong Kong Airport Authority — Ground Transport",
+        url: "https://www.hongkongairport.com/en/transport/to-from-airport/",
+      },
+      {
+        label: "Transport Department — Taxi Fares",
+        url: "https://www.td.gov.hk/en/transport_in_hong_kong/taxis/",
+      },
+    ],
+  },
+
+  // ── Copenhagen ────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-copenhagen",
+    title: "How Much Does a Taxi Cost in Copenhagen? (2026 Guide)",
+    description:
+      "Copenhagen Airport to the city centre costs 250–350 DKK by taxi. Here's the 2026 fare breakdown — why Copenhagen taxis are among Europe's most expensive, and how the Metro M2 does the same trip for 36 DKK.",
+    publishedAt: "2026-09-16",
+    readingMinutes: 6,
+    category: "taxi",
+    city: "Copenhagen",
+    country: "Denmark",
+    citySlug: "copenhagen",
+    countrySlug: "denmark",
+    content: [
+      {
+        type: "intro",
+        body: "Copenhagen taxis are metered, reliable, and expensive — Denmark has some of the highest taxi fares in Europe. The good news: the Metro M2 runs directly from the airport to the city centre in 15 minutes for 36 DKK. For groups of 4 splitting a taxi, the per-person cost becomes more reasonable.",
+      },
+      {
+        type: "h2",
+        heading: "Copenhagen Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (day)", value: "41 DKK" },
+          { label: "Per km (day, up to 25 km/h)", value: "17 DKK" },
+          { label: "Per minute (waiting/slow traffic)", value: "5.50 DKK" },
+          {
+            label: "Night/weekend surcharge (19:00–07:00)",
+            value: "+15–20% on meter",
+          },
+          { label: "Minimum fare", value: "41 DKK" },
+          { label: "Phone booking fee", value: "~10 DKK" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Copenhagen Airport (CPH / Kastrup)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "CPH Airport → Tivoli / Central Station (Rådhuspladsen)",
+            value: "250–320 DKK",
+          },
+          {
+            label: "CPH Airport → Nørreport / Old City (Strøget)",
+            value: "270–340 DKK",
+          },
+          {
+            label: "CPH Airport → Nørrebro / Frederiksberg",
+            value: "300–380 DKK",
+          },
+          { label: "CPH Airport → Christianshavn", value: "220–280 DKK" },
+          { label: "City centre → Tivoli (short trip)", value: "80–120 DKK" },
+          { label: "City centre → Nørrebro", value: "100–150 DKK" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Metro M2 runs from Copenhagen Airport (Kastrup) to Kongens Nytorv (city centre) in 15 minutes for 36 DKK (3 zones). It operates 24 hours, every 4–6 minutes. This is unambiguously the best option for solo and paired travellers — a taxi costs 7–9× more for the same journey.",
+      },
+      {
+        type: "h2",
+        heading: "Bolt and Uber in Copenhagen",
+      },
+      {
+        type: "p",
+        body: "Bolt and Uber both operate in Copenhagen and offer meaningful savings over metered taxis. Bolt is typically 20–30% cheaper than a traditional Copenhagen taxi for most city routes. Both apps provide upfront pricing and card payment. At the airport, rideshare pickups are from the designated zone outside Terminal 3 arrivals.",
+      },
+      {
+        type: "p",
+        body: "Traditional Copenhagen taxi companies (Dantaxi, Taxa 4x35) can also be pre-booked via their apps at fixed rates for airport transfers. A pre-booked fixed-rate taxi avoids meter uncertainty and is often priced similarly to Bolt.",
+      },
+      {
+        type: "h2",
+        heading: "Why Are Copenhagen Taxis So Expensive?",
+      },
+      {
+        type: "p",
+        body: "Danish wage levels and operating costs are among the highest in the world. A Copenhagen taxi driver earns a regulated minimum wage that exceeds €25/hour — this is built into the meter rate. VAT at 25% applies to taxi fares. The result is rates that feel high to visitors from the US, UK, or southern Europe but are normal in the Scandinavian context.",
+      },
+      {
+        type: "h2",
+        heading: "Tipping in Copenhagen Taxis",
+      },
+      {
+        type: "p",
+        body: "Tipping is not expected in Denmark — drivers are well-compensated by the base fare. Rounding up to the nearest 10 DKK is a polite gesture if the service was good, but no social pressure exists to tip. Do not feel obligated.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Copenhagen Airport to the city?",
+            a: "Expect 250–340 DKK depending on your destination. Bolt and Uber run 200–280 DKK. The Metro M2 covers the same journey in 15 minutes for 36 DKK.",
+          },
+          {
+            q: "Is there a cheaper alternative to a taxi in Copenhagen?",
+            a: "Yes — the Metro M2 from Kastrup Airport to the city centre costs 36 DKK and takes 15 minutes. It runs 24 hours. For solo travellers this is the obvious choice.",
+          },
+          {
+            q: "Is Uber available in Copenhagen?",
+            a: "Yes — Uber and Bolt both operate in Copenhagen and are 20–30% cheaper than metered taxis. They use licensed professional drivers in Denmark.",
+          },
+          {
+            q: "Do you tip taxi drivers in Copenhagen?",
+            a: "Tipping is not expected or required in Denmark. Drivers earn well from the base fare. Rounding up is a gesture, not an obligation.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Copenhagen Airport — Transport to the City",
+        url: "https://www.cph.dk/en/practical/to-and-from-the-airport",
+      },
+    ],
+  },
+
   // ── Taxi Driver Phrases (Tier 2 — Linkable / Shareable) ───────────────────
   {
     slug: "what-to-say-to-your-taxi-driver-in-15-languages",
