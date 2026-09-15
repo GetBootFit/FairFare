@@ -27,29 +27,38 @@ async function rlIncrement(ip: string, route: string, windowSecs: number): Promi
   const key    = `rl:${route}:${ip}:${bucket}`
 
   const abort = new AbortController()
-  const timer = setTimeout(() => abort.abort(), 500) // fail-open after 500ms
-  try {
-    const res = await fetch(`${kvUrl}/pipeline`, {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${kvToken}`,
-        'Content-Type': 'application/json',
-      },
-      // Atomic: increment then set TTL (small buffer so last-second requests decay cleanly)
-      body: JSON.stringify([
-        ['INCR', key],
-        ['EXPIRE', key, windowSecs + 30],
-      ]),
-      signal: abort.signal,
+  const abortTimer = setTimeout(() => abort.abort(), 500)
+
+  // Belt-and-suspenders: Promise.race guarantees a 500ms wall-clock ceiling even
+  // when AbortController fails to cancel a stalled TCP connection (observed in
+  // Node.js when the remote end establishes a connection but sends no RST/FIN).
+  const kvPromise: Promise<number | null> = fetch(`${kvUrl}/pipeline`, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${kvToken}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify([
+      ['INCR', key],
+      ['EXPIRE', key, windowSecs + 30],
+    ]),
+    signal: abort.signal,
+  })
+    .then(async (res) => {
+      if (!res.ok) return null
+      const data = await res.json() as Array<{ result: number }>
+      return data[0]?.result ?? null
     })
-    if (!res.ok) return null
-    const data = await res.json() as Array<{ result: number }>
-    return data[0]?.result ?? null
-  } catch {
-    return null // Network error or timeout — fail open, never block legitimate traffic
-  } finally {
-    clearTimeout(timer)
-  }
+    .catch(() => null)
+
+  const winner = await Promise.race([
+    kvPromise,
+    new Promise<null>((resolve) => setTimeout(() => resolve(null), 500)),
+  ])
+
+  clearTimeout(abortTimer)
+  abort.abort() // no-op if already aborted; signals fetch cleanup if race timed out
+  return winner
 }
 
 function getIP(req: NextRequest): string {
