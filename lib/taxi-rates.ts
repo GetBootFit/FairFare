@@ -99,6 +99,16 @@ const ALIASES: Record<string, string> = {
   khet_chatuchak: "bangkok",
   khet_lat_krabang: "bangkok", // Suvarnabhumi area
 
+  // Pattaya — Tambon Nong Prue and Bang Lamung district contain Pattaya/Jomtien
+  tambon_nong_prue: "pattaya",
+  nong_prue: "pattaya",
+  amphoe_bang_lamung: "pattaya",
+  bang_lamung: "pattaya",
+
+  // Phuket — Thalang district is where Phuket International Airport is located
+  amphoe_thalang: "phuket",
+  thalang: "phuket",
+
   // London — Heathrow → Hillingdon AND Hounslow (airport spans both boroughs);
   // Gatwick → Crawley; Stansted → Uttlesford
   hillingdon: "london",
@@ -132,6 +142,8 @@ const ALIASES: Record<string, string> = {
   narita: "tokyo",
   chiba: "tokyo", // Narita area
   ota: "tokyo", // Haneda ward
+  minato_city: "tokyo", // Minato ward — city_miss hit
+  minato: "tokyo", // shorter form
 
   // Rome — Fiumicino airport in Fiumicino municipality
   fiumicino: "rome",
