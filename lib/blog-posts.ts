@@ -5219,6 +5219,834 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
 
+  // ── Los Angeles ───────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-los-angeles",
+    title: "How Much Does a Taxi Cost in Los Angeles? (2026 Guide)",
+    description:
+      "LAX to Downtown LA costs $55–70 by taxi. Here's the 2026 fare breakdown — why Uber dominates LA, the flat-rate taxi zone from LAX, and the FlyAway bus alternative.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 6,
+    category: "taxi",
+    city: "Los Angeles",
+    country: "United States",
+    citySlug: "los-angeles",
+    countrySlug: "united-states",
+    content: [
+      {
+        type: "intro",
+        body: "Los Angeles is famously car-dependent — and the taxi landscape reflects that. Traditional metered taxis exist but are rarely hailed on the street. Uber and Lyft dominate, operating at 5–10× the volume of yellow cabs. That said, taxis from LAX operate under a regulated zone system that provides price certainty, and a FlyAway bus offers the cheapest airport transfer for solo travellers.",
+      },
+      {
+        type: "h2",
+        heading: "Los Angeles Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "$2.85" },
+          {
+            label: "Per mile (approx per km)",
+            value: "$3.10/mile (~$1.93/km)",
+          },
+          { label: "Per km (dataset rate)", value: "$2.70" },
+          { label: "Minimum fare", value: "$3.25" },
+          { label: "Airport surcharge (LAX)", value: "$4.00" },
+          { label: "LA City/County regulation", value: "LADOT / LA County" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from LAX Airport",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "LAX → Downtown LA (DTLA)", value: "$55–70" },
+          { label: "LAX → Santa Monica", value: "$35–50" },
+          { label: "LAX → Beverly Hills", value: "$40–55" },
+          { label: "LAX → Hollywood / West Hollywood", value: "$45–60" },
+          { label: "LAX → Anaheim / Disneyland", value: "$85–115" },
+          { label: "LAX → Burbank / Glendale", value: "$70–95" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The FlyAway bus runs non-stop from LAX to Union Station (downtown) for $9.75. Journey time is 30–60 minutes depending on traffic. For solo travellers, this is the cheapest option by far. From Union Station, the Metro rail network covers most of the city.",
+      },
+      {
+        type: "h2",
+        heading: "Uber and Lyft in Los Angeles",
+      },
+      {
+        type: "p",
+        body: "Uber and Lyft are the dominant transport option in LA. UberX typically runs $45–60 from LAX to Downtown, often matching or beating the metered taxi rate — and with upfront pricing. Both apps have designated pickup zones at LAX (the LAX-it lot, a short shuttle ride from terminals). Expect surge pricing during peak morning and evening rush hours on the 405 and 10 freeways.",
+      },
+      {
+        type: "h2",
+        heading: "Is a Taxi Worth It in LA?",
+      },
+      {
+        type: "p",
+        body: "For airport journeys, a pre-booked taxi or Uber is the practical choice. LA's public transit (Metro) is improving but doesn't reach many tourist destinations without transfers. The Metro K and C lines connect to Inglewood near LAX, and the LAX people mover (connector to Metro) opens in phases through 2026. For point-to-point travel, Uber/Lyft remains the default for visitors.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from LAX to downtown Los Angeles?",
+            a: "Expect $55–70 for a metered taxi from LAX to DTLA, including the $4 airport surcharge. Uber/Lyft runs $45–60. The FlyAway bus costs $9.75 for solo travellers.",
+          },
+          {
+            q: "Do LA taxis have meters?",
+            a: "Yes — licensed LA taxis use regulated meters set by LADOT. However, taxis are rarely hailed on the street in LA. Call or app-book, or use Uber/Lyft instead.",
+          },
+          {
+            q: "Is Uber cheaper than a taxi in Los Angeles?",
+            a: "Often yes, especially with UberX. Uber also offers upfront pricing, which removes metered uncertainty. During peak hours, surge pricing can make taxis competitive.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "LA FlyAway Bus — LAX Official",
+        url: "https://www.flylax.com/flyaway-bus",
+      },
+    ],
+  },
+
+  // ── Toronto ───────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-toronto",
+    title: "How Much Does a Taxi Cost in Toronto? (2026 Guide)",
+    description:
+      "Toronto Pearson Airport to downtown costs CAD $55–75 by taxi. Here's the 2026 fare breakdown — metered rates, the UP Express train alternative, and how Uber fits in.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 6,
+    category: "taxi",
+    city: "Toronto",
+    country: "Canada",
+    citySlug: "toronto",
+    countrySlug: "canada",
+    content: [
+      {
+        type: "intro",
+        body: "Toronto's taxis are metered, licensed by the City of Toronto, and available at all major transport hubs. Uber and Lyft also operate openly. For airport journeys, the UP Express train offers the fastest and most predictable alternative — 25 minutes from Pearson to Union Station for CAD $12.35.",
+      },
+      {
+        type: "h2",
+        heading: "Toronto Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "CAD $4.25" },
+          { label: "Per km", value: "CAD $1.75" },
+          { label: "Minimum fare", value: "CAD $4.25" },
+          { label: "Wait time (per hour)", value: "CAD $32.00" },
+          { label: "Night surcharge (00:00–05:00)", value: "None (same rate)" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Toronto Pearson Airport (YYZ)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "YYZ → Downtown (Financial District / Union Station)",
+            value: "CAD $55–75",
+          },
+          {
+            label: "YYZ → Kensington / Chinatown / Ossington",
+            value: "CAD $50–65",
+          },
+          { label: "YYZ → North York / Yorkville", value: "CAD $45–60" },
+          { label: "YYZ → Scarborough / East End", value: "CAD $75–100" },
+          {
+            label: "Downtown → CN Tower / Rogers Centre area",
+            value: "CAD $10–18",
+          },
+          {
+            label: "Downtown → Toronto Island Ferry Terminal",
+            value: "CAD $8–15",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The UP Express train runs from Pearson Airport (Terminal 1) to Union Station in 25 minutes for CAD $12.35. Trains run every 15 minutes, 05:00–01:00. For most downtown destinations, this is the fastest and cheapest option — particularly during rush hour when the highway can add 40–60 minutes to a taxi journey.",
+      },
+      {
+        type: "h2",
+        heading: "Uber and Lyft in Toronto",
+      },
+      {
+        type: "p",
+        body: "Uber and Lyft both operate in Toronto and are typically 10–20% cheaper than metered taxis for most city trips. UberX from Pearson to downtown runs CAD $45–60 with upfront pricing. Both have designated pickup zones at Pearson (Level P1 of each terminal's parking structure). Rideshares are a practical alternative to the taxi rank queue during peak hours.",
+      },
+      {
+        type: "h2",
+        heading: "Billy Bishop Airport (YTZ) — Downtown",
+      },
+      {
+        type: "p",
+        body: "Billy Bishop Airport on the Toronto Islands is served by the free pedestrian tunnel and ferry. From the terminal, the waterfront is a 10-minute walk. A taxi to most downtown hotels costs CAD $15–25. There is no ride-share pickup at Billy Bishop — street taxis only.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Toronto Pearson to downtown?",
+            a: "CAD $55–75 depending on exact destination and traffic. The UP Express train costs CAD $12.35 and takes 25 minutes — much faster during rush hour.",
+          },
+          {
+            q: "Is tipping expected in Toronto taxis?",
+            a: "Yes — 15% is standard, 20% for good service. Card terminals in Toronto taxis typically prompt for a tip and default to 20%.",
+          },
+          {
+            q: "Is Uber available at Toronto Pearson Airport?",
+            a: "Yes — both Uber and Lyft operate at YYZ. Pickup is from Level P1 of each terminal's parking structure. Expect CAD $45–60 to downtown.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "UP Express — Pearson to Union Station",
+        url: "https://www.upexpress.com",
+      },
+    ],
+  },
+
+  // ── Melbourne ─────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-melbourne",
+    title: "How Much Does a Taxi Cost in Melbourne? (2026 Guide)",
+    description:
+      "Melbourne Airport to the CBD costs AUD $55–80 by taxi. Here's the 2026 fare breakdown — why there's no airport rail link, SkyBus vs taxi, and the free tram zone trick.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 6,
+    category: "taxi",
+    city: "Melbourne",
+    country: "Australia",
+    citySlug: "melbourne",
+    countrySlug: "australia",
+    content: [
+      {
+        type: "intro",
+        body: "Melbourne taxis are metered, regulated by the Victorian Commercial Passenger Vehicle regulator, and yellow like most Australian cabs. The notable quirk: Melbourne Airport (Tullamarine) has no direct rail link — the closest rail is the Skybus shuttle to Southern Cross Station. For the CBD, a taxi or pre-booked rideshare is the only door-to-door option.",
+      },
+      {
+        type: "h2",
+        heading: "Melbourne Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (day)", value: "AUD $3.60" },
+          { label: "Per km (day)", value: "AUD $1.87" },
+          { label: "Minimum fare", value: "AUD $5.00" },
+          {
+            label: "Night rate (20:00–06:00)",
+            value: "AUD $4.63 flag fall + AUD $1.87/km",
+          },
+          { label: "Airport pickup surcharge", value: "AUD $3.70" },
+          { label: "Booking fee (phone/app)", value: "AUD $2.70" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Melbourne Airport (MEL / Tullamarine)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "MEL → Melbourne CBD (Flinders Street / Southern Cross)",
+            value: "AUD $55–80",
+          },
+          { label: "MEL → St Kilda", value: "AUD $65–90" },
+          {
+            label: "MEL → Fitzroy / Carlton / Collingwood",
+            value: "AUD $60–85",
+          },
+          { label: "MEL → Docklands", value: "AUD $50–70" },
+          { label: "CBD → St Kilda (short trip)", value: "AUD $20–30" },
+          { label: "CBD → Fitzroy / Collingwood", value: "AUD $15–22" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "SkyBus runs from Melbourne Airport to Southern Cross Station (CBD) for AUD $22.95 one-way. Buses run every 10 minutes during peak hours. For solo travellers, SkyBus is significantly cheaper than a taxi. From Southern Cross, the free CBD tram zone covers most city-centre hotels.",
+      },
+      {
+        type: "h2",
+        heading: "The Free Tram Zone",
+      },
+      {
+        type: "p",
+        body: "Melbourne's CBD tram network is free to ride within the city loop. If your hotel is within the free tram zone, you can take SkyBus to Southern Cross and then hop on a free tram — bringing your total airport-to-hotel cost to AUD $22.95. This beats a taxi by AUD $30–50 for central CBD destinations.",
+      },
+      {
+        type: "h2",
+        heading: "Uber and Rideshare in Melbourne",
+      },
+      {
+        type: "p",
+        body: "Uber and Ola operate in Melbourne. UberX from Melbourne Airport to the CBD typically runs AUD $45–65 with upfront pricing — cheaper than a metered taxi. Rideshare pickup is from the designated zone on the ground floor of the Short-Term Car Park. During peak hours, surge pricing can push Uber costs above the taxi rate.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Melbourne Airport to the CBD?",
+            a: "AUD $55–80 depending on exact destination and traffic. The AUD $3.70 airport surcharge is added. SkyBus costs AUD $22.95 and takes 30–45 minutes to Southern Cross Station.",
+          },
+          {
+            q: "Is there a train from Melbourne Airport?",
+            a: "No — Melbourne Airport has no direct rail link. SkyBus is the public-transit equivalent. The Metro Tunnel project does not serve Tullamarine; a rail link is planned but not operational as of 2026.",
+          },
+          {
+            q: "Is Uber available at Melbourne Airport?",
+            a: "Yes — Uber and Ola operate at MEL. Pickup is from the Short-Term Car Park ground floor. Expect AUD $45–65 to the CBD.",
+          },
+          {
+            q: "Do Melbourne taxis charge extra at night?",
+            a: "Yes — the night flag fall is AUD $4.63 (vs $3.60 day), applying 20:00–06:00. Per-km rate stays the same at $1.87.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "SkyBus Melbourne — Airport to CBD",
+        url: "https://www.skybus.com.au",
+      },
+    ],
+  },
+
+  // ── Berlin ────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-berlin",
+    title: "How Much Does a Taxi Cost in Berlin? (2026 Guide)",
+    description:
+      "Berlin Brandenburg Airport to the city centre costs €45–65 by taxi. Here's the 2026 fare breakdown — metered rates, the S-Bahn express alternative, and how Bolt undercuts the beige cabs.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 6,
+    category: "taxi",
+    city: "Berlin",
+    country: "Germany",
+    citySlug: "berlin",
+    countrySlug: "germany",
+    content: [
+      {
+        type: "intro",
+        body: "Berlin taxis are metered, regulated, and conspicuously beige. Fares are set by the Berlin Senate Department for Transport. The city's S-Bahn and U-Bahn network is excellent — the S9 and FEX express trains connect Brandenburg Airport (BER) to the city centre for €3.80. For groups or late arrivals, a taxi is the practical choice.",
+      },
+      {
+        type: "h2",
+        heading: "Berlin Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "€3.90" },
+          { label: "Per km (up to 7 km)", value: "€2.00" },
+          { label: "Per km (over 7 km)", value: "€1.50" },
+          { label: "Minimum fare", value: "€3.90" },
+          {
+            label: "Kurzstreckentarif (short-hop rate)",
+            value: "€6 flat (≤2 km, hailed only)",
+          },
+          { label: "Phone booking fee", value: "€1.50" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Berlin Brandenburg Airport (BER)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "BER → Mitte (Alexanderplatz / Museum Island)",
+            value: "€45–60",
+          },
+          { label: "BER → Prenzlauer Berg / Friedrichshain", value: "€40–55" },
+          { label: "BER → Kreuzberg / Tempelhof", value: "€35–50" },
+          { label: "BER → Charlottenburg / West Berlin", value: "€55–75" },
+          { label: "BER → Mitte (late night, no traffic)", value: "€40–50" },
+          { label: "Mitte → Potsdamer Platz", value: "€8–14" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The FEX (Flughafen Express) S-Bahn runs from BER to Ostbahnhof and Hauptbahnhof in 30 minutes for €3.80 (ABC zone ticket). Trains run every 30 minutes. The S9 also runs every 20 minutes. For solo travellers, this is dramatically cheaper than a taxi and avoids the A113/A100 traffic.",
+      },
+      {
+        type: "h2",
+        heading: "The Kurzstreckentarif (Short-Hop Rate)",
+      },
+      {
+        type: "p",
+        body: "Berlin has a unique 'Kurzstreckentarif' — a flat €6 rate for journeys of up to 2 km, available only when hailing a taxi on the street (not pre-booked). If you're making a short city hop, hail a cab and ask for 'Kurzstrecke' before getting in. The driver must honour it. This makes short Berlin taxi trips very competitive.",
+      },
+      {
+        type: "h2",
+        heading: "Bolt and Rideshare in Berlin",
+      },
+      {
+        type: "p",
+        body: "Uber operates in Berlin using licensed FHV vehicles (not UberX with private drivers, which is banned in Germany). Bolt also operates and is often 15–25% cheaper than a metered taxi. FreeNow (formerly mytaxi) lets you book official Berlin taxis via app at regulated meter rates. For airport transfers, Bolt or a pre-booked FreeNow taxi are the most cost-effective options.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Berlin Airport to the city?",
+            a: "€45–65 to central Berlin (Mitte, Prenzlauer Berg). Bolt runs €35–55. The FEX S-Bahn costs €3.80 and takes 30 minutes.",
+          },
+          {
+            q: "What is the Kurzstreckentarif in Berlin?",
+            a: "A flat €6 fare for street-hailed taxis on journeys of 2 km or less. Ask for 'Kurzstrecke' before getting in. Only valid for hailed cabs, not pre-booked ones.",
+          },
+          {
+            q: "Is Uber available in Berlin?",
+            a: "Yes — but Uber uses licensed FHV vehicles, not standard UberX peer-to-peer drivers (which are banned in Germany). Bolt and FreeNow are also available.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Berlin Brandenburg Airport — Ground Transport",
+        url: "https://www.berlin-airport.de/en/travellers/to-and-from-the-airports/",
+      },
+    ],
+  },
+
+  // ── Madrid ────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-madrid",
+    title: "How Much Does a Taxi Cost in Madrid? (2026 Guide)",
+    description:
+      "Madrid Airport to the city centre costs €30 flat by taxi — one of Europe's best-value airport fixed rates. Here's the 2026 fare breakdown — tariff zones, night rates, and the Metro Line 8 alternative.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 6,
+    category: "taxi",
+    city: "Madrid",
+    country: "Spain",
+    citySlug: "madrid",
+    countrySlug: "spain",
+    content: [
+      {
+        type: "intro",
+        body: "Madrid taxis are white, metered, and regulated by the Community of Madrid. The city operates three tariff zones and a well-publicised €30 flat rate from the airport to any point within the M-30 ring road — one of the clearest and most traveller-friendly fixed airport rates in Europe.",
+      },
+      {
+        type: "h2",
+        heading: "Madrid Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Flag fall (Tariff 1 — weekday day, within M-30)",
+            value: "€2.40",
+          },
+          { label: "Per km (Tariff 1)", value: "€1.17" },
+          { label: "Minimum fare", value: "€4.05" },
+          {
+            label: "Tariff 2 (night 21:00–07:00, weekends, holidays)",
+            value: "€2.90 flag fall + €1.35/km",
+          },
+          {
+            label: "Tariff 3 (outside M-30, including airport)",
+            value: "€2.90 flag fall + €1.35/km",
+          },
+          { label: "Airport flat rate (MAD → M-30 zone)", value: "€30 fixed" },
+          { label: "Airport surcharge (on meter journeys)", value: "€5.50" },
+          { label: "Station/bus terminal supplement", value: "€3.00" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "The €30 Airport Flat Rate",
+      },
+      {
+        type: "p",
+        body: "Madrid's €30 flat rate applies to all taxi journeys between Adolfo Suárez Madrid–Barajas Airport (MAD) and any destination within the M-30 ring road (central Madrid). This covers Sol, Gran Vía, Retiro, Malasaña, Chueca, Lavapiés, and most tourist areas. The rate is fixed by the Community of Madrid and applies 24 hours a day, 7 days a week — no night supplement.",
+      },
+      {
+        type: "p",
+        body: "Destinations outside the M-30 (including parts of Salamanca district east of the ring road, Carabanchel, Vallecas, or further suburbs) use the Tariff 3 meter. Confirm the €30 flat rate applies to your destination before the journey — any reputable driver will confirm it.",
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Madrid Airport (MAD)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "MAD → Puerta del Sol / Gran Vía",
+            value: "€30 (flat rate)",
+          },
+          { label: "MAD → Retiro / Atocha", value: "€30 (flat rate)" },
+          { label: "MAD → Malasaña / Chueca", value: "€30 (flat rate)" },
+          {
+            label: "MAD → Chamartín (outside M-30)",
+            value: "€32–38 (metered T3)",
+          },
+          {
+            label: "MAD → IFEMA / trade fair (near airport)",
+            value: "€18–25 (metered T3)",
+          },
+          { label: "Puerta del Sol → Prado Museum", value: "€5–9 (T1 meter)" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Madrid Metro Line 8 runs from the airport (T1–T2–T4) to Nuevos Ministerios station in 12 minutes for €5 (includes airport supplement). At Nuevos Ministerios you can change for Lines 6 and 10 to reach most of central Madrid. For solo travellers, this is cheaper than a taxi and avoids traffic entirely.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Madrid Airport to the city centre?",
+            a: "€30 flat rate to any destination within the M-30 ring road (central Madrid). This applies 24/7. Destinations outside M-30 use the Tariff 3 meter.",
+          },
+          {
+            q: "Is there a Metro from Madrid Airport?",
+            a: "Yes — Metro Line 8 runs from all terminals to Nuevos Ministerios in 12 minutes for €5. Change there for central Madrid lines. Much cheaper than a taxi for solo travellers.",
+          },
+          {
+            q: "Do Madrid taxis have night surcharges?",
+            a: "For city meter fares yes — Tariff 2 applies 21:00–07:00 and on weekends. But the €30 airport flat rate is fixed 24/7 with no night supplement.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Taxi Barajas Madrid — Official Airport Taxi Information",
+        url: "https://www.aeropuertomadrid-barajas.com/eng/taxi.htm",
+      },
+    ],
+  },
+
+  // ── Munich ────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-munich",
+    title: "How Much Does a Taxi Cost in Munich? (2026 Guide)",
+    description:
+      "Munich Airport to the city centre costs €65–85 by taxi — one of Europe's more expensive airport routes. Here's the 2026 fare breakdown — S-Bahn vs taxi, night rates, and Oktoberfest surge pricing.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 6,
+    category: "taxi",
+    city: "Munich",
+    country: "Germany",
+    citySlug: "munich",
+    countrySlug: "germany",
+    content: [
+      {
+        type: "intro",
+        body: "Munich taxis are metered, cream-coloured, and expensive by European standards — Munich is one of Germany's highest cost-of-living cities and taxi rates reflect that. The airport is 40 km from the city centre, making the taxi route longer and pricier than most European capitals. The S1/S8 S-Bahn is the clear choice for solo travellers.",
+      },
+      {
+        type: "h2",
+        heading: "Munich Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "€4.50" },
+          { label: "Per km (up to 10 km)", value: "€2.00" },
+          { label: "Per km (10–40 km)", value: "€1.80" },
+          { label: "Per km (over 40 km)", value: "€1.55" },
+          { label: "Minimum fare", value: "€4.50" },
+          {
+            label: "Night surcharge (21:00–06:00)",
+            value: "+€1.20 on flag fall",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Munich Airport (MUC)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "MUC → Marienplatz / Altstadt (city centre)",
+            value: "€65–85",
+          },
+          { label: "MUC → Schwabing / Maxvorstadt", value: "€70–90" },
+          { label: "MUC → Hauptbahnhof (central station)", value: "€65–80" },
+          { label: "MUC → Neuhausen / Nymphenburg", value: "€70–90" },
+          { label: "MUC → Garching / Research Campus", value: "€40–55" },
+          { label: "Marienplatz → Englischer Garten", value: "€8–14" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The S1 and S8 S-Bahn lines both run from Munich Airport to Marienplatz in 40 minutes for €13.60 (Zone M+5 day ticket). Trains run every 20 minutes (10 minutes with both lines combined). This is by far the cheapest airport transfer — €65+ taxi vs €13.60 S-Bahn for solo travellers.",
+      },
+      {
+        type: "h2",
+        heading: "Oktoberfest and Event Surge Pricing",
+      },
+      {
+        type: "p",
+        body: "During Oktoberfest (late September / early October), Munich taxi demand surges enormously. Metered taxis cannot legally charge above the regulated rates, but wait times at ranks are 30–60 minutes and Bolt/Uber surge pricing can double or triple standard fares. If you're arriving during Oktoberfest, the S-Bahn is not only cheaper but faster than sitting in festival traffic.",
+      },
+      {
+        type: "h2",
+        heading: "Bolt and Rideshare in Munich",
+      },
+      {
+        type: "p",
+        body: "Uber operates in Munich using licensed FHV drivers (not peer-to-peer, which is banned in Germany). Bolt also operates and is typically 10–20% cheaper than metered taxis for city trips. For airport routes, a pre-booked Bolt is often €55–70 to the city centre vs €65–85 for a taxi rank cab.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Munich Airport to the city?",
+            a: "€65–85 to Marienplatz or Hauptbahnhof. The S1/S8 S-Bahn costs €13.60 and takes 40 minutes — strongly recommended for solo travellers.",
+          },
+          {
+            q: "Why is Munich Airport taxi so expensive?",
+            a: "Munich Airport is 40 km from the city centre — significantly further than most European city airports. Combined with high German wage costs, the long distance makes taxi fares expensive.",
+          },
+          {
+            q: "Is there a cheaper way from Munich Airport to the city?",
+            a: "Yes — the S1/S8 S-Bahn at €13.60 is the best option for solo travellers. For 4 people sharing, the taxi at €65–85 becomes €16–21 per person, comparable to the S-Bahn.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Munich Airport — Getting to the City",
+        url: "https://www.munich-airport.de/en/to-from/ground-transport",
+      },
+    ],
+  },
+
+  // ── Zurich ────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-zurich",
+    title: "How Much Does a Taxi Cost in Zurich? (2026 Guide)",
+    description:
+      "Zurich Airport to the city centre costs CHF 55–75 by taxi — but the train takes 10 minutes for CHF 6.80. Here's the 2026 fare breakdown — Switzerland's highest taxi rates and why the airport train wins.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Zurich",
+    country: "Switzerland",
+    citySlug: "zurich",
+    countrySlug: "switzerland",
+    content: [
+      {
+        type: "intro",
+        body: "Zurich taxis are metered, immaculately maintained, and among the most expensive in the world. Switzerland's high labour costs and strict vehicle regulations mean a Zurich taxi costs roughly 3× a comparable ride in southern Europe. The good news: Zurich Airport has a direct train to the city centre in 10 minutes, making the taxi a group-travel luxury rather than a solo necessity.",
+      },
+      {
+        type: "h2",
+        heading: "Zurich Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (day)", value: "CHF 6.00" },
+          { label: "Per km (day)", value: "CHF 3.80" },
+          { label: "Minimum fare", value: "CHF 6.00" },
+          {
+            label: "Night rate (20:00–07:00)",
+            value: "CHF 6.00 + CHF 4.20/km",
+          },
+          { label: "Airport surcharge", value: "CHF 5.00" },
+          { label: "Phone/app booking", value: "CHF 5.00–8.00" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Zurich Airport (ZRH)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "ZRH → Zurich HB (main station / Bahnhofstrasse)",
+            value: "CHF 55–70",
+          },
+          { label: "ZRH → Zurich Old Town (Altstadt)", value: "CHF 60–75" },
+          { label: "ZRH → Zurich West / Langstrasse", value: "CHF 55–70" },
+          { label: "ZRH → Oerlikon (near airport)", value: "CHF 25–35" },
+          { label: "Bahnhofstrasse → ETH / University", value: "CHF 12–18" },
+          { label: "City centre → Zurich Zoo", value: "CHF 15–22" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The ZRH Airport train runs directly to Zurich HB (main station) in 10 minutes for CHF 6.80. Trains run every 10 minutes, 06:00–00:30. This is one of the world's most convenient airport rail connections — the platform is directly in the airport terminal. For solo or paired travellers, there is almost no reason to take a taxi from ZRH.",
+      },
+      {
+        type: "h2",
+        heading: "Why Are Zurich Taxis So Expensive?",
+      },
+      {
+        type: "p",
+        body: "Switzerland has the highest taxi rates in Europe by most benchmarks. Drivers earn regulated minimum wages well above CHF 25/hour. Vehicle standards require regular inspections and modern equipment. Combined with Switzerland's overall high cost of living, the result is meter rates roughly double those of Germany and triple those of southern Europe.",
+      },
+      {
+        type: "h2",
+        heading: "Rideshare in Zurich",
+      },
+      {
+        type: "p",
+        body: "Uber operates in Zurich using licensed vehicles. Bolt entered the Swiss market and offers rates around 15–20% below standard taxis. However, Swiss rideshare regulation requires professional driver licensing, which means fares remain significantly higher than in other European cities. Even with Uber, expect CHF 45–60 from the airport to the city centre.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Zurich Airport to the city?",
+            a: "CHF 55–75 to the city centre. The direct airport train costs CHF 6.80 and takes 10 minutes — the obvious choice for solo travellers.",
+          },
+          {
+            q: "Why are Zurich taxis so expensive?",
+            a: "High Swiss labour costs, strict vehicle regulations, and Switzerland's overall cost of living make Zurich among the most expensive taxi cities globally.",
+          },
+          {
+            q: "Is there an Uber in Zurich?",
+            a: "Yes — Uber operates using licensed vehicles. Fares are around 15% lower than metered taxis but still much higher than in most other European cities. Expect CHF 45–60 from the airport.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Zurich Airport — Transport Connections",
+        url: "https://www.zurich-airport.com/passengers-and-visitors/to-and-from-the-airport",
+      },
+    ],
+  },
+
+  // ── Stockholm ─────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-stockholm",
+    title: "How Much Does a Taxi Cost in Stockholm? (2026 Guide)",
+    description:
+      "Stockholm Arlanda Airport to the city costs 500–700 SEK by taxi. Here's the 2026 fare breakdown — the taxi cartel history, Arlanda Express vs taxi, and why Bolt saves 30%.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 6,
+    category: "taxi",
+    city: "Stockholm",
+    country: "Sweden",
+    citySlug: "stockholm",
+    countrySlug: "sweden",
+    content: [
+      {
+        type: "intro",
+        body: "Stockholm taxis are deregulated — there is no fixed meter rate set by the city. Every company sets its own tariffs, displayed in the side window (required by law). This creates a wide price range: reputable fleets (Taxi Stockholm, Taxi Kurir) charge 400–600 SEK from Arlanda, while unlicensed operators at the rank have charged up to 2,000 SEK. Always check the price card before entering.",
+      },
+      {
+        type: "h2",
+        heading: "Stockholm Taxi Rate Ranges (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Flag fall (typical regulated companies)",
+            value: "41–65 SEK",
+          },
+          { label: "Per km (day)", value: "13–17 SEK" },
+          { label: "Per km (night / weekend)", value: "17–22 SEK" },
+          { label: "Minimum fare", value: "41–65 SEK" },
+          {
+            label: "Arlanda Airport → city fixed rate (Taxi Stockholm)",
+            value: "499 SEK",
+          },
+          {
+            label: "Arlanda Airport → city fixed rate (Taxi Kurir)",
+            value: "549 SEK",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Stockholm Arlanda Airport (ARN)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "ARN → Gamla Stan / Norrmalm (city centre)",
+            value: "499–620 SEK (fixed/metered)",
+          },
+          { label: "ARN → Södermalm", value: "520–680 SEK" },
+          { label: "ARN → Östermalm", value: "480–600 SEK" },
+          { label: "ARN → Stockholm Central Station", value: "499–600 SEK" },
+          {
+            label: "City centre → Djurgården (short trip)",
+            value: "80–140 SEK",
+          },
+          { label: "City centre → Skansen", value: "80–130 SEK" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Arlanda Express train runs from Arlanda Airport to Stockholm Central in 18 minutes for 299 SEK (adult, one-way). Trains run every 15 minutes. For solo travellers, it is faster, more predictable, and often cheaper than a taxi. Couples and small groups will find the 499 SEK fixed taxi competitive.",
+      },
+      {
+        type: "h2",
+        heading: "How to Avoid Stockholm Taxi Overcharging",
+      },
+      {
+        type: "p",
+        body: "Stockholm had a well-documented taxi overcharging problem at Arlanda in the 2010s. Regulations now require the maximum fare to be displayed on a yellow sticker on the rear side window. Before entering any taxi at the rank, check the sticker: the 'Högsta pris 10 km' (maximum price for 10 km) figure tells you the rate category. Reputable companies show around 200–240 SEK per 10 km. Anything above 400 SEK per 10 km is an exploitative rate — walk away.",
+      },
+      {
+        type: "h2",
+        heading: "Bolt in Stockholm",
+      },
+      {
+        type: "p",
+        body: "Bolt operates in Stockholm and is typically 25–35% cheaper than a metered taxi from a reputable company. For city trips (not airport), Bolt is the best-value option. For airport journeys, compare Bolt's upfront quote against the Arlanda Express (299 SEK) — Bolt's airport route often comes in at 380–450 SEK.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Stockholm Arlanda Airport to the city?",
+            a: "Reputable companies charge 499–620 SEK on fixed or meter rates. The Arlanda Express train costs 299 SEK and takes 18 minutes — faster and often cheaper.",
+          },
+          {
+            q: "How do I avoid taxi scams at Stockholm Arlanda?",
+            a: "Check the yellow tariff sticker on the rear side window. The 'Högsta pris 10 km' value should be around 200–240 SEK for reputable companies. Use Taxi Stockholm, Taxi Kurir, or book via Bolt app to get a fixed price.",
+          },
+          {
+            q: "Is Bolt available in Stockholm?",
+            a: "Yes — Bolt operates across Stockholm and is 25–35% cheaper than metered taxi companies for city journeys. For airport routes, compare Bolt's quote against the Arlanda Express.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Arlanda Express — Official Airport Train",
+        url: "https://www.arlandaexpress.com",
+      },
+    ],
+  },
+
   // ── Taxi Driver Phrases (Tier 2 — Linkable / Shareable) ───────────────────
   {
     slug: "what-to-say-to-your-taxi-driver-in-15-languages",
