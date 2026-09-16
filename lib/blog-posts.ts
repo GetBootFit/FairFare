@@ -7645,6 +7645,790 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
 
+  // ── Venice ────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-venice",
+    title: "How Much Does a Taxi Cost in Venice? (2026 Guide)",
+    description:
+      "Venice water taxis cost €80–130 from Marco Polo Airport to the city. Here's the 2026 fare breakdown — water taxi vs Alilaguna ferry vs People Mover, and why the vaporetto beats all of them.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 6,
+    category: "taxi",
+    city: "Venice",
+    country: "Italy",
+    citySlug: "venice",
+    countrySlug: "italy",
+    content: [
+      {
+        type: "intro",
+        body: "Venice has no roads in the historic centre — so there are no road taxis. Transport is by water taxi (motoscafo), vaporetto (water bus), or on foot. From Marco Polo Airport on the mainland, water taxis operate as the premium option; the Alilaguna boat line is the mid-range; and the ACTV bus to Piazzale Roma followed by vaporetto is the budget route.",
+      },
+      {
+        type: "h2",
+        heading: "Venice Water Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Starting fare (minimum)",
+            value: "€50 (city centre trips)",
+          },
+          {
+            label: "Marco Polo Airport → San Marco / Rialto",
+            value: "€80–120 (shared) / €120–160 (private)",
+          },
+          {
+            label: "Marco Polo Airport → Grand Canal hotel (private)",
+            value: "€110–150",
+          },
+          { label: "City canal crossing (traghetto gondola)", value: "€2.00" },
+          {
+            label: "Gondola serenade (traditional, non-transit)",
+            value: "€80–100/30 min",
+          },
+          { label: "Vaporetto (Line 1 or 2) — single trip", value: "€9.50" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Getting from Marco Polo Airport to Venice",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Private water taxi (direct to hotel canal dock)",
+            value: "€110–150 · 30–40 min",
+          },
+          {
+            label: "Shared water taxi (Alilaguna Orange Line, San Marco)",
+            value: "€15 · 75 min",
+          },
+          {
+            label: "Alilaguna Blue Line (Stazione / Rialto area)",
+            value: "€15 · 60 min",
+          },
+          {
+            label: "ATVO/ACTV bus to Piazzale Roma + vaporetto",
+            value: "€8 + €9.50 · 40 min",
+          },
+          {
+            label: "People Mover (from Piazzale Roma to cruise terminal)",
+            value: "€1.50 one-way",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Alilaguna boat service is the sweet spot between comfort and cost. At €15 per person it is slower than a private water taxi but far cheaper, and far more atmospheric than the bus. Book online in advance to guarantee a seat on peak-season mornings.",
+      },
+      {
+        type: "h2",
+        heading: "Getting Around Venice",
+      },
+      {
+        type: "p",
+        body: "Within the historic centre, walking is almost always the most practical option — Venice is compact and a walk from Rialto to San Marco takes 15 minutes. The vaporetto (water bus) runs along the Grand Canal and the outer islands. A 24-hour unlimited vaporetto pass costs €25, valid on all ACTV lines. Single trips cost €9.50.",
+      },
+      {
+        type: "p",
+        body: "Water taxis inside the city are priced per journey, not by meter, and prices are set by a municipal tariff schedule. Always confirm the total price before boarding. For hotel drop-offs at canal-side hotels, a private water taxi is the only door-to-door option.",
+      },
+      {
+        type: "warning",
+        body: "Venice has a well-documented problem with unlicensed water taxi operators ('abusivi') offering rides without official tariffs. Only use licensed water taxis (yellow and white, with the taxi sign) from official ranks at the airport, Piazzale Roma, Santa Lucia station, and San Marco.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a water taxi from Venice Airport to San Marco?",
+            a: "€110–150 for a private water taxi. The Alilaguna shared boat service costs €15 per person and takes 75 minutes. The bus + vaporetto combination costs €17.50 total.",
+          },
+          {
+            q: "Are there regular taxis in Venice?",
+            a: "No — Venice has no road taxis in the historic centre. Transport is by foot, vaporetto (water bus), or water taxi.",
+          },
+          {
+            q: "What is the cheapest way to get from Venice Airport to the city?",
+            a: "The ATVO/ACTV bus to Piazzale Roma (€8) followed by a vaporetto (€9.50) totals €17.50 and takes about 40 minutes. The Alilaguna shared boat (€15) is slightly cheaper and more scenic.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Alilaguna — Airport Boat Service Venice",
+        url: "https://www.alilaguna.it/en",
+      },
+    ],
+  },
+
+  // ── Auckland ──────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-auckland",
+    title: "How Much Does a Taxi Cost in Auckland? (2026 Guide)",
+    description:
+      "Auckland Airport to the city centre costs NZD $75–100 by taxi. Here's the 2026 fare breakdown — metered rates, Uber vs local taxis, and the SkyBus coach alternative.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Auckland",
+    country: "New Zealand",
+    citySlug: "auckland",
+    countrySlug: "new-zealand",
+    content: [
+      {
+        type: "intro",
+        body: "Auckland taxis are metered and regulated by Auckland Transport. The city doesn't have a direct rail link from the airport (unlike Wellington, which also lacks one). The SkyBus provides a regular coach service, and Uber is widely used. For groups of 3–4, a taxi to the city is often competitive.",
+      },
+      {
+        type: "h2",
+        heading: "Auckland Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "NZD $3.40" },
+          { label: "Per km", value: "NZD $2.85" },
+          { label: "Minimum fare", value: "NZD $3.40" },
+          { label: "Airport surcharge (AKL)", value: "NZD $8.00" },
+          { label: "Night surcharge (21:00–06:00)", value: "+10%" },
+          { label: "Phone booking fee", value: "NZD $2.00–3.00" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Auckland Airport (AKL)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "AKL → Auckland CBD (Britomart / Queen Street)",
+            value: "NZD $75–100",
+          },
+          { label: "AKL → Parnell / Newmarket", value: "NZD $80–105" },
+          { label: "AKL → Ponsonby / Grey Lynn", value: "NZD $85–110" },
+          { label: "AKL → North Shore (Takapuna)", value: "NZD $90–120" },
+          { label: "CBD → Viaduct Harbour", value: "NZD $8–15" },
+          { label: "CBD → Mt Eden", value: "NZD $14–20" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "SkyBus runs 24/7 between Auckland Airport and the CBD (Sky Tower stop) for NZD $20 (adult, one-way). Journey time is 45–75 minutes depending on traffic. For solo and paired travellers, SkyBus is significantly cheaper than a taxi.",
+      },
+      {
+        type: "h2",
+        heading: "Uber in Auckland",
+      },
+      {
+        type: "p",
+        body: "Uber and Ola operate in Auckland. UberX from AKL to the CBD typically runs NZD $60–80 — cheaper than a metered taxi with upfront pricing. Pickup is from the rideshare zone on Level 1 of the AKL car park building.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Auckland Airport to the city?",
+            a: "NZD $75–100 by metered taxi. Uber runs NZD $60–80. SkyBus costs NZD $20 and takes 45–75 minutes.",
+          },
+          {
+            q: "Is there a train from Auckland Airport?",
+            a: "Not yet. A rail link to AKL Airport is under construction but not operational as of 2026. SkyBus coach is the main public transit option.",
+          },
+          {
+            q: "Is Uber available in Auckland?",
+            a: "Yes — Uber and Ola both operate. Pickup from Level 1 of the AKL car park building.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "SkyBus Auckland — Airport Coach",
+        url: "https://www.skybus.co.nz",
+      },
+    ],
+  },
+
+  // ── Doha ──────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-doha",
+    title: "How Much Does a Taxi Cost in Doha? (2026 Guide)",
+    description:
+      "Doha Hamad Airport to the city centre costs QAR 40–65 by taxi. Here's the 2026 fare breakdown — Karwa metered taxis, the Doha Metro Red Line, and Uber availability.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Doha",
+    country: "Qatar",
+    citySlug: "doha",
+    countrySlug: "qatar",
+    content: [
+      {
+        type: "intro",
+        body: "Doha's official taxi service is operated by Karwa, a government-owned company with metered vehicles. Karwa taxis are available 24/7 at Hamad International Airport. The Doha Metro Red Line also connects the airport to the city centre, offering a fast and cheap alternative that many visitors overlook.",
+      },
+      {
+        type: "h2",
+        heading: "Doha Taxi Rates — Karwa (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "QAR 4.00 (~$1.10)" },
+          { label: "Per km", value: "QAR 1.60 (~$0.44)" },
+          { label: "Minimum fare", value: "QAR 10.00 (~$2.75)" },
+          { label: "Night surcharge (22:00–06:00)", value: "+25% on meter" },
+          { label: "Airport pickup supplement", value: "QAR 5.00" },
+          { label: "Booking via Karwa app", value: "QAR 2.00 fee" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Hamad International Airport (DOH)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "DOH → West Bay (Corniche / business district)",
+            value: "QAR 40–60",
+          },
+          { label: "DOH → Souq Waqif / Old Doha", value: "QAR 35–55" },
+          { label: "DOH → The Pearl / Porto Arabia", value: "QAR 55–75" },
+          { label: "DOH → Lusail City", value: "QAR 70–95" },
+          { label: "West Bay → Souq Waqif", value: "QAR 15–25" },
+          {
+            label: "Souq Waqif → Museum of Islamic Art",
+            value: "QAR 10 (minimum fare)",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Doha Metro Red Line runs from Hamad Airport to Al Matar/QNH station and onward to West Bay, Souq Waqif, and Lusail. A single ride costs QAR 2–3 (standard class). The airport station is directly connected to the terminal. For central Doha destinations, the metro is faster and dramatically cheaper than a taxi.",
+      },
+      {
+        type: "h2",
+        heading: "Uber in Doha",
+      },
+      {
+        type: "p",
+        body: "Uber operates in Doha using licensed vehicles. Fares are comparable to Karwa taxis and include upfront pricing. Careem (acquired by Uber) is also available and popular regionally. Both apps work at Hamad Airport from the designated rideshare pickup area.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Doha Airport to the city?",
+            a: "QAR 40–60 to West Bay or Souq Waqif. The Doha Metro costs QAR 2–3 and runs directly from the airport terminal.",
+          },
+          {
+            q: "What is Karwa?",
+            a: "Karwa is Qatar's government-owned taxi company — the official metered taxi service. Karwa taxis are the standard reliable option at Doha's Hamad Airport.",
+          },
+          {
+            q: "Is Uber available in Doha?",
+            a: "Yes — Uber and Careem both operate in Doha. Prices are similar to Karwa taxis.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Hamad International Airport — Transport",
+        url: "https://dohahamadairport.com/transport",
+      },
+    ],
+  },
+
+  // ── Abu Dhabi ─────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-abu-dhabi",
+    title: "How Much Does a Taxi Cost in Abu Dhabi? (2026 Guide)",
+    description:
+      "Abu Dhabi Airport to the city costs AED 50–80 by taxi. Here's the 2026 fare breakdown — TransAD metered taxis, night surcharges, and how Uber compares in the UAE capital.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Abu Dhabi",
+    country: "United Arab Emirates",
+    citySlug: "abu-dhabi",
+    countrySlug: "united-arab-emirates",
+    content: [
+      {
+        type: "intro",
+        body: "Abu Dhabi taxis are operated by TransAD, a government-regulated company running metered silver and silver-and-gold coloured vehicles. Fares are among the most affordable in the Gulf region. Uber also operates and offers a useful alternative for upfront pricing.",
+      },
+      {
+        type: "h2",
+        heading: "Abu Dhabi Taxi Rates — TransAD (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (day, 06:00–22:00)", value: "AED 5.00 (~$1.36)" },
+          { label: "Per km (day)", value: "AED 1.82 (~$0.50)" },
+          { label: "Minimum fare", value: "AED 12.00" },
+          { label: "Flag fall (night, 22:00–06:00)", value: "AED 5.50" },
+          { label: "Per km (night)", value: "AED 1.93" },
+          { label: "Airport booking fee (AUH)", value: "AED 5.00" },
+          { label: "Phone booking fee", value: "AED 3.00" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Abu Dhabi Airport (AUH)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "AUH → Corniche / downtown Abu Dhabi", value: "AED 50–75" },
+          {
+            label: "AUH → Yas Island (Ferrari World / Yas Marina)",
+            value: "AED 35–50",
+          },
+          {
+            label: "AUH → Saadiyat Island (Louvre Abu Dhabi)",
+            value: "AED 40–60",
+          },
+          { label: "AUH → Khalidiyah (residential)", value: "AED 55–75" },
+          { label: "Corniche → Sheikh Zayed Grand Mosque", value: "AED 18–28" },
+          { label: "Yas Island → downtown Abu Dhabi", value: "AED 30–45" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "There is no Metro in Abu Dhabi. Taxis and Uber are the practical transport options for tourists. The city is car-oriented and walking between attractions is generally not practical. A taxi from Yas Island to the Grand Mosque (two major tourist sites) costs AED 30–50.",
+      },
+      {
+        type: "h2",
+        heading: "Uber in Abu Dhabi",
+      },
+      {
+        type: "p",
+        body: "Uber and Careem (Uber-owned) both operate in Abu Dhabi. Prices are similar to TransAD metered taxis. Uber offers upfront pricing and card payment — useful for visitors who want to avoid cash. The Abu Dhabi taxis app also lets you pre-book TransAD taxis.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Abu Dhabi Airport to the city?",
+            a: "AED 50–75 to the Corniche or downtown area. Uber is similarly priced. The journey takes 20–35 minutes.",
+          },
+          {
+            q: "Is there public transport from Abu Dhabi Airport?",
+            a: "Yes — Abu Dhabi city buses serve the airport (Route A1 to Al Wahda Bus Terminal). However, for tourists with luggage, a taxi is far more practical.",
+          },
+          {
+            q: "Is Uber available in Abu Dhabi?",
+            a: "Yes — Uber and Careem both operate. Prices are similar to metered TransAD taxis.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Abu Dhabi Airport — Ground Transport",
+        url: "https://www.abudhabiairport.ae/en/transport-and-parking",
+      },
+    ],
+  },
+
+  // ── Tel Aviv ──────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-tel-aviv",
+    title: "How Much Does a Taxi Cost in Tel Aviv? (2026 Guide)",
+    description:
+      "Tel Aviv Ben Gurion Airport to the city costs ILS 120–160 by taxi. Here's the 2026 fare breakdown — metered Moniyot taxis, the Airport Express train, and Gett vs Yango.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Tel Aviv",
+    country: "Israel",
+    citySlug: "tel-aviv",
+    countrySlug: "israel",
+    content: [
+      {
+        type: "intro",
+        body: "Tel Aviv taxis (called Moniyot in Hebrew) are metered, regulated by the Ministry of Transport, and widely available. The city also has an excellent intercity rail network — the Airport Express runs from Ben Gurion Airport to Tel Aviv HaShalom station in 20 minutes. Gett (formerly GetTaxi) is the dominant taxi app.",
+      },
+      {
+        type: "h2",
+        heading: "Tel Aviv Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Flag fall (day, 05:30–21:00)",
+            value: "ILS 13.90 (~$3.75)",
+          },
+          { label: "Per km (day)", value: "ILS 4.55 (~$1.23)" },
+          { label: "Minimum fare", value: "ILS 13.90" },
+          { label: "Night flag fall (21:00–05:30)", value: "ILS 16.50" },
+          { label: "Night per km", value: "ILS 5.40" },
+          { label: "Shabbat / holiday surcharge", value: "+25% on day rate" },
+          { label: "Airport surcharge (TLV)", value: "ILS 5.00" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Ben Gurion Airport (TLV)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "TLV → Tel Aviv city centre (Ibn Gavirol / Dizengoff)",
+            value: "ILS 120–165",
+          },
+          { label: "TLV → Jaffa (Old Jaffa)", value: "ILS 130–170" },
+          {
+            label: "TLV → Tel Aviv beach area (Hayarkon St)",
+            value: "ILS 125–165",
+          },
+          { label: "TLV → Jerusalem (intercity)", value: "ILS 350–450" },
+          { label: "Tel Aviv centre → Jaffa", value: "ILS 30–50" },
+          {
+            label: "Tel Aviv centre → Rothschild Boulevard",
+            value: "ILS 14 (minimum)",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Airport Express rail service (operated by Israel Railways) runs from Ben Gurion Airport to Tel Aviv HaShalom in 20 minutes for ILS 21. Trains run every 30 minutes. This is far cheaper than a taxi for solo travellers. Connect to other Tel Aviv stations (Savidor, Hashalom) or continue to Jerusalem.",
+      },
+      {
+        type: "h2",
+        heading: "Gett and Yango in Tel Aviv",
+      },
+      {
+        type: "p",
+        body: "Gett (known locally as GetTaxi) is the dominant taxi app in Israel — it dispatches licensed metered taxis at regulated rates. Yango (Yandex's international ride-hailing app) also operates in Israel at competitive rates. Uber does not operate in Israel. Both Gett and Yango offer app payment and upfront price estimates.",
+      },
+      {
+        type: "warning",
+        body: "Shabbat (Friday sunset to Saturday night) surcharges significantly increase taxi fares — up to 25% above daytime rates. If you're arriving or travelling on Saturday, expect higher taxi costs. The train service also runs reduced schedules on Shabbat.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Ben Gurion Airport to Tel Aviv?",
+            a: "ILS 120–165 during the day. The Airport Express train costs ILS 21 in 20 minutes.",
+          },
+          {
+            q: "Is Uber available in Tel Aviv?",
+            a: "No — Uber does not operate in Israel. Gett and Yango are the main ride-hailing apps.",
+          },
+          {
+            q: "What is the Shabbat surcharge in Israeli taxis?",
+            a: "A 25% supplement on the standard daytime rate, applying Friday at sunset through Saturday night. The meter automatically switches tariffs.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Israel Railways — Ben Gurion Airport Line",
+        url: "https://www.rail.co.il/en/",
+      },
+    ],
+  },
+
+  // ── Cape Town ─────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-cape-town",
+    title: "How Much Does a Taxi Cost in Cape Town? (2026 Guide)",
+    description:
+      "Cape Town Airport to the city costs ZAR 250–380 by taxi. Here's the 2026 fare breakdown — metered vs e-hailing, why street hailing is not recommended, and Uber vs InDriver.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Cape Town",
+    country: "South Africa",
+    citySlug: "cape-town",
+    countrySlug: "south-africa",
+    content: [
+      {
+        type: "intro",
+        body: "Cape Town metered taxis are regulated but rarely hailed from the street — the culture here is to pre-book or use the Uber/Bolt app. Traditional 'minibus taxis' (informal shared transport) are used by locals but are not safe or practical for visitors. For tourists, Uber is the standard and safest option.",
+      },
+      {
+        type: "h2",
+        heading: "Cape Town Metered Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "ZAR 20 (~$1.10)" },
+          { label: "Per km", value: "ZAR 14 (~$0.77)" },
+          { label: "Minimum fare", value: "ZAR 40" },
+          { label: "Night surcharge (22:00–06:00)", value: "+15%" },
+          { label: "Airport pickup surcharge (CPT)", value: "ZAR 20–30" },
+          { label: "Phone booking fee", value: "ZAR 15–25" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Cape Town Airport (CPT)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "CPT → V&A Waterfront", value: "ZAR 250–360" },
+          { label: "CPT → City Bowl / Long Street", value: "ZAR 240–340" },
+          { label: "CPT → Sea Point / Green Point", value: "ZAR 270–380" },
+          { label: "CPT → Camps Bay", value: "ZAR 290–400" },
+          { label: "CPT → Stellenbosch", value: "ZAR 350–480" },
+          {
+            label: "V&A Waterfront → Table Mountain (lower cable station)",
+            value: "ZAR 80–130",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Uber and Bolt are the default transport option for visitors in Cape Town. UberX from CPT Airport to the V&A Waterfront costs ZAR 180–260 — 25–30% cheaper than a metered taxi. Both apps log the trip, driver, and route, which is important for safety.",
+      },
+      {
+        type: "h2",
+        heading: "Safety Notes for Cape Town Transport",
+      },
+      {
+        type: "p",
+        body: "Do not use informal minibus taxis (which are standard transport for local commuters) as a visitor — they are not designed for tourists and carry safety risks. Use Uber, Bolt, or pre-booked metered taxis from reputable companies (Excite Taxis, Rikkis). Always sit in the back seat and lock the door immediately.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Cape Town Airport to the Waterfront?",
+            a: "ZAR 250–360 by metered taxi. Uber/Bolt runs ZAR 180–260. The journey takes 20–35 minutes.",
+          },
+          {
+            q: "Is Uber available in Cape Town?",
+            a: "Yes — Uber and Bolt are widely used in Cape Town and are the recommended transport option for tourists.",
+          },
+          {
+            q: "Are Cape Town taxis safe?",
+            a: "Pre-booked metered taxis and Uber/Bolt are safe. Do not hail taxis from the street or use informal minibus taxis as a visitor.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Cape Town Airport — Ground Transport",
+        url: "https://www.airports.co.za/our-airports/cape-town-international-airport/getting-to-and-from",
+      },
+    ],
+  },
+
+  // ── Beijing ───────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-beijing",
+    title: "How Much Does a Taxi Cost in Beijing? (2026 Guide)",
+    description:
+      "Beijing Capital Airport to the city costs CNY 90–130 by taxi. Here's the 2026 fare breakdown — metered rates, the Airport Express train, and how DiDi works without Uber.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 6,
+    category: "taxi",
+    city: "Beijing",
+    country: "China",
+    citySlug: "beijing",
+    countrySlug: "china",
+    content: [
+      {
+        type: "intro",
+        body: "Beijing taxis are metered, regulated, and extremely affordable by global standards. Two airports serve the city: Capital Airport (PEK, 28 km northeast) and Daxing Airport (PKX, 46 km south). Uber does not operate in China — DiDi is the dominant ride-hailing app, though foreign payment setup requires some preparation.",
+      },
+      {
+        type: "h2",
+        heading: "Beijing Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (day, first 3 km)", value: "CNY 13 (~$1.80)" },
+          { label: "Per km (day, after 3 km)", value: "CNY 2.30 (~$0.32)" },
+          { label: "Minimum fare", value: "CNY 13" },
+          { label: "Night surcharge (23:00–05:00)", value: "+20% on meter" },
+          { label: "Fuel surcharge", value: "CNY 1 per trip" },
+          {
+            label: "Airport expressway toll (PEK)",
+            value: "CNY 15–20 (added to fare)",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Beijing Capital Airport (PEK)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "PEK → Wangfujing / Tiananmen (centre)",
+            value: "CNY 90–130",
+          },
+          {
+            label: "PEK → Sanlitun / Chaoyang (embassy district)",
+            value: "CNY 70–100",
+          },
+          { label: "PEK → Zhongguancun (tech district)", value: "CNY 100–140" },
+          { label: "PEK → Beijing South Station (HSR)", value: "CNY 100–140" },
+          { label: "PKX Daxing → Tiananmen", value: "CNY 130–180" },
+          {
+            label: "Wangfujing → Forbidden City",
+            value: "CNY 13 (minimum, very close)",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Airport Express from PEK runs to Sanyuanqiao and Dongzhimen stations in 20 minutes for CNY 25. Connect to Metro Line 2 (ring line) or Line 10 for the rest of the city. At CNY 25 vs CNY 90–130 for a taxi, the Airport Express is the clear choice for central destinations.",
+      },
+      {
+        type: "h2",
+        heading: "DiDi in Beijing (Instead of Uber)",
+      },
+      {
+        type: "p",
+        body: "DiDi is China's dominant ride-hailing platform — think Uber but Chinese. The DiDi app requires a Chinese phone number for registration, which can be a barrier for visitors. DiDi International has a version for international visitors that accepts foreign credit cards. Alternatively, many hotels in Beijing can call a taxi or DiDi on your behalf.",
+      },
+      {
+        type: "warning",
+        body: "Carry your destination written in Chinese characters — many Beijing taxi drivers do not read English or Roman script. Your hotel's business card or a translation app showing the address in Chinese will help enormously.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Beijing Airport to the city?",
+            a: "CNY 90–130 to central Beijing (Wangfujing, Tiananmen area). The Airport Express train costs CNY 25 in 20 minutes.",
+          },
+          {
+            q: "Is Uber available in Beijing?",
+            a: "No — Uber does not operate in China. DiDi is the local equivalent. DiDi International supports foreign credit cards for visitors.",
+          },
+          {
+            q: "How do I tell a Beijing taxi driver my destination?",
+            a: "Show the destination in Chinese characters — use your hotel's business card, Google Translate with your phone screen, or a pre-written note. Most drivers do not read English.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Beijing Capital Airport — Ground Transport",
+        url: "https://en.bcia.com.cn/traffic/index.shtml",
+      },
+    ],
+  },
+
+  // ── Manila ────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-manila",
+    title: "How Much Does a Taxi Cost in Manila? (2026 Guide)",
+    description:
+      "Manila NAIA Airport to Makati costs PHP 300–500 by taxi. Here's the 2026 fare breakdown — metered vs airport taxis, why Grab beats the yellow cabs, and the airport terminal confusion explained.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 6,
+    category: "taxi",
+    city: "Manila",
+    country: "Philippines",
+    citySlug: "manila",
+    countrySlug: "philippines",
+    content: [
+      {
+        type: "intro",
+        body: "Manila's NAIA Airport (Ninoy Aquino International) has four terminals spread across two cities. Yellow metered taxis are available but have a troubled reputation for tampered meters and overcharging. The NAIA terminal specifically operates 'airport taxis' at fixed yellow-receipt rates. Grab is the safest and most transparent option.",
+      },
+      {
+        type: "h2",
+        heading: "Manila Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (first 500m)", value: "PHP 40 (~$0.70)" },
+          { label: "Per 200m after flag fall", value: "PHP 3.50" },
+          { label: "Effective per km", value: "~PHP 17.50/km" },
+          { label: "Minimum fare", value: "PHP 40" },
+          {
+            label: "NAIA Airport taxi (fixed receipt system)",
+            value: "PHP 70 minimum",
+          },
+          { label: "Night surcharge (22:00–05:00)", value: "+20% on meter" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from NAIA Airport",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "NAIA (T1/T2/T3) → Makati CBD / BGC", value: "PHP 300–500" },
+          {
+            label: "NAIA → Ermita / Malate (tourism belt)",
+            value: "PHP 200–350",
+          },
+          { label: "NAIA → Ortigas / Pasig", value: "PHP 400–600" },
+          { label: "NAIA → Quezon City", value: "PHP 450–650" },
+          { label: "Makati → Intramuros (old city)", value: "PHP 120–200" },
+          { label: "Makati → SM Mall of Asia", value: "PHP 150–250" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Grab is the safest, most transparent, and often cheapest way to get around Manila. GrabCar from NAIA to Makati typically costs PHP 200–380 — cheaper than metered taxis and with full upfront pricing. Grab pickup at NAIA is from the designated rideshare zones at each terminal (outside baggage claim, not the taxi area).",
+      },
+      {
+        type: "h2",
+        heading: "The Four NAIA Terminals",
+      },
+      {
+        type: "p",
+        body: "NAIA has four terminals — T1 (international), T2 (Philippine Airlines domestic), T3 (Cebu Pacific and others), and T4 (budget international). They are not connected and are a significant distance apart. Confirm which terminal your flight uses before arriving or departing. Getting between terminals requires a taxi or shuttle.",
+      },
+      {
+        type: "warning",
+        body: "Avoid unlicensed touts inside or near NAIA offering 'fixed rate' rides without a meter or receipt. Only use the official airport taxi booths inside the terminal (which issue pre-paid receipts) or Grab from the designated rideshare zones. Overcharging of visitors is common with unregulated drivers.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Manila Airport to Makati?",
+            a: "PHP 300–500 by metered taxi. Grab typically runs PHP 200–380. Traffic is Manila's biggest variable — the same route can take 20 minutes at midnight or 90 minutes during rush hour.",
+          },
+          {
+            q: "Is Grab available at Manila Airport?",
+            a: "Yes — Grab operates at all NAIA terminals from designated rideshare pickup zones outside baggage claim. It is the recommended option over street taxis.",
+          },
+          {
+            q: "Which NAIA terminal do I use?",
+            a: "T1 for most international airlines (excluding Philippine Airlines). T2 for Philippine Airlines (PAL). T3 for Cebu Pacific, AirAsia. T4 for budget international. Confirm with your airline.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "NAIA Airport — Ground Transport",
+        url: "https://www.manila-airport.net/transport.html",
+      },
+    ],
+  },
+
   // ── Taxi Driver Phrases (Tier 2 — Linkable / Shareable) ───────────────────
   {
     slug: "what-to-say-to-your-taxi-driver-in-15-languages",
