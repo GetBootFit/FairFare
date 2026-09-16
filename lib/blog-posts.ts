@@ -6047,6 +6047,821 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
 
+  // ── Budapest ──────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-budapest",
+    title: "How Much Does a Taxi Cost in Budapest? (2026 Guide)",
+    description:
+      "Budapest Airport to the city centre costs HUF 12,000–16,000 (€30–40) by taxi. Here's the 2026 fare breakdown — the regulated flat rate, how Bolt halves the price, and the airport minibus alternative.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 6,
+    category: "taxi",
+    city: "Budapest",
+    country: "Hungary",
+    citySlug: "budapest",
+    countrySlug: "hungary",
+    content: [
+      {
+        type: "intro",
+        body: "Budapest taxis are metered and heavily regulated following a 2013 reform that standardised fares after years of overcharging scandals. All licensed taxis now display a yellow roof sign, a taximeter, and the Főtaxi or Bolt logo. The city is well-covered by Bolt, which undercuts traditional taxis by 30–40%.",
+      },
+      {
+        type: "h2",
+        heading: "Budapest Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "HUF 1,100 (~€2.80)" },
+          { label: "Per km", value: "HUF 600 (~€1.50)" },
+          { label: "Minimum fare", value: "HUF 1,100 (~€2.80)" },
+          { label: "Wait time (per hour)", value: "HUF 6,000 (~€15)" },
+          {
+            label: "BUD Airport → city flat rate (licensed taxis)",
+            value: "HUF 9,500–12,000 (~€24–30)",
+          },
+          { label: "Night surcharge", value: "None (same rate 24/7)" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Budapest Airport (BUD / Liszt Ferenc)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "BUD → District V (Belváros / Vörösmarty tér)",
+            value: "HUF 11,000–15,000",
+          },
+          {
+            label: "BUD → District VII (Jewish Quarter / Ruin Bars)",
+            value: "HUF 10,000–14,000",
+          },
+          {
+            label: "BUD → Buda side (Castle District)",
+            value: "HUF 13,000–17,000",
+          },
+          { label: "BUD → Keleti train station", value: "HUF 9,000–12,000" },
+          {
+            label: "City centre → Buda Castle (funicular base)",
+            value: "HUF 2,500–4,000",
+          },
+          { label: "City centre → Széchenyi Baths", value: "HUF 2,000–3,500" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The airport minibus (Minibud) runs shared door-to-door transfers from BUD Airport to any Budapest address for HUF 5,500–6,500 (€14–16) per person. It takes 45–90 minutes with multiple stops. For solo budget travellers, this is the cheapest option. The 100E airport bus runs to Deák tér for HUF 1,200.",
+      },
+      {
+        type: "h2",
+        heading: "Bolt in Budapest",
+      },
+      {
+        type: "p",
+        body: "Bolt is extremely popular in Budapest and typically 30–40% cheaper than a metered taxi for city routes. From the airport, Bolt's upfront price to central Budapest is often HUF 7,000–9,500 — roughly half the official taxi rack rate. Uber exited Hungary in 2016; Bolt is the dominant ride-hailing app. Pickup at BUD Airport is from the designated rideshare area in the car park.",
+      },
+      {
+        type: "h2",
+        heading: "Avoiding Taxi Scams in Budapest",
+      },
+      {
+        type: "p",
+        body: "Always use a licensed taxi (yellow roof sign, metered) or book via the Bolt app. Street taxis in Budapest's city centre sometimes quote flat prices to tourists rather than using the meter — these prices are invariably higher than the metered fare. If a driver refuses to use the meter, find another cab.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Budapest Airport to the city?",
+            a: "Metered taxis charge HUF 11,000–15,000 (€28–38). Bolt costs HUF 7,000–9,500 (€18–24). The 100E airport bus to Deák tér costs HUF 1,200.",
+          },
+          {
+            q: "Is Uber available in Budapest?",
+            a: "No — Uber exited Hungary in 2016. Bolt is the dominant ride-hailing app and widely used.",
+          },
+          {
+            q: "How do I avoid taxi overcharging in Budapest?",
+            a: "Use the Bolt app for fixed upfront pricing, or insist the metered taxi uses the meter. Look for the yellow roof sign and taximeter as signs of a licensed cab.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Budapest Airport — Ground Transport",
+        url: "https://www.bud.hu/en/passengers/to_from_the_airport",
+      },
+    ],
+  },
+
+  // ── Warsaw ────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-warsaw",
+    title: "How Much Does a Taxi Cost in Warsaw? (2026 Guide)",
+    description:
+      "Warsaw Chopin Airport to the city centre costs PLN 45–65 (€10–15) by taxi. Here's the 2026 fare breakdown — regulated rates, the SKM train alternative, and Bolt vs local taxi apps.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Warsaw",
+    country: "Poland",
+    citySlug: "warsaw",
+    countrySlug: "poland",
+    content: [
+      {
+        type: "intro",
+        body: "Warsaw taxis are metered, regulated by the city, and genuinely affordable by Western European standards. The PLN 3.00/km rate makes even airport journeys reasonable. Bolt and FreeNow operate alongside traditional taxis. The SKM commuter rail from Chopin Airport offers the cheapest connection for solo travellers.",
+      },
+      {
+        type: "h2",
+        heading: "Warsaw Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (day, 06:00–22:00)", value: "PLN 8.00 (~€1.85)" },
+          { label: "Per km (day)", value: "PLN 3.00 (~€0.70)" },
+          { label: "Flag fall (night / weekends)", value: "PLN 8.00" },
+          { label: "Per km (night / weekends)", value: "PLN 4.50 (~€1.05)" },
+          { label: "Minimum fare", value: "PLN 8.00" },
+          { label: "Airport surcharge", value: "PLN 5.00" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Warsaw Chopin Airport (WAW)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "WAW → Old Town (Stare Miasto) / City Centre",
+            value: "PLN 45–65",
+          },
+          { label: "WAW → Śródmieście (downtown)", value: "PLN 40–55" },
+          { label: "WAW → Praga district (east bank)", value: "PLN 55–70" },
+          { label: "WAW → Wilanów (south)", value: "PLN 35–50" },
+          {
+            label: "City centre → Warsaw Central Station (PKP)",
+            value: "PLN 10–18",
+          },
+          { label: "City centre → POLIN Museum / Muranów", value: "PLN 12–20" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The SKM urban rail from Chopin Airport to Warsaw Central Station costs PLN 4.40 and takes 20 minutes. Trains run every 15–30 minutes. At PLN 4.40 vs PLN 45–65 for a taxi, the train is significantly cheaper for solo travellers and avoids rush-hour traffic on Al. Jerozolimskie.",
+      },
+      {
+        type: "h2",
+        heading: "Bolt and iTaxi in Warsaw",
+      },
+      {
+        type: "p",
+        body: "Bolt is the dominant ride-hailing app in Warsaw and offers prices 20–30% below metered taxis. iTaxi is a popular Polish taxi app that books licensed cabs at standard metered rates. Uber also operates. For airport journeys, Bolt's upfront price from WAW to the city centre typically runs PLN 35–50 — less than a metered taxi.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Warsaw Airport to the city?",
+            a: "PLN 45–65 (€10–15) for a metered taxi. Bolt runs PLN 35–50. The SKM train costs PLN 4.40 for solo travellers.",
+          },
+          {
+            q: "Is Warsaw taxi cheap?",
+            a: "By Western European standards, yes. The PLN 3/km day rate (roughly €0.70/km) makes Warsaw one of the more affordable European capitals for taxi travel.",
+          },
+          {
+            q: "Is Bolt available in Warsaw?",
+            a: "Yes — Bolt is widely used in Warsaw and 20–30% cheaper than metered taxis. Uber also operates.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Warsaw Chopin Airport — Transport",
+        url: "https://www.lotnisko-chopina.pl/en/transport.html",
+      },
+    ],
+  },
+
+  // ── Dublin ────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-dublin",
+    title: "How Much Does a Taxi Cost in Dublin? (2026 Guide)",
+    description:
+      "Dublin Airport to the city centre costs €25–35 by taxi. Here's the 2026 fare breakdown — regulated SPSV rates, how the Airlink bus saves €20, and why Dublin taxis don't use apps like Uber.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 6,
+    category: "taxi",
+    city: "Dublin",
+    country: "Ireland",
+    citySlug: "dublin",
+    countrySlug: "ireland",
+    content: [
+      {
+        type: "intro",
+        body: "Dublin taxis — officially called Small Public Service Vehicles (SPSVs) — are metered, regulated by the National Transport Authority, and dark blue since a 2015 standardisation. Fares are set nationally. The city has no Uber in the traditional sense (Uber uses licensed SPSV drivers at meter rates), but Free Now (formerly mytaxi) is widely used.",
+      },
+      {
+        type: "h2",
+        heading: "Dublin Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (day, 08:00–22:00)", value: "€4.10" },
+          { label: "Per km (day)", value: "€1.14" },
+          { label: "Minimum fare", value: "€4.10" },
+          { label: "Night flag fall (22:00–08:00, Mon–Sat)", value: "€4.75" },
+          { label: "Night per km", value: "€1.42" },
+          { label: "Sunday / public holiday flag fall", value: "€4.75" },
+          { label: "Airport surcharge (Dublin Airport)", value: "€3.71" },
+          { label: "Booking fee", value: "€2.00 (phone), free (app)" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Dublin Airport (DUB)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "DUB → Dublin City Centre (O'Connell St / Trinity College)",
+            value: "€25–35",
+          },
+          { label: "DUB → Temple Bar / Grafton Street", value: "€28–38" },
+          { label: "DUB → Docklands / Grand Canal Dock", value: "€30–40" },
+          { label: "DUB → Ballsbridge / Donnybrook", value: "€32–42" },
+          { label: "DUB → Heuston Station", value: "€30–40" },
+          { label: "City centre → Phoenix Park", value: "€10–16" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Airlink Express bus (Route 747) runs from Dublin Airport to the city centre (O'Connell Street, Heuston, and Connolly stations) for €7.00 one-way. Journey time is 30–45 minutes. At €7 vs €25–35 for a taxi, the bus saves €18–28 for solo travellers.",
+      },
+      {
+        type: "h2",
+        heading: "Free Now and Uber in Dublin",
+      },
+      {
+        type: "p",
+        body: "Uber operates in Dublin but uses licensed SPSV drivers at NTA-regulated meter rates — not cheaper than a regular taxi and with no surge pricing advantage. Free Now (formerly mytaxi) is the more popular app and lets you book licensed Dublin taxis with cashless payment. For airport journeys, the official taxi rank at Terminal 1 and Terminal 2 is the most straightforward option.",
+      },
+      {
+        type: "h2",
+        heading: "Tipping in Dublin Taxis",
+      },
+      {
+        type: "p",
+        body: "Tipping is common but not mandatory in Dublin. Rounding up to the nearest euro or adding €2–3 on longer airport journeys is standard. A 10% tip is generous and appreciated.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Dublin Airport to the city?",
+            a: "€25–35 during the day, including the €3.71 airport surcharge. The Airlink 747 bus costs €7.00 and takes 30–45 minutes.",
+          },
+          {
+            q: "Is Uber available in Dublin?",
+            a: "Yes — Uber uses licensed SPSV drivers at regulated meter rates. It is not cheaper than a regular taxi. Free Now is the more widely used taxi app in Dublin.",
+          },
+          {
+            q: "Why do Dublin taxis have night surcharges?",
+            a: "National Transport Authority regulations set a higher night tariff (22:00–08:00, plus Sundays and public holidays) to account for lower driver earnings during off-peak hours.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "National Transport Authority — SPSV Fare Regulations",
+        url: "https://www.nationaltransport.ie/taxi-regulation/",
+      },
+    ],
+  },
+
+  // ── Milan ─────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-milan",
+    title: "How Much Does a Taxi Cost in Milan? (2026 Guide)",
+    description:
+      "Milan Malpensa Airport to the city centre costs €90–110 by taxi. Here's the 2026 fare breakdown — why Linate is more convenient, the Malpensa Express train, and how Italian taxi tariff zones work.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 7,
+    category: "taxi",
+    city: "Milan",
+    country: "Italy",
+    citySlug: "milan",
+    countrySlug: "italy",
+    content: [
+      {
+        type: "intro",
+        body: "Milan has three airports serving the city: Malpensa (MXP, 50 km northwest), Linate (LIN, 8 km east), and Bergamo Orio al Serio (BGY, 50 km east). Taxi fares vary enormously by airport. White Milanese taxis are metered with fixed supplements for airports, luggage, and night travel.",
+      },
+      {
+        type: "h2",
+        heading: "Milan Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (day, 06:00–21:00)", value: "€3.50" },
+          { label: "Per km (day)", value: "€1.10" },
+          { label: "Minimum fare", value: "€5.40" },
+          { label: "Night flag fall (21:00–06:00)", value: "€6.50" },
+          { label: "Night per km", value: "€1.50" },
+          {
+            label: "Malpensa Airport fixed supplement",
+            value: "€90 (day) / €110 (night)",
+          },
+          { label: "Linate Airport fixed supplement", value: "€8.00" },
+          { label: "Luggage (per bag)", value: "€1.00" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Milan Airports",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "MXP Malpensa → Milan Centrale (day)", value: "€90–100" },
+          {
+            label: "MXP Malpensa → Duomo / city centre (night)",
+            value: "€110–120",
+          },
+          { label: "LIN Linate → Milan Centrale", value: "€15–22" },
+          { label: "LIN Linate → Duomo / city centre", value: "€18–25" },
+          {
+            label: "BGY Bergamo → Milan Centrale",
+            value: "€110–130 (metered)",
+          },
+          { label: "Milan Centrale → Duomo", value: "€8–14" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "From Malpensa, the Malpensa Express train runs to Milan Centrale in 50 minutes for €13.00, or to Cadorna station in 40 minutes. At €13 vs €90+ for a taxi, the train is dramatically cheaper for solo travellers. Trains run every 30 minutes.",
+      },
+      {
+        type: "h2",
+        heading: "Linate vs Malpensa: Which Airport?",
+      },
+      {
+        type: "p",
+        body: "Linate Airport (LIN) is only 8 km from central Milan. A taxi from Linate costs €15–22 — a fraction of the €90+ from Malpensa. If your flight options include both airports, Linate is significantly more convenient and cheaper for city-centre destinations. The tram (Line 73) from Linate to the Duomo costs €2 and takes 25 minutes.",
+      },
+      {
+        type: "h2",
+        heading: "Uber and Rideshare in Milan",
+      },
+      {
+        type: "p",
+        body: "Uber operates in Milan using licensed NCC vehicles (not standard UberX peer-to-peer, which is restricted in Italy). Fares are higher than in other countries. For Malpensa transfers, pre-booked NCC services often run €70–85 — saving €15–20 vs a taxi rank cab. itTaxi and FREE NOW also let you book licensed Milanese white taxis.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Malpensa Airport to Milan?",
+            a: "€90–100 day rate (fixed supplement). The Malpensa Express train costs €13.00 and takes 50 minutes to Milan Centrale.",
+          },
+          {
+            q: "Which Milan airport is closest to the city?",
+            a: "Linate (LIN) is 8 km from the city centre — taxi costs €15–22. Malpensa (MXP) is 50 km away — taxi costs €90+. If you have a choice of airport, Linate is much more convenient.",
+          },
+          {
+            q: "Is Uber available in Milan?",
+            a: "Yes — but Uber uses licensed NCC vehicles at higher rates than in the US or UK. Expect €70–85 for a Malpensa transfer vs €90+ for a taxi rank.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Milan Malpensa Airport — Getting to Milan",
+        url: "https://www.milanomalpensa-airport.com/en/transport",
+      },
+    ],
+  },
+
+  // ── Osaka ─────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-osaka",
+    title: "How Much Does a Taxi Cost in Osaka? (2026 Guide)",
+    description:
+      "Osaka Itami Airport to the city centre costs ¥3,000–4,500 by taxi. Here's the 2026 fare breakdown — Japan's unique flag-fall system, the Haruka Express vs taxi, and why Uber is rarely worth it.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 6,
+    category: "taxi",
+    city: "Osaka",
+    country: "Japan",
+    citySlug: "osaka",
+    countrySlug: "japan",
+    content: [
+      {
+        type: "intro",
+        body: "Osaka taxis are metered, immaculately maintained, and operated by uniformed drivers. Japan's taxi system is among the world's most reliable — meters are tamper-proof, prices are regulated by the Ministry of Land, Infrastructure, Transport and Tourism, and the famous white-gloved drivers take pride in their work. Night surcharges of 20–30% apply after 22:00.",
+      },
+      {
+        type: "h2",
+        heading: "Osaka Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (first 1.6 km)", value: "¥680" },
+          { label: "Per 237m after flag fall", value: "¥80" },
+          { label: "Effective per km", value: "~¥337/km" },
+          { label: "Minimum fare", value: "¥680" },
+          { label: "Night surcharge (22:00–05:00)", value: "+22% on meter" },
+          { label: "Luggage fee", value: "None (included)" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Osaka Airports",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "ITM Itami → Umeda / Osaka Station", value: "¥3,000–4,000" },
+          { label: "ITM Itami → Namba / Shinsaibashi", value: "¥3,500–4,500" },
+          {
+            label: "KIX Kansai International → Namba",
+            value: "¥12,000–15,000",
+          },
+          {
+            label: "KIX Kansai International → Umeda",
+            value: "¥13,000–16,000",
+          },
+          { label: "Umeda → Namba (city centre trip)", value: "¥900–1,400" },
+          {
+            label: "Namba → Dotonbori area",
+            value: "¥680 (minimum, very close)",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "From Kansai International (KIX), the Haruka Express Limited to Osaka Station costs ¥3,600 and takes 55 minutes. The Nankai Railway to Namba costs ¥930 in 38 minutes. Both are dramatically cheaper than the ¥12,000–16,000 taxi fare from KIX. From Itami, the Airport Limousine Bus to Umeda costs ¥640 in 25 minutes.",
+      },
+      {
+        type: "h2",
+        heading: "Japanese Taxi Culture and Tips",
+      },
+      {
+        type: "p",
+        body: "Do not tip taxi drivers in Japan — tipping is not part of Japanese service culture and may cause confusion or embarrassment. Doors open and close automatically (the driver operates them). Sit in the back seat. Cash is standard; IC cards (ICOCA, Suica) are accepted in many Osaka taxis. Carry your hotel's address in Japanese script to show the driver.",
+      },
+      {
+        type: "h2",
+        heading: "Uber in Osaka",
+      },
+      {
+        type: "p",
+        body: "Uber operates in Osaka but uses licensed taxi companies rather than private drivers (required by Japanese law). As a result, Uber prices are similar to — or higher than — a regular metered taxi. GO (formerly JapanTaxi) is the dominant taxi app in Japan and works seamlessly in Osaka for cashless booking.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Osaka Itami Airport to the city?",
+            a: "¥3,000–4,500 to Umeda or Namba. The Airport Limousine Bus costs ¥640 and takes 25 minutes to Umeda.",
+          },
+          {
+            q: "How much is a taxi from Kansai International Airport (KIX) to Osaka?",
+            a: "¥12,000–16,000 — very expensive due to the 60+ km distance. The Haruka Express costs ¥3,600 to Osaka Station (55 min). The Nankai train costs ¥930 to Namba (38 min).",
+          },
+          {
+            q: "Should I tip my taxi driver in Osaka?",
+            a: "No — tipping is not part of Japanese culture and is not expected or desired. Pay the exact metered amount.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Kansai Tourist Information — Getting to Osaka",
+        url: "https://www.osaka-info.jp/en/getting-to/",
+      },
+    ],
+  },
+
+  // ── Taipei ────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-taipei",
+    title: "How Much Does a Taxi Cost in Taipei? (2026 Guide)",
+    description:
+      "Taipei Taoyuan Airport to the city costs TWD 1,000–1,400 by taxi. Here's the 2026 fare breakdown — metered rates, night surcharges, and why the Airport MRT is almost always a better choice.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 6,
+    category: "taxi",
+    city: "Taipei",
+    country: "Taiwan",
+    citySlug: "taipei",
+    countrySlug: "taiwan",
+    content: [
+      {
+        type: "intro",
+        body: "Taipei taxis are metered, yellow, affordable, and abundant. The city's taxi network is one of the densest in Asia. For airport journeys, the Airport MRT (Taoyuan Metro) provides a fast and cheap direct connection. City taxis are excellent value for short urban trips.",
+      },
+      {
+        type: "h2",
+        heading: "Taipei Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (first 1.25 km)", value: "TWD 85" },
+          { label: "Per 250m after flag fall", value: "TWD 5" },
+          { label: "Effective per km", value: "~TWD 20/km" },
+          { label: "Minimum fare", value: "TWD 85" },
+          { label: "Night surcharge (23:00–06:00)", value: "+20% on meter" },
+          { label: "Waiting time (per minute)", value: "TWD 2" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Taoyuan Airport (TPE)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "TPE → Taipei Main Station", value: "TWD 1,000–1,400" },
+          { label: "TPE → Zhongshan / Daan area", value: "TWD 1,100–1,500" },
+          { label: "TPE → Xinyi / Taipei 101", value: "TWD 1,200–1,600" },
+          {
+            label: "TPE → Zhonghe / Yonghe (Taipei suburbs)",
+            value: "TWD 1,200–1,600",
+          },
+          {
+            label: "Taipei Main Station → Shilin Night Market",
+            value: "TWD 120–180",
+          },
+          { label: "Taipei Main Station → Taipei 101", value: "TWD 150–220" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Airport MRT runs from Taoyuan Airport (T1 and T2) to Taipei Main Station in 35 minutes for TWD 160 (Express train). Standard trains take 50 minutes and cost less. At TWD 160 vs TWD 1,000+ for a taxi, the MRT is the clear choice for solo and paired travellers.",
+      },
+      {
+        type: "h2",
+        heading: "Uber and Line Taxi in Taipei",
+      },
+      {
+        type: "p",
+        body: "Uber operates legally in Taiwan using licensed professional drivers. Fares are upfront and typically 10–20% below metered taxis. Line Taxi (from Line messaging app) is extremely popular in Taipei and connects users with licensed taxis at app-dispatched rates. Taipei EasyCard works on the Airport MRT and all city transit.",
+      },
+      {
+        type: "h2",
+        heading: "City Taxis: When They Make Sense",
+      },
+      {
+        type: "p",
+        body: "For short Taipei city trips (Zhongshan to Daan, for example), metered taxis are very affordable — a typical 3–5 km urban trip costs TWD 100–200 (€3–6). The MRT covers most tourist routes but taxis are practical for late nights, luggage-heavy trips, or destinations not on the MRT grid. Carry cash — many Taipei taxis do not accept card.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Taoyuan Airport to Taipei?",
+            a: "TWD 1,000–1,400 to Taipei Main Station (35–60 min). The Airport MRT Express costs TWD 160 in 35 minutes.",
+          },
+          {
+            q: "Is Uber available in Taipei?",
+            a: "Yes — Uber uses licensed drivers in Taiwan and is legal. Fares are 10–20% below metered taxis with upfront pricing.",
+          },
+          {
+            q: "Do Taipei taxis accept card payment?",
+            a: "Some do, but cash is safer. Carry TWD — there are ATMs at Taoyuan Airport arrivals. Some taxis accept EasyCard.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Taoyuan Airport MRT — Fares and Schedules",
+        url: "https://www.tymetro.com.tw/en/index.php",
+      },
+    ],
+  },
+
+  // ── Delhi ─────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-delhi",
+    title: "How Much Does a Taxi Cost in Delhi? (2026 Guide)",
+    description:
+      "Delhi IGI Airport to Connaught Place costs INR 400–600 by taxi. Here's the 2026 fare breakdown — prepaid taxi booths, Ola and Uber vs autorickshaws, and the Delhi Metro Airport Express.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 7,
+    category: "taxi",
+    city: "Delhi",
+    country: "India",
+    citySlug: "delhi",
+    countrySlug: "india",
+    content: [
+      {
+        type: "intro",
+        body: "Delhi's taxi landscape has transformed since Ola and Uber arrived. Traditional metered black-and-yellow taxis still operate but app-based services have become the default for most visitors. The airport has regulated prepaid taxi booths — a safe and transparent option. The Delhi Metro Airport Express Line is the fastest and cheapest connection for solo travellers.",
+      },
+      {
+        type: "h2",
+        heading: "Delhi Taxi and Auto Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Metered taxi — flag fall", value: "INR 25" },
+          { label: "Metered taxi — per km", value: "INR 15" },
+          { label: "Minimum fare", value: "INR 25" },
+          { label: "Autorickshaw — flag fall", value: "INR 25" },
+          { label: "Autorickshaw — per km", value: "INR 9.50" },
+          {
+            label: "Airport prepaid taxi (IGI → Connaught Place)",
+            value: "INR 350–500",
+          },
+          { label: "Night surcharge (23:00–05:00)", value: "+25% on meter" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Delhi IGI Airport (DEL)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "DEL → Connaught Place / New Delhi", value: "INR 350–550" },
+          { label: "DEL → Karol Bagh", value: "INR 300–450" },
+          { label: "DEL → Old Delhi / Chandni Chowk", value: "INR 450–650" },
+          {
+            label: "DEL → South Delhi (Hauz Khas / Saket)",
+            value: "INR 250–380",
+          },
+          { label: "DEL → Gurugram (Gurgaon)", value: "INR 400–600" },
+          { label: "Connaught Place → India Gate", value: "INR 80–150" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Airport Express Metro runs from IGI Airport (Terminal 3) to New Delhi station in 18 minutes for INR 60. Trains run every 10–15 minutes, 05:00–23:30. At INR 60 vs INR 350–500 for a taxi, the metro is dramatically cheaper for solo travellers heading to central Delhi.",
+      },
+      {
+        type: "h2",
+        heading: "Prepaid Taxi Booths at IGI Airport",
+      },
+      {
+        type: "p",
+        body: "Inside the arrivals area of all IGI terminals, Delhi Police and DIAL (Delhi International Airport Ltd) operate official prepaid taxi counters. Pay the fixed amount at the counter and receive a receipt — hand it to the driver at the exit. This eliminates meter disputes and protects against overcharging. Prepaid rates are regulated and cheaper than most private cab estimates.",
+      },
+      {
+        type: "h2",
+        heading: "Ola and Uber in Delhi",
+      },
+      {
+        type: "p",
+        body: "Ola and Uber both have large fleets in Delhi and are the most convenient option for app-savvy travellers. From the airport, pickup is from the designated rideshare zone (Ola/Uber pick-up area, different from the taxi rank). Prices are dynamic — surge pricing applies during peak hours, rain, and festivals. OlaMicro and UberGo (economy hatchbacks) typically cost INR 280–450 from IGI to central Delhi.",
+      },
+      {
+        type: "warning",
+        body: "Do not accept rides from touts or unofficial drivers inside the terminal or on the kerb. Use only the official prepaid counter, licensed metered taxis from the designated rank, or the Ola/Uber app pickup zone. Unlicensed touts are common at Indian airports and prices are arbitrary.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Delhi Airport to Connaught Place?",
+            a: "INR 350–500 for a prepaid taxi. Ola/Uber runs INR 280–450. The Airport Express Metro costs INR 60 in 18 minutes.",
+          },
+          {
+            q: "Is Uber available at Delhi Airport?",
+            a: "Yes — both Uber and Ola have designated pickup zones at IGI Terminal 3. Download the app and book before landing to avoid the taxi rank queue.",
+          },
+          {
+            q: "What is a prepaid taxi in India?",
+            a: "A taxi booked at an official airport counter with a fixed price paid upfront. You receive a receipt — hand it to the driver. It prevents meter manipulation and overcharging.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Delhi Airport — Ground Transport",
+        url: "https://www.newdelhiairport.in/passenger-info/ground-transport.aspx",
+      },
+    ],
+  },
+
+  // ── Rio de Janeiro ────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-rio-de-janeiro",
+    title: "How Much Does a Taxi Cost in Rio de Janeiro? (2026 Guide)",
+    description:
+      "Rio de Janeiro GIG Airport to Ipanema costs BRL 90–130 by taxi. Here's the 2026 fare breakdown — Bandeira 1 vs 2 tariffs, the Aeroexpress bus, and how 99 and Uber undercut the yellow cabs.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 6,
+    category: "taxi",
+    city: "Rio de Janeiro",
+    country: "Brazil",
+    citySlug: "rio-de-janeiro",
+    countrySlug: "brazil",
+    content: [
+      {
+        type: "intro",
+        body: "Rio de Janeiro taxis are yellow, metered, and regulated by the city. The two-tariff system (Bandeira 1 for daytime, Bandeira 2 for nights, Sundays, and outside city limits) materially affects the price. App-based services (99 and Uber) are extremely popular and offer upfront pricing that removes the tariff confusion.",
+      },
+      {
+        type: "h2",
+        heading: "Rio de Janeiro Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Bandeira 1 — flag fall (Mon–Sat, 06:00–21:00)",
+            value: "BRL 5.50",
+          },
+          { label: "Bandeira 1 — per km", value: "BRL 2.75" },
+          {
+            label: "Bandeira 2 — flag fall (nights, weekends, holidays)",
+            value: "BRL 5.50",
+          },
+          {
+            label: "Bandeira 2 — per km (20% higher than B1)",
+            value: "BRL 3.30",
+          },
+          { label: "Minimum fare", value: "BRL 5.50" },
+          { label: "Luggage fee (per large bag)", value: "BRL 2.00" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Rio Galeão Airport (GIG)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "GIG → Ipanema / Leblon", value: "BRL 90–130" },
+          { label: "GIG → Copacabana", value: "BRL 80–120" },
+          { label: "GIG → Centro (downtown)", value: "BRL 50–75" },
+          { label: "GIG → Barra da Tijuca", value: "BRL 100–140" },
+          {
+            label: "Copacabana → Christ the Redeemer (base)",
+            value: "BRL 40–60",
+          },
+          { label: "Ipanema → Lapa / Santa Teresa", value: "BRL 30–50" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Aeroexpress Real bus runs from Galeão Airport to Alvorada (Barra da Tijuca) and Novo Rio bus terminal for BRL 22. For Copacabana and Ipanema, bus routes are indirect. For south zone beaches, a taxi or 99/Uber is the practical choice.",
+      },
+      {
+        type: "h2",
+        heading: "99 and Uber in Rio de Janeiro",
+      },
+      {
+        type: "p",
+        body: "99 (a Brazilian rideshare company owned by Didi) and Uber are both widely used in Rio. Both offer economy (99Pop, UberX) and premium tiers. From Galeão Airport, 99Pop and UberX typically run BRL 70–100 to Copacabana — 20–30% cheaper than a metered taxi. Both apps allow you to pay by card, avoiding the need for cash.",
+      },
+      {
+        type: "warning",
+        body: "Rio de Janeiro has significant safety concerns for tourists in taxis. Use app-based services (99, Uber) whenever possible — they log the journey, identify the driver, and provide a record. If you must use a metered taxi, use credentialled companies (Cootramo, Central Taxi). Avoid hailing from the street late at night.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Rio Airport to Copacabana?",
+            a: "BRL 80–120 by metered taxi. 99Pop or UberX costs BRL 65–95. The journey takes 40–70 minutes depending on traffic.",
+          },
+          {
+            q: "What is Bandeira 2 in Rio taxis?",
+            a: "Bandeira 2 is the night/weekend tariff — 20% higher per km than Bandeira 1. It applies Mon–Sat after 21:00, all day Sunday, and on public holidays. The taximeter display shows 1 or 2 for the active tariff.",
+          },
+          {
+            q: "Is it safe to take a taxi in Rio de Janeiro?",
+            a: "Use app-based 99 or Uber for safety and accountability. If using metered taxis, stick to recognised companies. Avoid hailing from the street late at night.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Rio de Janeiro Airport — Galeão Ground Transport",
+        url: "https://www.aeroportogaleao.net/en/transport.aspx",
+      },
+    ],
+  },
+
   // ── Taxi Driver Phrases (Tier 2 — Linkable / Shareable) ───────────────────
   {
     slug: "what-to-say-to-your-taxi-driver-in-15-languages",
