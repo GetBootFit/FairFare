@@ -8429,6 +8429,784 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
 
+  // ── Shanghai ──────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-shanghai",
+    title: "How Much Does a Taxi Cost in Shanghai? (2026 Guide)",
+    description:
+      "Shanghai Pudong Airport to the city costs CNY 180–250 by taxi. Here's the 2026 fare breakdown — the Maglev train option, DiDi for foreigners, and the difference between PVG and SHA airports.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 6,
+    category: "taxi",
+    city: "Shanghai",
+    country: "China",
+    citySlug: "shanghai",
+    countrySlug: "china",
+    content: [
+      {
+        type: "intro",
+        body: "Shanghai has two airports: Pudong (PVG, 30 km east) for international flights, and Hongqiao (SHA, 15 km west) for domestic. Metered taxis are cheap and reliable; DiDi is the ride-hailing alternative. The Maglev train from Pudong is one of the world's fastest rail connections — 430 km/h, 8 minutes, CNY 50.",
+      },
+      {
+        type: "h2",
+        heading: "Shanghai Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (day, first 3 km)", value: "CNY 14 (~$1.95)" },
+          { label: "Per km (day)", value: "CNY 2.40 (~$0.33)" },
+          { label: "Minimum fare", value: "CNY 14" },
+          { label: "Night surcharge (23:00–05:00)", value: "+30% on meter" },
+          { label: "Fuel surcharge", value: "CNY 1 per trip" },
+          { label: "Pudong expressway toll", value: "CNY 15–20" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Pudong Airport (PVG)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "PVG → The Bund / Nanjing Rd (city centre)",
+            value: "CNY 180–240",
+          },
+          {
+            label: "PVG → Lujiazui / Pudong (financial district)",
+            value: "CNY 100–140",
+          },
+          {
+            label: "PVG → French Concession / Xintiandi",
+            value: "CNY 190–250",
+          },
+          { label: "PVG → Hongqiao Station (HSR hub)", value: "CNY 220–280" },
+          { label: "SHA Hongqiao → The Bund", value: "CNY 80–120" },
+          {
+            label: "The Bund → Yu Garden",
+            value: "CNY 14 (minimum, very close)",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Maglev (magnetic levitation) train runs from Pudong Airport to Longyang Road Metro station in 8 minutes for CNY 50. At Longyang Road, connect to Metro Line 2 for the Bund and city centre. The combined Maglev + Metro journey (CNY 50 + 6) is far cheaper than a taxi (CNY 180+) and takes about 40 minutes total.",
+      },
+      {
+        type: "h2",
+        heading: "DiDi in Shanghai",
+      },
+      {
+        type: "p",
+        body: "DiDi dominates ride-hailing in Shanghai. DiDi International allows foreign credit card payment, making it accessible for visitors. From PVG to the Bund, DiDi Express typically runs CNY 160–220 — similar to a taxi but with upfront pricing and an English interface. Carry your destination in Chinese characters even with DiDi, as the in-app map may not always resolve English addresses correctly.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Shanghai Pudong Airport to the city?",
+            a: "CNY 180–250 to the Bund or French Concession. The Maglev + Metro costs CNY 56 total in about 40 minutes.",
+          },
+          {
+            q: "What is the Maglev in Shanghai?",
+            a: "The world's fastest commercial railway — 430 km/h, connecting Pudong Airport to Longyang Road Metro station in 8 minutes for CNY 50.",
+          },
+          {
+            q: "Is Uber available in Shanghai?",
+            a: "No — Uber does not operate in China. Use DiDi (DiDi International supports foreign payment cards).",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Shanghai Pudong Airport — Ground Transport",
+        url: "https://www.shanghaiairport.com/en/pvg/",
+      },
+    ],
+  },
+
+  // ── Oslo ──────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-oslo",
+    title: "How Much Does a Taxi Cost in Oslo? (2026 Guide)",
+    description:
+      "Oslo Gardermoen Airport to the city costs NOK 700–900 by taxi. Here's the 2026 fare breakdown — Norway's expensive taxi market, the Airport Express train for NOK 229, and Bolt savings.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Oslo",
+    country: "Norway",
+    citySlug: "oslo",
+    countrySlug: "norway",
+    content: [
+      {
+        type: "intro",
+        body: "Oslo taxis are metered, regulated, and among the most expensive in the world — Norway's high labour costs and strict transport regulations produce rates roughly double those of Central Europe. The Airport Express (Flytoget) train from Gardermoen cuts the airport journey cost dramatically for solo travellers.",
+      },
+      {
+        type: "h2",
+        heading: "Oslo Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (day)", value: "NOK 70 (~€6)" },
+          { label: "Per km (day)", value: "NOK 18 (~€1.55)" },
+          { label: "Minimum fare", value: "NOK 70" },
+          {
+            label: "Night surcharge (17:00–06:00 Mon–Fri, all day Sat–Sun)",
+            value: "+20–30%",
+          },
+          {
+            label: "Oslo Airport (OSL) → Oslo S flat rate (pre-booked)",
+            value: "NOK 650–850",
+          },
+          { label: "Phone/app booking", value: "NOK 15–30" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Oslo Gardermoen Airport (OSL)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "OSL → Oslo Central Station (Oslo S)",
+            value: "NOK 700–900",
+          },
+          { label: "OSL → Aker Brygge / Frogner", value: "NOK 750–950" },
+          { label: "OSL → Grünerløkka / Majorstuen", value: "NOK 720–920" },
+          {
+            label: "City centre → Vigeland Sculpture Park",
+            value: "NOK 100–160",
+          },
+          {
+            label: "City centre → Akershus Fortress",
+            value: "NOK 70 (minimum, walkable)",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Flytoget (Airport Express) runs from Gardermoen to Oslo Central Station in 20 minutes for NOK 229 (one-way). Trains run every 10 minutes. The NSB regional train also runs for NOK 120 in 23 minutes. Both are dramatically cheaper than a taxi (NOK 700+) for solo travellers.",
+      },
+      {
+        type: "h2",
+        heading: "Bolt in Oslo",
+      },
+      {
+        type: "p",
+        body: "Bolt operates in Oslo and offers 20–30% savings over metered taxis. For city trips, Bolt is the most cost-effective ride-hailing option. Uber also operates using licensed vehicles. For airport journeys, the Flytoget or NSB train is still considerably cheaper than either Bolt or a metered taxi.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Oslo Airport to the city?",
+            a: "NOK 700–900. The Flytoget costs NOK 229 in 20 minutes, or the NSB regional train costs NOK 120 in 23 minutes.",
+          },
+          {
+            q: "Why are Oslo taxis so expensive?",
+            a: "Norway has among the highest labour costs in the world. Taxi drivers earn regulated wages exceeding NOK 200/hour. Combined with the country's high cost of living, rates are well above European averages.",
+          },
+          {
+            q: "Is there a cheaper alternative to the Oslo Airport taxi?",
+            a: "Yes — the NSB regional train at NOK 120 is the cheapest option (23 min). Flytoget at NOK 229 is faster (20 min) and more comfortable.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Flytoget — Airport Express Oslo",
+        url: "https://flytoget.no/en/",
+      },
+    ],
+  },
+
+  // ── Brussels ──────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-brussels",
+    title: "How Much Does a Taxi Cost in Brussels? (2026 Guide)",
+    description:
+      "Brussels Airport to the city centre costs €40–55 by taxi. Here's the 2026 fare breakdown — regulated tariffs, the Brussels Express train for €12.80, and Uber vs Taxis Verts.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Brussels",
+    country: "Belgium",
+    citySlug: "brussels",
+    countrySlug: "belgium",
+    content: [
+      {
+        type: "intro",
+        body: "Brussels taxis are metered, regulated by the Brussels Capital Region, and white or light-coloured with a taxi sign. The city has two airports: Brussels Airport (BRU, Zaventem, 12 km northeast) and Brussels South Charleroi (CRL, 55 km south). Taxi fares and alternatives differ enormously between them.",
+      },
+      {
+        type: "h2",
+        heading: "Brussels Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Flag fall (within Brussels Capital Region)",
+            value: "€2.40",
+          },
+          { label: "Per km (within Brussels)", value: "€1.80" },
+          { label: "Minimum fare", value: "€7.00" },
+          {
+            label: "Outside Brussels Capital Region (Zaventem airport)",
+            value: "€2.70 flag fall + €2.70/km",
+          },
+          {
+            label: "Night surcharge (22:00–06:00)",
+            value: "+€2.00 on flag fall",
+          },
+          { label: "Phone/app booking fee", value: "€2.00" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Brussels Airports",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "BRU Zaventem → Brussels city centre (Grand Place area)",
+            value: "€40–55",
+          },
+          { label: "BRU Zaventem → Ixelles / Uccle", value: "€45–60" },
+          { label: "BRU Zaventem → Molenbeek / Anderlecht", value: "€45–62" },
+          {
+            label: "CRL Charleroi → Brussels city centre",
+            value: "€100–130 (55 km)",
+          },
+          { label: "Grand Place → Atomium", value: "€15–22" },
+          {
+            label: "Grand Place → Manneken Pis",
+            value: "€7 (minimum, walkable)",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Brussels Express train runs from Brussels Airport (BRU) to Brussels Central, Midi (South), and Nord stations in 20 minutes for €12.80. Trains run every 15–30 minutes. For CRL Charleroi, the Flibco.com bus costs €17 and takes 60 minutes to Brussels South station.",
+      },
+      {
+        type: "h2",
+        heading: "Uber in Brussels",
+      },
+      {
+        type: "p",
+        body: "Uber operates in Brussels using licensed vehicles. Fares are 10–20% below metered taxis for most routes. Bolt also operates. Taxis Verts and Taxis Bleus are the main licensed taxi companies and can be booked via app. For airport journeys from BRU, the train is significantly cheaper than any taxi or rideshare.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Brussels Airport to the city?",
+            a: "€40–55 to the city centre. The Brussels Express train costs €12.80 in 20 minutes.",
+          },
+          {
+            q: "What is the difference between Brussels Airport and Charleroi?",
+            a: "Brussels Airport (BRU) is 12 km from the city — easy to reach by taxi or train. Brussels South Charleroi (CRL) is 55 km away and used by budget airlines — a bus transfer adds 60 minutes each way.",
+          },
+          {
+            q: "Is Uber available in Brussels?",
+            a: "Yes — Uber and Bolt both operate in Brussels at 10–20% below metered taxi rates.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Brussels Airport — Train to Brussels",
+        url: "https://www.brusselsairport.be/en/passengers/to-from-the-airport/train",
+      },
+    ],
+  },
+
+  // ── Edinburgh ─────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-edinburgh",
+    title: "How Much Does a Taxi Cost in Edinburgh? (2026 Guide)",
+    description:
+      "Edinburgh Airport to the city costs £22–30 by taxi. Here's the 2026 fare breakdown — regulated Hackney Carriage fares, the Airlink 100 bus for £5, and how Uber fits in.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Edinburgh",
+    country: "United Kingdom",
+    citySlug: "edinburgh",
+    countrySlug: "united-kingdom",
+    content: [
+      {
+        type: "intro",
+        body: "Edinburgh black cabs (Hackney Carriages) are metered and regulated by the City of Edinburgh Council. They are some of the UK's most recognisable taxis — spacious, reliable, and able to carry wheelchairs. Private hire vehicles (PHVs) and Uber also operate. The Airlink 100 express bus from the airport is fast, frequent, and excellent value.",
+      },
+      {
+        type: "h2",
+        heading: "Edinburgh Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (first 366m)", value: "£3.00" },
+          { label: "Per km (approx)", value: "£2.10" },
+          { label: "Minimum fare", value: "£3.00" },
+          { label: "Night tariff (22:00–06:00)", value: "25% surcharge" },
+          { label: "Edinburgh Airport pickup", value: "£2.00 surcharge" },
+          { label: "Bank holidays", value: "50% surcharge" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Edinburgh Airport (EDI)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "EDI → Old Town / Royal Mile / Castle", value: "£22–30" },
+          { label: "EDI → Princes Street / New Town", value: "£20–28" },
+          { label: "EDI → Leith / Portobello", value: "£25–35" },
+          { label: "EDI → Haymarket (nearest train station)", value: "£16–22" },
+          { label: "Old Town → Arthur's Seat (base)", value: "£6–10" },
+          { label: "Old Town → Leith (port)", value: "£8–14" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Airlink 100 express bus runs from Edinburgh Airport to Waverley Bridge (city centre) in 25 minutes for £5.00. Buses run every 10 minutes throughout the day. At £5 vs £22–30 for a taxi, it is the recommended option for solo travellers.",
+      },
+      {
+        type: "h2",
+        heading: "Uber in Edinburgh",
+      },
+      {
+        type: "p",
+        body: "Uber operates in Edinburgh using licensed PHV drivers. From the airport to the city centre, Uber typically runs £18–26 — somewhat cheaper than a black cab. Edinburgh's licensed black cabs can be hailed on the street; Uber and other PHVs must be pre-booked and cannot pick up from taxi ranks.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Edinburgh Airport to the city?",
+            a: "£22–30 by black cab. Uber runs £18–26. The Airlink 100 bus costs £5 in 25 minutes.",
+          },
+          {
+            q: "Can you hail a taxi in Edinburgh?",
+            a: "Yes — Edinburgh black cabs can be hailed on the street. Uber and PHVs must be pre-booked via app.",
+          },
+          {
+            q: "Is tipping expected in Edinburgh taxis?",
+            a: "Rounding up to the nearest pound or adding 10% is customary. Not mandatory but appreciated.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Edinburgh Airport — Ground Transport",
+        url: "https://www.edinburghairport.com/transport-options",
+      },
+    ],
+  },
+
+  // ── Hanoi ─────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-hanoi",
+    title: "How Much Does a Taxi Cost in Hanoi? (2026 Guide)",
+    description:
+      "Hanoi Noi Bai Airport to the Old Quarter costs VND 350,000–450,000 by taxi. Here's the 2026 fare breakdown — Grab vs metered taxis, avoiding scam operators, and the airport bus option.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 6,
+    category: "taxi",
+    city: "Hanoi",
+    country: "Vietnam",
+    citySlug: "hanoi",
+    countrySlug: "vietnam",
+    content: [
+      {
+        type: "intro",
+        body: "Hanoi taxis are metered and affordable — but the city has a significant problem with unlicensed or dishonest operators, particularly at Noi Bai Airport. Reputable companies (Mai Linh, G7, Vinasun Hanoi) use tamper-proof meters. Grab is the safest and most transparent option, particularly for first-time visitors.",
+      },
+      {
+        type: "h2",
+        heading: "Hanoi Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (first 0.5–1 km)", value: "VND 12,000 (~$0.47)" },
+          {
+            label: "Per km (budget taxis)",
+            value: "VND 10,000–11,000 (~$0.39–0.43)",
+          },
+          {
+            label: "Per km (standard taxis)",
+            value: "VND 13,000–16,000 (~$0.51–0.63)",
+          },
+          { label: "Minimum fare", value: "VND 12,000" },
+          { label: "Night surcharge", value: "None (same rate)" },
+          {
+            label: "Noi Bai Airport toll (added to fare)",
+            value: "VND 10,000",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Noi Bai Airport (HAN)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "HAN → Old Quarter (Hoan Kiem area)",
+            value: "VND 350,000–450,000",
+          },
+          {
+            label: "HAN → Hoan Kiem Lake / Sword Lake",
+            value: "VND 360,000–460,000",
+          },
+          { label: "HAN → West Lake / Tay Ho", value: "VND 320,000–420,000" },
+          {
+            label: "HAN → Ba Dinh / Ho Chi Minh Mausoleum",
+            value: "VND 340,000–440,000",
+          },
+          {
+            label: "Old Quarter → Temple of Literature",
+            value: "VND 30,000–50,000",
+          },
+          {
+            label: "Old Quarter → Ho Tay (West Lake)",
+            value: "VND 40,000–70,000",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Grab is the recommended option in Hanoi. GrabCar from Noi Bai to the Old Quarter costs VND 260,000–340,000 — 20–30% cheaper than a metered taxi, with upfront pricing and driver details. Pickup from the Grab zone on Level 1 of the parking building opposite the arrivals hall.",
+      },
+      {
+        type: "h2",
+        heading: "Avoiding Taxi Scams in Hanoi",
+      },
+      {
+        type: "p",
+        body: "At Noi Bai Airport, only use Mai Linh (green), G7 (yellow/white), or Taxi Ba Sao from the official taxi rank. Operators with similar-looking logos to established brands (fake 'Mailinh' with different spelling, 'Vinasun' in Hanoi where Vinasun doesn't actually operate) are common scams. Taxi touts inside the terminal are universally unlicensed — walk past them. The airport bus (86) runs to the Old Quarter for VND 35,000.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Hanoi Airport to the Old Quarter?",
+            a: "VND 350,000–450,000 by metered taxi. Grab runs VND 260,000–340,000. The bus 86 costs VND 35,000.",
+          },
+          {
+            q: "Which taxi company is best in Hanoi?",
+            a: "Mai Linh (green taxis) is the most widely recommended. G7 and Ba Sao are also reputable. Avoid unofficial operators.",
+          },
+          {
+            q: "Is Grab available in Hanoi?",
+            a: "Yes — Grab is widely used and recommended. Download and set up the app before arriving. Pickup at Noi Bai is from the Level 1 car park zone.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Noi Bai Airport — Transport to Hanoi",
+        url: "https://www.noibaiairport.vn/en/to-city",
+      },
+    ],
+  },
+
+  // ── Chiang Mai ────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-chiang-mai",
+    title: "How Much Does a Taxi Cost in Chiang Mai? (2026 Guide)",
+    description:
+      "Chiang Mai Airport to the Old City costs THB 150–200 by airport taxi. Here's the 2026 fare breakdown — why Chiang Mai doesn't have metered taxis, Grab alternatives, and the songthaew red truck option.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 6,
+    category: "taxi",
+    city: "Chiang Mai",
+    country: "Thailand",
+    citySlug: "chiang-mai",
+    countrySlug: "thailand",
+    content: [
+      {
+        type: "intro",
+        body: "Chiang Mai is unusual among major Thai cities: there are virtually no metered taxis. Transport is dominated by songthaews (red shared pickup trucks), tuk-tuks, motorbike taxis, and increasingly Grab. Fixed-price negotiations are the norm. Knowing the going rate before agreeing to a price is essential.",
+      },
+      {
+        type: "h2",
+        heading: "Chiang Mai Typical Transport Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Airport taxi to Old City (official airport taxi)",
+            value: "THB 150–200",
+          },
+          {
+            label: "Songthaew (red truck) — within Old City or nearby",
+            value: "THB 30–50 per person (shared)",
+          },
+          { label: "Tuk-tuk — short city trip", value: "THB 60–120" },
+          { label: "Motorbike taxi — short trip", value: "THB 40–80" },
+          { label: "Grab car — airport to Old City", value: "THB 120–180" },
+          { label: "Grab car — city trip (3–5 km)", value: "THB 80–150" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Getting from the Airport to the City",
+      },
+      {
+        type: "p",
+        body: "Chiang Mai Airport is only 3 km from the Old City — one of the closest city-to-airport distances in Southeast Asia. The airport operates a fixed-price taxi counter inside arrivals: THB 150 to the Old City, THB 160–200 to Nimman or Santitham. Pay at the counter, receive a voucher, hand it to the driver.",
+      },
+      {
+        type: "p",
+        body: "Grab operates at Chiang Mai Airport from the pickup zone on the ground level outside arrivals. A GrabCar to the Old City costs THB 120–180 — often cheaper than the official airport taxi. Grab also works for city trips once you're in Chiang Mai.",
+      },
+      {
+        type: "h2",
+        heading: "Songthaews (Red Trucks)",
+      },
+      {
+        type: "p",
+        body: "The iconic Chiang Mai songthaew is a red pickup truck operating as a shared taxi. Wave one down, negotiate the per-person price (THB 30–50 for short distances within the Old City or nearby areas), and up to 8 people share the ride. Songthaews don't run fixed routes — you tell the driver your destination, and they'll take you if it's on their way or if they have no other passengers.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "Are there metered taxis in Chiang Mai?",
+            a: "No — Chiang Mai has almost no metered taxis. Transport is by songthaew, tuk-tuk, Grab, or the official fixed-price airport taxi counter.",
+          },
+          {
+            q: "How much is a taxi from Chiang Mai Airport to the Old City?",
+            a: "THB 150–200 via the official airport taxi counter. Grab runs THB 120–180. The airport is only 3 km from the Old City.",
+          },
+          {
+            q: "What is a songthaew?",
+            a: "A red pickup truck modified with two bench seats in the back, operating as a shared city taxi in Chiang Mai. Fares are negotiated per person — typically THB 30–50 for short trips within the city.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Chiang Mai Airport — Transport to City",
+        url: "https://www.chiangmaiairportonline.com/transport/",
+      },
+    ],
+  },
+
+  // ── Nairobi ───────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-nairobi",
+    title: "How Much Does a Taxi Cost in Nairobi? (2026 Guide)",
+    description:
+      "Nairobi JKIA Airport to the city costs KES 2,500–4,000 by taxi. Here's the 2026 fare breakdown — Uber vs Little Cab, why metered taxis are rare, and safety guidance for Nairobi.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Nairobi",
+    country: "Kenya",
+    citySlug: "nairobi",
+    countrySlug: "kenya",
+    content: [
+      {
+        type: "intro",
+        body: "Nairobi taxis are predominantly unmetered — prices are negotiated. The city has embraced ride-hailing strongly: Uber and Little Cab (a Kenyan-owned app) are both popular and provide upfront pricing. For visitors, app-based services are safer and more transparent than negotiating with individual taxi drivers.",
+      },
+      {
+        type: "h2",
+        heading: "Nairobi Taxi Rate Ranges (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Metered taxi — flag fall", value: "KES 200 (~$1.55)" },
+          { label: "Metered taxi — per km", value: "KES 100 (~$0.77)" },
+          { label: "Minimum fare", value: "KES 350" },
+          {
+            label: "Uber — typical km rate",
+            value: "KES 50–70/km (~$0.39–0.54)",
+          },
+          {
+            label: "JKIA Airport → city fixed range (unmetered taxis)",
+            value: "KES 2,500–4,500 (negotiated)",
+          },
+          { label: "Night surcharge", value: "+20–30% (informal)" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Jomo Kenyatta Airport (JKIA)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "JKIA → Westlands / Parklands", value: "KES 2,500–3,500" },
+          { label: "JKIA → CBD (city centre)", value: "KES 2,000–3,000" },
+          { label: "JKIA → Karen / Langata", value: "KES 2,200–3,200" },
+          { label: "JKIA → Kilimani / Lavington", value: "KES 2,500–3,500" },
+          { label: "CBD → Westlands", value: "KES 500–800" },
+          { label: "CBD → Nairobi National Park gate", value: "KES 400–700" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Uber and Little Cab both operate at JKIA. From the airport to Westlands, Uber typically costs KES 1,800–2,800 — cheaper than a negotiated taxi. Little Cab (founded in Kenya, partly owned by Safaricom) is a strong local alternative. Both apps allow M-Pesa mobile payment, which is ubiquitous in Kenya.",
+      },
+      {
+        type: "h2",
+        heading: "Safety in Nairobi Taxis",
+      },
+      {
+        type: "p",
+        body: "Use Uber or Little Cab for journeys — both log the driver, vehicle, and route, significantly improving safety. Avoid hailing taxis from the street at night. Share your trip details with someone when travelling alone. Nairobi has improved significantly for visitors in recent years but basic precautions remain important.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Nairobi Airport to the city?",
+            a: "KES 2,000–3,500 depending on destination and negotiating. Uber or Little Cab runs KES 1,800–2,800.",
+          },
+          {
+            q: "What is Little Cab in Nairobi?",
+            a: "A Kenya-based ride-hailing app, partly owned by Safaricom (M-Pesa). Available across Nairobi and accepts M-Pesa payment. A local Uber equivalent.",
+          },
+          {
+            q: "Is Uber available in Nairobi?",
+            a: "Yes — Uber operates in Nairobi and at JKIA Airport. It is the recommended option for visitors for safety and upfront pricing.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Uber Nairobi — Kenya Operations",
+        url: "https://www.uber.com/ke/en/",
+      },
+    ],
+  },
+
+  // ── Reykjavik ─────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-reykjavik",
+    title: "How Much Does a Taxi Cost in Reykjavik? (2026 Guide)",
+    description:
+      "Reykjavik Keflavik Airport to the city costs ISK 16,000–22,000 by taxi. Here's the 2026 fare breakdown — Iceland's expensive taxis, the Flybus alternative, and what to expect.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Reykjavik",
+    country: "Iceland",
+    citySlug: "reykjavik",
+    countrySlug: "iceland",
+    content: [
+      {
+        type: "intro",
+        body: "Reykjavik taxis are metered and very expensive — Iceland has one of the highest costs of living in the world. Keflavik Airport is 50 km from the city, making the taxi journey long and costly. The Flybus operates a reliable and significantly cheaper transfer service.",
+      },
+      {
+        type: "h2",
+        heading: "Reykjavik Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "ISK 1,800 (~€12)" },
+          { label: "Per km", value: "ISK 560 (~€3.80)" },
+          { label: "Minimum fare", value: "ISK 1,800" },
+          { label: "Night surcharge (00:00–07:00)", value: "+20–25%" },
+          {
+            label: "Keflavik Airport (KEF) → Reykjavik city (50 km)",
+            value: "ISK 16,000–22,000",
+          },
+          {
+            label: "Within Reykjavik city — short trip",
+            value: "ISK 2,500–4,000",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Keflavik Airport (KEF)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "KEF → Reykjavik city centre (Laugavegur)",
+            value: "ISK 16,000–22,000 (~€108–148)",
+          },
+          {
+            label: "KEF → BSÍ Bus Terminal (city)",
+            value: "ISK 16,000–20,000",
+          },
+          {
+            label: "City centre → Hallgrímskirkja",
+            value: "ISK 1,800 (minimum)",
+          },
+          { label: "City centre → Perlan", value: "ISK 2,500–3,500" },
+          {
+            label: "City centre → Reykjavik Harbour (whale watching)",
+            value: "ISK 1,800–2,500",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Flybus runs from KEF to BSÍ Bus Terminal (Reykjavik city centre) for ISK 4,199 (€28). Journey time is 45 minutes. A hotel door-to-door version (Flybus+) costs ISK 5,499 (€37). Both are dramatically cheaper than a taxi at ISK 16,000–22,000.",
+      },
+      {
+        type: "h2",
+        heading: "Why Is Reykjavik So Expensive?",
+      },
+      {
+        type: "p",
+        body: "Iceland's high wages, geographic isolation (most goods are imported), and small population create very high prices across the board. Taxis are no exception. A 5 km city trip in Reykjavik costs about the same as a 30 km ride in Spain. For visitors on a budget, Strætó city buses cover the main Reykjavik attractions for ISK 560 per trip.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Keflavik Airport to Reykjavik?",
+            a: "ISK 16,000–22,000 (~€108–148). The Flybus costs ISK 4,199 (€28) and takes 45 minutes.",
+          },
+          {
+            q: "Is there public transport from Keflavik Airport?",
+            a: "The Flybus is the main option — it's a commercial coach service, not a regular city bus. No direct city bus runs from KEF to Reykjavik.",
+          },
+          {
+            q: "Why are Icelandic taxis so expensive?",
+            a: "Iceland has very high labour costs, and Keflavik Airport is 50 km from Reykjavik — the distance alone makes the taxi fare large even at moderate per-km rates.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Flybus Iceland — Keflavik Airport Transfer",
+        url: "https://www.re.is/flybus/",
+      },
+    ],
+  },
+
   // ── Taxi Driver Phrases (Tier 2 — Linkable / Shareable) ───────────────────
   {
     slug: "what-to-say-to-your-taxi-driver-in-15-languages",
