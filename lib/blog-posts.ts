@@ -6862,6 +6862,789 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
 
+  // ── São Paulo ─────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-sao-paulo",
+    title: "How Much Does a Taxi Cost in São Paulo? (2026 Guide)",
+    description:
+      "São Paulo Guarulhos Airport to the city costs BRL 120–180 by taxi. Here's the 2026 fare breakdown — the two-tariff system, 99 vs Uber, and the Guarucoop airport taxi alternative.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 6,
+    category: "taxi",
+    city: "São Paulo",
+    country: "Brazil",
+    citySlug: "sao-paulo",
+    countrySlug: "brazil",
+    content: [
+      {
+        type: "intro",
+        body: "São Paulo taxis are white, metered, and regulated by the city. The megacity's notorious traffic means journey times are highly variable — the same route can take 30 minutes at midnight or 2 hours during rush hour. App-based services (99 and Uber) offer upfront pricing that removes meter uncertainty and are the default choice for most residents.",
+      },
+      {
+        type: "h2",
+        heading: "São Paulo Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Bandeira 1 — flag fall (Mon–Sat, 06:00–21:00)",
+            value: "BRL 5.50",
+          },
+          { label: "Bandeira 1 — per km", value: "BRL 2.90" },
+          {
+            label: "Bandeira 2 — flag fall (nights, weekends, holidays)",
+            value: "BRL 5.50",
+          },
+          { label: "Bandeira 2 — per km (30% above B1)", value: "BRL 3.77" },
+          { label: "Minimum fare", value: "BRL 5.50" },
+          { label: "Airport surcharge (Guarulhos)", value: "BRL 8.00" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from São Paulo Guarulhos Airport (GRU)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "GRU → Paulista Avenue / Bela Vista", value: "BRL 120–160" },
+          { label: "GRU → Pinheiros / Vila Madalena", value: "BRL 130–175" },
+          { label: "GRU → Centro Histórico (Sé)", value: "BRL 100–140" },
+          {
+            label: "GRU → Brooklin / Itaim Bibi (business district)",
+            value: "BRL 140–190",
+          },
+          { label: "Paulista Avenue → Ibirapuera Park", value: "BRL 18–28" },
+          {
+            label: "Paulista Avenue → Liberdade (Japanese quarter)",
+            value: "BRL 10–18",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Guarucoop (Radio Taxi Guarucoop) operates the official airport taxi cooperative at GRU with regulated flat fares to different zones of the city. Prices are posted at the counter — expect BRL 110–160 depending on zone. This is often cheaper than a metered taxi during traffic.",
+      },
+      {
+        type: "h2",
+        heading: "99 and Uber in São Paulo",
+      },
+      {
+        type: "p",
+        body: "99 (owned by Didi) and Uber are both dominant in São Paulo. 99Pop and UberX typically run BRL 90–130 from GRU to central areas — noticeably cheaper than a metered taxi. Both apps show upfront prices and allow card payment. During morning and evening rush hours (07:00–09:00 and 17:00–20:00), expect dynamic surge pricing to apply.",
+      },
+      {
+        type: "warning",
+        body: "São Paulo has significant security concerns. Use app-based services with a known driver, vehicle, and route rather than hailing from the street. Share your trip status with someone if travelling at night. Lock doors immediately after entering the vehicle.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from São Paulo Guarulhos Airport to the city?",
+            a: "BRL 120–175 for metered taxi depending on destination and traffic. 99 and Uber run BRL 90–130. Guarucoop airport taxis offer fixed zone rates from around BRL 110.",
+          },
+          {
+            q: "Is São Paulo safe for taxis?",
+            a: "Use app-based 99 or Uber for safety — they record the trip, driver ID, and route. Avoid hailing from the street, especially at night.",
+          },
+          {
+            q: "What is Bandeira 2 in São Paulo taxis?",
+            a: "The night/weekend tariff — 30% higher per km than Bandeira 1. Applies Mon–Sat after 21:00, all day Sunday, and on public holidays.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "GRU Airport — Ground Transport",
+        url: "https://www.gru.com.br/en/passenger/access-and-transport",
+      },
+    ],
+  },
+
+  // ── Jakarta ───────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-jakarta",
+    title: "How Much Does a Taxi Cost in Jakarta? (2026 Guide)",
+    description:
+      "Jakarta Soekarno-Hatta Airport to the city costs IDR 200,000–350,000 by taxi. Here's the 2026 fare breakdown — metered Blue Bird taxis, the Airport Railink, and why Grab dominates.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 6,
+    category: "taxi",
+    city: "Jakarta",
+    country: "Indonesia",
+    citySlug: "jakarta",
+    countrySlug: "indonesia",
+    content: [
+      {
+        type: "intro",
+        body: "Jakarta's taxi market is dominated by two names: Blue Bird (bluebird-group.com), the gold standard of reliable metered taxis, and Grab, the Southeast Asian super-app. Traditional metered taxis from other operators exist but have a poor reputation for tampered meters. For visitors, using Blue Bird or booking via Grab provides price certainty and safety.",
+      },
+      {
+        type: "h2",
+        heading: "Jakarta Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Blue Bird — flag fall (first km)",
+            value: "IDR 7,500 (~$0.45)",
+          },
+          {
+            label: "Blue Bird — per km after first",
+            value: "IDR 4,500 (~$0.28)",
+          },
+          { label: "Minimum fare", value: "IDR 15,000 (~$0.90)" },
+          { label: "Wait time (per hour)", value: "IDR 45,000 (~$2.75)" },
+          { label: "Night surcharge (23:00–06:00)", value: "None (same rate)" },
+          {
+            label: "Airport taxi zone rate (CGK → city)",
+            value: "IDR 250,000–400,000",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Jakarta Soekarno-Hatta Airport (CGK)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "CGK → SCBD / Sudirman (central business)",
+            value: "IDR 220,000–320,000",
+          },
+          {
+            label: "CGK → Kota (Old Town / Glodok)",
+            value: "IDR 180,000–260,000",
+          },
+          {
+            label: "CGK → South Jakarta (Kemang / Blok M)",
+            value: "IDR 280,000–380,000",
+          },
+          {
+            label: "CGK → Kuningan / Mega Kuningan",
+            value: "IDR 250,000–350,000",
+          },
+          { label: "SCBD → Glodok (city trip)", value: "IDR 35,000–55,000" },
+          { label: "SCBD → Kota Tua (Old Town)", value: "IDR 30,000–50,000" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Airport Railink (Railink) train runs from CGK Airport to Sudirman and Manggarai stations in 40 minutes for IDR 70,000. Combined with Jakarta's TransJakarta BRT or MRT, it covers most of the city for a fraction of the taxi price.",
+      },
+      {
+        type: "h2",
+        heading: "Grab in Jakarta",
+      },
+      {
+        type: "p",
+        body: "Grab is the dominant ride-hailing platform across Southeast Asia, including Jakarta. GrabCar is 20–35% cheaper than a Blue Bird metered taxi for most city routes. The app shows upfront pricing and lets you pay by card or GrabPay. From the airport, Grab pickup is from designated zones outside each terminal. GrabBike (motorbike taxi) is extremely popular for navigating Jakarta's congestion.",
+      },
+      {
+        type: "h2",
+        heading: "Blue Bird vs Other Jakarta Taxis",
+      },
+      {
+        type: "p",
+        body: "Only use Blue Bird (bright blue vehicles, white bird logo) or Silver Bird (premium) for metered taxis. Other taxi companies in Jakarta have a documented history of meter tampering and overcharging tourists. If you are not using Grab, specifically request Blue Bird. Their app also lets you book.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Jakarta Airport to the city?",
+            a: "IDR 220,000–380,000 (roughly $13–23 USD) depending on destination and traffic. The Railink train costs IDR 70,000 to Sudirman/Manggarai.",
+          },
+          {
+            q: "Which taxi is safe in Jakarta?",
+            a: "Blue Bird is the most reliable and trusted metered taxi in Jakarta. Alternatively, use Grab for upfront pricing and driver accountability.",
+          },
+          {
+            q: "Is Uber available in Jakarta?",
+            a: "Uber exited Indonesia in 2018 and merged into Grab. Use Grab instead.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Blue Bird Group — Jakarta Taxi",
+        url: "https://www.bluebirdgroup.com",
+      },
+    ],
+  },
+
+  // ── Johannesburg ──────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-johannesburg",
+    title: "How Much Does a Taxi Cost in Johannesburg? (2026 Guide)",
+    description:
+      "Johannesburg OR Tambo Airport to Sandton costs ZAR 350–500 by Gautrain taxi. Here's the 2026 fare breakdown — metered vs e-hailing, the Gautrain option, and why minibus taxis are for locals only.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 6,
+    category: "taxi",
+    city: "Johannesburg",
+    country: "South Africa",
+    citySlug: "johannesburg",
+    countrySlug: "south-africa",
+    content: [
+      {
+        type: "intro",
+        body: "Johannesburg's transport landscape is split between metered taxis (used by visitors), e-hailing apps (Uber and InDriver, used by most urban residents), and minibus taxis (the ubiquitous informal network, not recommended for visitors). For airport journeys, a pre-booked e-hailing or the Gautrain is safest.",
+      },
+      {
+        type: "h2",
+        heading: "Johannesburg Metered Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "ZAR 25 (~$1.35)" },
+          { label: "Per km", value: "ZAR 17 (~$0.92)" },
+          { label: "Minimum fare", value: "ZAR 50" },
+          { label: "Airport surcharge (OR Tambo)", value: "ZAR 30–50" },
+          { label: "Night surcharge (22:00–06:00)", value: "+15%" },
+          { label: "Phone booking fee", value: "ZAR 20–30" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from OR Tambo Airport (JNB)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "JNB → Sandton (Gautrain station / business hub)",
+            value: "ZAR 350–520",
+          },
+          { label: "JNB → Rosebank", value: "ZAR 380–540" },
+          { label: "JNB → Johannesburg CBD", value: "ZAR 300–430" },
+          { label: "JNB → Melrose Arch / Illovo", value: "ZAR 400–560" },
+          { label: "Sandton → Rosebank (short trip)", value: "ZAR 80–140" },
+          { label: "Sandton → Johannesburg CBD", value: "ZAR 150–220" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Gautrain runs from OR Tambo Airport to Sandton station in 15 minutes for ZAR 231. This is significantly cheaper than a metered taxi and immune to traffic. From Sandton station, Uber or e-hailing can reach most northern suburbs quickly.",
+      },
+      {
+        type: "h2",
+        heading: "Uber in Johannesburg",
+      },
+      {
+        type: "p",
+        body: "Uber is widely used in Johannesburg and provides upfront pricing, driver identification, and trip logging — important for safety. UberX from OR Tambo to Sandton typically costs ZAR 280–400 — cheaper than metered taxis. InDriver (negotiated fares) is also popular and can be cheaper still. Both are far safer than hailing a metered taxi from the street at night.",
+      },
+      {
+        type: "warning",
+        body: "Do not use minibus taxis in Johannesburg as a visitor — they are part of an informal network not designed for tourists and carry safety risks. Only use Uber, pre-booked metered taxis from reputable companies, or the Gautrain.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Johannesburg Airport to Sandton?",
+            a: "ZAR 350–520 by metered taxi. Uber runs ZAR 280–400. The Gautrain costs ZAR 231 and takes 15 minutes.",
+          },
+          {
+            q: "Is Uber safe in Johannesburg?",
+            a: "Uber and InDriver are the safest ride-hailing options in Johannesburg — they log the driver, vehicle, and route. Avoid hailing from the street, especially at night.",
+          },
+          {
+            q: "What is the Gautrain?",
+            a: "The Gautrain is Johannesburg's rapid rail network, connecting OR Tambo Airport to Sandton, Rosebank, Park Station, and Pretoria. Fast, safe, and dramatically cheaper than a taxi.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Gautrain — OR Tambo to Sandton",
+        url: "https://www.gautrain.co.za",
+      },
+    ],
+  },
+
+  // ── Vancouver ─────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-vancouver",
+    title: "How Much Does a Taxi Cost in Vancouver? (2026 Guide)",
+    description:
+      "Vancouver YVR Airport to downtown costs CAD $35–50 by taxi. Here's the 2026 fare breakdown — metered rates, the Canada Line SkyTrain alternative, and Uber vs the yellow cab fleets.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Vancouver",
+    country: "Canada",
+    citySlug: "vancouver",
+    countrySlug: "canada",
+    content: [
+      {
+        type: "intro",
+        body: "Vancouver taxis are metered, regulated by the Passenger Transportation Board, and among Canada's most affordable for airport runs — YVR is close to the city centre by airport standards. The Canada Line SkyTrain provides an excellent rapid transit alternative for solo travellers.",
+      },
+      {
+        type: "h2",
+        heading: "Vancouver Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "CAD $3.40" },
+          { label: "Per km", value: "CAD $1.96" },
+          { label: "Minimum fare", value: "CAD $3.40" },
+          { label: "YVR Airport surcharge", value: "CAD $3.00" },
+          { label: "Night surcharge", value: "None (same rate 24/7)" },
+          { label: "Phone booking fee", value: "CAD $0–2.00" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Vancouver YVR Airport",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "YVR → Downtown Vancouver (Burrard / Granville St)",
+            value: "CAD $35–50",
+          },
+          { label: "YVR → Gastown / Chinatown", value: "CAD $38–52" },
+          { label: "YVR → Yaletown", value: "CAD $33–45" },
+          {
+            label: "YVR → North Vancouver (via Lions Gate Bridge)",
+            value: "CAD $50–70",
+          },
+          { label: "YVR → Whistler", value: "CAD $180–220" },
+          { label: "Downtown → Stanley Park", value: "CAD $10–18" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Canada Line SkyTrain runs from YVR Airport to Waterfront Station (downtown) in 26 minutes for CAD $4.55 (standard fare; $9.45 with the airport surcharge on the YVR station). Trains run every 6 minutes, 05:07–01:14. For solo travellers it is significantly cheaper than a taxi.",
+      },
+      {
+        type: "h2",
+        heading: "Uber in Vancouver",
+      },
+      {
+        type: "p",
+        body: "Uber and Lyft launched in BC in 2020 after years of regulatory resistance. Both now operate in Vancouver and are 10–20% cheaper than metered taxis for most routes. UberX from YVR to downtown typically runs CAD $28–42 with upfront pricing. Pickup at YVR is from Level 2 of the parkade.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Vancouver Airport to downtown?",
+            a: "CAD $35–50 by metered taxi. Uber runs CAD $28–42. The Canada Line SkyTrain costs CAD $9.45 from the airport station in 26 minutes.",
+          },
+          {
+            q: "Is Uber available in Vancouver?",
+            a: "Yes — Uber and Lyft both operate in Vancouver since 2020. Available at YVR Airport from the Level 2 parkade pickup zone.",
+          },
+          {
+            q: "Is tipping expected in Vancouver taxis?",
+            a: "Yes — 15–20% is standard. Card terminals in Vancouver taxis prompt for a tip and typically default to 15–20%.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "YVR Airport — Ground Transport",
+        url: "https://www.yvr.ca/en/passengers/transportation/leaving-the-airport",
+      },
+    ],
+  },
+
+  // ── Washington DC ─────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-washington-dc",
+    title: "How Much Does a Taxi Cost in Washington DC? (2026 Guide)",
+    description:
+      "Washington Dulles Airport to the city costs $65–90 by taxi. Here's the 2026 fare breakdown — Reagan vs Dulles vs BWI, the Silver Line Metro, and how Uber compares.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 6,
+    category: "taxi",
+    city: "Washington DC",
+    country: "United States",
+    citySlug: "washington-dc",
+    countrySlug: "united-states",
+    content: [
+      {
+        type: "intro",
+        body: "Washington DC is served by three airports at very different distances from the city. Reagan National (DCA) is 5 km away; Dulles (IAD) is 45 km; BWI is 55 km. Your taxi price will vary enormously depending on which airport you use. DC taxis are metered and regulated by the DC Taxicab Commission.",
+      },
+      {
+        type: "h2",
+        heading: "Washington DC Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "$3.50" },
+          { label: "Per km", value: "$2.16 (~$3.50/mile)" },
+          { label: "Minimum fare", value: "$3.50" },
+          { label: "Wait time (per hour)", value: "$25.00" },
+          { label: "DCA Airport surcharge", value: "$2.50" },
+          { label: "Dulles Airport surcharge", value: "$1.50" },
+          {
+            label: "Night surcharge (21:00–06:00)",
+            value: "+$1.00 on flag fall",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares by Airport",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "DCA Reagan National → Capitol Hill / National Mall",
+            value: "$15–25",
+          },
+          {
+            label: "DCA Reagan National → Downtown DC / Dupont Circle",
+            value: "$18–30",
+          },
+          {
+            label: "IAD Dulles → Downtown DC (Georgetown / Foggy Bottom)",
+            value: "$65–90",
+          },
+          { label: "BWI → Downtown DC", value: "$75–100" },
+          { label: "Downtown → The White House / Georgetown", value: "$10–18" },
+          { label: "Downtown → Georgetown", value: "$12–20" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Reagan National (DCA) has the best transit connection: the DC Metro Blue and Yellow lines serve the airport directly ($2.25–$6.00 to downtown in 20–35 minutes). From Dulles, the Silver Line Express bus connects to Wiehle–Reston East Metro station (from $5.00), adding 30 minutes. From BWI, the MARC train to Union Station costs $9 in 35 minutes.",
+      },
+      {
+        type: "h2",
+        heading: "Uber in Washington DC",
+      },
+      {
+        type: "p",
+        body: "Uber and Lyft both operate at all three DC-area airports. From DCA, UberX to downtown typically runs $18–30. From Dulles, expect $55–75. Both apps have designated pickup zones at each airport. For short trips within DC, app-based rideshare often costs the same as or less than metered taxis.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "Which DC airport is closest to the city?",
+            a: "Reagan National (DCA) is 5 km from the National Mall and has a direct Metro connection. It is the clear choice for city-centre destinations. Dulles and BWI are 45–55 km away and primarily serve longer-haul routes.",
+          },
+          {
+            q: "How much is a taxi from Dulles Airport to DC?",
+            a: "$65–90 for a metered taxi. Uber runs $55–75. The Silver Line Express bus to Wiehle–Reston Metro + Metro to downtown costs around $8–10 total.",
+          },
+          {
+            q: "Is tipping expected in DC taxis?",
+            a: "Yes — 15–20% is standard. Most DC taxi terminals have card readers that prompt for a tip.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "DC Taxicab Commission — Fare Information",
+        url: "https://dfhv.dc.gov/service/taxicab-services",
+      },
+    ],
+  },
+
+  // ── Chicago ───────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-chicago",
+    title: "How Much Does a Taxi Cost in Chicago? (2026 Guide)",
+    description:
+      "Chicago O'Hare Airport to downtown costs $45–65 by taxi. Here's the 2026 fare breakdown — metered rates, the Blue Line L train for $5, and how Lyft and Uber compare.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 6,
+    category: "taxi",
+    city: "Chicago",
+    country: "United States",
+    citySlug: "chicago",
+    countrySlug: "united-states",
+    content: [
+      {
+        type: "intro",
+        body: "Chicago's iconic yellow cabs are metered, regulated by the City of Chicago, and available at both O'Hare (ORD) and Midway (MDW) airports. The Blue Line L train from O'Hare to the Loop costs just $5.00 and takes 45 minutes — one of the best-value airport rail connections in any US city.",
+      },
+      {
+        type: "h2",
+        heading: "Chicago Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (first 1/9 mile)", value: "$3.25" },
+          { label: "Per mile", value: "$2.25 (~$1.40/km)" },
+          { label: "Per km (dataset rate)", value: "$1.87" },
+          { label: "Minimum fare", value: "$3.25" },
+          { label: "Additional passenger surcharge", value: "$1.00 each" },
+          { label: "O'Hare Airport surcharge", value: "$4.50" },
+          { label: "Midway Airport surcharge", value: "$4.50" },
+          { label: "Night surcharge", value: "None (same rate 24/7)" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Chicago O'Hare Airport (ORD)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "ORD → The Loop (downtown)", value: "$45–65" },
+          { label: "ORD → River North / Magnificent Mile", value: "$48–68" },
+          { label: "ORD → Lincoln Park / Wicker Park", value: "$42–60" },
+          { label: "MDW Midway → The Loop", value: "$28–40" },
+          { label: "Loop → Navy Pier", value: "$10–16" },
+          { label: "Loop → Wrigley Field", value: "$18–28" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Blue Line L train runs from O'Hare Airport to the Loop (Washington/Dearborn) for $5.00 — fixed airport fare. Journey time is 45 minutes. Trains run 24/7. For solo travellers, this is unbeatable. From Midway, the Orange Line runs to the Loop for $2.50 in 30 minutes.",
+      },
+      {
+        type: "h2",
+        heading: "Uber and Lyft in Chicago",
+      },
+      {
+        type: "p",
+        body: "Both Uber and Lyft operate at O'Hare and Midway. From ORD to the Loop, UberX typically runs $38–55 — somewhat cheaper than a metered taxi when not surging. Both have designated pickup areas at each airport (separate from the taxi rank). Lyft Pink and Uber One subscribers often get the best rates.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from O'Hare Airport to downtown Chicago?",
+            a: "$45–65 by metered taxi. Uber/Lyft runs $38–55. The Blue Line L train costs $5.00 and takes 45 minutes — the best option for solo travellers.",
+          },
+          {
+            q: "What is the cheapest way from O'Hare to Chicago downtown?",
+            a: "The Blue Line CTA train at $5.00 flat. It runs 24/7 and takes 45 minutes to the Loop.",
+          },
+          {
+            q: "Do Chicago taxis have night surcharges?",
+            a: "No — Chicago's metered rate is the same 24/7. The per-passenger surcharge ($1 each additional passenger) does apply at all hours.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Chicago O'Hare Airport — Ground Transportation",
+        url: "https://www.flychicago.com/ohare/to-from/Pages/ground-transportation.aspx",
+      },
+    ],
+  },
+
+  // ── San Francisco ─────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-san-francisco",
+    title: "How Much Does a Taxi Cost in San Francisco? (2026 Guide)",
+    description:
+      "San Francisco SFO Airport to Union Square costs $50–70 by taxi. Here's the 2026 fare breakdown — why Uber rules SF, the BART train for $9.65, and the infamous surge pricing hill.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 6,
+    category: "taxi",
+    city: "San Francisco",
+    country: "United States",
+    citySlug: "san-francisco",
+    countrySlug: "united-states",
+    content: [
+      {
+        type: "intro",
+        body: "San Francisco is the birthplace of Uber and Lyft — fittingly, ride-hailing dominates the city's transport culture. Traditional metered taxis exist and are licensed, but Uber and Lyft command the market. For airport journeys, BART is the overlooked gem: $9.65 from SFO to downtown in 30 minutes.",
+      },
+      {
+        type: "h2",
+        heading: "San Francisco Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (first 1/5 mile)", value: "$3.50" },
+          { label: "Per mile", value: "$2.75 (~$1.71/km)" },
+          { label: "Per km (dataset rate)", value: "$2.80" },
+          { label: "Minimum fare", value: "$3.50" },
+          { label: "SFO Airport surcharge", value: "$4.50" },
+          { label: "Night surcharge (21:00–06:00)", value: "None (same rate)" },
+          { label: "Wait time (per hour)", value: "$55.00" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from San Francisco Airport (SFO)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "SFO → Union Square / Tenderloin (city centre)",
+            value: "$50–70",
+          },
+          { label: "SFO → Financial District / SOMA", value: "$48–65" },
+          { label: "SFO → Mission District", value: "$45–60" },
+          { label: "SFO → Fisherman's Wharf", value: "$55–75" },
+          { label: "SFO → North Beach / Chinatown", value: "$55–70" },
+          {
+            label: "Union Square → Pier 39 / Fisherman's Wharf",
+            value: "$12–18",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "BART (Bay Area Rapid Transit) connects SFO Airport directly to downtown San Francisco (Powell Street / Civic Center) in 30 minutes for $9.65. Trains run Mon–Sat 05:00–midnight, Sun 08:00–midnight. This is the cheapest airport option by far for solo travellers.",
+      },
+      {
+        type: "h2",
+        heading: "Uber and Lyft in San Francisco",
+      },
+      {
+        type: "p",
+        body: "Uber and Lyft are the dominant transport option in SF. Both have upfront pricing and UberX typically runs $40–60 from SFO to the city centre — comparable to or less than a metered taxi depending on traffic. Pickup at SFO is from the designated TNCs area, level 5 of the domestic garage. Surge pricing applies aggressively during rush hour, events at Chase Center or Oracle Park, and rainy days.",
+      },
+      {
+        type: "p",
+        body: "Waymo autonomous robotaxis operate in San Francisco (to/from SFO since 2024) and offer a unique experience at prices similar to standard Uber. Booking via the Waymo One app.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from SFO to San Francisco?",
+            a: "$50–70 by metered taxi. Uber/Lyft runs $40–60. BART costs $9.65 in 30 minutes — the best option for solo travellers.",
+          },
+          {
+            q: "Is Uber available at SFO Airport?",
+            a: "Yes — pickup from the Domestic TNC area (Level 5, domestic garage). Lyft, Uber, and Waymo all operate at SFO.",
+          },
+          {
+            q: "What is Waymo in San Francisco?",
+            a: "Waymo One is an autonomous (driverless) robotaxi service operating in San Francisco and to/from SFO Airport. Book via the Waymo One app at prices similar to UberX.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "SFO Airport — Ground Transportation",
+        url: "https://www.flysfo.com/passengers/ground-transportation",
+      },
+    ],
+  },
+
+  // ── Florence ──────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-florence",
+    title: "How Much Does a Taxi Cost in Florence? (2026 Guide)",
+    description:
+      "Florence Airport to the city centre costs €20–28 by taxi. Here's the 2026 fare breakdown — fixed tariff zones, the tram alternative, and how to use the white Florentine cab system.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Florence",
+    country: "Italy",
+    citySlug: "florence",
+    countrySlug: "italy",
+    content: [
+      {
+        type: "intro",
+        body: "Florence taxis are white, metered, and plentiful in the historic city centre — though ZTL (Limited Traffic Zone) restrictions mean taxi routes through the old city can be complex. Fares are regulated by the Municipality of Florence and include fixed flat-rate supplements for airport, train station, and night journeys.",
+      },
+      {
+        type: "h2",
+        heading: "Florence Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (day, 06:00–22:00)", value: "€3.30" },
+          { label: "Per km (day)", value: "€0.95" },
+          { label: "Minimum fare", value: "€5.00" },
+          { label: "Night flag fall (22:00–06:00)", value: "€5.30" },
+          { label: "Night per km", value: "€1.20" },
+          {
+            label: "Amerigo Vespucci Airport fixed supplement",
+            value: "€2.50",
+          },
+          {
+            label: "Train station supplement (Santa Maria Novella)",
+            value: "€1.50",
+          },
+          { label: "Luggage (per bag)", value: "€1.00" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Florence Airport (FLR)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "FLR → Florence Duomo / Piazza del Duomo", value: "€20–28" },
+          {
+            label: "FLR → Santa Maria Novella (central station)",
+            value: "€18–24",
+          },
+          { label: "FLR → Oltrarno (Pitti Palace area)", value: "€22–30" },
+          { label: "FLR → Piazzale Michelangelo", value: "€25–34" },
+          { label: "Duomo → Ponte Vecchio", value: "€5–9 (short, walkable)" },
+          { label: "Duomo → Piazzale Michelangelo", value: "€10–16" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The T2 tram runs from Florence Airport to Alamanni-Stazione (next to Santa Maria Novella) in 20 minutes for €1.70. It's the cheapest and most frequent airport connection. Trams run every 5 minutes during peak hours. Much of Florence's historic centre is walkable from the station.",
+      },
+      {
+        type: "h2",
+        heading: "ZTL Zones and Taxis",
+      },
+      {
+        type: "p",
+        body: "Florence's historic centre is a ZTL (Zona a Traffico Limitato) — only residents and authorised vehicles (including licensed taxis) can enter during restricted hours. Licensed taxis can drop you at your hotel even within the ZTL. If you are renting a private car, do not enter the ZTL without a permit.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Florence Airport to the city?",
+            a: "€20–28 to the Duomo area. The T2 tram costs €1.70 and takes 20 minutes to Santa Maria Novella — the obvious choice for solo travellers.",
+          },
+          {
+            q: "Can taxis enter Florence's ZTL zone?",
+            a: "Yes — licensed Florence taxis are authorised to enter the ZTL and can drop you at your hotel in the historic centre.",
+          },
+          {
+            q: "Is Uber available in Florence?",
+            a: "Uber operates with NCC licensed vehicles in Florence but coverage is limited and often more expensive than a metered white taxi. Use the taxi rank or pre-book via itTaxi app.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Florence Airport — Getting to the City",
+        url: "https://www.aeroporto.firenze.it/en/passengers/getting-to-the-airport",
+      },
+    ],
+  },
+
   // ── Taxi Driver Phrases (Tier 2 — Linkable / Shareable) ───────────────────
   {
     slug: "what-to-say-to-your-taxi-driver-in-15-languages",
