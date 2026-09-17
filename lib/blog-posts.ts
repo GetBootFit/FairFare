@@ -836,7 +836,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "How Much Does a Taxi Cost in London? (2026 Black Cab Fares)",
     description:
       "A Heathrow black cab to central London costs £55–85 — Uber or Bolt typically do the same run for £35–55. Here's the full 2026 tariff breakdown, why the meter shows three different rates, and how to spot an illegal minicab tout.",
-    publishedAt: "2025-12-26",
+    publishedAt: "2026-12-26",
     readingMinutes: 8,
     category: "taxi",
     city: "London",
@@ -1009,7 +1009,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "How Much Does a Taxi Cost in New York? (2026 Yellow Cab Guide)",
     description:
       "The JFK flat rate is $70 to Manhattan — but tolls, surcharges and a 20% tip push the real cost to $90–110. Here's the full 2026 yellow cab breakdown, and why Uber's $65–85 fixed price from JFK often wins.",
-    publishedAt: "2025-12-14",
+    publishedAt: "2026-12-14",
     readingMinutes: 8,
     category: "taxi",
     city: "New York",
@@ -1187,7 +1187,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "How Much Does a Taxi Cost in Tokyo? (2026 Fare Guide)",
     description:
       "A taxi from Narita Airport to central Tokyo runs ¥20,000–30,000 ($130–200) — the Narita Express covers the same 60 km in 50 minutes for ¥3,070. Here's the full 2026 fare breakdown and exactly when a taxi is still worth it.",
-    publishedAt: "2025-12-03",
+    publishedAt: "2026-12-03",
     readingMinutes: 8,
     category: "taxi",
     city: "Tokyo",
@@ -1329,7 +1329,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "How Much Does a Taxi Cost in Paris? (2026 Rates)",
     description:
       "CDG to central Paris is a fixed €56–65; Orly is €35–41 — running the meter instead is illegal. Here's the full 2026 tariff breakdown (Tariffs A, B and C), and when Bolt or Uber beats a licensed G7 taxi.",
-    publishedAt: "2025-11-21",
+    publishedAt: "2026-11-21",
     readingMinutes: 8,
     category: "taxi",
     city: "Paris",
@@ -1547,7 +1547,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "How Much Does a Taxi Cost in Bali? (2026 Guide)",
     description:
       "Unmetered tourist taxis in Bali charge 3–5× the metered rate — a Kuta–Seminyak ride that's IDR 30,000–45,000 on the Blue Bird meter gets quoted at IDR 100,000–200,000 by touts. Here's the full 2026 fare guide for airport transfers, Gojek vs Grab, and avoiding the markup.",
-    publishedAt: "2025-11-09",
+    publishedAt: "2026-11-09",
     readingMinutes: 8,
     category: "taxi",
     city: "Bali",
@@ -1741,7 +1741,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "How Much Does a Taxi Cost in Rome? (2026 Fixed & Metered Fares)",
     description:
       "Fiumicino Airport to central Rome is a fixed €50; Ciampino is €30 — both all-inclusive, no extras. Here's the full 2026 metered-fare breakdown for getting around the city, and how unlicensed drivers try to inflate that flat rate.",
-    publishedAt: "2025-10-29",
+    publishedAt: "2026-10-29",
     readingMinutes: 8,
     category: "taxi",
     city: "Rome",
@@ -1921,7 +1921,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "How Much Does a Taxi Cost in Istanbul? (2026 Guide)",
     description:
       "Istanbul Airport to Taksim costs ₺550–750 by metered taxi — the M11 metro does it for ₺60. Here's the full 2026 fare breakdown, the banknote-switch scam every visitor should know, and when BiTaksi is the safer call.",
-    publishedAt: "2025-10-17",
+    publishedAt: "2026-10-17",
     readingMinutes: 8,
     category: "taxi",
     city: "Istanbul",
@@ -2103,7 +2103,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "How Much Does a Taxi Cost in Phuket? (2026 Fare Guide)",
     description:
       "Phuket taxi fares, fixed-rate zones, airport scams, and when to use Grab instead — everything you need to know before hailing a cab in 2026.",
-    publishedAt: "2025-10-05",
+    publishedAt: "2026-10-05",
     readingMinutes: 8,
     category: "taxi",
     city: "Phuket",
@@ -2273,7 +2273,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "How Much Does a Taxi Cost in Barcelona? (2026 Guide)",
     description:
       "El Prat Airport to Las Ramblas costs €25–35 by metered taxi, or €6.75 on the Aerobus. Here's the full 2026 fare breakdown — night tariffs, luggage fees, and when Uber beats a metered cab.",
-    publishedAt: "2025-09-24",
+    publishedAt: "2026-09-24",
     readingMinutes: 7,
     category: "taxi",
     city: "Barcelona",
@@ -2400,7 +2400,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "How Much Does a Taxi Cost in Sydney? (2026 Fare Guide)",
     description:
       "Sydney Airport to the CBD costs A$45–60 by taxi — the Airport Link train does the same trip in 13 minutes for A$21.60. Here's the full 2026 fare breakdown and when Uber's 10–20% discount actually holds up.",
-    publishedAt: "2025-09-13",
+    publishedAt: "2026-09-13",
     readingMinutes: 7,
     category: "taxi",
     city: "Sydney",
@@ -2523,7 +2523,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "How Much Does a Taxi Cost in Amsterdam? (2026 Guide)",
     description:
       "Amsterdam taxi meter rates, Schiphol airport fares, and why booking a pre-agreed taxi saves money — updated for 2026.",
-    publishedAt: "2025-09-04",
+    publishedAt: "2026-09-04",
     readingMinutes: 7,
     category: "taxi",
     city: "Amsterdam",
@@ -2643,7 +2643,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "How Much Does a Taxi Cost in Mumbai? (2026 Guide)",
     description:
       "Mumbai taxi and auto-rickshaw rates, airport fares, meter conversion charts, and Ola vs Uber comparison for 2026.",
-    publishedAt: "2025-09-17",
+    publishedAt: "2026-09-17",
     readingMinutes: 8,
     category: "taxi",
     city: "Mumbai",
@@ -2819,7 +2819,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "How Much Does a Taxi Cost in Mexico City? (2026 Guide)",
     description:
       "Mexico City taxi rates, AICM airport taxi costs, Uber vs sitio taxis, and how to avoid tourist scams in CDMX for 2026.",
-    publishedAt: "2025-09-27",
+    publishedAt: "2026-09-27",
     readingMinutes: 8,
     category: "taxi",
     city: "Mexico City",
@@ -2987,7 +2987,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "How Much Does a Taxi Cost in Buenos Aires? (2026 Rates)",
     description:
       "Buenos Aires taxi rates in ARS, Ezeiza and Aeroparque airport fares, Cabify vs metered cabs, and tips for navigating high inflation in 2026.",
-    publishedAt: "2025-10-11",
+    publishedAt: "2026-10-11",
     readingMinutes: 8,
     category: "taxi",
     city: "Buenos Aires",
@@ -3158,7 +3158,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "How Much Does a Taxi Cost in Cairo? (2026 Fare Guide)",
     description:
       "Cairo taxi fares in EGP, Cairo International Airport rates, Uber vs Careem vs white taxis, and what to know about meter negotiation in Egypt 2026.",
-    publishedAt: "2025-10-24",
+    publishedAt: "2026-10-24",
     readingMinutes: 8,
     category: "taxi",
     city: "Cairo",
@@ -3339,7 +3339,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "How Much Does a Taxi Cost in Marrakech? (2026 Fare Guide)",
     description:
       "Marrakech petit taxi and grand taxi fares in MAD, Menara airport rates, medina zone pricing, and how to avoid overcharging in Morocco 2026.",
-    publishedAt: "2025-11-04",
+    publishedAt: "2026-11-04",
     readingMinutes: 8,
     category: "taxi",
     city: "Marrakech",
@@ -3516,7 +3516,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "How Much Does a Taxi Cost in Ho Chi Minh City? (2026 Guide)",
     description:
       "Ho Chi Minh City (Saigon) taxi fares in VND, Tan Son Nhat airport rates, Grab vs Vinasun vs Mai Linh, and how to avoid fake taxi scams in 2026.",
-    publishedAt: "2025-11-16",
+    publishedAt: "2026-11-16",
     readingMinutes: 8,
     category: "taxi",
     city: "Ho Chi Minh City",
@@ -3698,7 +3698,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "How Much Does a Taxi Cost in Kuala Lumpur? (2026 Guide)",
     description:
       "Kuala Lumpur taxi rates in MYR, KLIA and KL Sentral airport fares, Grab vs metered cabs, and KLIA Ekspres train comparison for 2026.",
-    publishedAt: "2025-11-30",
+    publishedAt: "2026-11-30",
     readingMinutes: 8,
     category: "taxi",
     city: "Kuala Lumpur",
@@ -3886,7 +3886,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "How Much Does a Taxi Cost in Lisbon? (2026 Fare Guide)",
     description:
       "Lisbon taxi fares in euros, Humberto Delgado airport rates, Uber vs licensed taxis, and why trams are sometimes a better choice in 2026.",
-    publishedAt: "2025-12-09",
+    publishedAt: "2026-12-09",
     readingMinutes: 8,
     category: "taxi",
     city: "Lisbon",
