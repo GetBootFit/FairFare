@@ -12865,6 +12865,677 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
 
+  // ── Nha Trang ─────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-nha-trang",
+    title: "How Much Does a Taxi Cost in Nha Trang? (2026 Guide)",
+    description:
+      "Cam Ranh Airport to Nha Trang beach costs VND 200,000–350,000 by taxi. Here's the 2026 fare breakdown — Grab vs Mai Linh, the 40 km airport transfer, and getting around the beach city.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Nha Trang",
+    country: "Vietnam",
+    citySlug: "nha-trang",
+    countrySlug: "vietnam",
+    content: [
+      {
+        type: "intro",
+        body: "Cam Ranh International Airport (CXR) is 40 km south of Nha Trang — one of the longer airport-to-city drives in Vietnam. Taxis are metered (Mai Linh, Vinasun are the most trusted brands). Grab is available and usually cheaper.",
+      },
+      {
+        type: "h2",
+        heading: "Nha Trang Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (metered taxi)", value: "VND 10,000 (~$0.40)" },
+          { label: "Per km", value: "VND 8,000 (~$0.32)" },
+          { label: "Minimum fare", value: "VND 12,000" },
+          {
+            label: "CXR → Nha Trang beach strip (metered)",
+            value: "VND 300,000–450,000",
+          },
+          {
+            label: "Grab — CXR to Nha Trang city (typical)",
+            value: "VND 220,000–350,000",
+          },
+          {
+            label: "Airport shuttle bus (shared)",
+            value: "VND 80,000–120,000",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares in Nha Trang",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "CXR Airport → Nha Trang beach / city centre",
+            value: "VND 280,000–450,000",
+          },
+          {
+            label: "City → Vinpearl Land ferry pier",
+            value: "VND 30,000–60,000",
+          },
+          {
+            label: "City → Ba Ho Waterfalls (15 km)",
+            value: "VND 120,000–180,000",
+          },
+          { label: "Beach to Nha Trang Cathedral", value: "VND 30,000–55,000" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Airport shuttle buses (VND 80,000–120,000) are the cheapest option for the 40 km drive. For the return to the airport, book a Grab or taxi the night before — the 40 km drive takes 45–60 minutes and early flights are common.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Cam Ranh Airport to Nha Trang?",
+            a: "VND 280,000–450,000 (~$11–18) by taxi. Grab costs VND 220,000–350,000. Shuttle bus is VND 80,000–120,000.",
+          },
+          {
+            q: "How far is Cam Ranh Airport from Nha Trang?",
+            a: "40 km south — the drive takes 45–60 minutes by taxi.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Cam Ranh International Airport",
+        url: "https://www.camranhairportonline.com",
+      },
+    ],
+  },
+
+  // ── Siem Reap ─────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-siem-reap",
+    title: "How Much Does a Taxi Cost in Siem Reap? (2026 Guide)",
+    description:
+      "Siem Reap Airport to the city costs $6–12 by tuk-tuk or taxi. Here's the 2026 fare breakdown — USD-priced taxis, tuk-tuks for Angkor Wat, and the new Siem Reap Angkor Airport.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Siem Reap",
+    country: "Cambodia",
+    citySlug: "siem-reap",
+    countrySlug: "cambodia",
+    content: [
+      {
+        type: "intro",
+        body: "Siem Reap has a new airport: Siem Reap Angkor International Airport (SAI), which opened in 2023 and is 51 km from the city. The old airport (REP) is 5 km from town and still used for some flights. Taxis and tuk-tuks operate in USD. PassApp (Cambodian ride-hailing app) is available.",
+      },
+      {
+        type: "h2",
+        heading: "Siem Reap Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Airport taxi (old REP airport → city centre)",
+            value: "$6–10",
+          },
+          { label: "New SAI Airport → city centre (51 km)", value: "$25–40" },
+          { label: "Tuk-tuk — city to Angkor Wat (day hire)", value: "$12–20" },
+          { label: "PassApp — in-city trips", value: "$2–6" },
+          { label: "Base taxi rate", value: "$1.50 flag + $0.60/km" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Siem Reap",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Old REP Airport → city centre / Pub Street",
+            value: "$6–10",
+          },
+          { label: "New SAI Airport → city centre", value: "$25–40" },
+          {
+            label: "City → Angkor Wat (sunrise trip, tuk-tuk)",
+            value: "$12–15 (half day)",
+          },
+          {
+            label: "City → Ta Prohm / Angkor Thom (tuk-tuk full day)",
+            value: "$18–25",
+          },
+          { label: "City → Tonlé Sap Lake", value: "$10–18" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Tuk-tuks are the iconic Siem Reap transport and the best way to tour the Angkor temple complex. Hire one for a full day (INR 18–25) to visit multiple temples — it is far more practical than taking individual taxis between sites.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Siem Reap Airport to the city?",
+            a: "Old REP airport: $6–10. New SAI airport (51 km from city): $25–40.",
+          },
+          {
+            q: "How do I get to Angkor Wat from Siem Reap?",
+            a: "Tuk-tuk is the most popular option — $12–15 for a half-day sunrise trip, $18–25 for a full temple day.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Siem Reap Angkor International Airport",
+        url: "https://www.cambodiaairports.aero/siem-reap-angkor",
+      },
+    ],
+  },
+
+  // ── Macau ─────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-macau",
+    title: "How Much Does a Taxi Cost in Macau? (2026 Guide)",
+    description:
+      "Macau Ferry Terminal to the casinos costs MOP 55–90 by taxi. Here's the 2026 fare breakdown — free casino shuttles, the Cotai Strip vs Macau Peninsula, and why metered taxis are straightforward.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Macau",
+    country: "Macau",
+    citySlug: "macau",
+    countrySlug: "macau",
+    content: [
+      {
+        type: "intro",
+        body: "Macau taxis are metered, affordable by Asian casino-city standards, and widely available. Most visitors arrive by ferry from Hong Kong (55 minutes). Free casino shuttle buses operate from the ferry terminal and Macau International Airport to all major resort hotels.",
+      },
+      {
+        type: "h2",
+        heading: "Macau Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "MOP 19 (~$2.40)" },
+          { label: "Per km", value: "MOP 9.50 (~$1.19)" },
+          { label: "Minimum fare", value: "MOP 19" },
+          { label: "Night surcharge (midnight–06:00)", value: "+20%" },
+          { label: "Luggage surcharge (per bag)", value: "MOP 3" },
+          { label: "Border Gate → Grand Lisboa", value: "MOP 35–55" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares in Macau",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Outer Harbour Ferry → Grand Lisboa / Peninsula casinos",
+            value: "MOP 40–60",
+          },
+          {
+            label: "Outer Harbour Ferry → Cotai Strip (Galaxy, Venetian)",
+            value: "MOP 55–80",
+          },
+          { label: "Macau Airport → Grand Lisboa", value: "MOP 50–70" },
+          {
+            label: "Macau Airport → Venetian / Cotai Strip",
+            value: "MOP 40–60",
+          },
+          { label: "Ruins of St. Paul's → A-Ma Temple", value: "MOP 20–30" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Free casino shuttles run from the ferry terminals and airport to virtually every major casino resort. If you are staying at or visiting a large casino, use their free shuttle rather than a taxi — they run every 15–30 minutes around the clock.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from the ferry terminal to the Venetian Macau?",
+            a: "MOP 55–80 by taxi. The Venetian's free shuttle bus is the easiest and costless option.",
+          },
+          {
+            q: "Is Uber available in Macau?",
+            a: "No — Uber does not operate in Macau. Use metered taxis or casino shuttle buses.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Macau Government Tourism Office — Getting Around",
+        url: "https://www.macaotourism.gov.mo/en/travelessential/before-you-travel/getting-around",
+      },
+    ],
+  },
+
+  // ── Guangzhou ─────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-guangzhou",
+    title: "How Much Does a Taxi Cost in Guangzhou? (2026 Guide)",
+    description:
+      "Guangzhou Baiyun Airport to the city costs CNY 150–230 by taxi. Here's the 2026 fare breakdown — Metro Line 3 at CNY 9, DiDi vs metered cabs, and navigating the Pearl River Delta mega-city.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Guangzhou",
+    country: "China",
+    citySlug: "guangzhou",
+    countrySlug: "china",
+    content: [
+      {
+        type: "intro",
+        body: "Guangzhou Baiyun International Airport (CAN) is 28 km north of the city centre. Taxis are metered, plentiful, and must display their rates. DiDi (China's dominant ride-hailing app) is widely used. Metro Line 3 connects the airport to central Guangzhou.",
+      },
+      {
+        type: "h2",
+        heading: "Guangzhou Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (day, first 2.5 km)", value: "CNY 10 (~$1.40)" },
+          { label: "Per km (after 2.5 km)", value: "CNY 2.60 (~$0.36)" },
+          { label: "Minimum fare", value: "CNY 10" },
+          { label: "Night surcharge (23:00–05:00)", value: "+30%" },
+          {
+            label: "CAN → Tianhe / Pearl River New Town (typical)",
+            value: "CNY 150–230",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Guangzhou Airport (CAN)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "CAN → Tianhe / Pearl River New Town (CBD)",
+            value: "CNY 150–230",
+          },
+          { label: "CAN → Yuexiu / Liwan (old city)", value: "CNY 160–240" },
+          {
+            label: "CAN → Guangzhou South Railway Station (for HSR)",
+            value: "CNY 130–200",
+          },
+          { label: "Tianhe → Canton Tower", value: "CNY 20–35" },
+          {
+            label: "Tianhe → Shamian Island (old colonial area)",
+            value: "CNY 30–50",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Metro Line 3 (Airport North Line) runs from CAN to Tiyu Xilu (city centre) in 40 minutes for CNY 9. It runs every 10 minutes and is the most efficient airport option. DiDi is the recommended app for in-city rides.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Guangzhou Airport to the city?",
+            a: "CNY 150–230 by taxi. Metro Line 3 costs CNY 9 in 40 minutes.",
+          },
+          {
+            q: "Is DiDi available in Guangzhou?",
+            a: "Yes — DiDi is the dominant ride-hailing app in Guangzhou. It requires a Chinese phone number and WeChat/Alipay for payment.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Guangzhou Baiyun International Airport — Transport",
+        url: "https://www.gbiac.net/en/transport.html",
+      },
+    ],
+  },
+
+  // ── Shenzhen ──────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-shenzhen",
+    title: "How Much Does a Taxi Cost in Shenzhen? (2026 Guide)",
+    description:
+      "Shenzhen Airport to the city costs CNY 80–140 by taxi. Here's the 2026 fare breakdown — Metro Line 11 at CNY 10, DiDi, and getting from Shenzhen to Hong Kong border crossings.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Shenzhen",
+    country: "China",
+    citySlug: "shenzhen",
+    countrySlug: "china",
+    content: [
+      {
+        type: "intro",
+        body: "Shenzhen Bao'an International Airport (SZX) is 35 km west of Futian (CBD). Shenzhen is famous as China's tech hub and borders Hong Kong at three crossing points. Metro Line 11 (Airport Express) provides direct rail to the city. DiDi is the standard ride-hailing app.",
+      },
+      {
+        type: "h2",
+        heading: "Shenzhen Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (day, first 2.5 km)", value: "CNY 10 (~$1.40)" },
+          { label: "Per km (after 2.5 km)", value: "CNY 2.40 (~$0.33)" },
+          { label: "Minimum fare", value: "CNY 10" },
+          { label: "Night surcharge", value: "+30%" },
+          { label: "SZX → Futian CBD (typical)", value: "CNY 100–160" },
+          {
+            label: "SZX → Shenzhen Bay Port (HK border)",
+            value: "CNY 120–180",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Shenzhen Airport (SZX)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "SZX → Futian CBD / Civic Center", value: "CNY 100–160" },
+          {
+            label: "SZX → Nanshan / Hi-Tech Park (tech district)",
+            value: "CNY 55–90",
+          },
+          { label: "SZX → Luohu / Lo Wu (HK border)", value: "CNY 130–200" },
+          {
+            label: "SZX → Shekou Ferry Terminal (for HK ferry)",
+            value: "CNY 40–70",
+          },
+          { label: "Futian → OCT (Windows of the World)", value: "CNY 20–35" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Metro Line 11 (Airport Express) runs from SZX to Futian (city centre) in 30 minutes for CNY 10. It is fast, affordable, and connects to all other Shenzhen Metro lines. For travellers heading to Hong Kong, the Shekou-to-Hong Kong ferry ($40 HKD, 30 minutes) is an alternative.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Shenzhen Airport to the city?",
+            a: "CNY 100–160 to Futian CBD. Metro Line 11 costs CNY 10 in 30 minutes.",
+          },
+          {
+            q: "How do I get from Shenzhen Airport to Hong Kong?",
+            a: "Three options: taxi to Shenzhen Bay Port (CNY 120–180, then walk border), ferry from Shekou Terminal, or Metro to Futian/Huanggang port.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Shenzhen Bao'an International Airport — Transport",
+        url: "https://www.szairport.com/szjcen/transport/",
+      },
+    ],
+  },
+
+  // ── Hangzhou ──────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-hangzhou",
+    title: "How Much Does a Taxi Cost in Hangzhou? (2026 Guide)",
+    description:
+      "Hangzhou Airport to West Lake costs CNY 100–160 by taxi. Here's the 2026 fare breakdown — Metro Line 1, DiDi, and getting around China's most scenic city.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Hangzhou",
+    country: "China",
+    citySlug: "hangzhou",
+    countrySlug: "china",
+    content: [
+      {
+        type: "intro",
+        body: "Hangzhou Xiaoshan International Airport (HGH) is 27 km southeast of West Lake. Hangzhou is famous for West Lake (UNESCO World Heritage Site) and is home to Alibaba's headquarters. DiDi and metered taxis are both common; Metro Line 1 connects the airport to the city.",
+      },
+      {
+        type: "h2",
+        heading: "Hangzhou Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (first 3 km)", value: "CNY 11 (~$1.55)" },
+          { label: "Per km (after 3 km)", value: "CNY 2.50 (~$0.35)" },
+          { label: "Minimum fare", value: "CNY 11" },
+          { label: "Night surcharge (23:00–05:00)", value: "+30%" },
+          { label: "HGH → West Lake / Linyin area", value: "CNY 100–170" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Hangzhou Airport (HGH)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "HGH → West Lake / Leifeng Pagoda area",
+            value: "CNY 100–170",
+          },
+          { label: "HGH → Hangzhou East Railway Station", value: "CNY 70–110" },
+          { label: "HGH → Wulin Square / city centre", value: "CNY 90–140" },
+          { label: "West Lake → Lingyin Temple (5 km)", value: "CNY 20–35" },
+          { label: "West Lake → Alibaba HQ (Xixi area)", value: "CNY 30–50" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Metro Line 1 (Airport Branch) runs from HGH to the city in 45 minutes for CNY 10. DiDi is the standard ride-hailing app in Hangzhou — available in English interface. West Lake is best explored on a rented bike (CNY 5–10/hour) once in the city.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Hangzhou Airport to West Lake?",
+            a: "CNY 100–170 by taxi. Metro Line 1 costs CNY 10 in 45 minutes.",
+          },
+          {
+            q: "Is DiDi available in Hangzhou?",
+            a: "Yes — DiDi is the primary ride-hailing app and works well in Hangzhou.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Hangzhou Xiaoshan International Airport",
+        url: "https://www.hzairport.com/en",
+      },
+    ],
+  },
+
+  // ── Suzhou ────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-suzhou",
+    title: "How Much Does a Taxi Cost in Suzhou? (2026 Guide)",
+    description:
+      "Suzhou is 30 minutes from Shanghai by high-speed rail — most visitors arrive by train, not air. Here's the 2026 taxi fare breakdown for getting around the garden city.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Suzhou",
+    country: "China",
+    citySlug: "suzhou",
+    countrySlug: "china",
+    content: [
+      {
+        type: "intro",
+        body: "Suzhou doesn't have a major international airport — most visitors arrive from Shanghai by HSR (30 minutes, CNY 35) or from Shanghai Pudong Airport directly by bus or taxi. Once in Suzhou, taxis and DiDi are the standard transport. The famous classical gardens are spread across the city.",
+      },
+      {
+        type: "h2",
+        heading: "Suzhou Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (first 3 km)", value: "CNY 10 (~$1.40)" },
+          { label: "Per km (after 3 km)", value: "CNY 2.20 (~$0.31)" },
+          { label: "Minimum fare", value: "CNY 10" },
+          { label: "Night surcharge (23:00–05:00)", value: "+30%" },
+          {
+            label: "Suzhou Railway Station → Humble Administrator's Garden",
+            value: "CNY 15–25",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares Within Suzhou",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Suzhou Railway Station → Humble Administrator's Garden",
+            value: "CNY 15–25",
+          },
+          {
+            label: "Humble Administrator's Garden → Tiger Hill",
+            value: "CNY 20–32",
+          },
+          {
+            label: "City centre → Suzhou Museum (I.M. Pei)",
+            value: "CNY 10–18",
+          },
+          {
+            label: "Suzhou → Shanghai Pudong Airport (110 km, shared shuttle)",
+            value: "CNY 110–140",
+          },
+          {
+            label: "Suzhou → Shanghai Hongqiao Airport (75 km)",
+            value: "CNY 200–280 (private taxi)",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The fastest way to reach Suzhou from Shanghai is by G-class high-speed rail (30 minutes, CNY 35). From Suzhou station, taxis take you to any classical garden in under 20 minutes. DiDi works well for in-city rides.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How do I get from Shanghai to Suzhou?",
+            a: "High-speed rail (G-train) runs every 30 minutes, takes 30 minutes, and costs CNY 35. Much faster than driving.",
+          },
+          {
+            q: "How much is a taxi between Suzhou's classical gardens?",
+            a: "CNY 15–35 between most gardens — the city is compact and taxis are affordable.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Suzhou Tourism Information",
+        url: "https://www.visitsz.com/en",
+      },
+    ],
+  },
+
+  // ── Kyiv ──────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-kyiv",
+    title: "How Much Does a Taxi Cost in Kyiv? (2026 Guide)",
+    description:
+      "Kyiv Boryspil Airport to the city costs UAH 700–1,100 by taxi. Here's the 2026 fare breakdown — Uklon app, Bolt, and the Skybus express option during wartime operations.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Kyiv",
+    country: "Ukraine",
+    citySlug: "kyiv",
+    countrySlug: "ukraine",
+    content: [
+      {
+        type: "intro",
+        body: "Boryspil International Airport (KBP) is 29 km east of central Kyiv. Ukraine's ongoing conflict with Russia has affected some infrastructure, but commercial flights and taxis continue operating. Uklon is Ukraine's leading ride-hailing app. Bolt also operates in Kyiv.",
+      },
+      {
+        type: "h2",
+        heading: "Kyiv Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "UAH 50 (~$1.22)" },
+          { label: "Per km", value: "UAH 20 (~$0.49)" },
+          { label: "Minimum fare", value: "UAH 80 (~$2)" },
+          { label: "Night surcharge (22:00–06:00)", value: "+25%" },
+          {
+            label: "KBP → city centre / Maidan (Uklon typical)",
+            value: "UAH 650–1,000",
+          },
+          {
+            label: "Skybus express (KBP → Kyiv Central Bus Station)",
+            value: "UAH 150–200",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Boryspil Airport (KBP)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "KBP → Maidan Nezalezhnosti (Independence Square)",
+            value: "UAH 700–1,100",
+          },
+          { label: "KBP → Podil / old town area", value: "UAH 750–1,150" },
+          { label: "KBP → Pechersk / Lavra area", value: "UAH 700–1,050" },
+          {
+            label: "City centre → St. Sophia Cathedral",
+            value: "UAH 80 (minimum)",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Skybus express runs from KBP to Kyiv Central Bus Station (Tsentralna Avtostantsiya) for UAH 150–200 every 30–45 minutes, taking 40–55 minutes. Uklon (Ukraine's #1 taxi app) typically quotes UAH 650–900 — cheaper than metered street taxis.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Kyiv Airport to the city?",
+            a: "UAH 700–1,100 by taxi. Skybus express costs UAH 150–200. Uklon app quotes UAH 650–900.",
+          },
+          {
+            q: "Is it safe to travel to Kyiv?",
+            a: "Check your government's travel advisory before visiting. Commercial flights and ground transport continue operating, but conditions vary.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Boryspil International Airport — Transport",
+        url: "https://boryspil.aero/en/passengers/how-to-get-to-kyiv/",
+      },
+    ],
+  },
+
   // ── Taxi Driver Phrases (Tier 2 — Linkable / Shareable) ───────────────────
   {
     slug: "what-to-say-to-your-taxi-driver-in-15-languages",
