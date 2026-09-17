@@ -13536,6 +13536,691 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
 
+  // ── St. Petersburg ────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-st-petersburg",
+    title: "How Much Does a Taxi Cost in St. Petersburg? (2026 Guide)",
+    description:
+      "St. Petersburg Airport to the city costs RUB 1,200–2,000 by taxi. Here's the 2026 fare breakdown — Yandex Go dominance, the Aeroexpress train, and navigating Russia's cultural capital.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "St. Petersburg",
+    country: "Russia",
+    citySlug: "st-petersburg",
+    countrySlug: "russia",
+    content: [
+      {
+        type: "intro",
+        body: "Pulkovo International Airport (LED) is 17 km south of St. Petersburg city centre. Yandex Go is the dominant taxi app in Russia and widely used by locals and tourists. Street-hailed taxis exist but Yandex Go is cheaper and more reliable. Note: check current travel advisories before visiting Russia.",
+      },
+      {
+        type: "h2",
+        heading: "St. Petersburg Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (metered taxi)", value: "RUB 300 (~$3.30)" },
+          { label: "Per km", value: "RUB 70 (~$0.77)" },
+          { label: "Minimum fare", value: "RUB 300" },
+          { label: "Night surcharge (22:00–06:00)", value: "+20%" },
+          {
+            label: "LED → Nevsky Prospekt / city centre (Yandex Go)",
+            value: "RUB 700–1,200",
+          },
+          {
+            label: "LED → city centre (metered taxi)",
+            value: "RUB 1,200–2,000",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Pulkovo Airport (LED)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "LED → Nevsky Prospekt / city centre",
+            value: "RUB 1,200–2,000",
+          },
+          {
+            label: "LED → Hermitage / Palace Square area",
+            value: "RUB 1,300–2,100",
+          },
+          { label: "LED → Vasilyevsky Island", value: "RUB 1,400–2,200" },
+          { label: "City centre → Peterhof (30 km)", value: "RUB 1,800–2,800" },
+          {
+            label: "Hermitage → Mariinsky Theatre",
+            value: "RUB 300 (minimum)",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Yandex Go is the essential app for getting around St. Petersburg — it offers upfront pricing and is significantly cheaper than street-hailed taxis. Bus Route 39 also runs from LED to the city centre for RUB 75.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from St. Petersburg Airport to the city?",
+            a: "RUB 1,200–2,000 by metered taxi. Yandex Go typically quotes RUB 700–1,200.",
+          },
+          {
+            q: "Is Uber available in St. Petersburg?",
+            a: "Uber merged its Russian operations into Yandex Go in 2018. Use the Yandex Go app.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Pulkovo Airport — Ground Transport",
+        url: "https://www.pulkovoairport.ru/en/passengers/arrival/transport/",
+      },
+    ],
+  },
+
+  // ── Dubrovnik ─────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-dubrovnik",
+    title: "How Much Does a Taxi Cost in Dubrovnik? (2026 Guide)",
+    description:
+      "Dubrovnik Airport to the Old Town costs €35–55 by taxi. Here's the 2026 fare breakdown — bus vs taxi, metered Croatian rates, and getting around the Game of Thrones city.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Dubrovnik",
+    country: "Croatia",
+    citySlug: "dubrovnik",
+    countrySlug: "croatia",
+    content: [
+      {
+        type: "intro",
+        body: "Dubrovnik Airport (DBV) is 18 km southeast of the Old Town (Stari Grad). Taxis are metered and regulated. The Atlas/Platanus airport shuttle bus provides a much cheaper alternative. Uber does not operate in Dubrovnik — local ride-hailing options are limited.",
+      },
+      {
+        type: "h2",
+        heading: "Dubrovnik Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "€2.65" },
+          { label: "Per km", value: "€2.00" },
+          { label: "Minimum fare", value: "€5.00" },
+          { label: "Night surcharge (22:00–05:00)", value: "+20%" },
+          { label: "DBV → Old Town (Pile Gate)", value: "€35–55" },
+          { label: "DBV → Lapad / Babin Kuk (hotels)", value: "€30–45" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Dubrovnik Airport (DBV)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "DBV → Old Town (Pile Gate)", value: "€35–55" },
+          { label: "DBV → Lapad / Babin Kuk hotel strip", value: "€30–45" },
+          { label: "Old Town → Lokrum Island ferry pier", value: "€5–9" },
+          { label: "Old Town → Banje Beach", value: "€5 (minimum)" },
+          { label: "Dubrovnik → Cavtat (14 km)", value: "€25–38" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Atlas/Platanus airport shuttle bus runs to the Old Town for €8–10 per person. It meets most flights and drops off at the Pile Gate. At €8 vs €35–55 for a taxi, it is exceptional value — though it does not serve all suburbs.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Dubrovnik Airport to the Old Town?",
+            a: "€35–55 by metered taxi. The airport shuttle bus costs €8–10 to Pile Gate.",
+          },
+          {
+            q: "Is Uber available in Dubrovnik?",
+            a: "No — Uber does not operate in Dubrovnik. Use metered taxis or the airport shuttle.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Dubrovnik Airport — Ground Transport",
+        url: "https://www.airport-dubrovnik.hr/en/passengers/transport",
+      },
+    ],
+  },
+
+  // ── Kigali ────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-kigali",
+    title: "How Much Does a Taxi Cost in Kigali? (2026 Guide)",
+    description:
+      "Kigali Airport to the city costs RWF 8,000–15,000 by taxi. Here's the 2026 fare breakdown — Yego Moto (motorbike taxis), Move app, and navigating Rwanda's exceptionally clean capital.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Kigali",
+    country: "Rwanda",
+    citySlug: "kigali",
+    countrySlug: "rwanda",
+    content: [
+      {
+        type: "intro",
+        body: "Kigali International Airport (KGL) is 10 km from the city centre. Kigali is famous for being one of Africa's cleanest and safest capitals. Taxis are negotiated (not metered). Yego Moto (regulated motorbike taxis) are cheap and ubiquitous. The Move app provides app-based booking.",
+      },
+      {
+        type: "h2",
+        heading: "Kigali Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Base fare (negotiated)", value: "RWF 200 (~$0.18)" },
+          { label: "Per km (negotiated)", value: "RWF 200 (~$0.18)" },
+          { label: "Minimum fare", value: "RWF 500 (~$0.44)" },
+          {
+            label: "KGL → City Centre / Kigali Convention Centre (negotiated)",
+            value: "RWF 8,000–15,000",
+          },
+          {
+            label: "Yego Moto (motorbike taxi) — short city trip",
+            value: "RWF 500–1,500",
+          },
+          { label: "Move app — KGL to city centre", value: "RWF 6,000–10,000" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Kigali Airport (KGL)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "KGL → City Centre / Kigali Convention Centre",
+            value: "RWF 8,000–15,000",
+          },
+          {
+            label: "KGL → Kimihurura / Nyarutarama (upscale areas)",
+            value: "RWF 7,000–12,000",
+          },
+          { label: "City → Genocide Memorial", value: "RWF 1,500–3,000" },
+          {
+            label: "City → Nyirangarama Market",
+            value: "RWF 500–1,500 (moto)",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Yego Moto (green-uniformed motorbike taxis) is the fastest and cheapest way to get around Kigali for solo travellers. Book via the Yego Moto app for set prices. The Move app books car rides similar to Uber.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Kigali Airport to the city?",
+            a: "RWF 8,000–15,000 (~$7–13) negotiated. Move app runs RWF 6,000–10,000.",
+          },
+          {
+            q: "What are Yego Motos in Kigali?",
+            a: "Regulated green-uniformed motorbike taxis — the fastest and cheapest in-city transport. Helmets are provided.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Visit Rwanda — Getting Around Kigali",
+        url: "https://www.visitrwanda.com/plan-your-trip/getting-around/",
+      },
+    ],
+  },
+
+  // ── Lagos ─────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-lagos",
+    title: "How Much Does a Taxi Cost in Lagos? (2026 Guide)",
+    description:
+      "Lagos Airport to the city costs NGN 15,000–30,000 by taxi. Here's the 2026 fare breakdown — Bolt and InDriver vs street taxis, the Third Mainland Bridge traffic, and what to expect in Africa's largest city.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Lagos",
+    country: "Nigeria",
+    citySlug: "lagos",
+    countrySlug: "nigeria",
+    content: [
+      {
+        type: "intro",
+        body: "Murtala Muhammed International Airport (LOS) is 22 km from Lagos Island (Victoria Island / Lagos Mainland). Lagos has severe traffic — the Third Mainland Bridge connecting the mainland to the island can add 1–2 hours during peak hours. Bolt and InDriver are both widely used and more affordable than traditional airport taxis.",
+      },
+      {
+        type: "h2",
+        heading: "Lagos Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (metered taxi)", value: "NGN 500 (~$0.31)" },
+          { label: "Per km", value: "NGN 250 (~$0.16)" },
+          { label: "Minimum fare", value: "NGN 800" },
+          {
+            label: "Airport taxi (fixed rate to Victoria Island)",
+            value: "NGN 20,000–40,000",
+          },
+          {
+            label: "Bolt — LOS to Victoria Island (typical)",
+            value: "NGN 12,000–22,000",
+          },
+          {
+            label: "InDriver — LOS to Victoria Island (bid)",
+            value: "NGN 10,000–18,000",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Lagos Airport (LOS)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "LOS → Victoria Island (VI)", value: "NGN 15,000–30,000" },
+          {
+            label: "LOS → Lagos Island / Balogun Market",
+            value: "NGN 12,000–25,000",
+          },
+          { label: "LOS → Lekki Phase 1", value: "NGN 18,000–35,000" },
+          {
+            label: "LOS → Ikeja / Allen Avenue (nearby)",
+            value: "NGN 4,000–8,000",
+          },
+          {
+            label: "Victoria Island → Lekki Conservation Centre",
+            value: "NGN 5,000–10,000",
+          },
+        ],
+      },
+      {
+        type: "warning",
+        body: "Lagos traffic is legendary — the Third Mainland Bridge and Eko Bridge can be gridlocked from 07:00–10:00 and 16:00–20:00. Budget 2–3 hours for airport transfers to Victoria Island during peak times. Early morning flights often have significantly shorter journey times.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Lagos Airport to Victoria Island?",
+            a: "NGN 15,000–30,000 by airport taxi. Bolt costs NGN 12,000–22,000.",
+          },
+          {
+            q: "Is Uber available in Lagos?",
+            a: "Uber operates in Lagos. Bolt and InDriver are also popular — InDriver lets you bid on a price.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Murtala Muhammed International Airport",
+        url: "https://www.faan.gov.ng/airports/mmia/",
+      },
+    ],
+  },
+
+  // ── Durban ────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-durban",
+    title: "How Much Does a Taxi Cost in Durban? (2026 Guide)",
+    description:
+      "Durban King Shaka Airport to the city costs ZAR 400–650 by taxi. Here's the 2026 fare breakdown — Bolt vs metered cabs, minibus taxi warnings, and getting around South Africa's coastal city.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Durban",
+    country: "South Africa",
+    citySlug: "durban",
+    countrySlug: "south-africa",
+    content: [
+      {
+        type: "intro",
+        body: "King Shaka International Airport (DUR) is 35 km north of central Durban. Taxis are metered and regulated. Bolt is available and typically 20–30% cheaper than metered taxis. Minibus taxis (shared informal transport) are the cheapest option but not recommended for tourists due to safety concerns.",
+      },
+      {
+        type: "h2",
+        heading: "Durban Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "ZAR 25 (~$1.37)" },
+          { label: "Per km", value: "ZAR 15 (~$0.82)" },
+          { label: "Minimum fare", value: "ZAR 50" },
+          { label: "Night surcharge (21:00–05:00)", value: "+10%" },
+          { label: "DUR → Durban CBD (typical)", value: "ZAR 400–650" },
+          { label: "Bolt — DUR to Durban CBD", value: "ZAR 280–450" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from King Shaka Airport (DUR)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "DUR → Durban CBD / beachfront", value: "ZAR 400–650" },
+          { label: "DUR → Umhlanga (upscale suburb)", value: "ZAR 150–250" },
+          { label: "DUR → Ballito / Dolphin Coast", value: "ZAR 180–280" },
+          { label: "Durban CBD → Ushaka Marine World", value: "ZAR 50–90" },
+          {
+            label: "Durban CBD → Valley of a Thousand Hills (35 km)",
+            value: "ZAR 300–500",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Bolt is the recommended option in Durban — it is significantly cheaper than metered airport taxis and has good availability. Umhlanga (the upscale beach suburb near the airport) is only 15 km from DUR and a much shorter, cheaper trip than the CBD.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Durban Airport to the city?",
+            a: "ZAR 400–650 by metered taxi to the CBD. Bolt costs ZAR 280–450.",
+          },
+          {
+            q: "Are minibus taxis safe in Durban?",
+            a: "Minibus (informal) taxis are not recommended for tourists — use Bolt or metered taxis.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "King Shaka International Airport — Transport",
+        url: "https://www.kingshakaairport.co.za/transport",
+      },
+    ],
+  },
+
+  // ── Cartagena ─────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-cartagena",
+    title: "How Much Does a Taxi Cost in Cartagena? (2026 Guide)",
+    description:
+      "Cartagena Airport to the Walled City costs COP 20,000–35,000 by taxi. Here's the 2026 fare breakdown — InDriver, fixed-rate airport taxis, and getting around Colombia's most beautiful colonial city.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Cartagena",
+    country: "Colombia",
+    citySlug: "cartagena",
+    countrySlug: "colombia",
+    content: [
+      {
+        type: "intro",
+        body: "Rafael Núñez International Airport (CTG) is just 3 km from Cartagena's Walled City (Ciudad Amurallada). Most taxis are negotiated (not metered) — agree on a price before getting in. InDriver (bid-based) and Uber both operate in Cartagena.",
+      },
+      {
+        type: "h2",
+        heading: "Cartagena Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Base fare (negotiated)", value: "COP 5,000 (~$1.20)" },
+          { label: "Per km (negotiated)", value: "COP 1,200 (~$0.29)" },
+          { label: "Minimum fare", value: "COP 5,000" },
+          {
+            label: "CTG → Walled City / El Centro (negotiated)",
+            value: "COP 15,000–30,000",
+          },
+          { label: "CTG → Bocagrande / hotels", value: "COP 18,000–32,000" },
+          {
+            label: "InDriver / Uber — same routes",
+            value: "COP 12,000–22,000",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Cartagena Airport (CTG)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "CTG → Walled City (Ciudad Amurallada)",
+            value: "COP 15,000–30,000",
+          },
+          {
+            label: "CTG → Bocagrande (beach hotel strip)",
+            value: "COP 18,000–32,000",
+          },
+          {
+            label: "CTG → Getsemaní neighbourhood",
+            value: "COP 14,000–25,000",
+          },
+          { label: "Walled City → Bocagrande", value: "COP 8,000–15,000" },
+          {
+            label: "City → Playa Blanca (day trip, 45 km)",
+            value: "COP 120,000–180,000",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "InDriver is the recommended app in Cartagena — you propose a price and drivers accept or counter. Typically 20–30% cheaper than negotiated street taxis. The Walled City is only 3 km from the airport, making taxis very affordable.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Cartagena Airport to the Walled City?",
+            a: "COP 15,000–30,000 (~$3.60–7.20) negotiated. InDriver costs COP 12,000–22,000.",
+          },
+          {
+            q: "Should I negotiate taxi prices in Cartagena?",
+            a: "Yes — Cartagena taxis are not metered. Always agree on a price before getting in, or use InDriver/Uber for upfront pricing.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Rafael Núñez International Airport",
+        url: "https://www.aerocivil.gov.co/aeropuertos/Pages/cartagena.aspx",
+      },
+    ],
+  },
+
+  // ── Medellín ──────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-medellin",
+    title: "How Much Does a Taxi Cost in Medellín? (2026 Guide)",
+    description:
+      "Medellín's José María Córdova Airport to the city costs COP 70,000–120,000 by taxi. Here's the 2026 fare breakdown — the 45 km mountain drive, InDriver vs metered cabs, and Medellín's metro alternative.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Medellín",
+    country: "Colombia",
+    citySlug: "medellin",
+    countrySlug: "colombia",
+    content: [
+      {
+        type: "intro",
+        body: "José María Córdova International Airport (MDE) is 45 km east of Medellín — a winding mountain drive that takes 45–90 minutes. This is one of Latin America's longest major airport-to-city transfers. InDriver and Uber both operate. Medellín's Metro is world-class but doesn't reach the airport.",
+      },
+      {
+        type: "h2",
+        heading: "Medellín Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (metered)", value: "COP 5,500 (~$1.30)" },
+          { label: "Per km (metered)", value: "COP 1,400 (~$0.34)" },
+          { label: "Minimum fare", value: "COP 5,500" },
+          {
+            label: "MDE → El Poblado / city centre (metered)",
+            value: "COP 80,000–130,000",
+          },
+          {
+            label: "InDriver/Uber — MDE to El Poblado",
+            value: "COP 55,000–90,000",
+          },
+          {
+            label: "Shared shuttle bus (MDE to Terminal Norte)",
+            value: "COP 12,000–16,000",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Medellín Airport (MDE)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "MDE → El Poblado (expat / tourist hub)",
+            value: "COP 80,000–130,000",
+          },
+          { label: "MDE → Laureles / Estadio", value: "COP 85,000–135,000" },
+          { label: "MDE → Centro (city centre)", value: "COP 75,000–120,000" },
+          {
+            label: "El Poblado → Parque Arví (cable car base)",
+            value: "COP 20,000–35,000",
+          },
+          {
+            label: "El Poblado → Guatapé (80 km day trip)",
+            value: "COP 250,000–380,000",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Shared shuttle buses from MDE to Terminal Norte cost COP 12,000–16,000 and take 60–90 minutes. From Terminal Norte, the Medellín Metro (Line A) takes you to El Poblado in 20 minutes for COP 3,000. This combination is far cheaper than a private taxi.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Medellín Airport to El Poblado?",
+            a: "COP 80,000–130,000 (~$19–31) by metered taxi. InDriver/Uber runs COP 55,000–90,000.",
+          },
+          {
+            q: "Is there a cheaper option than a taxi from Medellín Airport?",
+            a: "Yes — shared shuttle to Terminal Norte (COP 12,000) + Metro to El Poblado (COP 3,000) costs COP 15,000 total.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "José María Córdova International Airport — Transport",
+        url: "https://www.aeropuertomedellin.com/en/transport",
+      },
+    ],
+  },
+
+  // ── Cusco ─────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-cusco",
+    title: "How Much Does a Taxi Cost in Cusco? (2026 Guide)",
+    description:
+      "Cusco Airport is within walking distance of the Plaza de Armas — a taxi costs PEN 15–25. Here's the 2026 fare breakdown — altitude, official vs pirate taxis, and getting to Machu Picchu.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Cusco",
+    country: "Peru",
+    citySlug: "cusco",
+    countrySlug: "peru",
+    content: [
+      {
+        type: "intro",
+        body: "Alejandro Velasco Astete International Airport (CUZ) is only 3 km from central Cusco — one of the world's most centrally located airports. At 3,400m altitude, taxis are the most comfortable option on arrival. Taxis are not metered — prices are negotiated. Use official taxis (with roof sign) rather than informal drivers.",
+      },
+      {
+        type: "h2",
+        heading: "Cusco Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Base fare (negotiated)", value: "PEN 5.00 (~$1.35)" },
+          { label: "Per km (negotiated)", value: "PEN 2.00 (~$0.54)" },
+          { label: "Minimum fare", value: "PEN 5.00" },
+          {
+            label: "CUZ → Plaza de Armas / city centre (official taxi)",
+            value: "PEN 15–25",
+          },
+          { label: "CUZ → Miraflores / Wanchaq", value: "PEN 10–18" },
+          {
+            label: "Cusco → Pisac market (35 km, half-day hire)",
+            value: "PEN 80–130",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Cusco Airport (CUZ)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "CUZ → Plaza de Armas", value: "PEN 15–25" },
+          { label: "CUZ → San Blas neighbourhood", value: "PEN 18–28" },
+          {
+            label: "Plaza de Armas → Sacsayhuamán (Inca fortress)",
+            value: "PEN 10–18",
+          },
+          {
+            label: "Cusco → Chinchero (26 km, Sacred Valley)",
+            value: "PEN 50–80",
+          },
+          {
+            label: "Cusco → Ollantaytambo (80 km — for Machu Picchu train)",
+            value: "PEN 150–220",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Machu Picchu is not accessible by taxi — take the train from Poroy (20 minutes from Cusco by taxi, PEN 15–25) or Ollantaytambo (80 km, PEN 150–220 taxi). Trains are operated by Peru Rail and Inca Rail; book well in advance.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Cusco Airport to the city?",
+            a: "PEN 15–25 (~$4–7) to the Plaza de Armas. The airport is only 3 km from the city centre.",
+          },
+          {
+            q: "Can I take a taxi to Machu Picchu?",
+            a: "No — Machu Picchu is not road-accessible. Take a taxi to Poroy or Ollantaytambo, then the train.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Peru Rail — Machu Picchu Trains",
+        url: "https://www.perurail.com/en",
+      },
+    ],
+  },
+
   // ── Taxi Driver Phrases (Tier 2 — Linkable / Shareable) ───────────────────
   {
     slug: "what-to-say-to-your-taxi-driver-in-15-languages",
