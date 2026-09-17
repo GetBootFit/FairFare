@@ -11554,6 +11554,643 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
 
+  // ── Austin ────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-austin",
+    title: "How Much Does a Taxi Cost in Austin? (2026 Guide)",
+    description:
+      "Austin Airport to downtown costs $25–38 by taxi. Here's the 2026 fare breakdown — no light rail at AUS, Uber surge during SXSW, and what to expect in Texas's fastest-growing city.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Austin",
+    country: "United States",
+    citySlug: "austin",
+    countrySlug: "united-states",
+    content: [
+      {
+        type: "intro",
+        body: "Austin-Bergstrom International Airport (AUS) is 11 km from downtown. Like Nashville, Austin has no light rail airport connection — taxis and rideshares are the standard transfer. Uber and Lyft surge dramatically during SXSW (March), Austin City Limits (October), and Formula 1 weekend (November).",
+      },
+      {
+        type: "h2",
+        heading: "Austin Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "$2.50" },
+          { label: "Per mile (approx)", value: "$2.05" },
+          { label: "Minimum fare", value: "$5.00" },
+          { label: "Airport surcharge (AUS)", value: "$2.15" },
+          { label: "AUS → Downtown Austin (typical)", value: "$25–38" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Austin Airport (AUS)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "AUS → Downtown / 6th Street", value: "$25–38" },
+          { label: "AUS → South Congress / South Lamar", value: "$22–32" },
+          { label: "AUS → East Austin / East 6th", value: "$20–30" },
+          { label: "AUS → Domain / North Austin", value: "$30–45" },
+          { label: "Downtown → UT Austin campus", value: "$6–12" },
+        ],
+      },
+      {
+        type: "warning",
+        body: "During SXSW, ACL Fest, and Formula 1 weekend, Uber/Lyft surge pricing can make rideshares 3–5× the normal fare. Metered taxis don't surge — they can be significantly cheaper during peak event periods.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Austin Airport to downtown?",
+            a: "$25–38 by metered taxi. No light rail option — taxis and rideshare are primary airport transfers.",
+          },
+          {
+            q: "Are taxis or Uber better at Austin Airport?",
+            a: "During events (SXSW, F1), metered taxis are often cheaper. At normal times, Uber/Lyft runs $18–28.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Austin-Bergstrom International Airport — Ground Transportation",
+        url: "https://www.austintexas.gov/airport/ground-transportation",
+      },
+    ],
+  },
+
+  // ── Antalya ───────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-antalya",
+    title: "How Much Does a Taxi Cost in Antalya? (2026 Guide)",
+    description:
+      "Antalya Airport to the city centre costs TRY 300–450 by taxi. Here's the 2026 fare breakdown — metered TRY rates, Havataş airport bus, and how to avoid overcharging at Turkey's biggest resort airport.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Antalya",
+    country: "Turkey",
+    citySlug: "antalya",
+    countrySlug: "turkey",
+    content: [
+      {
+        type: "intro",
+        body: "Antalya Airport (AYT) handles over 30 million passengers annually — primarily holiday charter flights. The airport is 12 km from the city centre (Kaleiçi old town). All taxis are metered, but tourist overcharging is reported; always ensure the meter is running before departure.",
+      },
+      {
+        type: "h2",
+        heading: "Antalya Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "TRY 40 (~$1.15)" },
+          { label: "Per km", value: "TRY 30 (~$0.87)" },
+          { label: "Minimum fare", value: "TRY 70 (~$2.00)" },
+          { label: "Night surcharge (midnight–06:00)", value: "+50%" },
+          {
+            label: "AYT → city centre (Kaleiçi / old town)",
+            value: "TRY 350–500",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Antalya Airport (AYT)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "AYT → Kaleiçi (old town)", value: "TRY 350–500 (~$10–14)" },
+          { label: "AYT → Konyaaltı Beach", value: "TRY 400–550 (~$11–16)" },
+          {
+            label: "AYT → Lara Beach / luxury hotel strip",
+            value: "TRY 250–350 (~$7–10)",
+          },
+          {
+            label: "AYT → Belek Resort area (40 km)",
+            value: "TRY 700–900 (~$20–26)",
+          },
+          { label: "Kaleiçi → Hadrian's Gate", value: "TRY 70 (minimum)" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Havataş airport shuttle bus connects AYT to the city centre (Atatürk Park / Kaleiçi area) for TRY 80–100. It runs every 30 minutes and takes 25 minutes. At ~$2.30 vs ~$10–14 for a taxi, it is excellent value for solo travellers.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Antalya Airport to the city?",
+            a: "TRY 350–500 (~$10–14) to the old town (Kaleiçi). Havataş bus costs TRY 80–100 in 25 minutes.",
+          },
+          {
+            q: "How do I avoid being overcharged in an Antalya taxi?",
+            a: "Always confirm the meter is running (tariff 1 for day) and check the rate card on the window. Avoid unlicensed cabs.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Antalya Airport — Transport to City",
+        url: "https://www.aytport.com/en/transportation/",
+      },
+    ],
+  },
+
+  // ── Bucharest ─────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-bucharest",
+    title: "How Much Does a Taxi Cost in Bucharest? (2026 Guide)",
+    description:
+      "Bucharest Airport to the city costs RON 50–80 by taxi. Here's the 2026 fare breakdown — very affordable Romanian rates, Bolt vs metered cabs, and avoiding the airport taxi scam.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Bucharest",
+    country: "Romania",
+    citySlug: "bucharest",
+    countrySlug: "romania",
+    content: [
+      {
+        type: "intro",
+        body: "Bucharest Henri Coandă International Airport (OTP) is 17 km north of the city. Bucharest taxis are metered and very affordable — RON 3.50/km makes it one of Europe's cheapest. However, the airport taxi queue has a well-documented history of scams; always use a licensed company or book via the Bolt app.",
+      },
+      {
+        type: "h2",
+        heading: "Bucharest Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (licensed taxi)", value: "RON 3.50 (~€0.70)" },
+          { label: "Per km (licensed taxi)", value: "RON 3.50 (~€0.70)" },
+          { label: "Minimum fare", value: "RON 3.50" },
+          { label: "Night surcharge (22:00–06:00)", value: "+20%" },
+          { label: "Bolt — OTP to city centre (typical)", value: "RON 45–65" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Bucharest Airport (OTP)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "OTP → Old Town (Centrul Istoric)",
+            value: "RON 55–80 (~€11–16)",
+          },
+          {
+            label: "OTP → Floreasca / Dorobanți area",
+            value: "RON 40–60 (~€8–12)",
+          },
+          { label: "OTP → Piața Unirii (city centre)", value: "RON 55–75" },
+          { label: "Old Town → Herastrau Park", value: "RON 14–22" },
+        ],
+      },
+      {
+        type: "warning",
+        body: "Bucharest Airport has one of Eastern Europe's most active taxi scam scenes — unofficial drivers demand €40–80 for a €15 ride. Use only licensed taxis from the official rank (marked with company logos and rate cards on the door) or book Bolt before you reach arrivals.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Bucharest Airport to the city?",
+            a: "RON 55–80 (€11–16) by licensed taxi. Bolt typically quotes RON 45–65.",
+          },
+          {
+            q: "How do I avoid taxi scams at Bucharest Airport?",
+            a: "Book via Bolt before exiting arrivals, or use the official taxi terminal (yellow phone stands inside arrivals). Never accept offers from touts in the terminal.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Henri Coandă International Airport — Transport",
+        url: "https://www.bucharestairports.ro/en/airports/otopeni/transport",
+      },
+    ],
+  },
+
+  // ── Casablanca ────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-casablanca",
+    title: "How Much Does a Taxi Cost in Casablanca? (2026 Guide)",
+    description:
+      "Casablanca Airport to the city costs MAD 200–300 by grand taxi. Here's the 2026 fare breakdown — petit taxi vs grand taxi, the airport train, and Morocco's two-tier taxi system.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Casablanca",
+    country: "Morocco",
+    citySlug: "casablanca",
+    countrySlug: "morocco",
+    content: [
+      {
+        type: "intro",
+        body: "Casablanca has two types of taxis: petit taxis (metered, small, city use only) and grand taxis (unmetered, negotiate price, for longer trips). Mohammed V International Airport (CMN) is 30 km from the city centre. The ONCF train runs from the airport to Casa Voyageurs station for MAD 45.",
+      },
+      {
+        type: "h2",
+        heading: "Casablanca Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Petit taxi — flag fall (day)", value: "MAD 5.00" },
+          { label: "Petit taxi — per km", value: "MAD 2.50" },
+          { label: "Petit taxi — minimum fare", value: "MAD 8.00" },
+          {
+            label: "Grand taxi — CMN to city centre (negotiated)",
+            value: "MAD 200–350",
+          },
+          { label: "Night surcharge (petit taxi)", value: "+50%" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares in Casablanca",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "CMN Airport → city centre (Hassan II Mosque area)",
+            value: "MAD 200–350 (grand taxi)",
+          },
+          {
+            label: "CMN Airport → city centre (train — ONCF)",
+            value: "MAD 45",
+          },
+          {
+            label: "City centre → Hassan II Mosque (petit taxi)",
+            value: "MAD 15–25",
+          },
+          {
+            label: "City centre → Morocco Mall (petit taxi)",
+            value: "MAD 20–35",
+          },
+          {
+            label: "Between neighbourhoods (petit taxi, 5 km)",
+            value: "MAD 20–30",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The ONCF airport train runs from CMN Airport to Casa Voyageurs station in 35 minutes for MAD 45. Trains run every hour. From Casa Voyageurs, take a metered petit taxi to your destination (agree on fare using the meter).",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Casablanca Airport to the city?",
+            a: "MAD 200–350 by grand taxi (negotiate before you go). The train costs MAD 45 to Casa Voyageurs in 35 minutes.",
+          },
+          {
+            q: "What is the difference between petit taxi and grand taxi?",
+            a: "Petit taxis are metered, small (max 3 passengers), and city-only. Grand taxis are unmetered, larger, and used for intercity or airport trips — always negotiate the fare upfront.",
+          },
+        ],
+      },
+    ],
+    references: [
+      { label: "ONCF Airport Express Train", url: "https://www.oncf.ma" },
+    ],
+  },
+
+  // ── Tunis ─────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-tunis",
+    title: "How Much Does a Taxi Cost in Tunis? (2026 Guide)",
+    description:
+      "Tunis Airport to the medina costs TND 15–25 by taxi. Here's the 2026 fare breakdown — one of Africa's cheapest taxi markets, yellow petit taxis, and night rate rules.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Tunis",
+    country: "Tunisia",
+    citySlug: "tunis",
+    countrySlug: "tunisia",
+    content: [
+      {
+        type: "intro",
+        body: "Tunis-Carthage International Airport (TUN) is 8 km from the city centre — and Tunisian taxi fares are among the lowest in North Africa. Yellow metered taxis are plentiful and cheap. Night tariffs (22:00–05:00) run at 50% higher than day rates.",
+      },
+      {
+        type: "h2",
+        heading: "Tunis Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (day)", value: "TND 0.82 (~$0.27)" },
+          { label: "Per km (day)", value: "TND 0.50 (~$0.16)" },
+          { label: "Night flag fall (22:00–05:00)", value: "TND 1.23" },
+          { label: "Night per km", value: "TND 0.75" },
+          {
+            label: "TUN Airport → Medina / Avenue Habib Bourguiba (typical)",
+            value: "TND 10–18",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Tunis Airport (TUN)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "TUN → Medina / Bab el-Bhar", value: "TND 10–18 (~$3–6)" },
+          {
+            label: "TUN → Avenue Habib Bourguiba (city centre)",
+            value: "TND 10–16",
+          },
+          { label: "TUN → Carthage ruins site", value: "TND 5–9" },
+          { label: "TUN → Sidi Bou Said village", value: "TND 12–18" },
+          { label: "Medina → Bardo National Museum", value: "TND 5–10" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The RFR Metro train (Line 4) connects Tunis Airport to the city centre for TND 1.50. It runs every 30 minutes and takes 15 minutes. For such a short and cheap trip, the taxi at TND 10–18 is still affordable for most visitors.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Tunis Airport to the city?",
+            a: "TND 10–18 (~$3–6) by metered taxi. The Metro train costs TND 1.50 in 15 minutes.",
+          },
+          {
+            q: "Are Tunis taxis cheap?",
+            a: "Very — one of Africa's most affordable taxi markets at TND 0.50/km (~$0.16).",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Tunis Carthage International Airport",
+        url: "https://www.oaca.nat.tn/en/air/tunis-carthage-airport",
+      },
+    ],
+  },
+
+  // ── Amman ─────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-amman",
+    title: "How Much Does a Taxi Cost in Amman? (2026 Guide)",
+    description:
+      "Amman's Queen Alia Airport to the city costs JOD 18–28 by yellow taxi. Here's the 2026 fare breakdown — Jordanian dinar rates, Uber vs metered cabs, and the bus option.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Amman",
+    country: "Jordan",
+    citySlug: "amman",
+    countrySlug: "jordan",
+    content: [
+      {
+        type: "intro",
+        body: "Queen Alia International Airport (AMM) is 35 km south of Amman city centre. Yellow taxis are metered. The Jordanian dinar (JOD) is one of the world's highest-valued currencies; fares appear low in number but have real purchasing power. Uber and Careem both operate in Amman.",
+      },
+      {
+        type: "h2",
+        heading: "Amman Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "JOD 0.30 (~$0.42)" },
+          { label: "Per km", value: "JOD 0.45 (~$0.63)" },
+          { label: "Minimum fare", value: "JOD 0.30" },
+          { label: "Night surcharge (22:00–06:00)", value: "+25%" },
+          {
+            label: "AMM Airport → Downtown Amman (typical)",
+            value: "JOD 18–28 (~$25–40)",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Queen Alia Airport (AMM)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "AMM → Downtown Amman (Rainbow St / Jabal Amman)",
+            value: "JOD 18–28",
+          },
+          { label: "AMM → 4th Circle / Abdoun", value: "JOD 20–30" },
+          { label: "AMM → Shmeisani / Sweifieh", value: "JOD 18–26" },
+          { label: "Downtown → Citadel / Roman Theatre", value: "JOD 1.50–3" },
+          {
+            label: "Amman → Petra (200 km, by private taxi)",
+            value: "JOD 70–90",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "JETT Airport Bus runs from AMM to the 7th Circle in Amman for JOD 3.50. Journey takes 45–60 minutes depending on traffic. Careem (the Uber-owned Middle East rideshare) often offers lower fares than metered taxis from the airport.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Amman Airport to the city?",
+            a: "JOD 18–28 ($25–40) by yellow taxi. JETT bus costs JOD 3.50.",
+          },
+          {
+            q: "Is Uber available in Amman?",
+            a: "Careem (Uber's regional brand) operates in Amman and is widely used. Uber's global app also works.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Queen Alia International Airport — Ground Transportation",
+        url: "https://www.qaiairport.com/en/transport",
+      },
+    ],
+  },
+
+  // ── Muscat ────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-muscat",
+    title: "How Much Does a Taxi Cost in Muscat? (2026 Guide)",
+    description:
+      "Muscat Airport to the city costs OMR 6–12 by taxi — the Omani rial is among the world's highest-valued currencies. Here's the 2026 fare breakdown and how to navigate Oman's taxi system.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Muscat",
+    country: "Oman",
+    citySlug: "muscat",
+    countrySlug: "oman",
+    content: [
+      {
+        type: "intro",
+        body: "Muscat International Airport (MCT) is 35 km from Muscat's commercial centre (CBD). The Omani rial (OMR) is one of the world's highest-valued currencies. Taxis exist in two forms: metered orange taxis and negotiated-fare taxis. Uber operates in Muscat; local app OTaxi is also common.",
+      },
+      {
+        type: "h2",
+        heading: "Muscat Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (metered taxi)", value: "OMR 0.40 (~$1.04)" },
+          { label: "Per km (metered)", value: "OMR 0.25 (~$0.65)" },
+          { label: "Minimum fare", value: "OMR 0.80" },
+          { label: "Night surcharge (22:00–06:00)", value: "+25%" },
+          {
+            label: "MCT Airport → Muscat CBD / Ruwi (typical)",
+            value: "OMR 6–10 (~$15–26)",
+          },
+          {
+            label: "MCT Airport → Mutrah Souq / Old Muscat",
+            value: "OMR 8–12 (~$21–31)",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Muscat Airport (MCT)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "MCT → Muscat CBD / Ruwi", value: "OMR 6–10" },
+          { label: "MCT → Mutrah Souq (old town)", value: "OMR 8–12" },
+          { label: "MCT → Qurum (beach area)", value: "OMR 7–11" },
+          { label: "MCT → Madinat Sultan Qaboos", value: "OMR 5–8" },
+          { label: "Mutrah Souq → Al Alam Palace", value: "OMR 1–2" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Uber operates in Muscat and often provides upfront pricing. For the airport run, Uber typically costs OMR 5–8 to the CBD — slightly cheaper than metered taxis. Always confirm meter use or agree on a price before boarding unmarked taxis.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Muscat Airport to the city?",
+            a: "OMR 6–10 (~$15–26) by metered taxi to the CBD. Uber runs OMR 5–8.",
+          },
+          {
+            q: "Is Muscat expensive for taxis?",
+            a: "In USD terms, moderate — OMR 0.25/km equals ~$0.65/km. Longer airport transfers are pricier due to distance.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Muscat International Airport — Transport",
+        url: "https://www.omanairports.co.om/muscat-airport",
+      },
+    ],
+  },
+
+  // ── Sharjah ───────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-sharjah",
+    title: "How Much Does a Taxi Cost in Sharjah? (2026 Guide)",
+    description:
+      "Sharjah Airport to Dubai costs AED 80–120 by taxi. Here's the 2026 fare breakdown — SRTA metered taxis, the Sharjah–Dubai corridor, and how fares compare to Dubai.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Sharjah",
+    country: "United Arab Emirates",
+    citySlug: "sharjah",
+    countrySlug: "united-arab-emirates",
+    content: [
+      {
+        type: "intro",
+        body: "Sharjah International Airport (SHJ) is the hub for Air Arabia — often much cheaper than flying into Dubai. Sharjah borders Dubai; many travellers fly into SHJ and take a taxi to Dubai hotels. Taxis are regulated by the Sharjah Roads and Transport Authority (SRTA).",
+      },
+      {
+        type: "h2",
+        heading: "Sharjah Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (metered)", value: "AED 3.50 (~$0.95)" },
+          { label: "Per km (metered)", value: "AED 1.55 (~$0.42)" },
+          { label: "Minimum fare", value: "AED 10.00" },
+          {
+            label: "SHJ → Dubai Airport (DXB) area (typical)",
+            value: "AED 80–120",
+          },
+          { label: "SHJ → Downtown Dubai / Burj Khalifa", value: "AED 90–130" },
+          {
+            label: "SHJ → Sharjah city centre (from airport)",
+            value: "AED 20–35",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Sharjah Airport (SHJ)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "SHJ → Sharjah city centre / Blue Souq",
+            value: "AED 20–35",
+          },
+          { label: "SHJ → Dubai Airport (DXB)", value: "AED 80–120" },
+          { label: "SHJ → Dubai Marina / JBR", value: "AED 110–150" },
+          { label: "SHJ → Downtown Dubai / Burj Khalifa", value: "AED 90–130" },
+          { label: "Sharjah → Abu Dhabi (130 km)", value: "AED 250–350" },
+        ],
+      },
+      {
+        type: "warning",
+        body: "The Sharjah–Dubai highway (E11) is one of the world's most congested during peak hours (07:00–09:00 and 17:00–20:00). Budget an extra 30–60 minutes and up to AED 30–50 in additional fare during rush hour.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Sharjah Airport to Dubai?",
+            a: "AED 80–120 to Dubai Airport area; AED 90–130 to Downtown Dubai. Budget extra for peak-hour traffic.",
+          },
+          {
+            q: "Is Uber available in Sharjah?",
+            a: "Yes — Uber and Careem operate in Sharjah and the Sharjah–Dubai corridor.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Sharjah International Airport — Transport",
+        url: "https://www.sharjahairport.ae/en/transport",
+      },
+    ],
+  },
+
   // ── Taxi Driver Phrases (Tier 2 — Linkable / Shareable) ───────────────────
   {
     slug: "what-to-say-to-your-taxi-driver-in-15-languages",
