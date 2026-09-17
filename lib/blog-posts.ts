@@ -10950,6 +10950,610 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
 
+  // ── Atlanta ───────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-atlanta",
+    title: "How Much Does a Taxi Cost in Atlanta? (2026 Guide)",
+    description:
+      "Atlanta Airport (Hartsfield-Jackson) to downtown costs $35–50 by taxi. Here's the 2026 fare breakdown — Uber vs metered cabs, MARTA rail, and what to expect at the world's busiest airport.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Atlanta",
+    country: "United States",
+    citySlug: "atlanta",
+    countrySlug: "united-states",
+    content: [
+      {
+        type: "intro",
+        body: "Atlanta taxis are metered and dispatched from Hartsfield-Jackson International (ATL), the world's busiest airport. The airport is 16 km from downtown. Uber and Lyft operate from a dedicated rideshare lot. The MARTA Gold Line offers a direct rail connection for $2.50.",
+      },
+      {
+        type: "h2",
+        heading: "Atlanta Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "$2.50" },
+          { label: "Per mile (approx)", value: "$2.17" },
+          { label: "Minimum fare", value: "$2.50" },
+          { label: "ATL Airport → downtown (typical)", value: "$35–50" },
+          {
+            label: "Flat rate (ATL → Buckhead, where available)",
+            value: "$50–60",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Atlanta Airport (ATL)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "ATL → Downtown / Five Points", value: "$35–50" },
+          { label: "ATL → Midtown Atlanta", value: "$38–55" },
+          { label: "ATL → Buckhead", value: "$45–65" },
+          { label: "ATL → Georgia Aquarium / CNN Center", value: "$35–48" },
+          { label: "Downtown → Buckhead", value: "$18–28" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The MARTA Gold Line (train) runs from ATL Airport to Five Points (downtown) in 20 minutes for $2.50. The most cost-effective option for solo travellers — trains run every 15 minutes.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Atlanta Airport to downtown?",
+            a: "$35–50 by metered taxi. MARTA rail costs $2.50 in 20 minutes.",
+          },
+          {
+            q: "Is Uber available at Atlanta Airport?",
+            a: "Yes — Uber and Lyft pick up from the Ground Transportation Center. Typically $22–35 to downtown.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Hartsfield-Jackson Atlanta Airport — Ground Transportation",
+        url: "https://www.atl.com/at-the-airport/ground-transportation/",
+      },
+    ],
+  },
+
+  // ── Honolulu ──────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-honolulu",
+    title: "How Much Does a Taxi Cost in Honolulu? (2026 Guide)",
+    description:
+      "Honolulu Airport to Waikiki costs $35–45 by taxi — a fixed-rate corridor. Here's the 2026 fare breakdown — TheBus option, metered rates, and navigating Hawaii's island taxi system.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Honolulu",
+    country: "United States",
+    citySlug: "honolulu",
+    countrySlug: "united-states",
+    content: [
+      {
+        type: "intro",
+        body: "Honolulu is compact but car-dependent. Taxis are metered and Hawaii has among the highest rates in the US — reflecting the high cost of living. Honolulu International (HNL) is only 11 km from Waikiki. TheBus Route 20 provides a very cheap alternative but takes 1 hour and prohibits large luggage.",
+      },
+      {
+        type: "h2",
+        heading: "Honolulu Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "$3.50" },
+          { label: "Per mile (approx)", value: "$2.85" },
+          { label: "Minimum fare", value: "$4.50" },
+          { label: "HNL Airport → Waikiki (typical)", value: "$35–45" },
+          { label: "HNL Airport → Diamond Head", value: "$40–52" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Honolulu Airport (HNL)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "HNL → Waikiki Beach / Royal Hawaiian area",
+            value: "$35–45",
+          },
+          { label: "HNL → Ala Moana Center", value: "$28–38" },
+          { label: "HNL → Downtown Honolulu", value: "$22–32" },
+          { label: "HNL → Diamond Head", value: "$40–52" },
+          { label: "Waikiki → Diamond Head Lookout", value: "$12–18" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "TheBus Route 20 runs from HNL to Waikiki for $3.00 (exact change). Journey takes 50–60 minutes and no oversized luggage is allowed. For most visitors with bags, a rideshare or taxi is the practical choice.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Honolulu Airport to Waikiki?",
+            a: "$35–45 by metered taxi. TheBus costs $3.00 but takes 60 minutes and bans large bags.",
+          },
+          {
+            q: "Is Uber available in Honolulu?",
+            a: "Yes — Uber and Lyft operate in Honolulu and typically cost $25–35 to Waikiki.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Daniel K. Inouye International Airport — Ground Transportation",
+        url: "https://airports.hawaii.gov/hnl/ground-transportation/",
+      },
+    ],
+  },
+
+  // ── Seattle ───────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-seattle",
+    title: "How Much Does a Taxi Cost in Seattle? (2026 Guide)",
+    description:
+      "Seattle–Tacoma Airport to downtown costs $45–60 by taxi. Here's the 2026 fare breakdown — Link Light Rail at $3.75, Uber vs metered cabs, and the fixed airport rate.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Seattle",
+    country: "United States",
+    citySlug: "seattle",
+    countrySlug: "united-states",
+    content: [
+      {
+        type: "intro",
+        body: "Seattle taxis operate from Sea-Tac Airport (SEA), 22 km south of downtown. The City of Seattle regulates taxi fares. Link Light Rail provides a direct 38-minute connection to downtown for $3.75. Uber and Lyft are dominant for most city trips.",
+      },
+      {
+        type: "h2",
+        heading: "Seattle Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "$2.50" },
+          { label: "Per mile (approx)", value: "$2.49" },
+          { label: "Minimum fare", value: "$3.50" },
+          { label: "Airport surcharge (SEA)", value: "$1.50" },
+          { label: "SEA → downtown (typical)", value: "$45–60" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Seattle–Tacoma Airport (SEA)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "SEA → Downtown Seattle (Pike Place / Westlake)",
+            value: "$45–60",
+          },
+          { label: "SEA → Capitol Hill", value: "$48–63" },
+          { label: "SEA → Belltown / Space Needle area", value: "$45–62" },
+          { label: "SEA → Bellevue (across lake)", value: "$55–75" },
+          { label: "Downtown → Pike Place Market", value: "$6–12" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Link Light Rail runs from SEA Airport to Westlake (downtown) in 38 minutes for $3.75. It runs every 8–10 minutes and handles bike + luggage. This is by far the best value for solo travellers.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Seattle Airport to downtown?",
+            a: "$45–60 by metered taxi. Link Light Rail costs $3.75 in 38 minutes.",
+          },
+          {
+            q: "Is Uber cheaper than a taxi in Seattle?",
+            a: "Typically yes — Uber/Lyft from SEA to downtown runs $28–45, vs $45–60 for a metered taxi.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Seattle–Tacoma International Airport — Getting Around",
+        url: "https://www.portseattle.org/sea-tac/ground-transportation/taxi-and-rideshare",
+      },
+    ],
+  },
+
+  // ── Dallas ────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-dallas",
+    title: "How Much Does a Taxi Cost in Dallas? (2026 Guide)",
+    description:
+      "Dallas/Fort Worth Airport to downtown costs $55–75 by taxi. Here's the 2026 fare breakdown — DFW vs Love Field, DART rail option, and navigating one of the US's largest airports.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Dallas",
+    country: "United States",
+    citySlug: "dallas",
+    countrySlug: "united-states",
+    content: [
+      {
+        type: "intro",
+        body: "Dallas has two airports: Dallas/Fort Worth International (DFW, 32 km from downtown) and Dallas Love Field (DAL, 10 km from downtown). DFW is one of the largest airports in the world. The DART Orange Line connects DFW to downtown; Love Field has no direct rail connection.",
+      },
+      {
+        type: "h2",
+        heading: "Dallas Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "$2.50" },
+          { label: "Per mile (approx)", value: "$2.40" },
+          { label: "Minimum fare", value: "$4.75" },
+          { label: "DFW → downtown Dallas (typical)", value: "$55–75" },
+          {
+            label: "DAL (Love Field) → downtown Dallas (typical)",
+            value: "$25–38",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from DFW and Love Field",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "DFW → Downtown Dallas / Arts District", value: "$55–75" },
+          { label: "DFW → Uptown Dallas / Deep Ellum", value: "$58–78" },
+          { label: "DFW → Fort Worth downtown", value: "$45–65" },
+          { label: "DAL (Love Field) → Downtown Dallas", value: "$25–38" },
+          { label: "Downtown → Bishop Arts District", value: "$10–16" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The DART Orange Line runs from DFW Terminal A to downtown Dallas (Cityplace/Uptown) in 45 minutes for $2.50. Rideshare from DFW to downtown runs $35–55 — cheaper than a metered taxi but still pricier than rail.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from DFW to downtown Dallas?",
+            a: "$55–75 by metered taxi. DART Orange Line costs $2.50 in 45 minutes.",
+          },
+          {
+            q: "Which is closer to Dallas — DFW or Love Field?",
+            a: "Love Field (DAL) is much closer at 10 km — taxis cost $25–38. DFW is 32 km away and costs $55–75.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label:
+          "Dallas/Fort Worth International Airport — Ground Transportation",
+        url: "https://www.dfwairport.com/parking-transportation/to-from-dfw/ground-transportation/",
+      },
+    ],
+  },
+
+  // ── Denver ────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-denver",
+    title: "How Much Does a Taxi Cost in Denver? (2026 Guide)",
+    description:
+      "Denver International Airport to downtown costs $55–70 by taxi. Here's the 2026 fare breakdown — the A Line commuter rail, Uber vs metered cabs, and what to budget for Mile High City rides.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Denver",
+    country: "United States",
+    citySlug: "denver",
+    countrySlug: "united-states",
+    content: [
+      {
+        type: "intro",
+        body: "Denver International Airport (DEN) is 37 km from downtown — one of the most remote US major airport locations from its city centre. Taxis are metered and regulated by Denver. The University of Colorado A Line (commuter rail) provides a 37-minute direct connection for $10.50.",
+      },
+      {
+        type: "h2",
+        heading: "Denver Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "$2.50" },
+          { label: "Per mile (approx)", value: "$2.25" },
+          { label: "Minimum fare", value: "$5.00" },
+          { label: "Airport surcharge (DEN)", value: "$4.00" },
+          { label: "DEN → downtown (typical)", value: "$55–70" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Denver International (DEN)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "DEN → Downtown Denver (16th Street Mall)",
+            value: "$55–70",
+          },
+          { label: "DEN → LoDo / Coors Field", value: "$55–68" },
+          { label: "DEN → Cherry Creek", value: "$60–75" },
+          { label: "DEN → Boulder (45 km)", value: "$100–130" },
+          {
+            label: "Downtown → Red Rocks Amphitheatre (27 km)",
+            value: "$50–65",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The UC A Line commuter rail runs from DEN to Denver Union Station (downtown) in 37 minutes for $10.50. Trains run every 15 minutes. At $10.50 vs $55–70 for a taxi, it is exceptional value for solo travellers.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Denver Airport to downtown?",
+            a: "$55–70 by metered taxi. The A Line rail costs $10.50 in 37 minutes.",
+          },
+          {
+            q: "Is Uber cheaper than a taxi in Denver?",
+            a: "Yes — Uber/Lyft from DEN to downtown typically runs $35–55, vs $55–70 for a metered taxi.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Denver International Airport — Ground Transportation",
+        url: "https://www.flydenver.com/at-the-airport/ground-transportation",
+      },
+    ],
+  },
+
+  // ── Philadelphia ──────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-philadelphia",
+    title: "How Much Does a Taxi Cost in Philadelphia? (2026 Guide)",
+    description:
+      "Philadelphia Airport to Center City costs $30–45 by taxi. Here's the 2026 fare breakdown — SEPTA train at $8, Uber vs metered cabs, and Philadelphia's competitive taxi market.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Philadelphia",
+    country: "United States",
+    citySlug: "philadelphia",
+    countrySlug: "united-states",
+    content: [
+      {
+        type: "intro",
+        body: "Philadelphia International Airport (PHL) is 14 km from Center City. Taxis are metered and regulated by the Philadelphia Parking Authority (PPA). Philadelphia has a competitive taxi market. The SEPTA Airport Line connects directly to City Hall in 26 minutes.",
+      },
+      {
+        type: "h2",
+        heading: "Philadelphia Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "$2.70" },
+          { label: "Per mile (approx)", value: "$2.80" },
+          { label: "Minimum fare", value: "$6.50" },
+          { label: "Airport surcharge (PHL)", value: "$1.50" },
+          { label: "PHL → Center City (typical)", value: "$30–45" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Philadelphia Airport (PHL)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "PHL → Center City / City Hall", value: "$30–45" },
+          { label: "PHL → Old City / Independence Hall", value: "$33–48" },
+          { label: "PHL → University City / Penn/Drexel", value: "$22–33" },
+          { label: "PHL → Rittenhouse Square", value: "$32–46" },
+          { label: "Center City → Eastern State Penitentiary", value: "$8–14" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "SEPTA Airport Line trains run from PHL to Center City (Jefferson/City Hall) in 26 minutes for $8.00. Trains run every 30 minutes. At $8 vs $30–45 for a taxi, the train is excellent value.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Philadelphia Airport to Center City?",
+            a: "$30–45 by metered taxi. SEPTA Airport Line costs $8.00 in 26 minutes.",
+          },
+          {
+            q: "Is Uber available at Philadelphia Airport?",
+            a: "Yes — Uber and Lyft pick up from PHL. Typical fare to Center City is $22–35.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Philadelphia International Airport — Ground Transportation",
+        url: "https://www.phl.org/at-the-airport/ground-transportation",
+      },
+    ],
+  },
+
+  // ── Portland ──────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-portland",
+    title: "How Much Does a Taxi Cost in Portland? (2026 Guide)",
+    description:
+      "Portland Airport to the city costs $35–50 by taxi. Here's the 2026 fare breakdown — MAX Light Rail at $2.80, Portland's quirky taxi market, and Uber vs cabs.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Portland",
+    country: "United States",
+    citySlug: "portland",
+    countrySlug: "united-states",
+    content: [
+      {
+        type: "intro",
+        body: "Portland International Airport (PDX) is 18 km from downtown. TriMet MAX Red Line provides a direct 38-minute rail connection for $2.80. Portland taxis are metered and regulated; Broadway Cab and Radio Cab are the main operators. Uber and Lyft are widely used.",
+      },
+      {
+        type: "h2",
+        heading: "Portland Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "$2.90" },
+          { label: "Per mile (approx)", value: "$3.10" },
+          { label: "Minimum fare", value: "$3.75" },
+          { label: "Airport surcharge (PDX)", value: "$2.00" },
+          { label: "PDX → downtown (typical)", value: "$35–50" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Portland Airport (PDX)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "PDX → Downtown Portland / Pearl District",
+            value: "$35–50",
+          },
+          { label: "PDX → Northwest District / Nob Hill", value: "$38–52" },
+          { label: "PDX → SE Portland / Division St", value: "$35–48" },
+          { label: "PDX → Vancouver, WA (across river)", value: "$40–55" },
+          { label: "Downtown → Powell's Books / West End", value: "$6–12" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "MAX Red Line runs from PDX to Pioneer Courthouse Square (downtown) in 38 minutes for $2.80. Trains run every 15 minutes. Portland is one of the best US cities for using light rail from the airport.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Portland Airport to downtown?",
+            a: "$35–50 by metered taxi. MAX Red Line costs $2.80 in 38 minutes.",
+          },
+          {
+            q: "Is Uber available in Portland?",
+            a: "Yes — Uber and Lyft operate at PDX. Typical fare to downtown is $25–38.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Portland International Airport — Ground Transportation",
+        url: "https://www.pdx.com/transportation/ground-transportation",
+      },
+    ],
+  },
+
+  // ── Nashville ─────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-nashville",
+    title: "How Much Does a Taxi Cost in Nashville? (2026 Guide)",
+    description:
+      "Nashville Airport to Broadway costs $30–45 by taxi. Here's the 2026 fare breakdown — no light rail at BNA, Uber surge pricing during events, and what to expect in Music City.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Nashville",
+    country: "United States",
+    citySlug: "nashville",
+    countrySlug: "united-states",
+    content: [
+      {
+        type: "intro",
+        body: "Nashville International Airport (BNA) is 12 km from downtown Broadway. Unlike most major US cities, Nashville has no light rail connection from the airport — taxis and rideshares are the main options. Nashville's growth as a tourism and bachelorette-party destination means Uber surge pricing is common on weekends.",
+      },
+      {
+        type: "h2",
+        heading: "Nashville Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "$2.50" },
+          { label: "Per mile (approx)", value: "$2.20" },
+          { label: "Minimum fare", value: "$5.00" },
+          { label: "Airport surcharge (BNA)", value: "$2.00" },
+          {
+            label: "BNA → Broadway / honky-tonk strip (typical)",
+            value: "$30–45",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Nashville Airport (BNA)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "BNA → Broadway / Lower Broad (honky-tonks)",
+            value: "$30–45",
+          },
+          { label: "BNA → Midtown / Vanderbilt area", value: "$28–40" },
+          { label: "BNA → 12 South / Germantown", value: "$30–42" },
+          { label: "BNA → East Nashville", value: "$28–40" },
+          { label: "Broadway → Ryman Auditorium", value: "$5 (walkable)" },
+        ],
+      },
+      {
+        type: "warning",
+        body: "Uber and Lyft surge pricing during CMA Fest, stadium events, and Friday/Saturday nights in Nashville can double or triple normal fares. During surge, a metered taxi is often cheaper — or book a rideshare well in advance.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Nashville Airport to Broadway?",
+            a: "$30–45 by metered taxi. No light rail option — taxis and rideshare are the primary airport transfers.",
+          },
+          {
+            q: "Is there a bus from Nashville Airport to the city?",
+            a: "WeGo Bus Route 18 runs to downtown for $2.00 but takes 50–60 minutes with limited luggage space.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Nashville International Airport — Ground Transportation",
+        url: "https://www.flynashville.com/ground-transportation",
+      },
+    ],
+  },
+
   // ── Taxi Driver Phrases (Tier 2 — Linkable / Shareable) ───────────────────
   {
     slug: "what-to-say-to-your-taxi-driver-in-15-languages",
