@@ -14905,6 +14905,661 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
 
+  // ── San Diego ─────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-san-diego",
+    title: "How Much Does a Taxi Cost in San Diego? (2026 Guide)",
+    description:
+      "San Diego Airport to downtown costs $15–25 by taxi — one of the closest US airports to its city centre. Here's the 2026 fare breakdown — Uber vs metered cabs, the MTS Trolley, and getting to the beach.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "San Diego",
+    country: "United States",
+    citySlug: "san-diego",
+    countrySlug: "united-states",
+    content: [
+      {
+        type: "intro",
+        body: "San Diego International Airport (SAN) is just 4 km from downtown — making it one of the most conveniently located US major airports. Taxis and rideshares are the standard transfer. The MTS Trolley Green Line connects the airport area to downtown and Mission Valley.",
+      },
+      {
+        type: "h2",
+        heading: "San Diego Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "$2.85" },
+          { label: "Per mile (approx)", value: "$2.80" },
+          { label: "Minimum fare", value: "$3.25" },
+          { label: "Airport surcharge (SAN)", value: "$2.50" },
+          {
+            label: "SAN → Downtown / Gaslamp Quarter (typical)",
+            value: "$15–25",
+          },
+          { label: "Uber — SAN to Downtown", value: "$10–18" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from San Diego Airport (SAN)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "SAN → Downtown / Gaslamp Quarter", value: "$15–25" },
+          { label: "SAN → Little Italy / Old Town", value: "$12–20" },
+          { label: "SAN → Balboa Park / Zoo", value: "$18–28" },
+          { label: "SAN → Pacific Beach / Mission Beach", value: "$22–35" },
+          { label: "SAN → La Jolla (25 km)", value: "$35–50" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "MTS Bus Route 992 (Flyer) connects SAN to the Santa Fe Depot (downtown) for $2.50. The Green Trolley Line is also accessible from downtown for $2.50. Uber/Lyft typically run $10–18 to downtown — significantly cheaper than metered taxis.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from San Diego Airport to downtown?",
+            a: "$15–25 by metered taxi. Uber costs $10–18. Bus Route 992 costs $2.50.",
+          },
+          {
+            q: "Is San Diego Airport close to the city?",
+            a: "Yes — SAN is just 4 km from downtown, making it one of the most central major US airports.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "San Diego International Airport — Ground Transportation",
+        url: "https://www.san.org/at-the-airport/ground-transportation",
+      },
+    ],
+  },
+
+  // ── San José (Costa Rica) ─────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-san-jose-costa-rica",
+    title: "How Much Does a Taxi Cost in San José, Costa Rica? (2026 Guide)",
+    description:
+      "San José Airport to the city costs CRC 12,000–20,000 by red official taxi. Here's the 2026 fare breakdown — metered María taxis, Uber, and navigating Costa Rica's capital.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "San José",
+    country: "Costa Rica",
+    citySlug: "san-jose-costa-rica",
+    countrySlug: "costa-rica",
+    content: [
+      {
+        type: "intro",
+        body: "Juan Santamaría International Airport (SJO) is 18 km northwest of central San José. Official taxis in Costa Rica are red with a yellow triangle and use the María meter system. Only use official red taxis from the airport — unofficial 'pirate' taxis (piratas) are common and often charge inflated rates. Uber operates in Costa Rica.",
+      },
+      {
+        type: "h2",
+        heading: "San José Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (María meter)", value: "CRC 900 (~$1.75)" },
+          { label: "Per km (María meter)", value: "CRC 600 (~$1.15)" },
+          { label: "Minimum fare", value: "CRC 900" },
+          { label: "Night surcharge (22:00–05:00)", value: "+20%" },
+          {
+            label: "SJO → San José city centre (official red taxi)",
+            value: "CRC 12,000–20,000",
+          },
+          { label: "Uber — SJO to city centre", value: "CRC 8,000–14,000" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from San José Airport (SJO)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "SJO → San José city centre / Barrio Escalante",
+            value: "CRC 12,000–20,000",
+          },
+          { label: "SJO → La Sabana / Rohrmoser", value: "CRC 10,000–17,000" },
+          {
+            label: "SJO → Escazú (upscale suburb)",
+            value: "CRC 14,000–22,000",
+          },
+          { label: "SJO → San Pedro / Los Yoses", value: "CRC 14,000–22,000" },
+          { label: "City centre → Mercado Central", value: "CRC 1,500–3,000" },
+        ],
+      },
+      {
+        type: "warning",
+        body: "Never accept rides from unlicensed 'pirate' taxi drivers who approach you in the airport terminal. Only use official red taxis from the designated taxi rank outside arrivals, or book Uber from inside the terminal.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from San José Airport to the city?",
+            a: "CRC 12,000–20,000 (~$23–38) by official red taxi. Uber costs CRC 8,000–14,000.",
+          },
+          {
+            q: "Is Uber safe and legal in San José?",
+            a: "Uber operates in Costa Rica but faces regulatory challenges. It is widely used and generally considered safe.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Juan Santamaría International Airport — Transport",
+        url: "https://www.aeris.aero/en/transport",
+      },
+    ],
+  },
+
+  // ── Hurghada ──────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-hurghada",
+    title: "How Much Does a Taxi Cost in Hurghada? (2026 Guide)",
+    description:
+      "Hurghada Airport to your hotel costs EGP 150–400 by taxi. Here's the 2026 fare breakdown — negotiated vs metered fares, the hotel strip geography, and avoiding overcharging at Egypt's Red Sea resort.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Hurghada",
+    country: "Egypt",
+    citySlug: "hurghada",
+    countrySlug: "egypt",
+    content: [
+      {
+        type: "intro",
+        body: "Hurghada International Airport (HRG) is centrally located within Hurghada — the resort strip stretches north (El Dahar / Sekalla) and south (Sahl Hasheesh). Most taxis are not metered and prices are negotiated. Hotel transfers are often included in package deals.",
+      },
+      {
+        type: "h2",
+        heading: "Hurghada Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Base fare (negotiated)", value: "EGP 10 (~$0.20)" },
+          { label: "Per km (negotiated)", value: "EGP 6 (~$0.12)" },
+          { label: "Minimum fare", value: "EGP 20" },
+          {
+            label: "HRG → El Dahar / Sekalla (Old Town)",
+            value: "EGP 100–200",
+          },
+          { label: "HRG → Sahl Hasheesh (south, 25 km)", value: "EGP 300–500" },
+          { label: "HRG → El Gouna (north, 25 km)", value: "EGP 300–500" },
+          { label: "Night surcharge", value: "+25–50%" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Hurghada Airport (HRG)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "HRG → Sekalla / Hurghada Marina strip",
+            value: "EGP 80–200",
+          },
+          { label: "HRG → El Dahar (old town)", value: "EGP 100–200" },
+          {
+            label: "HRG → El Gouna resort (north, 25 km)",
+            value: "EGP 350–550",
+          },
+          { label: "HRG → Sahl Hasheesh (south, 25 km)", value: "EGP 350–550" },
+          {
+            label: "Hurghada → Luxor (320 km, private taxi)",
+            value: "EGP 3,000–5,000",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Always agree on the fare before getting in — Hurghada taxis are not metered. Ask your hotel to arrange a taxi for the return journey. For El Gouna, note that El Gouna has its own internal transport (tuk-tuks and golf carts) and private taxis charge a premium to enter the resort.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Hurghada Airport to my hotel?",
+            a: "EGP 80–550 depending on distance — always negotiate before getting in.",
+          },
+          {
+            q: "Is Uber available in Hurghada?",
+            a: "Uber operates in some Egyptian cities but coverage in Hurghada is limited. Use negotiated taxis or hotel transfers.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Hurghada International Airport",
+        url: "https://www.hurghada-airport.net/en",
+      },
+    ],
+  },
+
+  // ── Sharm el-Sheikh ───────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-sharm-el-sheikh",
+    title: "How Much Does a Taxi Cost in Sharm el-Sheikh? (2026 Guide)",
+    description:
+      "Sharm el-Sheikh Airport to Naama Bay costs EGP 200–400 by taxi. Here's the 2026 fare breakdown — negotiated fares, hotel zones, and navigating Egypt's Sinai resort.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Sharm el-Sheikh",
+    country: "Egypt",
+    citySlug: "sharm-el-sheikh",
+    countrySlug: "egypt",
+    content: [
+      {
+        type: "intro",
+        body: "Sharm el-Sheikh International Airport (SSH) is centrally located near Naama Bay. Taxis are not metered — all fares are negotiated. Hotel transfers are commonly included in resort packages. Naama Bay (the main tourist strip) is 5 km from the airport; Sharks Bay and Ras Um Sid are further.",
+      },
+      {
+        type: "h2",
+        heading: "Sharm el-Sheikh Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Base fare (negotiated)", value: "EGP 15 (~$0.30)" },
+          { label: "Per km (negotiated)", value: "EGP 7 (~$0.14)" },
+          { label: "Minimum fare", value: "EGP 25" },
+          { label: "SSH → Naama Bay (5 km)", value: "EGP 150–300" },
+          { label: "SSH → Sharks Bay (north)", value: "EGP 200–350" },
+          {
+            label: "SSH → Ras Um Sid / South Sinai hotels",
+            value: "EGP 200–400",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Sharm el-Sheikh Airport (SSH)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "SSH → Naama Bay", value: "EGP 150–300" },
+          { label: "SSH → Soho Square area", value: "EGP 180–320" },
+          { label: "SSH → Ras Um Sid (south hotels)", value: "EGP 220–380" },
+          { label: "SSH → Sharks Bay (north)", value: "EGP 200–350" },
+          {
+            label: "Naama Bay → Old Market (Sharm el-Maya)",
+            value: "EGP 100–200",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Negotiate the fare firmly before departure — EGP 150–250 to Naama Bay is reasonable. Drivers may quote EGP 500–800 initially to tourists. Your hotel concierge can arrange reliable taxis or recommend trusted drivers.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Sharm el-Sheikh Airport to Naama Bay?",
+            a: "EGP 150–300 negotiated. Drivers may quote more — always negotiate before getting in.",
+          },
+          {
+            q: "Should I pre-book a taxi in Sharm el-Sheikh?",
+            a: "Pre-booking through your hotel is recommended to get a fair price and avoid airport touts.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Sharm el-Sheikh International Airport",
+        url: "https://www.sharm-el-sheikh-airport.net/en",
+      },
+    ],
+  },
+
+  // ── Punta Cana ────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-punta-cana",
+    title: "How Much Does a Taxi Cost in Punta Cana? (2026 Guide)",
+    description:
+      "Punta Cana Airport to your resort costs $15–35 by taxi. Here's the 2026 fare breakdown — USD-priced fares, the hotel zone geography, and why most visitors take resort shuttles.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Punta Cana",
+    country: "Dominican Republic",
+    citySlug: "punta-cana",
+    countrySlug: "dominican-republic",
+    content: [
+      {
+        type: "intro",
+        body: "Punta Cana International Airport (PUJ) is the Caribbean's busiest airport. Most visitors are heading to all-inclusive resorts in the Bávaro/Punta Cana hotel zone — many of which are 5–30 km from the airport. Taxis use US dollars and prices are fixed by zone.",
+      },
+      {
+        type: "h2",
+        heading: "Punta Cana Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Base fare (USD)", value: "$5.00" },
+          { label: "Per km (approx)", value: "$2.00" },
+          { label: "Minimum fare", value: "$15" },
+          { label: "PUJ → Bávaro Beach resorts (5–15 km)", value: "$15–25" },
+          { label: "PUJ → Cap Cana (luxury resort enclave)", value: "$20–30" },
+          { label: "PUJ → Macao Beach (30 km)", value: "$30–45" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Punta Cana Airport (PUJ)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "PUJ → Bávaro / Playa Bávaro resorts", value: "$15–25" },
+          {
+            label: "PUJ → Cap Cana (Secrets, Breathless, etc.)",
+            value: "$20–30",
+          },
+          { label: "PUJ → Uvero Alto (far north)", value: "$40–60" },
+          { label: "PUJ → Hard Rock Punta Cana", value: "$15–22" },
+          {
+            label: "PUJ → La Romana / Casa de Campo (80 km)",
+            value: "$90–130",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Most all-inclusive resorts offer airport shuttle transfers — often free or $10–20 per person for package-inclusive guests. Check with your resort before booking a private taxi. Shared shuttle services (Caribe Shuttle) run $12–20 per person.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Punta Cana Airport to a Bávaro resort?",
+            a: "$15–25 by taxi. Resort shuttle or shared transfer costs $12–20/person.",
+          },
+          {
+            q: "Are taxis at Punta Cana Airport safe?",
+            a: "Official white taxis from the airport rank are safe and use fixed zone rates. Avoid touts inside the terminal.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Punta Cana International Airport — Transport",
+        url: "https://www.puntacanainternationalairport.com/en/transport",
+      },
+    ],
+  },
+
+  // ── Santo Domingo ─────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-santo-domingo",
+    title: "How Much Does a Taxi Cost in Santo Domingo? (2026 Guide)",
+    description:
+      "Santo Domingo Las Américas Airport to the city costs DOP 1,200–2,000 by taxi. Here's the 2026 fare breakdown — negotiated vs metered fares, Uber, and the Colonial Zone.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Santo Domingo",
+    country: "Dominican Republic",
+    citySlug: "santo-domingo",
+    countrySlug: "dominican-republic",
+    content: [
+      {
+        type: "intro",
+        body: "Las Américas International Airport (SDQ) is 23 km east of Santo Domingo's Colonial Zone. Taxis are regulated but fares are negotiated at the airport. Yellow metered taxis operate in the city. Uber also operates in Santo Domingo.",
+      },
+      {
+        type: "h2",
+        heading: "Santo Domingo Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Base fare (metered, in city)", value: "DOP 150 (~$2.55)" },
+          { label: "Per km (metered)", value: "DOP 80 (~$1.36)" },
+          { label: "Minimum fare", value: "DOP 150" },
+          {
+            label: "SDQ → Colonial Zone (negotiated)",
+            value: "DOP 1,200–2,000",
+          },
+          {
+            label: "SDQ → Piantini / Naco (business district)",
+            value: "DOP 1,500–2,400",
+          },
+          { label: "Uber — SDQ to Colonial Zone", value: "DOP 900–1,500" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Santo Domingo Airport (SDQ)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "SDQ → Colonial Zone (Zona Colonial)",
+            value: "DOP 1,200–2,000",
+          },
+          { label: "SDQ → Piantini / Naco", value: "DOP 1,500–2,400" },
+          { label: "SDQ → Malecón / seafront", value: "DOP 1,300–2,100" },
+          { label: "Colonial Zone → Malecón", value: "DOP 200–400" },
+          { label: "City → Santo Domingo Zoo", value: "DOP 300–600" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Uber is available in Santo Domingo and typically 25–35% cheaper than negotiated airport taxis. Book through the app in the arrivals hall. Avoid unofficial taxi drivers who approach you in the terminal.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Santo Domingo Airport to the Colonial Zone?",
+            a: "DOP 1,200–2,000 (~$20–34) negotiated. Uber costs DOP 900–1,500.",
+          },
+          {
+            q: "Is Uber available in Santo Domingo?",
+            a: "Yes — Uber operates and is the recommended option for upfront pricing.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Las Américas International Airport",
+        url: "https://www.aerodom.com/en/airports/las-americas",
+      },
+    ],
+  },
+
+  // ── Havana ────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-havana",
+    title: "How Much Does a Taxi Cost in Havana? (2026 Guide)",
+    description:
+      "Havana José Martí Airport to the city costs $25–35 by state taxi. Here's the 2026 fare breakdown — coco taxis, classic car taxis, state Cubataxi, and navigating Cuba's unique transport system.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Havana",
+    country: "Cuba",
+    citySlug: "havana",
+    countrySlug: "cuba",
+    content: [
+      {
+        type: "intro",
+        body: "José Martí International Airport (HAV) is 25 km southwest of Havana's city centre. Cuba's taxi system is government-regulated — Cubataxi is the main state taxi company. Classic American cars (almendrones) serve as shared taxis on fixed routes. Uber does not operate in Cuba.",
+      },
+      {
+        type: "h2",
+        heading: "Havana Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Cubataxi — flag fall", value: "$2.00 USD" },
+          { label: "Cubataxi — per km", value: "$1.00 USD" },
+          { label: "Minimum fare", value: "$3.00 USD" },
+          { label: "HAV → Vedado / Miramar (state taxi)", value: "$25–35" },
+          { label: "HAV → Old Havana (Habana Vieja)", value: "$25–35" },
+          {
+            label: "Coco taxi (yellow egg-shaped, in city)",
+            value: "$1–3/km (negotiated)",
+          },
+          {
+            label: "Classic car tourist taxi (per hour, Old Havana)",
+            value: "$30–50",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Havana Airport (HAV)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "HAV → Old Havana (Habana Vieja / Parque Central)",
+            value: "$25–35",
+          },
+          { label: "HAV → Vedado / Hotel Nacional area", value: "$25–33" },
+          { label: "HAV → Miramar (diplomatic/tourist area)", value: "$20–28" },
+          {
+            label: "Old Havana → Malecon seafront walk",
+            value: "$3–8 (coco taxi)",
+          },
+          { label: "Old Havana → Plaza de la Revolución", value: "$8–15" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Negotiate with coco taxis (yellow, 3-wheeled) and almendrones (classic American cars on shared routes) before boarding. Cubataxi state taxis are metered and more reliable for airport transfers. Classic convertible car tours of Old Havana cost $30–50/hour and are a popular tourist experience.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Havana Airport to Old Havana?",
+            a: "$25–35 by Cubataxi state taxi. No Uber — only state taxis, coco taxis, and classic cars.",
+          },
+          {
+            q: "Can I use Uber in Havana?",
+            a: "No — Uber does not operate in Cuba. Use Cubataxi (state-licensed) or negotiate with independent drivers.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "José Martí International Airport — Transport",
+        url: "https://www.havana-guide.com/havana-airport-transportation.html",
+      },
+    ],
+  },
+
+  // ── Taoyuan ───────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-taoyuan",
+    title: "How Much Does a Taxi Cost at Taoyuan Airport? (2026 Guide)",
+    description:
+      "Taiwan Taoyuan Airport to Taipei costs TWD 1,200–1,600 by taxi. Here's the 2026 fare breakdown — Airport MRT for TWD 160, metered Taiwanese rates, and getting from TPE to central Taipei.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Taoyuan",
+    country: "Taiwan",
+    citySlug: "taoyuan",
+    countrySlug: "taiwan",
+    content: [
+      {
+        type: "intro",
+        body: "Taiwan Taoyuan International Airport (TPE) is 40 km west of Taipei. It serves as Taipei's main international gateway. The Taoyuan Airport MRT provides a direct 35-minute connection to Taipei Main Station for TWD 160. Taxis are metered.",
+      },
+      {
+        type: "h2",
+        heading: "Taoyuan Airport Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (first 1.25 km)", value: "TWD 85 (~$2.60)" },
+          { label: "Per km (after 1.25 km)", value: "TWD 15/500m (~$0.92/km)" },
+          { label: "Minimum fare", value: "TWD 85" },
+          { label: "Night surcharge (23:00–06:00)", value: "+20%" },
+          {
+            label: "TPE → Taipei Main Station (typical)",
+            value: "TWD 1,200–1,600",
+          },
+          {
+            label: "Airport MRT — TPE to Taipei Main Station",
+            value: "TWD 160",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Taoyuan Airport (TPE)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "TPE → Taipei Main Station", value: "TWD 1,200–1,600" },
+          {
+            label: "TPE → Zhongshan / Songshan (east Taipei)",
+            value: "TWD 1,400–1,800",
+          },
+          { label: "TPE → Xinyi / Taipei 101", value: "TWD 1,500–2,000" },
+          { label: "TPE → Taoyuan city centre (20 km)", value: "TWD 500–700" },
+          {
+            label: "Taipei Main Station → Jiufen (55 km)",
+            value: "TWD 1,000–1,400",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Airport MRT (purple line) runs from both TPE terminals to Taipei Main Station in 35 minutes for TWD 160 (express) or TWD 150 (commuter). It runs every 15 minutes. At TWD 160 vs TWD 1,200–1,600 for a taxi, the MRT is the obvious choice for solo travellers.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Taoyuan Airport to Taipei?",
+            a: "TWD 1,200–1,600 by metered taxi. The Airport MRT costs TWD 160 in 35 minutes.",
+          },
+          {
+            q: "Is the MRT faster than a taxi from Taoyuan Airport?",
+            a: "Yes — the MRT takes 35 minutes and avoids highway traffic. A taxi can take 45–70 minutes depending on traffic.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Taoyuan International Airport — Airport MRT",
+        url: "https://www.taoyuan-airport.com/main_en/docdetail.aspx?uid=134&pid=130",
+      },
+    ],
+  },
+
   // ── Taxi Driver Phrases (Tier 2 — Linkable / Shareable) ───────────────────
   {
     slug: "what-to-say-to-your-taxi-driver-in-15-languages",
