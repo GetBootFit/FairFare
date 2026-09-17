@@ -14221,6 +14221,690 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
 
+  // ── Quito ─────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-quito",
+    title: "How Much Does a Taxi Cost in Quito? (2026 Guide)",
+    description:
+      "Quito's Mariscal Sucre Airport to the city costs $20–30 by taxi. Here's the 2026 fare breakdown — USD fares, InDriver vs metered cabs, and the airport's distance from the city.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Quito",
+    country: "Ecuador",
+    citySlug: "quito",
+    countrySlug: "ecuador",
+    content: [
+      {
+        type: "intro",
+        body: "Mariscal Sucre International Airport (UIO) is 37 km northeast of Quito's historic centre (Old Town). Ecuador uses the US dollar, making fares simple. Taxis are metered. InDriver operates in Quito. The Aeropuerto Bus runs to the city for $2.",
+      },
+      {
+        type: "h2",
+        heading: "Quito Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "$1.30" },
+          { label: "Per km", value: "$0.45" },
+          { label: "Minimum fare", value: "$2.00" },
+          { label: "Night surcharge (19:00–06:00)", value: "+25%" },
+          { label: "UIO → Old Town / Plaza Grande (typical)", value: "$20–30" },
+          { label: "UIO → Mariscal (tourist district)", value: "$22–32" },
+          { label: "Aeropuerto Express Bus", value: "$2.00" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Quito Airport (UIO)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "UIO → Old Town (La Ronda / Plaza Grande)",
+            value: "$20–30",
+          },
+          { label: "UIO → Mariscal Sucre tourist district", value: "$22–32" },
+          { label: "UIO → Mitad del Mundo monument (25 km)", value: "$15–25" },
+          { label: "Old Town → La Carolina Park", value: "$4–8" },
+          { label: "Old Town → Teleférico (cable car base)", value: "$8–14" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Aeropuerto Express Bus runs from UIO to La Y (central Quito) for $2. Journey takes 50–70 minutes. InDriver is available in Quito and typically cheaper than metered taxis.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Quito Airport to the city?",
+            a: "$20–30 by metered taxi. The express bus costs $2 but takes 50–70 minutes.",
+          },
+          {
+            q: "Are Quito taxis metered?",
+            a: "Yes — Quito taxis are metered and priced in USD. Always confirm the meter is running.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Quito Mariscal Sucre Airport — Transport",
+        url: "https://www.aeropuertoquito.aero/en/transport",
+      },
+    ],
+  },
+
+  // ── Santiago ──────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-santiago",
+    title: "How Much Does a Taxi Cost in Santiago? (2026 Guide)",
+    description:
+      "Santiago Airport to the city costs CLP 25,000–40,000 by taxi. Here's the 2026 fare breakdown — Uber vs yellow metered cabs, the Centropuerto bus, and Chile's Metro system.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Santiago",
+    country: "Chile",
+    citySlug: "santiago",
+    countrySlug: "chile",
+    content: [
+      {
+        type: "intro",
+        body: "Arturo Merino Benítez International Airport (SCL) is 26 km northwest of central Santiago. Yellow metered taxis queue outside arrivals. Uber operates from the airport. The Centropuerto bus provides a cheap connection to metro stations.",
+      },
+      {
+        type: "h2",
+        heading: "Santiago Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (day)", value: "CLP 900 (~$1.00)" },
+          { label: "Per km (day)", value: "CLP 450 (~$0.50)" },
+          { label: "Minimum fare", value: "CLP 1,500" },
+          { label: "Night surcharge (21:00–06:00)", value: "+20%" },
+          {
+            label: "SCL → Providencia / Bellavista (typical)",
+            value: "CLP 25,000–40,000",
+          },
+          { label: "Uber — SCL to city centre", value: "CLP 16,000–28,000" },
+          { label: "Centropuerto bus → Pajaritos metro", value: "CLP 2,200" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Santiago Airport (SCL)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "SCL → Providencia / Bellavista",
+            value: "CLP 25,000–40,000",
+          },
+          {
+            label: "SCL → Santiago Centro / Alameda",
+            value: "CLP 22,000–35,000",
+          },
+          { label: "SCL → Las Condes / Vitacura", value: "CLP 28,000–45,000" },
+          {
+            label: "SCL → Miraflores / Barrio Italia",
+            value: "CLP 25,000–38,000",
+          },
+          { label: "City centre → Plaza de Armas", value: "CLP 2,500–5,000" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Centropuerto bus (CLP 2,200) runs from SCL to Pajaritos Metro station every 10 minutes. From Pajaritos you can reach anywhere in Santiago by Metro for CLP 800–900. Uber is also significantly cheaper than yellow taxis from the airport.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Santiago Airport to the city?",
+            a: "CLP 25,000–40,000 by yellow taxi. Uber runs CLP 16,000–28,000. Bus to Metro costs CLP 2,200.",
+          },
+          {
+            q: "Is Uber available at Santiago Airport?",
+            a: "Yes — Uber operates from SCL and is typically 30–40% cheaper than yellow metered taxis.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Arturo Merino Benítez International Airport — Transport",
+        url: "https://www.nuevopudahuel.cl/en/ground-transport",
+      },
+    ],
+  },
+
+  // ── Hạ Long Bay ───────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-halong",
+    title: "How Much Does a Taxi Cost to Hạ Long Bay? (2026 Guide)",
+    description:
+      "Hanoi to Hạ Long Bay costs VND 600,000–900,000 by private taxi (170 km). Here's the 2026 fare breakdown — bus vs taxi, local Hạ Long City taxis, and getting to the UNESCO wonder.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Hạ Long Bay",
+    country: "Vietnam",
+    citySlug: "halong",
+    countrySlug: "vietnam",
+    content: [
+      {
+        type: "intro",
+        body: "Hạ Long Bay (Ha Long) has no major international airport. Most visitors fly into Hanoi (HAN) and travel 170 km to the bay — a 3.5–4 hour drive via the Hanoi–Hạ Long Expressway. Private taxis, tourist buses, and limousine vans are the main options.",
+      },
+      {
+        type: "h2",
+        heading: "Hạ Long Bay Transfer Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Private taxi — Hanoi to Hạ Long City (170 km)",
+            value: "VND 700,000–1,200,000",
+          },
+          {
+            label: "Limousine van (shared, tourist-class, 9-seater)",
+            value: "VND 180,000–250,000/person",
+          },
+          {
+            label: "Hạ Long City metered taxi — flag fall",
+            value: "VND 12,000",
+          },
+          { label: "Hạ Long City metered taxi — per km", value: "VND 8,000" },
+          {
+            label: "Hạ Long City → Tuan Chau Marina (ferry pier)",
+            value: "VND 50,000–90,000",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Getting to Hạ Long Bay from Hanoi",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Hanoi → Hạ Long City (private taxi, 170 km)",
+            value: "VND 700,000–1,100,000",
+          },
+          {
+            label: "Hanoi → Hạ Long City (tourist limousine van, per person)",
+            value: "VND 180,000–250,000",
+          },
+          {
+            label: "Hanoi → Hạ Long City (Hung Thanh / Kumho bus)",
+            value: "VND 120,000–180,000",
+          },
+          {
+            label: "Hạ Long City → Tuan Chau Marina",
+            value: "VND 50,000–90,000",
+          },
+          { label: "Hạ Long City → Hon Gai port", value: "VND 20,000–40,000" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The tourist limousine van is the best value — VND 180,000–250,000 per person for a comfortable 4-seat van with A/C, departing Hanoi's Old Quarter hotels. Most cruise operators include transfers in their package. Book via your cruise company to avoid logistical complexity.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How do I get to Hạ Long Bay from Hanoi?",
+            a: "Private taxi (VND 700,000–1,100,000), tourist limousine van (VND 180,000–250,000/person), or public bus (VND 120,000–180,000). Journey is 3.5–4 hours.",
+          },
+          {
+            q: "Is there an airport near Hạ Long Bay?",
+            a: "Yes — Van Don International Airport (VDO) is 50 km from Hạ Long Bay, but has limited routes. Most visitors fly via Hanoi.",
+          },
+        ],
+      },
+    ],
+    references: [
+      { label: "Ha Long Bay Tourism Portal", url: "https://halong.gov.vn/en" },
+    ],
+  },
+
+  // ── Algiers ───────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-algiers",
+    title: "How Much Does a Taxi Cost in Algiers? (2026 Guide)",
+    description:
+      "Algiers Airport to the city costs DZD 2,500–4,000 by taxi. Here's the 2026 fare breakdown — negotiated fares, the Algiers Metro, and what to expect in Algeria's capital.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Algiers",
+    country: "Algeria",
+    citySlug: "algiers",
+    countrySlug: "algeria",
+    content: [
+      {
+        type: "intro",
+        body: "Houari Boumediene International Airport (ALG) is 20 km southeast of central Algiers. Taxis are mostly negotiated rather than metered. Uber does not operate. The Algiers Metro connects to the city, but does not reach the airport — a taxi or shuttle is needed to the nearest metro station.",
+      },
+      {
+        type: "h2",
+        heading: "Algiers Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Base fare (negotiated)", value: "DZD 200 (~$1.50)" },
+          { label: "Per km (negotiated)", value: "DZD 80 (~$0.60)" },
+          { label: "Minimum fare", value: "DZD 200" },
+          { label: "Night surcharge (20:00–06:00)", value: "+25%" },
+          {
+            label: "ALG → Place des Martyrs / city centre (negotiated)",
+            value: "DZD 2,500–4,000",
+          },
+          {
+            label: "Airport taxi fixed-rate (white official taxis)",
+            value: "DZD 2,800–3,500",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Algiers Airport (ALG)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "ALG → Place des Martyrs / Bab el-Oued",
+            value: "DZD 2,500–4,000",
+          },
+          {
+            label: "ALG → El Mouradia / Hydra (embassy district)",
+            value: "DZD 2,000–3,200",
+          },
+          {
+            label: "ALG → Didouche Mourad (city centre)",
+            value: "DZD 2,500–4,000",
+          },
+          {
+            label: "City centre → Casbah (UNESCO old town)",
+            value: "DZD 200–500",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "White official airport taxis (TaxiLux) have fixed rates and are the safest option. Agree on the fare before getting in with all taxis. The Algiers Metro does not reach the airport — take a taxi to El Harrach Est station if you want to connect to the metro.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Algiers Airport to the city?",
+            a: "DZD 2,500–4,000 (~$19–30) negotiated. Official TaxiLux fixed rates are DZD 2,800–3,500.",
+          },
+          {
+            q: "Is there a metro from Algiers Airport?",
+            a: "No direct metro. Take a taxi to El Harrach Est station to connect to the Algiers Metro network.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Houari Boumediene International Airport",
+        url: "https://www.egsa-alger.com/en/houari-boumediene-airport",
+      },
+    ],
+  },
+
+  // ── Addis Ababa ───────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-addis-ababa",
+    title: "How Much Does a Taxi Cost in Addis Ababa? (2026 Guide)",
+    description:
+      "Addis Ababa Bole Airport to the city costs ETB 400–700 by taxi. Here's the 2026 fare breakdown — Ride app, negotiated vs metered cabs, and navigating Ethiopia's sprawling capital.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Addis Ababa",
+    country: "Ethiopia",
+    citySlug: "addis-ababa",
+    countrySlug: "ethiopia",
+    content: [
+      {
+        type: "intro",
+        body: "Bole International Airport (ADD) is 6 km from central Addis Ababa — one of Africa's closest city-centre airports. Taxis are common but mostly negotiated. The Ride app (local ride-hailing, similar to Uber) is widely used and recommended. Uber does not currently operate in Ethiopia.",
+      },
+      {
+        type: "h2",
+        heading: "Addis Ababa Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Base fare (negotiated)", value: "ETB 15 (~$0.27)" },
+          { label: "Per km (negotiated)", value: "ETB 12 (~$0.22)" },
+          { label: "Minimum fare", value: "ETB 30" },
+          { label: "Night surcharge (20:00–06:00)", value: "+20%" },
+          {
+            label: "ADD → Bole / Kazanchis area (Ride app)",
+            value: "ETB 150–250",
+          },
+          {
+            label: "ADD → Piazza / Churchill Road (city centre)",
+            value: "ETB 350–600",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Bole Airport (ADD)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "ADD → Bole Medhanealem area (near airport)",
+            value: "ETB 150–280",
+          },
+          { label: "ADD → Kazanchis / Bole Road hotels", value: "ETB 200–350" },
+          { label: "ADD → Piazza / National Museum", value: "ETB 400–650" },
+          {
+            label: "ADD → Mercato (Africa's largest open market)",
+            value: "ETB 450–700",
+          },
+          {
+            label: "City centre → National Museum of Ethiopia",
+            value: "ETB 80–150",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Ride app (formerly Feres) is the main ride-hailing service in Addis Ababa — download it before arriving. It offers upfront pricing and is significantly cheaper than negotiated street taxis. Many hotels also have arrangements with trusted taxi drivers.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Addis Ababa Airport to the city?",
+            a: "ETB 350–700 (~$6–12 USD) by taxi. Bole/Kazanchis (near airport) costs ETB 150–280.",
+          },
+          {
+            q: "Is Uber available in Addis Ababa?",
+            a: "No — use the Ride app (local equivalent) for upfront-priced rides.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Bole International Airport — Ground Transport",
+        url: "https://www.ethiopianairlines.com/eth/information/bole-international-airport",
+      },
+    ],
+  },
+
+  // ── Christchurch ──────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-christchurch",
+    title: "How Much Does a Taxi Cost in Christchurch? (2026 Guide)",
+    description:
+      "Christchurch Airport to the city centre costs NZD 35–50 by taxi. Here's the 2026 fare breakdown — Uber vs metered cabs, Metro bus for NZD 4, and getting around New Zealand's South Island gateway.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Christchurch",
+    country: "New Zealand",
+    citySlug: "christchurch",
+    countrySlug: "new-zealand",
+    content: [
+      {
+        type: "intro",
+        body: "Christchurch Airport (CHC) is 12 km from the city centre. Christchurch is the main gateway to New Zealand's South Island. Uber and Zoomy (NZ local app) both operate. The Metro Purple Line bus connects the airport to the city for NZD 4.",
+      },
+      {
+        type: "h2",
+        heading: "Christchurch Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "NZD 3.40 (~$2.10)" },
+          { label: "Per km", value: "NZD 2.75 (~$1.70)" },
+          { label: "Minimum fare", value: "NZD 3.40" },
+          { label: "Night surcharge (22:00–06:00)", value: "+20%" },
+          { label: "CHC → Central City (typical)", value: "NZD 35–50" },
+          { label: "Uber — CHC to Central City", value: "NZD 22–35" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Christchurch Airport (CHC)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "CHC → Central City / Cathedral Square",
+            value: "NZD 35–50",
+          },
+          {
+            label: "CHC → Riccarton / Westfield (shopping)",
+            value: "NZD 18–28",
+          },
+          { label: "CHC → Sumner Beach (22 km)", value: "NZD 65–90" },
+          {
+            label: "Central City → Antarctic Centre (adjacent to airport)",
+            value: "NZD 35–48",
+          },
+          {
+            label: "Central City → Hagley Park / Botanic Gardens",
+            value: "NZD 8–15",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Metro Purple Line runs from the airport to the Central City Interchange for NZD 4. Uber is significantly cheaper than metered taxis at NZD 22–35 to the city centre.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Christchurch Airport to the city?",
+            a: "NZD 35–50 by metered taxi. Uber costs NZD 22–35. Metro bus costs NZD 4.",
+          },
+          {
+            q: "Is Uber available in Christchurch?",
+            a: "Yes — Uber and Zoomy both operate in Christchurch.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Christchurch International Airport — Transport",
+        url: "https://www.christchurchairport.co.nz/at-the-airport/transport-and-parking/",
+      },
+    ],
+  },
+
+  // ── Queenstown ────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-queenstown",
+    title: "How Much Does a Taxi Cost in Queenstown? (2026 Guide)",
+    description:
+      "Queenstown Airport to the town centre costs NZD 20–35 by taxi — one of New Zealand's most walkable airport routes. Here's the 2026 fare breakdown for the adventure capital.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Queenstown",
+    country: "New Zealand",
+    citySlug: "queenstown",
+    countrySlug: "new-zealand",
+    content: [
+      {
+        type: "intro",
+        body: "Queenstown Airport (ZQN) is only 7 km from the town centre — and 5 km to Frankton (where many hotels are). Queenstown is New Zealand's adventure tourism capital. The town is compact and walkable once you arrive. Uber operates; OR Bus provides public transport.",
+      },
+      {
+        type: "h2",
+        heading: "Queenstown Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "NZD 3.50 (~$2.15)" },
+          { label: "Per km", value: "NZD 3.00 (~$1.85)" },
+          { label: "Minimum fare", value: "NZD 5.00" },
+          { label: "ZQN → Town Centre (typical)", value: "NZD 20–35" },
+          { label: "ZQN → Frankton (nearby suburb)", value: "NZD 12–20" },
+          { label: "ZQN → Arrowtown (20 km)", value: "NZD 55–75" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Queenstown Airport (ZQN)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "ZQN → Town Centre / Steamer Wharf", value: "NZD 20–35" },
+          {
+            label: "ZQN → Frankton (hotels, supermarkets)",
+            value: "NZD 12–20",
+          },
+          { label: "ZQN → Arrowtown (heritage village)", value: "NZD 55–75" },
+          { label: "ZQN → Remarkables Ski Field (30 km)", value: "NZD 85–120" },
+          { label: "Town Centre → Skyline Gondola base", value: "NZD 8–15" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "OR Bus Route 1 connects ZQN Airport to Queenstown town centre for NZD 10. The journey takes 15 minutes and buses run every 30 minutes. Uber is available and typically NZD 15–25 to the town centre — cheaper than metered taxis.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Queenstown Airport to town?",
+            a: "NZD 20–35 by metered taxi. Uber costs NZD 15–25. OR Bus costs NZD 10.",
+          },
+          {
+            q: "How far is Queenstown Airport from the town centre?",
+            a: "7 km — a 10-minute taxi ride or 15-minute bus journey.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Queenstown Airport — Transport",
+        url: "https://www.queenstownairport.co.nz/getting-to-and-from/transport-options/",
+      },
+    ],
+  },
+
+  // ── New Orleans ───────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-new-orleans",
+    title: "How Much Does a Taxi Cost in New Orleans? (2026 Guide)",
+    description:
+      "New Orleans Airport to the French Quarter costs $36 flat rate by taxi. Here's the 2026 fare breakdown — the fixed airport rate, Uber vs metered cabs, and navigating the Crescent City.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "New Orleans",
+    country: "United States",
+    citySlug: "new-orleans",
+    countrySlug: "united-states",
+    content: [
+      {
+        type: "intro",
+        body: "Louis Armstrong New Orleans International Airport (MSY) is 24 km west of the French Quarter. The City of New Orleans sets a flat taxi rate of $36 per trip (1–2 passengers) or $15 per person (3+ passengers) between MSY and downtown. The airport streetcar (Loyola/UPT Line) opened in 2018.",
+      },
+      {
+        type: "h2",
+        heading: "New Orleans Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (in city)", value: "$3.50" },
+          { label: "Per mile (approx)", value: "$2.80" },
+          { label: "Minimum fare", value: "$3.50" },
+          {
+            label: "MSY → downtown / French Quarter (flat rate, 1–2 pax)",
+            value: "$36",
+          },
+          {
+            label: "MSY → downtown / French Quarter (flat rate, 3+ pax)",
+            value: "$15/person",
+          },
+          { label: "Uber — MSY to French Quarter (typical)", value: "$28–42" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from New Orleans Airport (MSY)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "MSY → French Quarter / Bourbon Street",
+            value: "$36 (flat rate taxi)",
+          },
+          { label: "MSY → Garden District", value: "$36 (flat rate)" },
+          { label: "MSY → CBD / Canal Street", value: "$36 (flat rate)" },
+          {
+            label: "French Quarter → Garden District (streetcar)",
+            value: "$1.25",
+          },
+          {
+            label: "French Quarter → Frenchmen Street (music strip)",
+            value: "$8–14",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Airport Streetcar (Loyola/UPT Line) connects MSY to the CBD (Loyola Ave/Tulane stop) for $1.25. From the CBD, transfer to the St. Charles streetcar ($1.25) for the Garden District or French Quarter. Total $2.50 vs $36 for a taxi.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from New Orleans Airport to the French Quarter?",
+            a: "$36 flat rate (1–2 passengers) or $15/person (3+ passengers). Airport streetcar costs $1.25.",
+          },
+          {
+            q: "Is Uber available at New Orleans Airport?",
+            a: "Yes — Uber and Lyft pick up from MSY. Typical fare to the French Quarter is $28–42.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label:
+          "Louis Armstrong New Orleans International Airport — Ground Transportation",
+        url: "https://www.flymsy.com/getting-to-from/ground-transportation/",
+      },
+    ],
+  },
+
   // ── Taxi Driver Phrases (Tier 2 — Linkable / Shareable) ───────────────────
   {
     slug: "what-to-say-to-your-taxi-driver-in-15-languages",
