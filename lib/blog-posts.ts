@@ -9207,6 +9207,744 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
 
+  // ── Riyadh ────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-riyadh",
+    title: "How Much Does a Taxi Cost in Riyadh? (2026 Guide)",
+    description:
+      "Riyadh King Khalid Airport to the city costs SAR 80–120 by taxi. Here's the 2026 fare breakdown — Careem vs metered taxis, the Riyadh Metro alternative, and what to expect.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Riyadh",
+    country: "Saudi Arabia",
+    citySlug: "riyadh",
+    countrySlug: "saudi-arabia",
+    content: [
+      {
+        type: "intro",
+        body: "Riyadh has undergone a transport transformation since Saudi Vision 2030. The Riyadh Metro opened fully in 2024, providing a modern alternative to taxis across 6 lines. Careem (Uber's regional brand) and Uber both operate widely. Traditional metered taxis exist but Careem is the default for most residents and visitors.",
+      },
+      {
+        type: "h2",
+        heading: "Riyadh Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (metered taxi)", value: "SAR 4.00 (~$1.07)" },
+          { label: "Per km (metered)", value: "SAR 2.00 (~$0.53)" },
+          { label: "Minimum fare", value: "SAR 10.00" },
+          { label: "Night surcharge (22:00–06:00)", value: "+25%" },
+          {
+            label: "King Khalid Airport → city centre (Careem approx)",
+            value: "SAR 80–120",
+          },
+          { label: "Airport taxi (regulated)", value: "SAR 100–140" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from King Khalid Airport (RUH)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "RUH → Al Olaya (business district / Kingdom Centre)",
+            value: "SAR 85–120",
+          },
+          { label: "RUH → Al Malaz / downtown", value: "SAR 70–100" },
+          { label: "RUH → Diplomatic Quarter", value: "SAR 90–130" },
+          { label: "RUH → Diriyah (UNESCO heritage site)", value: "SAR 65–95" },
+          { label: "Kingdom Centre → Diriyah", value: "SAR 30–50" },
+          {
+            label: "Old Airport Rd area → Al Faisaliyah Tower",
+            value: "SAR 20–35",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Riyadh Metro Line 2 (Green Line) connects King Khalid Airport to the city centre. A single journey costs SAR 4–7 depending on zones. The metro is air-conditioned, modern, and significantly cheaper than a taxi for solo travellers.",
+      },
+      {
+        type: "h2",
+        heading: "Careem and Uber in Riyadh",
+      },
+      {
+        type: "p",
+        body: "Careem (owned by Uber) is the dominant ride-hailing platform in Saudi Arabia and extremely widely used in Riyadh. Uber also operates under the Uber brand. Both show upfront pricing and accept card payment. From King Khalid Airport, Careem typically quotes SAR 80–120 to the city centre.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Riyadh Airport to the city?",
+            a: "SAR 80–120 via Careem/Uber. Metered airport taxis run SAR 100–140. The Riyadh Metro costs SAR 4–7.",
+          },
+          {
+            q: "Is Uber available in Riyadh?",
+            a: "Yes — both Uber and Careem (Uber's regional brand) operate in Riyadh.",
+          },
+          {
+            q: "Is there public transport from Riyadh Airport?",
+            a: "Yes — Riyadh Metro Line 2 connects King Khalid Airport to the city centre.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Riyadh Metro — Route Map and Fares",
+        url: "https://www.riyadhmetro.sa/en/",
+      },
+    ],
+  },
+
+  // ── Houston ───────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-houston",
+    title: "How Much Does a Taxi Cost in Houston? (2026 Guide)",
+    description:
+      "Houston Bush Airport to downtown costs $55–75 by taxi. Here's the 2026 fare breakdown — Houston's taxi system, Uber vs yellow cabs, and why there's no rail from either airport.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Houston",
+    country: "United States",
+    citySlug: "houston",
+    countrySlug: "united-states",
+    content: [
+      {
+        type: "intro",
+        body: "Houston is one of America's most car-dependent cities — and that extends to airport transport. Neither Bush Intercontinental (IAH) nor Hobby (HOU) has a direct rail link to downtown. Taxis, Uber, Lyft, and pre-booked shuttles are the options. The METRO bus provides a cheap but slow alternative.",
+      },
+      {
+        type: "h2",
+        heading: "Houston Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "$2.50" },
+          { label: "Per mile (~per km)", value: "$2.50/mile (~$1.55/km)" },
+          { label: "Minimum fare", value: "$2.50" },
+          { label: "IAH Airport surcharge", value: "$3.00" },
+          { label: "HOU Hobby surcharge", value: "$2.00" },
+          { label: "Night surcharge (21:00–06:00)", value: "None" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Houston Airports",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "IAH Bush → Downtown Houston", value: "$55–75" },
+          { label: "IAH Bush → Galleria / Uptown", value: "$50–68" },
+          { label: "IAH Bush → Medical Center / Montrose", value: "$60–80" },
+          { label: "HOU Hobby → Downtown Houston", value: "$28–40" },
+          { label: "HOU Hobby → Medical Center", value: "$22–35" },
+          { label: "Downtown → Galleria", value: "$18–28" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "If flying into Hobby (HOU), it is significantly closer to downtown (12 km) than Bush Intercontinental (40 km). If you have a choice of airports and are staying downtown, Hobby saves $25–35 on a taxi and 30–40 minutes of travel time.",
+      },
+      {
+        type: "h2",
+        heading: "Uber and Lyft in Houston",
+      },
+      {
+        type: "p",
+        body: "Uber and Lyft dominate Houston transportation. UberX from IAH to downtown typically runs $45–65 — comparable to metered taxis. From HOU, UberX runs $22–35. Both have designated pickup zones at each airport. Ride-hailing is generally the default for visitors over traditional taxis in Houston.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Houston Airport to downtown?",
+            a: "From IAH Bush: $55–75. From HOU Hobby: $28–40. Hobby is far closer to downtown.",
+          },
+          {
+            q: "Is there a train from Houston Airport?",
+            a: "No direct rail link exists from either IAH or HOU to downtown. The METRO bus Route 102 runs from IAH to the Transit Center but takes 60+ minutes.",
+          },
+          {
+            q: "Which Houston airport is closest to downtown?",
+            a: "William P. Hobby (HOU) is 12 km from downtown — much closer than Bush Intercontinental (IAH) at 40 km. Use Hobby if your route serves it.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Houston Airport System — Ground Transportation",
+        url: "https://www.fly2houston.com/ground-transportation",
+      },
+    ],
+  },
+
+  // ── Orlando ───────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-orlando",
+    title: "How Much Does a Taxi Cost in Orlando? (2026 Guide)",
+    description:
+      "Orlando Airport to Walt Disney World costs $70–90 by taxi. Here's the 2026 fare breakdown — theme park zone pricing, Uber vs taxi, and the Brightline train option to Miami.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Orlando",
+    country: "United States",
+    citySlug: "orlando",
+    countrySlug: "united-states",
+    content: [
+      {
+        type: "intro",
+        body: "Orlando's transport is dominated by theme park tourism. Most visitors rent a car or use resort shuttles. Taxis and Uber/Lyft are available from Orlando International (MCO) but are not the primary transport mode. For Walt Disney World and Universal, the taxi ranks are active 24/7.",
+      },
+      {
+        type: "h2",
+        heading: "Orlando Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "$2.75" },
+          { label: "Per mile (~per km)", value: "$2.40/mile (~$1.49/km)" },
+          { label: "Per km (dataset rate)", value: "$2.10" },
+          { label: "Minimum fare", value: "$3.25" },
+          { label: "MCO Airport surcharge", value: "$2.00" },
+          { label: "Night surcharge", value: "None" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Orlando International Airport (MCO)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "MCO → Walt Disney World (Magic Kingdom area)",
+            value: "$70–90",
+          },
+          {
+            label: "MCO → Universal Studios / International Drive",
+            value: "$35–50",
+          },
+          { label: "MCO → Downtown Orlando", value: "$25–38" },
+          { label: "MCO → SeaWorld Orlando", value: "$40–55" },
+          { label: "Walt Disney World → Universal Studios", value: "$30–45" },
+          { label: "International Drive → downtown Orlando", value: "$18–28" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Most Walt Disney World resorts are served by Disney's own complimentary shuttle (Magical Express is discontinued but Mears Connect operates for $16–32 per person). For 2–4 people, a shared Mears shuttle to WDW costs $16–32 per person vs $70–90 for a taxi — book in advance.",
+      },
+      {
+        type: "h2",
+        heading: "Uber and Lyft in Orlando",
+      },
+      {
+        type: "p",
+        body: "Both Uber and Lyft operate at MCO from the designated rideshare area on Level 1 of the A-side and B-side of the terminal. To Walt Disney World, UberX typically runs $55–78. For International Drive hotels, Uber runs $28–42. Disney Springs and all WDW resort areas allow rideshare pickup and drop-off.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Orlando Airport to Disney World?",
+            a: "$70–90. Uber runs $55–78. Mears Connect shared shuttle costs $16–32 per person — the cheapest option for solo travellers.",
+          },
+          {
+            q: "Is Uber available at Orlando Airport?",
+            a: "Yes — pickup from Level 1 of the A-side and B-side. Both Uber and Lyft operate.",
+          },
+          {
+            q: "How far is Disney World from Orlando Airport?",
+            a: "About 30–35 km (20 miles). The journey takes 25–45 minutes depending on traffic.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Orlando International Airport — Ground Transportation",
+        url: "https://www.orlandoairports.net/transportation",
+      },
+    ],
+  },
+
+  // ── Boston ────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-boston",
+    title: "How Much Does a Taxi Cost in Boston? (2026 Guide)",
+    description:
+      "Boston Logan Airport to downtown costs $35–50 by taxi. Here's the 2026 fare breakdown — metered rates, the Silver Line bus for free, and how Uber compares.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Boston",
+    country: "United States",
+    citySlug: "boston",
+    countrySlug: "united-states",
+    content: [
+      {
+        type: "intro",
+        body: "Boston Logan Airport is just 5 km from downtown — one of the closest US major-city airports to its city centre. Taxis, Uber, Lyft, and the Silver Line bus all serve it. The Silver Line SL1 is technically free from Logan (outbound from Logan to South Station) making it one of the best airport transit deals in the US.",
+      },
+      {
+        type: "h2",
+        heading: "Boston Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (first 1/8 mile)", value: "$2.60" },
+          { label: "Per mile", value: "$2.80 (~$1.74/km)" },
+          { label: "Minimum fare", value: "$8.50" },
+          { label: "Logan Airport surcharge", value: "$2.75" },
+          {
+            label: "Tunnel toll (added to fare)",
+            value: "$5.25 (Sumner/Callahan)",
+          },
+          { label: "Night surcharge", value: "None (same rate 24/7)" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Boston Logan Airport (BOS)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "BOS → Downtown / Financial District", value: "$35–50" },
+          { label: "BOS → Back Bay / Copley Square", value: "$38–52" },
+          { label: "BOS → Cambridge / Harvard Square", value: "$45–60" },
+          { label: "BOS → South End", value: "$35–48" },
+          { label: "BOS → Fenway Park / Kenmore", value: "$40–55" },
+          { label: "Downtown → Cambridge (MIT / Harvard)", value: "$18–28" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Silver Line SL1 bus runs from Logan Airport (all terminals) to South Station completely free (no fare charged outbound from Logan). At South Station, connect to the Red, Silver, or Green MBTA lines. Free bus + $2.40 subway = far cheaper than a $35–50 taxi for solo travellers.",
+      },
+      {
+        type: "h2",
+        heading: "Uber and Lyft in Boston",
+      },
+      {
+        type: "p",
+        body: "Uber and Lyft operate at Logan from the designated rideshare area on the lower roadway level. UberX to downtown Boston typically runs $28–42 — somewhat cheaper than a metered taxi, particularly avoiding the tunnel toll. For Cambridge and the northern parts of Boston, Uber is competitive.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Logan Airport to downtown Boston?",
+            a: "$35–50 including the airport surcharge and tunnel toll. Uber runs $28–42. The Silver Line SL1 bus is free from Logan.",
+          },
+          {
+            q: "What is the Silver Line at Logan Airport?",
+            a: "The Silver Line SL1 is a free bus-rapid-transit from Logan Airport to South Station. It's free only in the outbound direction (airport to city). Return trips cost $2.40.",
+          },
+          {
+            q: "Is tipping expected in Boston taxis?",
+            a: "Yes — 15–20% is standard. Most Boston taxi card readers prompt for a tip.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Logan Airport — Ground Transportation",
+        url: "https://www.massport.com/logan-airport/getting-to-logan/",
+      },
+    ],
+  },
+
+  // ── Pattaya ───────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-pattaya",
+    title: "How Much Does a Taxi Cost in Pattaya? (2026 Guide)",
+    description:
+      "Bangkok Suvarnabhumi Airport to Pattaya costs THB 1,200–1,500 by taxi. Here's the 2026 fare breakdown — baht bus songthaews, the lack of meters, and Grab as the transparent alternative.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Pattaya",
+    country: "Thailand",
+    citySlug: "pattaya",
+    countrySlug: "thailand",
+    content: [
+      {
+        type: "intro",
+        body: "Pattaya has no metered taxis. The city is served by baht buses (songthaews — blue pickup trucks running fixed routes along Beach Road and Second Road for THB 10–20 per person) and independently operated 'taxis' with negotiated fares. Grab has expanded coverage in Pattaya and provides upfront pricing.",
+      },
+      {
+        type: "h2",
+        heading: "Pattaya Typical Transport Costs (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Baht bus (songthaew) — shared route",
+            value: "THB 10–20 per person",
+          },
+          {
+            label: "Baht bus — private (hired as taxi)",
+            value: "THB 100–300 (negotiated)",
+          },
+          {
+            label: "Taxi (fixed price, negotiated)",
+            value: "THB 50–400 depending on distance",
+          },
+          { label: "Grab — Pattaya city trip", value: "THB 80–250" },
+          {
+            label: "BKK Suvarnabhumi Airport → Pattaya (taxi)",
+            value: "THB 1,200–1,600",
+          },
+          {
+            label: "BKK Suvarnabhumi Airport → Pattaya (minibus)",
+            value: "THB 200 (Bell Travel)",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Getting from Bangkok Airport to Pattaya",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Private taxi (130 km journey)", value: "THB 1,200–1,600" },
+          { label: "Bell Travel Service minibus", value: "THB 200 per person" },
+          {
+            label: "Roong Reuang Coach bus",
+            value: "THB 131 (from Ekkamai station)",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Bell Travel Service operates a shared minibus from Suvarnabhumi Airport directly to hotels in Pattaya for THB 200 per person. Book at the Bell Travel counter in the arrivals hall. For groups of 4+, a private taxi at THB 1,200–1,600 works out similar per person.",
+      },
+      {
+        type: "h2",
+        heading: "The Baht Bus System",
+      },
+      {
+        type: "p",
+        body: "The blue songthaews (baht buses) run along Pattaya's main roads in a circuit for THB 10 per person — one of Asia's cheapest forms of transport. Wave one down on Beach Road or Second Road, hop in, and tap the buzzer when you want to stop. For off-route destinations, negotiate a flat fare with the driver upfront.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "Are there metered taxis in Pattaya?",
+            a: "No — Pattaya has no metered taxis. Use Grab for upfront pricing, or negotiate a flat fare with a baht bus driver for private hire.",
+          },
+          {
+            q: "How do I get from Bangkok Airport to Pattaya?",
+            a: "Bell Travel minibus (THB 200/person) or private taxi (THB 1,200–1,600 for the car). The journey takes 90–120 minutes.",
+          },
+          {
+            q: "What is a baht bus in Pattaya?",
+            a: "A blue pickup truck (songthaew) running shared routes along Pattaya's main roads for THB 10–20 per person. It can also be hired privately for THB 100–300.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Bell Travel Service — Suvarnabhumi to Pattaya",
+        url: "https://www.belltravelservice.com",
+      },
+    ],
+  },
+
+  // ── Phnom Penh ────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-phnom-penh",
+    title: "How Much Does a Taxi Cost in Phnom Penh? (2026 Guide)",
+    description:
+      "Phnom Penh Airport to the riverside costs $8–12 by taxi. Here's the 2026 fare breakdown — USD pricing explained, Grab vs tuk-tuk, and the cheapest ways around Cambodia's capital.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Phnom Penh",
+    country: "Cambodia",
+    citySlug: "phnom-penh",
+    countrySlug: "cambodia",
+    content: [
+      {
+        type: "intro",
+        body: "Phnom Penh is one of the most affordable capitals in Southeast Asia for transport. USD is widely used alongside the Cambodian riel — most transport quotes prices in dollars. Tuk-tuks are the iconic transport mode; Grab and PassApp (a Cambodian ride-hailing app) provide metered alternatives.",
+      },
+      {
+        type: "h2",
+        heading: "Phnom Penh Transport Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Taxi — flag fall", value: "$1.50" },
+          { label: "Taxi — per km", value: "$0.80" },
+          { label: "Minimum fare", value: "$2.50" },
+          {
+            label: "Tuk-tuk — short city trip (1–3 km)",
+            value: "$2–4 (negotiated)",
+          },
+          { label: "Grab car — city trip", value: "$3–7" },
+          { label: "PassApp — city trip", value: "$2–5" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Phnom Penh Airport (PNH)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "PNH → Riverside / Sisowath Quay", value: "$8–12" },
+          {
+            label: "PNH → BKK1 / Boeung Keng Kang (expat district)",
+            value: "$6–10",
+          },
+          { label: "PNH → Night market area (Phsar Chas)", value: "$8–12" },
+          { label: "PNH → Toul Tom Poung (Russian Market)", value: "$7–11" },
+          { label: "Riverside → Royal Palace", value: "$2–4 (tuk-tuk)" },
+          { label: "Riverside → Tuol Sleng Museum", value: "$3–5 (tuk-tuk)" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "PassApp is the leading Cambodian ride-hailing app, cheaper than Grab for most trips. A PassApp car from the airport to Riverside typically costs $5–8. The app supports card and cash payment and is used by locals and expats alike.",
+      },
+      {
+        type: "h2",
+        heading: "Tuk-Tuks in Phnom Penh",
+      },
+      {
+        type: "p",
+        body: "Tuk-tuks (two-wheeled trailers pulled by motorbikes) are the iconic Phnom Penh transport for short trips. Prices are negotiated — $2–4 for most city trips under 3 km. They are not metered. Always agree the price before getting in. Grab also operates tuk-tuks through the app at fixed upfront prices.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Phnom Penh Airport to the city?",
+            a: "$8–12 for a taxi or Grab car. PassApp costs $5–8. The airport is 10 km from the riverside.",
+          },
+          {
+            q: "Should I use Grab or PassApp in Phnom Penh?",
+            a: "Both work well. PassApp is usually 20–30% cheaper for local trips and is the dominant app among Cambodian users. Grab is more recognisable for regional travellers.",
+          },
+          {
+            q: "Do Phnom Penh taxis use meters?",
+            a: "Most traditional taxis do not use meters — prices are negotiated. Use Grab or PassApp for upfront pricing.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "PassApp — Cambodia Ride-Hailing",
+        url: "https://www.passapp.com.kh/en/",
+      },
+    ],
+  },
+
+  // ── Lima ──────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-lima",
+    title: "How Much Does a Taxi Cost in Lima? (2026 Guide)",
+    description:
+      "Lima Jorge Chávez Airport to Miraflores costs PEN 60–90 by taxi. Here's the 2026 fare breakdown — formal vs informal taxis, InDriver and Uber, and why taxi apps are the safest option.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Lima",
+    country: "Peru",
+    citySlug: "lima",
+    countrySlug: "peru",
+    content: [
+      {
+        type: "intro",
+        body: "Lima has two parallel taxi systems: formal (licensed, often app-based) and informal (unregistered, negotiated fares). The city has significant taxi scam and crime issues, particularly at the airport. Using Uber, InDriver, or a pre-booked formal taxi from the airport is strongly recommended.",
+      },
+      {
+        type: "h2",
+        heading: "Lima Taxi Rate Ranges (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Flag fall (formal metered taxi)",
+            value: "PEN 5.00 (~$1.35)",
+          },
+          { label: "Per km", value: "PEN 2.50 (~$0.68)" },
+          { label: "Minimum fare", value: "PEN 5.00" },
+          {
+            label: "Informal taxi — negotiated (no meter)",
+            value: "PEN 8–25 typical city trip",
+          },
+          { label: "Airport formal taxi (pre-booked)", value: "PEN 60–100" },
+          { label: "Night surcharge", value: "+20–30% informal" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Jorge Chávez Airport (LIM)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "LIM → Miraflores", value: "PEN 60–90" },
+          {
+            label: "LIM → San Isidro (financial district)",
+            value: "PEN 55–80",
+          },
+          { label: "LIM → Barranco", value: "PEN 65–95" },
+          { label: "LIM → Historic Centre (Lima Centro)", value: "PEN 30–50" },
+          { label: "Miraflores → Barranco", value: "PEN 15–25" },
+          { label: "Miraflores → Larco Mar", value: "PEN 10–15" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Uber is the safest and most transparent option in Lima. From the airport to Miraflores, Uber typically costs PEN 45–70 — cheaper than a formal pre-booked taxi. InDriver (negotiated fares) is also popular. Pick up from the rideshare zone outside arrivals, Level 1.",
+      },
+      {
+        type: "warning",
+        body: "Do not accept rides from touts inside Lima's airport — violent taxi robberies have occurred when visitors accepted unofficial cabs. Use Uber, InDriver, or the formal airport taxi counters inside the terminal. Share your trip details with a contact.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Lima Airport to Miraflores?",
+            a: "PEN 60–90 for a formal pre-booked taxi. Uber runs PEN 45–70.",
+          },
+          {
+            q: "Is Uber available in Lima?",
+            a: "Yes — Uber operates in Lima and is the recommended option for safety and upfront pricing. InDriver is also available.",
+          },
+          {
+            q: "Are Lima taxis safe?",
+            a: "Formal taxis and Uber are safe. Avoid accepting rides from strangers at the airport or hailing from the street, particularly at night.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Jorge Chávez International Airport — Transport",
+        url: "https://www.lima-airport.com/eng/getting-to-and-from-the-airport/",
+      },
+    ],
+  },
+
+  // ── Bogotá ────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-bogota",
+    title: "How Much Does a Taxi Cost in Bogotá? (2026 Guide)",
+    description:
+      "Bogotá El Dorado Airport to Zona Rosa costs COP 45,000–65,000 by taxi. Here's the 2026 fare breakdown — TAXÍMETRO rates, InDriver vs Uber, and the TransMilenio bus rapid transit.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Bogotá",
+    country: "Colombia",
+    citySlug: "bogota",
+    countrySlug: "colombia",
+    content: [
+      {
+        type: "intro",
+        body: "Bogotá's yellow taxis are metered (taxímetro) and regulated by the city's transit authority. Fares are set by a unit system — the TAXÍMETRO displays 'unidades' (units) that convert to pesos on a published table posted inside all taxis. Uber operates legally through a private hire model. InDriver is also popular.",
+      },
+      {
+        type: "h2",
+        heading: "Bogotá Taxi Meter Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Flag fall (minimum taxi unit / arranque)",
+            value: "COP 5,800 (~$1.40)",
+          },
+          { label: "Per km (approximate)", value: "COP 1,500/km (~$0.36)" },
+          { label: "Minimum fare", value: "COP 5,800" },
+          { label: "Night surcharge (20:00–05:00)", value: "+COP 2,500" },
+          { label: "Airport supplement (El Dorado)", value: "+COP 5,000" },
+          { label: "Holiday surcharge", value: "+COP 2,500" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from El Dorado Airport (BOG)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "BOG → Zona Rosa / Chapinero", value: "COP 40,000–60,000" },
+          {
+            label: "BOG → La Candelaria (historic centre)",
+            value: "COP 30,000–45,000",
+          },
+          { label: "BOG → Usaquén", value: "COP 45,000–65,000" },
+          { label: "BOG → Parque 93 area", value: "COP 35,000–55,000" },
+          { label: "Zona Rosa → La Candelaria", value: "COP 18,000–28,000" },
+          { label: "Zona Rosa → Usaquén", value: "COP 15,000–25,000" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "TransMilenio, Bogotá's bus rapid transit system, connects the airport area to most of the city for COP 2,950. The nearest stations to El Dorado (Terminal) are on the Troncal Calle 26. For budget travellers without luggage, it is dramatically cheaper than a taxi.",
+      },
+      {
+        type: "h2",
+        heading: "Uber and InDriver in Bogotá",
+      },
+      {
+        type: "p",
+        body: "Uber operates in Colombia through a private hire model. InDriver (negotiate your own fare with drivers) is very popular in Bogotá and often 20–30% cheaper than Uber. Both provide upfront or negotiated pricing and are the recommended options for visitors over hailing a street taxi.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Bogotá Airport to the city?",
+            a: "COP 40,000–65,000 (roughly $10–16 USD) depending on destination. Uber/InDriver runs COP 30,000–50,000.",
+          },
+          {
+            q: "How does the Bogotá taxi meter work?",
+            a: "The TAXÍMETRO shows 'unidades' (units), not pesos directly. A conversion table posted inside the taxi translates units to the COP fare. Ask the driver to show you the table if needed.",
+          },
+          {
+            q: "Is Uber available in Bogotá?",
+            a: "Yes — Uber operates via a private hire model in Colombia. InDriver is also available and popular for negotiated-rate rides.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "El Dorado Airport — Ground Transport",
+        url: "https://www.aeropuerto.gov.co/en/services/transport",
+      },
+    ],
+  },
+
   // ── Taxi Driver Phrases (Tier 2 — Linkable / Shareable) ───────────────────
   {
     slug: "what-to-say-to-your-taxi-driver-in-15-languages",
