@@ -12191,6 +12191,680 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
 
+  // ── Colombo ───────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-colombo",
+    title: "How Much Does a Taxi Cost in Colombo? (2026 Guide)",
+    description:
+      "Colombo Airport to the city costs LKR 3,000–4,500 by metered taxi. Here's the 2026 fare breakdown — PickMe vs metered cabs, red taxis, and Sri Lanka's two-speed taxi market.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Colombo",
+    country: "Sri Lanka",
+    citySlug: "colombo",
+    countrySlug: "sri-lanka",
+    content: [
+      {
+        type: "intro",
+        body: "Bandaranaike International Airport (CMB) is 30 km north of central Colombo. Sri Lanka has two taxi tiers: app-based taxis (PickMe is the dominant local app) and traditional metered taxis. PickMe typically costs significantly less than metered taxis.",
+      },
+      {
+        type: "h2",
+        heading: "Colombo Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (metered taxi)", value: "LKR 80 (~$0.27)" },
+          { label: "Per km (metered)", value: "LKR 80 (~$0.27)" },
+          { label: "Minimum fare", value: "LKR 100" },
+          {
+            label: "PickMe — CMB to Fort / Colombo 1 (typical)",
+            value: "LKR 2,800–4,000",
+          },
+          {
+            label: "Metered taxi — CMB to city centre (typical)",
+            value: "LKR 3,500–5,000",
+          },
+          { label: "Night surcharge (22:00–06:00)", value: "+25%" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Colombo Airport (CMB)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "CMB → Fort / World Trade Centre (city centre)",
+            value: "LKR 3,000–5,000",
+          },
+          {
+            label: "CMB → Kollupitiya / Cinnamon Grand area",
+            value: "LKR 3,200–5,200",
+          },
+          { label: "CMB → Galle Face Green", value: "LKR 3,200–5,000" },
+          { label: "CMB → Negombo (nearby beach town)", value: "LKR 600–900" },
+          {
+            label: "City centre → Pettah Market (short hop)",
+            value: "LKR 200–400",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "PickMe is Sri Lanka's leading taxi app and the recommended option. Download before arriving — it offers upfront pricing and air-conditioned cars. Uber also operates in Colombo but with less coverage. Red taxis are official airport cabs with fixed rates.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Colombo Airport to the city?",
+            a: "LKR 3,000–5,000 (~$10–17 USD) by taxi. PickMe app typically costs LKR 2,800–4,000.",
+          },
+          {
+            q: "Which taxi app is best in Colombo?",
+            a: "PickMe is the dominant local app and most reliable. Uber also operates but with fewer drivers.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Bandaranaike International Airport — Transport",
+        url: "https://www.airport.lk/passenger_guide/transport_guide",
+      },
+    ],
+  },
+
+  // ── Chennai ───────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-chennai",
+    title: "How Much Does a Taxi Cost in Chennai? (2026 Guide)",
+    description:
+      "Chennai Airport to the city costs INR 400–700 by prepaid taxi. Here's the 2026 fare breakdown — Ola and Rapido vs metered autos, MRTS rail, and navigating India's fourth-largest city.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Chennai",
+    country: "India",
+    citySlug: "chennai",
+    countrySlug: "india",
+    content: [
+      {
+        type: "intro",
+        body: "Chennai International Airport (MAA) is 13 km from the city centre (T. Nagar / Anna Salai). Chennai has prepaid taxi counters inside the airport, metered auto-rickshaws, and app-based services. Ola and Uber both operate widely. The MRTS and suburban rail connect the airport to the city.",
+      },
+      {
+        type: "h2",
+        heading: "Chennai Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (metered taxi)", value: "INR 30 (~$0.36)" },
+          { label: "Per km (metered taxi)", value: "INR 14 (~$0.17)" },
+          { label: "Minimum fare", value: "INR 30" },
+          {
+            label: "MAA → T. Nagar / Anna Salai (prepaid counter)",
+            value: "INR 400–600",
+          },
+          {
+            label: "Ola/Uber — MAA to city centre (typical)",
+            value: "INR 350–550",
+          },
+          {
+            label: "Airport auto-rickshaw to nearest metro",
+            value: "INR 100–150",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Chennai Airport (MAA)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "MAA → T. Nagar", value: "INR 400–650" },
+          {
+            label: "MAA → Anna Salai / Chennai Central station",
+            value: "INR 450–700",
+          },
+          {
+            label: "MAA → Adyar / Besant Nagar (beach area)",
+            value: "INR 300–500",
+          },
+          { label: "MAA → OMR (IT corridor)", value: "INR 500–750" },
+          { label: "City centre → Marina Beach", value: "INR 80–150" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Airport Metro (Chennai Metro Phase 2) opened a direct connection to the city. Trains run every 8 minutes for INR 50–80 to the central station area. Ola and Rapido (bike taxi for solo travellers) are the most popular app options.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Chennai Airport to T. Nagar?",
+            a: "INR 400–650 by prepaid taxi or Ola/Uber. Metro costs INR 50–80.",
+          },
+          {
+            q: "Is Uber available in Chennai?",
+            a: "Yes — Uber and Ola both operate. Rapido is popular for bike taxis for solo travellers.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Chennai International Airport — Ground Transport",
+        url: "https://www.aai.aero/en/airports/chennai",
+      },
+    ],
+  },
+
+  // ── Kolkata ───────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-kolkata",
+    title: "How Much Does a Taxi Cost in Kolkata? (2026 Guide)",
+    description:
+      "Kolkata Airport to the city costs INR 400–700 by AC taxi. Here's the 2026 fare breakdown — yellow Ambassador cabs, Ola/Uber, the Metro, and India's most affordable taxi market.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Kolkata",
+    country: "India",
+    citySlug: "kolkata",
+    countrySlug: "india",
+    content: [
+      {
+        type: "intro",
+        body: "Kolkata Netaji Subhas Chandra Bose International Airport (CCU) is 17 km from central Kolkata. The city is famous for its yellow Ambassador taxis — iconic but increasingly rare. Ola, Uber, and the Kolkata Metro (Line 6 direct airport connection) are the modern alternatives.",
+      },
+      {
+        type: "h2",
+        heading: "Kolkata Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (metered yellow cab)", value: "INR 25 (~$0.30)" },
+          { label: "Per km (metered)", value: "INR 13 (~$0.16)" },
+          { label: "Minimum fare", value: "INR 25" },
+          {
+            label: "Airport AC taxi (prepaid) to city centre",
+            value: "INR 500–750",
+          },
+          {
+            label: "Ola/Uber — CCU to Esplanade / BBD Bagh",
+            value: "INR 400–650",
+          },
+          {
+            label: "Yellow taxi (metered) — CCU to city",
+            value: "INR 300–500 + tip",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Kolkata Airport (CCU)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "CCU → Esplanade / BBD Bagh (city centre)",
+            value: "INR 450–700",
+          },
+          { label: "CCU → Park Street / Maidaan area", value: "INR 450–700" },
+          { label: "CCU → Howrah Station", value: "INR 500–750" },
+          { label: "CCU → New Town / Rajarhat (IT hub)", value: "INR 200–350" },
+          { label: "Esplanade → Victoria Memorial", value: "INR 30–60" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Kolkata Metro Airport Line (Line 6) opened a direct connection from CCU to the city (Salt Lake Sector V in ~25 minutes). Metro fares are INR 25–50. This is now the most efficient and affordable airport option.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Kolkata Airport to the city centre?",
+            a: "INR 450–750 by AC taxi or Ola/Uber. Metro Line 6 costs INR 25–50.",
+          },
+          {
+            q: "Are yellow taxis still used in Kolkata?",
+            a: "Yes — iconic yellow Ambassador cabs are metered and still operate, though Ola and Uber have become dominant.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Kolkata Airport — Ground Transportation",
+        url: "https://www.aai.aero/en/airports/kolkata",
+      },
+    ],
+  },
+
+  // ── Jaipur ────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-jaipur",
+    title: "How Much Does a Taxi Cost in Jaipur? (2026 Guide)",
+    description:
+      "Jaipur Airport to the Pink City costs INR 300–500 by taxi. Here's the 2026 fare breakdown — Ola vs metered cabs, auto-rickshaws, and navigating Rajasthan's capital.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Jaipur",
+    country: "India",
+    citySlug: "jaipur",
+    countrySlug: "india",
+    content: [
+      {
+        type: "intro",
+        body: "Jaipur International Airport (JAI) is 10 km from the walled city (Pink City). Jaipur is Rajasthan's capital and a major tourism hub. Ola is the dominant app; Uber coverage is limited. Auto-rickshaws are excellent for short trips within the city.",
+      },
+      {
+        type: "h2",
+        heading: "Jaipur Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (metered taxi)", value: "INR 20 (~$0.24)" },
+          { label: "Per km (metered)", value: "INR 11 (~$0.13)" },
+          { label: "Minimum fare", value: "INR 20" },
+          {
+            label: "JAI → Pink City / Johari Bazaar (Ola typical)",
+            value: "INR 300–450",
+          },
+          {
+            label: "Auto-rickshaw (city trips, per km approx)",
+            value: "INR 10–15",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Jaipur Airport (JAI)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "JAI → Pink City / Johari Bazaar", value: "INR 300–480" },
+          { label: "JAI → Amber Fort (30 km)", value: "INR 600–900" },
+          {
+            label: "JAI → Hawa Mahal / City Palace area",
+            value: "INR 320–500",
+          },
+          {
+            label: "Pink City → Amber Fort (day trip)",
+            value: "INR 400–600 (return)",
+          },
+          { label: "City → Nahargarh Fort", value: "INR 200–350" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Ola is the recommended app in Jaipur. Auto-rickshaws are ideal for in-city sightseeing — negotiate a half-day rate (INR 400–700) to visit multiple forts and palaces rather than hailing for each trip.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Jaipur Airport to the Pink City?",
+            a: "INR 300–480 by Ola or metered taxi. No metro — taxis and auto-rickshaws are the primary options.",
+          },
+          {
+            q: "Is Uber available in Jaipur?",
+            a: "Uber has limited availability in Jaipur. Ola is the dominant and more reliable app.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Jaipur International Airport",
+        url: "https://www.aai.aero/en/airports/jaipur",
+      },
+    ],
+  },
+
+  // ── Penang ────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-penang",
+    title: "How Much Does a Taxi Cost in Penang? (2026 Guide)",
+    description:
+      "Penang Airport to Georgetown costs MYR 30–50 by taxi. Here's the 2026 fare breakdown — Grab vs metered cabs, the Penang Ferry, and navigating Malaysia's heritage island.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Penang",
+    country: "Malaysia",
+    citySlug: "penang",
+    countrySlug: "malaysia",
+    content: [
+      {
+        type: "intro",
+        body: "Penang International Airport (PEN) is located on the island, 15 km south of Georgetown (UNESCO World Heritage Site). Grab dominates the local rideshare market and is significantly cheaper than metered taxis. The Penang Ferry connects to the mainland if heading there.",
+      },
+      {
+        type: "h2",
+        heading: "Penang Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (metered taxi)", value: "MYR 3.00 (~$0.67)" },
+          { label: "Per km (metered)", value: "MYR 1.50 (~$0.34)" },
+          { label: "Minimum fare", value: "MYR 3.00" },
+          {
+            label: "PEN → Georgetown / Komtar (Grab typical)",
+            value: "MYR 20–35",
+          },
+          { label: "PEN → Georgetown (metered taxi)", value: "MYR 30–50" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Penang Airport (PEN)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "PEN → Georgetown / Komtar", value: "MYR 30–50" },
+          { label: "PEN → Batu Ferringhi (beach)", value: "MYR 45–65" },
+          { label: "PEN → Gurney Drive", value: "MYR 25–40" },
+          { label: "Georgetown → Penang Hill funicular", value: "MYR 12–20" },
+          { label: "Georgetown → Batu Ferringhi", value: "MYR 30–45" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Grab is the recommended app in Penang and typically 30–40% cheaper than metered taxis. Download it before arriving. Rapid Penang bus Route 401 also runs from the airport to Georgetown for MYR 2.70.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Penang Airport to Georgetown?",
+            a: "MYR 30–50 by metered taxi. Grab costs MYR 20–35. Bus Route 401 costs MYR 2.70.",
+          },
+          {
+            q: "Is Grab available in Penang?",
+            a: "Yes — Grab is the dominant rideshare app in Penang and highly recommended.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Penang International Airport — Ground Transport",
+        url: "https://www.penangairport.com.my/en/transport",
+      },
+    ],
+  },
+
+  // ── Surabaya ──────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-surabaya",
+    title: "How Much Does a Taxi Cost in Surabaya? (2026 Guide)",
+    description:
+      "Surabaya Airport to the city costs IDR 80,000–130,000 by taxi. Here's the 2026 fare breakdown — Gojek vs Blue Bird taxis, and navigating Indonesia's second city.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Surabaya",
+    country: "Indonesia",
+    citySlug: "surabaya",
+    countrySlug: "indonesia",
+    content: [
+      {
+        type: "intro",
+        body: "Juanda International Airport (SUB) is 18 km south of Surabaya city centre. Blue Bird is the most trusted metered taxi brand in Indonesia. Gojek (ride and motorbike) and Grab are both widely used and cheaper than regular taxis.",
+      },
+      {
+        type: "h2",
+        heading: "Surabaya Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (Blue Bird taxi)", value: "IDR 7,000 (~$0.44)" },
+          { label: "Per km", value: "IDR 4,500 (~$0.28)" },
+          { label: "Minimum fare", value: "IDR 15,000 (~$0.94)" },
+          {
+            label: "SUB → city centre / Tunjungan Plaza (typical)",
+            value: "IDR 80,000–130,000",
+          },
+          {
+            label: "Gojek GoCar — SUB to city centre",
+            value: "IDR 60,000–100,000",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Surabaya Airport (SUB)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "SUB → Tunjungan Plaza / city centre",
+            value: "IDR 80,000–130,000",
+          },
+          { label: "SUB → Kota Tua (old town)", value: "IDR 90,000–140,000" },
+          {
+            label: "SUB → Pakuwon Mall (west Surabaya)",
+            value: "IDR 70,000–110,000",
+          },
+          {
+            label: "City centre → House of Sampoerna",
+            value: "IDR 20,000–35,000",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Gojek and Grab are significantly cheaper than Blue Bird taxis and both widely available in Surabaya. GoJek's GoCar is the most popular option for car rides. For solo travellers, GoRide (motorbike) is fastest and cheapest in traffic.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Surabaya Airport to the city?",
+            a: "IDR 80,000–130,000 (~$5–8) by taxi. Gojek/Grab cost IDR 60,000–100,000.",
+          },
+          {
+            q: "Which taxi company is most reliable in Surabaya?",
+            a: "Blue Bird is the most trusted metered taxi brand. Avoid unlicensed taxis at the airport.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Juanda International Airport — Transport",
+        url: "https://juanda-airport.com/en/passengers/transportation",
+      },
+    ],
+  },
+
+  // ── Cebu ──────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-cebu",
+    title: "How Much Does a Taxi Cost in Cebu? (2026 Guide)",
+    description:
+      "Cebu Airport (Mactan) to the city costs PHP 400–700 by taxi. Here's the 2026 fare breakdown — Grab vs metered cabs, the airport bridge crossing, and Cebu City island travel.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Cebu",
+    country: "Philippines",
+    citySlug: "cebu",
+    countrySlug: "philippines",
+    content: [
+      {
+        type: "intro",
+        body: "Mactan-Cebu International Airport (CEB) is on Mactan Island, connected to Cebu City by two bridges. The crossing adds 15–30 minutes in traffic. Yellow metered taxis are the standard; Grab is increasingly popular and usually cheaper.",
+      },
+      {
+        type: "h2",
+        heading: "Cebu Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (metered taxi)", value: "PHP 40 (~$0.70)" },
+          { label: "Per km (metered)", value: "PHP 13.50 (~$0.24)" },
+          { label: "Minimum fare", value: "PHP 40" },
+          {
+            label: "CEB → Cebu City centre / Colon St (metered)",
+            value: "PHP 400–700",
+          },
+          { label: "Grab — CEB to Cebu City (typical)", value: "PHP 280–500" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Mactan-Cebu Airport (CEB)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "CEB → Cebu City centre (Colon St / SM City)",
+            value: "PHP 400–700",
+          },
+          {
+            label: "CEB → Mactan Newtown / Lapu-Lapu (on island)",
+            value: "PHP 80–140",
+          },
+          { label: "CEB → Parkmall / Ayala Center Cebu", value: "PHP 300–500" },
+          { label: "Cebu City → Carbon Market", value: "PHP 50–80" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Grab is recommended at Mactan-Cebu Airport — prices are typically 25–35% lower than metered taxis, and you avoid negotiation. Book via the app before exiting the terminal.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Cebu Airport to the city?",
+            a: "PHP 400–700 by metered taxi. Grab typically costs PHP 280–500.",
+          },
+          {
+            q: "How far is Cebu Airport from Cebu City?",
+            a: "12 km by road, but crossing the bridge can take 20–40 minutes in peak traffic.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Mactan-Cebu International Airport — Transport",
+        url: "https://www.mactancebuairport.com.ph/transport",
+      },
+    ],
+  },
+
+  // ── Da Nang ───────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-da-nang",
+    title: "How Much Does a Taxi Cost in Da Nang? (2026 Guide)",
+    description:
+      "Da Nang Airport is in the city — a taxi to the beach costs VND 80,000–150,000. Here's the 2026 fare breakdown — Grab vs metered cabs, and why Da Nang is one of Vietnam's easiest cities to navigate.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Da Nang",
+    country: "Vietnam",
+    citySlug: "da-nang",
+    countrySlug: "vietnam",
+    content: [
+      {
+        type: "intro",
+        body: "Da Nang International Airport (DAD) is remarkably central — just 3 km from the city centre and 5–8 km from the main beach strip (My Khe). Grab dominates the market and is highly recommended. Vietnamese metered taxis (Mai Linh, Vinasun) are reliable alternatives.",
+      },
+      {
+        type: "h2",
+        heading: "Da Nang Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (metered taxi)", value: "VND 10,000 (~$0.40)" },
+          { label: "Per km (metered)", value: "VND 8,500 (~$0.34)" },
+          { label: "Minimum fare", value: "VND 12,000" },
+          {
+            label: "DAD → My Khe Beach / Phạm Văn Đồng (Grab)",
+            value: "VND 80,000–120,000",
+          },
+          {
+            label: "DAD → Han Market / city centre (Grab)",
+            value: "VND 50,000–80,000",
+          },
+          { label: "DAD → Hội An (30 km)", value: "VND 300,000–450,000" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Da Nang Airport (DAD)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "DAD → My Khe Beach", value: "VND 80,000–130,000" },
+          {
+            label: "DAD → Han Market / Cầu Rồng (Dragon Bridge)",
+            value: "VND 50,000–85,000",
+          },
+          {
+            label: "DAD → Hội An Ancient Town (30 km)",
+            value: "VND 300,000–450,000",
+          },
+          {
+            label: "DAD → Bà Nà Hills cable car base (40 km)",
+            value: "VND 400,000–550,000",
+          },
+          { label: "My Khe Beach → Han Market", value: "VND 40,000–70,000" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Grab is the easiest and safest option in Da Nang. The airport is so close to the city that even a taxi is inexpensive. For the day trip to Hội An (30 km), hiring a taxi or Grab for the day (VND 600,000–900,000 return) is much easier than bus connections.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Da Nang Airport to the beach?",
+            a: "VND 80,000–130,000 (~$3–5) by Grab or metered taxi to My Khe Beach.",
+          },
+          {
+            q: "How far is Da Nang Airport from the city?",
+            a: "Only 3 km — one of Vietnam's most centrally located airports. The beach is 5–8 km.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Da Nang International Airport",
+        url: "https://www.danangairportonline.com",
+      },
+    ],
+  },
+
   // ── Taxi Driver Phrases (Tier 2 — Linkable / Shareable) ───────────────────
   {
     slug: "what-to-say-to-your-taxi-driver-in-15-languages",
