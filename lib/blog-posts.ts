@@ -9945,6 +9945,1011 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
 
+  // ── Frankfurt ─────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-frankfurt",
+    title: "How Much Does a Taxi Cost in Frankfurt? (2026 Guide)",
+    description:
+      "Frankfurt Airport to the city costs €30–40 by taxi. Here's the 2026 fare breakdown — S-Bahn vs taxi, night rates, and the Kurzstreckentarif for short hops.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Frankfurt",
+    country: "Germany",
+    citySlug: "frankfurt",
+    countrySlug: "germany",
+    content: [
+      {
+        type: "intro",
+        body: "Frankfurt taxis are metered, regulated, and cream/beige-coloured like most German cabs. Frankfurt Airport is one of Europe's largest — but unusually, it is only 12 km from the city centre, making taxis genuinely competitive for groups. The S-Bahn S8/S9 is the standard solo alternative.",
+      },
+      {
+        type: "h2",
+        heading: "Frankfurt Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "€3.80" },
+          { label: "Per km (up to 10 km)", value: "€2.00" },
+          { label: "Per km (over 10 km)", value: "€1.65" },
+          { label: "Minimum fare", value: "€3.80" },
+          {
+            label: "Kurzstreckentarif (≤2 km, hailed on street)",
+            value: "€5.80 flat",
+          },
+          { label: "Night/weekend surcharge", value: "+€1.00 flag fall" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Frankfurt Airport (FRA)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "FRA → Sachsenhausen / Römerberg (city centre)",
+            value: "€30–40",
+          },
+          { label: "FRA → Westend / Bockenheim", value: "€32–42" },
+          { label: "FRA → Hauptbahnhof (central station)", value: "€28–38" },
+          { label: "FRA → Trade Fair (Messe)", value: "€22–30" },
+          {
+            label: "Römerberg → Sachsenhausen (short trip)",
+            value: "€5.80 (Kurzstrecke)",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The S8 and S9 S-Bahn run from Frankfurt Airport to Hauptbahnhof in 11 minutes for €5.35 (1-zone). Trains run every 15 minutes. At €5.35 vs €28–38 for a taxi, the S-Bahn is strongly preferred for solo travellers.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Frankfurt Airport to the city?",
+            a: "€30–40 to central Frankfurt. The S8/S9 S-Bahn costs €5.35 in 11 minutes to Hauptbahnhof.",
+          },
+          {
+            q: "Is there a Kurzstreckentarif in Frankfurt like Berlin?",
+            a: "Yes — a flat €5.80 for hailed street taxis on journeys under 2 km. Ask for 'Kurzstrecke' before getting in.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Frankfurt Airport — Getting to the City",
+        url: "https://www.frankfurt-airport.com/en/to-from-airport.html",
+      },
+    ],
+  },
+
+  // ── Hamburg ───────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-hamburg",
+    title: "How Much Does a Taxi Cost in Hamburg? (2026 Guide)",
+    description:
+      "Hamburg Airport to the city costs €25–35 by taxi. Here's the 2026 fare breakdown — U-Bahn vs taxi, night surcharges, and Bolt savings in Germany's second city.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Hamburg",
+    country: "Germany",
+    citySlug: "hamburg",
+    countrySlug: "germany",
+    content: [
+      {
+        type: "intro",
+        body: "Hamburg taxis are cream-coloured, metered, and regulated. Hamburg Airport (HAM) is only 9 km from the city centre — one of Germany's closest airport-to-centre distances. The U1 U-Bahn connects directly to the terminal for €3.80.",
+      },
+      {
+        type: "h2",
+        heading: "Hamburg Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "€3.90" },
+          { label: "Per km (up to 10 km)", value: "€2.00" },
+          { label: "Per km (over 10 km)", value: "€1.55" },
+          { label: "Minimum fare", value: "€3.90" },
+          { label: "Night surcharge (22:00–06:00)", value: "+€1.50 flag fall" },
+          { label: "Phone booking fee", value: "€1.50" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Hamburg Airport (HAM)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "HAM → Altstadt / City Centre (Rathaus)", value: "€25–35" },
+          { label: "HAM → Reeperbahn / St Pauli", value: "€27–37" },
+          { label: "HAM → HafenCity / Speicherstadt", value: "€28–38" },
+          { label: "HAM → Hauptbahnhof", value: "€23–32" },
+          {
+            label: "Altstadt → Speicherstadt (warehouse district)",
+            value: "€8–14",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The U1 U-Bahn runs from Hamburg Airport directly to Hauptbahnhof in 24 minutes for €3.80 (Hamburg zone AB). Trains run every 10 minutes. Much cheaper than a taxi for solo travellers.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Hamburg Airport to the city?",
+            a: "€25–35 to central Hamburg. The U1 U-Bahn costs €3.80 in 24 minutes.",
+          },
+          {
+            q: "Is Bolt or Uber available in Hamburg?",
+            a: "Bolt and Uber operate in Hamburg using licensed vehicles. Expect 15–20% savings vs metered taxis.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Hamburg Airport — Transfer to City",
+        url: "https://www.hamburg-airport.de/en/transfer",
+      },
+    ],
+  },
+
+  // ── Manchester ────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-manchester",
+    title: "How Much Does a Taxi Cost in Manchester? (2026 Guide)",
+    description:
+      "Manchester Airport to the city costs £25–38 by taxi. Here's the 2026 fare breakdown — Hackney Carriages vs private hire, the Metrolink tram, and Uber in the UK's second city.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Manchester",
+    country: "United Kingdom",
+    citySlug: "manchester",
+    countrySlug: "united-kingdom",
+    content: [
+      {
+        type: "intro",
+        body: "Manchester taxis are metered and regulated by Manchester City Council. Black cabs (Hackney Carriages) can be hailed; private hire vehicles (including Uber) must be pre-booked. Manchester Airport has a direct Metrolink tram to the city centre — 45 minutes for £4.80.",
+      },
+      {
+        type: "h2",
+        heading: "Manchester Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (first 214m)", value: "£3.40" },
+          { label: "Per km (approx)", value: "£1.80" },
+          { label: "Minimum fare", value: "£3.40" },
+          { label: "Night tariff (23:00–07:00)", value: "+20%" },
+          { label: "Manchester Airport surcharge", value: "£2.00" },
+          { label: "Weekend surcharge (Sat 23:00–Mon 07:00)", value: "+20%" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Manchester Airport (MAN)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "MAN → City Centre (Piccadilly / Northern Quarter)",
+            value: "£25–38",
+          },
+          { label: "MAN → Salford / MediaCityUK", value: "£28–40" },
+          { label: "MAN → Old Trafford", value: "£20–30" },
+          { label: "MAN → Didsbury / Chorlton", value: "£18–26" },
+          { label: "City Centre → Old Trafford", value: "£8–14" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Metrolink tram runs from Manchester Airport to Piccadilly (city centre) in 45 minutes for £4.80. Runs every 12 minutes. Significantly cheaper than a taxi for solo travellers.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Manchester Airport to the city?",
+            a: "£25–38 to central Manchester. The Metrolink tram costs £4.80 in 45 minutes.",
+          },
+          {
+            q: "Is Uber available in Manchester?",
+            a: "Yes — Uber operates using licensed private hire vehicles. Typically 10–20% cheaper than a black cab.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Manchester Airport — Getting to Manchester",
+        url: "https://www.manchesterairport.co.uk/transport-and-directions/",
+      },
+    ],
+  },
+
+  // ── Porto ─────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-porto",
+    title: "How Much Does a Taxi Cost in Porto? (2026 Guide)",
+    description:
+      "Porto Airport to the city centre costs €20–30 by taxi. Here's the 2026 fare breakdown — very affordable metered rates, the Metro Line E, and how Uber fits in.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Porto",
+    country: "Portugal",
+    citySlug: "porto",
+    countrySlug: "portugal",
+    content: [
+      {
+        type: "intro",
+        body: "Porto taxis are cream-coloured, metered, and among the most affordable in Western Europe. The airport is 11 km from the historic city centre. The Metro Line E (Violet) provides a direct connection for €2.00.",
+      },
+      {
+        type: "h2",
+        heading: "Porto Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (day, 06:00–21:00)", value: "€3.25" },
+          { label: "Per km (day)", value: "€0.47" },
+          { label: "Minimum fare", value: "€3.25" },
+          { label: "Night flag fall (21:00–06:00)", value: "€4.05" },
+          { label: "Night per km", value: "€0.53" },
+          { label: "Airport surcharge", value: "€1.60" },
+          { label: "Luggage (per bag)", value: "€1.60" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Porto Airport (OPO)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "OPO → Ribeira / Baixa (old town)", value: "€20–28" },
+          { label: "OPO → Boavista / Foz", value: "€18–26" },
+          {
+            label: "OPO → Vila Nova de Gaia (port wine cellars)",
+            value: "€25–35",
+          },
+          { label: "OPO → Campanhã (train station)", value: "€15–22" },
+          { label: "Ribeira → Livraria Lello", value: "€5–9" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Metro Line E (Violet) runs from Porto Airport to the city centre (Trindade) in 35 minutes for €2.00. Trains run every 30 minutes. At €2 vs €20–28 for a taxi, the Metro is the obvious choice for solo travellers.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Porto Airport to the city?",
+            a: "€20–28 to the historic centre. Metro Line E costs €2.00 in 35 minutes.",
+          },
+          {
+            q: "Are Porto taxis expensive?",
+            a: "No — Porto has some of the lowest taxi rates in Western Europe at €0.47/km daytime.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Porto Metro — Airport Line",
+        url: "https://www.metrodoporto.pt/en",
+      },
+    ],
+  },
+
+  // ── Kraków ────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-krakow",
+    title: "How Much Does a Taxi Cost in Kraków? (2026 Guide)",
+    description:
+      "Kraków Airport to the Old Town costs PLN 60–90 by taxi. Here's the 2026 fare breakdown — metered rates, the train option, and Bolt as the cheapest alternative.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Kraków",
+    country: "Poland",
+    citySlug: "krakow",
+    countrySlug: "poland",
+    content: [
+      {
+        type: "intro",
+        body: "Kraków taxis are metered and regulated, similar to Warsaw but slightly cheaper per km. The city is compact and very walkable in the old town. For airport journeys, a train option exists — though infrequent. Bolt is the dominant ride-hailing app and significantly cheaper than metered taxis.",
+      },
+      {
+        type: "h2",
+        heading: "Kraków Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (day)", value: "PLN 7.00 (~€1.60)" },
+          { label: "Per km (day)", value: "PLN 3.00 (~€0.70)" },
+          { label: "Minimum fare", value: "PLN 7.00" },
+          { label: "Night/weekend per km", value: "PLN 4.50" },
+          { label: "Airport surcharge (KRK)", value: "PLN 5.00" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Kraków Airport (KRK)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "KRK → Old Town (Main Square)", value: "PLN 60–90" },
+          { label: "KRK → Kazimierz (Jewish Quarter)", value: "PLN 65–95" },
+          { label: "KRK → Podgórze / Schindler's Factory", value: "PLN 60–88" },
+          {
+            label: "Old Town → Wawel Castle",
+            value: "PLN 7 (walkable, minimum)",
+          },
+          {
+            label: "Old Town → Auschwitz (Oświęcim)",
+            value: "PLN 150–200 (60 km)",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The KMK train (Line 4) runs from the airport to the main train station (Kraków Główny) in 17 minutes for PLN 4 (transit ticket). Trains run approximately hourly. Bolt from KRK to the Old Town costs PLN 40–65 — significantly cheaper than a metered taxi.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Kraków Airport to the Old Town?",
+            a: "PLN 60–90 by metered taxi. Bolt runs PLN 40–65. The KMK train costs PLN 4 in 17 minutes to the main station.",
+          },
+          {
+            q: "Is Bolt available in Kraków?",
+            a: "Yes — Bolt is the dominant ride-hailing app in Kraków. Uber also operates.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Kraków Airport — Transport to City",
+        url: "https://www.krakowairport.pl/en/passenger,c,81/getting-here-and-away,c,84",
+      },
+    ],
+  },
+
+  // ── Nice ──────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-nice",
+    title: "How Much Does a Taxi Cost in Nice? (2026 Guide)",
+    description:
+      "Nice Côte d'Azur Airport to the city costs €30–40 by taxi. Here's the 2026 fare breakdown — regulated Côte d'Azur rates, the tram alternative, and Monaco transfer pricing.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Nice",
+    country: "France",
+    citySlug: "nice",
+    countrySlug: "france",
+    content: [
+      {
+        type: "intro",
+        body: "Nice taxis are metered, regulated by the Alpes-Maritimes department, and available at Nice Côte d'Azur Airport. The airport is only 7 km from the Promenade des Anglais. Tram Line 2 connects the airport to the city centre for €1.70.",
+      },
+      {
+        type: "h2",
+        heading: "Nice Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (day, in city)", value: "€3.80" },
+          { label: "Per km (in Nice city, day)", value: "€1.06" },
+          { label: "Minimum fare", value: "€7.00" },
+          { label: "Night rate (19:00–07:00)", value: "€1.59/km" },
+          { label: "Airport supplement", value: "€4.00" },
+          { label: "Monaco flat rate (from NCE Airport)", value: "€90–120" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Nice Airport (NCE)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "NCE → Promenade des Anglais / Old Town (Vieux-Nice)",
+            value: "€30–42",
+          },
+          { label: "NCE → Nice-Ville train station", value: "€28–38" },
+          { label: "NCE → Cannes (32 km)", value: "€80–110" },
+          { label: "NCE → Monaco (20 km)", value: "€90–120" },
+          {
+            label: "Old Town → Cours Saleya (flower market)",
+            value: "€7 (minimum)",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Tram Line 2 runs from Terminal 1 of Nice Airport to Jean Médecin (city centre) in 30 minutes for €1.70. Trams run every 10 minutes. A €1.70 tram vs a €30–42 taxi is one of the clearest value wins of any French city.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Nice Airport to the city?",
+            a: "€30–42 to the city centre. Tram Line 2 costs €1.70 in 30 minutes.",
+          },
+          {
+            q: "How much is a taxi from Nice to Monaco?",
+            a: "€90–120 by taxi (20 km). Trains run every 30 minutes for €4.40.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Nice Côte d'Azur Airport — Transport",
+        url: "https://www.nice.aeroport.fr/en/parking-access/public-transport-taxis",
+      },
+    ],
+  },
+
+  // ── Seville ───────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-seville",
+    title: "How Much Does a Taxi Cost in Seville? (2026 Guide)",
+    description:
+      "Seville Airport to the city costs €22–30 by taxi. Here's the 2026 fare breakdown — some of Spain's cheapest taxi rates, the EA bus alternative, and what to expect.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Seville",
+    country: "Spain",
+    citySlug: "seville",
+    countrySlug: "spain",
+    content: [
+      {
+        type: "intro",
+        body: "Seville taxis are metered and regulated by the city council. Rates are among the lowest in Spain. The airport is 10 km from the historic centre. The EA Especial Aeropuerto bus provides a frequent and cheap alternative.",
+      },
+      {
+        type: "h2",
+        heading: "Seville Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (day)", value: "€1.65" },
+          { label: "Per km (day)", value: "€1.10" },
+          { label: "Minimum fare", value: "€3.75" },
+          { label: "Night tariff (22:00–08:00)", value: "+25% supplement" },
+          { label: "Airport supplement (SVQ)", value: "€2.95" },
+          { label: "Sundays/holidays supplement", value: "+25%" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Seville Airport (SVQ)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "SVQ → Cathedral / Santa Cruz (Old Town)", value: "€22–30" },
+          { label: "SVQ → Triana neighbourhood", value: "€20–28" },
+          { label: "SVQ → Maria Luisa Park", value: "€23–31" },
+          { label: "SVQ → Alameda de Hércules", value: "€22–30" },
+          { label: "Santa Cruz → Triana (bridge hop)", value: "€5–9" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The EA Especial Aeropuerto bus runs from SVQ Airport to the city centre (Prado de San Sebastián) for €4.00 every 30 minutes. At €4 vs €22–30 for a taxi, it is the clear choice for solo travellers.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Seville Airport to the city?",
+            a: "€22–30 to the historic centre. The EA bus costs €4.00 in 30 minutes.",
+          },
+          {
+            q: "Are Seville taxis cheap?",
+            a: "Yes — Seville has some of Spain's lowest taxi rates at €1.10/km daytime.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Seville Airport — Transport to City",
+        url: "https://www.aena.es/en/sevilla.html",
+      },
+    ],
+  },
+
+  // ── Naples ────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-naples",
+    title: "How Much Does a Taxi Cost in Naples? (2026 Guide)",
+    description:
+      "Naples Airport to the city costs €20–30 by taxi — but there's a fixed rate of €23 for the historic centre. Here's the 2026 fare breakdown and what to watch for.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Naples",
+    country: "Italy",
+    citySlug: "naples",
+    countrySlug: "italy",
+    content: [
+      {
+        type: "intro",
+        body: "Naples taxis are white, metered, and regulated by the Municipality of Naples. Like Florence, taxis operate on fixed flat-rate supplements for airport journeys. The €23 flat rate to/from Capodichino Airport to/from the historic centre is one of Italy's most visitor-friendly fixed rates.",
+      },
+      {
+        type: "h2",
+        heading: "Naples Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (day, 07:00–22:00)", value: "€3.50" },
+          { label: "Per km (day)", value: "€1.06" },
+          { label: "Minimum fare", value: "€5.00" },
+          { label: "Night flag fall (22:00–07:00)", value: "€5.50" },
+          { label: "Airport flat rate (NAP → historic centre)", value: "€23" },
+          { label: "Ferry port supplement (Molo Beverello)", value: "€6.00" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Naples Airport (NAP)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "NAP → Spaccanapoli / Piazza del Gesù (historic centre)",
+            value: "€23 (flat rate)",
+          },
+          {
+            label: "NAP → Piazza Garibaldi (central station)",
+            value: "€23 (flat rate)",
+          },
+          { label: "NAP → Posillipo / Chiaia", value: "€25–32 (metered)" },
+          {
+            label: "NAP → Molo Beverello (ferry to Capri/Ischia)",
+            value: "€23 + €6 port supplement",
+          },
+          { label: "Historic centre → Piazzale Tecchio", value: "€8–14" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Alibus runs from Naples Airport to Piazza Garibaldi (central station) and Molo Beverello (ferry port) for €5 in 20 minutes. For the historic centre or the ferry port, Alibus + a short walk is much cheaper than a taxi.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Naples Airport to the city?",
+            a: "€23 flat rate to the historic centre (Piazza Garibaldi or Spaccanapoli). The Alibus costs €5 in 20 minutes.",
+          },
+          {
+            q: "What is the Naples Airport flat rate?",
+            a: "€23 for journeys between Capodichino Airport and the historic city centre. Fixed by the municipality — confirm with the driver before getting in.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Naples Airport — Transport to City",
+        url: "https://www.aeroportodinapoli.it/en/transport",
+      },
+    ],
+  },
+
+  // ── Belgrade ──────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-belgrade",
+    title: "How Much Does a Taxi Cost in Belgrade? (2026 Guide)",
+    description:
+      "Belgrade Nikola Tesla Airport to the city costs RSD 2,800–3,800 by taxi. Here's the 2026 fare breakdown — very affordable Balkan rates, Car:Go app vs meters, and what to expect.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Belgrade",
+    country: "Serbia",
+    citySlug: "belgrade",
+    countrySlug: "serbia",
+    content: [
+      {
+        type: "intro",
+        body: "Belgrade taxis are metered and among the most affordable in Europe — the low RSD rates make even airport trips very cheap by Western standards. Car:Go is the dominant local ride-hailing app. Uber does not operate in Serbia.",
+      },
+      {
+        type: "h2",
+        heading: "Belgrade Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "RSD 180 (~€1.55)" },
+          { label: "Per km", value: "RSD 90 (~€0.77)" },
+          { label: "Minimum fare", value: "RSD 280 (~€2.40)" },
+          { label: "Night surcharge (22:00–06:00)", value: "+20%" },
+          { label: "Airport surcharge (BEG)", value: "RSD 200" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Belgrade Airport (BEG)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "BEG → Stari Grad / Knez Mihailova (old town)",
+            value: "RSD 2,800–3,800",
+          },
+          { label: "BEG → Novi Beograd / Zemun", value: "RSD 1,600–2,400" },
+          { label: "BEG → Savamala / Beton Hala", value: "RSD 2,800–3,600" },
+          {
+            label: "Stari Grad → Kalemegdan Fortress",
+            value: "RSD 280 (minimum)",
+          },
+          { label: "Stari Grad → Skadarlija", value: "RSD 350–600" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Car:Go is the leading Belgrade taxi app and frequently 20–30% cheaper than calling a metered taxi to the rank. Bolt also operates. From BEG Airport to the city centre, Car:Go typically quotes RSD 2,200–3,000.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Belgrade Airport to the city?",
+            a: "RSD 2,800–3,800 (€24–33) by metered taxi. Car:Go app runs RSD 2,200–3,000.",
+          },
+          {
+            q: "Is Uber available in Belgrade?",
+            a: "No — Uber does not operate in Serbia. Car:Go and Bolt are the main ride-hailing apps.",
+          },
+          {
+            q: "Are Belgrade taxis cheap?",
+            a: "Yes — very affordable by European standards. A 10 km city trip costs around RSD 1,000–1,400 (€8–12).",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Belgrade Airport — Ground Transport",
+        url: "https://www.beg.aero/en/passengers/transportation",
+      },
+    ],
+  },
+
+  // ── Tallinn ───────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-tallinn",
+    title: "How Much Does a Taxi Cost in Tallinn? (2026 Guide)",
+    description:
+      "Tallinn Airport to the Old Town costs €7–12 by taxi — one of Europe's cheapest airport routes. Here's the 2026 fare breakdown — Bolt dominance, tram Line 4, and Estonian taxi culture.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Tallinn",
+    country: "Estonia",
+    citySlug: "tallinn",
+    countrySlug: "estonia",
+    content: [
+      {
+        type: "intro",
+        body: "Tallinn Airport is just 4 km from the Old Town — one of the closest major European airports to its city centre. A taxi takes 10 minutes. Bolt (originally founded in Tallinn) dominates the local market and typically costs €5–9 for the airport trip.",
+      },
+      {
+        type: "h2",
+        heading: "Tallinn Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (regulated companies)", value: "€3.50" },
+          { label: "Per km (day)", value: "€0.55" },
+          { label: "Minimum fare", value: "€3.50" },
+          { label: "Night surcharge (23:00–06:00)", value: "+20%" },
+          {
+            label: "Bolt — airport to Old Town (typical upfront)",
+            value: "€5–9",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Tallinn Airport (TLL)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "TLL → Old Town (Vanalinn)", value: "€7–12" },
+          { label: "TLL → Kadriorg Palace area", value: "€9–14" },
+          { label: "TLL → Telliskivi / Kalamaja", value: "€6–10" },
+          { label: "Old Town → Kadriorg", value: "€5–8" },
+          { label: "Old Town → Pirita (seaside)", value: "€8–13" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Tram Line 4 runs from near the airport (Lennujaam stop) to the city centre for €2.00. Journey time is 15 minutes. But for 4 km at €7–12 total for the car, a Bolt taxi is so affordable that many travellers just use it anyway.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Tallinn Airport to the Old Town?",
+            a: "€7–12 by metered taxi. Bolt typically quotes €5–9 for the same route.",
+          },
+          {
+            q: "Is Bolt available in Tallinn?",
+            a: "Yes — Bolt was founded in Tallinn and dominates the market. It is the recommended option.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Tallinn Airport — Transport",
+        url: "https://www.tallinn-airport.ee/en/transport/",
+      },
+    ],
+  },
+
+  // ── Riga ──────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-riga",
+    title: "How Much Does a Taxi Cost in Riga? (2026 Guide)",
+    description:
+      "Riga Airport to the Old Town costs €12–18 by taxi. Here's the 2026 fare breakdown — very low Latvian rates, Bolt vs metered taxis, and the bus option.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Riga",
+    country: "Latvia",
+    citySlug: "riga",
+    countrySlug: "latvia",
+    content: [
+      {
+        type: "intro",
+        body: "Riga taxis are metered and very affordable — Latvia's low cost of living makes taxi travel cheap by European standards. Riga Airport is 10 km from the historic Old Town. Bolt is widely used and often cheaper than metered taxis.",
+      },
+      {
+        type: "h2",
+        heading: "Riga Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "€2.20" },
+          { label: "Per km (day)", value: "€0.67" },
+          { label: "Minimum fare", value: "€3.00" },
+          { label: "Night surcharge (22:00–06:00)", value: "+20%" },
+          { label: "Airport surcharge (RIX)", value: "€2.00" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Riga Airport (RIX)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "RIX → Old Town (Vecrīga)", value: "€12–18" },
+          { label: "RIX → Central Market area", value: "€12–17" },
+          { label: "RIX → Art Nouveau district (Alberta St)", value: "€13–18" },
+          { label: "Old Town → Central Station", value: "€4–7" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Bus Route 22 runs from Riga Airport to the city centre for €2.00. Journey time is 30 minutes. Bolt from RIX to Old Town typically costs €8–13 — often preferable given the short journey and low price.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Riga Airport to the Old Town?",
+            a: "€12–18 by metered taxi. Bolt typically costs €8–13.",
+          },
+          {
+            q: "Is Bolt available in Riga?",
+            a: "Yes — Bolt is the dominant ride-hailing app in Latvia.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Riga Airport — Getting to the City",
+        url: "https://www.riga-airport.com/en/to-from-airport/",
+      },
+    ],
+  },
+
+  // ── Vilnius ───────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-vilnius",
+    title: "How Much Does a Taxi Cost in Vilnius? (2026 Guide)",
+    description:
+      "Vilnius Airport to the Old Town costs €8–14 by taxi. Here's the 2026 fare breakdown — Lithuania's lowest taxi rates in the EU, Bolt dominance, and bus options.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Vilnius",
+    country: "Lithuania",
+    citySlug: "vilnius",
+    countrySlug: "lithuania",
+    content: [
+      {
+        type: "intro",
+        body: "Vilnius Airport is just 7 km from the city centre — and Lithuania's low cost of living means taxi rates are among the lowest in the EU. A taxi from the airport to the Old Town costs €8–14 and takes 15 minutes. Bolt dominates and is even cheaper.",
+      },
+      {
+        type: "h2",
+        heading: "Vilnius Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "€1.50" },
+          { label: "Per km", value: "€0.45" },
+          { label: "Minimum fare", value: "€3.00" },
+          { label: "Night surcharge", value: "+20%" },
+          { label: "Bolt — airport to Old Town (typical)", value: "€5–9" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Vilnius Airport (VNO)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "VNO → Old Town (Senamiestis)", value: "€8–14" },
+          { label: "VNO → New Town / Gediminas Prospekt", value: "€7–12" },
+          { label: "VNO → Žirmūnai / Karoliniškės", value: "€9–14" },
+          { label: "Old Town → Gediminas Castle", value: "€3–5" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Bus Route 1 and Route 3G run from Vilnius Airport to the city centre for €1.00 (ticket from driver) or €0.65 (via app). Bolt from the airport to Old Town costs €5–9 — remarkably cheap, making it competitive with the bus for most travellers.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Vilnius Airport to the Old Town?",
+            a: "€8–14 by metered taxi. Bolt typically costs €5–9.",
+          },
+          {
+            q: "Are Vilnius taxis cheap?",
+            a: "Yes — among the cheapest in the EU at €0.45/km.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Vilnius Airport — Transport",
+        url: "https://www.vno.lt/en/transportation",
+      },
+    ],
+  },
+
+  // ── Tbilisi ───────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-tbilisi",
+    title: "How Much Does a Taxi Cost in Tbilisi? (2026 Guide)",
+    description:
+      "Tbilisi Airport to the Old Town costs GEL 30–45 by taxi. Here's the 2026 fare breakdown — Yandex Go vs Bolt, no meters in most taxis, and what to expect.",
+    publishedAt: "2026-09-17",
+    readingMinutes: 5,
+    category: "taxi",
+    city: "Tbilisi",
+    country: "Georgia",
+    citySlug: "tbilisi",
+    countrySlug: "georgia",
+    content: [
+      {
+        type: "intro",
+        body: "Most Tbilisi taxis are unmetered — prices are negotiated or set by app. The city has embraced ride-hailing enthusiastically: Yandex Go (Yandex's regional taxi app) and Bolt are both widely used and offer upfront pricing in GEL. Traditional metered taxis exist but are less common.",
+      },
+      {
+        type: "h2",
+        heading: "Tbilisi Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Metered taxi — flag fall", value: "GEL 1.50 (~$0.55)" },
+          { label: "Metered taxi — per km", value: "GEL 0.50 (~$0.18)" },
+          { label: "Minimum fare", value: "GEL 3.00" },
+          {
+            label: "Yandex Go — airport to Old Town (typical)",
+            value: "GEL 25–35",
+          },
+          { label: "Bolt — airport to Old Town (typical)", value: "GEL 28–40" },
+          { label: "Unmetered negotiated taxi (airport)", value: "GEL 35–60" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Tbilisi Airport (TBS)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "TBS → Old Town (Kala / Metekhi)", value: "GEL 30–45" },
+          { label: "TBS → Rustaveli Avenue / city centre", value: "GEL 28–42" },
+          { label: "TBS → Vake / Saburtalo", value: "GEL 32–48" },
+          {
+            label: "Old Town → Narikala Fortress (cable car base)",
+            value: "GEL 3–6",
+          },
+          { label: "Old Town → Mtatsminda (funicular base)", value: "GEL 5–9" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Yandex Go typically offers the lowest fares in Tbilisi and is the most-used app. Download and set up Yandex Go before arriving — it requires registration with a phone number. Bolt is a useful backup. The airport train (TBC Rail) runs to the city for GEL 1 but is infrequent.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Tbilisi Airport to the Old Town?",
+            a: "GEL 30–45 (roughly $11–16 USD). Yandex Go runs GEL 25–35.",
+          },
+          {
+            q: "Which app is best for taxis in Tbilisi?",
+            a: "Yandex Go (also called Yango) is the most popular and typically cheapest. Bolt is also available.",
+          },
+          {
+            q: "Are Tbilisi taxis metered?",
+            a: "Most are not — prices are set by negotiation or app. Use Yandex Go or Bolt for upfront pricing.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Yandex Go — Georgia Operations",
+        url: "https://taxi.yandex.com/ru_ge/",
+      },
+    ],
+  },
+
   // ── Taxi Driver Phrases (Tier 2 — Linkable / Shareable) ───────────────────
   {
     slug: "what-to-say-to-your-taxi-driver-in-15-languages",
