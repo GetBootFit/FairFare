@@ -15560,6 +15560,681 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
 
+  // ── Krabi ─────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-krabi",
+    title: "How Much Does a Taxi Cost in Krabi? (2026 Guide)",
+    description:
+      "Krabi Airport to Ao Nang Beach costs THB 150–300 by minibus. Here's the 2026 fare breakdown — shared minibuses, longtail boats, and getting to Railay Beach from Krabi Town.",
+    publishedAt: "2026-09-18",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Krabi",
+    country: "Thailand",
+    citySlug: "krabi",
+    countrySlug: "thailand",
+    content: [
+      {
+        type: "intro",
+        body: "Krabi Airport (KBV) is 15 km from Krabi Town and 25 km from Ao Nang Beach. Most visitors head to Ao Nang, Railay Beach, or the Phi Phi Islands. Taxis are metered for private rides; shared minibuses (songthaews) are significantly cheaper. Grab operates in Krabi.",
+      },
+      {
+        type: "h2",
+        heading: "Krabi Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (metered taxi)", value: "THB 50 (~$1.40)" },
+          { label: "Per km (metered)", value: "THB 30 (~$0.84)" },
+          { label: "Minimum fare", value: "THB 100" },
+          { label: "KBV → Ao Nang Beach (private taxi)", value: "THB 500–700" },
+          {
+            label: "KBV → Ao Nang (shared minibus, per person)",
+            value: "THB 150–200",
+          },
+          { label: "KBV → Krabi Town (private taxi)", value: "THB 300–450" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Krabi Airport (KBV)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "KBV → Ao Nang Beach (private)", value: "THB 500–700" },
+          {
+            label: "KBV → Ao Nang (shared minibus)",
+            value: "THB 150–200/person",
+          },
+          { label: "KBV → Krabi Town", value: "THB 300–450" },
+          {
+            label: "Ao Nang → Railay Beach (longtail boat)",
+            value: "THB 100–150/person",
+          },
+          { label: "Krabi Town → Tiger Cave Temple", value: "THB 100–180" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Railay Beach is only accessible by longtail boat — no roads connect it. From Ao Nang, longtails cost THB 100–150 per person. Grab operates in Krabi and is a cheaper alternative to metered airport taxis for the Ao Nang route.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Krabi Airport to Ao Nang?",
+            a: "THB 500–700 private taxi. Shared minibus costs THB 150–200/person.",
+          },
+          {
+            q: "How do I get to Railay Beach from Krabi Airport?",
+            a: "Take a taxi/minibus to Ao Nang (or Krabi Town pier), then a longtail boat to Railay (THB 100–150). Railay has no road access.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Krabi Airport — Transport Information",
+        url: "https://www.krabiairportonline.com/transport",
+      },
+    ],
+  },
+
+  // ── Minsk ─────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-minsk",
+    title: "How Much Does a Taxi Cost in Minsk? (2026 Guide)",
+    description:
+      "Minsk National Airport to the city costs BYN 40–65 by taxi. Here's the 2026 fare breakdown — very affordable Belarusian rates, Yandex Go vs metered cabs, and the airport train option.",
+    publishedAt: "2026-09-18",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Minsk",
+    country: "Belarus",
+    citySlug: "minsk",
+    countrySlug: "belarus",
+    content: [
+      {
+        type: "intro",
+        body: "Minsk National Airport (MSQ) is 40 km east of central Minsk. Taxis are metered and very affordable. Yandex Go is widely used. The Airport City train runs from the airport to Minsk Central Station in 35 minutes. Note: check current travel advisories before visiting Belarus.",
+      },
+      {
+        type: "h2",
+        heading: "Minsk Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall", value: "BYN 2.50 (~$0.80)" },
+          { label: "Per km", value: "BYN 0.60 (~$0.19)" },
+          { label: "Minimum fare", value: "BYN 2.50" },
+          { label: "Night surcharge (22:00–06:00)", value: "+20%" },
+          {
+            label: "MSQ → city centre (Yandex Go typical)",
+            value: "BYN 35–55",
+          },
+          { label: "MSQ → city centre (metered taxi)", value: "BYN 40–65" },
+          {
+            label: "Airport City train (MSQ → Minsk Central)",
+            value: "BYN 4–5",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Minsk Airport (MSQ)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "MSQ → Independence Square / city centre",
+            value: "BYN 40–65",
+          },
+          { label: "MSQ → Oktyabrskaya / Old Town", value: "BYN 40–60" },
+          { label: "MSQ → Nemiga / Trinity Suburb", value: "BYN 42–65" },
+          { label: "City centre → Mir Castle (100 km)", value: "BYN 80–120" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Airport City Line (train) runs from MSQ to Minsk Central Station for BYN 4–5 in 35 minutes. Trains run hourly. Yandex Go is the recommended ride-hailing app in Minsk and typically BYN 10–15 cheaper than metered taxis.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Minsk Airport to the city?",
+            a: "BYN 40–65 by metered taxi. Airport City train costs BYN 4–5 in 35 minutes.",
+          },
+          {
+            q: "Is Uber available in Minsk?",
+            a: "Uber merged with Yandex Go in Belarus. Use the Yandex Go app.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Minsk National Airport — Transport",
+        url: "https://airport.by/en/transport",
+      },
+    ],
+  },
+
+  // ── Varna ─────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-varna",
+    title: "How Much Does a Taxi Cost in Varna? (2026 Guide)",
+    description:
+      "Varna Airport to the city costs BGN 15–25 by taxi. Here's the 2026 fare breakdown — very affordable Bulgarian rates, Bolt vs metered cabs, and getting around Bulgaria's Black Sea coast capital.",
+    publishedAt: "2026-09-18",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Varna",
+    country: "Bulgaria",
+    citySlug: "varna",
+    countrySlug: "bulgaria",
+    content: [
+      {
+        type: "intro",
+        body: "Varna Airport (VAR) is 10 km northwest of central Varna. Varna is Bulgaria's largest Black Sea city and main summer resort gateway. Taxis are metered and very affordable. Bolt operates and is typically cheaper. No direct public transport from the airport to the city.",
+      },
+      {
+        type: "h2",
+        heading: "Varna Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (day)", value: "BGN 1.60 (~$0.88)" },
+          { label: "Per km (day)", value: "BGN 1.10 (~$0.61)" },
+          { label: "Minimum fare", value: "BGN 1.60" },
+          { label: "Night surcharge (22:00–06:00)", value: "+15%" },
+          {
+            label: "VAR → city centre / Sea Garden (Bolt typical)",
+            value: "BGN 12–18",
+          },
+          { label: "VAR → city centre (metered taxi)", value: "BGN 15–25" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Varna Airport (VAR)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "VAR → city centre / Cathedral", value: "BGN 15–25" },
+          {
+            label: "VAR → Golden Sands resort (25 km north)",
+            value: "BGN 35–55",
+          },
+          { label: "VAR → Albena resort (45 km north)", value: "BGN 60–90" },
+          { label: "City centre → Sea Garden / beach", value: "BGN 5–9" },
+          {
+            label: "Varna → Nessebar / Sunny Beach (95 km)",
+            value: "BGN 120–170",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Bolt is widely available in Varna and typically BGN 3–5 cheaper than metered taxis for city routes. For Golden Sands or Albena resorts, many hotels operate shuttle services from the airport — check with your accommodation.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Varna Airport to the city?",
+            a: "BGN 15–25 by metered taxi. Bolt costs BGN 12–18.",
+          },
+          {
+            q: "Is there a bus from Varna Airport?",
+            a: "No direct public bus. Taxis and Bolt are the main options.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Varna Airport — Transport",
+        url: "https://www.varna-airport.bg/en/transport",
+      },
+    ],
+  },
+
+  // ── Burgas ────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-burgas",
+    title: "How Much Does a Taxi Cost in Burgas? (2026 Guide)",
+    description:
+      "Burgas Airport to Sunny Beach costs BGN 25–40 by taxi. Here's the 2026 fare breakdown — Bulgaria's cheapest resort taxi rates, Bolt vs metered cabs, and getting to the Black Sea beach strip.",
+    publishedAt: "2026-09-18",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Burgas",
+    country: "Bulgaria",
+    citySlug: "burgas",
+    countrySlug: "bulgaria",
+    content: [
+      {
+        type: "intro",
+        body: "Burgas Airport (BOJ) is the gateway to Bulgaria's southern Black Sea resorts — Sunny Beach, Nessebar (UNESCO), and Sozopol. The airport is 13 km north of Burgas city. Most charter flight passengers head directly to the resort strip, 30–40 km north.",
+      },
+      {
+        type: "h2",
+        heading: "Burgas Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (day)", value: "BGN 1.40 (~$0.77)" },
+          { label: "Per km (day)", value: "BGN 1.10 (~$0.61)" },
+          { label: "Minimum fare", value: "BGN 1.40" },
+          { label: "Night surcharge (22:00–06:00)", value: "+15%" },
+          { label: "BOJ → Burgas city centre", value: "BGN 18–28" },
+          { label: "BOJ → Sunny Beach (30 km)", value: "BGN 35–55" },
+          { label: "BOJ → Nessebar (30 km)", value: "BGN 35–55" },
+          { label: "BOJ → Sozopol (30 km south)", value: "BGN 35–50" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Burgas Airport (BOJ)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "BOJ → Burgas city centre", value: "BGN 18–28" },
+          { label: "BOJ → Sunny Beach resort", value: "BGN 35–55" },
+          { label: "BOJ → Nessebar Old Town (UNESCO)", value: "BGN 35–50" },
+          {
+            label: "BOJ → Sozopol (historic fishing town)",
+            value: "BGN 35–50",
+          },
+          { label: "Sunny Beach → Nessebar (5 km)", value: "BGN 10–16" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Bolt operates at Burgas Airport and is the recommended option for upfront pricing. Shared transfer shuttles (e.g. Sunny Transfers) cost BGN 15–25 per person to the resort strip — cheaper than a private taxi for solo travellers.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Burgas Airport to Sunny Beach?",
+            a: "BGN 35–55 by taxi. Shared shuttle costs BGN 15–25/person.",
+          },
+          {
+            q: "How far is Burgas Airport from Sunny Beach?",
+            a: "30 km north — a 30–40 minute drive.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Burgas Airport — Transport",
+        url: "https://www.bourgas-airport.com/en/transport",
+      },
+    ],
+  },
+
+  // ── Agra ──────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-agra",
+    title: "How Much Does a Taxi Cost in Agra? (2026 Guide)",
+    description:
+      "Agra to the Taj Mahal costs INR 200–400 by auto-rickshaw. Here's the 2026 fare breakdown — Ola vs metered cabs, the Agra–Delhi route, and getting around the home of the Taj.",
+    publishedAt: "2026-09-18",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Agra",
+    country: "India",
+    citySlug: "agra",
+    countrySlug: "india",
+    content: [
+      {
+        type: "intro",
+        body: "Agra doesn't have a major international airport — most visitors arrive from Delhi by Gatimaan Express (100 minutes) or Shatabdi Express (2 hours). Agra Airport (AGR) has limited domestic flights. Within the city, auto-rickshaws and Ola taxis are the standard transport. Vehicles cannot enter the Taj Mahal's restricted zone.",
+      },
+      {
+        type: "h2",
+        heading: "Agra Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (metered taxi)", value: "INR 20 (~$0.24)" },
+          { label: "Per km (metered)", value: "INR 10 (~$0.12)" },
+          { label: "Minimum fare", value: "INR 20" },
+          {
+            label: "Auto-rickshaw — Agra Cantt station to Taj Mahal",
+            value: "INR 150–300",
+          },
+          {
+            label: "Ola — Agra Cantt station to Taj Mahal (typical)",
+            value: "INR 200–350",
+          },
+          {
+            label: "Taxi — Agra to Delhi (230 km, private, day trip)",
+            value: "INR 3,000–4,500",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares in Agra",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Agra Cantt station → Taj Mahal East Gate",
+            value: "INR 200–350",
+          },
+          { label: "Taj Mahal → Agra Fort (2 km)", value: "INR 100–200" },
+          {
+            label: "Taj Mahal → Fatehpur Sikri (40 km)",
+            value: "INR 600–900 (taxi)",
+          },
+          {
+            label: "Agra → Mathura / Vrindavan (60 km)",
+            value: "INR 800–1,200",
+          },
+          {
+            label: "Agra → Delhi (230 km, private taxi)",
+            value: "INR 3,000–4,500",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Taj Mahal has a vehicle-free zone 500m around it — you must walk, take a cycle rickshaw, or an e-vehicle from the parking area. Hire an auto-rickshaw for the whole day (INR 400–700) to cover Taj Mahal, Agra Fort, and Baby Taj.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How do I get from Delhi to Agra?",
+            a: "Gatimaan Express (100 minutes, ~INR 1,000) or Shatabdi Express (2 hours, ~INR 800) are the fastest rail options. Private taxi takes 3–4 hours (INR 3,000–4,500).",
+          },
+          {
+            q: "Can I take a taxi to the Taj Mahal entrance?",
+            a: "Taxis can drop you at the parking area 500m away. You then walk or take an e-vehicle to the entrance.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Agra Tourism — Getting Around",
+        url: "https://www.uptourism.gov.in/pages/agra",
+      },
+    ],
+  },
+
+  // ── Muğla / Bodrum & Marmaris ──────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-mugla",
+    title: "How Much Does a Taxi Cost in Muğla? (2026 Guide)",
+    description:
+      "Bodrum Airport to Bodrum town costs TRY 300–500 by taxi. Here's the 2026 fare breakdown — serving Bodrum and Marmaris, metered vs negotiated fares, and the Turkish Riviera's taxi scene.",
+    publishedAt: "2026-09-18",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Muğla",
+    country: "Turkey",
+    citySlug: "mugla",
+    countrySlug: "turkey",
+    content: [
+      {
+        type: "intro",
+        body: "Muğla province covers the Turkish Riviera including Bodrum (Milas-Bodrum Airport, BJV) and Marmaris. Bodrum Airport is 36 km from Bodrum town. Taxis are metered in the city; the short airport transfer is typically negotiated. Marmaris Airport (DLM, Dalaman) is 90 km from Marmaris town.",
+      },
+      {
+        type: "h2",
+        heading: "Bodrum / Muğla Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (day)", value: "TRY 35 (~$1.00)" },
+          { label: "Per km (day)", value: "TRY 25 (~$0.72)" },
+          { label: "Minimum fare", value: "TRY 60" },
+          { label: "Night surcharge (midnight–06:00)", value: "+50%" },
+          { label: "BJV → Bodrum town centre (36 km)", value: "TRY 500–800" },
+          {
+            label: "BJV → Bodrum town (Havas airport bus, per person)",
+            value: "TRY 120–160",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Milas-Bodrum Airport (BJV)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "BJV → Bodrum town / marina", value: "TRY 500–800" },
+          { label: "BJV → Gümbet / Bitez beach resorts", value: "TRY 450–700" },
+          { label: "BJV → Türkbükü (north peninsula)", value: "TRY 600–900" },
+          {
+            label: "Bodrum town → Marmaris (90 km, private taxi)",
+            value: "TRY 1,500–2,500",
+          },
+          { label: "Bodrum town → castle / marina", value: "TRY 60 (minimum)" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Havas airport buses run from BJV to Bodrum Otogar (bus terminal) for TRY 120–160. From the terminal, a short taxi to your hotel costs TRY 60–120. This is significantly cheaper than the private airport taxi for solo travellers.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Bodrum Airport to Bodrum town?",
+            a: "TRY 500–800 by private taxi. Havas airport bus costs TRY 120–160 to the otogar.",
+          },
+          {
+            q: "How do I get from Bodrum to Marmaris?",
+            a: "Private taxi (TRY 1,500–2,500, 90 km) or bus via Muğla. Hydrofoil in summer is faster.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Milas-Bodrum Airport — Transport",
+        url: "https://www.bodrum-airport.com/en/transport",
+      },
+    ],
+  },
+
+  // ── Edirne ────────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-edirne",
+    title: "How Much Does a Taxi Cost in Edirne? (2026 Guide)",
+    description:
+      "Edirne city centre taxi fares start at TRY 30. Here's the 2026 fare breakdown — no airport in Edirne, Istanbul to Edirne bus, and getting around Turkey's historic European border city.",
+    publishedAt: "2026-09-18",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Edirne",
+    country: "Turkey",
+    citySlug: "edirne",
+    countrySlug: "turkey",
+    content: [
+      {
+        type: "intro",
+        body: "Edirne is a historic city in northwestern Turkey near the Greek and Bulgarian borders. There is no airport in Edirne — visitors arrive by bus from Istanbul (2.5 hours, TRY 200–300) or by car. Within the compact city, taxis cover the main sights quickly. Most attractions are within walking distance of each other.",
+      },
+      {
+        type: "h2",
+        heading: "Edirne Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag fall (day)", value: "TRY 30 (~$0.87)" },
+          { label: "Per km (day)", value: "TRY 20 (~$0.58)" },
+          { label: "Minimum fare", value: "TRY 50" },
+          { label: "Night surcharge (midnight–06:00)", value: "+50%" },
+          { label: "Otogar (bus terminal) → city centre", value: "TRY 80–130" },
+          { label: "City centre → Selimiye Mosque", value: "TRY 50 (minimum)" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares in Edirne",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Otogar → Selimiye Mosque area (city centre)",
+            value: "TRY 80–130",
+          },
+          {
+            label: "City centre → Old Mosque (Eski Cami)",
+            value: "TRY 50 (walkable)",
+          },
+          {
+            label: "City centre → Kırkpınar wrestling grounds",
+            value: "TRY 80–140",
+          },
+          {
+            label: "Edirne → Kapıkule border crossing (Bulgaria, 18 km)",
+            value: "TRY 250–400",
+          },
+          {
+            label: "Edirne → Uzunköprü (for Greece border, 55 km)",
+            value: "TRY 600–900",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Edirne's main sights (Selimiye Mosque, Old Mosque, Covered Bazaar, Muradiye Mosque) are all within a 15-minute walk of each other. Taxis are most useful for the otogar transfer or the border crossing. Istanbul buses depart from Edirne Otogar (bus terminal).",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How do I get to Edirne from Istanbul?",
+            a: "Bus from Istanbul Büyük Otogar takes 2.5 hours and costs TRY 200–300. No direct train service.",
+          },
+          {
+            q: "Is Edirne walkable?",
+            a: "Yes — the historic city centre is very compact. Most sights are within a 15-minute walk of the Selimiye Mosque.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Edirne Tourism — Visit Edirne",
+        url: "https://www.edirnekulturturizm.gov.tr",
+      },
+    ],
+  },
+
+  // ── Port Vila ─────────────────────────────────────────────────────────────
+  {
+    slug: "how-much-does-a-taxi-cost-in-port-vila",
+    title: "How Much Does a Taxi Cost in Port Vila? (2026 Guide)",
+    description:
+      "Port Vila Bauerfield Airport is 4 km from town — a taxi costs VUV 1,500–2,500. Here's the 2026 fare breakdown for Vanuatu's capital, where cash is king and meters are rare.",
+    publishedAt: "2026-09-18",
+    readingMinutes: 4,
+    category: "taxi",
+    city: "Port Vila",
+    country: "Vanuatu",
+    citySlug: "port-vila",
+    countrySlug: "vanuatu",
+    content: [
+      {
+        type: "intro",
+        body: "Bauerfield International Airport (VLI) is 4 km from Port Vila city centre. Vanuatu taxis are not metered — all fares are negotiated in Vanuatu vatu (VUV). Uber does not operate. Port Vila is a small city and the taxi network is informal — most drivers are independent.",
+      },
+      {
+        type: "h2",
+        heading: "Port Vila Taxi Rates (2026)",
+      },
+      {
+        type: "table",
+        rows: [
+          { label: "Base fare (negotiated)", value: "VUV 300 (~$2.50)" },
+          { label: "Per km (negotiated)", value: "VUV 200 (~$1.70)" },
+          { label: "Minimum fare", value: "VUV 400 (~$3.35)" },
+          {
+            label: "VLI Airport → Port Vila city centre",
+            value: "VUV 1,500–2,500",
+          },
+          {
+            label: "City → Mele Cascades waterfall (12 km)",
+            value: "VUV 2,500–4,000",
+          },
+          {
+            label: "City → Hideaway Island (ferry point, 6 km)",
+            value: "VUV 1,500–2,500",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Sample Fares from Port Vila Airport (VLI)",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "VLI → Port Vila centre / market",
+            value: "VUV 1,500–2,500",
+          },
+          {
+            label: "VLI → Iririki Island Resort (ferry dock)",
+            value: "VUV 1,500–2,500",
+          },
+          { label: "City → Mele Cascades", value: "VUV 2,500–4,000" },
+          {
+            label: "City → Ekasup Village Cultural Village",
+            value: "VUV 1,500–3,000",
+          },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Always negotiate the taxi fare before getting in — there are no meters in Port Vila. The airport is only 4 km from town, so the ride is short. Most resorts will arrange airport transfers; confirm in advance as it simplifies arrival.",
+      },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Port Vila Airport to the city?",
+            a: "VUV 1,500–2,500 (~$12–21) negotiated. The airport is only 4 km from the city centre.",
+          },
+          {
+            q: "Is there a bus from Port Vila Airport?",
+            a: "No fixed bus service. Taxis and resort transfers are the main options.",
+          },
+        ],
+      },
+    ],
+    references: [
+      {
+        label: "Vanuatu Tourism Office — Getting Around",
+        url: "https://www.vanuatu.travel/plan-your-visit/getting-around/",
+      },
+    ],
+  },
+
   // ── Taxi Driver Phrases (Tier 2 — Linkable / Shareable) ───────────────────
   {
     slug: "what-to-say-to-your-taxi-driver-in-15-languages",
