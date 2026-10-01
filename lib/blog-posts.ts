@@ -486,7 +486,7 @@ export const BLOG_POSTS: BlogPost[] = [
     city: "Dubai",
     country: "UAE",
     citySlug: "dubai",
-    countrySlug: "uae",
+    countrySlug: "united-arab-emirates",
     content: [
       {
         type: "intro",
@@ -15012,7 +15012,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "taxi",
     city: "San José",
     country: "Costa Rica",
-    citySlug: "san-jose-costa-rica",
+    citySlug: "san-jose",
     countrySlug: "costa-rica",
     content: [
       {
