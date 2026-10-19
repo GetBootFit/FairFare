@@ -6,7 +6,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
     title: "Tipping in China: Do You Tip & How Much? (2026)",
     description:
       "At a local Beijing or Shanghai restaurant, staff may chase you down the street to return money they think you forgot — tipping is that unfamiliar. Here's the full 2026 guide: private tour guides (CNY 50–100/day) and resort spa workers do appreciate tips; local restaurants and DiDi drivers don't.",
-    publishedAt: "2025-09-06",
+    publishedAt: "2026-09-06",
     readingMinutes: 8,
     category: "tipping",
     country: "China",
@@ -124,7 +124,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
     title: "Tipping in New Zealand: Is It Expected? (2026)",
     description:
       "NZ hospitality staff earn NZD $23.15/hour minimum wage — tipping is genuinely optional and no one expects it. Here's the full 2026 guide: 10% for exceptional service is a lovely gesture, café tip jars are common, and card readers rarely have a tip screen (unlike Australia).",
-    publishedAt: "2025-09-14",
+    publishedAt: "2026-09-14",
     readingMinutes: 8,
     category: "tipping",
     country: "New Zealand",
@@ -239,7 +239,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
     title: "Tipping in the Netherlands: How Much & When (2026)",
     description:
       "Dutch restaurants don't include a service charge, and most card terminals don't have a tip prompt — say the full total you want to pay before they process the card. Here's the full 2026 guide: 5–10% is appreciated, 0% causes no offence.",
-    publishedAt: "2025-09-21",
+    publishedAt: "2026-09-21",
     readingMinutes: 8,
     category: "tipping",
     country: "Netherlands",
@@ -346,7 +346,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
     title: "Tipping in Switzerland: How Much to Tip (2026)",
     description:
       "Tipping is optional in Switzerland — but ski instructors at Zermatt or Verbier expect CHF 10–20 per day, and 'stimmt so' is the phrase that handles every restaurant tip without counting change. Here's the full 2026 guide for restaurants, taxis, ski resorts, and mountain guides.",
-    publishedAt: "2025-10-02",
+    publishedAt: "2026-10-02",
     readingMinutes: 8,
     category: "tipping",
     country: "Switzerland",
@@ -558,7 +558,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
     title: "Tipping in Norway: Is It Expected? (2026)",
     description:
       "Norway is one of Europe's most expensive countries and tipping is genuinely optional — but Northern Lights guides in Tromsø and fjord operators appreciate NOK 100–200 for an exceptional experience. Here's the full 2026 guide to when and how much Oslo locals actually tip.",
-    publishedAt: "2025-10-16",
+    publishedAt: "2026-10-16",
     readingMinutes: 8,
     category: "tipping",
     country: "Norway",
@@ -662,7 +662,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
     title: "Tipping in Denmark: How Much & When (2026)",
     description:
       "Copenhagen free walking tours are fully tip-based — DKK 50–100 per person is the expected contribution at the end, since it's the guide's entire income for that walk. Here's the full 2026 guide: tipping is optional at Danish restaurants, but 5–10% for good service is warmly received.",
-    publishedAt: "2025-10-23",
+    publishedAt: "2026-10-23",
     readingMinutes: 8,
     category: "tipping",
     country: "Denmark",
@@ -766,7 +766,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
     title: "Tipping in Austria: How Much to Tip (2026)",
     description:
       "Vienna coffee houses have a specific ritual: say the total you want to pay ('neun Euro' for €9) when settling up — not the tip amount. Here's the full 2026 guide: 5–10% is standard at Austrian restaurants, and ski instructors at Kitzbühel or St. Anton expect €10–20 per day.",
-    publishedAt: "2025-10-30",
+    publishedAt: "2026-10-30",
     readingMinutes: 8,
     category: "tipping",
     country: "Austria",
@@ -874,7 +874,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
     title: "Tipping in Poland: How Much & When (2026)",
     description:
       "Poland is 40–60% cheaper than Western Europe, making 10% at a Kraków or Warsaw restaurant genuinely impactful for staff — and it's now the standard. Here's the full 2026 guide, including Auschwitz tour guides (PLN 30–60 per person — difficult, emotionally demanding work).",
-    publishedAt: "2025-11-06",
+    publishedAt: "2026-11-06",
     readingMinutes: 8,
     category: "tipping",
     country: "Poland",
@@ -982,7 +982,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
     title: "Tipping in Czech Republic: Prague & Beyond (2026)",
     description:
       "Prague restaurants expect 10%, and free walking tours of the Old Town and Jewish Quarter are tip-based — CZK 100–200 per person is the guide's full income for the walk. Here's the full 2026 guide, plus the Old Town Square taxi scam (CZK 700 Bolt ride vs CZK 1,500+ street quote).",
-    publishedAt: "2025-11-13",
+    publishedAt: "2026-11-13",
     readingMinutes: 8,
     category: "tipping",
     country: "Czech Republic",
@@ -1087,7 +1087,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
     title: "Tipping in Israel: How Much to Tip (2026)",
     description:
       "Tipping in Israel is expected, not optional — 10–15% at Tel Aviv and Jerusalem restaurants is the local norm. Here's the full 2026 guide, including card terminals with a built-in tip screen (the טיפ prompt) and private heritage tour guides (ILS 50–100+ per person per day).",
-    publishedAt: "2025-11-20",
+    publishedAt: "2026-11-20",
     readingMinutes: 8,
     category: "tipping",
     country: "Israel",
@@ -1190,7 +1190,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
     title: "Tipping in Egypt: Baksheesh & How Much to Give (2026)",
     description:
       "In Egypt, baksheesh is a critical part of service workers' income — budget USD $10–20 per person per day in small notes for guides, site guards, and porters alone. Here's the full 2026 guide, including Nile cruise staff norms (USD $10–15/day for the guide, USD $5/day for crew).",
-    publishedAt: "2025-11-27",
+    publishedAt: "2026-11-27",
     readingMinutes: 8,
     category: "tipping",
     country: "Egypt",
@@ -1301,7 +1301,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
     title: "Tipping in South Africa: Rand, Rates & Who to Tip (2026)",
     description:
       "South Africa has full-service petrol stations — the attendant fills your tank and expects ZAR 5–10. Car guards outside restaurants also expect ZAR 5–10 when you return. Here's the full 2026 guide: 10–15% at restaurants is expected, and safari guides earn ZAR 200–500 per day.",
-    publishedAt: "2025-12-04",
+    publishedAt: "2026-12-04",
     readingMinutes: 8,
     category: "tipping",
     country: "South Africa",
@@ -1414,7 +1414,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
     title: "Tipping in the Philippines: How Much & When (2026)",
     description:
       "Philippine restaurants often add a 10% service charge that goes to the establishment, not your server — a PHP 50–100 cash tip directly to them makes the real difference. Here's the full 2026 guide, plus island-hopping boat crews (PHP 200–500 per person for a full-day trip).",
-    publishedAt: "2025-12-11",
+    publishedAt: "2026-12-11",
     readingMinutes: 8,
     category: "tipping",
     country: "Philippines",
@@ -1531,7 +1531,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
     title: "Tipping in Vietnam: How Much & Who to Tip (2026)",
     description:
       "Local phở and bánh mì stalls expect no tip — but tourist restaurants in Hanoi's Old Quarter and Hội An expect VND 30,000–70,000 per person, and Ha Long Bay cruise guides earn USD $5–10 per person for 2-night trips. Here's the full 2026 guide.",
-    publishedAt: "2025-12-18",
+    publishedAt: "2026-12-18",
     readingMinutes: 8,
     category: "tipping",
     country: "Vietnam",
@@ -1646,7 +1646,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
     title: "Tipping in Malaysia: What's Expected in 2026",
     description:
       "Malaysian menus show '++' — a 10% service charge plus 6% GST that turns a MYR 50 dish into ~MYR 58. Hawker stalls and mamak restaurants never expect tips. Here's the full 2026 guide to when a MYR 5–10 cash tip to the server still makes a meaningful difference.",
-    publishedAt: "2025-12-22",
+    publishedAt: "2026-12-22",
     readingMinutes: 8,
     category: "tipping",
     country: "Malaysia",
@@ -1770,7 +1770,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
     title: "Tipping in Sri Lanka: How Much & Who to Tip (2026)",
     description:
       "Tourist restaurants in Galle and Colombo expect 10% or LKR 200–500 — and USD $5 that feels small to a visitor is worth LKR 1,500–1,800 to a Sri Lankan guide. Here's the full 2026 guide, including Yala safari drivers (USD $5–10) and Cultural Triangle drivers (USD $3–5/day).",
-    publishedAt: "2025-12-29",
+    publishedAt: "2026-12-29",
     readingMinutes: 8,
     category: "tipping",
     country: "Sri Lanka",
@@ -4056,7 +4056,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
     title: "Taxi Scams in Bali: What to Watch For in 2026",
     description:
       "Bali has a well-documented taxi scam problem. Here's exactly what happens, who does it, and how to avoid every trap.",
-    publishedAt: "2025-09-08",
+    publishedAt: "2026-09-08",
     readingMinutes: 8,
     category: "taxi",
     city: "Bali",
@@ -4169,7 +4169,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
     title: "Taxi Scams in Cairo: How to Avoid Getting Overcharged (2026)",
     description:
       "Cairo taxis have a complex reputation. Here's which scams are real, how to negotiate correctly, and when to use Uber instead.",
-    publishedAt: "2025-09-17",
+    publishedAt: "2026-09-17",
     readingMinutes: 8,
     category: "taxi",
     city: "Cairo",
@@ -4274,7 +4274,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
     title: "Taxi Scams in Marrakech: Stay Sharp in the Medina (2026)",
     description:
       "Marrakech's petit taxis are cheap — but the scam potential is real. Here's what visitors consistently face and how to handle it.",
-    publishedAt: "2025-09-25",
+    publishedAt: "2026-09-25",
     readingMinutes: 8,
     category: "taxi",
     city: "Marrakech",
@@ -4385,7 +4385,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
     title: "Taxi Scams in Istanbul: How to Avoid Getting Ripped Off (2026)",
     description:
       "Istanbul taxis have a notorious overcharging problem. Here's the specific tricks used and how to guarantee a fair fare.",
-    publishedAt: "2025-10-05",
+    publishedAt: "2026-10-05",
     readingMinutes: 8,
     category: "taxi",
     city: "Istanbul",
@@ -4495,7 +4495,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
     title: "Taxi Scams in Mexico City: Stay Safe in CDMX (2026)",
     description:
       "Street taxis in Mexico City carry genuine safety risks. Here's what to use instead and how to travel safely in CDMX.",
-    publishedAt: "2025-10-12",
+    publishedAt: "2026-10-12",
     readingMinutes: 8,
     category: "taxi",
     city: "Mexico City",
@@ -4598,7 +4598,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
     title: "Taxi Scams in Nairobi: What Visitors Need to Know (2026)",
     description:
       "Nairobi's taxi market is unregulated and overcharging is common. Here's how to get a safe, fair ride every time.",
-    publishedAt: "2025-10-19",
+    publishedAt: "2026-10-19",
     readingMinutes: 8,
     category: "taxi",
     city: "Nairobi",
@@ -4697,7 +4697,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
     title: "Taxi Scams in Jakarta: Avoid the Common Traps (2026)",
     description:
       "Jakarta's taxi scene has improved with Grab and Gojek, but street taxis still have known scams. Here's the full picture.",
-    publishedAt: "2025-10-26",
+    publishedAt: "2026-10-26",
     readingMinutes: 8,
     category: "taxi",
     city: "Jakarta",
@@ -4815,7 +4815,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
     title: "Taxi Scams in Manila: How to Get a Fair Ride (2026)",
     description:
       "Manila taxis have a reputation for scams — but Grab has changed everything. Here's what to know for 2026.",
-    publishedAt: "2025-11-02",
+    publishedAt: "2026-11-02",
     readingMinutes: 8,
     category: "taxi",
     city: "Manila",
@@ -4917,7 +4917,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
     title: "Taxi Scams in Phnom Penh: Tuk-tuks, Apps & What to Watch (2026)",
     description:
       "Phnom Penh's transport is dominated by tuk-tuks and apps. Here's how to navigate fares, avoid overcharging, and stay safe.",
-    publishedAt: "2025-11-09",
+    publishedAt: "2026-11-09",
     readingMinutes: 8,
     category: "taxi",
     city: "Phnom Penh",
