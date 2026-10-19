@@ -1,609 +1,1409 @@
-import type { BlogPost } from './blog-posts'
+import type { BlogPost } from "./blog-posts";
 
 export const BATCH4_BLOG_POSTS: BlogPost[] = [
-
   // ── Airport Route Posts ────────────────────────────────────────────────────
 
   {
-    slug: 'taxi-dxb-to-dubai',
-    title: 'Taxi from Dubai Airport (DXB) to Dubai City: Cost & Guide (2026)',
-    description: "A taxi from Dubai Airport to Downtown costs AED 60–80 all-in, including the mandatory AED 20 airport surcharge that catches first-timers off guard. Here's the full 2026 guide to RTA fares, Careem, and why the AED 3–7 Metro is the better deal.",
-    publishedAt: '2026-03-22',
+    slug: "taxi-dxb-to-dubai",
+    title: "Taxi from Dubai Airport (DXB) to Dubai City: Cost & Guide (2026)",
+    description:
+      "A taxi from Dubai Airport to Downtown costs AED 60–80 all-in, including the mandatory AED 20 airport surcharge that catches first-timers off guard. Here's the full 2026 guide to RTA fares, Careem, and why the AED 3–7 Metro is the better deal.",
+    publishedAt: "2026-03-22",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'Dubai',
-    citySlug: 'dubai',
+    category: "taxi",
+    city: "Dubai",
+    citySlug: "dubai",
     content: [
-      { type: 'intro', body: 'Dubai International Airport (DXB) is served by a fleet of RTA (Roads and Transport Authority) taxis — air-conditioned, metered, and among the most reliable airport taxi services in the Middle East. There are no unlicensed touts operating inside the terminal, fares are government-regulated, and drivers are professionally licensed. The metered fare to most city destinations runs AED 50–120, plus a mandatory AED 20 airport surcharge that surprises many first-time visitors. Understanding the complete cost structure before you land is the best way to avoid any payment anxiety.' },
-      { type: 'h2', heading: 'DXB to Dubai City: Key Numbers' },
-      { type: 'table', rows: [
-        { label: 'Flag-fall (daytime, 6am–10pm)', value: 'AED 5' },
-        { label: 'Flag-fall (night, 10pm–6am)', value: 'AED 5.50' },
-        { label: 'Rate per km (daytime)', value: 'AED 1.97' },
-        { label: 'Rate per km (night)', value: 'AED 2.22' },
-        { label: 'Airport surcharge (all taxis from DXB)', value: 'AED 20 — mandatory, added automatically' },
-        { label: 'Minimum fare', value: 'AED 12' },
-        { label: 'Total to Downtown Dubai / Burj Khalifa', value: 'Approximately AED 60–80 all-in (daytime)' },
-        { label: 'Total to Dubai Marina / JBR', value: 'Approximately AED 80–110 all-in (daytime)' },
-      ]},
-      { type: 'h2', heading: 'Typical Fares by Destination from DXB' },
-      { type: 'table', rows: [
-        { label: 'DXB → Downtown Dubai / Burj Khalifa', value: 'AED 60–80 all-in (20km, daytime)' },
-        { label: 'DXB → Deira / Bur Dubai', value: 'AED 30–45 all-in — closest city areas' },
-        { label: 'DXB → Dubai Mall / Business Bay', value: 'AED 55–75 all-in (daytime)' },
-        { label: 'DXB → Dubai Marina / JBR', value: 'AED 80–110 all-in (30km, daytime)' },
-        { label: 'DXB → Palm Jumeirah', value: 'AED 85–115 all-in — palm road toll included' },
-        { label: 'DXB → Mall of the Emirates / Al Barsha', value: 'AED 75–100 all-in (daytime)' },
-        { label: 'DXB → Abu Dhabi (intercity)', value: 'AED 200–250 — long journey, confirm before boarding' },
-      ]},
-      { type: 'h2', heading: 'How to Get a Taxi at Dubai Airport' },
-      { type: 'p', body: 'Taxis at DXB depart from the designated taxi ranks on the ground-floor arrivals level of all three terminals (T1, T2, T3). Follow signs for "Taxi" in arrivals — the queues are well-managed by RTA staff. You cannot pre-book an RTA airport taxi; they operate on a queue basis and are available 24 hours. Peak arrival periods (Friday–Saturday nights, major event weekends) may have waits of 15–25 minutes. All RTA taxis are metered — the AED 20 airport surcharge appears automatically on the meter when the journey begins. Drivers do not add it manually, and it is non-negotiable.' },
-      { type: 'h2', heading: 'Careem vs Taxi from Dubai Airport' },
-      { type: 'p', body: 'Careem (the dominant ride-hailing app in the UAE, owned by Uber) operates from designated pick-up zones at DXB arrivals — follow signs for "Ride Hailing." Careem and Uber provide upfront pricing with no meter uncertainty, and surge pricing outside the airport is often lower than the regulated taxi rate. For most city destinations during off-peak hours, Careem is competitive with taxis. During high-demand periods (Friday nights, major concerts, New Year\'s Eve), surge pricing can make Careem significantly more expensive. The RTA taxi queue is the more predictable option when demand is high.' },
-      { type: 'h2', heading: 'Dubai Metro: The Budget Alternative' },
-      { type: 'ul', items: [
-        'Red Line (Terminal 1 & 3): Direct metro from DXB to Union, BurJuman, Business Bay, Dubai Mall, DMCC — AED 3–7 depending on zones',
-        'Route 2020 Line (Terminal 2 / Al Maktoum Airport): Connects to the main metro grid',
-        'Journey time to Downtown Dubai: approximately 30–40 minutes by metro',
-        'Metro runs 5:30am–midnight (weekdays), 10am–1am (Friday), 5:30am–1am (Saturday) — check timings for late arrivals',
-        'Nol Card required for metro — available at airport stations for AED 25 (card) + credit',
-        'Not ideal for heavy luggage or destinations off the metro line, but exceptional value at AED 3–7 vs AED 60–110 taxi',
-      ]},
-      { type: 'tip', body: 'Tipping is not customary in Dubai taxis — pay the metered amount including the AED 20 surcharge and nothing further is expected. If a driver provides exceptional service (helping with heavy bags, navigating a complex destination), rounding up by AED 5–10 is a generous gesture but entirely optional. Do not feel pressured to tip.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'How much is a taxi from Dubai Airport to Downtown Dubai?', a: 'Approximately AED 60–80 all-in for daytime travel, including the mandatory AED 20 airport surcharge and the metered fare over approximately 20km. Night fares (10pm–6am) are slightly higher due to the increased per-km rate.' },
-        { q: 'What is the AED 20 airport surcharge?', a: 'All taxis departing from Dubai Airport (DXB) automatically add AED 20 to the meter start. This is a government-mandated RTA surcharge and is non-negotiable — it is not the driver adding extra. It appears on the meter display automatically.' },
-        { q: 'How long does the taxi take from DXB to Dubai Marina?', a: 'Approximately 35–50 minutes under normal traffic conditions for the 30km journey. During peak hours (7–9am and 5–8pm weekdays), traffic on Sheikh Zayed Road can extend this to 60–75 minutes. Late-night arrivals after midnight are typically 25–35 minutes with clear roads.' },
-        { q: 'Is Careem better than a metered taxi from DXB?', a: 'In off-peak conditions, Careem is often cheaper and the upfront price eliminates meter uncertainty. During high-demand periods (weekends, holidays, major events), Careem surge pricing can easily exceed the regulated taxi rate. Check the Careem app on arrival and compare.' },
-        { q: 'Can I take the Dubai Metro from DXB?', a: 'Yes — T1 and T3 have direct metro access on the Red Line. For destinations along the Red Line (Deira, Business Bay, Downtown, Marina area), the metro is significantly cheaper (AED 3–7) and very comfortable. For destinations off the metro line or with heavy luggage, the taxi is worth the cost.' },
-        { q: 'Are there female-only taxis at Dubai Airport?', a: 'Yes — Dubai has a dedicated "women and family" taxi service (pink rooftop vehicles) available at DXB. These are operated by female drivers exclusively for women, children, and families. They operate on the same meter rate plus the AED 20 airport surcharge. Look for the pink-marked queue lane at the taxi rank.' },
-      ]},
+      {
+        type: "intro",
+        body: "Dubai International Airport (DXB) is served by a fleet of RTA (Roads and Transport Authority) taxis — air-conditioned, metered, and among the most reliable airport taxi services in the Middle East. There are no unlicensed touts operating inside the terminal, fares are government-regulated, and drivers are professionally licensed. The metered fare to most city destinations runs AED 50–120, plus a mandatory AED 20 airport surcharge that surprises many first-time visitors. Understanding the complete cost structure before you land is the best way to avoid any payment anxiety.",
+      },
+      { type: "h2", heading: "DXB to Dubai City: Key Numbers" },
+      {
+        type: "table",
+        rows: [
+          { label: "Flag-fall (daytime, 6am–10pm)", value: "AED 5" },
+          { label: "Flag-fall (night, 10pm–6am)", value: "AED 5.50" },
+          { label: "Rate per km (daytime)", value: "AED 1.97" },
+          { label: "Rate per km (night)", value: "AED 2.22" },
+          {
+            label: "Airport surcharge (all taxis from DXB)",
+            value: "AED 20 — mandatory, added automatically",
+          },
+          { label: "Minimum fare", value: "AED 12" },
+          {
+            label: "Total to Downtown Dubai / Burj Khalifa",
+            value: "Approximately AED 60–80 all-in (daytime)",
+          },
+          {
+            label: "Total to Dubai Marina / JBR",
+            value: "Approximately AED 80–110 all-in (daytime)",
+          },
+        ],
+      },
+      { type: "h2", heading: "Typical Fares by Destination from DXB" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "DXB → Downtown Dubai / Burj Khalifa",
+            value: "AED 60–80 all-in (20km, daytime)",
+          },
+          {
+            label: "DXB → Deira / Bur Dubai",
+            value: "AED 30–45 all-in — closest city areas",
+          },
+          {
+            label: "DXB → Dubai Mall / Business Bay",
+            value: "AED 55–75 all-in (daytime)",
+          },
+          {
+            label: "DXB → Dubai Marina / JBR",
+            value: "AED 80–110 all-in (30km, daytime)",
+          },
+          {
+            label: "DXB → Palm Jumeirah",
+            value: "AED 85–115 all-in — palm road toll included",
+          },
+          {
+            label: "DXB → Mall of the Emirates / Al Barsha",
+            value: "AED 75–100 all-in (daytime)",
+          },
+          {
+            label: "DXB → Abu Dhabi (intercity)",
+            value: "AED 200–250 — long journey, confirm before boarding",
+          },
+        ],
+      },
+      { type: "h2", heading: "How to Get a Taxi at Dubai Airport" },
+      {
+        type: "p",
+        body: 'Taxis at DXB depart from the designated taxi ranks on the ground-floor arrivals level of all three terminals (T1, T2, T3). Follow signs for "Taxi" in arrivals — the queues are well-managed by RTA staff. You cannot pre-book an RTA airport taxi; they operate on a queue basis and are available 24 hours. Peak arrival periods (Friday–Saturday nights, major event weekends) may have waits of 15–25 minutes. All RTA taxis are metered — the AED 20 airport surcharge appears automatically on the meter when the journey begins. Drivers do not add it manually, and it is non-negotiable.',
+      },
+      { type: "h2", heading: "Careem vs Taxi from Dubai Airport" },
+      {
+        type: "p",
+        body: 'Careem (the dominant ride-hailing app in the UAE, owned by Uber) operates from designated pick-up zones at DXB arrivals — follow signs for "Ride Hailing." Careem and Uber provide upfront pricing with no meter uncertainty, and surge pricing outside the airport is often lower than the regulated taxi rate. For most city destinations during off-peak hours, Careem is competitive with taxis. During high-demand periods (Friday nights, major concerts, New Year\'s Eve), surge pricing can make Careem significantly more expensive. The RTA taxi queue is the more predictable option when demand is high.',
+      },
+      { type: "h2", heading: "Dubai Metro: The Budget Alternative" },
+      {
+        type: "ul",
+        items: [
+          "Red Line (Terminal 1 & 3): Direct metro from DXB to Union, BurJuman, Business Bay, Dubai Mall, DMCC — AED 3–7 depending on zones",
+          "Route 2020 Line (Terminal 2 / Al Maktoum Airport): Connects to the main metro grid",
+          "Journey time to Downtown Dubai: approximately 30–40 minutes by metro",
+          "Metro runs 5:30am–midnight (weekdays), 10am–1am (Friday), 5:30am–1am (Saturday) — check timings for late arrivals",
+          "Nol Card required for metro — available at airport stations for AED 25 (card) + credit",
+          "Not ideal for heavy luggage or destinations off the metro line, but exceptional value at AED 3–7 vs AED 60–110 taxi",
+        ],
+      },
+      {
+        type: "tip",
+        body: "Tipping is not customary in Dubai taxis — pay the metered amount including the AED 20 surcharge and nothing further is expected. If a driver provides exceptional service (helping with heavy bags, navigating a complex destination), rounding up by AED 5–10 is a generous gesture but entirely optional. Do not feel pressured to tip.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Dubai Airport to Downtown Dubai?",
+            a: "Approximately AED 60–80 all-in for daytime travel, including the mandatory AED 20 airport surcharge and the metered fare over approximately 20km. Night fares (10pm–6am) are slightly higher due to the increased per-km rate.",
+          },
+          {
+            q: "What is the AED 20 airport surcharge?",
+            a: "All taxis departing from Dubai Airport (DXB) automatically add AED 20 to the meter start. This is a government-mandated RTA surcharge and is non-negotiable — it is not the driver adding extra. It appears on the meter display automatically.",
+          },
+          {
+            q: "How long does the taxi take from DXB to Dubai Marina?",
+            a: "Approximately 35–50 minutes under normal traffic conditions for the 30km journey. During peak hours (7–9am and 5–8pm weekdays), traffic on Sheikh Zayed Road can extend this to 60–75 minutes. Late-night arrivals after midnight are typically 25–35 minutes with clear roads.",
+          },
+          {
+            q: "Is Careem better than a metered taxi from DXB?",
+            a: "In off-peak conditions, Careem is often cheaper and the upfront price eliminates meter uncertainty. During high-demand periods (weekends, holidays, major events), Careem surge pricing can easily exceed the regulated taxi rate. Check the Careem app on arrival and compare.",
+          },
+          {
+            q: "Can I take the Dubai Metro from DXB?",
+            a: "Yes — T1 and T3 have direct metro access on the Red Line. For destinations along the Red Line (Deira, Business Bay, Downtown, Marina area), the metro is significantly cheaper (AED 3–7) and very comfortable. For destinations off the metro line or with heavy luggage, the taxi is worth the cost.",
+          },
+          {
+            q: "Are there female-only taxis at Dubai Airport?",
+            a: 'Yes — Dubai has a dedicated "women and family" taxi service (pink rooftop vehicles) available at DXB. These are operated by female drivers exclusively for women, children, and families. They operate on the same meter rate plus the AED 20 airport surcharge. Look for the pink-marked queue lane at the taxi rank.',
+          },
+        ],
+      },
     ],
   },
 
   {
-    slug: 'taxi-hkg-to-hong-kong',
-    title: 'Taxi from Hong Kong Airport (HKG) to the City: Cost & Guide (2026)',
-    description: "A taxi from Hong Kong Airport to Central costs HK$380–450 once the HK$110 Cross-Harbour Tunnel toll is added — sometimes doubled if the driver charges the return toll too. Here's the full 2026 guide to HK's three taxi colours, and when the HK$115 Airport Express wins.",
-    publishedAt: '2026-03-25',
+    slug: "taxi-hkg-to-hong-kong",
+    title: "Taxi from Hong Kong Airport (HKG) to the City: Cost & Guide (2026)",
+    description:
+      "A taxi from Hong Kong Airport to Central costs HK$380–450 once the HK$110 Cross-Harbour Tunnel toll is added — sometimes doubled if the driver charges the return toll too. Here's the full 2026 guide to HK's three taxi colours, and when the HK$115 Airport Express wins.",
+    publishedAt: "2026-03-25",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'Hong Kong',
-    citySlug: 'hong-kong',
+    category: "taxi",
+    city: "Hong Kong",
+    citySlug: "hong-kong",
     content: [
-      { type: 'intro', body: 'Hong Kong International Airport (HKIA / HKG) sits on Lantau Island, separated from the main urban areas of Kowloon and Hong Kong Island by water and expressway. The taxi system is clean, metered, and regulated by the Transport Department — but the fare structure catches many visitors off guard: three taxi colours operate different zones, tunnel surcharges add significantly to cross-harbour journeys, and the full airport-to-Central fare can reach HK$450 with tunnel tolls included. The Airport Express train (24 minutes, HK$115) remains the most popular alternative, but for groups or heavy luggage, taxis are often the more practical choice.' },
-      { type: 'h2', heading: 'HKG to Hong Kong City: Key Numbers' },
-      { type: 'table', rows: [
-        { label: 'Red taxi flag-fall (urban: HK Island + Kowloon)', value: 'HK$27 for first 2km, then HK$9.3 per additional km' },
-        { label: 'Green taxi (New Territories only)', value: 'HK$23.50 flag-fall — cannot enter urban areas' },
-        { label: 'Yellow taxi (Lantau Island only)', value: 'HK$23 flag-fall — airport area short trips only' },
-        { label: 'Airport surcharge', value: 'None — fare runs from airport pickup point' },
-        { label: 'Cross-Harbour Tunnel (CHT)', value: 'HK$110 one-way — passenger pays, added to meter total' },
-        { label: 'Airport → Kowloon (Tsim Sha Tsui)', value: 'Approximately HK$280–350 all-in' },
-        { label: 'Airport → Hong Kong Island (Central)', value: 'Approximately HK$380–450 all-in (includes CHT toll)' },
-        { label: 'Airport Express (to Hong Kong Station)', value: 'HK$115 one-way — 24 minutes' },
-      ]},
-      { type: 'h2', heading: 'Typical Fares by Destination from HKG' },
-      { type: 'table', rows: [
-        { label: 'HKG → Tsim Sha Tsui (Kowloon)', value: 'HK$280–340 — no tunnel charge' },
-        { label: 'HKG → Mong Kok (Kowloon)', value: 'HK$300–360 — no tunnel charge' },
-        { label: 'HKG → Central (HK Island)', value: 'HK$380–450 — includes HK$110 CHT toll' },
-        { label: 'HKG → Causeway Bay (HK Island)', value: 'HK$400–470 — includes tunnel toll' },
-        { label: 'HKG → Wan Chai (HK Island)', value: 'HK$390–460 — includes tunnel toll' },
-        { label: 'HKG → Tung Chung (near airport)', value: 'HK$60–90 — very close, yellow taxi sufficient' },
-        { label: 'HKG → Disneyland Resort', value: 'HK$150–200 — short Lantau trip' },
-      ]},
-      { type: 'h2', heading: 'Understanding HK Taxi Colours' },
-      { type: 'p', body: 'At HKG you will only have access to red urban taxis (for Kowloon and Hong Kong Island destinations) and, for Lantau-only trips, yellow taxis. Do not enter a green taxi at the airport if your destination is Kowloon or HK Island — green taxis are restricted to the New Territories and cannot enter urban zones. Red taxis are the correct choice for all major tourist destinations. They queue at the designated taxi rank on the ground floor of the passenger terminal — follow signs for "Taxi" from arrivals.' },
-      { type: 'h2', heading: 'Tunnel Surcharges — The Hidden Cost' },
-      { type: 'p', body: 'The most common source of sticker shock in Hong Kong taxis is the tunnel surcharge. If your destination is on Hong Kong Island (Central, Wan Chai, Causeway Bay, etc.), the driver must pass through the Cross-Harbour Tunnel (CHT). The toll is HK$110 — paid by the driver at the booth, but the full amount is added to your fare. You pay the meter fare plus the tunnel toll, and in some tunnels, the driver may also add the return toll (HK$110 again), making the total tunnel addition HK$220. This is legal and printed on the tariff card in all taxis — it is not a scam, though it is startlingly high for a tunnel crossing.' },
-      { type: 'h2', heading: 'Airport Express: The Smarter Alternative' },
-      { type: 'ul', items: [
-        'Airport Express: HK$115 one-way from HKG to Hong Kong Station (Central) — 24 minutes, runs every 10 minutes from 5:50am to 12:48am',
-        'Octopus card passengers: HK$100 one-way (slight discount for contactless payment)',
-        'HK$75 roundtrip discount available if return within 30 days',
-        'From Hong Kong Station, free shuttle buses serve major hotels in Central, Admiralty, and Wan Chai',
-        'Kowloon Station stop (Tsim Sha Tsui adjacent): HK$105, 20 minutes from airport',
-        'Ideal for solo travellers or couples with one or two bags — less practical for families with significant luggage',
-      ]},
-      { type: 'tip', body: 'For destinations in Kowloon (Tsim Sha Tsui, Mong Kok, Jordan), a taxi is genuinely competitive with the Airport Express — HK$280–340 split between two or three people is not much more than HK$105–115 per person each. For Hong Kong Island destinations, the tunnel toll pushes taxi costs high enough that the Airport Express is usually the better choice for individuals or pairs.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'How much is a taxi from Hong Kong Airport to Central?', a: 'Approximately HK$380–450 all-in. This includes the metered fare for the 50km journey plus the mandatory Cross-Harbour Tunnel toll of HK$110 (and in some cases a return toll). The Airport Express (HK$115) is significantly cheaper for solo travellers and pairs.' },
-        { q: 'Why did my Hong Kong taxi fare include a HK$110 or HK$220 tunnel charge?', a: 'The Cross-Harbour Tunnel toll is HK$110. In most cases, the driver adds HK$110 (the one-way toll they pay). Some tunnels also entitle the driver to add the return journey toll — up to HK$220 total. This is legal and printed on the tariff notice inside the cab. It is not a scam.' },
-        { q: 'What colour taxi should I take at Hong Kong Airport?', a: 'Red taxis for all urban destinations (Kowloon and Hong Kong Island). Yellow taxis are only for Lantau Island destinations (e.g., Tung Chung, Disneyland). Do not enter a green taxi — they are restricted to the New Territories and cannot take you to city destinations.' },
-        { q: 'Is the Airport Express faster than a taxi from HKG?', a: 'Yes — 24 minutes by Airport Express to Central versus 45–75 minutes by taxi depending on traffic. For time-sensitive arrivals, the Airport Express is always faster and never gets stuck in the expressway congestion that can affect taxis during peak hours.' },
-        { q: 'Do Hong Kong taxis have an airport surcharge?', a: 'No separate airport surcharge — the meter runs from the pickup point. However, if you take a taxi back to the airport, there is an airport tunnel toll payable. Always ensure the meter is running from the moment you depart the taxi rank.' },
-        { q: 'Can I pay by card in Hong Kong taxis?', a: 'Some taxis accept Octopus card or credit card — look for signage in the window. Many still prefer cash (HKD). Have HKD ready, particularly for the tunnel toll portion which is sometimes collected separately at the booth. ATMs are available in the arrivals hall before you reach the taxi rank.' },
-      ]},
+      {
+        type: "intro",
+        body: "Hong Kong International Airport (HKIA / HKG) sits on Lantau Island, separated from the main urban areas of Kowloon and Hong Kong Island by water and expressway. The taxi system is clean, metered, and regulated by the Transport Department — but the fare structure catches many visitors off guard: three taxi colours operate different zones, tunnel surcharges add significantly to cross-harbour journeys, and the full airport-to-Central fare can reach HK$450 with tunnel tolls included. The Airport Express train (24 minutes, HK$115) remains the most popular alternative, but for groups or heavy luggage, taxis are often the more practical choice.",
+      },
+      { type: "h2", heading: "HKG to Hong Kong City: Key Numbers" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Red taxi flag-fall (urban: HK Island + Kowloon)",
+            value: "HK$27 for first 2km, then HK$9.3 per additional km",
+          },
+          {
+            label: "Green taxi (New Territories only)",
+            value: "HK$23.50 flag-fall — cannot enter urban areas",
+          },
+          {
+            label: "Yellow taxi (Lantau Island only)",
+            value: "HK$23 flag-fall — airport area short trips only",
+          },
+          {
+            label: "Airport surcharge",
+            value: "None — fare runs from airport pickup point",
+          },
+          {
+            label: "Cross-Harbour Tunnel (CHT)",
+            value: "HK$110 one-way — passenger pays, added to meter total",
+          },
+          {
+            label: "Airport → Kowloon (Tsim Sha Tsui)",
+            value: "Approximately HK$280–350 all-in",
+          },
+          {
+            label: "Airport → Hong Kong Island (Central)",
+            value: "Approximately HK$380–450 all-in (includes CHT toll)",
+          },
+          {
+            label: "Airport Express (to Hong Kong Station)",
+            value: "HK$115 one-way — 24 minutes",
+          },
+        ],
+      },
+      { type: "h2", heading: "Typical Fares by Destination from HKG" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "HKG → Tsim Sha Tsui (Kowloon)",
+            value: "HK$280–340 — no tunnel charge",
+          },
+          {
+            label: "HKG → Mong Kok (Kowloon)",
+            value: "HK$300–360 — no tunnel charge",
+          },
+          {
+            label: "HKG → Central (HK Island)",
+            value: "HK$380–450 — includes HK$110 CHT toll",
+          },
+          {
+            label: "HKG → Causeway Bay (HK Island)",
+            value: "HK$400–470 — includes tunnel toll",
+          },
+          {
+            label: "HKG → Wan Chai (HK Island)",
+            value: "HK$390–460 — includes tunnel toll",
+          },
+          {
+            label: "HKG → Tung Chung (near airport)",
+            value: "HK$60–90 — very close, yellow taxi sufficient",
+          },
+          {
+            label: "HKG → Disneyland Resort",
+            value: "HK$150–200 — short Lantau trip",
+          },
+        ],
+      },
+      { type: "h2", heading: "Understanding HK Taxi Colours" },
+      {
+        type: "p",
+        body: 'At HKG you will only have access to red urban taxis (for Kowloon and Hong Kong Island destinations) and, for Lantau-only trips, yellow taxis. Do not enter a green taxi at the airport if your destination is Kowloon or HK Island — green taxis are restricted to the New Territories and cannot enter urban zones. Red taxis are the correct choice for all major tourist destinations. They queue at the designated taxi rank on the ground floor of the passenger terminal — follow signs for "Taxi" from arrivals.',
+      },
+      { type: "h2", heading: "Tunnel Surcharges — The Hidden Cost" },
+      {
+        type: "p",
+        body: "The most common source of sticker shock in Hong Kong taxis is the tunnel surcharge. If your destination is on Hong Kong Island (Central, Wan Chai, Causeway Bay, etc.), the driver must pass through the Cross-Harbour Tunnel (CHT). The toll is HK$110 — paid by the driver at the booth, but the full amount is added to your fare. You pay the meter fare plus the tunnel toll, and in some tunnels, the driver may also add the return toll (HK$110 again), making the total tunnel addition HK$220. This is legal and printed on the tariff card in all taxis — it is not a scam, though it is startlingly high for a tunnel crossing.",
+      },
+      { type: "h2", heading: "Airport Express: The Smarter Alternative" },
+      {
+        type: "ul",
+        items: [
+          "Airport Express: HK$115 one-way from HKG to Hong Kong Station (Central) — 24 minutes, runs every 10 minutes from 5:50am to 12:48am",
+          "Octopus card passengers: HK$100 one-way (slight discount for contactless payment)",
+          "HK$75 roundtrip discount available if return within 30 days",
+          "From Hong Kong Station, free shuttle buses serve major hotels in Central, Admiralty, and Wan Chai",
+          "Kowloon Station stop (Tsim Sha Tsui adjacent): HK$105, 20 minutes from airport",
+          "Ideal for solo travellers or couples with one or two bags — less practical for families with significant luggage",
+        ],
+      },
+      {
+        type: "tip",
+        body: "For destinations in Kowloon (Tsim Sha Tsui, Mong Kok, Jordan), a taxi is genuinely competitive with the Airport Express — HK$280–340 split between two or three people is not much more than HK$105–115 per person each. For Hong Kong Island destinations, the tunnel toll pushes taxi costs high enough that the Airport Express is usually the better choice for individuals or pairs.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Hong Kong Airport to Central?",
+            a: "Approximately HK$380–450 all-in. This includes the metered fare for the 50km journey plus the mandatory Cross-Harbour Tunnel toll of HK$110 (and in some cases a return toll). The Airport Express (HK$115) is significantly cheaper for solo travellers and pairs.",
+          },
+          {
+            q: "Why did my Hong Kong taxi fare include a HK$110 or HK$220 tunnel charge?",
+            a: "The Cross-Harbour Tunnel toll is HK$110. In most cases, the driver adds HK$110 (the one-way toll they pay). Some tunnels also entitle the driver to add the return journey toll — up to HK$220 total. This is legal and printed on the tariff notice inside the cab. It is not a scam.",
+          },
+          {
+            q: "What colour taxi should I take at Hong Kong Airport?",
+            a: "Red taxis for all urban destinations (Kowloon and Hong Kong Island). Yellow taxis are only for Lantau Island destinations (e.g., Tung Chung, Disneyland). Do not enter a green taxi — they are restricted to the New Territories and cannot take you to city destinations.",
+          },
+          {
+            q: "Is the Airport Express faster than a taxi from HKG?",
+            a: "Yes — 24 minutes by Airport Express to Central versus 45–75 minutes by taxi depending on traffic. For time-sensitive arrivals, the Airport Express is always faster and never gets stuck in the expressway congestion that can affect taxis during peak hours.",
+          },
+          {
+            q: "Do Hong Kong taxis have an airport surcharge?",
+            a: "No separate airport surcharge — the meter runs from the pickup point. However, if you take a taxi back to the airport, there is an airport tunnel toll payable. Always ensure the meter is running from the moment you depart the taxi rank.",
+          },
+          {
+            q: "Can I pay by card in Hong Kong taxis?",
+            a: "Some taxis accept Octopus card or credit card — look for signage in the window. Many still prefer cash (HKD). Have HKD ready, particularly for the tunnel toll portion which is sometimes collected separately at the booth. ATMs are available in the arrivals hall before you reach the taxi rank.",
+          },
+        ],
+      },
     ],
   },
 
   {
-    slug: 'taxi-tpe-to-taipei',
-    title: 'Taxi from Taoyuan Airport (TPE) to Taipei: Cost & Guide (2026)',
-    description: 'Taoyuan Airport is 40km from central Taipei — taxis cost NT$1,100–1,300 but the Airport MRT is far cheaper. Here\'s everything you need to know.',
-    publishedAt: '2026-03-28',
+    slug: "taxi-tpe-to-taipei",
+    title: "Taxi from Taoyuan Airport (TPE) to Taipei: Cost & Guide (2026)",
+    description:
+      "Taoyuan Airport is 40km from central Taipei — taxis cost NT$1,100–1,300 but the Airport MRT is far cheaper. Here's everything you need to know.",
+    publishedAt: "2026-03-28",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'Taipei',
-    citySlug: 'taipei',
+    category: "taxi",
+    city: "Taipei",
+    citySlug: "taipei",
     content: [
-      { type: 'intro', body: 'Taiwan Taoyuan International Airport (TPE) is the main international gateway to Taiwan, located approximately 40 kilometres west of central Taipei in the Dayuan District of Taoyuan City. Taxis from TPE to Taipei are metered, honest, and reliable — but the distance means fares of NT$1,100–1,300 are standard, which surprises visitors used to shorter airport-to-city taxi routes. The Taoyuan Airport MRT (opened 2017) connects the airport directly to Taipei Main Station in about 35 minutes for NT$165 — making it the best value option for most travellers. Taxis remain the right choice for large groups, heavy luggage, or destinations off the MRT route.' },
-      { type: 'h2', heading: 'TPE to Taipei: Key Numbers' },
-      { type: 'table', rows: [
-        { label: 'Meter flag-fall (Taoyuan taxis)', value: 'NT$85 for first 1.5km' },
-        { label: 'Rate per km (metered)', value: 'NT$18–22 per km (metered intervals)' },
-        { label: 'Night surcharge (23:00–06:00)', value: '+20% of metered fare' },
-        { label: 'Typical fare (TPE → Taipei Main Station)', value: 'NT$1,100–1,300 (daytime)' },
-        { label: 'Typical fare (TPE → Xinyi / Taipei 101)', value: 'NT$1,200–1,400 (daytime)' },
-        { label: 'Typical fare (TPE → Zhongzheng / NTU area)', value: 'NT$1,100–1,250 (daytime)' },
-        { label: 'Typical fare (TPE → Shilin / Tianmu)', value: 'NT$900–1,100 (daytime)' },
-        { label: 'Airport MRT (Express to Taipei Main Station)', value: 'NT$165 — 35 minutes direct' },
-      ]},
-      { type: 'h2', heading: 'Fares by Area — Taoyuan Airport to Taipei' },
-      { type: 'table', rows: [
-        { label: 'T1/T2 → Taipei Main Station (中正區)', value: 'NT$1,100–1,280' },
-        { label: 'T1/T2 → Zhongshan / Songshan District', value: 'NT$1,100–1,250' },
-        { label: 'T1/T2 → Xinyi / Taipei 101 (信義區)', value: 'NT$1,200–1,400' },
-        { label: 'T1/T2 → Shilin Night Market area', value: 'NT$900–1,100' },
-        { label: 'T1/T2 → Xinbeitou / Beitou hot springs', value: 'NT$1,000–1,200' },
-        { label: 'T1/T2 → Taoyuan City centre (nearby)', value: 'NT$250–400 — short local trip' },
-        { label: 'T1/T2 → Zhongli (Taoyuan county area)', value: 'NT$350–550' },
-      ]},
-      { type: 'h2', heading: 'How to Get a Taxi at Taoyuan Airport' },
-      { type: 'p', body: 'Taxis at TPE are found at the official taxi ranks on the arrivals level (B1) of both Terminal 1 and Terminal 2. Follow yellow "Taxi" signs from the baggage claim area. There is a pre-paid taxi counter inside arrivals at both terminals where you can pay a fixed price for your destination before boarding — this eliminates any post-journey pricing disputes and is recommended for first-time visitors. The pre-paid counter quotes are accurate and not significantly higher than the meter rate. If you prefer the meter, walk to the street-side taxi queue — all metered airport taxis at TPE are licensed and regulated by the Taoyuan City Government.' },
-      { type: 'h2', heading: 'Taoyuan Airport MRT: The Better Option' },
-      { type: 'ul', items: [
-        'Express Train (紫色): NT$165, 35 minutes direct to Taipei Main Station (臺北車站) — no stops',
-        'Commuter Train (藍色): NT$150, 51 minutes to Taipei Main Station — stops at intermediate stations',
-        'Runs every 15–20 minutes (Express), 6am–11pm daily; commuter train more frequent',
-        'From Taipei Main Station, connect to the MRT Red/Blue/Green lines or TRA/HSR trains',
-        'Luggage storage available at the MRT carriage — wide aisles accommodate large suitcases',
-        'EasyCard (悠遊卡) accepted — slightly cheaper than single-trip tokens; available at airport',
-        'Not ideal if your hotel is far from an MRT station — a taxi end-to-end may be simpler',
-      ]},
-      { type: 'tip', body: 'The Airport MRT Express is the right choice for most solo travellers and couples. But for families of 3–4 with luggage heading to a hotel in central Taipei, a taxi at NT$1,200 split by four people (NT$300 each) is comparable to four MRT tickets (NT$165 × 4 = NT$660) once you factor in the convenience of door-to-door service. Run the numbers for your group before deciding.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'How much is a taxi from Taoyuan Airport to Taipei?', a: 'Approximately NT$1,100–1,300 to most central Taipei destinations (Taipei Main Station area, Zhongzheng, Zhongshan, Da\'an). Destinations in Xinyi (Taipei 101) or Neihu may be NT$1,200–1,450. Night fares (11pm–6am) add a 20% surcharge.' },
-        { q: 'How long does the taxi take from Taoyuan Airport to Taipei?', a: 'Approximately 40–60 minutes under normal conditions on National Freeway 2 and the Airport Expressway. During weekday morning rush hours (7:30–9am) and evening peak (5–7:30pm), allow 70–90 minutes. Late-night arrivals are often 35–45 minutes with clear roads.' },
-        { q: 'Is the Taoyuan Airport MRT better than a taxi?', a: 'For most solo travellers and pairs heading to areas near MRT stations, yes. NT$165 versus NT$1,100–1,300 is a significant saving, and 35 minutes is faster than most taxi journeys. For groups of 3+ with heavy luggage, or destinations far from MRT stations, a taxi is more convenient.' },
-        { q: 'Can I use Uber or Grab from Taoyuan Airport?', a: 'Uber does operate in Taiwan and can be booked from the airport. It functions similarly to a taxi fare-wise (the 40km distance means NT$900–1,200 is common on Uber too). Uber is available at the same arrivals level as taxis. There is no Grab in Taiwan — Uber is the main app-based option.' },
-        { q: 'How do I get back to Taoyuan Airport from Taipei?', a: 'The Airport MRT is the easiest option: board at Taipei Main Station (NT$165 Express, NT$150 commuter). Allow 45–70 minutes from your hotel to departure gate including MRT journey. For early-morning flights (before 6am when MRT doesn\'t run), a taxi is NT$1,100–1,300 and can be pre-booked the night before through your hotel.' },
-        { q: 'Is Songshan Airport (TSA) closer to Taipei than Taoyuan?', a: 'Yes — Taipei Songshan Airport (TSA) is inside the city and serves regional routes (Japan, South Korea, mainland China). If your flight arrives at TSA rather than TPE, taxis to most Taipei hotels are NT$200–450. Check which airport your airline uses before planning ground transport.' },
-      ]},
+      {
+        type: "intro",
+        body: "Taiwan Taoyuan International Airport (TPE) is the main international gateway to Taiwan, located approximately 40 kilometres west of central Taipei in the Dayuan District of Taoyuan City. Taxis from TPE to Taipei are metered, honest, and reliable — but the distance means fares of NT$1,100–1,300 are standard, which surprises visitors used to shorter airport-to-city taxi routes. The Taoyuan Airport MRT (opened 2017) connects the airport directly to Taipei Main Station in about 35 minutes for NT$165 — making it the best value option for most travellers. Taxis remain the right choice for large groups, heavy luggage, or destinations off the MRT route.",
+      },
+      { type: "h2", heading: "TPE to Taipei: Key Numbers" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Meter flag-fall (Taoyuan taxis)",
+            value: "NT$85 for first 1.5km",
+          },
+          {
+            label: "Rate per km (metered)",
+            value: "NT$18–22 per km (metered intervals)",
+          },
+          {
+            label: "Night surcharge (23:00–06:00)",
+            value: "+20% of metered fare",
+          },
+          {
+            label: "Typical fare (TPE → Taipei Main Station)",
+            value: "NT$1,100–1,300 (daytime)",
+          },
+          {
+            label: "Typical fare (TPE → Xinyi / Taipei 101)",
+            value: "NT$1,200–1,400 (daytime)",
+          },
+          {
+            label: "Typical fare (TPE → Zhongzheng / NTU area)",
+            value: "NT$1,100–1,250 (daytime)",
+          },
+          {
+            label: "Typical fare (TPE → Shilin / Tianmu)",
+            value: "NT$900–1,100 (daytime)",
+          },
+          {
+            label: "Airport MRT (Express to Taipei Main Station)",
+            value: "NT$165 — 35 minutes direct",
+          },
+        ],
+      },
+      { type: "h2", heading: "Fares by Area — Taoyuan Airport to Taipei" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "T1/T2 → Taipei Main Station (中正區)",
+            value: "NT$1,100–1,280",
+          },
+          {
+            label: "T1/T2 → Zhongshan / Songshan District",
+            value: "NT$1,100–1,250",
+          },
+          {
+            label: "T1/T2 → Xinyi / Taipei 101 (信義區)",
+            value: "NT$1,200–1,400",
+          },
+          { label: "T1/T2 → Shilin Night Market area", value: "NT$900–1,100" },
+          {
+            label: "T1/T2 → Xinbeitou / Beitou hot springs",
+            value: "NT$1,000–1,200",
+          },
+          {
+            label: "T1/T2 → Taoyuan City centre (nearby)",
+            value: "NT$250–400 — short local trip",
+          },
+          {
+            label: "T1/T2 → Zhongli (Taoyuan county area)",
+            value: "NT$350–550",
+          },
+        ],
+      },
+      { type: "h2", heading: "How to Get a Taxi at Taoyuan Airport" },
+      {
+        type: "p",
+        body: 'Taxis at TPE are found at the official taxi ranks on the arrivals level (B1) of both Terminal 1 and Terminal 2. Follow yellow "Taxi" signs from the baggage claim area. There is a pre-paid taxi counter inside arrivals at both terminals where you can pay a fixed price for your destination before boarding — this eliminates any post-journey pricing disputes and is recommended for first-time visitors. The pre-paid counter quotes are accurate and not significantly higher than the meter rate. If you prefer the meter, walk to the street-side taxi queue — all metered airport taxis at TPE are licensed and regulated by the Taoyuan City Government.',
+      },
+      { type: "h2", heading: "Taoyuan Airport MRT: The Better Option" },
+      {
+        type: "ul",
+        items: [
+          "Express Train (紫色): NT$165, 35 minutes direct to Taipei Main Station (臺北車站) — no stops",
+          "Commuter Train (藍色): NT$150, 51 minutes to Taipei Main Station — stops at intermediate stations",
+          "Runs every 15–20 minutes (Express), 6am–11pm daily; commuter train more frequent",
+          "From Taipei Main Station, connect to the MRT Red/Blue/Green lines or TRA/HSR trains",
+          "Luggage storage available at the MRT carriage — wide aisles accommodate large suitcases",
+          "EasyCard (悠遊卡) accepted — slightly cheaper than single-trip tokens; available at airport",
+          "Not ideal if your hotel is far from an MRT station — a taxi end-to-end may be simpler",
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Airport MRT Express is the right choice for most solo travellers and couples. But for families of 3–4 with luggage heading to a hotel in central Taipei, a taxi at NT$1,200 split by four people (NT$300 each) is comparable to four MRT tickets (NT$165 × 4 = NT$660) once you factor in the convenience of door-to-door service. Run the numbers for your group before deciding.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Taoyuan Airport to Taipei?",
+            a: "Approximately NT$1,100–1,300 to most central Taipei destinations (Taipei Main Station area, Zhongzheng, Zhongshan, Da'an). Destinations in Xinyi (Taipei 101) or Neihu may be NT$1,200–1,450. Night fares (11pm–6am) add a 20% surcharge.",
+          },
+          {
+            q: "How long does the taxi take from Taoyuan Airport to Taipei?",
+            a: "Approximately 40–60 minutes under normal conditions on National Freeway 2 and the Airport Expressway. During weekday morning rush hours (7:30–9am) and evening peak (5–7:30pm), allow 70–90 minutes. Late-night arrivals are often 35–45 minutes with clear roads.",
+          },
+          {
+            q: "Is the Taoyuan Airport MRT better than a taxi?",
+            a: "For most solo travellers and pairs heading to areas near MRT stations, yes. NT$165 versus NT$1,100–1,300 is a significant saving, and 35 minutes is faster than most taxi journeys. For groups of 3+ with heavy luggage, or destinations far from MRT stations, a taxi is more convenient.",
+          },
+          {
+            q: "Can I use Uber or Grab from Taoyuan Airport?",
+            a: "Uber does operate in Taiwan and can be booked from the airport. It functions similarly to a taxi fare-wise (the 40km distance means NT$900–1,200 is common on Uber too). Uber is available at the same arrivals level as taxis. There is no Grab in Taiwan — Uber is the main app-based option.",
+          },
+          {
+            q: "How do I get back to Taoyuan Airport from Taipei?",
+            a: "The Airport MRT is the easiest option: board at Taipei Main Station (NT$165 Express, NT$150 commuter). Allow 45–70 minutes from your hotel to departure gate including MRT journey. For early-morning flights (before 6am when MRT doesn't run), a taxi is NT$1,100–1,300 and can be pre-booked the night before through your hotel.",
+          },
+          {
+            q: "Is Songshan Airport (TSA) closer to Taipei than Taoyuan?",
+            a: "Yes — Taipei Songshan Airport (TSA) is inside the city and serves regional routes (Japan, South Korea, mainland China). If your flight arrives at TSA rather than TPE, taxis to most Taipei hotels are NT$200–450. Check which airport your airline uses before planning ground transport.",
+          },
+        ],
+      },
     ],
   },
 
   {
-    slug: 'taxi-klia-to-kuala-lumpur',
-    title: 'Taxi from KLIA to Kuala Lumpur City Centre: Cost & Guide (2026)',
-    description: 'KLIA is 55km from KL — taxis cost RM 70–100 but the KLIA Ekspres train is faster and cheaper for most travellers.',
-    publishedAt: '2026-04-01',
+    slug: "taxi-klia-to-kuala-lumpur",
+    title: "Taxi from KLIA to Kuala Lumpur City Centre: Cost & Guide (2026)",
+    description:
+      "KLIA is 55km from KL — taxis cost RM 70–100 but the KLIA Ekspres train is faster and cheaper for most travellers.",
+    publishedAt: "2026-04-01",
+    updatedAt: "2026-10-20",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'Kuala Lumpur',
-    citySlug: 'kuala-lumpur',
+    category: "taxi",
+    city: "Kuala Lumpur",
+    citySlug: "kuala-lumpur",
     content: [
-      { type: 'intro', body: 'Kuala Lumpur International Airport (KLIA and KLIA2) sits 55 kilometres south of the city in Sepang, Selangor. It is one of Southeast Asia\'s major aviation hubs and one of the further airport-to-city distances in the region. Pre-paid taxi counters at both terminals provide transparent fixed-rate pricing — the most recommended option for visitors as it eliminates metering ambiguity. The KLIA Ekspres train covers the distance in 28 minutes for RM 55, making it the benchmark all other options are measured against. Taxis remain the right choice for groups, families with significant luggage, or destinations not well-served by KL Sentral rail connections.' },
-      { type: 'h2', heading: 'KLIA to KL City Centre: Key Numbers' },
-      { type: 'table', rows: [
-        { label: 'Budget taxi (pre-paid counter, KLIA)', value: 'RM 70–80 to KL city centre (KLCC / Bukit Bintang)' },
-        { label: 'Premier / executive taxi (pre-paid counter)', value: 'RM 100–120 to KL city centre' },
-        { label: 'Family van taxi (6 seats)', value: 'RM 100–130 to city centre' },
-        { label: 'KLIA2 → KL city (budget cab)', value: 'RM 60–75 — slightly closer' },
-        { label: 'Grab from KLIA/KLIA2 drop-off zone', value: 'RM 40–70 — book in app, collect at designated zone' },
-        { label: 'Journey time by taxi (no traffic)', value: '45–60 minutes' },
-        { label: 'Journey time by taxi (peak hours)', value: '75–100 minutes' },
-        { label: 'KLIA Ekspres (KL Sentral)', value: 'RM 55 one-way — 28 minutes' },
-      ]},
-      { type: 'h2', heading: 'Typical Fares by Destination from KLIA' },
-      { type: 'table', rows: [
-        { label: 'KLIA → KLCC / Petronas Towers area', value: 'RM 75–90 (pre-paid budget cab)' },
-        { label: 'KLIA → Bukit Bintang / Pavilion', value: 'RM 75–90' },
-        { label: 'KLIA → KL Sentral (transit hub)', value: 'RM 65–75' },
-        { label: 'KLIA → Bangsar / Mid Valley', value: 'RM 70–85' },
-        { label: 'KLIA → Chow Kit / Little India', value: 'RM 80–95' },
-        { label: 'KLIA → Petaling Jaya (PJ)', value: 'RM 60–80' },
-        { label: 'KLIA → Putrajaya / Cyberjaya (nearby)', value: 'RM 30–50 — much closer than KL' },
-      ]},
-      { type: 'h2', heading: 'How to Get a Taxi at KLIA' },
-      { type: 'p', body: 'Always use the official pre-paid taxi counters inside the arrivals hall at KLIA and KLIA2 — do not negotiate with drivers approaching you in the terminal. The pre-paid counters are run by regulated taxi operators and display fixed prices by destination. Purchase your coupon at the counter, then proceed to the taxi rank where a dispatcher assigns you to your vehicle. The driver cannot charge you more than the coupon amount — hand it over at the end of the journey. At KLIA2 (budget airlines terminal), the same system applies with a separate taxi counter in the arrivals area.' },
-      { type: 'h2', heading: 'Grab from KLIA: The App Alternative' },
-      { type: 'p', body: 'Grab (the dominant ride-hailing app in Malaysia) operates from designated pick-up zones at both KLIA and KLIA2. Book via the Grab app before you exit arrivals, then follow signage to the "E-Hailing" or "TNCs" pick-up zone. Grab fares to KL city are typically RM 40–70 — often cheaper than the pre-paid taxi counter, though surge pricing during peak demand periods can narrow or eliminate the gap. The trade-off is the wait time and the fact that you have no guaranteed vehicle until the match is made in-app.' },
-      { type: 'h2', heading: 'KLIA Ekspres: The Fastest Option' },
-      { type: 'ul', items: [
-        'KLIA Ekspres: RM 55 one-way, 28 minutes to KL Sentral — fastest non-taxi option',
-        'KLIA Transit (local stops): RM 55, stops at Putrajaya, Salak Tinggi, Bandar Tasik Selatan, KL Sentral',
-        'Runs every 15–20 minutes, 5am–12:30am daily from both KLIA and KLIA2',
-        'From KL Sentral, connect to LRT (Kelana Jaya / Ampang), MRT, Monorail, Komuter — covers most of central KL',
-        'KLIA2 requires a free shuttle bus to the KLIA Ekspres station (runs every 10–15 minutes)',
-        'Not cost-efficient for groups: RM 55 × 4 people = RM 220 vs one RM 100 family cab',
-      ]},
-      { type: 'tip', body: 'If you have a Malaysian SIM or roaming data on arrival, open the Grab app immediately after landing and book your ride while walking to the baggage carousel. By the time you collect your bags, the driver is often already waiting. This saves the queue time at the taxi counter and is typically RM 15–30 cheaper.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'How much is a taxi from KLIA to Kuala Lumpur city centre?', a: 'RM 70–90 for a budget pre-paid taxi to KLCC or Bukit Bintang. Executive taxis are RM 100–120. Grab from the e-hailing zone is typically RM 40–70. Always use the pre-paid counter rather than a metered negotiated ride.' },
-        { q: 'How long does it take from KLIA to KL by taxi?', a: '45–60 minutes in normal traffic on the ELITE Highway. During weekday morning rush (7–9am) or evening peak (5–8pm), allow 75–100 minutes. Late-night arrivals (after 11pm) typically reach KL in 40–50 minutes.' },
-        { q: 'Is the KLIA Ekspres worth it vs a taxi?', a: 'For 1–2 people, yes — RM 55 vs RM 75–90 per person in a taxi, and 28 minutes vs 45–60. For 3–4 people sharing a taxi, the math flips: one taxi at RM 80 split by four is RM 20 each vs RM 55 each on the train. Groups should take a cab; individuals and pairs should take the express.' },
-        { q: 'Is KLIA or KLIA2 my terminal?', a: 'Full-service airlines (Malaysia Airlines, AirAsia X long-haul, Cathay, Emirates) use KLIA Main Terminal. Budget carriers (AirAsia domestic/regional, Malindo) use KLIA2. The two terminals are connected by a free shuttle bus — allow 20–30 minutes if you need to transfer between them.' },
-        { q: 'Can I hail a meter taxi at KLIA?', a: 'You should not — unmetered negotiated taxis at airports are common in KL and often charge 2–3× the fair rate. Always use the official pre-paid counter inside arrivals or the Grab e-hailing zone. Never accept pricing offers from drivers approaching you in the terminal.' },
-        { q: 'How far is KLIA from Kuala Lumpur?', a: '55 kilometres by road via the ELITE Highway. Putrajaya and Cyberjaya are much closer (20–30km) — if your destination is either of these government/tech districts, taxi fares are RM 30–50, a fraction of the KL-bound fare.' },
-      ]},
+      {
+        type: "intro",
+        body: "Kuala Lumpur International Airport (KLIA and KLIA2) sits 55 kilometres south of the city in Sepang, Selangor. It is one of Southeast Asia's major aviation hubs and one of the further airport-to-city distances in the region. Pre-paid taxi counters at both terminals provide transparent fixed-rate pricing — the most recommended option for visitors as it eliminates metering ambiguity. The KLIA Ekspres train covers the distance in 28 minutes for RM 55, making it the benchmark all other options are measured against. Taxis remain the right choice for groups, families with significant luggage, or destinations not well-served by KL Sentral rail connections.",
+      },
+      { type: "h2", heading: "KLIA to KL City Centre: Key Numbers" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Budget taxi (pre-paid counter, KLIA)",
+            value: "RM 70–80 to KL city centre (KLCC / Bukit Bintang)",
+          },
+          {
+            label: "Premier / executive taxi (pre-paid counter)",
+            value: "RM 100–120 to KL city centre",
+          },
+          {
+            label: "Family van taxi (6 seats)",
+            value: "RM 100–130 to city centre",
+          },
+          {
+            label: "KLIA2 → KL city (budget cab)",
+            value: "RM 60–75 — slightly closer",
+          },
+          {
+            label: "Grab from KLIA/KLIA2 drop-off zone",
+            value: "RM 40–70 — book in app, collect at designated zone",
+          },
+          {
+            label: "Journey time by taxi (no traffic)",
+            value: "45–60 minutes",
+          },
+          {
+            label: "Journey time by taxi (peak hours)",
+            value: "75–100 minutes",
+          },
+          {
+            label: "KLIA Ekspres (KL Sentral)",
+            value: "RM 55 one-way — 28 minutes",
+          },
+        ],
+      },
+      { type: "h2", heading: "Typical Fares by Destination from KLIA" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "KLIA → KLCC / Petronas Towers area",
+            value: "RM 75–90 (pre-paid budget cab)",
+          },
+          { label: "KLIA → Bukit Bintang / Pavilion", value: "RM 75–90" },
+          { label: "KLIA → KL Sentral (transit hub)", value: "RM 65–75" },
+          { label: "KLIA → Bangsar / Mid Valley", value: "RM 70–85" },
+          { label: "KLIA → Chow Kit / Little India", value: "RM 80–95" },
+          { label: "KLIA → Petaling Jaya (PJ)", value: "RM 60–80" },
+          {
+            label: "KLIA → Putrajaya / Cyberjaya (nearby)",
+            value: "RM 30–50 — much closer than KL",
+          },
+        ],
+      },
+      { type: "h2", heading: "How to Get a Taxi at KLIA" },
+      {
+        type: "p",
+        body: "Always use the official pre-paid taxi counters inside the arrivals hall at KLIA and KLIA2 — do not negotiate with drivers approaching you in the terminal. The pre-paid counters are run by regulated taxi operators and display fixed prices by destination. Purchase your coupon at the counter, then proceed to the taxi rank where a dispatcher assigns you to your vehicle. The driver cannot charge you more than the coupon amount — hand it over at the end of the journey. At KLIA2 (budget airlines terminal), the same system applies with a separate taxi counter in the arrivals area.",
+      },
+      { type: "h2", heading: "Grab from KLIA: The App Alternative" },
+      {
+        type: "p",
+        body: 'Grab (the dominant ride-hailing app in Malaysia) operates from designated pick-up zones at both KLIA and KLIA2. Book via the Grab app before you exit arrivals, then follow signage to the "E-Hailing" or "TNCs" pick-up zone. Grab fares to KL city are typically RM 40–70 — often cheaper than the pre-paid taxi counter, though surge pricing during peak demand periods can narrow or eliminate the gap. The trade-off is the wait time and the fact that you have no guaranteed vehicle until the match is made in-app.',
+      },
+      { type: "h2", heading: "KLIA Ekspres: The Fastest Option" },
+      {
+        type: "ul",
+        items: [
+          "KLIA Ekspres: RM 55 one-way, 28 minutes to KL Sentral — fastest non-taxi option",
+          "KLIA Transit (local stops): RM 55, stops at Putrajaya, Salak Tinggi, Bandar Tasik Selatan, KL Sentral",
+          "Runs every 15–20 minutes, 5am–12:30am daily from both KLIA and KLIA2",
+          "From KL Sentral, connect to LRT (Kelana Jaya / Ampang), MRT, Monorail, Komuter — covers most of central KL",
+          "KLIA2 requires a free shuttle bus to the KLIA Ekspres station (runs every 10–15 minutes)",
+          "Not cost-efficient for groups: RM 55 × 4 people = RM 220 vs one RM 100 family cab",
+        ],
+      },
+      {
+        type: "tip",
+        body: "If you have a Malaysian SIM or roaming data on arrival, open the Grab app immediately after landing and book your ride while walking to the baggage carousel. By the time you collect your bags, the driver is often already waiting. This saves the queue time at the taxi counter and is typically RM 15–30 cheaper.",
+      },
+      {
+        type: "h2",
+        heading: "Driving to KLIA & Parking Costs: Is It Cheaper Than a Taxi?",
+      },
+      {
+        type: "p",
+        body: "If you're self-driving to KLIA rather than being dropped off, the question is whether parking for the duration of your trip beats the cost of a taxi or Grab both ways. KLIA has several parking tiers, and rates have shifted in 2026 — Malaysia Airports raised the Long-Term Car Park's daily cap from RM 27 to RM 32 in May 2026, and a viral RM 384 bill for a 12-day stay (≈RM 32/day) shows the new rate in practice. Always confirm current tariffs on the Malaysia Airports site before you travel, as short-term rates in particular have changed more than once this year.",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Long-Term Car Park (LTCP)",
+            value: "RM 2.50/hour, capped at RM 32/day",
+          },
+          {
+            label: "klia2 short-term (1st–2nd day)",
+            value: "Up to RM 52/day — hourly from RM 2–5",
+          },
+          {
+            label: "gateway@klia2 (1st–4th day)",
+            value: "Up to RM 55/day, RM 10/day from day 7 (incl. 6% tax)",
+          },
+          { label: "Preferred (closest) parking", value: "Up to RM 150/day" },
+          {
+            label: "Round-trip taxi/Grab (no parking)",
+            value: "RM 80–140 total (both legs, budget to premier)",
+          },
+        ],
+      },
+      {
+        type: "warning",
+        body: "For a typical 3–5 day trip, Long-Term Car Park parking alone (RM 32/day = RM 96–160) already costs about the same as a round-trip taxi or Grab — and that's before counting fuel, tolls, and the inconvenience of leaving a car at the airport for a week. Parking only wins financially on very short trips (1–2 days) or if you're dropping off and picking up passengers rather than leaving a car unattended for the full trip.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from KLIA to Kuala Lumpur city centre?",
+            a: "RM 70–90 for a budget pre-paid taxi to KLCC or Bukit Bintang. Executive taxis are RM 100–120. Grab from the e-hailing zone is typically RM 40–70. Always use the pre-paid counter rather than a metered negotiated ride.",
+          },
+          {
+            q: "How long does it take from KLIA to KL by taxi?",
+            a: "45–60 minutes in normal traffic on the ELITE Highway. During weekday morning rush (7–9am) or evening peak (5–8pm), allow 75–100 minutes. Late-night arrivals (after 11pm) typically reach KL in 40–50 minutes.",
+          },
+          {
+            q: "Is the KLIA Ekspres worth it vs a taxi?",
+            a: "For 1–2 people, yes — RM 55 vs RM 75–90 per person in a taxi, and 28 minutes vs 45–60. For 3–4 people sharing a taxi, the math flips: one taxi at RM 80 split by four is RM 20 each vs RM 55 each on the train. Groups should take a cab; individuals and pairs should take the express.",
+          },
+          {
+            q: "Is it cheaper to drive and park at KLIA than take a taxi?",
+            a: "Usually not for trips longer than 2–3 days. Long-Term Car Park parking is capped at RM 32/day (RM 2.50/hour) as of May 2026 — a 5-day trip costs around RM 160 in parking alone, versus RM 80–140 for a round-trip taxi or Grab with no parking hassle. Parking only makes sense for very short trips or airport drop-offs/pickups where you're not leaving the car unattended.",
+          },
+          {
+            q: "Is KLIA or KLIA2 my terminal?",
+            a: "Full-service airlines (Malaysia Airlines, AirAsia X long-haul, Cathay, Emirates) use KLIA Main Terminal. Budget carriers (AirAsia domestic/regional, Malindo) use KLIA2. The two terminals are connected by a free shuttle bus — allow 20–30 minutes if you need to transfer between them.",
+          },
+          {
+            q: "Can I hail a meter taxi at KLIA?",
+            a: "You should not — unmetered negotiated taxis at airports are common in KL and often charge 2–3× the fair rate. Always use the official pre-paid counter inside arrivals or the Grab e-hailing zone. Never accept pricing offers from drivers approaching you in the terminal.",
+          },
+          {
+            q: "How far is KLIA from Kuala Lumpur?",
+            a: "55 kilometres by road via the ELITE Highway. Putrajaya and Cyberjaya are much closer (20–30km) — if your destination is either of these government/tech districts, taxi fares are RM 30–50, a fraction of the KL-bound fare.",
+          },
+        ],
+      },
     ],
   },
 
   {
-    slug: 'taxi-jfk-to-new-york',
-    title: 'Taxi from JFK Airport to Manhattan: Fixed Fare Guide (2026)',
-    description: "The JFK to Manhattan flat rate is $70 — add tolls and a 15–20% tip and the real cost is $90–110. Unlicensed black cars inside the terminal quote $100–150 for the same ride. Here's the full 2026 guide to the legitimate taxi queue, and when the $8.25 AirTrain + subway wins.",
-    publishedAt: '2026-04-04',
+    slug: "taxi-jfk-to-new-york",
+    title: "Taxi from JFK Airport to Manhattan: Fixed Fare Guide (2026)",
+    description:
+      "The JFK to Manhattan flat rate is $70 — add tolls and a 15–20% tip and the real cost is $90–110. Unlicensed black cars inside the terminal quote $100–150 for the same ride. Here's the full 2026 guide to the legitimate taxi queue, and when the $8.25 AirTrain + subway wins.",
+    publishedAt: "2026-04-04",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'New York',
-    citySlug: 'new-york',
+    category: "taxi",
+    city: "New York",
+    citySlug: "new-york",
     content: [
-      { type: 'intro', body: 'New York City taxis from JFK to Manhattan operate on a flat rate — not the meter — making JFK one of the most straightforward airport taxi systems in the world. The flat rate was raised to $70 in January 2024 (up from $52 where it had sat since 1996). On top of the flat fare, passengers pay applicable tolls ($9.50–19 depending on entry point) and the customary 15–20% tip, bringing the all-in total to approximately $90–110. For solo travellers, the express subway is dramatically cheaper ($2.90 via the AirTrain + A train). For groups of 3–4, the taxi often becomes competitive on a per-person basis.' },
-      { type: 'h2', heading: 'JFK to Manhattan: Key Numbers' },
-      { type: 'table', rows: [
-        { label: 'Flat fare (JFK → Manhattan, below 96th St)', value: '$70 — fixed, not metered' },
-        { label: 'MTA congestion surcharge (2025+)', value: '$2.50 — added to all trips' },
-        { label: 'Midtown Tunnel toll (Queens–Midtown Tunnel)', value: '$9.50 E-ZPass / $11.25 cash' },
-        { label: 'Lincoln Tunnel toll (to NJ side routes)', value: '$17–19 depending on entry' },
-        { label: 'Triborough/RFK Bridge (Upper East Side)', value: '$7.17 E-ZPass / $8.50 cash' },
-        { label: 'Typical tip (15–20%)', value: '$10.50–14 on the $70 fare' },
-        { label: 'Total all-in (Midtown via tunnel, with tip)', value: 'Approximately $92–107' },
-        { label: 'Night surcharge (8pm–6am)', value: '$0.50 per 0.2 miles on any metered portion — flat fare unaffected' },
-      ]},
-      { type: 'h2', heading: 'What the $70 Flat Rate Covers — and What It Does Not' },
-      { type: 'p', body: 'The $70 flat rate covers all taxi meter charges for any destination in Manhattan below 96th Street — regardless of route, traffic, or time of day. It does not cover: (1) tolls, which are added to the $70 and paid by the passenger; (2) the tip, which is at your discretion but expected at 15–20%; (3) any destination above 96th Street in Manhattan, which reverts to the metered rate; (4) destinations outside Manhattan (Brooklyn, Queens, the Bronx) which are metered. The flat rate applies in both directions — a metered taxi going back to JFK from Manhattan will use the meter, not a flat rate.' },
-      { type: 'h2', heading: 'JFK Taxi Process — Step by Step' },
-      { type: 'p', body: 'Exit your terminal and follow signs to "Taxi." All JFK terminals funnel taxis through a central taxi dispatcher on the ground-floor arrivals level. A dispatcher in a yellow vest will direct you to the next available yellow cab in the queue. There is no need to negotiate or state a price — every yellow cab is required by law to offer the $70 flat rate to Manhattan. Say "Manhattan" when you enter the cab and the driver will confirm. Do not accept offers from unlicensed drivers (black cars, SUVs) approaching you in the terminal — these are illegal and typically charge $100–150 for the same trip.' },
-      { type: 'h2', heading: 'Alternatives to JFK Taxis' },
-      { type: 'ul', items: [
-        'AirTrain + NYC Subway (A train): $8.25 total from any JFK terminal to Manhattan — 55–75 minutes to Midtown; the cheapest option by far',
-        'AirTrain + LIRR (Long Island Rail Road): $9–15 + AirTrain, 35 minutes to Penn Station — fastest rail option',
-        'Uber / Lyft from JFK: $50–80 for a standard car depending on surge pricing; pick-up from the app-based ride-hailing zone (follow yellow "Uber/Lyft" signs)',
-        'NYC Express Bus (NYM1 / B15): $3.25, reaches downtown Brooklyn and beyond — very slow but very cheap',
-        'Pre-booked private car service: $85–120 flat rate, driver meets you at arrivals with a name sign — popular for business travellers',
-      ]},
-      { type: 'warning', body: 'Never accept rides from unlicensed "black car" drivers who approach you in the arrivals hall at JFK. They often look professional but are operating illegally and typically quote $100–150 or more for the trip. The legitimate yellow taxi queue is outside on the arrivals kerb — follow the dispatcher\'s direction and only enter metered yellow cabs.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'How much is the flat taxi fare from JFK to Manhattan?', a: '$70 flat rate for any destination in Manhattan below 96th Street, set by the NYC Taxi & Limousine Commission. On top of this: applicable tolls ($9.50–19) and tip (15–20%). Total all-in is typically $90–107 for Midtown Manhattan.' },
-        { q: 'Is the JFK flat rate in both directions?', a: 'No — the $70 flat rate applies only from JFK to Manhattan. Going from Manhattan to JFK, the taxi runs on the meter. Manhattan to JFK is typically $55–75 depending on origin and traffic, plus tolls and tip.' },
-        { q: 'How long does the taxi take from JFK to Midtown Manhattan?', a: '35–55 minutes in normal traffic via the Queens–Midtown Tunnel or Queensboro Bridge. During rush hours (7–9am, 4–7pm), allow 60–90 minutes. Late-night arrivals are typically 30–40 minutes with clear roads.' },
-        { q: 'Is Uber cheaper than a yellow cab from JFK?', a: 'Often, but not always. Uber\'s base fare to Midtown is typically $50–70 but surges to $90–120+ during peak demand (Friday evenings, holidays, bad weather). The yellow cab flat rate of $70 + tolls is more predictable if Uber is showing surge pricing.' },
-        { q: 'Can I use the AirTrain + Subway instead?', a: 'Yes — and for solo travellers it\'s by far the cheapest option ($8.25 total). The AirTrain ($8) connects to the Jamaica AirTrain hub where you board the A train ($2.90 but included in the AirTrain payment). Journey time to Midtown is 55–75 minutes. Not ideal with heavy luggage but completely manageable for one bag.' },
-        { q: 'What about LaGuardia (LGA) and Newark (EWR)?', a: 'LGA taxis to Manhattan are metered (not flat rate) — approximately $30–50 depending on destination. EWR taxis charge a $5 airport surcharge plus the meter, typically totalling $65–90 to Midtown plus tolls and tip. NJ Transit to Penn Station ($17 + $7.75 AirTrain) is the budget option from Newark.' },
-      ]},
+      {
+        type: "intro",
+        body: "New York City taxis from JFK to Manhattan operate on a flat rate — not the meter — making JFK one of the most straightforward airport taxi systems in the world. The flat rate was raised to $70 in January 2024 (up from $52 where it had sat since 1996). On top of the flat fare, passengers pay applicable tolls ($9.50–19 depending on entry point) and the customary 15–20% tip, bringing the all-in total to approximately $90–110. For solo travellers, the express subway is dramatically cheaper ($2.90 via the AirTrain + A train). For groups of 3–4, the taxi often becomes competitive on a per-person basis.",
+      },
+      { type: "h2", heading: "JFK to Manhattan: Key Numbers" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Flat fare (JFK → Manhattan, below 96th St)",
+            value: "$70 — fixed, not metered",
+          },
+          {
+            label: "MTA congestion surcharge (2025+)",
+            value: "$2.50 — added to all trips",
+          },
+          {
+            label: "Midtown Tunnel toll (Queens–Midtown Tunnel)",
+            value: "$9.50 E-ZPass / $11.25 cash",
+          },
+          {
+            label: "Lincoln Tunnel toll (to NJ side routes)",
+            value: "$17–19 depending on entry",
+          },
+          {
+            label: "Triborough/RFK Bridge (Upper East Side)",
+            value: "$7.17 E-ZPass / $8.50 cash",
+          },
+          { label: "Typical tip (15–20%)", value: "$10.50–14 on the $70 fare" },
+          {
+            label: "Total all-in (Midtown via tunnel, with tip)",
+            value: "Approximately $92–107",
+          },
+          {
+            label: "Night surcharge (8pm–6am)",
+            value:
+              "$0.50 per 0.2 miles on any metered portion — flat fare unaffected",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "What the $70 Flat Rate Covers — and What It Does Not",
+      },
+      {
+        type: "p",
+        body: "The $70 flat rate covers all taxi meter charges for any destination in Manhattan below 96th Street — regardless of route, traffic, or time of day. It does not cover: (1) tolls, which are added to the $70 and paid by the passenger; (2) the tip, which is at your discretion but expected at 15–20%; (3) any destination above 96th Street in Manhattan, which reverts to the metered rate; (4) destinations outside Manhattan (Brooklyn, Queens, the Bronx) which are metered. The flat rate applies in both directions — a metered taxi going back to JFK from Manhattan will use the meter, not a flat rate.",
+      },
+      { type: "h2", heading: "JFK Taxi Process — Step by Step" },
+      {
+        type: "p",
+        body: 'Exit your terminal and follow signs to "Taxi." All JFK terminals funnel taxis through a central taxi dispatcher on the ground-floor arrivals level. A dispatcher in a yellow vest will direct you to the next available yellow cab in the queue. There is no need to negotiate or state a price — every yellow cab is required by law to offer the $70 flat rate to Manhattan. Say "Manhattan" when you enter the cab and the driver will confirm. Do not accept offers from unlicensed drivers (black cars, SUVs) approaching you in the terminal — these are illegal and typically charge $100–150 for the same trip.',
+      },
+      { type: "h2", heading: "Alternatives to JFK Taxis" },
+      {
+        type: "ul",
+        items: [
+          "AirTrain + NYC Subway (A train): $8.25 total from any JFK terminal to Manhattan — 55–75 minutes to Midtown; the cheapest option by far",
+          "AirTrain + LIRR (Long Island Rail Road): $9–15 + AirTrain, 35 minutes to Penn Station — fastest rail option",
+          'Uber / Lyft from JFK: $50–80 for a standard car depending on surge pricing; pick-up from the app-based ride-hailing zone (follow yellow "Uber/Lyft" signs)',
+          "NYC Express Bus (NYM1 / B15): $3.25, reaches downtown Brooklyn and beyond — very slow but very cheap",
+          "Pre-booked private car service: $85–120 flat rate, driver meets you at arrivals with a name sign — popular for business travellers",
+        ],
+      },
+      {
+        type: "warning",
+        body: 'Never accept rides from unlicensed "black car" drivers who approach you in the arrivals hall at JFK. They often look professional but are operating illegally and typically quote $100–150 or more for the trip. The legitimate yellow taxi queue is outside on the arrivals kerb — follow the dispatcher\'s direction and only enter metered yellow cabs.',
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is the flat taxi fare from JFK to Manhattan?",
+            a: "$70 flat rate for any destination in Manhattan below 96th Street, set by the NYC Taxi & Limousine Commission. On top of this: applicable tolls ($9.50–19) and tip (15–20%). Total all-in is typically $90–107 for Midtown Manhattan.",
+          },
+          {
+            q: "Is the JFK flat rate in both directions?",
+            a: "No — the $70 flat rate applies only from JFK to Manhattan. Going from Manhattan to JFK, the taxi runs on the meter. Manhattan to JFK is typically $55–75 depending on origin and traffic, plus tolls and tip.",
+          },
+          {
+            q: "How long does the taxi take from JFK to Midtown Manhattan?",
+            a: "35–55 minutes in normal traffic via the Queens–Midtown Tunnel or Queensboro Bridge. During rush hours (7–9am, 4–7pm), allow 60–90 minutes. Late-night arrivals are typically 30–40 minutes with clear roads.",
+          },
+          {
+            q: "Is Uber cheaper than a yellow cab from JFK?",
+            a: "Often, but not always. Uber's base fare to Midtown is typically $50–70 but surges to $90–120+ during peak demand (Friday evenings, holidays, bad weather). The yellow cab flat rate of $70 + tolls is more predictable if Uber is showing surge pricing.",
+          },
+          {
+            q: "Can I use the AirTrain + Subway instead?",
+            a: "Yes — and for solo travellers it's by far the cheapest option ($8.25 total). The AirTrain ($8) connects to the Jamaica AirTrain hub where you board the A train ($2.90 but included in the AirTrain payment). Journey time to Midtown is 55–75 minutes. Not ideal with heavy luggage but completely manageable for one bag.",
+          },
+          {
+            q: "What about LaGuardia (LGA) and Newark (EWR)?",
+            a: "LGA taxis to Manhattan are metered (not flat rate) — approximately $30–50 depending on destination. EWR taxis charge a $5 airport surcharge plus the meter, typically totalling $65–90 to Midtown plus tolls and tip. NJ Transit to Penn Station ($17 + $7.75 AirTrain) is the budget option from Newark.",
+          },
+        ],
+      },
     ],
   },
 
   {
-    slug: 'taxi-istanbul-airport-to-city',
-    title: 'Taxi from Istanbul Airport (IST) to the City: Cost & Guide (2026)',
-    description: "A taxi from Istanbul Airport to Taksim costs ₺1,880–2,200 for the 40km ride — the Havaist bus covers it for ₺100–200, and the M11 metro connects in about 35 minutes. Here's the full 2026 guide, including the fixed-price scam to avoid (always insist on the meter).",
-    publishedAt: '2026-04-07',
+    slug: "taxi-istanbul-airport-to-city",
+    title: "Taxi from Istanbul Airport (IST) to the City: Cost & Guide (2026)",
+    description:
+      "A taxi from Istanbul Airport to Taksim costs ₺1,880–2,200 for the 40km ride — the Havaist bus covers it for ₺100–200, and the M11 metro connects in about 35 minutes. Here's the full 2026 guide, including the fixed-price scam to avoid (always insist on the meter).",
+    publishedAt: "2026-04-07",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'Istanbul',
-    citySlug: 'istanbul',
+    category: "taxi",
+    city: "Istanbul",
+    citySlug: "istanbul",
     content: [
-      { type: 'intro', body: 'Istanbul Airport (IST), which replaced Atatürk Airport in 2019, is located on the European side of Istanbul\'s northwestern suburbs — approximately 35–45km from Sultanahmet (the historic Old City) and Taksim Square. Taxis from IST are plentiful and metered, but Turkey\'s rapid inflation means fares shift frequently; the numbers in this guide reflect 2026 rates. The journey to the city centre takes 45–75 minutes depending on traffic, with Istanbul\'s notorious congestion meaning peak-hour journeys can stretch to 90 minutes or more. For budget-conscious travellers, the Havaist airport bus service provides a reliable, comfortable, and far cheaper alternative.' },
-      { type: 'h2', heading: 'Istanbul Airport to City: Key Numbers' },
-      { type: 'table', rows: [
-        { label: 'Taxi flag-fall', value: '₺80' },
-        { label: 'Rate per km', value: '₺45 per km' },
-        { label: 'Night surcharge (midnight–6am)', value: '+50% of the metered fare' },
-        { label: 'Airport surcharge', value: 'No official surcharge — meter runs from pickup' },
-        { label: 'IST → Taksim Square (40km)', value: 'Approximately ₺1,880–2,100 (daytime)' },
-        { label: 'IST → Sultanahmet / Old City (45km)', value: 'Approximately ₺2,100–2,400 (daytime)' },
-        { label: 'IST → Beşiktaş / Karaköy', value: 'Approximately ₺1,900–2,200 (daytime)' },
-        { label: 'Havaist airport bus (IETT)', value: '₺100–200 depending on route — 60–90 minutes' },
-      ]},
-      { type: 'h2', heading: 'Typical Fares by Destination from IST' },
-      { type: 'table', rows: [
-        { label: 'IST → Taksim (European side hub)', value: '₺1,880–2,200' },
-        { label: 'IST → Sultanahmet (Old City / Hagia Sophia)', value: '₺2,100–2,500' },
-        { label: 'IST → Kadıköy (Asian side)', value: '₺2,500–3,200 (includes Bosphorus bridge toll)' },
-        { label: 'IST → Üsküdar (Asian side)', value: '₺2,400–3,000 (bridge toll included)' },
-        { label: 'IST → Beşiktaş / Ortaköy', value: '₺1,800–2,100' },
-        { label: 'IST → Fatih / Grand Bazaar area', value: '₺2,000–2,300' },
-        { label: 'IST → Gayrettepe (ITU Metro station)', value: '₺1,200–1,600 — short trip to metro' },
-      ]},
-      { type: 'h2', heading: 'How to Get a Taxi at Istanbul Airport' },
-      { type: 'p', body: 'The taxi rank at IST is on the ground floor of the International Arrivals hall — follow signs for "Taxi / Taksi." Only take yellow metered taxis from the official rank. Ensure the meter is running before the car moves — the driver must start the meter at the beginning of the journey. Taxis to the Asian side of Istanbul cross the Bosphorus via the 15 Temmuz Şehitler Bridge (15 July Martyrs Bridge, formerly Bosphorus Bridge) or the Fatih Sultan Mehmet Bridge; bridge tolls are paid by the passenger and added to the total fare.' },
-      { type: 'h2', heading: 'Havaist Bus: The Smart Budget Alternative' },
-      { type: 'ul', items: [
-        'Havaist (IETT) routes from IST serve Taksim, Beşiktaş, Mecidiyeköy, Kadıköy, and other major stops — ₺100–200',
-        'H1 (Taksim): ₺100–180, 60–90 minutes depending on traffic',
-        'H2 (Beşiktaş): ₺100–150, 50–70 minutes',
-        'Runs 24 hours on most routes — check IETT or Havaist app for schedule',
-        'Airport Metro (M11 line): connects IST to Gayrettepe station in ~35 minutes for approximately ₺60–90 (from Gayrettepe, transfer to M2 for Taksim/Şişli)',
-        'The M11 metro opened in 2023 — the fastest budget option to connect to the main metro network',
-      ]},
-      { type: 'warning', body: 'Be wary of taxi drivers who quote a fixed price rather than using the meter, particularly for journeys to major tourist areas (Sultanahmet, Taksim). Fixed quotes are almost always significantly higher than the metered rate. Insist on the meter — "Sayaç lütfen" (SAH-yach loot-fen) means "Meter please" in Turkish. If a driver refuses to use the meter, exit the vehicle and join the official queue.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'How much is a taxi from Istanbul Airport to Taksim?', a: 'Approximately ₺1,880–2,200 for the 40km daytime journey. Night fares (midnight–6am) are 50% higher. At current exchange rates (~38 TRY/USD), this is approximately $50–58 USD — similar to a Western European airport taxi.' },
-        { q: 'How far is the new Istanbul Airport from the city centre?', a: '35km to Beşiktaş, 40km to Taksim, 45km to Sultanahmet (Old City). The old Atatürk Airport was much closer (15–20km). IST\'s distance is why the Havaist bus and the M11 metro are worth considering.' },
-        { q: 'What is the airport bus to Istanbul and how much does it cost?', a: 'Havaist buses (IETT) run from IST to multiple city destinations. H1 to Taksim runs 24 hours and costs ₺100–180 (under $5 USD). Allow 60–90 minutes depending on traffic — usually faster late at night.' },
-        { q: 'How long does the taxi take from Istanbul Airport to the city?', a: '45–65 minutes to Taksim or Sultanahmet in normal conditions. During Istanbul\'s severe rush hours (8–10am and 5–8pm weekdays), the journey can extend to 90–120 minutes. The O-7 highway from the airport is often congested. Late-night arrivals are typically 35–50 minutes.' },
-        { q: 'Is there a metro from Istanbul Airport?', a: 'Yes — the M11 line connects IST directly to Gayrettepe station, where it connects to M2 (for Taksim and the Bosphorus area). The M11 opened in 2023 and is a major improvement in airport access. Journey time is approximately 35–40 minutes to Gayrettepe, then another 10–15 minutes on M2.' },
-        { q: 'Do I tip taxi drivers in Istanbul?', a: 'Tipping taxi drivers is not expected in Turkey. Pay the metered amount and nothing further is required. If a driver provides genuinely helpful service (carrying heavy luggage, navigating complex routes), rounding up by ₺50–100 is a kind gesture — but tipping is not obligatory.' },
-      ]},
+      {
+        type: "intro",
+        body: "Istanbul Airport (IST), which replaced Atatürk Airport in 2019, is located on the European side of Istanbul's northwestern suburbs — approximately 35–45km from Sultanahmet (the historic Old City) and Taksim Square. Taxis from IST are plentiful and metered, but Turkey's rapid inflation means fares shift frequently; the numbers in this guide reflect 2026 rates. The journey to the city centre takes 45–75 minutes depending on traffic, with Istanbul's notorious congestion meaning peak-hour journeys can stretch to 90 minutes or more. For budget-conscious travellers, the Havaist airport bus service provides a reliable, comfortable, and far cheaper alternative.",
+      },
+      { type: "h2", heading: "Istanbul Airport to City: Key Numbers" },
+      {
+        type: "table",
+        rows: [
+          { label: "Taxi flag-fall", value: "₺80" },
+          { label: "Rate per km", value: "₺45 per km" },
+          {
+            label: "Night surcharge (midnight–6am)",
+            value: "+50% of the metered fare",
+          },
+          {
+            label: "Airport surcharge",
+            value: "No official surcharge — meter runs from pickup",
+          },
+          {
+            label: "IST → Taksim Square (40km)",
+            value: "Approximately ₺1,880–2,100 (daytime)",
+          },
+          {
+            label: "IST → Sultanahmet / Old City (45km)",
+            value: "Approximately ₺2,100–2,400 (daytime)",
+          },
+          {
+            label: "IST → Beşiktaş / Karaköy",
+            value: "Approximately ₺1,900–2,200 (daytime)",
+          },
+          {
+            label: "Havaist airport bus (IETT)",
+            value: "₺100–200 depending on route — 60–90 minutes",
+          },
+        ],
+      },
+      { type: "h2", heading: "Typical Fares by Destination from IST" },
+      {
+        type: "table",
+        rows: [
+          { label: "IST → Taksim (European side hub)", value: "₺1,880–2,200" },
+          {
+            label: "IST → Sultanahmet (Old City / Hagia Sophia)",
+            value: "₺2,100–2,500",
+          },
+          {
+            label: "IST → Kadıköy (Asian side)",
+            value: "₺2,500–3,200 (includes Bosphorus bridge toll)",
+          },
+          {
+            label: "IST → Üsküdar (Asian side)",
+            value: "₺2,400–3,000 (bridge toll included)",
+          },
+          { label: "IST → Beşiktaş / Ortaköy", value: "₺1,800–2,100" },
+          { label: "IST → Fatih / Grand Bazaar area", value: "₺2,000–2,300" },
+          {
+            label: "IST → Gayrettepe (ITU Metro station)",
+            value: "₺1,200–1,600 — short trip to metro",
+          },
+        ],
+      },
+      { type: "h2", heading: "How to Get a Taxi at Istanbul Airport" },
+      {
+        type: "p",
+        body: 'The taxi rank at IST is on the ground floor of the International Arrivals hall — follow signs for "Taxi / Taksi." Only take yellow metered taxis from the official rank. Ensure the meter is running before the car moves — the driver must start the meter at the beginning of the journey. Taxis to the Asian side of Istanbul cross the Bosphorus via the 15 Temmuz Şehitler Bridge (15 July Martyrs Bridge, formerly Bosphorus Bridge) or the Fatih Sultan Mehmet Bridge; bridge tolls are paid by the passenger and added to the total fare.',
+      },
+      { type: "h2", heading: "Havaist Bus: The Smart Budget Alternative" },
+      {
+        type: "ul",
+        items: [
+          "Havaist (IETT) routes from IST serve Taksim, Beşiktaş, Mecidiyeköy, Kadıköy, and other major stops — ₺100–200",
+          "H1 (Taksim): ₺100–180, 60–90 minutes depending on traffic",
+          "H2 (Beşiktaş): ₺100–150, 50–70 minutes",
+          "Runs 24 hours on most routes — check IETT or Havaist app for schedule",
+          "Airport Metro (M11 line): connects IST to Gayrettepe station in ~35 minutes for approximately ₺60–90 (from Gayrettepe, transfer to M2 for Taksim/Şişli)",
+          "The M11 metro opened in 2023 — the fastest budget option to connect to the main metro network",
+        ],
+      },
+      {
+        type: "warning",
+        body: 'Be wary of taxi drivers who quote a fixed price rather than using the meter, particularly for journeys to major tourist areas (Sultanahmet, Taksim). Fixed quotes are almost always significantly higher than the metered rate. Insist on the meter — "Sayaç lütfen" (SAH-yach loot-fen) means "Meter please" in Turkish. If a driver refuses to use the meter, exit the vehicle and join the official queue.',
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Istanbul Airport to Taksim?",
+            a: "Approximately ₺1,880–2,200 for the 40km daytime journey. Night fares (midnight–6am) are 50% higher. At current exchange rates (~38 TRY/USD), this is approximately $50–58 USD — similar to a Western European airport taxi.",
+          },
+          {
+            q: "How far is the new Istanbul Airport from the city centre?",
+            a: "35km to Beşiktaş, 40km to Taksim, 45km to Sultanahmet (Old City). The old Atatürk Airport was much closer (15–20km). IST's distance is why the Havaist bus and the M11 metro are worth considering.",
+          },
+          {
+            q: "What is the airport bus to Istanbul and how much does it cost?",
+            a: "Havaist buses (IETT) run from IST to multiple city destinations. H1 to Taksim runs 24 hours and costs ₺100–180 (under $5 USD). Allow 60–90 minutes depending on traffic — usually faster late at night.",
+          },
+          {
+            q: "How long does the taxi take from Istanbul Airport to the city?",
+            a: "45–65 minutes to Taksim or Sultanahmet in normal conditions. During Istanbul's severe rush hours (8–10am and 5–8pm weekdays), the journey can extend to 90–120 minutes. The O-7 highway from the airport is often congested. Late-night arrivals are typically 35–50 minutes.",
+          },
+          {
+            q: "Is there a metro from Istanbul Airport?",
+            a: "Yes — the M11 line connects IST directly to Gayrettepe station, where it connects to M2 (for Taksim and the Bosphorus area). The M11 opened in 2023 and is a major improvement in airport access. Journey time is approximately 35–40 minutes to Gayrettepe, then another 10–15 minutes on M2.",
+          },
+          {
+            q: "Do I tip taxi drivers in Istanbul?",
+            a: "Tipping taxi drivers is not expected in Turkey. Pay the metered amount and nothing further is required. If a driver provides genuinely helpful service (carrying heavy luggage, navigating complex routes), rounding up by ₺50–100 is a kind gesture — but tipping is not obligatory.",
+          },
+        ],
+      },
     ],
   },
 
   {
-    slug: 'taxi-ngurah-rai-to-bali',
-    title: 'Taxi from Bali Airport (DPS) to Seminyak, Kuta & Ubud: Cost Guide (2026)',
-    description: "Bali Airport runs a fixed-price taxi system, not metered — IDR 100,000–140,000 to Seminyak — and Grab is banned from the pickup zone entirely (walk 500m to the public road to book one). Here's the full 2026 guide to the official Kosti Bali counter and avoiding the tout zone outside.",
-    publishedAt: '2026-04-10',
+    slug: "taxi-ngurah-rai-to-bali",
+    title:
+      "Taxi from Bali Airport (DPS) to Seminyak, Kuta & Ubud: Cost Guide (2026)",
+    description:
+      "Bali Airport runs a fixed-price taxi system, not metered — IDR 100,000–140,000 to Seminyak — and Grab is banned from the pickup zone entirely (walk 500m to the public road to book one). Here's the full 2026 guide to the official Kosti Bali counter and avoiding the tout zone outside.",
+    publishedAt: "2026-04-10",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'Bali',
-    citySlug: 'bali',
+    category: "taxi",
+    city: "Bali",
+    citySlug: "bali",
     content: [
-      { type: 'intro', body: 'Ngurah Rai International Airport (DPS) in Denpasar serves all of Bali — and the taxi situation here is unlike any other major Asian airport. There are no metered taxis operating from the arrivals terminal. Instead, a fixed-price system is operated by the Bali Taxi Cooperative (Koperasi Angkutan Bali/Kosti Bali), where you pay a set rate based on your destination before boarding. App-based taxis (Grab, Gojek) are banned from the airport pickup zone by the taxi cooperative — you must walk outside the airport grounds to use them. Knowing this in advance saves confusion, and knowing the correct fixed prices helps you pay fair rather than the inflated rates some touts quote.' },
-      { type: 'h2', heading: 'Bali Airport to Key Destinations: Fixed Rates' },
-      { type: 'table', rows: [
-        { label: 'DPS → Kuta / Tuban (nearest area)', value: 'IDR 75,000–100,000' },
-        { label: 'DPS → Legian', value: 'IDR 90,000–120,000' },
-        { label: 'DPS → Seminyak', value: 'IDR 100,000–140,000' },
-        { label: 'DPS → Canggu', value: 'IDR 150,000–220,000' },
-        { label: 'DPS → Sanur', value: 'IDR 100,000–130,000' },
-        { label: 'DPS → Nusa Dua / Jimbaran', value: 'IDR 120,000–160,000' },
-        { label: 'DPS → Ubud', value: 'IDR 250,000–400,000 (1–1.5 hours)' },
-        { label: 'DPS → Uluwatu', value: 'IDR 150,000–200,000' },
-      ]},
-      { type: 'h2', heading: 'How the Fixed-Price Taxi System Works' },
-      { type: 'p', body: 'Inside the arrivals hall at DPS, you will see a taxi counter run by the Bali Taxi Cooperative (look for the "Official Taxi" or "Kosti Bali" booth). State your destination, pay the fixed rate, and receive a receipt and a voucher. Take the voucher outside to the taxi rank — a coordinator matches you with a vehicle. The driver takes the voucher and you owe nothing further at the end of the journey (tip excluded). Prices at the official counter are regulated and reasonable — the higher quotes you may receive from drivers approaching you before you reach the counter are unofficial and should be declined.' },
-      { type: 'h2', heading: 'Using Grab or Gojek from Bali Airport' },
-      { type: 'p', body: 'Grab and Gojek are not permitted to pick up inside the DPS arrivals zone. This is enforced by the taxi cooperative and is a commercial arrangement that benefits the cooperative drivers. However, you can walk approximately 500 metres to the public road outside the airport perimeter — follow the footpath past the car park exit gates — and book a Grab or Gojek from there. Grab fares from the public road to most Seminyak or Kuta hotels are IDR 60,000–100,000, noticeably cheaper than the official counter. The trade-off is the 10-minute walk in Bali\'s heat with your luggage.' },
-      { type: 'ul', items: [
-        'Blue Bird taxis are Bali\'s most reputable metered taxi operator — you can book them via app (MyBluebird) for pickup outside the airport zone',
-        'For Ubud, compare: IDR 300,000 official taxi vs IDR 250,000–280,000 Grab — the difference is smaller for longer journeys',
-        'DAMRI airport bus: IDR 20,000–30,000 to Kuta/Legian area — very cheap but infrequent; check the stop near the arrivals exit',
-        'Pre-booked private transfers (GoSend, Klook, hotel arrangements): often IDR 200,000–400,000 including meet-and-greet in arrivals',
-      ]},
-      { type: 'warning', body: 'The area outside DPS arrivals is an active zone for unofficial taxi touts who approach travellers with handwritten signs and quoted prices often 2–4× the official rate. Never accept a transport offer from someone who approaches you before you reach the official counter. If you want a regulated fixed-price taxi, use the Kosti Bali counter. If you want an app-based ride, walk to the public road and book via Grab.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'How much is a taxi from Bali Airport to Seminyak?', a: 'IDR 100,000–140,000 via the official Kosti Bali fixed-price counter — approximately $6–9 USD. Grab from the public road outside the airport is IDR 75,000–110,000. Journey time is 20–40 minutes depending on traffic.' },
-        { q: 'How much is a taxi from Bali Airport to Ubud?', a: 'IDR 250,000–400,000 (approximately $15–25 USD) depending on the operator. Ubud is 35–40km from the airport and takes 60–90 minutes. Grab from the public road is IDR 230,000–350,000. The official counter price is regulated and fair.' },
-        { q: 'Why can\'t I use Grab at Bali Airport?', a: 'App-based taxis (Grab, Gojek) are prohibited from the arrivals pickup zone by the Bali Taxi Cooperative. This is an enforced commercial arrangement. You can walk 500 metres to the public road and book from there. For most travellers, the convenience of the official counter is worth the modest price difference.' },
-        { q: 'How long does it take to get from Bali Airport to Kuta?', a: 'Kuta is only 2–5km from DPS — approximately 15–25 minutes in normal conditions. During Bali\'s notorious traffic peak hours (8–10am, 4–7pm), Kuta can take 35–50 minutes due to the congestion around Jalan Bypass Ngurah Rai.' },
-        { q: 'Are there metered taxis at Bali Airport?', a: 'No metered taxis operate from the DPS arrivals zone. The official system is fixed-price pre-payment. Blue Bird (Bali\'s most reputable metered taxi company) can be booked via the MyBluebird app for pickup at the public road outside the terminal.' },
-        { q: 'Is it safe to take an unofficial taxi in Bali?', a: 'Unofficial taxis (touts) in Bali are not unsafe in terms of personal safety, but you will almost certainly be overcharged significantly. Stick to the official Kosti Bali counter, Blue Bird app bookings, or Grab/Gojek from the public road — all provide fair, predictable fares.' },
-      ]},
+      {
+        type: "intro",
+        body: "Ngurah Rai International Airport (DPS) in Denpasar serves all of Bali — and the taxi situation here is unlike any other major Asian airport. There are no metered taxis operating from the arrivals terminal. Instead, a fixed-price system is operated by the Bali Taxi Cooperative (Koperasi Angkutan Bali/Kosti Bali), where you pay a set rate based on your destination before boarding. App-based taxis (Grab, Gojek) are banned from the airport pickup zone by the taxi cooperative — you must walk outside the airport grounds to use them. Knowing this in advance saves confusion, and knowing the correct fixed prices helps you pay fair rather than the inflated rates some touts quote.",
+      },
+      { type: "h2", heading: "Bali Airport to Key Destinations: Fixed Rates" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "DPS → Kuta / Tuban (nearest area)",
+            value: "IDR 75,000–100,000",
+          },
+          { label: "DPS → Legian", value: "IDR 90,000–120,000" },
+          { label: "DPS → Seminyak", value: "IDR 100,000–140,000" },
+          { label: "DPS → Canggu", value: "IDR 150,000–220,000" },
+          { label: "DPS → Sanur", value: "IDR 100,000–130,000" },
+          { label: "DPS → Nusa Dua / Jimbaran", value: "IDR 120,000–160,000" },
+          { label: "DPS → Ubud", value: "IDR 250,000–400,000 (1–1.5 hours)" },
+          { label: "DPS → Uluwatu", value: "IDR 150,000–200,000" },
+        ],
+      },
+      { type: "h2", heading: "How the Fixed-Price Taxi System Works" },
+      {
+        type: "p",
+        body: 'Inside the arrivals hall at DPS, you will see a taxi counter run by the Bali Taxi Cooperative (look for the "Official Taxi" or "Kosti Bali" booth). State your destination, pay the fixed rate, and receive a receipt and a voucher. Take the voucher outside to the taxi rank — a coordinator matches you with a vehicle. The driver takes the voucher and you owe nothing further at the end of the journey (tip excluded). Prices at the official counter are regulated and reasonable — the higher quotes you may receive from drivers approaching you before you reach the counter are unofficial and should be declined.',
+      },
+      { type: "h2", heading: "Using Grab or Gojek from Bali Airport" },
+      {
+        type: "p",
+        body: "Grab and Gojek are not permitted to pick up inside the DPS arrivals zone. This is enforced by the taxi cooperative and is a commercial arrangement that benefits the cooperative drivers. However, you can walk approximately 500 metres to the public road outside the airport perimeter — follow the footpath past the car park exit gates — and book a Grab or Gojek from there. Grab fares from the public road to most Seminyak or Kuta hotels are IDR 60,000–100,000, noticeably cheaper than the official counter. The trade-off is the 10-minute walk in Bali's heat with your luggage.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Blue Bird taxis are Bali's most reputable metered taxi operator — you can book them via app (MyBluebird) for pickup outside the airport zone",
+          "For Ubud, compare: IDR 300,000 official taxi vs IDR 250,000–280,000 Grab — the difference is smaller for longer journeys",
+          "DAMRI airport bus: IDR 20,000–30,000 to Kuta/Legian area — very cheap but infrequent; check the stop near the arrivals exit",
+          "Pre-booked private transfers (GoSend, Klook, hotel arrangements): often IDR 200,000–400,000 including meet-and-greet in arrivals",
+        ],
+      },
+      {
+        type: "warning",
+        body: "The area outside DPS arrivals is an active zone for unofficial taxi touts who approach travellers with handwritten signs and quoted prices often 2–4× the official rate. Never accept a transport offer from someone who approaches you before you reach the official counter. If you want a regulated fixed-price taxi, use the Kosti Bali counter. If you want an app-based ride, walk to the public road and book via Grab.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Bali Airport to Seminyak?",
+            a: "IDR 100,000–140,000 via the official Kosti Bali fixed-price counter — approximately $6–9 USD. Grab from the public road outside the airport is IDR 75,000–110,000. Journey time is 20–40 minutes depending on traffic.",
+          },
+          {
+            q: "How much is a taxi from Bali Airport to Ubud?",
+            a: "IDR 250,000–400,000 (approximately $15–25 USD) depending on the operator. Ubud is 35–40km from the airport and takes 60–90 minutes. Grab from the public road is IDR 230,000–350,000. The official counter price is regulated and fair.",
+          },
+          {
+            q: "Why can't I use Grab at Bali Airport?",
+            a: "App-based taxis (Grab, Gojek) are prohibited from the arrivals pickup zone by the Bali Taxi Cooperative. This is an enforced commercial arrangement. You can walk 500 metres to the public road and book from there. For most travellers, the convenience of the official counter is worth the modest price difference.",
+          },
+          {
+            q: "How long does it take to get from Bali Airport to Kuta?",
+            a: "Kuta is only 2–5km from DPS — approximately 15–25 minutes in normal conditions. During Bali's notorious traffic peak hours (8–10am, 4–7pm), Kuta can take 35–50 minutes due to the congestion around Jalan Bypass Ngurah Rai.",
+          },
+          {
+            q: "Are there metered taxis at Bali Airport?",
+            a: "No metered taxis operate from the DPS arrivals zone. The official system is fixed-price pre-payment. Blue Bird (Bali's most reputable metered taxi company) can be booked via the MyBluebird app for pickup at the public road outside the terminal.",
+          },
+          {
+            q: "Is it safe to take an unofficial taxi in Bali?",
+            a: "Unofficial taxis (touts) in Bali are not unsafe in terms of personal safety, but you will almost certainly be overcharged significantly. Stick to the official Kosti Bali counter, Blue Bird app bookings, or Grab/Gojek from the public road — all provide fair, predictable fares.",
+          },
+        ],
+      },
     ],
   },
 
   {
-    slug: 'taxi-athens-airport-to-city',
-    title: 'Taxi from Athens Airport (ATH) to Athens City Centre: Cost & Guide (2026)',
-    description: 'Athens Airport has fixed taxi rates to the city — €55 daytime, €80 at night. Here\'s what\'s included and the bus alternative that costs €6.50.',
-    publishedAt: '2026-04-13',
+    slug: "taxi-athens-airport-to-city",
+    title:
+      "Taxi from Athens Airport (ATH) to Athens City Centre: Cost & Guide (2026)",
+    description:
+      "Athens Airport has fixed taxi rates to the city — €55 daytime, €80 at night. Here's what's included and the bus alternative that costs €6.50.",
+    publishedAt: "2026-04-13",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'Athens',
-    citySlug: 'athens',
+    category: "taxi",
+    city: "Athens",
+    citySlug: "athens",
     content: [
-      { type: 'intro', body: 'Athens Eleftherios Venizelos Airport (ATH) is located 35 kilometres east of Athens city centre in Spata, Attica. Greece has an official system of fixed taxi fares between the airport and the city — no metering, no negotiation. The rates are set by the Greek Ministry of Infrastructure: €55 during the day (5am–midnight) and €80 at night (midnight–5am). These cover any destination in central Athens within a defined zone — making ATH one of the most transparent airport taxi systems in Europe. Express bus X95 provides a substantially cheaper alternative (€6.50) for budget-conscious travellers.' },
-      { type: 'h2', heading: 'Athens Airport to City: Key Numbers' },
-      { type: 'table', rows: [
-        { label: 'Fixed taxi rate (daytime, 5am–midnight)', value: '€55 — any destination in central Athens' },
-        { label: 'Fixed taxi rate (night, midnight–5am)', value: '€80 — all destinations in central Athens' },
-        { label: 'Coverage area', value: 'Syntagma, Monastiraki, Plaka, Kolonaki, Piraeus, Kifissia and inner suburbs' },
-        { label: 'Tip expected', value: '€2–5 (optional but appreciated)' },
-        { label: 'Journey time (normal traffic)', value: '35–50 minutes to Syntagma' },
-        { label: 'Journey time (peak hours)', value: '55–80 minutes' },
-        { label: 'Metro Line 3 (to Syntagma)', value: '€10.50 one-way — 40 minutes' },
-        { label: 'Express Bus X95 (to Syntagma)', value: '€6.50 — 60–90 minutes, runs 24 hours' },
-      ]},
-      { type: 'h2', heading: 'What the Fixed Rate Includes' },
-      { type: 'p', body: 'The €55 / €80 fixed fare covers the entire journey from the airport to any central Athens destination — tolls on the Attiki Odos motorway are included in the fixed rate, as is luggage assistance. If you have an unusual amount of luggage, the driver may request €1–2 additional per extra large suitcase — this is technically outside the regulation but very common and reasonable. The fixed fare applies only to journeys from the airport to Athens. Returning to the airport from the city uses the metered rate, which typically comes to €40–60 depending on origin and traffic — cheaper than the fixed rate in most cases.' },
-      { type: 'h2', heading: 'How to Get a Taxi at Athens Airport' },
-      { type: 'p', body: 'The official taxi rank is at the Arrivals level, exit 3 — follow the yellow "Taxi" signs from baggage claim. Taxi drivers are not permitted to approach you inside the terminal. Join the queue at the rank and a dispatcher may assist in directing you to the next available vehicle. Quote your destination, confirm the fixed rate (€55 daytime, €80 night) before the journey begins, and ensure the driver understands you know the regulated price. Most Athens taxi drivers are honest; the fixed-rate system eliminates almost all metering disputes at the airport.' },
-      { type: 'h2', heading: 'Budget Alternatives from Athens Airport' },
-      { type: 'ul', items: [
-        'Express Bus X95 (Syntagma Square): €6.50, runs 24 hours every 15–30 minutes, 60–90 minutes journey — best budget option',
-        'Express Bus X96 (Piraeus port): €6.50, 24 hours — ideal for cruise passengers or ferry connections',
-        'Metro Line 3 (Blue Line): €10.50 one-way to Syntagma, 40 minutes, runs 5:30am–midnight (later on weekends)',
-        'Metro + Express Bus combo: not necessary — either option alone reaches the city',
-        'Uber: Operates in Athens, shows fare upfront — typically €45–60 to Syntagma, cheaper than the €55 fixed taxi in some cases',
-      ]},
-      { type: 'tip', body: 'Confirm "€55 daytime fixed rate" before you get in. Any quote above €55 before midnight (or €80 after midnight) should be declined and reported to airport staff. If a driver demands more upon arrival at your destination, you are not legally obliged to pay above the regulated rate — point to the fixed-rate notice printed on the dashboard of all licensed Athens taxis.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'How much is a taxi from Athens Airport to Syntagma?', a: '€55 fixed rate for daytime travel (5am–midnight), including all motorway tolls. No extra charges should apply for central Athens destinations. Night rate (midnight–5am) is €80 fixed.' },
-        { q: 'Why does the taxi from Athens airport cost more at night?', a: 'The Greek government sets two fixed rates: €55 daytime (5am–midnight) and €80 night (midnight–5am). The night rate reflects higher driver costs and the additional premium for late-night service. It is the same €80 whether you arrive at 12:01am or 4:59am.' },
-        { q: 'How do I get from Athens Airport to the city for €6.50?', a: 'Take Express Bus X95 from outside Arrivals exit 4 to Syntagma Square. The bus runs 24 hours, costs €6.50, and takes 60–90 minutes depending on traffic. It\'s a comfortable coach — not a standing city bus — and is perfectly suitable for tourists with luggage.' },
-        { q: 'How long is the drive from Athens Airport to the city centre?', a: '35–50 minutes in normal conditions via the Attiki Odos motorway. During morning rush (7–9:30am) and evening peak (5–8pm), the motorway congestion can push travel time to 60–80 minutes. Late-night arrivals are typically 30–40 minutes.' },
-        { q: 'Does the fixed rate cover Piraeus?', a: 'Piraeus (the main port for Greek island ferries) is within the fixed-rate zone for most standard taxis. Confirm €55 daytime to Piraeus before boarding — some drivers may quote higher due to the slightly longer distance. The fixed rate regulation applies.' },
-        { q: 'Is Uber available at Athens Airport?', a: 'Yes — Uber operates in Athens and you can book from the airport. Fares are typically €45–60 to Syntagma in a standard car, which can be cheaper than the €55 fixed taxi during off-peak times. Book via the Uber app and follow signs to the ride-hailing pickup area.' },
-      ]},
+      {
+        type: "intro",
+        body: "Athens Eleftherios Venizelos Airport (ATH) is located 35 kilometres east of Athens city centre in Spata, Attica. Greece has an official system of fixed taxi fares between the airport and the city — no metering, no negotiation. The rates are set by the Greek Ministry of Infrastructure: €55 during the day (5am–midnight) and €80 at night (midnight–5am). These cover any destination in central Athens within a defined zone — making ATH one of the most transparent airport taxi systems in Europe. Express bus X95 provides a substantially cheaper alternative (€6.50) for budget-conscious travellers.",
+      },
+      { type: "h2", heading: "Athens Airport to City: Key Numbers" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Fixed taxi rate (daytime, 5am–midnight)",
+            value: "€55 — any destination in central Athens",
+          },
+          {
+            label: "Fixed taxi rate (night, midnight–5am)",
+            value: "€80 — all destinations in central Athens",
+          },
+          {
+            label: "Coverage area",
+            value:
+              "Syntagma, Monastiraki, Plaka, Kolonaki, Piraeus, Kifissia and inner suburbs",
+          },
+          { label: "Tip expected", value: "€2–5 (optional but appreciated)" },
+          {
+            label: "Journey time (normal traffic)",
+            value: "35–50 minutes to Syntagma",
+          },
+          { label: "Journey time (peak hours)", value: "55–80 minutes" },
+          {
+            label: "Metro Line 3 (to Syntagma)",
+            value: "€10.50 one-way — 40 minutes",
+          },
+          {
+            label: "Express Bus X95 (to Syntagma)",
+            value: "€6.50 — 60–90 minutes, runs 24 hours",
+          },
+        ],
+      },
+      { type: "h2", heading: "What the Fixed Rate Includes" },
+      {
+        type: "p",
+        body: "The €55 / €80 fixed fare covers the entire journey from the airport to any central Athens destination — tolls on the Attiki Odos motorway are included in the fixed rate, as is luggage assistance. If you have an unusual amount of luggage, the driver may request €1–2 additional per extra large suitcase — this is technically outside the regulation but very common and reasonable. The fixed fare applies only to journeys from the airport to Athens. Returning to the airport from the city uses the metered rate, which typically comes to €40–60 depending on origin and traffic — cheaper than the fixed rate in most cases.",
+      },
+      { type: "h2", heading: "How to Get a Taxi at Athens Airport" },
+      {
+        type: "p",
+        body: 'The official taxi rank is at the Arrivals level, exit 3 — follow the yellow "Taxi" signs from baggage claim. Taxi drivers are not permitted to approach you inside the terminal. Join the queue at the rank and a dispatcher may assist in directing you to the next available vehicle. Quote your destination, confirm the fixed rate (€55 daytime, €80 night) before the journey begins, and ensure the driver understands you know the regulated price. Most Athens taxi drivers are honest; the fixed-rate system eliminates almost all metering disputes at the airport.',
+      },
+      { type: "h2", heading: "Budget Alternatives from Athens Airport" },
+      {
+        type: "ul",
+        items: [
+          "Express Bus X95 (Syntagma Square): €6.50, runs 24 hours every 15–30 minutes, 60–90 minutes journey — best budget option",
+          "Express Bus X96 (Piraeus port): €6.50, 24 hours — ideal for cruise passengers or ferry connections",
+          "Metro Line 3 (Blue Line): €10.50 one-way to Syntagma, 40 minutes, runs 5:30am–midnight (later on weekends)",
+          "Metro + Express Bus combo: not necessary — either option alone reaches the city",
+          "Uber: Operates in Athens, shows fare upfront — typically €45–60 to Syntagma, cheaper than the €55 fixed taxi in some cases",
+        ],
+      },
+      {
+        type: "tip",
+        body: 'Confirm "€55 daytime fixed rate" before you get in. Any quote above €55 before midnight (or €80 after midnight) should be declined and reported to airport staff. If a driver demands more upon arrival at your destination, you are not legally obliged to pay above the regulated rate — point to the fixed-rate notice printed on the dashboard of all licensed Athens taxis.',
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Athens Airport to Syntagma?",
+            a: "€55 fixed rate for daytime travel (5am–midnight), including all motorway tolls. No extra charges should apply for central Athens destinations. Night rate (midnight–5am) is €80 fixed.",
+          },
+          {
+            q: "Why does the taxi from Athens airport cost more at night?",
+            a: "The Greek government sets two fixed rates: €55 daytime (5am–midnight) and €80 night (midnight–5am). The night rate reflects higher driver costs and the additional premium for late-night service. It is the same €80 whether you arrive at 12:01am or 4:59am.",
+          },
+          {
+            q: "How do I get from Athens Airport to the city for €6.50?",
+            a: "Take Express Bus X95 from outside Arrivals exit 4 to Syntagma Square. The bus runs 24 hours, costs €6.50, and takes 60–90 minutes depending on traffic. It's a comfortable coach — not a standing city bus — and is perfectly suitable for tourists with luggage.",
+          },
+          {
+            q: "How long is the drive from Athens Airport to the city centre?",
+            a: "35–50 minutes in normal conditions via the Attiki Odos motorway. During morning rush (7–9:30am) and evening peak (5–8pm), the motorway congestion can push travel time to 60–80 minutes. Late-night arrivals are typically 30–40 minutes.",
+          },
+          {
+            q: "Does the fixed rate cover Piraeus?",
+            a: "Piraeus (the main port for Greek island ferries) is within the fixed-rate zone for most standard taxis. Confirm €55 daytime to Piraeus before boarding — some drivers may quote higher due to the slightly longer distance. The fixed rate regulation applies.",
+          },
+          {
+            q: "Is Uber available at Athens Airport?",
+            a: "Yes — Uber operates in Athens and you can book from the airport. Fares are typically €45–60 to Syntagma in a standard car, which can be cheaper than the €55 fixed taxi during off-peak times. Book via the Uber app and follow signs to the ride-hailing pickup area.",
+          },
+        ],
+      },
     ],
   },
 
   // ── Batch 4b — Additional Airport Routes ─────────────────────────────────
 
   {
-    slug: 'taxi-lax-to-los-angeles',
-    title: 'Taxi from LAX Airport to Los Angeles: Cost & Guide (2026)',
-    description: 'LAX taxis to Hollywood cost $45–70; to Santa Monica $35–55. But Uber is cheaper and faster. Here\'s the full LAX ground transport guide for 2026.',
-    publishedAt: '2026-05-08',
+    slug: "taxi-lax-to-los-angeles",
+    title: "Taxi from LAX Airport to Los Angeles: Cost & Guide (2026)",
+    description:
+      "LAX taxis to Hollywood cost $45–70; to Santa Monica $35–55. But Uber is cheaper and faster. Here's the full LAX ground transport guide for 2026.",
+    publishedAt: "2026-05-08",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'Los Angeles',
-    citySlug: 'los-angeles',
+    category: "taxi",
+    city: "Los Angeles",
+    citySlug: "los-angeles",
     content: [
-      { type: 'intro', body: 'Los Angeles International Airport (LAX) is one of the busiest airports in the world — and its ground transport situation is unlike any other major US airport. There is no direct rail link to central LA. Your options are taxis, Uber/Lyft, the LAX FlyAway bus, or the new Metro rail connection via the Automated People Mover (APM). Taxis from LAX are metered and regulated by LA County, but Uber and Lyft almost always offer better pricing and convenience. Understanding the full picture before you land saves both time and money in a city where getting around is already expensive.' },
-      { type: 'h2', heading: 'LAX to Los Angeles: Key Numbers' },
-      { type: 'table', rows: [
-        { label: 'Taxi flag-fall', value: '$2.85 + $2.70/km ($4.35/mile)' },
-        { label: 'Taxi LAX surcharge', value: '$4.00 — added to all taxi trips from LAX' },
-        { label: 'LAX → Hollywood / West Hollywood', value: '$45–70 by taxi (17–20km)' },
-        { label: 'LAX → Santa Monica', value: '$30–50 by taxi (15km)' },
-        { label: 'LAX → Downtown LA / DTLA', value: '$45–65 by taxi (24km)' },
-        { label: 'LAX → Beverly Hills', value: '$35–55 by taxi (15km)' },
-        { label: 'LAX → Disneyland (Anaheim)', value: '$75–100 by taxi (50km)' },
-        { label: 'Uber/Lyft (standard)', value: '$30–60 depending on destination and surge — typically 20–30% cheaper than taxis' },
-      ]},
-      { type: 'h2', heading: 'Typical Taxi Fares from LAX by Destination' },
-      { type: 'table', rows: [
-        { label: 'LAX → West Hollywood / Sunset Strip', value: '$50–70' },
-        { label: 'LAX → Hollywood (Walk of Fame)', value: '$45–65' },
-        { label: 'LAX → Santa Monica / Venice Beach', value: '$30–50' },
-        { label: 'LAX → Beverly Hills', value: '$35–55' },
-        { label: 'LAX → Downtown LA (DTLA)', value: '$45–65' },
-        { label: 'LAX → Culver City', value: '$25–40' },
-        { label: 'LAX → Manhattan Beach', value: '$20–35' },
-        { label: 'LAX → Disneyland / Anaheim', value: '$75–100' },
-      ]},
-      { type: 'h2', heading: 'How to Get a Taxi at LAX' },
-      { type: 'p', body: 'Taxis at LAX depart from the designated Taxi/Rideshare island — the LAX-it lot. You cannot hail a taxi or be picked up at the terminal kerb. From your arrival terminal, take the free LAX Shuttle Bus (marked "LAX Shuttle — LAX-it") to the consolidated lot, then join the taxi queue. The lot is well-organised and taxis move quickly through the queue. All LAX taxis are regulated by LA County — they must use the meter plus the $4.00 airport surcharge. Do not accept rides from anyone approaching you in the terminal or arrivals hall.' },
-      { type: 'h2', heading: 'Uber and Lyft from LAX: The Better Option' },
-      { type: 'p', body: 'Uber and Lyft pick up from the same LAX-it lot as taxis — take the same shuttle bus, then follow signs to the rideshare waiting area. The key advantage: upfront pricing with no meter uncertainty. For most LAX destinations, Uber is 20–30% cheaper than taxis and available on demand. During peak surge times (Friday evenings, holiday weekends, Super Bowl, Oscar weekend), however, Uber pricing can spike above taxi rates — in which case the taxi queue is the better value.' },
-      { type: 'h2', heading: 'Budget Alternatives from LAX' },
-      { type: 'ul', items: [
-        'LAX FlyAway Bus: $9.75 one-way to Union Station (Downtown LA) — runs 24 hours, every 30 minutes',
-        'LAX FlyAway to Van Nuys, Westwood (UCLA), and Hollywood also available — check flyaway.lawa.org',
-        'Metro Rail via LAX APM: Free APM train from terminals to Aviation/Century station → Metro C Line → Metro A/E lines to DTLA — approximately $1.75, 50–70 minutes to Downtown',
-        'Shared shuttle services (SuperShuttle, Prime Time): $20–35/person to most Westside destinations — slower due to multiple stops',
-        'Taxi to nearest Metro station: $15–20 then $1.75 Metro — useful for groups heading to Mid-City or central LA',
-      ]},
-      { type: 'warning', body: 'Do not accept transport offers from unlicensed drivers who approach you in the arrivals hall or outside baggage claim. LAX has had persistent issues with unlicensed "gypsy cabs" charging $80–150 for journeys that should cost $40–60. All legitimate taxis and rideshare vehicles depart from the LAX-it lot — not from the terminal kerb.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'How much is a taxi from LAX to Hollywood?', a: 'Approximately $45–70 including the $4.00 LAX surcharge for the 17–20km journey. Uber is typically $35–55 for the same trip in normal conditions. During surge pricing (Friday evenings, major events), Uber can exceed the taxi rate.' },
-        { q: 'How do I get to the taxi stand at LAX?', a: 'You cannot take a taxi directly from the terminal kerb. Take the free LAX Shuttle Bus (blue and white "LAX Shuttle — LAX-it" sign outside arrivals) to the consolidated LAX-it lot, then join the taxi or rideshare queue. Allow 10–20 minutes for the shuttle and queue.' },
-        { q: 'Is Uber cheaper than a taxi from LAX?', a: 'Usually yes — 20–30% cheaper in normal conditions. During surge pricing (peak travel periods, bad weather, major events), Uber can exceed taxi rates. Check the Uber app on arrival and compare with the estimated taxi fare before committing.' },
-        { q: 'How long does it take from LAX to Downtown LA?', a: '30–50 minutes in normal traffic. LA traffic is notoriously unpredictable — during weekday rush hours (7–10am and 4–7pm), the same journey can take 60–90 minutes or more, particularly on the I-405 or I-10. Consider the FlyAway bus to Union Station as a more predictable option during peak hours.' },
-        { q: 'Is there a train from LAX to Los Angeles?', a: 'Not directly to the centre, but the Metro connection works: take the free APM tram from your terminal to the new LAX/Metro Transit Center, then board the Metro C Line (Crenshaw). Transfer to the A Line (Blue) for Downtown LA. Total journey time to DTLA is about 50–70 minutes for $1.75 — very cost-effective for solo travellers with manageable luggage.' },
-        { q: 'What is the LAX FlyAway bus?', a: 'The LAX FlyAway is an official airport coach service running 24 hours between LAX and several LA locations. The Union Station route ($9.75) is the most useful, connecting to Metro rail, Amtrak, and the Downtown core. Other routes serve Van Nuys, Westwood, and Hollywood. Buy tickets online or at the terminal kiosk.' },
-      ]},
+      {
+        type: "intro",
+        body: "Los Angeles International Airport (LAX) is one of the busiest airports in the world — and its ground transport situation is unlike any other major US airport. There is no direct rail link to central LA. Your options are taxis, Uber/Lyft, the LAX FlyAway bus, or the new Metro rail connection via the Automated People Mover (APM). Taxis from LAX are metered and regulated by LA County, but Uber and Lyft almost always offer better pricing and convenience. Understanding the full picture before you land saves both time and money in a city where getting around is already expensive.",
+      },
+      { type: "h2", heading: "LAX to Los Angeles: Key Numbers" },
+      {
+        type: "table",
+        rows: [
+          { label: "Taxi flag-fall", value: "$2.85 + $2.70/km ($4.35/mile)" },
+          {
+            label: "Taxi LAX surcharge",
+            value: "$4.00 — added to all taxi trips from LAX",
+          },
+          {
+            label: "LAX → Hollywood / West Hollywood",
+            value: "$45–70 by taxi (17–20km)",
+          },
+          { label: "LAX → Santa Monica", value: "$30–50 by taxi (15km)" },
+          { label: "LAX → Downtown LA / DTLA", value: "$45–65 by taxi (24km)" },
+          { label: "LAX → Beverly Hills", value: "$35–55 by taxi (15km)" },
+          {
+            label: "LAX → Disneyland (Anaheim)",
+            value: "$75–100 by taxi (50km)",
+          },
+          {
+            label: "Uber/Lyft (standard)",
+            value:
+              "$30–60 depending on destination and surge — typically 20–30% cheaper than taxis",
+          },
+        ],
+      },
+      { type: "h2", heading: "Typical Taxi Fares from LAX by Destination" },
+      {
+        type: "table",
+        rows: [
+          { label: "LAX → West Hollywood / Sunset Strip", value: "$50–70" },
+          { label: "LAX → Hollywood (Walk of Fame)", value: "$45–65" },
+          { label: "LAX → Santa Monica / Venice Beach", value: "$30–50" },
+          { label: "LAX → Beverly Hills", value: "$35–55" },
+          { label: "LAX → Downtown LA (DTLA)", value: "$45–65" },
+          { label: "LAX → Culver City", value: "$25–40" },
+          { label: "LAX → Manhattan Beach", value: "$20–35" },
+          { label: "LAX → Disneyland / Anaheim", value: "$75–100" },
+        ],
+      },
+      { type: "h2", heading: "How to Get a Taxi at LAX" },
+      {
+        type: "p",
+        body: 'Taxis at LAX depart from the designated Taxi/Rideshare island — the LAX-it lot. You cannot hail a taxi or be picked up at the terminal kerb. From your arrival terminal, take the free LAX Shuttle Bus (marked "LAX Shuttle — LAX-it") to the consolidated lot, then join the taxi queue. The lot is well-organised and taxis move quickly through the queue. All LAX taxis are regulated by LA County — they must use the meter plus the $4.00 airport surcharge. Do not accept rides from anyone approaching you in the terminal or arrivals hall.',
+      },
+      { type: "h2", heading: "Uber and Lyft from LAX: The Better Option" },
+      {
+        type: "p",
+        body: "Uber and Lyft pick up from the same LAX-it lot as taxis — take the same shuttle bus, then follow signs to the rideshare waiting area. The key advantage: upfront pricing with no meter uncertainty. For most LAX destinations, Uber is 20–30% cheaper than taxis and available on demand. During peak surge times (Friday evenings, holiday weekends, Super Bowl, Oscar weekend), however, Uber pricing can spike above taxi rates — in which case the taxi queue is the better value.",
+      },
+      { type: "h2", heading: "Budget Alternatives from LAX" },
+      {
+        type: "ul",
+        items: [
+          "LAX FlyAway Bus: $9.75 one-way to Union Station (Downtown LA) — runs 24 hours, every 30 minutes",
+          "LAX FlyAway to Van Nuys, Westwood (UCLA), and Hollywood also available — check flyaway.lawa.org",
+          "Metro Rail via LAX APM: Free APM train from terminals to Aviation/Century station → Metro C Line → Metro A/E lines to DTLA — approximately $1.75, 50–70 minutes to Downtown",
+          "Shared shuttle services (SuperShuttle, Prime Time): $20–35/person to most Westside destinations — slower due to multiple stops",
+          "Taxi to nearest Metro station: $15–20 then $1.75 Metro — useful for groups heading to Mid-City or central LA",
+        ],
+      },
+      {
+        type: "warning",
+        body: 'Do not accept transport offers from unlicensed drivers who approach you in the arrivals hall or outside baggage claim. LAX has had persistent issues with unlicensed "gypsy cabs" charging $80–150 for journeys that should cost $40–60. All legitimate taxis and rideshare vehicles depart from the LAX-it lot — not from the terminal kerb.',
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from LAX to Hollywood?",
+            a: "Approximately $45–70 including the $4.00 LAX surcharge for the 17–20km journey. Uber is typically $35–55 for the same trip in normal conditions. During surge pricing (Friday evenings, major events), Uber can exceed the taxi rate.",
+          },
+          {
+            q: "How do I get to the taxi stand at LAX?",
+            a: 'You cannot take a taxi directly from the terminal kerb. Take the free LAX Shuttle Bus (blue and white "LAX Shuttle — LAX-it" sign outside arrivals) to the consolidated LAX-it lot, then join the taxi or rideshare queue. Allow 10–20 minutes for the shuttle and queue.',
+          },
+          {
+            q: "Is Uber cheaper than a taxi from LAX?",
+            a: "Usually yes — 20–30% cheaper in normal conditions. During surge pricing (peak travel periods, bad weather, major events), Uber can exceed taxi rates. Check the Uber app on arrival and compare with the estimated taxi fare before committing.",
+          },
+          {
+            q: "How long does it take from LAX to Downtown LA?",
+            a: "30–50 minutes in normal traffic. LA traffic is notoriously unpredictable — during weekday rush hours (7–10am and 4–7pm), the same journey can take 60–90 minutes or more, particularly on the I-405 or I-10. Consider the FlyAway bus to Union Station as a more predictable option during peak hours.",
+          },
+          {
+            q: "Is there a train from LAX to Los Angeles?",
+            a: "Not directly to the centre, but the Metro connection works: take the free APM tram from your terminal to the new LAX/Metro Transit Center, then board the Metro C Line (Crenshaw). Transfer to the A Line (Blue) for Downtown LA. Total journey time to DTLA is about 50–70 minutes for $1.75 — very cost-effective for solo travellers with manageable luggage.",
+          },
+          {
+            q: "What is the LAX FlyAway bus?",
+            a: "The LAX FlyAway is an official airport coach service running 24 hours between LAX and several LA locations. The Union Station route ($9.75) is the most useful, connecting to Metro rail, Amtrak, and the Downtown core. Other routes serve Van Nuys, Westwood, and Hollywood. Buy tickets online or at the terminal kiosk.",
+          },
+        ],
+      },
     ],
   },
 
   {
-    slug: 'taxi-sfo-to-san-francisco',
-    title: 'Taxi from SFO Airport to San Francisco: Cost & Guide (2026)',
-    description: 'SFO taxis to downtown SF cost $45–60. BART gets you there in 30 minutes for $10.65. Here\'s the full guide to every SFO ground transport option in 2026.',
-    publishedAt: '2026-05-12',
+    slug: "taxi-sfo-to-san-francisco",
+    title: "Taxi from SFO Airport to San Francisco: Cost & Guide (2026)",
+    description:
+      "SFO taxis to downtown SF cost $45–60. BART gets you there in 30 minutes for $10.65. Here's the full guide to every SFO ground transport option in 2026.",
+    publishedAt: "2026-05-12",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'San Francisco',
-    citySlug: 'san-francisco',
+    category: "taxi",
+    city: "San Francisco",
+    citySlug: "san-francisco",
     content: [
-      { type: 'intro', body: 'San Francisco International Airport (SFO) is 22 kilometres south of downtown San Francisco in San Mateo County. Taxis from SFO are metered, honest, and readily available — but BART (Bay Area Rapid Transit) offers a direct rail connection to downtown for $10.65 that takes about 30 minutes. For groups of 2–3 heading to the city centre, taxis and Uber are competitive with BART on a per-person basis. For solo travellers, BART is the clear winner. This guide covers all ground transport options with accurate 2026 fares.' },
-      { type: 'h2', heading: 'SFO to San Francisco: Key Numbers' },
-      { type: 'table', rows: [
-        { label: 'Taxi flag-fall', value: '$3.50 + $2.80/km ($4.50/mile)' },
-        { label: 'Airport surcharge', value: '$4.50 — added automatically' },
-        { label: 'Bay Bridge toll (East Bay destinations)', value: '$7.00 E-ZPass — passenger pays' },
-        { label: 'SFO → Downtown SF / Union Square', value: '$45–60 all-in (22km)' },
-        { label: 'SFO → Fisherman\'s Wharf / North Beach', value: '$55–70 all-in (28km)' },
-        { label: 'SFO → Mission District', value: '$40–55 all-in (20km)' },
-        { label: 'SFO → Oakland (East Bay)', value: '$55–75 + Bay Bridge toll' },
-        { label: 'BART (SFO → Civic Center / Powell St)', value: '$10.65 one-way — 30 minutes' },
-      ]},
-      { type: 'h2', heading: 'Typical Fares by Destination from SFO' },
-      { type: 'table', rows: [
-        { label: 'SFO → Union Square / Civic Center', value: '$45–58' },
-        { label: 'SFO → Fisherman\'s Wharf / Ghirardelli', value: '$55–70' },
-        { label: 'SFO → Mission District / Castro', value: '$40–55' },
-        { label: 'SFO → Chinatown / Financial District', value: '$45–60' },
-        { label: 'SFO → Haight-Ashbury / Cole Valley', value: '$45–60' },
-        { label: 'SFO → Berkeley (East Bay)', value: '$60–80 + Bay Bridge toll' },
-        { label: 'SFO → Silicon Valley / Palo Alto', value: '$35–50 (closer, opposite direction)' },
-        { label: 'SFO → San Jose', value: '$60–80' },
-      ]},
-      { type: 'h2', heading: 'How to Get a Taxi at SFO' },
-      { type: 'p', body: 'Taxis at SFO depart from the Departures (upper) level of the International Terminal and all domestic terminals — follow signs for "Taxi." A taxi coordinator manages the queue and assigns you to the next available vehicle. All SFO taxis are metered; the $4.50 airport surcharge is added automatically at the start of the journey. Taxis to all San Francisco destinations are readily available around the clock. For destinations in Marin County (north of the Golden Gate Bridge), confirm the driver is willing before boarding — bridge tolls apply and some drivers prefer city runs.' },
-      { type: 'h2', heading: 'BART: The Fastest Budget Option' },
-      { type: 'p', body: 'BART connects SFO directly to downtown San Francisco via the SFO/Millbrae station on the Yellow Line (Antioch direction). Trains run every 10–20 minutes from 5am to midnight daily. From SFO to Powell Street (Union Square / Tenderloin area) takes approximately 30 minutes and costs $10.65. The BART station is inside the international terminal — a free AirTrain connects domestic terminals to the BART platform. For solo travellers and pairs, BART is dramatically cheaper than a taxi and surprisingly fast.' },
-      { type: 'h2', heading: 'Uber and Lyft from SFO' },
-      { type: 'ul', items: [
-        'Uber and Lyft pick up from the Domestic Arrivals level at all terminals (Level 1)',
-        'Fares to downtown SF are typically $35–55 — usually cheaper than metered taxis',
-        'During surge pricing (Giants or 49ers games, Salesforce events, Bay to Breakers), Uber can exceed taxi rates',
-        'Pre-book the Uber app ride before baggage claim — the trip is usually accepted before you reach the kerb',
-        'Shared Lyft/Uber options add 15–30 minutes but cut the price to $20–30',
-      ]},
-      { type: 'tip', body: 'BART\'s Clipper card (reloadable transit card, available at BART stations and select retailers) gives a small discount over paper tickets and speeds up boarding. For a multi-day SF visit, loading $30–40 on a Clipper card at the airport covers all your city transit plus the return trip to SFO.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'How much is a taxi from SFO to downtown San Francisco?', a: 'Approximately $45–60 all-in, including the $4.50 airport surcharge, for the 22km journey to Union Square or Civic Center. Uber is typically $35–55. BART costs $10.65 and takes 30 minutes.' },
-        { q: 'Is BART worth taking from SFO?', a: 'For solo travellers, absolutely — $10.65 vs $45–60 taxi, and BART is actually faster than taxis during rush hour. For groups of 3 or more with heavy luggage heading to a central hotel, a taxi or Uber split three ways ($15–20/person) becomes competitive with BART tickets ($10.65 each).' },
-        { q: 'How long does it take from SFO to downtown SF by taxi?', a: '25–40 minutes in normal traffic. During commute hours (7–9am and 4–7pm), the US-101 and I-280 can be heavily congested — allow 50–75 minutes. BART bypasses surface traffic entirely and is more reliable for time-sensitive arrivals.' },
-        { q: 'Are there tolls from SFO to San Francisco?', a: 'No — there are no bridge tolls on the direct US-101 route from SFO into San Francisco. Bay Bridge toll ($7.00) only applies for journeys to the East Bay (Oakland, Berkeley). If your driver takes an unusual route, confirm before the journey.' },
-        { q: 'Can I take a taxi from SFO to Silicon Valley?', a: 'Yes — SFO is actually closer to Palo Alto, Mountain View, and Sunnyvale than to downtown SF. Expect $35–50 to Palo Alto and $50–70 to San Jose. The Caltrain commuter rail is a cheaper option from SFO (transfer via BART to Millbrae, then Caltrain south).' },
-        { q: 'Is there a direct bus from SFO to San Francisco?', a: 'SamTrans runs route ECR (Express Coastal Route) connecting SFO to San Francisco, Daly City, and the SF Caltrain station for $2.50 — very cheap but slow (45–75 minutes). The free AirTrain connects terminals to the SamTrans/BART station outside the international terminal.' },
-      ]},
+      {
+        type: "intro",
+        body: "San Francisco International Airport (SFO) is 22 kilometres south of downtown San Francisco in San Mateo County. Taxis from SFO are metered, honest, and readily available — but BART (Bay Area Rapid Transit) offers a direct rail connection to downtown for $10.65 that takes about 30 minutes. For groups of 2–3 heading to the city centre, taxis and Uber are competitive with BART on a per-person basis. For solo travellers, BART is the clear winner. This guide covers all ground transport options with accurate 2026 fares.",
+      },
+      { type: "h2", heading: "SFO to San Francisco: Key Numbers" },
+      {
+        type: "table",
+        rows: [
+          { label: "Taxi flag-fall", value: "$3.50 + $2.80/km ($4.50/mile)" },
+          { label: "Airport surcharge", value: "$4.50 — added automatically" },
+          {
+            label: "Bay Bridge toll (East Bay destinations)",
+            value: "$7.00 E-ZPass — passenger pays",
+          },
+          {
+            label: "SFO → Downtown SF / Union Square",
+            value: "$45–60 all-in (22km)",
+          },
+          {
+            label: "SFO → Fisherman's Wharf / North Beach",
+            value: "$55–70 all-in (28km)",
+          },
+          { label: "SFO → Mission District", value: "$40–55 all-in (20km)" },
+          {
+            label: "SFO → Oakland (East Bay)",
+            value: "$55–75 + Bay Bridge toll",
+          },
+          {
+            label: "BART (SFO → Civic Center / Powell St)",
+            value: "$10.65 one-way — 30 minutes",
+          },
+        ],
+      },
+      { type: "h2", heading: "Typical Fares by Destination from SFO" },
+      {
+        type: "table",
+        rows: [
+          { label: "SFO → Union Square / Civic Center", value: "$45–58" },
+          { label: "SFO → Fisherman's Wharf / Ghirardelli", value: "$55–70" },
+          { label: "SFO → Mission District / Castro", value: "$40–55" },
+          { label: "SFO → Chinatown / Financial District", value: "$45–60" },
+          { label: "SFO → Haight-Ashbury / Cole Valley", value: "$45–60" },
+          {
+            label: "SFO → Berkeley (East Bay)",
+            value: "$60–80 + Bay Bridge toll",
+          },
+          {
+            label: "SFO → Silicon Valley / Palo Alto",
+            value: "$35–50 (closer, opposite direction)",
+          },
+          { label: "SFO → San Jose", value: "$60–80" },
+        ],
+      },
+      { type: "h2", heading: "How to Get a Taxi at SFO" },
+      {
+        type: "p",
+        body: 'Taxis at SFO depart from the Departures (upper) level of the International Terminal and all domestic terminals — follow signs for "Taxi." A taxi coordinator manages the queue and assigns you to the next available vehicle. All SFO taxis are metered; the $4.50 airport surcharge is added automatically at the start of the journey. Taxis to all San Francisco destinations are readily available around the clock. For destinations in Marin County (north of the Golden Gate Bridge), confirm the driver is willing before boarding — bridge tolls apply and some drivers prefer city runs.',
+      },
+      { type: "h2", heading: "BART: The Fastest Budget Option" },
+      {
+        type: "p",
+        body: "BART connects SFO directly to downtown San Francisco via the SFO/Millbrae station on the Yellow Line (Antioch direction). Trains run every 10–20 minutes from 5am to midnight daily. From SFO to Powell Street (Union Square / Tenderloin area) takes approximately 30 minutes and costs $10.65. The BART station is inside the international terminal — a free AirTrain connects domestic terminals to the BART platform. For solo travellers and pairs, BART is dramatically cheaper than a taxi and surprisingly fast.",
+      },
+      { type: "h2", heading: "Uber and Lyft from SFO" },
+      {
+        type: "ul",
+        items: [
+          "Uber and Lyft pick up from the Domestic Arrivals level at all terminals (Level 1)",
+          "Fares to downtown SF are typically $35–55 — usually cheaper than metered taxis",
+          "During surge pricing (Giants or 49ers games, Salesforce events, Bay to Breakers), Uber can exceed taxi rates",
+          "Pre-book the Uber app ride before baggage claim — the trip is usually accepted before you reach the kerb",
+          "Shared Lyft/Uber options add 15–30 minutes but cut the price to $20–30",
+        ],
+      },
+      {
+        type: "tip",
+        body: "BART's Clipper card (reloadable transit card, available at BART stations and select retailers) gives a small discount over paper tickets and speeds up boarding. For a multi-day SF visit, loading $30–40 on a Clipper card at the airport covers all your city transit plus the return trip to SFO.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from SFO to downtown San Francisco?",
+            a: "Approximately $45–60 all-in, including the $4.50 airport surcharge, for the 22km journey to Union Square or Civic Center. Uber is typically $35–55. BART costs $10.65 and takes 30 minutes.",
+          },
+          {
+            q: "Is BART worth taking from SFO?",
+            a: "For solo travellers, absolutely — $10.65 vs $45–60 taxi, and BART is actually faster than taxis during rush hour. For groups of 3 or more with heavy luggage heading to a central hotel, a taxi or Uber split three ways ($15–20/person) becomes competitive with BART tickets ($10.65 each).",
+          },
+          {
+            q: "How long does it take from SFO to downtown SF by taxi?",
+            a: "25–40 minutes in normal traffic. During commute hours (7–9am and 4–7pm), the US-101 and I-280 can be heavily congested — allow 50–75 minutes. BART bypasses surface traffic entirely and is more reliable for time-sensitive arrivals.",
+          },
+          {
+            q: "Are there tolls from SFO to San Francisco?",
+            a: "No — there are no bridge tolls on the direct US-101 route from SFO into San Francisco. Bay Bridge toll ($7.00) only applies for journeys to the East Bay (Oakland, Berkeley). If your driver takes an unusual route, confirm before the journey.",
+          },
+          {
+            q: "Can I take a taxi from SFO to Silicon Valley?",
+            a: "Yes — SFO is actually closer to Palo Alto, Mountain View, and Sunnyvale than to downtown SF. Expect $35–50 to Palo Alto and $50–70 to San Jose. The Caltrain commuter rail is a cheaper option from SFO (transfer via BART to Millbrae, then Caltrain south).",
+          },
+          {
+            q: "Is there a direct bus from SFO to San Francisco?",
+            a: "SamTrans runs route ECR (Express Coastal Route) connecting SFO to San Francisco, Daly City, and the SF Caltrain station for $2.50 — very cheap but slow (45–75 minutes). The free AirTrain connects terminals to the SamTrans/BART station outside the international terminal.",
+          },
+        ],
+      },
     ],
   },
 
   {
-    slug: 'taxi-ohare-to-chicago',
-    title: 'Taxi from O\'Hare Airport (ORD) to Chicago: Cost & Guide (2026)',
-    description: 'O\'Hare taxis to downtown Chicago cost $45–60 flat rate. The Blue Line gets there for $2.50 in 45 minutes. Here\'s when each makes sense in 2026.',
-    publishedAt: '2026-05-15',
+    slug: "taxi-ohare-to-chicago",
+    title: "Taxi from O'Hare Airport (ORD) to Chicago: Cost & Guide (2026)",
+    description:
+      "O'Hare taxis to downtown Chicago cost $45–60 flat rate. The Blue Line gets there for $2.50 in 45 minutes. Here's when each makes sense in 2026.",
+    publishedAt: "2026-05-15",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'Chicago',
-    citySlug: 'chicago',
+    category: "taxi",
+    city: "Chicago",
+    citySlug: "chicago",
     content: [
-      { type: 'intro', body: 'O\'Hare International Airport (ORD) is 27 kilometres northwest of downtown Chicago — one of the furthest major airport-to-city distances in the US. Taxis from O\'Hare to the Loop (downtown) run on a flat rate of $50.25, a fixed price established by the City of Chicago that eliminates metering uncertainty. Uber and Lyft are often cheaper. The CTA Blue Line, however, offers a direct 45-minute connection to downtown for just $2.50 — one of the best airport transit deals in the United States. Understanding which option works for your situation is the key decision you\'ll make at O\'Hare arrivals.' },
-      { type: 'h2', heading: 'O\'Hare to Chicago: Key Numbers' },
-      { type: 'table', rows: [
-        { label: 'Flat taxi rate (O\'Hare → City of Chicago)', value: '$50.25 — fixed, not metered' },
-        { label: 'Flat rate coverage', value: 'All of Chicago city limits (not suburbs)' },
-        { label: 'Destination outside city limits', value: 'Metered — approximately $2.85 flag-fall + $1.87/km' },
-        { label: 'Tip (expected)', value: '15–20% = $7.50–10.00 on the flat rate' },
-        { label: 'Total all-in (taxi to Loop, with tip)', value: 'Approximately $58–62' },
-        { label: 'Uber/Lyft to Loop (standard)', value: '$35–55 depending on demand' },
-        { label: 'CTA Blue Line (O\'Hare → Clark/Lake, Loop)', value: '$2.50 — 45 minutes, runs 24 hours' },
-        { label: 'Journey time by taxi (normal traffic)', value: '35–50 minutes' },
-      ]},
-      { type: 'h2', heading: 'Typical Fares from O\'Hare' },
-      { type: 'table', rows: [
-        { label: 'ORD → The Loop / Millennium Park', value: '$50.25 flat (+ tip)' },
-        { label: 'ORD → River North / Magnificent Mile', value: '$50.25 flat (+ tip)' },
-        { label: 'ORD → Wicker Park / Bucktown', value: '$50.25 flat (+ tip)' },
-        { label: 'ORD → Lincoln Park', value: '$50.25 flat (+ tip)' },
-        { label: 'ORD → Hyde Park (South Side)', value: '$50.25 flat (+ tip) — longer journey, same rate' },
-        { label: 'ORD → Evanston (suburb, not Chicago)', value: 'Metered — approximately $45–65' },
-        { label: 'ORD → Midway Airport (MDW)', value: 'Metered — approximately $40–55' },
-        { label: 'ORD → Rosemont (suburb, convention centre)', value: 'Metered — approximately $10–18' },
-      ]},
-      { type: 'h2', heading: 'How the O\'Hare Flat Rate Works' },
-      { type: 'p', body: 'The $50.25 flat rate applies to any destination within Chicago city limits — no exceptions and no negotiation. The driver must accept the flat rate and cannot charge more for traffic delays. The rate does not cover suburbs such as Evanston, Skokie, Rosemont, Schaumburg, or Naperville — those run on the meter. Before entering the cab, confirm your destination is within Chicago city limits. Tolls are included in the flat rate; you pay nothing additional. Tips (15–20%) are separate and expected.' },
-      { type: 'h2', heading: 'CTA Blue Line: The $2.50 Alternative' },
-      { type: 'p', body: 'The CTA Blue Line runs directly from O\'Hare Airport (Terminal 5, free people mover from Terminals 1–3) to downtown Chicago, stopping at Clark/Lake (the Loop), Washington, Monroe, Jackson, and LaSalle before continuing south and west. The journey takes 45 minutes and costs $2.50 with a Ventra card or $2.50 in cash at the station. Trains run 24 hours — even at 3am, the Blue Line is operating. For solo travellers and pairs with manageable luggage heading to the Loop or North Side neighbourhoods on the Blue/Red line, this is the undisputed best value option in American airport transit.' },
-      { type: 'h2', heading: 'Uber and Lyft from O\'Hare' },
-      { type: 'ul', items: [
-        'Uber and Lyft pick up from the Ride App Waiting Area on the lower level of each terminal — follow "Rideshare" signs',
-        'Fares to the Loop are typically $35–55 in normal conditions — 10–30% below the taxi flat rate',
-        'Chicago event surges (Bears/Cubs/Sox games, Lollapalooza, Taste of Chicago) can push Uber above taxi rates',
-        'Pool/shared options: $20–35 to the Loop — adds 20–30 minutes but significant savings for solo travellers',
-        'UberXL / Lyft XL for groups with luggage: $55–80 — often the right call for 4+ people with bags',
-      ]},
-      { type: 'tip', body: 'If you\'re heading to Navy Pier, Wrigleyville, or the Museum Campus and have a bit of luggage, the Blue Line + short Uber/taxi combo often beats a direct taxi on both cost and time. Take Blue Line to Damen or Logan Square, then a short Uber to your hotel. Total cost: $2.50 + $8 Uber vs $50 taxi — significant savings.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'How much is a taxi from O\'Hare to downtown Chicago?', a: '$50.25 flat rate to any destination within Chicago city limits — fixed by the City of Chicago, not metered. Tip (15–20% = $7.50–10) is expected on top. Total all-in: approximately $58–62.' },
-        { q: 'Is the O\'Hare flat rate to all Chicago destinations?', a: 'Yes — $50.25 to anywhere within the City of Chicago, from the South Side to Rogers Park on the North Side. Destinations outside Chicago city limits (Evanston, Skokie, suburbs) revert to the metered rate.' },
-        { q: 'Is the CTA Blue Line safe at night?', a: 'Yes — the Blue Line runs 24 hours and is widely used by late-arriving travellers and Chicago night-shift workers. The O\'Hare station and Loop stations are well-lit and staffed. Exercise the same awareness you would on any major city transit system late at night.' },
-        { q: 'How long does the taxi take from O\'Hare to the Loop?', a: '35–50 minutes in normal conditions on I-90/94. During Chicago rush hours (7–9am and 3:30–6:30pm) and inclement weather (snowstorms are significant in Chicago), allow 60–90 minutes. The Blue Line is immune to road traffic and stays at 45 minutes regardless.' },
-        { q: 'What is the difference between O\'Hare and Midway airports?', a: 'O\'Hare (ORD) is 27km northwest — the larger international hub. Midway (MDW) is 16km southwest — serves Southwest Airlines and some other carriers. Midway is closer to the city. The CTA Orange Line connects Midway to the Loop in 30 minutes for $2.50. Check which airport your flight uses before planning ground transport.' },
-        { q: 'Can I take a taxi from O\'Hare to suburbs like Evanston or Naperville?', a: 'Yes — the flat rate only applies within Chicago city limits. For suburbs, the meter runs from O\'Hare: Evanston is approximately $45–65, Naperville $80–110, Schaumburg $25–40. For frequent suburban O\'Hare routes, shared shuttle services like Go Airport Express are more economical.' },
-      ]},
+      {
+        type: "intro",
+        body: "O'Hare International Airport (ORD) is 27 kilometres northwest of downtown Chicago — one of the furthest major airport-to-city distances in the US. Taxis from O'Hare to the Loop (downtown) run on a flat rate of $50.25, a fixed price established by the City of Chicago that eliminates metering uncertainty. Uber and Lyft are often cheaper. The CTA Blue Line, however, offers a direct 45-minute connection to downtown for just $2.50 — one of the best airport transit deals in the United States. Understanding which option works for your situation is the key decision you'll make at O'Hare arrivals.",
+      },
+      { type: "h2", heading: "O'Hare to Chicago: Key Numbers" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Flat taxi rate (O'Hare → City of Chicago)",
+            value: "$50.25 — fixed, not metered",
+          },
+          {
+            label: "Flat rate coverage",
+            value: "All of Chicago city limits (not suburbs)",
+          },
+          {
+            label: "Destination outside city limits",
+            value: "Metered — approximately $2.85 flag-fall + $1.87/km",
+          },
+          {
+            label: "Tip (expected)",
+            value: "15–20% = $7.50–10.00 on the flat rate",
+          },
+          {
+            label: "Total all-in (taxi to Loop, with tip)",
+            value: "Approximately $58–62",
+          },
+          {
+            label: "Uber/Lyft to Loop (standard)",
+            value: "$35–55 depending on demand",
+          },
+          {
+            label: "CTA Blue Line (O'Hare → Clark/Lake, Loop)",
+            value: "$2.50 — 45 minutes, runs 24 hours",
+          },
+          {
+            label: "Journey time by taxi (normal traffic)",
+            value: "35–50 minutes",
+          },
+        ],
+      },
+      { type: "h2", heading: "Typical Fares from O'Hare" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "ORD → The Loop / Millennium Park",
+            value: "$50.25 flat (+ tip)",
+          },
+          {
+            label: "ORD → River North / Magnificent Mile",
+            value: "$50.25 flat (+ tip)",
+          },
+          {
+            label: "ORD → Wicker Park / Bucktown",
+            value: "$50.25 flat (+ tip)",
+          },
+          { label: "ORD → Lincoln Park", value: "$50.25 flat (+ tip)" },
+          {
+            label: "ORD → Hyde Park (South Side)",
+            value: "$50.25 flat (+ tip) — longer journey, same rate",
+          },
+          {
+            label: "ORD → Evanston (suburb, not Chicago)",
+            value: "Metered — approximately $45–65",
+          },
+          {
+            label: "ORD → Midway Airport (MDW)",
+            value: "Metered — approximately $40–55",
+          },
+          {
+            label: "ORD → Rosemont (suburb, convention centre)",
+            value: "Metered — approximately $10–18",
+          },
+        ],
+      },
+      { type: "h2", heading: "How the O'Hare Flat Rate Works" },
+      {
+        type: "p",
+        body: "The $50.25 flat rate applies to any destination within Chicago city limits — no exceptions and no negotiation. The driver must accept the flat rate and cannot charge more for traffic delays. The rate does not cover suburbs such as Evanston, Skokie, Rosemont, Schaumburg, or Naperville — those run on the meter. Before entering the cab, confirm your destination is within Chicago city limits. Tolls are included in the flat rate; you pay nothing additional. Tips (15–20%) are separate and expected.",
+      },
+      { type: "h2", heading: "CTA Blue Line: The $2.50 Alternative" },
+      {
+        type: "p",
+        body: "The CTA Blue Line runs directly from O'Hare Airport (Terminal 5, free people mover from Terminals 1–3) to downtown Chicago, stopping at Clark/Lake (the Loop), Washington, Monroe, Jackson, and LaSalle before continuing south and west. The journey takes 45 minutes and costs $2.50 with a Ventra card or $2.50 in cash at the station. Trains run 24 hours — even at 3am, the Blue Line is operating. For solo travellers and pairs with manageable luggage heading to the Loop or North Side neighbourhoods on the Blue/Red line, this is the undisputed best value option in American airport transit.",
+      },
+      { type: "h2", heading: "Uber and Lyft from O'Hare" },
+      {
+        type: "ul",
+        items: [
+          'Uber and Lyft pick up from the Ride App Waiting Area on the lower level of each terminal — follow "Rideshare" signs',
+          "Fares to the Loop are typically $35–55 in normal conditions — 10–30% below the taxi flat rate",
+          "Chicago event surges (Bears/Cubs/Sox games, Lollapalooza, Taste of Chicago) can push Uber above taxi rates",
+          "Pool/shared options: $20–35 to the Loop — adds 20–30 minutes but significant savings for solo travellers",
+          "UberXL / Lyft XL for groups with luggage: $55–80 — often the right call for 4+ people with bags",
+        ],
+      },
+      {
+        type: "tip",
+        body: "If you're heading to Navy Pier, Wrigleyville, or the Museum Campus and have a bit of luggage, the Blue Line + short Uber/taxi combo often beats a direct taxi on both cost and time. Take Blue Line to Damen or Logan Square, then a short Uber to your hotel. Total cost: $2.50 + $8 Uber vs $50 taxi — significant savings.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from O'Hare to downtown Chicago?",
+            a: "$50.25 flat rate to any destination within Chicago city limits — fixed by the City of Chicago, not metered. Tip (15–20% = $7.50–10) is expected on top. Total all-in: approximately $58–62.",
+          },
+          {
+            q: "Is the O'Hare flat rate to all Chicago destinations?",
+            a: "Yes — $50.25 to anywhere within the City of Chicago, from the South Side to Rogers Park on the North Side. Destinations outside Chicago city limits (Evanston, Skokie, suburbs) revert to the metered rate.",
+          },
+          {
+            q: "Is the CTA Blue Line safe at night?",
+            a: "Yes — the Blue Line runs 24 hours and is widely used by late-arriving travellers and Chicago night-shift workers. The O'Hare station and Loop stations are well-lit and staffed. Exercise the same awareness you would on any major city transit system late at night.",
+          },
+          {
+            q: "How long does the taxi take from O'Hare to the Loop?",
+            a: "35–50 minutes in normal conditions on I-90/94. During Chicago rush hours (7–9am and 3:30–6:30pm) and inclement weather (snowstorms are significant in Chicago), allow 60–90 minutes. The Blue Line is immune to road traffic and stays at 45 minutes regardless.",
+          },
+          {
+            q: "What is the difference between O'Hare and Midway airports?",
+            a: "O'Hare (ORD) is 27km northwest — the larger international hub. Midway (MDW) is 16km southwest — serves Southwest Airlines and some other carriers. Midway is closer to the city. The CTA Orange Line connects Midway to the Loop in 30 minutes for $2.50. Check which airport your flight uses before planning ground transport.",
+          },
+          {
+            q: "Can I take a taxi from O'Hare to suburbs like Evanston or Naperville?",
+            a: "Yes — the flat rate only applies within Chicago city limits. For suburbs, the meter runs from O'Hare: Evanston is approximately $45–65, Naperville $80–110, Schaumburg $25–40. For frequent suburban O'Hare routes, shared shuttle services like Go Airport Express are more economical.",
+          },
+        ],
+      },
     ],
   },
-
-]
+];

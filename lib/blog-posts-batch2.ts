@@ -1,2161 +1,5133 @@
-import type { BlogPost } from './blog-posts'
+import type { BlogPost } from "./blog-posts";
 
 export const BATCH2_BLOG_POSTS: BlogPost[] = [
   {
-    slug: 'tipping-in-china',
-    title: 'Tipping in China: Do You Tip & How Much? (2026)',
-    description: "At a local Beijing or Shanghai restaurant, staff may chase you down the street to return money they think you forgot — tipping is that unfamiliar. Here's the full 2026 guide: private tour guides (CNY 50–100/day) and resort spa workers do appreciate tips; local restaurants and DiDi drivers don't.",
-    publishedAt: '2025-09-06',
+    slug: "tipping-in-china",
+    title: "Tipping in China: Do You Tip & How Much? (2026)",
+    description:
+      "At a local Beijing or Shanghai restaurant, staff may chase you down the street to return money they think you forgot — tipping is that unfamiliar. Here's the full 2026 guide: private tour guides (CNY 50–100/day) and resort spa workers do appreciate tips; local restaurants and DiDi drivers don't.",
+    publishedAt: "2025-09-06",
     readingMinutes: 8,
-    category: 'tipping',
-    country: 'China',
-    countrySlug: 'china',
+    category: "tipping",
+    country: "China",
+    countrySlug: "china",
     content: [
-      { type: 'intro', body: 'Tipping is not part of Chinese culture. In most restaurants, hotels, and taxis, a tip is not expected, not solicited, and in some traditional settings may be politely declined. This is not rudeness — it reflects a service culture where workers take pride in their role without expecting a gratuity. That said, tourist-facing businesses in Shanghai, Beijing, Shenzhen, and international hotel chains are increasingly tip-aware, particularly at venues catering to Western visitors. This guide explains exactly where tipping is appropriate, where it is not, and how to navigate the nuances of modern China\'s evolving service culture.' },
-      { type: 'h2', heading: 'Tipping in China at a Glance' },
-      { type: 'table', rows: [
-        { label: 'Restaurants (local)', value: 'Not expected — tip is uncommon and may be returned' },
-        { label: 'Restaurants (tourist/hotel)', value: 'Optional — 5–10% appreciated at international venues' },
-        { label: 'Taxis / DiDi', value: 'Not expected — fare only; round up at most' },
-        { label: 'Hotel Porters (international)', value: 'CNY 10–20 per bag' },
-        { label: 'Hotel Housekeeping', value: 'Not customary; CNY 10–20 at checkout is a kind gesture' },
-        { label: 'Tour Guides (private)', value: 'CNY 50–100 for a full day — appreciated' },
-        { label: 'Tour Guides (group package)', value: 'CNY 20–50 per person per day — standard on international tours' },
-        { label: 'Spa / Massage', value: 'CNY 20–50 handed directly — especially at tourist-area spas' },
-      ]},
-      { type: 'h2', heading: 'Restaurants & Cafés' },
-      { type: 'p', body: 'At local Chinese restaurants — from street dumplings to hot pot chains — do not tip. The bill is the bill. Leaving cash on the table will often result in staff chasing you down to return it. At international hotel restaurants, rooftop bars in Shanghai\'s Bund area, or Western-style dining venues in Beijing\'s Sanlitun, a small tip of 5–10% is acceptable and appreciated, though never expected. If a service charge is already on the bill (common at five-star international hotels), no additional tip is needed.' },
-      { type: 'h2', heading: 'Taxis & DiDi' },
-      { type: 'p', body: 'DiDi (the dominant ride-hailing app in China) and metered taxis do not have a tip feature in most contexts. Pay the fare shown. Rounding up a few yuan is fine but not expected. For airport runs with heavy luggage, a CNY 5–10 gesture is kind but entirely optional. Taxi and DiDi drivers in China are professionals who do not depend on tips — they earn a regulated wage or commission from the app.' },
-      { type: 'h2', heading: 'Guides, Hotels & Special Situations' },
-      { type: 'ul', items: [
-        'Private tour guides: CNY 50–100 for a full day is a generous and appreciated gesture — particularly for tailored itineraries',
-        'Group tour guides (international packages): CNY 20–50 per person per day is common and expected on packages marketed to Western tourists',
-        'Temple or museum staff who provide informal guidance: CNY 10–20 is appropriate if they spent meaningful time with you',
-        'Spa or massage workers: CNY 20–50 handed directly to the therapist, especially after longer sessions or in resort contexts',
-        'Hotel concierge who arranges something special: CNY 20–50 is a thoughtful acknowledgement for a dinner reservation or hard-to-get ticket',
-        'Luxury hotel restaurants with Western management: 5–10% tip is understood and appreciated by staff',
-      ]},
-      { type: 'h2', heading: 'Mobile Payments & Cash Tips in China' },
-      { type: 'p', body: 'China is one of the most cashless societies on earth — the vast majority of transactions use WeChat Pay or Alipay. Foreign visitors may have limited access to these unless they have a linked Chinese bank card. For tipping, cash in CNY (Chinese Yuan / Renminbi) is always appropriate. At international hotels, USD is also understood but CNY is better. Do not tip via WeChat Pay unless you have the app set up — the recipient would need to accept a transfer from you, which creates friction.' },
-      { type: 'tip', body: 'If you want to tip and the person declines, offer once more with a smile and a thank you — a gentle second offer is culturally acceptable in China. If they decline again, accept it graciously. Insisting a third time is considered impolite and creates discomfort for the recipient.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'Is tipping rude in China?', a: 'Not rude, but unusual in traditional settings. Staff may decline or be confused by it. At international hotels and tourist restaurants in major cities, small tips are understood and accepted.' },
-        { q: 'Do I tip at Chinese restaurants?', a: 'At local Chinese restaurants, no. At international or hotel restaurants in Shanghai, Beijing, or Guangzhou, a small tip (5–10%) is optional and appreciated. Check the bill for any existing service charge first.' },
-        { q: 'Should I tip my tour guide in China?', a: 'Yes — for private guides, CNY 50–100 for a full day is appropriate and appreciated. For group tours sold through international companies, CNY 20–50 per person per day is the standard guideline.' },
-        { q: 'Can I tip in USD in China?', a: 'It is better to tip in CNY. Foreign currency is difficult for individuals to exchange and can create complications. At international luxury hotels, USD is understood but CNY is always more practical.' },
-        { q: 'Do DiDi drivers expect tips in China?', a: 'No — DiDi does not have a built-in tip function in most contexts. Drivers are paid by the platform and do not expect or solicit tips. Rounding up in cash is fine but completely optional.' },
-        { q: 'What about tipping at a Chinese massage or spa?', a: 'At tourist-area massage parlours and resort spas, CNY 20–50 handed directly to your therapist is appreciated. At traditional Chinese medicine clinics and local massage shops, tipping is less expected — follow the staff\'s cue.' },
-      ]},
+      {
+        type: "intro",
+        body: "Tipping is not part of Chinese culture. In most restaurants, hotels, and taxis, a tip is not expected, not solicited, and in some traditional settings may be politely declined. This is not rudeness — it reflects a service culture where workers take pride in their role without expecting a gratuity. That said, tourist-facing businesses in Shanghai, Beijing, Shenzhen, and international hotel chains are increasingly tip-aware, particularly at venues catering to Western visitors. This guide explains exactly where tipping is appropriate, where it is not, and how to navigate the nuances of modern China's evolving service culture.",
+      },
+      { type: "h2", heading: "Tipping in China at a Glance" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Restaurants (local)",
+            value: "Not expected — tip is uncommon and may be returned",
+          },
+          {
+            label: "Restaurants (tourist/hotel)",
+            value: "Optional — 5–10% appreciated at international venues",
+          },
+          {
+            label: "Taxis / DiDi",
+            value: "Not expected — fare only; round up at most",
+          },
+          {
+            label: "Hotel Porters (international)",
+            value: "CNY 10–20 per bag",
+          },
+          {
+            label: "Hotel Housekeeping",
+            value: "Not customary; CNY 10–20 at checkout is a kind gesture",
+          },
+          {
+            label: "Tour Guides (private)",
+            value: "CNY 50–100 for a full day — appreciated",
+          },
+          {
+            label: "Tour Guides (group package)",
+            value:
+              "CNY 20–50 per person per day — standard on international tours",
+          },
+          {
+            label: "Spa / Massage",
+            value:
+              "CNY 20–50 handed directly — especially at tourist-area spas",
+          },
+        ],
+      },
+      { type: "h2", heading: "Restaurants & Cafés" },
+      {
+        type: "p",
+        body: "At local Chinese restaurants — from street dumplings to hot pot chains — do not tip. The bill is the bill. Leaving cash on the table will often result in staff chasing you down to return it. At international hotel restaurants, rooftop bars in Shanghai's Bund area, or Western-style dining venues in Beijing's Sanlitun, a small tip of 5–10% is acceptable and appreciated, though never expected. If a service charge is already on the bill (common at five-star international hotels), no additional tip is needed.",
+      },
+      { type: "h2", heading: "Taxis & DiDi" },
+      {
+        type: "p",
+        body: "DiDi (the dominant ride-hailing app in China) and metered taxis do not have a tip feature in most contexts. Pay the fare shown. Rounding up a few yuan is fine but not expected. For airport runs with heavy luggage, a CNY 5–10 gesture is kind but entirely optional. Taxi and DiDi drivers in China are professionals who do not depend on tips — they earn a regulated wage or commission from the app.",
+      },
+      { type: "h2", heading: "Guides, Hotels & Special Situations" },
+      {
+        type: "ul",
+        items: [
+          "Private tour guides: CNY 50–100 for a full day is a generous and appreciated gesture — particularly for tailored itineraries",
+          "Group tour guides (international packages): CNY 20–50 per person per day is common and expected on packages marketed to Western tourists",
+          "Temple or museum staff who provide informal guidance: CNY 10–20 is appropriate if they spent meaningful time with you",
+          "Spa or massage workers: CNY 20–50 handed directly to the therapist, especially after longer sessions or in resort contexts",
+          "Hotel concierge who arranges something special: CNY 20–50 is a thoughtful acknowledgement for a dinner reservation or hard-to-get ticket",
+          "Luxury hotel restaurants with Western management: 5–10% tip is understood and appreciated by staff",
+        ],
+      },
+      { type: "h2", heading: "Mobile Payments & Cash Tips in China" },
+      {
+        type: "p",
+        body: "China is one of the most cashless societies on earth — the vast majority of transactions use WeChat Pay or Alipay. Foreign visitors may have limited access to these unless they have a linked Chinese bank card. For tipping, cash in CNY (Chinese Yuan / Renminbi) is always appropriate. At international hotels, USD is also understood but CNY is better. Do not tip via WeChat Pay unless you have the app set up — the recipient would need to accept a transfer from you, which creates friction.",
+      },
+      {
+        type: "tip",
+        body: "If you want to tip and the person declines, offer once more with a smile and a thank you — a gentle second offer is culturally acceptable in China. If they decline again, accept it graciously. Insisting a third time is considered impolite and creates discomfort for the recipient.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "Is tipping rude in China?",
+            a: "Not rude, but unusual in traditional settings. Staff may decline or be confused by it. At international hotels and tourist restaurants in major cities, small tips are understood and accepted.",
+          },
+          {
+            q: "Do I tip at Chinese restaurants?",
+            a: "At local Chinese restaurants, no. At international or hotel restaurants in Shanghai, Beijing, or Guangzhou, a small tip (5–10%) is optional and appreciated. Check the bill for any existing service charge first.",
+          },
+          {
+            q: "Should I tip my tour guide in China?",
+            a: "Yes — for private guides, CNY 50–100 for a full day is appropriate and appreciated. For group tours sold through international companies, CNY 20–50 per person per day is the standard guideline.",
+          },
+          {
+            q: "Can I tip in USD in China?",
+            a: "It is better to tip in CNY. Foreign currency is difficult for individuals to exchange and can create complications. At international luxury hotels, USD is understood but CNY is always more practical.",
+          },
+          {
+            q: "Do DiDi drivers expect tips in China?",
+            a: "No — DiDi does not have a built-in tip function in most contexts. Drivers are paid by the platform and do not expect or solicit tips. Rounding up in cash is fine but completely optional.",
+          },
+          {
+            q: "What about tipping at a Chinese massage or spa?",
+            a: "At tourist-area massage parlours and resort spas, CNY 20–50 handed directly to your therapist is appreciated. At traditional Chinese medicine clinics and local massage shops, tipping is less expected — follow the staff's cue.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'tipping-in-new-zealand',
-    title: 'Tipping in New Zealand: Is It Expected? (2026)',
-    description: "NZ hospitality staff earn NZD $23.15/hour minimum wage — tipping is genuinely optional and no one expects it. Here's the full 2026 guide: 10% for exceptional service is a lovely gesture, café tip jars are common, and card readers rarely have a tip screen (unlike Australia).",
-    publishedAt: '2025-09-14',
+    slug: "tipping-in-new-zealand",
+    title: "Tipping in New Zealand: Is It Expected? (2026)",
+    description:
+      "NZ hospitality staff earn NZD $23.15/hour minimum wage — tipping is genuinely optional and no one expects it. Here's the full 2026 guide: 10% for exceptional service is a lovely gesture, café tip jars are common, and card readers rarely have a tip screen (unlike Australia).",
+    publishedAt: "2025-09-14",
     readingMinutes: 8,
-    category: 'tipping',
-    country: 'New Zealand',
-    countrySlug: 'new-zealand',
+    category: "tipping",
+    country: "New Zealand",
+    countrySlug: "new-zealand",
     content: [
-      { type: 'intro', body: 'New Zealand does not have a tipping culture. All workers in New Zealand — including hospitality staff — are entitled to the national minimum wage (NZD $23.15/hour as of 2026), which means they do not rely on tips to survive. Tipping is genuinely optional, and no one will be offended if you do not tip. That said, for exceptional service, a tip is always welcome and appreciated. This guide explains exactly what New Zealanders actually do, what visitors from tip-culture countries should know, and the specific situations where a tip is a lovely gesture.' },
-      { type: 'h2', heading: 'Tipping in New Zealand at a Glance' },
-      { type: 'table', rows: [
-        { label: 'Restaurants', value: 'Not expected — 10% for excellent service is a generous gesture' },
-        { label: 'Cafés / Coffee', value: 'Not expected — loose change in a tip jar is common' },
-        { label: 'Taxis / Uber', value: 'Not expected — rounding up is fine' },
-        { label: 'Hotel Porters', value: 'Not expected — NZD $2–5 per bag if you want to' },
-        { label: 'Hotel Housekeeping', value: 'Not customary' },
-        { label: 'Tour Guides', value: 'NZD $10–30 per person for a great experience — appreciated' },
-        { label: 'Food Delivery', value: 'Not customary — in-app tip optional' },
-        { label: 'Scenic flights / heli tours', value: 'NZD $20–50 for an outstanding pilot/guide — a lovely gesture' },
-      ]},
-      { type: 'h2', heading: 'Restaurants & Cafés' },
-      { type: 'p', body: 'New Zealand\'s café culture is world-class, and staff are paid fairly. There is no social expectation to tip, and you will not receive awkward looks for paying exactly what is on the bill. If a meal was genuinely exceptional — great food, attentive service, a memorable experience — rounding up or leaving 10% is a lovely gesture that will genuinely delight the staff. Most New Zealanders tip occasionally for excellent service; very few tip as a default rule. Card terminals in New Zealand rarely prompt for tips, unlike in Australia.' },
-      { type: 'h2', heading: 'Taxis & Rideshare' },
-      { type: 'p', body: 'Taxi and Uber drivers in New Zealand are paid a wage or commission rate. Rounding up to the nearest dollar is courteous but not expected. Uber in New Zealand supports in-app tipping — 5–10% is a nice gesture for a great ride, but pressing 0% is equally normal. For airport transfers or longer journeys, a NZD $3–5 tip on a NZD $40 fare is a kind acknowledgement.' },
-      { type: 'h2', heading: 'Tour Guides, Māori Experiences & Adventure Tourism' },
-      { type: 'p', body: 'New Zealand is famous for adventure tourism — bungy jumping, skydiving, white-water rafting, wilderness hiking, and scenic flights over Milford Sound or Franz Josef Glacier. For guided experiences, a tip of NZD $10–30 per person is a meaningful acknowledgement of expertise and effort, particularly for private guides or multi-hour experiences. Māori cultural experiences (hangi, pōwhiri, guided walks at marae) are led by kaitiaki (guardians) who share their heritage — tipping is not required but always respectfully received.' },
-      { type: 'ul', items: [
-        'Multi-day guided hikes (Milford Track, Routeburn): NZD $30–50 for the lead guide on completion',
-        'Scenic helicopter or fixed-wing flights: NZD $20–50 for an outstanding pilot is a lovely gesture',
-        'Whale watching tours: Not typically expected, but NZD $10–20 for an exceptional guide is appreciated',
-        'Māori cultural guides: Tipping is welcomed but not expected — NZD $10–20 per person for a memorable experience',
-      ]},
-      { type: 'tip', body: 'New Zealand has a strong café tip jar culture — the small ceramic jar or cardboard box on the counter at your local café is there for loose change. Dropping in a coin or two is a completely normal gesture, even where formal restaurant tipping would not occur.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'Do you tip in New Zealand restaurants?', a: 'It is not expected or required. For genuinely excellent service, 10% is a generous tip that will be warmly received. Most New Zealanders do not tip as a default rule.' },
-        { q: 'Is tipping common in New Zealand?', a: 'Less common than in Australia or the UK. Most New Zealanders tip occasionally for exceptional service rather than as a routine habit.' },
-        { q: 'Do I tip taxi drivers in New Zealand?', a: 'Not expected. Rounding up to the nearest dollar is a common courtesy but entirely optional. Uber supports in-app tipping — 5–10% is a nice gesture.' },
-        { q: 'Should I tip at a New Zealand café?', a: 'The tip jar on the counter is for loose change — dropping in a coin is appreciated. No one expects a percentage tip at a café; just enjoy your flat white.' },
-        { q: 'Do I tip my guide on the Milford Track?', a: 'Tipping is not required, but NZD $30–50 for the lead guide on a multi-day guided walk is a generous and meaningful acknowledgement of their expertise and care.' },
-        { q: 'Does New Zealand use a tipping screen on card readers?', a: 'Rarely — unlike Australia, most New Zealand card terminals do not have a tip prompt. If you want to tip, ask the server to add it before they process the card, or leave cash on the table.' },
-      ]},
+      {
+        type: "intro",
+        body: "New Zealand does not have a tipping culture. All workers in New Zealand — including hospitality staff — are entitled to the national minimum wage (NZD $23.15/hour as of 2026), which means they do not rely on tips to survive. Tipping is genuinely optional, and no one will be offended if you do not tip. That said, for exceptional service, a tip is always welcome and appreciated. This guide explains exactly what New Zealanders actually do, what visitors from tip-culture countries should know, and the specific situations where a tip is a lovely gesture.",
+      },
+      { type: "h2", heading: "Tipping in New Zealand at a Glance" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Restaurants",
+            value:
+              "Not expected — 10% for excellent service is a generous gesture",
+          },
+          {
+            label: "Cafés / Coffee",
+            value: "Not expected — loose change in a tip jar is common",
+          },
+          {
+            label: "Taxis / Uber",
+            value: "Not expected — rounding up is fine",
+          },
+          {
+            label: "Hotel Porters",
+            value: "Not expected — NZD $2–5 per bag if you want to",
+          },
+          { label: "Hotel Housekeeping", value: "Not customary" },
+          {
+            label: "Tour Guides",
+            value: "NZD $10–30 per person for a great experience — appreciated",
+          },
+          {
+            label: "Food Delivery",
+            value: "Not customary — in-app tip optional",
+          },
+          {
+            label: "Scenic flights / heli tours",
+            value:
+              "NZD $20–50 for an outstanding pilot/guide — a lovely gesture",
+          },
+        ],
+      },
+      { type: "h2", heading: "Restaurants & Cafés" },
+      {
+        type: "p",
+        body: "New Zealand's café culture is world-class, and staff are paid fairly. There is no social expectation to tip, and you will not receive awkward looks for paying exactly what is on the bill. If a meal was genuinely exceptional — great food, attentive service, a memorable experience — rounding up or leaving 10% is a lovely gesture that will genuinely delight the staff. Most New Zealanders tip occasionally for excellent service; very few tip as a default rule. Card terminals in New Zealand rarely prompt for tips, unlike in Australia.",
+      },
+      { type: "h2", heading: "Taxis & Rideshare" },
+      {
+        type: "p",
+        body: "Taxi and Uber drivers in New Zealand are paid a wage or commission rate. Rounding up to the nearest dollar is courteous but not expected. Uber in New Zealand supports in-app tipping — 5–10% is a nice gesture for a great ride, but pressing 0% is equally normal. For airport transfers or longer journeys, a NZD $3–5 tip on a NZD $40 fare is a kind acknowledgement.",
+      },
+      {
+        type: "h2",
+        heading: "Tour Guides, Māori Experiences & Adventure Tourism",
+      },
+      {
+        type: "p",
+        body: "New Zealand is famous for adventure tourism — bungy jumping, skydiving, white-water rafting, wilderness hiking, and scenic flights over Milford Sound or Franz Josef Glacier. For guided experiences, a tip of NZD $10–30 per person is a meaningful acknowledgement of expertise and effort, particularly for private guides or multi-hour experiences. Māori cultural experiences (hangi, pōwhiri, guided walks at marae) are led by kaitiaki (guardians) who share their heritage — tipping is not required but always respectfully received.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Multi-day guided hikes (Milford Track, Routeburn): NZD $30–50 for the lead guide on completion",
+          "Scenic helicopter or fixed-wing flights: NZD $20–50 for an outstanding pilot is a lovely gesture",
+          "Whale watching tours: Not typically expected, but NZD $10–20 for an exceptional guide is appreciated",
+          "Māori cultural guides: Tipping is welcomed but not expected — NZD $10–20 per person for a memorable experience",
+        ],
+      },
+      {
+        type: "tip",
+        body: "New Zealand has a strong café tip jar culture — the small ceramic jar or cardboard box on the counter at your local café is there for loose change. Dropping in a coin or two is a completely normal gesture, even where formal restaurant tipping would not occur.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "Do you tip in New Zealand restaurants?",
+            a: "It is not expected or required. For genuinely excellent service, 10% is a generous tip that will be warmly received. Most New Zealanders do not tip as a default rule.",
+          },
+          {
+            q: "Is tipping common in New Zealand?",
+            a: "Less common than in Australia or the UK. Most New Zealanders tip occasionally for exceptional service rather than as a routine habit.",
+          },
+          {
+            q: "Do I tip taxi drivers in New Zealand?",
+            a: "Not expected. Rounding up to the nearest dollar is a common courtesy but entirely optional. Uber supports in-app tipping — 5–10% is a nice gesture.",
+          },
+          {
+            q: "Should I tip at a New Zealand café?",
+            a: "The tip jar on the counter is for loose change — dropping in a coin is appreciated. No one expects a percentage tip at a café; just enjoy your flat white.",
+          },
+          {
+            q: "Do I tip my guide on the Milford Track?",
+            a: "Tipping is not required, but NZD $30–50 for the lead guide on a multi-day guided walk is a generous and meaningful acknowledgement of their expertise and care.",
+          },
+          {
+            q: "Does New Zealand use a tipping screen on card readers?",
+            a: "Rarely — unlike Australia, most New Zealand card terminals do not have a tip prompt. If you want to tip, ask the server to add it before they process the card, or leave cash on the table.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'tipping-in-netherlands',
-    title: 'Tipping in the Netherlands: How Much & When (2026)',
-    description: "Dutch restaurants don't include a service charge, and most card terminals don't have a tip prompt — say the full total you want to pay before they process the card. Here's the full 2026 guide: 5–10% is appreciated, 0% causes no offence.",
-    publishedAt: '2025-09-21',
+    slug: "tipping-in-netherlands",
+    title: "Tipping in the Netherlands: How Much & When (2026)",
+    description:
+      "Dutch restaurants don't include a service charge, and most card terminals don't have a tip prompt — say the full total you want to pay before they process the card. Here's the full 2026 guide: 5–10% is appreciated, 0% causes no offence.",
+    publishedAt: "2025-09-21",
     readingMinutes: 8,
-    category: 'tipping',
-    country: 'Netherlands',
-    countrySlug: 'netherlands',
+    category: "tipping",
+    country: "Netherlands",
+    countrySlug: "netherlands",
     content: [
-      { type: 'intro', body: 'The Netherlands has a relaxed approach to tipping. Service staff are paid a fair wage with social protections, so tips are a genuine "thank you" rather than a financial necessity. Rounding up the bill or leaving 5–10% for good restaurant service is the norm — and entirely optional. The Dutch are famously direct; they won\'t expect a tip and won\'t resent it if you don\'t leave one. This guide covers Amsterdam and all major Dutch cities, including the specific customs around card payments, brown cafés, and cycling-friendly city transport.' },
-      { type: 'h2', heading: 'Tipping in the Netherlands at a Glance' },
-      { type: 'table', rows: [
-        { label: 'Restaurants', value: '5–10% for good service — round up or leave coins' },
-        { label: 'Cafés / Bars', value: 'Round up or leave small change — not obligatory' },
-        { label: 'Taxis', value: 'Round up to the nearest euro — no percentage expected' },
-        { label: 'Hotel Porters', value: '€1–2 per bag — not customary but appreciated' },
-        { label: 'Hotel Housekeeping', value: 'Not customary' },
-        { label: 'Tour Guides', value: '€5–10 per person for a half/full day tour' },
-        { label: 'Food Delivery', value: '€1–2 in-app tip is a nice gesture' },
-      ]},
-      { type: 'h2', heading: 'Restaurants & Brown Cafés' },
-      { type: 'p', body: 'At sit-down restaurants in Amsterdam, Rotterdam, or Utrecht, the usual approach is to round up the bill or leave 5–10% for genuinely good service. You will not be chased down for a tip, and the bill does not include a service charge in most cases. At traditional "brown cafés" (bruine kroegen) — the cosy, wood-panelled pub-like bars that are a Dutch institution — leaving a euro or two on the bar at the end of the evening is appreciated. At tourist-heavy restaurants near the Rijksmuseum, Anne Frank House, or Vondelpark, staff are tip-aware and a 10% tip is a fair acknowledgement.' },
-      { type: 'h2', heading: 'Taxis & Getting Around Amsterdam' },
-      { type: 'p', body: 'Amsterdam taxis are metered and regulated. Rounding up to the nearest euro is the standard custom — if the fare is €18.40, leaving €20 is perfectly natural. No one expects 15–20% as in the US. Uber operates in Amsterdam; in-app tipping is available but not commonly used by Dutch passengers. For Schiphol airport transfers, a small round-up is the norm. Note: Amsterdam\'s extensive tram network, metro, and cycling infrastructure means many visitors use taxis far less than in other cities.' },
-      { type: 'h2', heading: 'Canal Boat Tours & Special Experiences' },
-      { type: 'ul', items: [
-        'Canal boat tours: €5–10 per person for the guide on a private tour — not expected on mass group tours',
-        'Bike rental shops: No tip expected — it is a retail transaction',
-        'Private walking tours of the Jordaan or Jewish Quarter: €5–10 per person for an excellent guide',
-        'Hotel concierge who secures a hard-to-get reservation: €10–20 is a thoughtful acknowledgement',
-        'Museum audio guides: No tip — these are automated services',
-      ]},
-      { type: 'tip', body: 'When paying by card in Dutch restaurants, tell the server the total you want to pay (including any tip) before they process the card — Dutch card terminals often do not have a tip prompt. Say the full amount you want to pay when they ask "hoeveel?" (how much?).' },
-      { type: 'warning', body: 'The Netherlands uses the euro (EUR), not a local currency. Cash is less common in Dutch daily life than in Germany or France — many Dutch establishments are card-only. If you want to leave a cash tip, ask the server if cash is accepted before sitting down.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'Do you tip in Amsterdam restaurants?', a: 'Yes, but modestly. Rounding up or leaving 5–10% for good service is the norm. It is not expected or obligatory, but always appreciated.' },
-        { q: 'How do I tip by card in the Netherlands?', a: 'Tell the server the total amount you want to pay (including tip) before they process the card. Most Dutch card readers do not have a tip screen — you state the total directly.' },
-        { q: 'Is service included in Dutch restaurant bills?', a: 'Not usually. Check for "bediening inbegrepen" on the menu or bill — if not present, no service charge has been added and a tip is entirely your choice.' },
-        { q: 'Do Dutch taxis expect tips?', a: 'No percentage tip is expected. Rounding up to the nearest euro (e.g., paying €20 on a €17.60 fare) is the normal custom. No one will be offended by exact change.' },
-        { q: 'Should I tip at a brown café (bruine kroeg) in Amsterdam?', a: 'Leaving a euro or two on the bar at the end of the evening is a appreciated gesture at a brown café. It is less formal than restaurant tipping and more of a social acknowledgement.' },
-        { q: 'Is it rude not to tip in the Netherlands?', a: 'Absolutely not. Dutch culture does not impose a tipping obligation, and service workers are paid a fair wage. Not tipping is entirely normal — tipping is a genuine bonus, not a social expectation.' },
-      ]},
+      {
+        type: "intro",
+        body: "The Netherlands has a relaxed approach to tipping. Service staff are paid a fair wage with social protections, so tips are a genuine \"thank you\" rather than a financial necessity. Rounding up the bill or leaving 5–10% for good restaurant service is the norm — and entirely optional. The Dutch are famously direct; they won't expect a tip and won't resent it if you don't leave one. This guide covers Amsterdam and all major Dutch cities, including the specific customs around card payments, brown cafés, and cycling-friendly city transport.",
+      },
+      { type: "h2", heading: "Tipping in the Netherlands at a Glance" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Restaurants",
+            value: "5–10% for good service — round up or leave coins",
+          },
+          {
+            label: "Cafés / Bars",
+            value: "Round up or leave small change — not obligatory",
+          },
+          {
+            label: "Taxis",
+            value: "Round up to the nearest euro — no percentage expected",
+          },
+          {
+            label: "Hotel Porters",
+            value: "€1–2 per bag — not customary but appreciated",
+          },
+          { label: "Hotel Housekeeping", value: "Not customary" },
+          {
+            label: "Tour Guides",
+            value: "€5–10 per person for a half/full day tour",
+          },
+          {
+            label: "Food Delivery",
+            value: "€1–2 in-app tip is a nice gesture",
+          },
+        ],
+      },
+      { type: "h2", heading: "Restaurants & Brown Cafés" },
+      {
+        type: "p",
+        body: 'At sit-down restaurants in Amsterdam, Rotterdam, or Utrecht, the usual approach is to round up the bill or leave 5–10% for genuinely good service. You will not be chased down for a tip, and the bill does not include a service charge in most cases. At traditional "brown cafés" (bruine kroegen) — the cosy, wood-panelled pub-like bars that are a Dutch institution — leaving a euro or two on the bar at the end of the evening is appreciated. At tourist-heavy restaurants near the Rijksmuseum, Anne Frank House, or Vondelpark, staff are tip-aware and a 10% tip is a fair acknowledgement.',
+      },
+      { type: "h2", heading: "Taxis & Getting Around Amsterdam" },
+      {
+        type: "p",
+        body: "Amsterdam taxis are metered and regulated. Rounding up to the nearest euro is the standard custom — if the fare is €18.40, leaving €20 is perfectly natural. No one expects 15–20% as in the US. Uber operates in Amsterdam; in-app tipping is available but not commonly used by Dutch passengers. For Schiphol airport transfers, a small round-up is the norm. Note: Amsterdam's extensive tram network, metro, and cycling infrastructure means many visitors use taxis far less than in other cities.",
+      },
+      { type: "h2", heading: "Canal Boat Tours & Special Experiences" },
+      {
+        type: "ul",
+        items: [
+          "Canal boat tours: €5–10 per person for the guide on a private tour — not expected on mass group tours",
+          "Bike rental shops: No tip expected — it is a retail transaction",
+          "Private walking tours of the Jordaan or Jewish Quarter: €5–10 per person for an excellent guide",
+          "Hotel concierge who secures a hard-to-get reservation: €10–20 is a thoughtful acknowledgement",
+          "Museum audio guides: No tip — these are automated services",
+        ],
+      },
+      {
+        type: "tip",
+        body: 'When paying by card in Dutch restaurants, tell the server the total you want to pay (including any tip) before they process the card — Dutch card terminals often do not have a tip prompt. Say the full amount you want to pay when they ask "hoeveel?" (how much?).',
+      },
+      {
+        type: "warning",
+        body: "The Netherlands uses the euro (EUR), not a local currency. Cash is less common in Dutch daily life than in Germany or France — many Dutch establishments are card-only. If you want to leave a cash tip, ask the server if cash is accepted before sitting down.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "Do you tip in Amsterdam restaurants?",
+            a: "Yes, but modestly. Rounding up or leaving 5–10% for good service is the norm. It is not expected or obligatory, but always appreciated.",
+          },
+          {
+            q: "How do I tip by card in the Netherlands?",
+            a: "Tell the server the total amount you want to pay (including tip) before they process the card. Most Dutch card readers do not have a tip screen — you state the total directly.",
+          },
+          {
+            q: "Is service included in Dutch restaurant bills?",
+            a: 'Not usually. Check for "bediening inbegrepen" on the menu or bill — if not present, no service charge has been added and a tip is entirely your choice.',
+          },
+          {
+            q: "Do Dutch taxis expect tips?",
+            a: "No percentage tip is expected. Rounding up to the nearest euro (e.g., paying €20 on a €17.60 fare) is the normal custom. No one will be offended by exact change.",
+          },
+          {
+            q: "Should I tip at a brown café (bruine kroeg) in Amsterdam?",
+            a: "Leaving a euro or two on the bar at the end of the evening is a appreciated gesture at a brown café. It is less formal than restaurant tipping and more of a social acknowledgement.",
+          },
+          {
+            q: "Is it rude not to tip in the Netherlands?",
+            a: "Absolutely not. Dutch culture does not impose a tipping obligation, and service workers are paid a fair wage. Not tipping is entirely normal — tipping is a genuine bonus, not a social expectation.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'tipping-in-switzerland',
-    title: 'Tipping in Switzerland: How Much to Tip (2026)',
-    description: "Tipping is optional in Switzerland — but ski instructors at Zermatt or Verbier expect CHF 10–20 per day, and 'stimmt so' is the phrase that handles every restaurant tip without counting change. Here's the full 2026 guide for restaurants, taxis, ski resorts, and mountain guides.",
-    publishedAt: '2025-10-02',
+    slug: "tipping-in-switzerland",
+    title: "Tipping in Switzerland: How Much to Tip (2026)",
+    description:
+      "Tipping is optional in Switzerland — but ski instructors at Zermatt or Verbier expect CHF 10–20 per day, and 'stimmt so' is the phrase that handles every restaurant tip without counting change. Here's the full 2026 guide for restaurants, taxis, ski resorts, and mountain guides.",
+    publishedAt: "2025-10-02",
     readingMinutes: 8,
-    category: 'tipping',
-    country: 'Switzerland',
-    countrySlug: 'switzerland',
+    category: "tipping",
+    country: "Switzerland",
+    countrySlug: "switzerland",
     content: [
-      { type: 'intro', body: 'Switzerland does not have a mandatory tipping culture. Service charges are not automatically added to bills, and hospitality workers receive among the highest wages in Europe. Tipping is entirely voluntary — a genuine expression of satisfaction rather than a social obligation. Rounding up the bill is common; calculating a percentage tip is less so. This guide covers Swiss tipping customs in restaurants, ski resorts, taxis, and hotels — including the specific etiquette phrase every Switzerland visitor should know.' },
-      { type: 'h2', heading: 'Tipping in Switzerland at a Glance' },
-      { type: 'table', rows: [
-        { label: 'Restaurants', value: 'Round up or leave 5–10% for good service' },
-        { label: 'Cafés', value: 'Round up to the nearest franc — not required' },
-        { label: 'Taxis', value: 'Round up — CHF 2–5 on longer journeys' },
-        { label: 'Hotel Porters', value: 'CHF 2–5 per bag at upscale hotels' },
-        { label: 'Hotel Housekeeping', value: 'Not customary; CHF 5–10 at end of stay is a kind gesture' },
-        { label: 'Tour Guides', value: 'CHF 10–20 per person for a full-day tour' },
-        { label: 'Ski Instructors', value: 'CHF 10–20 per day — common in Swiss resorts' },
-        { label: 'Mountain Guides / Heli-skiing', value: 'CHF 20–50 for exceptional guiding — appreciated' },
-      ]},
-      { type: 'h2', heading: 'Restaurants & Fondue Houses' },
-      { type: 'p', body: 'In Swiss restaurants — whether a lakeside terrace in Geneva or a mountain chalet in Zermatt — the standard practice is to round up the bill. If your meal costs CHF 87, leaving CHF 90 or CHF 95 is perfectly appropriate. For exceptional service, 10% is a generous gesture. Most Swiss diners pay the bill as shown and simply round up; percentage-based tipping is more common among international visitors than locals. Switzerland uses the Swiss Franc (CHF), not the euro — ensure you have CHF for cash tips.' },
-      { type: 'h2', heading: 'Taxis & Transport' },
-      { type: 'p', body: 'Swiss taxis are metered and among the most expensive in the world. Rounding up to the nearest franc or adding CHF 2–5 on a longer airport journey is the usual custom. There is no expectation of a percentage tip. Uber operates in Zürich, Geneva, and Basel; the app supports optional in-app tipping. Switzerland\'s train network (SBB) is excellent — many visitors use trains rather than taxis for intercity travel.' },
-      { type: 'h2', heading: 'Ski Resorts & Mountain Activities' },
-      { type: 'p', body: 'Swiss ski resorts — Verbier, St. Moritz, Zermatt, Grindelwald — have their own tipping norms shaped by international visitors. Ski instructors typically receive CHF 10–20 per day for group lessons and CHF 20–50 for private instruction. Mountain restaurant staff appreciate a small tip of CHF 2–5 for tableside service. Chalet staff on hosted ski holidays traditionally receive a collective tip at the end of the week — CHF 50–100 per person is common for an outstanding team.' },
-      { type: 'ul', items: [
-        'Ski instructors: CHF 10–20 per day for group lessons; CHF 20–50 for private guiding',
-        'Mountain guides (hiking, via ferrata, climbing): CHF 20–50 for a full day — reflects the safety expertise involved',
-        'Chalet staff (hosted chalet holidays): CHF 50–100 per person at end of week — shared among the team',
-        'Fondue restaurant servers: Round up or leave CHF 5–10 at a traditional fondue house for a warm, attentive experience',
-      ]},
-      { type: 'tip', body: 'The key phrase: "stimmt so" (SHTIMT zo) means "that\'s correct" or "keep the change." When handing over payment at a Swiss restaurant, state the total you want to pay and say "stimmt so" — the server keeps the difference as your tip. This is how Swiss people tip without any awkward coin-counting at the table.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'Is tipping expected in Switzerland?', a: 'No — rounding up is common and appreciated, but there is no social obligation. Swiss service workers earn a good wage and tipping is genuinely optional.' },
-        { q: 'How do I say "keep the change" in Swiss restaurants?', a: 'Say "stimmt so" when handing over payment. It literally means "that\'s correct" and signals that you want the server to keep the difference.' },
-        { q: 'Do I tip my ski instructor in Switzerland?', a: 'Yes — CHF 10–20 per day for group lessons and CHF 20–50 for private instruction is common in Swiss ski resorts. Give it directly at the end of your lesson.' },
-        { q: 'Does Switzerland use euros or Swiss francs?', a: 'Switzerland uses the Swiss Franc (CHF). Euros are accepted in many tourist areas and at ski resorts, but change is given in CHF. For cash tips, CHF is always preferable.' },
-        { q: 'Is there a service charge in Swiss restaurants?', a: 'No — Swiss bills do not include a service charge. Any tip is entirely voluntary and additional to the bill total.' },
-        { q: 'Should I tip in cash or by card in Switzerland?', a: 'Cash (CHF) tips are preferred — they go directly to the worker. Swiss card terminals sometimes allow tip entry, but cash is more certain. State the total you want to pay (including tip) before the card is processed.' },
-      ]},
+      {
+        type: "intro",
+        body: "Switzerland does not have a mandatory tipping culture. Service charges are not automatically added to bills, and hospitality workers receive among the highest wages in Europe. Tipping is entirely voluntary — a genuine expression of satisfaction rather than a social obligation. Rounding up the bill is common; calculating a percentage tip is less so. This guide covers Swiss tipping customs in restaurants, ski resorts, taxis, and hotels — including the specific etiquette phrase every Switzerland visitor should know.",
+      },
+      { type: "h2", heading: "Tipping in Switzerland at a Glance" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Restaurants",
+            value: "Round up or leave 5–10% for good service",
+          },
+          {
+            label: "Cafés",
+            value: "Round up to the nearest franc — not required",
+          },
+          { label: "Taxis", value: "Round up — CHF 2–5 on longer journeys" },
+          {
+            label: "Hotel Porters",
+            value: "CHF 2–5 per bag at upscale hotels",
+          },
+          {
+            label: "Hotel Housekeeping",
+            value: "Not customary; CHF 5–10 at end of stay is a kind gesture",
+          },
+          {
+            label: "Tour Guides",
+            value: "CHF 10–20 per person for a full-day tour",
+          },
+          {
+            label: "Ski Instructors",
+            value: "CHF 10–20 per day — common in Swiss resorts",
+          },
+          {
+            label: "Mountain Guides / Heli-skiing",
+            value: "CHF 20–50 for exceptional guiding — appreciated",
+          },
+        ],
+      },
+      { type: "h2", heading: "Restaurants & Fondue Houses" },
+      {
+        type: "p",
+        body: "In Swiss restaurants — whether a lakeside terrace in Geneva or a mountain chalet in Zermatt — the standard practice is to round up the bill. If your meal costs CHF 87, leaving CHF 90 or CHF 95 is perfectly appropriate. For exceptional service, 10% is a generous gesture. Most Swiss diners pay the bill as shown and simply round up; percentage-based tipping is more common among international visitors than locals. Switzerland uses the Swiss Franc (CHF), not the euro — ensure you have CHF for cash tips.",
+      },
+      { type: "h2", heading: "Taxis & Transport" },
+      {
+        type: "p",
+        body: "Swiss taxis are metered and among the most expensive in the world. Rounding up to the nearest franc or adding CHF 2–5 on a longer airport journey is the usual custom. There is no expectation of a percentage tip. Uber operates in Zürich, Geneva, and Basel; the app supports optional in-app tipping. Switzerland's train network (SBB) is excellent — many visitors use trains rather than taxis for intercity travel.",
+      },
+      { type: "h2", heading: "Ski Resorts & Mountain Activities" },
+      {
+        type: "p",
+        body: "Swiss ski resorts — Verbier, St. Moritz, Zermatt, Grindelwald — have their own tipping norms shaped by international visitors. Ski instructors typically receive CHF 10–20 per day for group lessons and CHF 20–50 for private instruction. Mountain restaurant staff appreciate a small tip of CHF 2–5 for tableside service. Chalet staff on hosted ski holidays traditionally receive a collective tip at the end of the week — CHF 50–100 per person is common for an outstanding team.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Ski instructors: CHF 10–20 per day for group lessons; CHF 20–50 for private guiding",
+          "Mountain guides (hiking, via ferrata, climbing): CHF 20–50 for a full day — reflects the safety expertise involved",
+          "Chalet staff (hosted chalet holidays): CHF 50–100 per person at end of week — shared among the team",
+          "Fondue restaurant servers: Round up or leave CHF 5–10 at a traditional fondue house for a warm, attentive experience",
+        ],
+      },
+      {
+        type: "tip",
+        body: 'The key phrase: "stimmt so" (SHTIMT zo) means "that\'s correct" or "keep the change." When handing over payment at a Swiss restaurant, state the total you want to pay and say "stimmt so" — the server keeps the difference as your tip. This is how Swiss people tip without any awkward coin-counting at the table.',
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "Is tipping expected in Switzerland?",
+            a: "No — rounding up is common and appreciated, but there is no social obligation. Swiss service workers earn a good wage and tipping is genuinely optional.",
+          },
+          {
+            q: 'How do I say "keep the change" in Swiss restaurants?',
+            a: 'Say "stimmt so" when handing over payment. It literally means "that\'s correct" and signals that you want the server to keep the difference.',
+          },
+          {
+            q: "Do I tip my ski instructor in Switzerland?",
+            a: "Yes — CHF 10–20 per day for group lessons and CHF 20–50 for private instruction is common in Swiss ski resorts. Give it directly at the end of your lesson.",
+          },
+          {
+            q: "Does Switzerland use euros or Swiss francs?",
+            a: "Switzerland uses the Swiss Franc (CHF). Euros are accepted in many tourist areas and at ski resorts, but change is given in CHF. For cash tips, CHF is always preferable.",
+          },
+          {
+            q: "Is there a service charge in Swiss restaurants?",
+            a: "No — Swiss bills do not include a service charge. Any tip is entirely voluntary and additional to the bill total.",
+          },
+          {
+            q: "Should I tip in cash or by card in Switzerland?",
+            a: "Cash (CHF) tips are preferred — they go directly to the worker. Swiss card terminals sometimes allow tip entry, but cash is more certain. State the total you want to pay (including tip) before the card is processed.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'tipping-in-sweden',
-    title: 'Tipping in Sweden: What Visitors Need to Know (2026)',
-    description: "Swedish card readers now routinely prompt for a tip — pressing 0% is completely normal and causes no reaction. Here's the full 2026 guide: 5–10% is increasingly expected at Stockholm restaurants, but Sweden remains a no-obligation-to-tip country.",
-    publishedAt: '2025-10-09',
+    slug: "tipping-in-sweden",
+    title: "Tipping in Sweden: Card Readers Ask, But 0% Is Fine (2026)",
+    description:
+      "Swedish card readers now routinely prompt for a tip — pressing 0% is completely normal and causes no reaction. Here's the full 2026 guide: 5–10% is increasingly expected at Stockholm restaurants, but Sweden remains a no-obligation-to-tip country.",
+    publishedAt: "2026-10-09",
+    updatedAt: "2026-10-20",
     readingMinutes: 8,
-    category: 'tipping',
-    country: 'Sweden',
-    countrySlug: 'sweden',
+    category: "tipping",
+    country: "Sweden",
+    countrySlug: "sweden",
     content: [
-      { type: 'intro', body: 'Sweden has historically been a no-tip country. Swedes earn strong wages, the social safety net is robust, and tipping was never part of the culture. That is still largely true today — but in Stockholm\'s tourist districts, upscale restaurants, and international hotels, tipping has become more common as card readers increasingly prompt for gratuity. You are never obligated to tip, but 5–10% for genuinely good service is now understood and appreciated. This guide covers Stockholm, Gothenburg, Malmö, and Swedish Lapland tourism situations.' },
-      { type: 'h2', heading: 'Tipping in Sweden at a Glance' },
-      { type: 'table', rows: [
-        { label: 'Restaurants', value: '5–10% for good service — optional and increasingly common' },
-        { label: 'Cafés (fika)', value: 'Not expected — round up if you like' },
-        { label: 'Taxis / Uber', value: 'Round up or 5–10% — Uber app prompts for tip' },
-        { label: 'Hotel Porters', value: 'SEK 20–40 per bag at luxury hotels' },
-        { label: 'Hotel Housekeeping', value: 'Not customary' },
-        { label: 'Tour Guides', value: 'SEK 50–100 for a half-day; SEK 100–200 for full day' },
-        { label: 'Food Delivery (Foodora etc.)', value: 'Not customary — Swedes rarely tip delivery drivers' },
-        { label: 'Swedish Lapland guides (Northern Lights)', value: 'SEK 100–200 for an outstanding experience' },
-      ]},
-      { type: 'h2', heading: 'Restaurants in Stockholm & Beyond' },
-      { type: 'p', body: 'Sweden is almost entirely cashless — even street vendors and fika cafés use card. Most modern Swedish card readers display a tip prompt at payment (commonly 0%, 5%, 10%, 15%). Pressing 0% is completely acceptable and causes no awkward reaction. For a memorable dinner at a Stockholm design restaurant or a Gothenburg seafood spot, pressing 10% is a generous and appreciated gesture. At traditional husmanskost (Swedish home cooking) restaurants, tipping is unusual; at high-end tasting menu restaurants or Michelin-starred venues in Stockholm, 10% is appropriate.' },
-      { type: 'h2', heading: 'Taxis & Getting Around Sweden' },
-      { type: 'p', body: 'Sweden\'s taxi market was deregulated in 1990, meaning fares vary significantly — always use Taxi Stockholm, Taxi Göteborg, or app-based services rather than hailing an unfamiliar cab on the street. Uber in Sweden supports in-app tipping; 5–10% is optional. For metered taxis, rounding up to the nearest 10 SEK is a natural courtesy. Sweden\'s train network (SJ) is excellent for intercity travel — Stockholm to Gothenburg takes under 3 hours.' },
-      { type: 'h2', heading: 'Swedish Lapland & Nature Tourism' },
-      { type: 'p', body: 'Swedish Lapland — Kiruna, Abisko, Jukkasjärvi — is a major winter tourism destination for Northern Lights, dog sledding, and ice hotel experiences. Guides for these outdoor experiences appreciate a tip of SEK 100–200 for an outstanding multi-hour experience, but it is not required. Dog sledding guides and reindeer herding hosts who share Sámi culture especially appreciate the gesture as an acknowledgement of their expertise and heritage.' },
-      { type: 'tip', body: 'Sweden is one of the most cashless countries on earth — many venues literally cannot accept cash. Do not plan to tip in coins or notes; all tipping happens via card terminal prompts or in-app. Carry a card at all times in Sweden.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'Do you tip in Sweden?', a: 'It is not expected or required. 5–10% for excellent restaurant service is appreciated in tourist areas. Card terminals show a tip option — pressing 0% is entirely normal and causes no offence.' },
-        { q: 'Can I use cash to tip in Sweden?', a: 'Sweden is highly cashless and many venues cannot accept cash at all. Tip via the card terminal prompt or in-app. If you want to leave cash, ask if it is accepted.' },
-        { q: 'Do Swedish taxi drivers expect tips?', a: 'No. Rounding up to the nearest 10 SEK or using Uber\'s in-app tip feature (5–10%) is a courtesy, not an expectation.' },
-        { q: 'What is fika in Sweden and should I tip at cafés?', a: 'Fika is the Swedish coffee and pastry tradition — a social institution rather than a formal service. At a fika café, rounding up is appreciated but no tip is expected. Pressing 0% on the card terminal is the norm.' },
-        { q: 'Should I tip my Northern Lights guide in Swedish Lapland?', a: 'SEK 100–200 for an outstanding multi-hour Northern Lights or dog sled experience is a warm gesture. It is not required, but guides in Lapland depend on tourism income and it is meaningfully appreciated.' },
-        { q: 'Do Stockholm\'s Michelin-starred restaurants expect tips?', a: 'At very high-end establishments, 10% is appropriate and understood. Sweden\'s Michelin scene is internationally oriented, and tipping at these venues is more common than at casual restaurants.' },
-      ]},
+      {
+        type: "intro",
+        body: "Sweden has historically been a no-tip country. Swedes earn strong wages, the social safety net is robust, and tipping was never part of the culture. That is still largely true today — but in Stockholm's tourist districts, upscale restaurants, and international hotels, tipping has become more common as card readers increasingly prompt for gratuity. You are never obligated to tip, but 5–10% for genuinely good service is now understood and appreciated. This guide covers Stockholm, Gothenburg, Malmö, and Swedish Lapland tourism situations.",
+      },
+      { type: "h2", heading: "Tipping in Sweden at a Glance" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Restaurants",
+            value: "5–10% for good service — optional and increasingly common",
+          },
+          {
+            label: "Cafés (fika)",
+            value: "Not expected — round up if you like",
+          },
+          {
+            label: "Taxis / Uber",
+            value: "Round up or 5–10% — Uber app prompts for tip",
+          },
+          {
+            label: "Hotel Porters",
+            value: "SEK 20–40 per bag at luxury hotels",
+          },
+          { label: "Hotel Housekeeping", value: "Not customary" },
+          {
+            label: "Tour Guides",
+            value: "SEK 50–100 for a half-day; SEK 100–200 for full day",
+          },
+          {
+            label: "Food Delivery (Foodora etc.)",
+            value: "Not customary — Swedes rarely tip delivery drivers",
+          },
+          {
+            label: "Swedish Lapland guides (Northern Lights)",
+            value: "SEK 100–200 for an outstanding experience",
+          },
+        ],
+      },
+      { type: "h2", heading: "Restaurants in Stockholm & Beyond" },
+      {
+        type: "p",
+        body: "Sweden is almost entirely cashless — even street vendors and fika cafés use card. Most modern Swedish card readers display a tip prompt at payment (commonly 0%, 5%, 10%, 15%). Pressing 0% is completely acceptable and causes no awkward reaction. For a memorable dinner at a Stockholm design restaurant or a Gothenburg seafood spot, pressing 10% is a generous and appreciated gesture. At traditional husmanskost (Swedish home cooking) restaurants, tipping is unusual; at high-end tasting menu restaurants or Michelin-starred venues in Stockholm, 10% is appropriate.",
+      },
+      { type: "h2", heading: "Taxis & Getting Around Sweden" },
+      {
+        type: "p",
+        body: "Sweden's taxi market was deregulated in 1990, meaning fares vary significantly — always use Taxi Stockholm, Taxi Göteborg, or app-based services rather than hailing an unfamiliar cab on the street. Uber in Sweden supports in-app tipping; 5–10% is optional. For metered taxis, rounding up to the nearest 10 SEK is a natural courtesy. Sweden's train network (SJ) is excellent for intercity travel — Stockholm to Gothenburg takes under 3 hours.",
+      },
+      { type: "h2", heading: "Swedish Lapland & Nature Tourism" },
+      {
+        type: "p",
+        body: "Swedish Lapland — Kiruna, Abisko, Jukkasjärvi — is a major winter tourism destination for Northern Lights, dog sledding, and ice hotel experiences. Guides for these outdoor experiences appreciate a tip of SEK 100–200 for an outstanding multi-hour experience, but it is not required. Dog sledding guides and reindeer herding hosts who share Sámi culture especially appreciate the gesture as an acknowledgement of their expertise and heritage.",
+      },
+      {
+        type: "tip",
+        body: "Sweden is one of the most cashless countries on earth — many venues literally cannot accept cash. Do not plan to tip in coins or notes; all tipping happens via card terminal prompts or in-app. Carry a card at all times in Sweden.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "Do you tip in Sweden?",
+            a: "It is not expected or required. 5–10% for excellent restaurant service is appreciated in tourist areas. Card terminals show a tip option — pressing 0% is entirely normal and causes no offence.",
+          },
+          {
+            q: "Can I use cash to tip in Sweden?",
+            a: "Sweden is highly cashless and many venues cannot accept cash at all. Tip via the card terminal prompt or in-app. If you want to leave cash, ask if it is accepted.",
+          },
+          {
+            q: "Do Swedish taxi drivers expect tips?",
+            a: "No. Rounding up to the nearest 10 SEK or using Uber's in-app tip feature (5–10%) is a courtesy, not an expectation.",
+          },
+          {
+            q: "What is fika in Sweden and should I tip at cafés?",
+            a: "Fika is the Swedish coffee and pastry tradition — a social institution rather than a formal service. At a fika café, rounding up is appreciated but no tip is expected. Pressing 0% on the card terminal is the norm.",
+          },
+          {
+            q: "Should I tip my Northern Lights guide in Swedish Lapland?",
+            a: "SEK 100–200 for an outstanding multi-hour Northern Lights or dog sled experience is a warm gesture. It is not required, but guides in Lapland depend on tourism income and it is meaningfully appreciated.",
+          },
+          {
+            q: "Do Stockholm's Michelin-starred restaurants expect tips?",
+            a: "At very high-end establishments, 10% is appropriate and understood. Sweden's Michelin scene is internationally oriented, and tipping at these venues is more common than at casual restaurants.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'tipping-in-norway',
-    title: 'Tipping in Norway: Is It Expected? (2026)',
-    description: "Norway is one of Europe's most expensive countries and tipping is genuinely optional — but Northern Lights guides in Tromsø and fjord operators appreciate NOK 100–200 for an exceptional experience. Here's the full 2026 guide to when and how much Oslo locals actually tip.",
-    publishedAt: '2025-10-16',
+    slug: "tipping-in-norway",
+    title: "Tipping in Norway: Is It Expected? (2026)",
+    description:
+      "Norway is one of Europe's most expensive countries and tipping is genuinely optional — but Northern Lights guides in Tromsø and fjord operators appreciate NOK 100–200 for an exceptional experience. Here's the full 2026 guide to when and how much Oslo locals actually tip.",
+    publishedAt: "2025-10-16",
     readingMinutes: 8,
-    category: 'tipping',
-    country: 'Norway',
-    countrySlug: 'norway',
+    category: "tipping",
+    country: "Norway",
+    countrySlug: "norway",
     content: [
-      { type: 'intro', body: 'Norway has no tipping obligation. Norwegian workers receive good wages, strong labour protections, and benefits that make tips a bonus rather than a necessity. For visitors, this is both liberating (you won\'t be judged for not tipping) and slightly confusing (you might still want to). A round-up or 5–10% for genuinely good restaurant service is the local norm when people do tip. This guide covers Oslo, Bergen, Tromsø, the fjord regions, and the specific situations unique to Norwegian tourism.' },
-      { type: 'h2', heading: 'Tipping in Norway at a Glance' },
-      { type: 'table', rows: [
-        { label: 'Restaurants', value: '5–10% for good service — round up or use the card prompt' },
-        { label: 'Cafés / Bars', value: 'Not expected — round up if you like' },
-        { label: 'Taxis', value: 'Round up to nearest 10 NOK — no percentage expected' },
-        { label: 'Hotel Porters', value: 'NOK 20–40 per bag — appreciated at upscale hotels' },
-        { label: 'Hotel Housekeeping', value: 'Not customary' },
-        { label: 'Fjord Tour Guides', value: 'NOK 50–200 for an excellent private experience' },
-        { label: 'Northern Lights Guides (Tromsø)', value: 'NOK 100–200 for a memorable hunt — not required' },
-        { label: 'Food Delivery', value: 'Not customary' },
-      ]},
-      { type: 'h2', heading: 'Restaurants & Bars in Oslo & Bergen' },
-      { type: 'p', body: 'Norway is expensive — a meal in Oslo will cost more than almost anywhere else in Europe. You are already paying a premium for your food, and no one expects an additional tip on top. That said, Norwegians do occasionally tip for exceptional service — 10% at a good restaurant is generous and well-received. Most card terminals in Norway have a tip option; pressing 0% is completely normal and causes no offence. Bergen\'s Bryggen district and Oslo\'s Aker Brygge waterfront have tourist-oriented restaurants where tipping is slightly more common.' },
-      { type: 'h2', heading: 'Fjord Tours & Nature Tourism' },
-      { type: 'p', body: 'Norway\'s tourism is built around its dramatic natural landscape — fjord cruises from Flåm and Gudvangen, Northern Lights tours from Tromsø, hiking guides on Preikestolen and Trolltunga, and wildlife safaris in Svalbard. For guided experiences, a tip of NOK 50–200 depending on the length and quality is a warm acknowledgement. This is more common for private guides than large group tours. For regular fjord ferry crossings (Nærøyfjord, Hardangerfjord), tipping is not expected.' },
-      { type: 'h2', heading: 'Northern Lights Tours & Arctic Experiences' },
-      { type: 'ul', items: [
-        'Northern Lights minibus tours (Tromsø): NOK 100–200 for an exceptional guide who found the lights — not required',
-        'Private Northern Lights photography guides: NOK 200–400 for a dedicated private session — appreciated',
-        'Dog sled or snowmobile guides: NOK 100–200 for safety, fun, and expertise — a kind gesture',
-        'Svalbard polar bear watching guides: NOK 200–500 for a full-day expedition — reflects the specialist knowledge involved',
-        'Kayaking or hiking guides in fjord country: NOK 50–150 for an excellent half-day — warm acknowledgement',
-      ]},
-      { type: 'tip', body: 'Norway is as cashless as Sweden — carry a card, not coins. All tipping is done via terminal prompts or in-app. If you want to tip a guide in cash, NOK notes work fine — do not worry about not having them, as most guides accept card tipping after the experience.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'Do you tip in Norway?', a: 'Not required. 5–10% for excellent restaurant service is a genuine gesture of appreciation. Most people round up rather than calculating a percentage. 0% on card terminals is completely normal.' },
-        { q: 'Is Norway too expensive to tip on top?', a: 'This is a common visitor feeling — and Norwegians understand it. Norwegian prices are high because wages and costs of living are high, not because service is underpaid. Tipping is entirely optional.' },
-        { q: 'Should I tip my fjord tour guide?', a: 'For private guides, NOK 50–200 for a great experience is appreciated. For large group tours, tipping is uncommon but not unwelcome. For overnight fjord cruises, tip at the end of the journey.' },
-        { q: 'How do I tip by card in Norway?', a: 'Most Norwegian card terminals display a tip selection screen. Select your percentage (or 0%) and confirm. The terminal handles the rest. If no prompt appears, tell the server the total you want to pay before they process the card.' },
-        { q: 'Should I tip my Northern Lights guide in Tromsø?', a: 'NOK 100–200 for an exceptional tour where they went above and beyond is a lovely gesture — particularly for private or small-group experiences. It is not expected or required.' },
-        { q: 'Do Norwegian taxis expect tips?', a: 'No. Rounding up to the nearest 10 NOK (e.g., paying NOK 200 on a NOK 183 fare) is the natural Norwegian courtesy. No percentage tip is expected.' },
-      ]},
+      {
+        type: "intro",
+        body: "Norway has no tipping obligation. Norwegian workers receive good wages, strong labour protections, and benefits that make tips a bonus rather than a necessity. For visitors, this is both liberating (you won't be judged for not tipping) and slightly confusing (you might still want to). A round-up or 5–10% for genuinely good restaurant service is the local norm when people do tip. This guide covers Oslo, Bergen, Tromsø, the fjord regions, and the specific situations unique to Norwegian tourism.",
+      },
+      { type: "h2", heading: "Tipping in Norway at a Glance" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Restaurants",
+            value: "5–10% for good service — round up or use the card prompt",
+          },
+          {
+            label: "Cafés / Bars",
+            value: "Not expected — round up if you like",
+          },
+          {
+            label: "Taxis",
+            value: "Round up to nearest 10 NOK — no percentage expected",
+          },
+          {
+            label: "Hotel Porters",
+            value: "NOK 20–40 per bag — appreciated at upscale hotels",
+          },
+          { label: "Hotel Housekeeping", value: "Not customary" },
+          {
+            label: "Fjord Tour Guides",
+            value: "NOK 50–200 for an excellent private experience",
+          },
+          {
+            label: "Northern Lights Guides (Tromsø)",
+            value: "NOK 100–200 for a memorable hunt — not required",
+          },
+          { label: "Food Delivery", value: "Not customary" },
+        ],
+      },
+      { type: "h2", heading: "Restaurants & Bars in Oslo & Bergen" },
+      {
+        type: "p",
+        body: "Norway is expensive — a meal in Oslo will cost more than almost anywhere else in Europe. You are already paying a premium for your food, and no one expects an additional tip on top. That said, Norwegians do occasionally tip for exceptional service — 10% at a good restaurant is generous and well-received. Most card terminals in Norway have a tip option; pressing 0% is completely normal and causes no offence. Bergen's Bryggen district and Oslo's Aker Brygge waterfront have tourist-oriented restaurants where tipping is slightly more common.",
+      },
+      { type: "h2", heading: "Fjord Tours & Nature Tourism" },
+      {
+        type: "p",
+        body: "Norway's tourism is built around its dramatic natural landscape — fjord cruises from Flåm and Gudvangen, Northern Lights tours from Tromsø, hiking guides on Preikestolen and Trolltunga, and wildlife safaris in Svalbard. For guided experiences, a tip of NOK 50–200 depending on the length and quality is a warm acknowledgement. This is more common for private guides than large group tours. For regular fjord ferry crossings (Nærøyfjord, Hardangerfjord), tipping is not expected.",
+      },
+      { type: "h2", heading: "Northern Lights Tours & Arctic Experiences" },
+      {
+        type: "ul",
+        items: [
+          "Northern Lights minibus tours (Tromsø): NOK 100–200 for an exceptional guide who found the lights — not required",
+          "Private Northern Lights photography guides: NOK 200–400 for a dedicated private session — appreciated",
+          "Dog sled or snowmobile guides: NOK 100–200 for safety, fun, and expertise — a kind gesture",
+          "Svalbard polar bear watching guides: NOK 200–500 for a full-day expedition — reflects the specialist knowledge involved",
+          "Kayaking or hiking guides in fjord country: NOK 50–150 for an excellent half-day — warm acknowledgement",
+        ],
+      },
+      {
+        type: "tip",
+        body: "Norway is as cashless as Sweden — carry a card, not coins. All tipping is done via terminal prompts or in-app. If you want to tip a guide in cash, NOK notes work fine — do not worry about not having them, as most guides accept card tipping after the experience.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "Do you tip in Norway?",
+            a: "Not required. 5–10% for excellent restaurant service is a genuine gesture of appreciation. Most people round up rather than calculating a percentage. 0% on card terminals is completely normal.",
+          },
+          {
+            q: "Is Norway too expensive to tip on top?",
+            a: "This is a common visitor feeling — and Norwegians understand it. Norwegian prices are high because wages and costs of living are high, not because service is underpaid. Tipping is entirely optional.",
+          },
+          {
+            q: "Should I tip my fjord tour guide?",
+            a: "For private guides, NOK 50–200 for a great experience is appreciated. For large group tours, tipping is uncommon but not unwelcome. For overnight fjord cruises, tip at the end of the journey.",
+          },
+          {
+            q: "How do I tip by card in Norway?",
+            a: "Most Norwegian card terminals display a tip selection screen. Select your percentage (or 0%) and confirm. The terminal handles the rest. If no prompt appears, tell the server the total you want to pay before they process the card.",
+          },
+          {
+            q: "Should I tip my Northern Lights guide in Tromsø?",
+            a: "NOK 100–200 for an exceptional tour where they went above and beyond is a lovely gesture — particularly for private or small-group experiences. It is not expected or required.",
+          },
+          {
+            q: "Do Norwegian taxis expect tips?",
+            a: "No. Rounding up to the nearest 10 NOK (e.g., paying NOK 200 on a NOK 183 fare) is the natural Norwegian courtesy. No percentage tip is expected.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'tipping-in-denmark',
-    title: 'Tipping in Denmark: How Much & When (2026)',
-    description: "Copenhagen free walking tours are fully tip-based — DKK 50–100 per person is the expected contribution at the end, since it's the guide's entire income for that walk. Here's the full 2026 guide: tipping is optional at Danish restaurants, but 5–10% for good service is warmly received.",
-    publishedAt: '2025-10-23',
+    slug: "tipping-in-denmark",
+    title: "Tipping in Denmark: How Much & When (2026)",
+    description:
+      "Copenhagen free walking tours are fully tip-based — DKK 50–100 per person is the expected contribution at the end, since it's the guide's entire income for that walk. Here's the full 2026 guide: tipping is optional at Danish restaurants, but 5–10% for good service is warmly received.",
+    publishedAt: "2025-10-23",
     readingMinutes: 8,
-    category: 'tipping',
-    country: 'Denmark',
-    countrySlug: 'denmark',
+    category: "tipping",
+    country: "Denmark",
+    countrySlug: "denmark",
     content: [
-      { type: 'intro', body: 'Tipping in Denmark is optional and carries no social obligation. Danish hospitality workers earn fair wages and are not reliant on tips to make ends meet. That said, leaving a small tip for good service is common among both locals and visitors — typically 5–10% at restaurants, or simply rounding up the bill. You will never cause offence by not tipping, and you will always cause delight by leaving a generous one. This guide covers Copenhagen, Aarhus, and Danish tipping customs in every situation you will encounter as a visitor.' },
-      { type: 'h2', heading: 'Tipping in Denmark at a Glance' },
-      { type: 'table', rows: [
-        { label: 'Restaurants', value: '5–10% for good service — commonly done by rounding up' },
-        { label: 'Cafés / Bars', value: 'Not expected — round up or leave coins' },
-        { label: 'Taxis', value: 'Round up to nearest 10 DKK — no percentage tip expected' },
-        { label: 'Hotel Porters', value: 'DKK 20–40 per bag at upscale hotels' },
-        { label: 'Hotel Housekeeping', value: 'Not customary' },
-        { label: 'Tour Guides', value: 'DKK 50–100 per person for a full-day guided experience' },
-        { label: 'Food Delivery', value: 'Not customary' },
-        { label: 'Copenhagen Canal Tours', value: 'DKK 20–50 for a knowledgeable guide — a warm gesture' },
-      ]},
-      { type: 'h2', heading: 'Restaurants in Copenhagen' },
-      { type: 'p', body: 'Copenhagen has a world-class restaurant scene — from Noma alumni ventures (Kadeau, Relæ, Geranium) to classic smørrebrød lunches at Torvehallerne market — and the service culture reflects Danish values: professional, understated, and not tip-dependent. A 10% tip at a fine-dining restaurant is appreciated and appropriate; at a casual lunch café, rounding up the bill is more than enough. Most card terminals will show a tip option; selecting 0% is entirely normal and causes no reaction.' },
-      { type: 'h2', heading: 'Taxis & Copenhagen\'s Cycling Culture' },
-      { type: 'p', body: 'Copenhagen is famously a cycling city — many visitors rent bikes, use the Metro, or walk rather than taking taxis. When you do take a taxi, round up to the nearest 10 DKK (e.g., paying DKK 200 on a DKK 183 fare). Uber operates in Copenhagen with in-app tipping available (optional). For Copenhagen Airport (CPH) transfers, a small round-up is a courteous acknowledgement without any obligation.' },
-      { type: 'h2', heading: 'Guides, Museums & Special Experiences' },
-      { type: 'ul', items: [
-        'Copenhagen free walking tours: DKK 50–100 at the end is the expected contribution — these are "pay what you think it\'s worth" tours',
-        'Tivoli Gardens: No tipping for rides or standard attractions; restaurant staff appreciate rounding up',
-        'Canal boat tours (GoBoat, Copenhagen Canal Tours): DKK 20–50 for an knowledgeable guide on a private or small-group tour',
-        'Bike rental shops: No tip expected — it is a straightforward retail hire',
-        'Nyhavn restaurant strip: Slightly more tourist-facing; 10% tip is understood and appreciated',
-      ]},
-      { type: 'tip', body: 'Denmark uses the Danish Krone (DKK), not the euro — unlike some of its Nordic neighbours. Do not accidentally tip in euros; they are not accepted in most Danish establishments. Have DKK ready for any cash tips. DKK ≈ EUR 0.13 (so DKK 50 ≈ EUR 7).' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'Do you tip in Denmark?', a: 'It is not required. 5–10% for genuinely good restaurant service is a common gesture among visitors and some locals. Rounding up to the nearest 10 DKK is the most natural approach.' },
-        { q: 'Do Danish restaurants include a service charge?', a: 'No. Bills in Denmark show the food and drink cost only. Any tip is entirely separate and voluntary. Check the bill before adding extra.' },
-        { q: 'What currency do I use to tip in Denmark?', a: 'Danish Krone (DKK). Euros are not widely accepted outside airports and some tourist hotels — always use DKK for cash tips.' },
-        { q: 'Should I tip at a Copenhagen fine-dining restaurant?', a: '10% is appropriate and will be genuinely appreciated at a high-end Copenhagen restaurant. The Michelin and New Nordic dining scene in Copenhagen is internationally oriented, and tipping is well understood here.' },
-        { q: 'Do Copenhagen taxis expect tips?', a: 'No. Rounding up to the nearest 10 DKK is the natural courtesy — no percentage tip is expected. Uber has optional in-app tipping; pressing 0% is completely normal.' },
-        { q: 'What are "free" walking tours in Copenhagen and should I tip?', a: 'Free walking tours (like those offered at Rådhuspladsen or Nørreport) are tip-based — the guide is paid entirely by what the group gives at the end. DKK 50–100 per person is the expected contribution for a quality 2-hour tour.' },
-      ]},
+      {
+        type: "intro",
+        body: "Tipping in Denmark is optional and carries no social obligation. Danish hospitality workers earn fair wages and are not reliant on tips to make ends meet. That said, leaving a small tip for good service is common among both locals and visitors — typically 5–10% at restaurants, or simply rounding up the bill. You will never cause offence by not tipping, and you will always cause delight by leaving a generous one. This guide covers Copenhagen, Aarhus, and Danish tipping customs in every situation you will encounter as a visitor.",
+      },
+      { type: "h2", heading: "Tipping in Denmark at a Glance" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Restaurants",
+            value: "5–10% for good service — commonly done by rounding up",
+          },
+          {
+            label: "Cafés / Bars",
+            value: "Not expected — round up or leave coins",
+          },
+          {
+            label: "Taxis",
+            value: "Round up to nearest 10 DKK — no percentage tip expected",
+          },
+          {
+            label: "Hotel Porters",
+            value: "DKK 20–40 per bag at upscale hotels",
+          },
+          { label: "Hotel Housekeeping", value: "Not customary" },
+          {
+            label: "Tour Guides",
+            value: "DKK 50–100 per person for a full-day guided experience",
+          },
+          { label: "Food Delivery", value: "Not customary" },
+          {
+            label: "Copenhagen Canal Tours",
+            value: "DKK 20–50 for a knowledgeable guide — a warm gesture",
+          },
+        ],
+      },
+      { type: "h2", heading: "Restaurants in Copenhagen" },
+      {
+        type: "p",
+        body: "Copenhagen has a world-class restaurant scene — from Noma alumni ventures (Kadeau, Relæ, Geranium) to classic smørrebrød lunches at Torvehallerne market — and the service culture reflects Danish values: professional, understated, and not tip-dependent. A 10% tip at a fine-dining restaurant is appreciated and appropriate; at a casual lunch café, rounding up the bill is more than enough. Most card terminals will show a tip option; selecting 0% is entirely normal and causes no reaction.",
+      },
+      { type: "h2", heading: "Taxis & Copenhagen's Cycling Culture" },
+      {
+        type: "p",
+        body: "Copenhagen is famously a cycling city — many visitors rent bikes, use the Metro, or walk rather than taking taxis. When you do take a taxi, round up to the nearest 10 DKK (e.g., paying DKK 200 on a DKK 183 fare). Uber operates in Copenhagen with in-app tipping available (optional). For Copenhagen Airport (CPH) transfers, a small round-up is a courteous acknowledgement without any obligation.",
+      },
+      { type: "h2", heading: "Guides, Museums & Special Experiences" },
+      {
+        type: "ul",
+        items: [
+          'Copenhagen free walking tours: DKK 50–100 at the end is the expected contribution — these are "pay what you think it\'s worth" tours',
+          "Tivoli Gardens: No tipping for rides or standard attractions; restaurant staff appreciate rounding up",
+          "Canal boat tours (GoBoat, Copenhagen Canal Tours): DKK 20–50 for an knowledgeable guide on a private or small-group tour",
+          "Bike rental shops: No tip expected — it is a straightforward retail hire",
+          "Nyhavn restaurant strip: Slightly more tourist-facing; 10% tip is understood and appreciated",
+        ],
+      },
+      {
+        type: "tip",
+        body: "Denmark uses the Danish Krone (DKK), not the euro — unlike some of its Nordic neighbours. Do not accidentally tip in euros; they are not accepted in most Danish establishments. Have DKK ready for any cash tips. DKK ≈ EUR 0.13 (so DKK 50 ≈ EUR 7).",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "Do you tip in Denmark?",
+            a: "It is not required. 5–10% for genuinely good restaurant service is a common gesture among visitors and some locals. Rounding up to the nearest 10 DKK is the most natural approach.",
+          },
+          {
+            q: "Do Danish restaurants include a service charge?",
+            a: "No. Bills in Denmark show the food and drink cost only. Any tip is entirely separate and voluntary. Check the bill before adding extra.",
+          },
+          {
+            q: "What currency do I use to tip in Denmark?",
+            a: "Danish Krone (DKK). Euros are not widely accepted outside airports and some tourist hotels — always use DKK for cash tips.",
+          },
+          {
+            q: "Should I tip at a Copenhagen fine-dining restaurant?",
+            a: "10% is appropriate and will be genuinely appreciated at a high-end Copenhagen restaurant. The Michelin and New Nordic dining scene in Copenhagen is internationally oriented, and tipping is well understood here.",
+          },
+          {
+            q: "Do Copenhagen taxis expect tips?",
+            a: "No. Rounding up to the nearest 10 DKK is the natural courtesy — no percentage tip is expected. Uber has optional in-app tipping; pressing 0% is completely normal.",
+          },
+          {
+            q: 'What are "free" walking tours in Copenhagen and should I tip?',
+            a: "Free walking tours (like those offered at Rådhuspladsen or Nørreport) are tip-based — the guide is paid entirely by what the group gives at the end. DKK 50–100 per person is the expected contribution for a quality 2-hour tour.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'tipping-in-austria',
-    title: 'Tipping in Austria: How Much to Tip (2026)',
-    description: "Vienna coffee houses have a specific ritual: say the total you want to pay ('neun Euro' for €9) when settling up — not the tip amount. Here's the full 2026 guide: 5–10% is standard at Austrian restaurants, and ski instructors at Kitzbühel or St. Anton expect €10–20 per day.",
-    publishedAt: '2025-10-30',
+    slug: "tipping-in-austria",
+    title: "Tipping in Austria: How Much to Tip (2026)",
+    description:
+      "Vienna coffee houses have a specific ritual: say the total you want to pay ('neun Euro' for €9) when settling up — not the tip amount. Here's the full 2026 guide: 5–10% is standard at Austrian restaurants, and ski instructors at Kitzbühel or St. Anton expect €10–20 per day.",
+    publishedAt: "2025-10-30",
     readingMinutes: 8,
-    category: 'tipping',
-    country: 'Austria',
-    countrySlug: 'austria',
+    category: "tipping",
+    country: "Austria",
+    countrySlug: "austria",
     content: [
-      { type: 'intro', body: 'Austria has a stronger tipping culture than its Nordic neighbours but a more relaxed one than Germany. At sit-down restaurants — particularly in Vienna\'s legendary coffee houses and traditional Gasthäuser — a tip of 5–10% is expected and normal. The custom is to round up or state the total you wish to pay when the server brings the bill, rather than leaving cash on the table and walking out. This guide covers Vienna, Salzburg, Innsbruck, and Austrian ski resorts.' },
-      { type: 'h2', heading: 'Tipping in Austria at a Glance' },
-      { type: 'table', rows: [
-        { label: 'Restaurants', value: '5–10% — state the total you want to pay when settling up' },
-        { label: 'Coffee Houses (Kaffeehäuser)', value: 'Round up or €0.50–1 — a Viennese social ritual' },
-        { label: 'Taxis', value: 'Round up to nearest euro — 5–10% on longer journeys' },
-        { label: 'Hotel Porters', value: '€1–2 per bag' },
-        { label: 'Hotel Housekeeping', value: '€1–2 per night — leave daily in an envelope' },
-        { label: 'Tour Guides', value: '€5–10 per person for city or museum tours' },
-        { label: 'Bars', value: 'Round up — €0.50–1 per drink round is appreciated' },
-        { label: 'Ski Instructors', value: '€10–20 per day — common at Salzburg, Arlberg, Kitzbühel resorts' },
-      ]},
-      { type: 'h2', heading: 'Vienna\'s Coffee Houses' },
-      { type: 'p', body: 'Vienna\'s traditional coffee houses (Kaffeehäuser) are UNESCO-listed cultural institutions — Café Central, Café Hawelka, Café Landtmann — and tipping here is a genuine social ritual. The waiter (Herr Ober or Frau Ober) will bring your bill on a small silver or wooden tray. You hand over your payment and state the total you wish to pay: if the bill is €8.20 and you want to leave a tip, hand over €10 and say "neun Euro" (nine euros) — the waiter will bring back €1. Leaving coins on the tray is also acceptable. Do not leave cash on the table and walk out — this is considered abrupt.' },
-      { type: 'h2', heading: 'Restaurants, Taxis & Ski Resorts' },
-      { type: 'p', body: 'At Austrian restaurants and Gasthäuser, the same rounding-up custom applies. A 5–10% tip is normal and expected at sit-down service establishments. Taxis in Vienna are metered and reliable — round up to the nearest euro or add 5–10% on longer journeys. Uber operates in Austria with in-app tipping. At Austrian ski resorts (Lech, St. Anton, Kitzbühel, Zell am See), ski instructors appreciate €10–20 per day for group lessons and €20–50 for private guiding — this is the norm for a resort of Austria\'s international calibre.' },
-      { type: 'h2', heading: 'Hotels, Spas & Tours' },
-      { type: 'ul', items: [
-        'Hotel porters: €1–2 per bag — hand it directly when they bring luggage to your room',
-        'Hotel housekeeping: €1–2 per night — leave in an envelope daily, not just on departure',
-        'Spa and thermal bath staff: €5–10 for a massage or treatment — handed directly to your therapist',
-        'Museum and palace guides: €5–10 per person for Schönbrunn, Belvedere, or Kunsthistorisches Museum guided tours',
-        'Private Salzkammergut or Vienna Woods hiking guides: €10–20 for a half-day — appreciated for local knowledge',
-      ]},
-      { type: 'tip', body: 'The key phrase: "Stimmt so" (SHTIMT zo) means "that\'s correct" or "keep the change." State this when handing over payment at a restaurant — the waiter keeps the difference as your tip. This is the elegant, quintessentially Viennese way to leave a gratuity.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'How do I tip in an Austrian restaurant?', a: 'When the server brings the bill, hand over your payment and state the total you want to pay (including tip), or say "Stimmt so" to keep the change. Do not leave coins on the table and walk out — it is considered abrupt.' },
-        { q: 'How much do you tip in Vienna?', a: '5–10% at restaurants and coffee houses. Round up for taxis. €1–2 per bag for hotel porters. €0.50–1 per drink round at bars.' },
-        { q: 'Is service included in Austrian restaurant bills?', a: 'Not usually. Bills show the food and drink cost only. Tips are separate and voluntary, though expected at sit-down service establishments.' },
-        { q: 'Should I tip at a Vienna coffee house?', a: 'Yes — leaving a small tip (rounding up, or €0.50–1 above the bill) is part of the Viennese coffee house ritual. The waiter bringing your Melange and glass of water on a silver tray is a cultural experience; a small gratuity acknowledges it.' },
-        { q: 'Do I tip my ski instructor in Austria?', a: 'Yes — €10–20 per day for group ski lessons and €20–50 for private instruction is the norm at Austrian resorts. Hand it directly to the instructor at the end of your last session together.' },
-        { q: 'Can I tip by card in Austrian restaurants?', a: 'Increasingly yes — many Austrian card terminals now have a tip entry screen. If not, state the total you want to pay (including tip) before the card is processed. Cash tips are also always welcome.' },
-      ]},
+      {
+        type: "intro",
+        body: "Austria has a stronger tipping culture than its Nordic neighbours but a more relaxed one than Germany. At sit-down restaurants — particularly in Vienna's legendary coffee houses and traditional Gasthäuser — a tip of 5–10% is expected and normal. The custom is to round up or state the total you wish to pay when the server brings the bill, rather than leaving cash on the table and walking out. This guide covers Vienna, Salzburg, Innsbruck, and Austrian ski resorts.",
+      },
+      { type: "h2", heading: "Tipping in Austria at a Glance" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Restaurants",
+            value: "5–10% — state the total you want to pay when settling up",
+          },
+          {
+            label: "Coffee Houses (Kaffeehäuser)",
+            value: "Round up or €0.50–1 — a Viennese social ritual",
+          },
+          {
+            label: "Taxis",
+            value: "Round up to nearest euro — 5–10% on longer journeys",
+          },
+          { label: "Hotel Porters", value: "€1–2 per bag" },
+          {
+            label: "Hotel Housekeeping",
+            value: "€1–2 per night — leave daily in an envelope",
+          },
+          {
+            label: "Tour Guides",
+            value: "€5–10 per person for city or museum tours",
+          },
+          {
+            label: "Bars",
+            value: "Round up — €0.50–1 per drink round is appreciated",
+          },
+          {
+            label: "Ski Instructors",
+            value:
+              "€10–20 per day — common at Salzburg, Arlberg, Kitzbühel resorts",
+          },
+        ],
+      },
+      { type: "h2", heading: "Vienna's Coffee Houses" },
+      {
+        type: "p",
+        body: 'Vienna\'s traditional coffee houses (Kaffeehäuser) are UNESCO-listed cultural institutions — Café Central, Café Hawelka, Café Landtmann — and tipping here is a genuine social ritual. The waiter (Herr Ober or Frau Ober) will bring your bill on a small silver or wooden tray. You hand over your payment and state the total you wish to pay: if the bill is €8.20 and you want to leave a tip, hand over €10 and say "neun Euro" (nine euros) — the waiter will bring back €1. Leaving coins on the tray is also acceptable. Do not leave cash on the table and walk out — this is considered abrupt.',
+      },
+      { type: "h2", heading: "Restaurants, Taxis & Ski Resorts" },
+      {
+        type: "p",
+        body: "At Austrian restaurants and Gasthäuser, the same rounding-up custom applies. A 5–10% tip is normal and expected at sit-down service establishments. Taxis in Vienna are metered and reliable — round up to the nearest euro or add 5–10% on longer journeys. Uber operates in Austria with in-app tipping. At Austrian ski resorts (Lech, St. Anton, Kitzbühel, Zell am See), ski instructors appreciate €10–20 per day for group lessons and €20–50 for private guiding — this is the norm for a resort of Austria's international calibre.",
+      },
+      { type: "h2", heading: "Hotels, Spas & Tours" },
+      {
+        type: "ul",
+        items: [
+          "Hotel porters: €1–2 per bag — hand it directly when they bring luggage to your room",
+          "Hotel housekeeping: €1–2 per night — leave in an envelope daily, not just on departure",
+          "Spa and thermal bath staff: €5–10 for a massage or treatment — handed directly to your therapist",
+          "Museum and palace guides: €5–10 per person for Schönbrunn, Belvedere, or Kunsthistorisches Museum guided tours",
+          "Private Salzkammergut or Vienna Woods hiking guides: €10–20 for a half-day — appreciated for local knowledge",
+        ],
+      },
+      {
+        type: "tip",
+        body: 'The key phrase: "Stimmt so" (SHTIMT zo) means "that\'s correct" or "keep the change." State this when handing over payment at a restaurant — the waiter keeps the difference as your tip. This is the elegant, quintessentially Viennese way to leave a gratuity.',
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How do I tip in an Austrian restaurant?",
+            a: 'When the server brings the bill, hand over your payment and state the total you want to pay (including tip), or say "Stimmt so" to keep the change. Do not leave coins on the table and walk out — it is considered abrupt.',
+          },
+          {
+            q: "How much do you tip in Vienna?",
+            a: "5–10% at restaurants and coffee houses. Round up for taxis. €1–2 per bag for hotel porters. €0.50–1 per drink round at bars.",
+          },
+          {
+            q: "Is service included in Austrian restaurant bills?",
+            a: "Not usually. Bills show the food and drink cost only. Tips are separate and voluntary, though expected at sit-down service establishments.",
+          },
+          {
+            q: "Should I tip at a Vienna coffee house?",
+            a: "Yes — leaving a small tip (rounding up, or €0.50–1 above the bill) is part of the Viennese coffee house ritual. The waiter bringing your Melange and glass of water on a silver tray is a cultural experience; a small gratuity acknowledges it.",
+          },
+          {
+            q: "Do I tip my ski instructor in Austria?",
+            a: "Yes — €10–20 per day for group ski lessons and €20–50 for private instruction is the norm at Austrian resorts. Hand it directly to the instructor at the end of your last session together.",
+          },
+          {
+            q: "Can I tip by card in Austrian restaurants?",
+            a: "Increasingly yes — many Austrian card terminals now have a tip entry screen. If not, state the total you want to pay (including tip) before the card is processed. Cash tips are also always welcome.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'tipping-in-poland',
-    title: 'Tipping in Poland: How Much & When (2026)',
-    description: "Poland is 40–60% cheaper than Western Europe, making 10% at a Kraków or Warsaw restaurant genuinely impactful for staff — and it's now the standard. Here's the full 2026 guide, including Auschwitz tour guides (PLN 30–60 per person — difficult, emotionally demanding work).",
-    publishedAt: '2025-11-06',
+    slug: "tipping-in-poland",
+    title: "Tipping in Poland: How Much & When (2026)",
+    description:
+      "Poland is 40–60% cheaper than Western Europe, making 10% at a Kraków or Warsaw restaurant genuinely impactful for staff — and it's now the standard. Here's the full 2026 guide, including Auschwitz tour guides (PLN 30–60 per person — difficult, emotionally demanding work).",
+    publishedAt: "2025-11-06",
     readingMinutes: 8,
-    category: 'tipping',
-    country: 'Poland',
-    countrySlug: 'poland',
+    category: "tipping",
+    country: "Poland",
+    countrySlug: "poland",
     content: [
-      { type: 'intro', body: 'Tipping in Poland has grown significantly over the past decade. In major cities like Warsaw, Kraków, Gdańsk, and Wrocław, 10% at sit-down restaurants is now standard practice. Older Polish customs — where tipping was rare — are less common in tourist areas. Service workers earn a modest base wage, and tips are a meaningful supplement to their income. This guide covers the current tipping norms across Poland, how to leave a tip by card, and the specific situations visitors encounter most often.' },
-      { type: 'h2', heading: 'Tipping in Poland at a Glance' },
-      { type: 'table', rows: [
-        { label: 'Restaurants', value: '10% for good service — now standard in tourist cities' },
-        { label: 'Cafés / Bars', value: 'Round up or leave small change — not obligatory' },
-        { label: 'Taxis / Bolt / Uber', value: 'Round up to nearest zloty — 5–10% appreciated' },
-        { label: 'Hotel Porters', value: 'PLN 5–10 per bag' },
-        { label: 'Hotel Housekeeping', value: 'PLN 5–10 per stay — leave on departure' },
-        { label: 'Tour Guides (Kraków, Warsaw, Auschwitz)', value: 'PLN 20–50 for a half-day; PLN 50–100 for full day' },
-        { label: 'Food Delivery (Glovo, Pyszne etc.)', value: 'PLN 5–10 appreciated, especially in bad weather' },
-        { label: 'Auschwitz-Birkenau guides', value: 'PLN 30–60 per person — meaningful acknowledgement of difficult work' },
-      ]},
-      { type: 'h2', heading: 'Restaurants in Kraków & Warsaw' },
-      { type: 'p', body: 'Poland uses the Polish Zloty (PLN), and restaurant prices are notably lower than Western Europe — a 10% tip is both meaningful to the staff and easy on the visitor\'s wallet. At sit-down restaurants with table service, 10% is a standard and appreciated tip. An important note for card payments: tell the server you want to add a tip before they process the payment — Polish card terminals often do not have a tip prompt screen. Alternatively, leave the tip in PLN cash alongside the card. At Kraków\'s Kazimierz district and Warsaw\'s Nowy Świat restaurants, tips are well understood.' },
-      { type: 'h2', heading: 'Guides & Tours' },
-      { type: 'p', body: 'Poland has a rich heritage tourism sector — from the Wieliczka Salt Mine to Auschwitz-Birkenau. Licensed guides at Auschwitz perform emotionally demanding work, often for groups carrying heavy emotional weight. A tip of PLN 30–60 per person is a meaningful acknowledgement. For standard city walking tours of Kraków\'s Old Town or Warsaw\'s Łazienki Park, PLN 20–50 per person is appropriate. Free walking tours (popular in both cities) are tip-based — PLN 30–50 per person is the expected contribution.' },
-      { type: 'ul', items: [
-        'Say "dziękuję" (JEN-koo-yeh — thank you) without reaching for change to indicate "keep it"',
-        '10% is the current standard for sit-down restaurant service in tourist cities',
-        'Leave tips in PLN cash when possible — card tips are not always available on terminals',
-        'At milk bars (bary mleczne) — traditional Polish self-service canteens — do not tip',
-        'Delivery drivers in Polish cities rely heavily on tips — PLN 5–10 is very welcome',
-        'Free walking tours in Kraków and Warsaw are tip-based — budget PLN 30–50 per person',
-      ]},
-      { type: 'tip', body: 'Poland is more cash-friendly than most EU members. Carrying some PLN notes (50 and 100 PLN denominations) is useful — many local restaurants, taxis, and smaller venues prefer cash, and it\'s the most direct way to ensure your tip reaches the right person.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'Do you tip in Poland?', a: 'Yes — 10% is now the standard at sit-down restaurants in major Polish cities. Rounding up for taxis is also common.' },
-        { q: 'How do I leave a tip by card in Poland?', a: 'Tell the server you want to add a tip before they process the card, or leave cash separately. Polish terminals often lack a tip prompt screen — always clarify before the card is swiped.' },
-        { q: 'How do I say "keep the change" in Polish?', a: 'Say "dziękuję" (thank you) without reaching for your change — this is universally understood as "keep it." Or say "reszty nie trzeba" (no change needed).' },
-        { q: 'Should I tip at a milk bar (bar mleczny) in Poland?', a: 'No — milk bars are traditional self-service Polish canteens where you order at the counter and collect your food. No tipping is expected or customary here.' },
-        { q: 'How much do I tip for a Kraków walking tour?', a: 'For free walking tours (which are tip-based), PLN 30–50 per person is the expected contribution for a 2-hour tour. For a paid licensed guide, PLN 20–50 extra is a generous acknowledgement.' },
-        { q: 'Is Poland expensive compared to Western Europe?', a: 'No — Poland is significantly cheaper. Restaurant meals, accommodation, and transport cost 30–60% less than in Germany or France. A 10% tip is easy on your budget and very meaningful to Polish service workers.' },
-      ]},
+      {
+        type: "intro",
+        body: "Tipping in Poland has grown significantly over the past decade. In major cities like Warsaw, Kraków, Gdańsk, and Wrocław, 10% at sit-down restaurants is now standard practice. Older Polish customs — where tipping was rare — are less common in tourist areas. Service workers earn a modest base wage, and tips are a meaningful supplement to their income. This guide covers the current tipping norms across Poland, how to leave a tip by card, and the specific situations visitors encounter most often.",
+      },
+      { type: "h2", heading: "Tipping in Poland at a Glance" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Restaurants",
+            value: "10% for good service — now standard in tourist cities",
+          },
+          {
+            label: "Cafés / Bars",
+            value: "Round up or leave small change — not obligatory",
+          },
+          {
+            label: "Taxis / Bolt / Uber",
+            value: "Round up to nearest zloty — 5–10% appreciated",
+          },
+          { label: "Hotel Porters", value: "PLN 5–10 per bag" },
+          {
+            label: "Hotel Housekeeping",
+            value: "PLN 5–10 per stay — leave on departure",
+          },
+          {
+            label: "Tour Guides (Kraków, Warsaw, Auschwitz)",
+            value: "PLN 20–50 for a half-day; PLN 50–100 for full day",
+          },
+          {
+            label: "Food Delivery (Glovo, Pyszne etc.)",
+            value: "PLN 5–10 appreciated, especially in bad weather",
+          },
+          {
+            label: "Auschwitz-Birkenau guides",
+            value:
+              "PLN 30–60 per person — meaningful acknowledgement of difficult work",
+          },
+        ],
+      },
+      { type: "h2", heading: "Restaurants in Kraków & Warsaw" },
+      {
+        type: "p",
+        body: "Poland uses the Polish Zloty (PLN), and restaurant prices are notably lower than Western Europe — a 10% tip is both meaningful to the staff and easy on the visitor's wallet. At sit-down restaurants with table service, 10% is a standard and appreciated tip. An important note for card payments: tell the server you want to add a tip before they process the payment — Polish card terminals often do not have a tip prompt screen. Alternatively, leave the tip in PLN cash alongside the card. At Kraków's Kazimierz district and Warsaw's Nowy Świat restaurants, tips are well understood.",
+      },
+      { type: "h2", heading: "Guides & Tours" },
+      {
+        type: "p",
+        body: "Poland has a rich heritage tourism sector — from the Wieliczka Salt Mine to Auschwitz-Birkenau. Licensed guides at Auschwitz perform emotionally demanding work, often for groups carrying heavy emotional weight. A tip of PLN 30–60 per person is a meaningful acknowledgement. For standard city walking tours of Kraków's Old Town or Warsaw's Łazienki Park, PLN 20–50 per person is appropriate. Free walking tours (popular in both cities) are tip-based — PLN 30–50 per person is the expected contribution.",
+      },
+      {
+        type: "ul",
+        items: [
+          'Say "dziękuję" (JEN-koo-yeh — thank you) without reaching for change to indicate "keep it"',
+          "10% is the current standard for sit-down restaurant service in tourist cities",
+          "Leave tips in PLN cash when possible — card tips are not always available on terminals",
+          "At milk bars (bary mleczne) — traditional Polish self-service canteens — do not tip",
+          "Delivery drivers in Polish cities rely heavily on tips — PLN 5–10 is very welcome",
+          "Free walking tours in Kraków and Warsaw are tip-based — budget PLN 30–50 per person",
+        ],
+      },
+      {
+        type: "tip",
+        body: "Poland is more cash-friendly than most EU members. Carrying some PLN notes (50 and 100 PLN denominations) is useful — many local restaurants, taxis, and smaller venues prefer cash, and it's the most direct way to ensure your tip reaches the right person.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "Do you tip in Poland?",
+            a: "Yes — 10% is now the standard at sit-down restaurants in major Polish cities. Rounding up for taxis is also common.",
+          },
+          {
+            q: "How do I leave a tip by card in Poland?",
+            a: "Tell the server you want to add a tip before they process the card, or leave cash separately. Polish terminals often lack a tip prompt screen — always clarify before the card is swiped.",
+          },
+          {
+            q: 'How do I say "keep the change" in Polish?',
+            a: 'Say "dziękuję" (thank you) without reaching for your change — this is universally understood as "keep it." Or say "reszty nie trzeba" (no change needed).',
+          },
+          {
+            q: "Should I tip at a milk bar (bar mleczny) in Poland?",
+            a: "No — milk bars are traditional self-service Polish canteens where you order at the counter and collect your food. No tipping is expected or customary here.",
+          },
+          {
+            q: "How much do I tip for a Kraków walking tour?",
+            a: "For free walking tours (which are tip-based), PLN 30–50 per person is the expected contribution for a 2-hour tour. For a paid licensed guide, PLN 20–50 extra is a generous acknowledgement.",
+          },
+          {
+            q: "Is Poland expensive compared to Western Europe?",
+            a: "No — Poland is significantly cheaper. Restaurant meals, accommodation, and transport cost 30–60% less than in Germany or France. A 10% tip is easy on your budget and very meaningful to Polish service workers.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'tipping-in-czech-republic',
-    title: 'Tipping in Czech Republic: Prague & Beyond (2026)',
-    description: "Prague restaurants expect 10%, and free walking tours of the Old Town and Jewish Quarter are tip-based — CZK 100–200 per person is the guide's full income for the walk. Here's the full 2026 guide, plus the Old Town Square taxi scam (CZK 700 Bolt ride vs CZK 1,500+ street quote).",
-    publishedAt: '2025-11-13',
+    slug: "tipping-in-czech-republic",
+    title: "Tipping in Czech Republic: Prague & Beyond (2026)",
+    description:
+      "Prague restaurants expect 10%, and free walking tours of the Old Town and Jewish Quarter are tip-based — CZK 100–200 per person is the guide's full income for the walk. Here's the full 2026 guide, plus the Old Town Square taxi scam (CZK 700 Bolt ride vs CZK 1,500+ street quote).",
+    publishedAt: "2025-11-13",
     readingMinutes: 8,
-    category: 'tipping',
-    country: 'Czech Republic',
-    countrySlug: 'czech-republic',
+    category: "tipping",
+    country: "Czech Republic",
+    countrySlug: "czech-republic",
     content: [
-      { type: 'intro', body: 'The Czech Republic has a clear tipping culture, particularly in Prague. At sit-down restaurants and bars with table service, a 10% tip is standard and expected. Service workers earn a modest base wage and rely on tips as part of their income. The Czech Koruna (CZK) makes rounding up intuitive. This guide covers Prague, Brno, Český Krumlov, and the specific tipping customs around Czech beer culture, walking tours, and tourist-area taxis.' },
-      { type: 'h2', heading: 'Tipping in the Czech Republic at a Glance' },
-      { type: 'table', rows: [
-        { label: 'Restaurants', value: '10% for good service — standard in Prague and tourist cities' },
-        { label: 'Beer Halls (Pivnice)', value: 'CZK 5–10 per round — round up the final tab by 10%' },
-        { label: 'Taxis / Bolt', value: 'Round up to nearest 20 CZK — 10% appreciated' },
-        { label: 'Hotel Porters', value: 'CZK 40–80 per bag' },
-        { label: 'Hotel Housekeeping', value: 'CZK 50–100 per stay' },
-        { label: 'Tour Guides (walking tours)', value: 'CZK 100–200 per person for paid tours; more for private' },
-        { label: 'Free Walking Tours (tip-based)', value: 'CZK 100–200 per person — the guide\'s entire income' },
-        { label: 'Food Delivery', value: 'CZK 20–50 appreciated' },
-      ]},
-      { type: 'h2', heading: 'Restaurants & Beer Halls' },
-      { type: 'p', body: 'Prague is one of Europe\'s great restaurant and beer cities, and tipping is woven into the culture. At restaurants, tell the server the total you wish to pay when settling — if the bill is CZK 780, say "800" to leave a CZK 20 tip, or "850" for a more generous gratuity. At traditional pivnice (Czech beer halls), the custom is to tab-run through the evening with a waiter marking a slip at your table — leave a small tip per round (CZK 5–10 per beer) or round up the final tab by 10%. In tourist-heavy Old Town areas, some restaurants have begun adding service charges — always check before adding extra.' },
-      { type: 'h2', heading: 'Taxis & Getting Around Prague' },
-      { type: 'p', body: 'Taxis in Prague have a mixed reputation, and tourist-facing cabs near Old Town Square sometimes overcharge. Use a ride-hailing app (Bolt is dominant in Prague, Uber also operates) rather than hailing a cab on the street — you will see the price upfront and be tracked. For Bolt rides, round up or tip 10% in-app. The Prague Metro (3 lines, CZK 24–40 per journey) and trams are excellent and cheap for most tourist routes.' },
-      { type: 'h2', heading: 'Walking Tours & Prague Tourism' },
-      { type: 'p', body: 'Prague has a thriving walking tour scene, including many "free" tip-based tours of the Old Town, Jewish Quarter, and Žižkov. These tours are paid entirely by tips — CZK 100–200 per person is the expected contribution for a 2-hour tour. For a private guide for Prague Castle, the National Museum, or a Kafka/Mucha heritage tour, CZK 200–500 is appropriate depending on the duration.' },
-      { type: 'ul', items: [
-        'Free walking tours: CZK 100–200 per person — the guide earns nothing unless you tip',
-        'Prague Castle guided tours: CZK 100–200 per person for a knowledgeable private guide',
-        'Jewish Quarter (Josefov) tours: CZK 150–250 per person — sensitive heritage work deserving of a generous tip',
-        'Boat tours on the Vltava: CZK 30–50 for the captain/guide on a private boat experience',
-      ]},
-      { type: 'warning', body: 'Prague has a documented history of taxi overcharging at tourist hotspots (Wenceslas Square, Old Town Square, airport). Never take an unmarked cab. Use Bolt or Uber — a legitimate journey from Václav Havel Airport to central Prague costs CZK 400–700 via app. If a driver quotes CZK 1,500+, decline.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'Do you tip in Prague?', a: 'Yes — 10% is standard at restaurants with table service. This is a genuine expectation, not just a courtesy. Czech service workers earn modest wages and tips are meaningful.' },
-        { q: 'What currency do I use to tip in Czech Republic?', a: 'Czech Koruna (CZK). The Czech Republic is not in the eurozone — euros are not widely accepted outside airports and some tourist hotels.' },
-        { q: 'Should I tip at a Prague beer hall (pivnice)?', a: 'Yes — round up CZK 5–10 per round or add 10% to the final tab. The waiter tracks your drinks on a slip; tip when you settle up at the end of the evening.' },
-        { q: 'How do I tip by card in Czech restaurants?', a: 'Tell the server the total you want to pay (including tip) before they process the card. Say the total amount in Czech Koruna. Many Czech terminals do have a tip option — the server will help you navigate it.' },
-        { q: 'How much do I tip on a Prague free walking tour?', a: 'CZK 100–200 per person is the expected contribution at the end of the tour. The guide earns nothing from the tour organiser — your tip is their entire income for that walk.' },
-        { q: 'Is Prague cheaper than Western Europe for tipping purposes?', a: 'Yes — restaurant meals and drinks cost 40–60% less than in Paris or Amsterdam. A 10% tip has a meaningful impact on a Czech service worker\'s take-home, even if the absolute amount seems small.' },
-      ]},
+      {
+        type: "intro",
+        body: "The Czech Republic has a clear tipping culture, particularly in Prague. At sit-down restaurants and bars with table service, a 10% tip is standard and expected. Service workers earn a modest base wage and rely on tips as part of their income. The Czech Koruna (CZK) makes rounding up intuitive. This guide covers Prague, Brno, Český Krumlov, and the specific tipping customs around Czech beer culture, walking tours, and tourist-area taxis.",
+      },
+      { type: "h2", heading: "Tipping in the Czech Republic at a Glance" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Restaurants",
+            value:
+              "10% for good service — standard in Prague and tourist cities",
+          },
+          {
+            label: "Beer Halls (Pivnice)",
+            value: "CZK 5–10 per round — round up the final tab by 10%",
+          },
+          {
+            label: "Taxis / Bolt",
+            value: "Round up to nearest 20 CZK — 10% appreciated",
+          },
+          { label: "Hotel Porters", value: "CZK 40–80 per bag" },
+          { label: "Hotel Housekeeping", value: "CZK 50–100 per stay" },
+          {
+            label: "Tour Guides (walking tours)",
+            value: "CZK 100–200 per person for paid tours; more for private",
+          },
+          {
+            label: "Free Walking Tours (tip-based)",
+            value: "CZK 100–200 per person — the guide's entire income",
+          },
+          { label: "Food Delivery", value: "CZK 20–50 appreciated" },
+        ],
+      },
+      { type: "h2", heading: "Restaurants & Beer Halls" },
+      {
+        type: "p",
+        body: 'Prague is one of Europe\'s great restaurant and beer cities, and tipping is woven into the culture. At restaurants, tell the server the total you wish to pay when settling — if the bill is CZK 780, say "800" to leave a CZK 20 tip, or "850" for a more generous gratuity. At traditional pivnice (Czech beer halls), the custom is to tab-run through the evening with a waiter marking a slip at your table — leave a small tip per round (CZK 5–10 per beer) or round up the final tab by 10%. In tourist-heavy Old Town areas, some restaurants have begun adding service charges — always check before adding extra.',
+      },
+      { type: "h2", heading: "Taxis & Getting Around Prague" },
+      {
+        type: "p",
+        body: "Taxis in Prague have a mixed reputation, and tourist-facing cabs near Old Town Square sometimes overcharge. Use a ride-hailing app (Bolt is dominant in Prague, Uber also operates) rather than hailing a cab on the street — you will see the price upfront and be tracked. For Bolt rides, round up or tip 10% in-app. The Prague Metro (3 lines, CZK 24–40 per journey) and trams are excellent and cheap for most tourist routes.",
+      },
+      { type: "h2", heading: "Walking Tours & Prague Tourism" },
+      {
+        type: "p",
+        body: 'Prague has a thriving walking tour scene, including many "free" tip-based tours of the Old Town, Jewish Quarter, and Žižkov. These tours are paid entirely by tips — CZK 100–200 per person is the expected contribution for a 2-hour tour. For a private guide for Prague Castle, the National Museum, or a Kafka/Mucha heritage tour, CZK 200–500 is appropriate depending on the duration.',
+      },
+      {
+        type: "ul",
+        items: [
+          "Free walking tours: CZK 100–200 per person — the guide earns nothing unless you tip",
+          "Prague Castle guided tours: CZK 100–200 per person for a knowledgeable private guide",
+          "Jewish Quarter (Josefov) tours: CZK 150–250 per person — sensitive heritage work deserving of a generous tip",
+          "Boat tours on the Vltava: CZK 30–50 for the captain/guide on a private boat experience",
+        ],
+      },
+      {
+        type: "warning",
+        body: "Prague has a documented history of taxi overcharging at tourist hotspots (Wenceslas Square, Old Town Square, airport). Never take an unmarked cab. Use Bolt or Uber — a legitimate journey from Václav Havel Airport to central Prague costs CZK 400–700 via app. If a driver quotes CZK 1,500+, decline.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "Do you tip in Prague?",
+            a: "Yes — 10% is standard at restaurants with table service. This is a genuine expectation, not just a courtesy. Czech service workers earn modest wages and tips are meaningful.",
+          },
+          {
+            q: "What currency do I use to tip in Czech Republic?",
+            a: "Czech Koruna (CZK). The Czech Republic is not in the eurozone — euros are not widely accepted outside airports and some tourist hotels.",
+          },
+          {
+            q: "Should I tip at a Prague beer hall (pivnice)?",
+            a: "Yes — round up CZK 5–10 per round or add 10% to the final tab. The waiter tracks your drinks on a slip; tip when you settle up at the end of the evening.",
+          },
+          {
+            q: "How do I tip by card in Czech restaurants?",
+            a: "Tell the server the total you want to pay (including tip) before they process the card. Say the total amount in Czech Koruna. Many Czech terminals do have a tip option — the server will help you navigate it.",
+          },
+          {
+            q: "How much do I tip on a Prague free walking tour?",
+            a: "CZK 100–200 per person is the expected contribution at the end of the tour. The guide earns nothing from the tour organiser — your tip is their entire income for that walk.",
+          },
+          {
+            q: "Is Prague cheaper than Western Europe for tipping purposes?",
+            a: "Yes — restaurant meals and drinks cost 40–60% less than in Paris or Amsterdam. A 10% tip has a meaningful impact on a Czech service worker's take-home, even if the absolute amount seems small.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'tipping-in-israel',
-    title: 'Tipping in Israel: How Much to Tip (2026)',
-    description: "Tipping in Israel is expected, not optional — 10–15% at Tel Aviv and Jerusalem restaurants is the local norm. Here's the full 2026 guide, including card terminals with a built-in tip screen (the טיפ prompt) and private heritage tour guides (ILS 50–100+ per person per day).",
-    publishedAt: '2025-11-20',
+    slug: "tipping-in-israel",
+    title: "Tipping in Israel: How Much to Tip (2026)",
+    description:
+      "Tipping in Israel is expected, not optional — 10–15% at Tel Aviv and Jerusalem restaurants is the local norm. Here's the full 2026 guide, including card terminals with a built-in tip screen (the טיפ prompt) and private heritage tour guides (ILS 50–100+ per person per day).",
+    publishedAt: "2025-11-20",
     readingMinutes: 8,
-    category: 'tipping',
-    country: 'Israel',
-    countrySlug: 'israel',
+    category: "tipping",
+    country: "Israel",
+    countrySlug: "israel",
     content: [
-      { type: 'intro', body: 'Tipping in Israel is standard practice and financially meaningful to service workers. At restaurants, 10–15% is the expected norm — Israeli locals tip consistently, and visitors are expected to do the same. The Israeli New Shekel (ILS) is the currency, and most transactions are card-friendly. Cash tips are preferred by many workers as they go directly to the individual. This guide covers Tel Aviv, Jerusalem, Haifa, Eilat, and the Negev desert tourism situations visitors commonly encounter.' },
-      { type: 'h2', heading: 'Tipping in Israel at a Glance' },
-      { type: 'table', rows: [
-        { label: 'Restaurants', value: '10–15% — expected, not optional in most sit-down contexts' },
-        { label: 'Cafés', value: 'Round up or ILS 5–10 for table service' },
-        { label: 'Taxis / Gett', value: 'Not traditionally expected — round up is sufficient' },
-        { label: 'Hotel Porters', value: 'ILS 10–20 per bag' },
-        { label: 'Hotel Housekeeping', value: 'ILS 10–20 per night — leave daily' },
-        { label: 'Tour Guides (private)', value: 'ILS 50–100+ per person for a full day' },
-        { label: 'Tour Guides (group)', value: 'ILS 20–50 per person per day + ILS 10–20 for driver' },
-        { label: 'Food Delivery (Wolt, 10bis)', value: 'ILS 5–10 — appreciated but not obligatory' },
-      ]},
-      { type: 'h2', heading: 'Restaurants in Tel Aviv & Jerusalem' },
-      { type: 'p', body: 'Israel has a thriving restaurant culture — from Tel Aviv\'s beachfront brunch spots on Rothschild Boulevard to Jerusalem\'s diverse Old City eateries. At sit-down restaurants, 10–15% is standard and expected. Israeli locals tip this amount consistently, so visitors should follow suit. Most Israeli card terminals now have a tip option (טיפ) built into the payment flow — select your percentage or have the server enter it for you. Some upscale Tel Aviv restaurants add a service charge automatically (10%); check the bill before adding extra.' },
-      { type: 'h2', heading: 'Tours, Archaeological Sites & Guides' },
-      { type: 'p', body: 'Israel has a phenomenally rich heritage tourism sector — the Old City of Jerusalem, Masada, Caesarea, the Dead Sea, and Petra-day-trips for those pushing into Jordan. Licensed Israeli tour guides undergo rigorous 3-year certification and know the land deeply. ILS 50–100 per person for a full-day private tour is standard and expected — for an exceptional guide covering multiple UNESCO sites, err toward the higher end. For group tours from hotels or cruise ships, ILS 20–50 per person per day for the guide, plus ILS 10–20 for the driver.' },
-      { type: 'h2', heading: 'Taxis & Apps in Israel' },
-      { type: 'ul', items: [
-        'Gett (formerly GetTaxi): The dominant taxi app in Israel — licensed taxis with upfront pricing. No tip button, but rounding up is fine.',
-        'Yango: A newer app-based taxi platform popular in Israeli cities — no tipping expectation.',
-        'Traditional metered taxis: By law meters must be running for all Israeli taxi journeys. Rounding up is courteous; no percentage tip expected.',
-        'Airport sherut (shared taxi): Fixed-rate shared taxi from Ben Gurion Airport to Tel Aviv or Jerusalem — no tip expected, fixed fare per person.',
-      ]},
-      { type: 'tip', body: 'Shabbat (Friday sunset to Saturday night) affects many restaurants, transport services, and hotel operations. If you are tipping for service during Shabbat — particularly from religious staff working under special halakha-compliant arrangements — the gesture is especially appreciated and can be done cash in hand at any time.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'Is tipping expected in Israel?', a: 'Yes — 10–15% at restaurants is a genuine social expectation, not just a courtesy. Israeli service workers rely on tips as a meaningful part of their income.' },
-        { q: 'Do I tip taxi drivers in Israel?', a: 'Taxi tipping is not traditionally expected in Israel. A round-up to the nearest ILS 10 is courteous; a percentage tip is not the norm. Use Gett or Yango for fare transparency.' },
-        { q: 'How do I tip by card in Israeli restaurants?', a: 'Most Israeli card terminals prompt for a tip during payment (look for "טיפ" or the percentage options on the screen). Select your percentage or enter a custom amount — the process is very smooth in Israel.' },
-        { q: 'How much do I tip an Israeli tour guide?', a: 'ILS 50–100 per person for a full-day private tour is the standard. For an exceptional licensed guide covering Jerusalem\'s Old City, Masada, or a personalised itinerary, the upper range is appropriate.' },
-        { q: 'Should I tip at an Israeli hotel?', a: 'Hotel porters: ILS 10–20 per bag. Housekeeping: ILS 10–20 per night, left daily. Concierge for a special arrangement: ILS 30–50. Tips go directly to the individual, so cash in hand is always preferred.' },
-        { q: 'Can I use USD or EUR to tip in Israel?', a: 'Israeli workers prefer ILS. USD and EUR are understood but create friction (exchange needed). For tour guides on international tours, USD or EUR is sometimes preferred — ask your guide if unsure.' },
-      ]},
+      {
+        type: "intro",
+        body: "Tipping in Israel is standard practice and financially meaningful to service workers. At restaurants, 10–15% is the expected norm — Israeli locals tip consistently, and visitors are expected to do the same. The Israeli New Shekel (ILS) is the currency, and most transactions are card-friendly. Cash tips are preferred by many workers as they go directly to the individual. This guide covers Tel Aviv, Jerusalem, Haifa, Eilat, and the Negev desert tourism situations visitors commonly encounter.",
+      },
+      { type: "h2", heading: "Tipping in Israel at a Glance" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Restaurants",
+            value: "10–15% — expected, not optional in most sit-down contexts",
+          },
+          { label: "Cafés", value: "Round up or ILS 5–10 for table service" },
+          {
+            label: "Taxis / Gett",
+            value: "Not traditionally expected — round up is sufficient",
+          },
+          { label: "Hotel Porters", value: "ILS 10–20 per bag" },
+          {
+            label: "Hotel Housekeeping",
+            value: "ILS 10–20 per night — leave daily",
+          },
+          {
+            label: "Tour Guides (private)",
+            value: "ILS 50–100+ per person for a full day",
+          },
+          {
+            label: "Tour Guides (group)",
+            value: "ILS 20–50 per person per day + ILS 10–20 for driver",
+          },
+          {
+            label: "Food Delivery (Wolt, 10bis)",
+            value: "ILS 5–10 — appreciated but not obligatory",
+          },
+        ],
+      },
+      { type: "h2", heading: "Restaurants in Tel Aviv & Jerusalem" },
+      {
+        type: "p",
+        body: "Israel has a thriving restaurant culture — from Tel Aviv's beachfront brunch spots on Rothschild Boulevard to Jerusalem's diverse Old City eateries. At sit-down restaurants, 10–15% is standard and expected. Israeli locals tip this amount consistently, so visitors should follow suit. Most Israeli card terminals now have a tip option (טיפ) built into the payment flow — select your percentage or have the server enter it for you. Some upscale Tel Aviv restaurants add a service charge automatically (10%); check the bill before adding extra.",
+      },
+      { type: "h2", heading: "Tours, Archaeological Sites & Guides" },
+      {
+        type: "p",
+        body: "Israel has a phenomenally rich heritage tourism sector — the Old City of Jerusalem, Masada, Caesarea, the Dead Sea, and Petra-day-trips for those pushing into Jordan. Licensed Israeli tour guides undergo rigorous 3-year certification and know the land deeply. ILS 50–100 per person for a full-day private tour is standard and expected — for an exceptional guide covering multiple UNESCO sites, err toward the higher end. For group tours from hotels or cruise ships, ILS 20–50 per person per day for the guide, plus ILS 10–20 for the driver.",
+      },
+      { type: "h2", heading: "Taxis & Apps in Israel" },
+      {
+        type: "ul",
+        items: [
+          "Gett (formerly GetTaxi): The dominant taxi app in Israel — licensed taxis with upfront pricing. No tip button, but rounding up is fine.",
+          "Yango: A newer app-based taxi platform popular in Israeli cities — no tipping expectation.",
+          "Traditional metered taxis: By law meters must be running for all Israeli taxi journeys. Rounding up is courteous; no percentage tip expected.",
+          "Airport sherut (shared taxi): Fixed-rate shared taxi from Ben Gurion Airport to Tel Aviv or Jerusalem — no tip expected, fixed fare per person.",
+        ],
+      },
+      {
+        type: "tip",
+        body: "Shabbat (Friday sunset to Saturday night) affects many restaurants, transport services, and hotel operations. If you are tipping for service during Shabbat — particularly from religious staff working under special halakha-compliant arrangements — the gesture is especially appreciated and can be done cash in hand at any time.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "Is tipping expected in Israel?",
+            a: "Yes — 10–15% at restaurants is a genuine social expectation, not just a courtesy. Israeli service workers rely on tips as a meaningful part of their income.",
+          },
+          {
+            q: "Do I tip taxi drivers in Israel?",
+            a: "Taxi tipping is not traditionally expected in Israel. A round-up to the nearest ILS 10 is courteous; a percentage tip is not the norm. Use Gett or Yango for fare transparency.",
+          },
+          {
+            q: "How do I tip by card in Israeli restaurants?",
+            a: 'Most Israeli card terminals prompt for a tip during payment (look for "טיפ" or the percentage options on the screen). Select your percentage or enter a custom amount — the process is very smooth in Israel.',
+          },
+          {
+            q: "How much do I tip an Israeli tour guide?",
+            a: "ILS 50–100 per person for a full-day private tour is the standard. For an exceptional licensed guide covering Jerusalem's Old City, Masada, or a personalised itinerary, the upper range is appropriate.",
+          },
+          {
+            q: "Should I tip at an Israeli hotel?",
+            a: "Hotel porters: ILS 10–20 per bag. Housekeeping: ILS 10–20 per night, left daily. Concierge for a special arrangement: ILS 30–50. Tips go directly to the individual, so cash in hand is always preferred.",
+          },
+          {
+            q: "Can I use USD or EUR to tip in Israel?",
+            a: "Israeli workers prefer ILS. USD and EUR are understood but create friction (exchange needed). For tour guides on international tours, USD or EUR is sometimes preferred — ask your guide if unsure.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'tipping-in-egypt',
-    title: 'Tipping in Egypt: Baksheesh & How Much to Give (2026)',
-    description: "In Egypt, baksheesh is a critical part of service workers' income — budget USD $10–20 per person per day in small notes for guides, site guards, and porters alone. Here's the full 2026 guide, including Nile cruise staff norms (USD $10–15/day for the guide, USD $5/day for crew).",
-    publishedAt: '2025-11-27',
+    slug: "tipping-in-egypt",
+    title: "Tipping in Egypt: Baksheesh & How Much to Give (2026)",
+    description:
+      "In Egypt, baksheesh is a critical part of service workers' income — budget USD $10–20 per person per day in small notes for guides, site guards, and porters alone. Here's the full 2026 guide, including Nile cruise staff norms (USD $10–15/day for the guide, USD $5/day for crew).",
+    publishedAt: "2025-11-27",
     readingMinutes: 8,
-    category: 'tipping',
-    country: 'Egypt',
-    countrySlug: 'egypt',
+    category: "tipping",
+    country: "Egypt",
+    countrySlug: "egypt",
     content: [
-      { type: 'intro', body: 'In Egypt, tipping — known as baksheesh — is not just customary; it is a fundamental part of the economy for millions of service workers. Many Egyptians in tourism-related roles earn very low base salaries, with baksheesh making up the majority of their real income. As a visitor, budgeting for tips is as important as budgeting for entry fees. The amounts are small in foreign currency terms but very meaningful to the recipient. Egyptian Pounds (EGP) are the currency, and cash is king for tipping. This guide covers the Giza pyramids, Luxor, Aswan, Nile cruises, Cairo, and every situation where baksheesh is expected.' },
-      { type: 'h2', heading: 'Tipping in Egypt at a Glance' },
-      { type: 'table', rows: [
-        { label: 'Restaurants (tourist)', value: '10–15% — always tip; it is expected and appreciated' },
-        { label: 'Restaurants (local)', value: 'EGP 20–50 — even at local foul/ta\'meya spots, a small tip is kind' },
-        { label: 'Taxis / Uber', value: 'Round up generously — EGP 20–50 over the meter' },
-        { label: 'Hotel Porters', value: 'EGP 30–60 per bag at tourist hotels' },
-        { label: 'Hotel Housekeeping', value: 'EGP 20–50 per day — leave daily, not at checkout' },
-        { label: 'Licensed Tour Guides', value: 'USD $5–10 per person per day — USD preferred for stability' },
-        { label: 'Site Attendants / Guards', value: 'EGP 20–50 for unlocking areas, photo assistance, or guidance' },
-        { label: 'Nile Cruise Staff (crew + guide)', value: 'USD $10–15/person/day for guide; USD $5/person/day for crew' },
-        { label: 'Toilet Attendants', value: 'EGP 5–10 — always have small notes' },
-      ]},
-      { type: 'h2', heading: 'Restaurants & Cafés' },
-      { type: 'p', body: 'At tourist-facing restaurants — near the pyramids in Giza, along the Corniche in Luxor and Aswan, or in Cairo\'s Khan el-Khalili district — 10–15% is expected. Some restaurants add a service charge automatically; check the bill before adding extra. At local Egyptian restaurants (foul and ta\'meya spots, koshari places, local cafeterias), a tip of EGP 20–50 is a generous gesture, though no formal tip is expected. Always tip in cash directly to your server — pooling systems mean card tips may not reach the individual.' },
-      { type: 'h2', heading: 'Guides, Sites & Small Tips' },
-      { type: 'p', body: 'Egypt\'s major sites — the Giza pyramids, Karnak Temple, the Valley of the Kings, Abu Simbel — are staffed with guards and attendants who may offer to show you something special, unlock a room, or take your photo in a restricted spot. A tip of EGP 20–50 (or USD $1–2) is expected in exchange for these informal services. For official licensed tour guides, USD $5–10 per person per day is the standard. USD, EUR, and GBP are widely accepted by guides due to Egypt\'s currency volatility — EGP fluctuates significantly and guides prefer stable foreign currency for multi-day tips.' },
-      { type: 'h2', heading: 'Nile Cruises & Multi-Day Tours' },
-      { type: 'p', body: 'Nile cruises (typically 4–7 nights between Luxor and Aswan) have their own well-established tipping norms. At the end of the cruise, tip envelopes are usually provided for different crew categories. Standard guidance: USD $10–15 per person per day for the guide; USD $5 per person per day for the crew collective (split among cabin stewards, waiters, and housekeeping). On a 5-night cruise with 2 people, budget approximately USD $200–250 total for the whole boat staff.' },
-      { type: 'warning', body: 'In Egypt, some individuals will offer "help" — directions, camel photo opportunities, carrying bags — without being asked, then request baksheesh afterward. Be firm but polite: decline unsolicited services before they are rendered if you do not intend to pay. Once a service has been provided, a tip is expected and refusing can become confrontational. The best approach is a clear "la shukran" (no thank you) before the service begins.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'What is baksheesh in Egypt?', a: 'Baksheesh is the Egyptian tipping and gratuity culture — covering everything from restaurant tips to small payments for services at tourist sites. It is deeply embedded in daily Egyptian life and a critical part of service workers\' real income.' },
-        { q: 'Can I tip in USD in Egypt?', a: 'Yes — USD, EUR, and GBP are widely accepted for tips, especially from tour guides who prefer foreign currency due to EGP instability. For small tips (toilet attendants, porters), EGP is more practical.' },
-        { q: 'How much should I tip my guide in Egypt?', a: 'USD $5–10 per person per day for a licensed day guide. For Nile cruise guides, USD $10–15 per person per day at the end of the cruise. For multi-day private guides (e.g., a 10-day Egypt tour), USD $10–20 per person per day.' },
-        { q: 'Do Egyptian taxis expect tips?', a: 'Uber and Careem fares are pre-set — a round-up is courteous but not required. Traditional taxis are negotiated — tip EGP 20–50 on top of the agreed fare for a pleasant journey. Always agree the total fare before getting in.' },
-        { q: 'How much should I budget for baksheesh in Egypt?', a: 'Budget USD $10–20 per person per day in small EGP notes and some USD $1–5 bills. This covers toilet attendants, site guards, porters, and spontaneous small services. It sounds like a lot; in practice it is not much but keeps interactions smooth.' },
-        { q: 'How do I say no politely to unsolicited baksheesh in Egypt?', a: '"La shukran" (no thank you) said firmly before a service is offered is the most effective response. Once you accept a service — even a photo or a camel pat — you have implicitly agreed to pay for it. Decline early and clearly.' },
-      ]},
+      {
+        type: "intro",
+        body: "In Egypt, tipping — known as baksheesh — is not just customary; it is a fundamental part of the economy for millions of service workers. Many Egyptians in tourism-related roles earn very low base salaries, with baksheesh making up the majority of their real income. As a visitor, budgeting for tips is as important as budgeting for entry fees. The amounts are small in foreign currency terms but very meaningful to the recipient. Egyptian Pounds (EGP) are the currency, and cash is king for tipping. This guide covers the Giza pyramids, Luxor, Aswan, Nile cruises, Cairo, and every situation where baksheesh is expected.",
+      },
+      { type: "h2", heading: "Tipping in Egypt at a Glance" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Restaurants (tourist)",
+            value: "10–15% — always tip; it is expected and appreciated",
+          },
+          {
+            label: "Restaurants (local)",
+            value:
+              "EGP 20–50 — even at local foul/ta'meya spots, a small tip is kind",
+          },
+          {
+            label: "Taxis / Uber",
+            value: "Round up generously — EGP 20–50 over the meter",
+          },
+          {
+            label: "Hotel Porters",
+            value: "EGP 30–60 per bag at tourist hotels",
+          },
+          {
+            label: "Hotel Housekeeping",
+            value: "EGP 20–50 per day — leave daily, not at checkout",
+          },
+          {
+            label: "Licensed Tour Guides",
+            value: "USD $5–10 per person per day — USD preferred for stability",
+          },
+          {
+            label: "Site Attendants / Guards",
+            value:
+              "EGP 20–50 for unlocking areas, photo assistance, or guidance",
+          },
+          {
+            label: "Nile Cruise Staff (crew + guide)",
+            value:
+              "USD $10–15/person/day for guide; USD $5/person/day for crew",
+          },
+          {
+            label: "Toilet Attendants",
+            value: "EGP 5–10 — always have small notes",
+          },
+        ],
+      },
+      { type: "h2", heading: "Restaurants & Cafés" },
+      {
+        type: "p",
+        body: "At tourist-facing restaurants — near the pyramids in Giza, along the Corniche in Luxor and Aswan, or in Cairo's Khan el-Khalili district — 10–15% is expected. Some restaurants add a service charge automatically; check the bill before adding extra. At local Egyptian restaurants (foul and ta'meya spots, koshari places, local cafeterias), a tip of EGP 20–50 is a generous gesture, though no formal tip is expected. Always tip in cash directly to your server — pooling systems mean card tips may not reach the individual.",
+      },
+      { type: "h2", heading: "Guides, Sites & Small Tips" },
+      {
+        type: "p",
+        body: "Egypt's major sites — the Giza pyramids, Karnak Temple, the Valley of the Kings, Abu Simbel — are staffed with guards and attendants who may offer to show you something special, unlock a room, or take your photo in a restricted spot. A tip of EGP 20–50 (or USD $1–2) is expected in exchange for these informal services. For official licensed tour guides, USD $5–10 per person per day is the standard. USD, EUR, and GBP are widely accepted by guides due to Egypt's currency volatility — EGP fluctuates significantly and guides prefer stable foreign currency for multi-day tips.",
+      },
+      { type: "h2", heading: "Nile Cruises & Multi-Day Tours" },
+      {
+        type: "p",
+        body: "Nile cruises (typically 4–7 nights between Luxor and Aswan) have their own well-established tipping norms. At the end of the cruise, tip envelopes are usually provided for different crew categories. Standard guidance: USD $10–15 per person per day for the guide; USD $5 per person per day for the crew collective (split among cabin stewards, waiters, and housekeeping). On a 5-night cruise with 2 people, budget approximately USD $200–250 total for the whole boat staff.",
+      },
+      {
+        type: "warning",
+        body: 'In Egypt, some individuals will offer "help" — directions, camel photo opportunities, carrying bags — without being asked, then request baksheesh afterward. Be firm but polite: decline unsolicited services before they are rendered if you do not intend to pay. Once a service has been provided, a tip is expected and refusing can become confrontational. The best approach is a clear "la shukran" (no thank you) before the service begins.',
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "What is baksheesh in Egypt?",
+            a: "Baksheesh is the Egyptian tipping and gratuity culture — covering everything from restaurant tips to small payments for services at tourist sites. It is deeply embedded in daily Egyptian life and a critical part of service workers' real income.",
+          },
+          {
+            q: "Can I tip in USD in Egypt?",
+            a: "Yes — USD, EUR, and GBP are widely accepted for tips, especially from tour guides who prefer foreign currency due to EGP instability. For small tips (toilet attendants, porters), EGP is more practical.",
+          },
+          {
+            q: "How much should I tip my guide in Egypt?",
+            a: "USD $5–10 per person per day for a licensed day guide. For Nile cruise guides, USD $10–15 per person per day at the end of the cruise. For multi-day private guides (e.g., a 10-day Egypt tour), USD $10–20 per person per day.",
+          },
+          {
+            q: "Do Egyptian taxis expect tips?",
+            a: "Uber and Careem fares are pre-set — a round-up is courteous but not required. Traditional taxis are negotiated — tip EGP 20–50 on top of the agreed fare for a pleasant journey. Always agree the total fare before getting in.",
+          },
+          {
+            q: "How much should I budget for baksheesh in Egypt?",
+            a: "Budget USD $10–20 per person per day in small EGP notes and some USD $1–5 bills. This covers toilet attendants, site guards, porters, and spontaneous small services. It sounds like a lot; in practice it is not much but keeps interactions smooth.",
+          },
+          {
+            q: "How do I say no politely to unsolicited baksheesh in Egypt?",
+            a: '"La shukran" (no thank you) said firmly before a service is offered is the most effective response. Once you accept a service — even a photo or a camel pat — you have implicitly agreed to pay for it. Decline early and clearly.',
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'tipping-in-south-africa',
-    title: 'Tipping in South Africa: Rand, Rates & Who to Tip (2026)',
-    description: "South Africa has full-service petrol stations — the attendant fills your tank and expects ZAR 5–10. Car guards outside restaurants also expect ZAR 5–10 when you return. Here's the full 2026 guide: 10–15% at restaurants is expected, and safari guides earn ZAR 200–500 per day.",
-    publishedAt: '2025-12-04',
+    slug: "tipping-in-south-africa",
+    title: "Tipping in South Africa: Rand, Rates & Who to Tip (2026)",
+    description:
+      "South Africa has full-service petrol stations — the attendant fills your tank and expects ZAR 5–10. Car guards outside restaurants also expect ZAR 5–10 when you return. Here's the full 2026 guide: 10–15% at restaurants is expected, and safari guides earn ZAR 200–500 per day.",
+    publishedAt: "2025-12-04",
     readingMinutes: 8,
-    category: 'tipping',
-    country: 'South Africa',
-    countrySlug: 'south-africa',
+    category: "tipping",
+    country: "South Africa",
+    countrySlug: "south-africa",
     content: [
-      { type: 'intro', body: 'Tipping in South Africa is expected and socially important. Service workers — from restaurant staff to petrol attendants — earn low base wages in a country with very high unemployment, making tips a vital part of their income. The South African Rand (ZAR) is the currency, and 10–15% at restaurants is the standard. South Africa also has tipping customs unique to the country — car guards and full-service petrol stations are two you will encounter almost immediately. This guide covers Cape Town, Johannesburg, Durban, and safari lodge tipping — the full picture.' },
-      { type: 'h2', heading: 'Tipping in South Africa at a Glance' },
-      { type: 'table', rows: [
-        { label: 'Restaurants', value: '10–15% — expected; 15% for excellent service' },
-        { label: 'Cafés / Coffee Shops', value: 'Round up or ZAR 5–10 for sit-down service' },
-        { label: 'Taxis / Uber', value: '10–15% — Uber has in-app tipping' },
-        { label: 'Hotel Porters', value: 'ZAR 20–40 per bag' },
-        { label: 'Hotel Housekeeping', value: 'ZAR 20–40 per day — leave daily' },
-        { label: 'Petrol Station Attendants', value: 'ZAR 5–10 — full-service stations are unique to SA' },
-        { label: 'Car Guards (parking)', value: 'ZAR 5–10 when you collect your car' },
-        { label: 'Supermarket Bag Packers', value: 'ZAR 5–10 — volunteer packers at checkouts' },
-        { label: 'Safari Guides & Trackers', value: 'ZAR 200–500 per day for outstanding private guiding' },
-        { label: 'Tour Guides', value: '10% of tour cost or ZAR 100–200 per day' },
-      ]},
-      { type: 'h2', heading: 'Restaurants in Cape Town & Johannesburg' },
-      { type: 'p', body: 'South Africa\'s restaurant culture is excellent — Cape Town\'s V&A Waterfront and Franschhoek wine country have world-class dining scenes, while Johannesburg\'s Sandton and Maboneng precincts offer sophisticated urban restaurants. At sit-down restaurants, 10–15% is the standard and expected tip. Most bills include VAT (15%) but not a service charge, so the tip is additional. Card tipping is widely supported — terminals typically have a tip prompt. For fine dining in Cape Town\'s Atlantic Seaboard or Johannesburg\'s Parkhurst, 15% is appropriate for exceptional service.' },
-      { type: 'h2', heading: 'South Africa\'s Unique Tipping Situations' },
-      { type: 'ul', items: [
-        'Petrol stations: South Africa has full-service petrol stations — the attendant fills your tank, checks oil and tyres, and cleans the windscreen. ZAR 5–10 is the standard tip.',
-        'Car guards: Informal parking attendants outside shopping centres, restaurants, and beaches. ZAR 5–10 when you collect your car — they watch for theft and scratches.',
-        'Supermarket bag packers: Volunteers (often elderly or disabled community members) who pack your bags at major supermarkets. ZAR 5–10 is appropriate.',
-        'Safari guides: ZAR 200–500 per day for outstanding private guiding in Kruger, the Western Cape, or private game reserves.',
-        'Safari trackers: ZAR 100–200 per day — trackers are the unsung experts who find the animals; they deserve separate acknowledgement from the guide.',
-        'Game drive camps: Many lodges have a communal tipping box at checkout split between all staff — kitchen, housekeeping, maintenance, and guiding teams.',
-      ]},
-      { type: 'h2', heading: 'Safari Lodge Tipping Guide' },
-      { type: 'p', body: 'South Africa\'s private game reserves (Sabi Sand, Timbavati, Phinda, Madikwe) attract significant international visitors. Lodge tipping norms: ZAR 200–500 per person per day for your guide (private vehicle), ZAR 100–200 for the tracker, and ZAR 200–400 total for all other lodge staff via the tipping box. On a 3-night stay with 2 people, budget approximately ZAR 2,000–4,000 in tips — this is a significant part of the staff\'s monthly income.' },
-      { type: 'tip', body: 'Carry small ZAR notes (R10, R20, R50) at all times in South Africa — you will need them constantly for petrol attendants, car guards, bag packers, and smaller daily tips. ATMs are widely available across the country including in most towns near game reserves.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'Is tipping expected in South Africa?', a: 'Yes — 10–15% at restaurants is expected, not optional. South Africa\'s service workers earn low base wages and rely significantly on tips to reach a living income.' },
-        { q: 'Should I tip car guards in South Africa?', a: 'Yes — ZAR 5–10 when you return to your car. They are watching your vehicle and it is a recognised informal employment category in South Africa. Never feel obligated, but it is a meaningful gesture.' },
-        { q: 'How much do I tip a safari guide in South Africa?', a: 'ZAR 200–500 per person per day for a private guide on a game drive. At lodges, a communal tipping box is usually available for all staff. Ask the lodge manager about their preferred tipping system on arrival.' },
-        { q: 'Do petrol stations in South Africa expect tips?', a: 'Yes — South African petrol stations are full-service (the attendant pumps your petrol, checks tyres, and cleans the windscreen). ZAR 5–10 is the standard tip; ZAR 20 for exceptional service or in bad weather.' },
-        { q: 'How do I tip by card in South African restaurants?', a: 'Most South African card terminals prompt for a tip amount in ZAR during the payment process. Enter the tip amount and confirm — it is added to the total. Alternatively, hand ZAR cash directly to your server.' },
-        { q: 'Should I tip separately for the guide and tracker on safari?', a: 'Yes — ideally tip them separately, as guides and trackers have different skill sets and the tracker is often overlooked. ZAR 200–500/day for the guide and ZAR 100–200/day for the tracker is appropriate.' },
-      ]},
+      {
+        type: "intro",
+        body: "Tipping in South Africa is expected and socially important. Service workers — from restaurant staff to petrol attendants — earn low base wages in a country with very high unemployment, making tips a vital part of their income. The South African Rand (ZAR) is the currency, and 10–15% at restaurants is the standard. South Africa also has tipping customs unique to the country — car guards and full-service petrol stations are two you will encounter almost immediately. This guide covers Cape Town, Johannesburg, Durban, and safari lodge tipping — the full picture.",
+      },
+      { type: "h2", heading: "Tipping in South Africa at a Glance" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Restaurants",
+            value: "10–15% — expected; 15% for excellent service",
+          },
+          {
+            label: "Cafés / Coffee Shops",
+            value: "Round up or ZAR 5–10 for sit-down service",
+          },
+          { label: "Taxis / Uber", value: "10–15% — Uber has in-app tipping" },
+          { label: "Hotel Porters", value: "ZAR 20–40 per bag" },
+          {
+            label: "Hotel Housekeeping",
+            value: "ZAR 20–40 per day — leave daily",
+          },
+          {
+            label: "Petrol Station Attendants",
+            value: "ZAR 5–10 — full-service stations are unique to SA",
+          },
+          {
+            label: "Car Guards (parking)",
+            value: "ZAR 5–10 when you collect your car",
+          },
+          {
+            label: "Supermarket Bag Packers",
+            value: "ZAR 5–10 — volunteer packers at checkouts",
+          },
+          {
+            label: "Safari Guides & Trackers",
+            value: "ZAR 200–500 per day for outstanding private guiding",
+          },
+          {
+            label: "Tour Guides",
+            value: "10% of tour cost or ZAR 100–200 per day",
+          },
+        ],
+      },
+      { type: "h2", heading: "Restaurants in Cape Town & Johannesburg" },
+      {
+        type: "p",
+        body: "South Africa's restaurant culture is excellent — Cape Town's V&A Waterfront and Franschhoek wine country have world-class dining scenes, while Johannesburg's Sandton and Maboneng precincts offer sophisticated urban restaurants. At sit-down restaurants, 10–15% is the standard and expected tip. Most bills include VAT (15%) but not a service charge, so the tip is additional. Card tipping is widely supported — terminals typically have a tip prompt. For fine dining in Cape Town's Atlantic Seaboard or Johannesburg's Parkhurst, 15% is appropriate for exceptional service.",
+      },
+      { type: "h2", heading: "South Africa's Unique Tipping Situations" },
+      {
+        type: "ul",
+        items: [
+          "Petrol stations: South Africa has full-service petrol stations — the attendant fills your tank, checks oil and tyres, and cleans the windscreen. ZAR 5–10 is the standard tip.",
+          "Car guards: Informal parking attendants outside shopping centres, restaurants, and beaches. ZAR 5–10 when you collect your car — they watch for theft and scratches.",
+          "Supermarket bag packers: Volunteers (often elderly or disabled community members) who pack your bags at major supermarkets. ZAR 5–10 is appropriate.",
+          "Safari guides: ZAR 200–500 per day for outstanding private guiding in Kruger, the Western Cape, or private game reserves.",
+          "Safari trackers: ZAR 100–200 per day — trackers are the unsung experts who find the animals; they deserve separate acknowledgement from the guide.",
+          "Game drive camps: Many lodges have a communal tipping box at checkout split between all staff — kitchen, housekeeping, maintenance, and guiding teams.",
+        ],
+      },
+      { type: "h2", heading: "Safari Lodge Tipping Guide" },
+      {
+        type: "p",
+        body: "South Africa's private game reserves (Sabi Sand, Timbavati, Phinda, Madikwe) attract significant international visitors. Lodge tipping norms: ZAR 200–500 per person per day for your guide (private vehicle), ZAR 100–200 for the tracker, and ZAR 200–400 total for all other lodge staff via the tipping box. On a 3-night stay with 2 people, budget approximately ZAR 2,000–4,000 in tips — this is a significant part of the staff's monthly income.",
+      },
+      {
+        type: "tip",
+        body: "Carry small ZAR notes (R10, R20, R50) at all times in South Africa — you will need them constantly for petrol attendants, car guards, bag packers, and smaller daily tips. ATMs are widely available across the country including in most towns near game reserves.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "Is tipping expected in South Africa?",
+            a: "Yes — 10–15% at restaurants is expected, not optional. South Africa's service workers earn low base wages and rely significantly on tips to reach a living income.",
+          },
+          {
+            q: "Should I tip car guards in South Africa?",
+            a: "Yes — ZAR 5–10 when you return to your car. They are watching your vehicle and it is a recognised informal employment category in South Africa. Never feel obligated, but it is a meaningful gesture.",
+          },
+          {
+            q: "How much do I tip a safari guide in South Africa?",
+            a: "ZAR 200–500 per person per day for a private guide on a game drive. At lodges, a communal tipping box is usually available for all staff. Ask the lodge manager about their preferred tipping system on arrival.",
+          },
+          {
+            q: "Do petrol stations in South Africa expect tips?",
+            a: "Yes — South African petrol stations are full-service (the attendant pumps your petrol, checks tyres, and cleans the windscreen). ZAR 5–10 is the standard tip; ZAR 20 for exceptional service or in bad weather.",
+          },
+          {
+            q: "How do I tip by card in South African restaurants?",
+            a: "Most South African card terminals prompt for a tip amount in ZAR during the payment process. Enter the tip amount and confirm — it is added to the total. Alternatively, hand ZAR cash directly to your server.",
+          },
+          {
+            q: "Should I tip separately for the guide and tracker on safari?",
+            a: "Yes — ideally tip them separately, as guides and trackers have different skill sets and the tracker is often overlooked. ZAR 200–500/day for the guide and ZAR 100–200/day for the tracker is appropriate.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'tipping-in-philippines',
-    title: 'Tipping in the Philippines: How Much & When (2026)',
-    description: "Philippine restaurants often add a 10% service charge that goes to the establishment, not your server — a PHP 50–100 cash tip directly to them makes the real difference. Here's the full 2026 guide, plus island-hopping boat crews (PHP 200–500 per person for a full-day trip).",
-    publishedAt: '2025-12-11',
+    slug: "tipping-in-philippines",
+    title: "Tipping in the Philippines: How Much & When (2026)",
+    description:
+      "Philippine restaurants often add a 10% service charge that goes to the establishment, not your server — a PHP 50–100 cash tip directly to them makes the real difference. Here's the full 2026 guide, plus island-hopping boat crews (PHP 200–500 per person for a full-day trip).",
+    publishedAt: "2025-12-11",
     readingMinutes: 8,
-    category: 'tipping',
-    country: 'Philippines',
-    countrySlug: 'philippines',
+    category: "tipping",
+    country: "Philippines",
+    countrySlug: "philippines",
     content: [
-      { type: 'intro', body: 'Tipping in the Philippines has an interesting dynamic: many restaurants automatically add a 10% service charge to the bill, but this charge often goes to the establishment rather than directly to service staff. As a result, a small additional cash tip to your server is always appreciated and goes directly to the person who served you. The Philippine Peso (PHP) is the currency. This guide covers Manila, Cebu, Boracay, Palawan, Siargao, and the island-hopping situations specific to Philippine tourism.' },
-      { type: 'h2', heading: 'Tipping in the Philippines at a Glance' },
-      { type: 'table', rows: [
-        { label: 'Restaurants (with service charge)', value: 'SC already on bill — PHP 50–100 cash tip to your server' },
-        { label: 'Restaurants (without service charge)', value: '10% tip — verify before adding' },
-        { label: 'Local carenderias / street food', value: 'Not expected — pay the bill only' },
-        { label: 'Grab / Angkas (ride-hailing)', value: 'PHP 20–50 in-app — Grab supports tipping' },
-        { label: 'Traditional metered taxis', value: 'Round up + PHP 20–50 for smooth, honest service' },
-        { label: 'Hotel Porters', value: 'PHP 50–100 per bag at upscale hotels' },
-        { label: 'Hotel Housekeeping', value: 'PHP 50–100 per stay — leave on departure' },
-        { label: 'Tour Guides', value: 'PHP 200–500 for a half-day; PHP 500–1,000 for full day' },
-        { label: 'Spa / Massage', value: '10–20% of service cost — common at resort spas' },
-        { label: 'Island-hopping boat crews', value: 'PHP 200–500 per person for a full day — meaningful income' },
-      ]},
-      { type: 'h2', heading: 'Restaurants & Service Charges' },
-      { type: 'p', body: 'Always check your bill before tipping. If a service charge (sometimes labelled "SC") has been added, you are not obligated to tip further — but handing PHP 50–100 directly to your server as a personal gesture ensures they benefit individually. In Manila\'s BGC and Makati districts, Cebu IT Park restaurants, and Boracay tourist areas, service charges are the norm at mid-range and upscale establishments. At local carenderias (small neighbourhood eateries) and street food stalls, no tip is expected. Jollibee and other fast-food chains: no tipping.' },
-      { type: 'h2', heading: 'Island Hopping, Boats & Beach Resorts' },
-      { type: 'p', body: 'The Philippines is famous for its island-hopping — El Nido and Coron in Palawan, the Chocolate Hills area in Bohol, Siargao\'s cloud 9 and Sugba Lagoon. Boat operators and crew on island-hopping day trips earn a modest fixed wage for very long, physically demanding days. PHP 200–500 per person at the end of the day is a genuine contribution to their livelihood — budget for this as part of your island-hopping cost.' },
-      { type: 'ul', items: [
-        'Island-hopping boat captain/crew: PHP 200–500 per person for a full-day island hop — the single most impactful tip in the Philippines',
-        'Dive instructors / dive masters: PHP 300–600 for a PADI course dive or fun dive — skilled professionals',
-        'Resort beach staff: PHP 100–200 for exceptional service setting up loungers, snorkel gear, etc.',
-        'Spa therapists: 10–20% of the service cost handed directly — do not leave it at reception',
-        'Hotel buffet restaurants: No tip if a service charge is already added; PHP 50–100 to a particularly attentive server is a nice gesture',
-      ]},
-      { type: 'tip', body: 'Carry PHP 50 and PHP 100 bills at all times in the Philippines — particularly in island areas where ATMs are sparse (El Nido, Siargao, remote Palawan). Pre-withdraw enough for tips before heading to islands. Credit cards are rarely accepted for tips outside Manila and Cebu.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'Is the service charge in Philippine restaurants a tip?', a: 'It is labelled as one, but it often goes to the establishment (or a shared pool) rather than directly to your server. A small additional cash tip ensures the individual who served you benefits personally.' },
-        { q: 'How much do I tip in the Philippines?', a: '10% if no service charge is on the bill; PHP 50–100 cash to the server if the service charge is already included. More for tours, resort activities, and island-hopping crews.' },
-        { q: 'Do I tip Grab drivers in the Philippines?', a: 'Not required, but a PHP 20–50 in-app tip is a kind gesture for a good ride. Grab supports tipping — select the tip option after the ride is completed.' },
-        { q: 'How much do I tip an island-hopping boat crew in Palawan?', a: 'PHP 200–500 per person for a full-day island-hopping tour in El Nido or Coron is appropriate. This is a physically demanding job and the crew typically earn very modest wages.' },
-        { q: 'Do I tip at Philippine beach resorts?', a: 'Yes — resort housekeeping PHP 100–200 per night, bellhop PHP 50–100 per bag, and bar/restaurant staff 10% if no service charge. For exceptional resort staff who go beyond their duties, PHP 200–500 is a lovely gesture.' },
-        { q: 'Should I tip tricycle or jeepney drivers in the Philippines?', a: 'No — tricycles and jeepneys have fixed fares for standard routes. Pay the stated fare only. No tip is expected or customary for these local transport modes.' },
-      ]},
+      {
+        type: "intro",
+        body: "Tipping in the Philippines has an interesting dynamic: many restaurants automatically add a 10% service charge to the bill, but this charge often goes to the establishment rather than directly to service staff. As a result, a small additional cash tip to your server is always appreciated and goes directly to the person who served you. The Philippine Peso (PHP) is the currency. This guide covers Manila, Cebu, Boracay, Palawan, Siargao, and the island-hopping situations specific to Philippine tourism.",
+      },
+      { type: "h2", heading: "Tipping in the Philippines at a Glance" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Restaurants (with service charge)",
+            value: "SC already on bill — PHP 50–100 cash tip to your server",
+          },
+          {
+            label: "Restaurants (without service charge)",
+            value: "10% tip — verify before adding",
+          },
+          {
+            label: "Local carenderias / street food",
+            value: "Not expected — pay the bill only",
+          },
+          {
+            label: "Grab / Angkas (ride-hailing)",
+            value: "PHP 20–50 in-app — Grab supports tipping",
+          },
+          {
+            label: "Traditional metered taxis",
+            value: "Round up + PHP 20–50 for smooth, honest service",
+          },
+          {
+            label: "Hotel Porters",
+            value: "PHP 50–100 per bag at upscale hotels",
+          },
+          {
+            label: "Hotel Housekeeping",
+            value: "PHP 50–100 per stay — leave on departure",
+          },
+          {
+            label: "Tour Guides",
+            value: "PHP 200–500 for a half-day; PHP 500–1,000 for full day",
+          },
+          {
+            label: "Spa / Massage",
+            value: "10–20% of service cost — common at resort spas",
+          },
+          {
+            label: "Island-hopping boat crews",
+            value: "PHP 200–500 per person for a full day — meaningful income",
+          },
+        ],
+      },
+      { type: "h2", heading: "Restaurants & Service Charges" },
+      {
+        type: "p",
+        body: 'Always check your bill before tipping. If a service charge (sometimes labelled "SC") has been added, you are not obligated to tip further — but handing PHP 50–100 directly to your server as a personal gesture ensures they benefit individually. In Manila\'s BGC and Makati districts, Cebu IT Park restaurants, and Boracay tourist areas, service charges are the norm at mid-range and upscale establishments. At local carenderias (small neighbourhood eateries) and street food stalls, no tip is expected. Jollibee and other fast-food chains: no tipping.',
+      },
+      { type: "h2", heading: "Island Hopping, Boats & Beach Resorts" },
+      {
+        type: "p",
+        body: "The Philippines is famous for its island-hopping — El Nido and Coron in Palawan, the Chocolate Hills area in Bohol, Siargao's cloud 9 and Sugba Lagoon. Boat operators and crew on island-hopping day trips earn a modest fixed wage for very long, physically demanding days. PHP 200–500 per person at the end of the day is a genuine contribution to their livelihood — budget for this as part of your island-hopping cost.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Island-hopping boat captain/crew: PHP 200–500 per person for a full-day island hop — the single most impactful tip in the Philippines",
+          "Dive instructors / dive masters: PHP 300–600 for a PADI course dive or fun dive — skilled professionals",
+          "Resort beach staff: PHP 100–200 for exceptional service setting up loungers, snorkel gear, etc.",
+          "Spa therapists: 10–20% of the service cost handed directly — do not leave it at reception",
+          "Hotel buffet restaurants: No tip if a service charge is already added; PHP 50–100 to a particularly attentive server is a nice gesture",
+        ],
+      },
+      {
+        type: "tip",
+        body: "Carry PHP 50 and PHP 100 bills at all times in the Philippines — particularly in island areas where ATMs are sparse (El Nido, Siargao, remote Palawan). Pre-withdraw enough for tips before heading to islands. Credit cards are rarely accepted for tips outside Manila and Cebu.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "Is the service charge in Philippine restaurants a tip?",
+            a: "It is labelled as one, but it often goes to the establishment (or a shared pool) rather than directly to your server. A small additional cash tip ensures the individual who served you benefits personally.",
+          },
+          {
+            q: "How much do I tip in the Philippines?",
+            a: "10% if no service charge is on the bill; PHP 50–100 cash to the server if the service charge is already included. More for tours, resort activities, and island-hopping crews.",
+          },
+          {
+            q: "Do I tip Grab drivers in the Philippines?",
+            a: "Not required, but a PHP 20–50 in-app tip is a kind gesture for a good ride. Grab supports tipping — select the tip option after the ride is completed.",
+          },
+          {
+            q: "How much do I tip an island-hopping boat crew in Palawan?",
+            a: "PHP 200–500 per person for a full-day island-hopping tour in El Nido or Coron is appropriate. This is a physically demanding job and the crew typically earn very modest wages.",
+          },
+          {
+            q: "Do I tip at Philippine beach resorts?",
+            a: "Yes — resort housekeeping PHP 100–200 per night, bellhop PHP 50–100 per bag, and bar/restaurant staff 10% if no service charge. For exceptional resort staff who go beyond their duties, PHP 200–500 is a lovely gesture.",
+          },
+          {
+            q: "Should I tip tricycle or jeepney drivers in the Philippines?",
+            a: "No — tricycles and jeepneys have fixed fares for standard routes. Pay the stated fare only. No tip is expected or customary for these local transport modes.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'tipping-in-vietnam',
-    title: 'Tipping in Vietnam: How Much & Who to Tip (2026)',
-    description: "Local phở and bánh mì stalls expect no tip — but tourist restaurants in Hanoi's Old Quarter and Hội An expect VND 30,000–70,000 per person, and Ha Long Bay cruise guides earn USD $5–10 per person for 2-night trips. Here's the full 2026 guide.",
-    publishedAt: '2025-12-18',
+    slug: "tipping-in-vietnam",
+    title: "Tipping in Vietnam: How Much & Who to Tip (2026)",
+    description:
+      "Local phở and bánh mì stalls expect no tip — but tourist restaurants in Hanoi's Old Quarter and Hội An expect VND 30,000–70,000 per person, and Ha Long Bay cruise guides earn USD $5–10 per person for 2-night trips. Here's the full 2026 guide.",
+    publishedAt: "2025-12-18",
     readingMinutes: 8,
-    category: 'tipping',
-    country: 'Vietnam',
-    countrySlug: 'vietnam',
+    category: "tipping",
+    country: "Vietnam",
+    countrySlug: "vietnam",
     content: [
-      { type: 'intro', body: 'Tipping in Vietnam is not part of traditional Vietnamese culture, but the country\'s booming tourism sector has shifted expectations significantly in Ho Chi Minh City (HCMC), Hanoi, Hội An, Da Nang, and resort areas. At tourist-facing restaurants and hotels, a tip is appreciated and increasingly expected. At local Vietnamese spots — bún bò Huế joints, phở shops, bánh mì stalls — tipping is not customary. The Vietnamese Dong (VND) is the currency; exchange rates make VND tips feel very different to the sender and receiver, so this guide gives amounts in both VND and USD.' },
-      { type: 'h2', heading: 'Tipping in Vietnam at a Glance' },
-      { type: 'table', rows: [
-        { label: 'Restaurants (tourist, sit-down)', value: '10% or VND 30,000–70,000 per person' },
-        { label: 'Restaurants (local pho/com), street food', value: 'Not expected — pay the bill only' },
-        { label: 'Grab / Be (ride-hailing)', value: 'Round up — Grab has in-app tipping' },
-        { label: 'Hotel Porters', value: 'VND 30,000–50,000 per bag at upscale hotels' },
-        { label: 'Hotel Housekeeping', value: 'VND 20,000–50,000 per night — leave daily' },
-        { label: 'Tour Guides', value: 'USD $2–5 per person per day — USD strongly preferred' },
-        { label: 'Spa / Massage', value: 'VND 50,000–100,000 or 10–15% directly to therapist' },
-        { label: 'Ha Long Bay overnight cruise guide', value: 'USD $5–10 per person — leave at end of cruise' },
-        { label: 'Ha Long Bay boat crew', value: 'USD $3–5 per person collectively' },
-      ]},
-      { type: 'h2', heading: 'Restaurants & Street Food' },
-      { type: 'p', body: 'Vietnam\'s food scene is extraordinary at every price point. At sit-down tourist restaurants in Hanoi\'s Old Quarter, Hội An\'s Ancient Town, or HCMC\'s Bùi Viện Street, leaving VND 30,000–70,000 (roughly USD $1–3) or 10% of the bill for good service is appropriate and appreciated. At local cơm bình dân (rice plate) restaurants, phở shops, and street food stalls, no tip is expected — pay the bill as shown. Many tourist restaurants now include a service charge; always check before adding extra.' },
-      { type: 'h2', heading: 'Ha Long Bay, Tours & Cruise Guides' },
-      { type: 'p', body: 'Vietnam\'s tour economy is one of the largest in Southeast Asia — motorbike tours of HCMC\'s alleys, overnight cruises in Ha Long Bay and Lan Ha Bay, cycling tours of Hội An\'s rice paddies, and trekking in Sapa. Tour guides and boat crew depend significantly on tips. USD $2–5 per person per day for guides is the widely cited standard. For Ha Long Bay overnight cruises (2–3 days), USD $5–10 per person for the guide and USD $3–5 per person for the boat crew is appropriate for a quality experience. Leave tips on the final morning in the envelopes provided, or hand directly at departure.' },
-      { type: 'h2', heading: 'Spas, Massages & Hotels' },
-      { type: 'ul', items: [
-        'Traditional Vietnamese massage (60–90 min): VND 50,000–100,000 directly to therapist',
-        'Hotel spa treatments (high-end resort): 10–15% of the bill, or USD $3–5 directly',
-        'Hotel porters: VND 30,000–50,000 per bag — hand directly when bags reach the room',
-        'Hotel housekeeping: VND 20,000–50,000 per night — leave daily on the bed or nightstand',
-        'Cooking class instructors: VND 50,000–100,000 per person for an excellent 3-hour class',
-        'Cyclo (rickshaw) drivers: Agree the fare upfront; tip VND 20,000–50,000 for a good experience',
-      ]},
-      { type: 'tip', body: 'USD is widely understood and accepted for tips in Vietnam — many tour guides and hotel staff prefer it. Have USD $1 bills for individual tips and USD $5 notes for guides. VND is always fine for restaurants and smaller tips — stock up on small VND notes (VND 20,000 and 50,000) from ATMs or exchange counters.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'Do you tip in Vietnam?', a: 'At tourist restaurants and hotels, yes — 10% or VND 30,000–70,000 per person is appropriate. At local Vietnamese eateries and street food stalls, no tip is expected or customary.' },
-        { q: 'Can I tip in USD in Vietnam?', a: 'Yes — USD is widely accepted for tips, especially from tour guides, cruise crew, and hotel staff. Many prefer USD due to exchange rate stability over VND.' },
-        { q: 'How much should I tip my Ha Long Bay tour guide?', a: 'USD $5–10 per person for the guide on a 2-night cruise; USD $3–5 per person for the boat crew collectively. Leave at the end of the cruise on the final morning.' },
-        { q: 'Should I tip at a Vietnamese massage parlour?', a: 'Yes — VND 50,000–100,000 handed directly to your therapist at the end is a generous gesture, particularly at local massage shops rather than high-end resort spas.' },
-        { q: 'How do I tip if I have no small VND notes?', a: 'ATMs in Vietnam dispense VND 200,000 and 500,000 notes — ask the desk to make change when you check in. Alternatively, tip in USD (small denominations) which is widely understood.' },
-        { q: 'Do Grab drivers in Vietnam expect tips?', a: 'Not expected — Grab sets fares upfront. The in-app tip option is available and a VND 10,000–20,000 tip is a kind gesture for a good ride, but pressing 0 is completely normal.' },
-      ]},
+      {
+        type: "intro",
+        body: "Tipping in Vietnam is not part of traditional Vietnamese culture, but the country's booming tourism sector has shifted expectations significantly in Ho Chi Minh City (HCMC), Hanoi, Hội An, Da Nang, and resort areas. At tourist-facing restaurants and hotels, a tip is appreciated and increasingly expected. At local Vietnamese spots — bún bò Huế joints, phở shops, bánh mì stalls — tipping is not customary. The Vietnamese Dong (VND) is the currency; exchange rates make VND tips feel very different to the sender and receiver, so this guide gives amounts in both VND and USD.",
+      },
+      { type: "h2", heading: "Tipping in Vietnam at a Glance" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Restaurants (tourist, sit-down)",
+            value: "10% or VND 30,000–70,000 per person",
+          },
+          {
+            label: "Restaurants (local pho/com), street food",
+            value: "Not expected — pay the bill only",
+          },
+          {
+            label: "Grab / Be (ride-hailing)",
+            value: "Round up — Grab has in-app tipping",
+          },
+          {
+            label: "Hotel Porters",
+            value: "VND 30,000–50,000 per bag at upscale hotels",
+          },
+          {
+            label: "Hotel Housekeeping",
+            value: "VND 20,000–50,000 per night — leave daily",
+          },
+          {
+            label: "Tour Guides",
+            value: "USD $2–5 per person per day — USD strongly preferred",
+          },
+          {
+            label: "Spa / Massage",
+            value: "VND 50,000–100,000 or 10–15% directly to therapist",
+          },
+          {
+            label: "Ha Long Bay overnight cruise guide",
+            value: "USD $5–10 per person — leave at end of cruise",
+          },
+          {
+            label: "Ha Long Bay boat crew",
+            value: "USD $3–5 per person collectively",
+          },
+        ],
+      },
+      { type: "h2", heading: "Restaurants & Street Food" },
+      {
+        type: "p",
+        body: "Vietnam's food scene is extraordinary at every price point. At sit-down tourist restaurants in Hanoi's Old Quarter, Hội An's Ancient Town, or HCMC's Bùi Viện Street, leaving VND 30,000–70,000 (roughly USD $1–3) or 10% of the bill for good service is appropriate and appreciated. At local cơm bình dân (rice plate) restaurants, phở shops, and street food stalls, no tip is expected — pay the bill as shown. Many tourist restaurants now include a service charge; always check before adding extra.",
+      },
+      { type: "h2", heading: "Ha Long Bay, Tours & Cruise Guides" },
+      {
+        type: "p",
+        body: "Vietnam's tour economy is one of the largest in Southeast Asia — motorbike tours of HCMC's alleys, overnight cruises in Ha Long Bay and Lan Ha Bay, cycling tours of Hội An's rice paddies, and trekking in Sapa. Tour guides and boat crew depend significantly on tips. USD $2–5 per person per day for guides is the widely cited standard. For Ha Long Bay overnight cruises (2–3 days), USD $5–10 per person for the guide and USD $3–5 per person for the boat crew is appropriate for a quality experience. Leave tips on the final morning in the envelopes provided, or hand directly at departure.",
+      },
+      { type: "h2", heading: "Spas, Massages & Hotels" },
+      {
+        type: "ul",
+        items: [
+          "Traditional Vietnamese massage (60–90 min): VND 50,000–100,000 directly to therapist",
+          "Hotel spa treatments (high-end resort): 10–15% of the bill, or USD $3–5 directly",
+          "Hotel porters: VND 30,000–50,000 per bag — hand directly when bags reach the room",
+          "Hotel housekeeping: VND 20,000–50,000 per night — leave daily on the bed or nightstand",
+          "Cooking class instructors: VND 50,000–100,000 per person for an excellent 3-hour class",
+          "Cyclo (rickshaw) drivers: Agree the fare upfront; tip VND 20,000–50,000 for a good experience",
+        ],
+      },
+      {
+        type: "tip",
+        body: "USD is widely understood and accepted for tips in Vietnam — many tour guides and hotel staff prefer it. Have USD $1 bills for individual tips and USD $5 notes for guides. VND is always fine for restaurants and smaller tips — stock up on small VND notes (VND 20,000 and 50,000) from ATMs or exchange counters.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "Do you tip in Vietnam?",
+            a: "At tourist restaurants and hotels, yes — 10% or VND 30,000–70,000 per person is appropriate. At local Vietnamese eateries and street food stalls, no tip is expected or customary.",
+          },
+          {
+            q: "Can I tip in USD in Vietnam?",
+            a: "Yes — USD is widely accepted for tips, especially from tour guides, cruise crew, and hotel staff. Many prefer USD due to exchange rate stability over VND.",
+          },
+          {
+            q: "How much should I tip my Ha Long Bay tour guide?",
+            a: "USD $5–10 per person for the guide on a 2-night cruise; USD $3–5 per person for the boat crew collectively. Leave at the end of the cruise on the final morning.",
+          },
+          {
+            q: "Should I tip at a Vietnamese massage parlour?",
+            a: "Yes — VND 50,000–100,000 handed directly to your therapist at the end is a generous gesture, particularly at local massage shops rather than high-end resort spas.",
+          },
+          {
+            q: "How do I tip if I have no small VND notes?",
+            a: "ATMs in Vietnam dispense VND 200,000 and 500,000 notes — ask the desk to make change when you check in. Alternatively, tip in USD (small denominations) which is widely understood.",
+          },
+          {
+            q: "Do Grab drivers in Vietnam expect tips?",
+            a: "Not expected — Grab sets fares upfront. The in-app tip option is available and a VND 10,000–20,000 tip is a kind gesture for a good ride, but pressing 0 is completely normal.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'tipping-in-malaysia',
-    title: 'Tipping in Malaysia: What\'s Expected in 2026',
-    description: "Malaysian menus show '++' — a 10% service charge plus 6% GST that turns a MYR 50 dish into ~MYR 58. Hawker stalls and mamak restaurants never expect tips. Here's the full 2026 guide to when a MYR 5–10 cash tip to the server still makes a meaningful difference.",
-    publishedAt: '2025-12-22',
+    slug: "tipping-in-malaysia",
+    title: "Tipping in Malaysia: What's Expected in 2026",
+    description:
+      "Malaysian menus show '++' — a 10% service charge plus 6% GST that turns a MYR 50 dish into ~MYR 58. Hawker stalls and mamak restaurants never expect tips. Here's the full 2026 guide to when a MYR 5–10 cash tip to the server still makes a meaningful difference.",
+    publishedAt: "2025-12-22",
     readingMinutes: 8,
-    category: 'tipping',
-    country: 'Malaysia',
-    countrySlug: 'malaysia',
+    category: "tipping",
+    country: "Malaysia",
+    countrySlug: "malaysia",
     content: [
-      { type: 'intro', body: 'Tipping in Malaysia is not obligatory, but it is genuinely appreciated at tourist-facing restaurants, hotels, and on guided tours. The country operates a dual tipping culture: at hawker centres and mamak stalls — the beating heart of Malaysian food — no tip is ever expected or appropriate. At mid-range and upscale restaurants, resorts, and hotels, a 10% service charge is typically added automatically (the "++ " model), but a personal cash tip to your server ensures the individual receives the recognition directly. The Malaysian Ringgit (MYR/RM) is the currency, and cash tips are always preferred over card. Kuala Lumpur, Penang, Langkawi, and the Perhentian Islands are all popular visitor destinations where this guide applies.' },
-      { type: 'h2', heading: 'Tipping in Malaysia at a Glance' },
-      { type: 'table', rows: [
-        { label: 'Restaurants (with ++ service charge)', value: 'Charge already added — MYR 5–10 cash tip to server' },
-        { label: 'Hawker stalls / Mamak / Food courts', value: 'Not expected — never tip here' },
-        { label: 'Upscale restaurants (no service charge)', value: '10% is generous — MYR 10–30 depending on bill' },
-        { label: 'Grab (ride-hailing)', value: 'In-app tipping available — MYR 2–5 optional' },
-        { label: 'Metered taxis', value: 'Round up the fare — no percentage expected' },
-        { label: 'Hotel Porters', value: 'MYR 5–10 per bag at 4- and 5-star hotels' },
-        { label: 'Hotel Housekeeping', value: 'MYR 10–20 per stay — leave on departure day' },
-        { label: 'Tour Guides', value: 'MYR 30–60 half-day; MYR 60–120 full day' },
-        { label: 'Spa / Massage', value: 'MYR 20–50 or 10–15% of the service cost' },
-      ]},
-      { type: 'h2', heading: 'Understanding ++ Pricing' },
-      { type: 'p', body: 'The "++" symbol on Malaysian menus and hotel bills means two additions are coming: a 10% service charge and a 6% government service tax (GST). A menu item listed at MYR 50 will appear on your bill as approximately MYR 57–58 after both charges. This is entirely legitimate and standard at sit-down restaurants, hotel restaurants, and resort dining. The important thing to know: the service charge goes into a pooled fund and may or may not be distributed directly to your server. This is why a personal cash tip — handed directly to the person who served you — is still a meaningful gesture even when the service charge is already on the bill. Do not add a percentage tip on top of the ++ if you are on a tight budget, but do consider a small MYR 5–10 cash gesture for genuinely good service.' },
-      { type: 'h2', heading: 'Restaurants, Hawker Stalls & Mamak' },
-      { type: 'p', body: 'Malaysia\'s hawker culture is one of the world\'s great food experiences — from the open-air hawker centres of Penang (Gurney Drive, New Lane) to the mamak restaurants open 24 hours across KL. At all of these venues, tipping is completely unknown and would cause genuine confusion. You order, you pay the exact amount on the bill or at the counter, and that is it. At sit-down restaurants in KLCC, Bukit Bintang, or Georgetown\'s heritage shophouses, a 10% service charge is standard. If you want to tip your individual server, leave MYR 5–10 in cash on the table after the bill is settled. At beach resorts in Langkawi or Perhentian Islands where a Western dining style is common, 10% is a normal and appreciated gesture.' },
-      { type: 'h2', heading: 'Grab, Taxis & Getting Around' },
-      { type: 'p', body: 'Grab has largely replaced metered taxis in Malaysia\'s major cities. The Grab app includes an optional in-app tipping feature after the ride — MYR 2–5 is a generous gesture for good service. Traditional metered taxis still operate but are less common; if you use one, rounding up the fare to the nearest MYR 5 is a standard courtesy. Tuk-tuks and trishaw rides (mainly in Penang and Melaka) are often tourist-facing and a MYR 5–10 tip is appropriate after a scenic ride. Intercity coaches and airport bus drivers do not expect tips.' },
-      { type: 'h2', heading: 'Hotels, Spas & Tours' },
-      { type: 'ul', items: [
-        'Hotel porters: MYR 5–10 per bag at 4- and 5-star hotels in KL, Penang, or beach resorts — hand it directly when they bring your bags to the room',
-        'Hotel housekeeping: MYR 10–20 left in the room on your departure day — use the envelope provided or leave it with a note',
-        'Hotel concierge: MYR 20–50 if they arrange something specific and helpful, like a sold-out restaurant booking or a private tour',
-        'Spa and massage: MYR 20–50 is standard at resort spas and dedicated massage centres — hand it directly to your therapist, not the front desk',
-        'Tour guides: MYR 60–120 per person for a full-day guided tour is appropriate — private guides appreciate the higher end of that range',
-        'Drivers on multi-day trips: MYR 50–80 per day for a dedicated private driver on a Cameron Highlands or Borneo tour, given at the end of the trip',
-      ]},
-      { type: 'tip', body: 'Always tip in cash (Malaysian Ringgit where possible). Card tips in Malaysia are unreliable — they may be processed as a separate transaction, delayed, or not reach the individual at all. Carry small-denomination notes (MYR 5 and MYR 10) so you can tip without needing change.' },
-      { type: 'warning', body: 'At some tourist-area restaurants, particularly in Penang\'s heritage zone and KL\'s Bukit Bintang, aggressive "service charge" labels are sometimes added to bills at restaurants that do not qualify as "++ " establishments. Check whether the service charge is itemised — if it seems unusual or the restaurant is a street-level local spot, query it politely before paying.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'Do you tip in Malaysia?', a: 'Not obligatory, but appreciated. At hawker stalls and mamak restaurants — never. At sit-down restaurants, hotels, on tours, and at spas — a small cash tip to the individual who served you is a genuine gesture.' },
-        { q: 'What does ++ mean on Malaysian menus?', a: 'The ++ means a 10% service charge and 6% government service tax will be added to the listed prices. A MYR 50 dish becomes approximately MYR 57–58 after both charges. Budget for this when ordering.' },
-        { q: 'Do I tip at Malaysian hawker stalls?', a: 'No. Hawker stalls, mamak restaurants, and food courts are counter-service or bring-your-own-order setups where tipping is entirely unknown. Leaving a tip would cause confusion — just pay the amount charged.' },
-        { q: 'How much do I tip a tour guide in Malaysia?', a: 'MYR 60–120 per person for a full-day tour is appropriate. For private guides on multi-day itineraries through Borneo, Cameron Highlands, or Taman Negara, MYR 80–150 per day is generous and well received.' },
-        { q: 'Should I tip Grab drivers in Malaysia?', a: 'It is optional but a nice gesture. The Grab app offers in-app tipping after the ride. MYR 2–5 is appropriate. For a particularly long ride or exceptional service, MYR 5–10 is generous.' },
-        { q: 'Is it better to tip in MYR or USD in Malaysia?', a: 'MYR is preferred for most tips. At remote island resorts (Perhentian, Redang, Tioman) where guests are mostly international, USD is sometimes accepted and appreciated, but the person will need to exchange it. MYR is always easier and more valuable to them directly.' },
-      ]},
+      {
+        type: "intro",
+        body: 'Tipping in Malaysia is not obligatory, but it is genuinely appreciated at tourist-facing restaurants, hotels, and on guided tours. The country operates a dual tipping culture: at hawker centres and mamak stalls — the beating heart of Malaysian food — no tip is ever expected or appropriate. At mid-range and upscale restaurants, resorts, and hotels, a 10% service charge is typically added automatically (the "++ " model), but a personal cash tip to your server ensures the individual receives the recognition directly. The Malaysian Ringgit (MYR/RM) is the currency, and cash tips are always preferred over card. Kuala Lumpur, Penang, Langkawi, and the Perhentian Islands are all popular visitor destinations where this guide applies.',
+      },
+      { type: "h2", heading: "Tipping in Malaysia at a Glance" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Restaurants (with ++ service charge)",
+            value: "Charge already added — MYR 5–10 cash tip to server",
+          },
+          {
+            label: "Hawker stalls / Mamak / Food courts",
+            value: "Not expected — never tip here",
+          },
+          {
+            label: "Upscale restaurants (no service charge)",
+            value: "10% is generous — MYR 10–30 depending on bill",
+          },
+          {
+            label: "Grab (ride-hailing)",
+            value: "In-app tipping available — MYR 2–5 optional",
+          },
+          {
+            label: "Metered taxis",
+            value: "Round up the fare — no percentage expected",
+          },
+          {
+            label: "Hotel Porters",
+            value: "MYR 5–10 per bag at 4- and 5-star hotels",
+          },
+          {
+            label: "Hotel Housekeeping",
+            value: "MYR 10–20 per stay — leave on departure day",
+          },
+          {
+            label: "Tour Guides",
+            value: "MYR 30–60 half-day; MYR 60–120 full day",
+          },
+          {
+            label: "Spa / Massage",
+            value: "MYR 20–50 or 10–15% of the service cost",
+          },
+        ],
+      },
+      { type: "h2", heading: "Understanding ++ Pricing" },
+      {
+        type: "p",
+        body: 'The "++" symbol on Malaysian menus and hotel bills means two additions are coming: a 10% service charge and a 6% government service tax (GST). A menu item listed at MYR 50 will appear on your bill as approximately MYR 57–58 after both charges. This is entirely legitimate and standard at sit-down restaurants, hotel restaurants, and resort dining. The important thing to know: the service charge goes into a pooled fund and may or may not be distributed directly to your server. This is why a personal cash tip — handed directly to the person who served you — is still a meaningful gesture even when the service charge is already on the bill. Do not add a percentage tip on top of the ++ if you are on a tight budget, but do consider a small MYR 5–10 cash gesture for genuinely good service.',
+      },
+      { type: "h2", heading: "Restaurants, Hawker Stalls & Mamak" },
+      {
+        type: "p",
+        body: "Malaysia's hawker culture is one of the world's great food experiences — from the open-air hawker centres of Penang (Gurney Drive, New Lane) to the mamak restaurants open 24 hours across KL. At all of these venues, tipping is completely unknown and would cause genuine confusion. You order, you pay the exact amount on the bill or at the counter, and that is it. At sit-down restaurants in KLCC, Bukit Bintang, or Georgetown's heritage shophouses, a 10% service charge is standard. If you want to tip your individual server, leave MYR 5–10 in cash on the table after the bill is settled. At beach resorts in Langkawi or Perhentian Islands where a Western dining style is common, 10% is a normal and appreciated gesture.",
+      },
+      { type: "h2", heading: "Grab, Taxis & Getting Around" },
+      {
+        type: "p",
+        body: "Grab has largely replaced metered taxis in Malaysia's major cities. The Grab app includes an optional in-app tipping feature after the ride — MYR 2–5 is a generous gesture for good service. Traditional metered taxis still operate but are less common; if you use one, rounding up the fare to the nearest MYR 5 is a standard courtesy. Tuk-tuks and trishaw rides (mainly in Penang and Melaka) are often tourist-facing and a MYR 5–10 tip is appropriate after a scenic ride. Intercity coaches and airport bus drivers do not expect tips.",
+      },
+      { type: "h2", heading: "Hotels, Spas & Tours" },
+      {
+        type: "ul",
+        items: [
+          "Hotel porters: MYR 5–10 per bag at 4- and 5-star hotels in KL, Penang, or beach resorts — hand it directly when they bring your bags to the room",
+          "Hotel housekeeping: MYR 10–20 left in the room on your departure day — use the envelope provided or leave it with a note",
+          "Hotel concierge: MYR 20–50 if they arrange something specific and helpful, like a sold-out restaurant booking or a private tour",
+          "Spa and massage: MYR 20–50 is standard at resort spas and dedicated massage centres — hand it directly to your therapist, not the front desk",
+          "Tour guides: MYR 60–120 per person for a full-day guided tour is appropriate — private guides appreciate the higher end of that range",
+          "Drivers on multi-day trips: MYR 50–80 per day for a dedicated private driver on a Cameron Highlands or Borneo tour, given at the end of the trip",
+        ],
+      },
+      {
+        type: "tip",
+        body: "Always tip in cash (Malaysian Ringgit where possible). Card tips in Malaysia are unreliable — they may be processed as a separate transaction, delayed, or not reach the individual at all. Carry small-denomination notes (MYR 5 and MYR 10) so you can tip without needing change.",
+      },
+      {
+        type: "warning",
+        body: 'At some tourist-area restaurants, particularly in Penang\'s heritage zone and KL\'s Bukit Bintang, aggressive "service charge" labels are sometimes added to bills at restaurants that do not qualify as "++ " establishments. Check whether the service charge is itemised — if it seems unusual or the restaurant is a street-level local spot, query it politely before paying.',
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "Do you tip in Malaysia?",
+            a: "Not obligatory, but appreciated. At hawker stalls and mamak restaurants — never. At sit-down restaurants, hotels, on tours, and at spas — a small cash tip to the individual who served you is a genuine gesture.",
+          },
+          {
+            q: "What does ++ mean on Malaysian menus?",
+            a: "The ++ means a 10% service charge and 6% government service tax will be added to the listed prices. A MYR 50 dish becomes approximately MYR 57–58 after both charges. Budget for this when ordering.",
+          },
+          {
+            q: "Do I tip at Malaysian hawker stalls?",
+            a: "No. Hawker stalls, mamak restaurants, and food courts are counter-service or bring-your-own-order setups where tipping is entirely unknown. Leaving a tip would cause confusion — just pay the amount charged.",
+          },
+          {
+            q: "How much do I tip a tour guide in Malaysia?",
+            a: "MYR 60–120 per person for a full-day tour is appropriate. For private guides on multi-day itineraries through Borneo, Cameron Highlands, or Taman Negara, MYR 80–150 per day is generous and well received.",
+          },
+          {
+            q: "Should I tip Grab drivers in Malaysia?",
+            a: "It is optional but a nice gesture. The Grab app offers in-app tipping after the ride. MYR 2–5 is appropriate. For a particularly long ride or exceptional service, MYR 5–10 is generous.",
+          },
+          {
+            q: "Is it better to tip in MYR or USD in Malaysia?",
+            a: "MYR is preferred for most tips. At remote island resorts (Perhentian, Redang, Tioman) where guests are mostly international, USD is sometimes accepted and appreciated, but the person will need to exchange it. MYR is always easier and more valuable to them directly.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'tipping-in-sri-lanka',
-    title: 'Tipping in Sri Lanka: How Much & Who to Tip (2026)',
-    description: "Tourist restaurants in Galle and Colombo expect 10% or LKR 200–500 — and USD $5 that feels small to a visitor is worth LKR 1,500–1,800 to a Sri Lankan guide. Here's the full 2026 guide, including Yala safari drivers (USD $5–10) and Cultural Triangle drivers (USD $3–5/day).",
-    publishedAt: '2025-12-29',
+    slug: "tipping-in-sri-lanka",
+    title: "Tipping in Sri Lanka: How Much & Who to Tip (2026)",
+    description:
+      "Tourist restaurants in Galle and Colombo expect 10% or LKR 200–500 — and USD $5 that feels small to a visitor is worth LKR 1,500–1,800 to a Sri Lankan guide. Here's the full 2026 guide, including Yala safari drivers (USD $5–10) and Cultural Triangle drivers (USD $3–5/day).",
+    publishedAt: "2025-12-29",
     readingMinutes: 8,
-    category: 'tipping',
-    country: 'Sri Lanka',
-    countrySlug: 'sri-lanka',
+    category: "tipping",
+    country: "Sri Lanka",
+    countrySlug: "sri-lanka",
     content: [
-      { type: 'intro', body: 'Tipping in Sri Lanka is expected at tourist-facing restaurants, hotels, and on tours. Service workers earn modest wages, and tips — particularly from overseas visitors — are a meaningful supplement to their income. The Sri Lankan Rupee (LKR) is the currency, though USD is also understood and appreciated in resort areas. This guide covers Colombo, Galle, Kandy, Sigiriya, Yala, and the beach towns like Mirissa, Unawatuna, and Arugam Bay — the full range of Sri Lankan tourism situations.' },
-      { type: 'h2', heading: 'Tipping in Sri Lanka at a Glance' },
-      { type: 'table', rows: [
-        { label: 'Restaurants (tourist)', value: '10% or LKR 200–500 — check if service charge already added' },
-        { label: 'Local rice & curry spots', value: 'LKR 100–200 for sit-down service — appreciated' },
-        { label: 'Street food / kottu stalls', value: 'Not expected — pay the bill only' },
-        { label: 'Taxis / PickMe', value: 'Round up — LKR 100–200 on top of metered fare' },
-        { label: 'Tuk-tuks (three-wheelers)', value: 'LKR 50–150 after a longer or helpful journey' },
-        { label: 'Hotel Porters', value: 'LKR 200–400 per bag at tourist hotels' },
-        { label: 'Hotel Housekeeping', value: 'LKR 200–500 per stay — leave on departure day' },
-        { label: 'Tour Guides', value: 'USD $5–10 per person per day — USD preferred' },
-        { label: 'Private Drivers (multi-day)', value: 'USD $3–5 per day tip on top of agreed fee' },
-        { label: 'Surf instructors (Arugam Bay etc.)', value: 'LKR 300–500 or USD $2–3 for a great lesson' },
-      ]},
-      { type: 'h2', heading: 'Restaurants & Beach Bars' },
-      { type: 'p', body: 'In Colombo, Galle Fort, Kandy, and coastal towns like Mirissa, Weligama, and Unawatuna, tourist restaurants expect a 10% tip. Check the bill — some add a 10% service charge automatically. At local rice and curry spots (a meal costs LKR 300–600), a LKR 100–200 tip is a very generous gesture even though none is expected. At kottu roti stalls and street food vendors, pay the stated price only. Always tip in cash — card tips in Sri Lanka may not reach the individual server.' },
-      { type: 'h2', heading: 'Tours, Safaris & Cultural Triangle' },
-      { type: 'p', body: 'Sri Lanka is a compact country with enormous tourism variety — leopard safaris at Yala, whale watching from Mirissa, cultural heritage at Sigiriya Rock Fortress, Dambulla Cave Temple, and Anuradhapura, and tea plantation tours in the Hill Country around Nuwara Eliya. Private drivers who handle multi-day Cultural Triangle tours are well-regarded professionals; USD $3–5 per day tip is appropriate on top of the agreed hire fee. For Yala safari jeep drivers and naturalists, USD $5–10 for a successful full-day game drive is appropriate.' },
-      { type: 'ul', items: [
-        'Yala / Udawalawe safari driver and naturalist: USD $5–10 for a half/full day — reflects specialist wildlife knowledge',
-        'Whale watching boat crew (Mirissa): LKR 300–500 per person — they spot and navigate carefully',
-        'Sigiriya / Anuradhapura site guides: USD $3–5 per person for a licensed licensed Cultural Triangle guide',
-        'Tea plantation guides (Nuwara Eliya, Ella): LKR 300–500 for a quality factory tour and explanation',
-        'Surf instructors (Arugam Bay, Weligama): LKR 300–500 or USD $2–3 for a beginner lesson',
-        'Gem sellers / spice garden guides: No tip expected — these are commercial operations',
-      ]},
-      { type: 'tip', body: 'Sri Lanka\'s exchange rate means USD $5 feels small to Western visitors but is very meaningful in local terms (LKR 1,500–1,800 as of 2026). Always carry some USD $1 and USD $5 bills for guiding tips — tour guides and drivers widely prefer USD over LKR for multi-day tips.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'Is tipping expected in Sri Lanka?', a: 'Yes — at tourist restaurants and hotels, 10% is expected. For drivers and guides on multi-day Cultural Triangle or wildlife tours, USD $3–10 per day is standard.' },
-        { q: 'Should I tip my tuk-tuk driver in Sri Lanka?', a: 'A small round-up or LKR 50–150 is a kind gesture for longer journeys or when the driver was particularly helpful. For a 5-minute hop, paying the agreed fare only is fine.' },
-        { q: 'Can I tip in USD in Sri Lanka?', a: 'Yes — USD is widely accepted and often preferred by tour guides, drivers, and hotel staff for larger tips. LKR works best for smaller tips at restaurants and for tuk-tuk drivers.' },
-        { q: 'How much do I tip a Yala safari driver?', a: 'USD $5–10 for a half/full day game drive in Yala or Udawalawe is appropriate. If the naturalist spotted a leopard or a sloth bear, lean toward the higher end.' },
-        { q: 'Do Sri Lankan hotels include a service charge?', a: 'Upscale and international chain hotels often include a 10% service charge. Check the bill before adding extra. Boutique guesthouses and smaller hotels typically do not include service charges.' },
-        { q: 'PickMe vs tuk-tuks — which do I tip?', a: 'PickMe (Sri Lanka\'s ride-hailing app) sets fares upfront; rounding up LKR 100–200 is a courteous gesture. Negotiated tuk-tuks: agree the fare beforehand and tip LKR 50–150 on top for good service.' },
-      ]},
+      {
+        type: "intro",
+        body: "Tipping in Sri Lanka is expected at tourist-facing restaurants, hotels, and on tours. Service workers earn modest wages, and tips — particularly from overseas visitors — are a meaningful supplement to their income. The Sri Lankan Rupee (LKR) is the currency, though USD is also understood and appreciated in resort areas. This guide covers Colombo, Galle, Kandy, Sigiriya, Yala, and the beach towns like Mirissa, Unawatuna, and Arugam Bay — the full range of Sri Lankan tourism situations.",
+      },
+      { type: "h2", heading: "Tipping in Sri Lanka at a Glance" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Restaurants (tourist)",
+            value: "10% or LKR 200–500 — check if service charge already added",
+          },
+          {
+            label: "Local rice & curry spots",
+            value: "LKR 100–200 for sit-down service — appreciated",
+          },
+          {
+            label: "Street food / kottu stalls",
+            value: "Not expected — pay the bill only",
+          },
+          {
+            label: "Taxis / PickMe",
+            value: "Round up — LKR 100–200 on top of metered fare",
+          },
+          {
+            label: "Tuk-tuks (three-wheelers)",
+            value: "LKR 50–150 after a longer or helpful journey",
+          },
+          {
+            label: "Hotel Porters",
+            value: "LKR 200–400 per bag at tourist hotels",
+          },
+          {
+            label: "Hotel Housekeeping",
+            value: "LKR 200–500 per stay — leave on departure day",
+          },
+          {
+            label: "Tour Guides",
+            value: "USD $5–10 per person per day — USD preferred",
+          },
+          {
+            label: "Private Drivers (multi-day)",
+            value: "USD $3–5 per day tip on top of agreed fee",
+          },
+          {
+            label: "Surf instructors (Arugam Bay etc.)",
+            value: "LKR 300–500 or USD $2–3 for a great lesson",
+          },
+        ],
+      },
+      { type: "h2", heading: "Restaurants & Beach Bars" },
+      {
+        type: "p",
+        body: "In Colombo, Galle Fort, Kandy, and coastal towns like Mirissa, Weligama, and Unawatuna, tourist restaurants expect a 10% tip. Check the bill — some add a 10% service charge automatically. At local rice and curry spots (a meal costs LKR 300–600), a LKR 100–200 tip is a very generous gesture even though none is expected. At kottu roti stalls and street food vendors, pay the stated price only. Always tip in cash — card tips in Sri Lanka may not reach the individual server.",
+      },
+      { type: "h2", heading: "Tours, Safaris & Cultural Triangle" },
+      {
+        type: "p",
+        body: "Sri Lanka is a compact country with enormous tourism variety — leopard safaris at Yala, whale watching from Mirissa, cultural heritage at Sigiriya Rock Fortress, Dambulla Cave Temple, and Anuradhapura, and tea plantation tours in the Hill Country around Nuwara Eliya. Private drivers who handle multi-day Cultural Triangle tours are well-regarded professionals; USD $3–5 per day tip is appropriate on top of the agreed hire fee. For Yala safari jeep drivers and naturalists, USD $5–10 for a successful full-day game drive is appropriate.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Yala / Udawalawe safari driver and naturalist: USD $5–10 for a half/full day — reflects specialist wildlife knowledge",
+          "Whale watching boat crew (Mirissa): LKR 300–500 per person — they spot and navigate carefully",
+          "Sigiriya / Anuradhapura site guides: USD $3–5 per person for a licensed licensed Cultural Triangle guide",
+          "Tea plantation guides (Nuwara Eliya, Ella): LKR 300–500 for a quality factory tour and explanation",
+          "Surf instructors (Arugam Bay, Weligama): LKR 300–500 or USD $2–3 for a beginner lesson",
+          "Gem sellers / spice garden guides: No tip expected — these are commercial operations",
+        ],
+      },
+      {
+        type: "tip",
+        body: "Sri Lanka's exchange rate means USD $5 feels small to Western visitors but is very meaningful in local terms (LKR 1,500–1,800 as of 2026). Always carry some USD $1 and USD $5 bills for guiding tips — tour guides and drivers widely prefer USD over LKR for multi-day tips.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "Is tipping expected in Sri Lanka?",
+            a: "Yes — at tourist restaurants and hotels, 10% is expected. For drivers and guides on multi-day Cultural Triangle or wildlife tours, USD $3–10 per day is standard.",
+          },
+          {
+            q: "Should I tip my tuk-tuk driver in Sri Lanka?",
+            a: "A small round-up or LKR 50–150 is a kind gesture for longer journeys or when the driver was particularly helpful. For a 5-minute hop, paying the agreed fare only is fine.",
+          },
+          {
+            q: "Can I tip in USD in Sri Lanka?",
+            a: "Yes — USD is widely accepted and often preferred by tour guides, drivers, and hotel staff for larger tips. LKR works best for smaller tips at restaurants and for tuk-tuk drivers.",
+          },
+          {
+            q: "How much do I tip a Yala safari driver?",
+            a: "USD $5–10 for a half/full day game drive in Yala or Udawalawe is appropriate. If the naturalist spotted a leopard or a sloth bear, lean toward the higher end.",
+          },
+          {
+            q: "Do Sri Lankan hotels include a service charge?",
+            a: "Upscale and international chain hotels often include a 10% service charge. Check the bill before adding extra. Boutique guesthouses and smaller hotels typically do not include service charges.",
+          },
+          {
+            q: "PickMe vs tuk-tuks — which do I tip?",
+            a: "PickMe (Sri Lanka's ride-hailing app) sets fares upfront; rounding up LKR 100–200 is a courteous gesture. Negotiated tuk-tuks: agree the fare beforehand and tip LKR 50–150 on top for good service.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'tipping-in-peru',
-    title: 'Tipping in Peru: How Much to Tip in Lima & Beyond (2026)',
-    description: "Tourist restaurants in Lima and Cusco expect 10% if servicio isn't on the bill — but Inca Trail porters are where it really counts: USD $15–25 per porter for the 4-day trek is considered a moral obligation. Here's the full 2026 guide for Lima, Cusco, and Machu Picchu.",
-    publishedAt: '2026-01-06',
+    slug: "tipping-in-peru",
+    title: "Tipping in Peru: How Much to Tip in Lima & Beyond (2026)",
+    description:
+      "Tourist restaurants in Lima and Cusco expect 10% if servicio isn't on the bill — but Inca Trail porters are where it really counts: USD $15–25 per porter for the 4-day trek is considered a moral obligation. Here's the full 2026 guide for Lima, Cusco, and Machu Picchu.",
+    publishedAt: "2026-01-06",
     readingMinutes: 8,
-    category: 'tipping',
-    country: 'Peru',
-    countrySlug: 'peru',
+    category: "tipping",
+    country: "Peru",
+    countrySlug: "peru",
     content: [
-      { type: 'intro', body: 'Tipping in Peru is expected at tourist-facing restaurants and appreciated at hotels and on tours — but not common at local Peruvian eateries or in non-tourist contexts. The Peruvian Sol (PEN) is the currency, and cash is the most practical way to tip. Lima\'s world-class restaurant scene, Machu Picchu tour guides, Amazon expedition staff, and Inca Trail porters all have clear tipping norms. This guide covers Lima, Cusco, the Sacred Valley, Machu Picchu, Arequipa, and the Amazon.' },
-      { type: 'h2', heading: 'Tipping in Peru at a Glance' },
-      { type: 'table', rows: [
-        { label: 'Restaurants (tourist/Lima upscale)', value: '10% — check if servicio is already included on bill' },
-        { label: 'Local restaurants / menú del día', value: 'Not expected — pay the bill as shown' },
-        { label: 'Taxis', value: 'Negotiate fare first — no tip expected' },
-        { label: 'Uber / InDriver', value: 'Round up — in-app tip available' },
-        { label: 'Hotel Porters', value: 'PEN 5–15 per bag at tourist hotels' },
-        { label: 'Hotel Housekeeping', value: 'PEN 5–10 per stay — leave on departure' },
-        { label: 'Tour Guides (Machu Picchu, Cusco)', value: 'USD $5–10 per person per day — USD preferred' },
-        { label: 'Inca Trail Porters', value: 'USD $15–25 per porter for the full trek — considered essential' },
-        { label: 'Amazon guides (Puerto Maldonado)', value: 'USD $5–10 per person per day' },
-      ]},
-      { type: 'h2', heading: 'Lima Restaurants & Ceviche Bars' },
-      { type: 'p', body: 'Lima is South America\'s finest food city — home to Central, Maido, Astrid y Gastón, and scores of world-class cevicherías. At upscale Lima restaurants in Miraflores, Barranco, and San Isidro, check the bill for "servicio" — if not present, 10% is a standard tip. At casual cevicherías serving leche de tigre and classic combinado plates, tipping is a gesture rather than an expectation. At menú del día spots (set lunch restaurants used by locals), tipping is not customary — pay the stated price. Card machines in Peru often do not have tip prompts — have PEN cash ready.' },
-      { type: 'h2', heading: 'Machu Picchu, Cusco & Inca Trail' },
-      { type: 'p', body: 'The Sacred Valley and Machu Picchu are Peru\'s tourism epicentre, and tipping norms here are well-established. Licensed Machu Picchu guides: USD $5–10 per person per day. For the 4-day Classic Inca Trail, Inca Trail porters carry extraordinary loads (25–40 kg) at high altitude — tipping them is considered a moral obligation by the global trekking community. USD $15–25 per porter for the full trek is the widely cited standard; the company typically distributes tips in a ceremony on the final day. Bring USD or PEN cash specifically for this.' },
-      { type: 'ul', items: [
-        'Inca Trail porters: USD $15–25 per porter for the 4-day trek — bring in advance',
-        'Inca Trail cook: USD $10–15 total from the group — they prepare meals at altitude under extraordinary conditions',
-        'Day trek guides (Rainbow Mountain, Vinicunca): USD $3–5 per person',
-        'Amazon jungle guides (Tambopata, Manu): USD $5–10 per person per day',
-        'Titicaca boat operators (Uros, Taquile Island): PEN 10–20 per person for a half-day trip',
-        'Cusco free walking tour guides: USD $3–5 per person — tip-based income',
-      ]},
-      { type: 'tip', body: 'Bring USD $1, $5, and $10 bills to Peru — USD is widely accepted for tips throughout the country and is preferred by many tourism professionals. PEN is fine for restaurants and smaller daily tips. Exchange at banks or official exchange offices (casas de cambio) rather than street changers.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'Do you tip in Peru?', a: 'At tourist restaurants in Lima and Cusco, yes — 10% is standard if servicio is not already on the bill. At local Peruvian eateries, no. For Inca Trail porters, tipping is considered a moral obligation.' },
-        { q: 'How much do I tip Inca Trail porters?', a: 'USD $15–25 per porter for the full 4-day Classic Inca Trail. This should be budgeted as part of the tour cost — porters earn very little in base wages for gruelling high-altitude work.' },
-        { q: 'Do Peruvian taxis expect tips?', a: 'No — taxi fares are negotiated in advance in Lima and Cusco. No tip is expected. For Uber or InDriver, rounding up is a courtesy but not required.' },
-        { q: 'Can I tip in USD in Peru?', a: 'Yes — USD is widely accepted and often preferred by tour guides, trek crew, and hotel staff. PEN is fine for restaurants and small daily tips. Bring small USD denominations ($1, $5, $10).' },
-        { q: 'What does "servicio" on a Peruvian restaurant bill mean?', a: 'It means a service charge (typically 10%) has already been added to the bill — you do not need to tip further, though a small additional cash gesture for exceptional service is always welcome.' },
-        { q: 'How much do I tip my Cusco city guide?', a: 'USD $5–10 per person for a half/full-day Cusco guided tour (San Blas, Sacsayhuamán, Qorikancha). For the Boleto Turístico multi-site tours, USD $3–5 per person is appropriate.' },
-      ]},
+      {
+        type: "intro",
+        body: "Tipping in Peru is expected at tourist-facing restaurants and appreciated at hotels and on tours — but not common at local Peruvian eateries or in non-tourist contexts. The Peruvian Sol (PEN) is the currency, and cash is the most practical way to tip. Lima's world-class restaurant scene, Machu Picchu tour guides, Amazon expedition staff, and Inca Trail porters all have clear tipping norms. This guide covers Lima, Cusco, the Sacred Valley, Machu Picchu, Arequipa, and the Amazon.",
+      },
+      { type: "h2", heading: "Tipping in Peru at a Glance" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Restaurants (tourist/Lima upscale)",
+            value: "10% — check if servicio is already included on bill",
+          },
+          {
+            label: "Local restaurants / menú del día",
+            value: "Not expected — pay the bill as shown",
+          },
+          { label: "Taxis", value: "Negotiate fare first — no tip expected" },
+          {
+            label: "Uber / InDriver",
+            value: "Round up — in-app tip available",
+          },
+          {
+            label: "Hotel Porters",
+            value: "PEN 5–15 per bag at tourist hotels",
+          },
+          {
+            label: "Hotel Housekeeping",
+            value: "PEN 5–10 per stay — leave on departure",
+          },
+          {
+            label: "Tour Guides (Machu Picchu, Cusco)",
+            value: "USD $5–10 per person per day — USD preferred",
+          },
+          {
+            label: "Inca Trail Porters",
+            value:
+              "USD $15–25 per porter for the full trek — considered essential",
+          },
+          {
+            label: "Amazon guides (Puerto Maldonado)",
+            value: "USD $5–10 per person per day",
+          },
+        ],
+      },
+      { type: "h2", heading: "Lima Restaurants & Ceviche Bars" },
+      {
+        type: "p",
+        body: 'Lima is South America\'s finest food city — home to Central, Maido, Astrid y Gastón, and scores of world-class cevicherías. At upscale Lima restaurants in Miraflores, Barranco, and San Isidro, check the bill for "servicio" — if not present, 10% is a standard tip. At casual cevicherías serving leche de tigre and classic combinado plates, tipping is a gesture rather than an expectation. At menú del día spots (set lunch restaurants used by locals), tipping is not customary — pay the stated price. Card machines in Peru often do not have tip prompts — have PEN cash ready.',
+      },
+      { type: "h2", heading: "Machu Picchu, Cusco & Inca Trail" },
+      {
+        type: "p",
+        body: "The Sacred Valley and Machu Picchu are Peru's tourism epicentre, and tipping norms here are well-established. Licensed Machu Picchu guides: USD $5–10 per person per day. For the 4-day Classic Inca Trail, Inca Trail porters carry extraordinary loads (25–40 kg) at high altitude — tipping them is considered a moral obligation by the global trekking community. USD $15–25 per porter for the full trek is the widely cited standard; the company typically distributes tips in a ceremony on the final day. Bring USD or PEN cash specifically for this.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Inca Trail porters: USD $15–25 per porter for the 4-day trek — bring in advance",
+          "Inca Trail cook: USD $10–15 total from the group — they prepare meals at altitude under extraordinary conditions",
+          "Day trek guides (Rainbow Mountain, Vinicunca): USD $3–5 per person",
+          "Amazon jungle guides (Tambopata, Manu): USD $5–10 per person per day",
+          "Titicaca boat operators (Uros, Taquile Island): PEN 10–20 per person for a half-day trip",
+          "Cusco free walking tour guides: USD $3–5 per person — tip-based income",
+        ],
+      },
+      {
+        type: "tip",
+        body: "Bring USD $1, $5, and $10 bills to Peru — USD is widely accepted for tips throughout the country and is preferred by many tourism professionals. PEN is fine for restaurants and smaller daily tips. Exchange at banks or official exchange offices (casas de cambio) rather than street changers.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "Do you tip in Peru?",
+            a: "At tourist restaurants in Lima and Cusco, yes — 10% is standard if servicio is not already on the bill. At local Peruvian eateries, no. For Inca Trail porters, tipping is considered a moral obligation.",
+          },
+          {
+            q: "How much do I tip Inca Trail porters?",
+            a: "USD $15–25 per porter for the full 4-day Classic Inca Trail. This should be budgeted as part of the tour cost — porters earn very little in base wages for gruelling high-altitude work.",
+          },
+          {
+            q: "Do Peruvian taxis expect tips?",
+            a: "No — taxi fares are negotiated in advance in Lima and Cusco. No tip is expected. For Uber or InDriver, rounding up is a courtesy but not required.",
+          },
+          {
+            q: "Can I tip in USD in Peru?",
+            a: "Yes — USD is widely accepted and often preferred by tour guides, trek crew, and hotel staff. PEN is fine for restaurants and small daily tips. Bring small USD denominations ($1, $5, $10).",
+          },
+          {
+            q: 'What does "servicio" on a Peruvian restaurant bill mean?',
+            a: "It means a service charge (typically 10%) has already been added to the bill — you do not need to tip further, though a small additional cash gesture for exceptional service is always welcome.",
+          },
+          {
+            q: "How much do I tip my Cusco city guide?",
+            a: "USD $5–10 per person for a half/full-day Cusco guided tour (San Blas, Sacsayhuamán, Qorikancha). For the Boleto Turístico multi-site tours, USD $3–5 per person is appropriate.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'tipping-in-colombia',
-    title: 'Tipping in Colombia: How Much & When (2026)',
-    description: "At the end of every Colombian restaurant meal, the server asks '¿Desea agregar la propina?' — a voluntary 10% you can decline without any social pressure. Here's the full 2026 guide, including coffee farm guides in the Eje Cafetero (COP 20,000–50,000 per person, about USD $5).",
-    publishedAt: '2026-01-12',
+    slug: "tipping-in-colombia",
+    title: "Tipping in Colombia: How Much & When (2026)",
+    description:
+      "At the end of every Colombian restaurant meal, the server asks '¿Desea agregar la propina?' — a voluntary 10% you can decline without any social pressure. Here's the full 2026 guide, including coffee farm guides in the Eje Cafetero (COP 20,000–50,000 per person, about USD $5).",
+    publishedAt: "2026-01-12",
     readingMinutes: 8,
-    category: 'tipping',
-    country: 'Colombia',
-    countrySlug: 'colombia',
+    category: "tipping",
+    country: "Colombia",
+    countrySlug: "colombia",
     content: [
-      { type: 'intro', body: 'Colombia has one of the most transparent tipping systems in the world: most sit-down restaurants ask at the end of the meal if you want to add a 10% "propina voluntaria" (voluntary tip) to the bill. You can say yes or no — no social pressure either way, and both answers are completely valid. The Colombian Peso (COP) is the currency. Colombia\'s service culture is warm and hospitality-driven — Cartagena, Bogotá, Medellín, and the coffee region all have their own tipping nuances covered in this guide.' },
-      { type: 'h2', heading: 'Tipping in Colombia at a Glance' },
-      { type: 'table', rows: [
-        { label: 'Restaurants (sit-down)', value: '10% propina voluntaria — asked at checkout; yes or no' },
-        { label: 'Street food / empanada stalls', value: 'Not expected' },
-        { label: 'Bakeries / pastelerías', value: 'Not expected' },
-        { label: 'Taxis / metered', value: 'Round up — no percentage tip expected' },
-        { label: 'Uber / InDriver / Cabify', value: 'In-app tipping available — COP 2,000–5,000 optional' },
-        { label: 'Hotel Porters', value: 'COP 5,000–10,000 per bag' },
-        { label: 'Hotel Housekeeping', value: 'COP 5,000–10,000 per stay — leave on departure' },
-        { label: 'City Tour Guides (Cartagena, Bogotá)', value: 'COP 20,000–50,000 or USD $5–10 per person' },
-        { label: 'Coffee Farm Tour Guides (Eje Cafetero)', value: 'COP 20,000–50,000 per person' },
-        { label: 'Parque Nacional guides (Tayrona etc.)', value: 'COP 15,000–30,000 for a half-day nature walk' },
-      ]},
-      { type: 'h2', heading: 'The Propina Voluntaria System' },
-      { type: 'p', body: 'At the end of your meal in a Colombian sit-down restaurant, the server or the card terminal will ask: "¿Desea agregar la propina?" (Would you like to add the tip?) — typically 10%. You simply say "sí" (yes) or "no" and the process is handled cleanly. This system is refreshingly straightforward compared to the social pressure of tipping cultures in the US or the UK. Most Colombian diners say yes for good service; both answers are socially acceptable. At street food stalls, empanada stands, and bakeries, no tip is expected.' },
-      { type: 'h2', heading: 'Taxis & Transport in Colombian Cities' },
-      { type: 'p', body: 'Taxis in Bogotá use meters; in Medellín, Cartagena, and Cali fares are typically negotiated. No tip is expected on top of the fare — the fare is the fare. Always use the official Tappsi or InDriver app to avoid overcharging. Uber has a complex legal history in Colombia (it was banned and later returned); InDriver and Cabify are reliable alternatives. In-app tipping is available — COP 2,000–5,000 is a kind gesture. Medellín\'s Metrocable gondolas and Bogotá\'s TransMilenio: no tipping.' },
-      { type: 'h2', heading: 'Coffee Region & City Tours' },
-      { type: 'p', body: 'The Eje Cafetero (coffee axis — Manizales, Pereira, Armenia) is one of Colombia\'s tourism highlights. Coffee farm guides are passionate, knowledgeable experts who take you through the full seed-to-cup process on working fincas. COP 20,000–50,000 per person at the end of the tour is a warm appreciation. In Cartagena\'s walled city (Ciudad Amurallada), free walking tour guides — particularly in the Getsemaní neighbourhood — depend on tips for their income. COP 20,000–40,000 per person is appropriate.' },
-      { type: 'ul', items: [
-        'Coffee farm guides (Eje Cafetero): COP 20,000–50,000 per person — specialised knowledge',
-        'Cartagena free walking tours: COP 20,000–40,000 per person — tip-based income',
-        'Bogotá free walking tours (La Candelaria): COP 20,000–50,000 per person',
-        'Medellín free tours (El Poblado, Pablo Escobar history): COP 20,000–40,000 per person',
-        'Tayrona National Park nature guides: COP 15,000–30,000 for a guided park walk',
-        'Scuba dive instructors (Cartagena, Rosario Islands): COP 30,000–60,000 or USD $5–10 for a great dive',
-      ]},
-      { type: 'tip', body: 'Colombia\'s COP makes it easy to forget the real value — COP 20,000 is approximately USD $5. Budget COP 20,000–50,000 per guide per person as a baseline for any significant guided experience. It feels like a small amount to spend but is meaningful income for local guides.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'What is propina voluntaria in Colombia?', a: 'It is an optional 10% service charge that Colombian restaurants ask you to confirm at the end of the meal. Say "sí" to add it or "no" to decline — there is no social pressure either way.' },
-        { q: 'Do you tip taxi drivers in Colombia?', a: 'No — fares are metered (Bogotá) or negotiated (other cities). No tip is expected on top of the agreed fare. Using InDriver or Tappsi shows the fare upfront.' },
-        { q: 'How do I tip in Colombian restaurants?', a: 'When asked "¿Desea agregar la propina?" (Would you like to add the tip?), say "sí" and 10% is automatically added to the bill or card payment. Simple and transparent.' },
-        { q: 'How much do I tip a Colombian coffee tour guide?', a: 'COP 20,000–50,000 per person for a quality coffee farm tour in the Eje Cafetero. These guides are specialists who typically work for small family farms with thin margins.' },
-        { q: 'Is tipping expected at Colombian hotels?', a: 'Hotel porters: COP 5,000–10,000 per bag. Housekeeping: COP 5,000–10,000 per stay. Concierge for a special favour: COP 20,000–30,000. Tips are appreciated but not obligatory.' },
-        { q: 'What is the currency in Colombia and do I need cash?', a: 'Colombian Peso (COP). Cash is important for tips in Colombia — many guides and smaller venues do not accept cards. ATMs are widely available in cities; carry COP 50,000–100,000 in small notes for daily tipping needs.' },
-      ]},
+      {
+        type: "intro",
+        body: 'Colombia has one of the most transparent tipping systems in the world: most sit-down restaurants ask at the end of the meal if you want to add a 10% "propina voluntaria" (voluntary tip) to the bill. You can say yes or no — no social pressure either way, and both answers are completely valid. The Colombian Peso (COP) is the currency. Colombia\'s service culture is warm and hospitality-driven — Cartagena, Bogotá, Medellín, and the coffee region all have their own tipping nuances covered in this guide.',
+      },
+      { type: "h2", heading: "Tipping in Colombia at a Glance" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Restaurants (sit-down)",
+            value: "10% propina voluntaria — asked at checkout; yes or no",
+          },
+          { label: "Street food / empanada stalls", value: "Not expected" },
+          { label: "Bakeries / pastelerías", value: "Not expected" },
+          {
+            label: "Taxis / metered",
+            value: "Round up — no percentage tip expected",
+          },
+          {
+            label: "Uber / InDriver / Cabify",
+            value: "In-app tipping available — COP 2,000–5,000 optional",
+          },
+          { label: "Hotel Porters", value: "COP 5,000–10,000 per bag" },
+          {
+            label: "Hotel Housekeeping",
+            value: "COP 5,000–10,000 per stay — leave on departure",
+          },
+          {
+            label: "City Tour Guides (Cartagena, Bogotá)",
+            value: "COP 20,000–50,000 or USD $5–10 per person",
+          },
+          {
+            label: "Coffee Farm Tour Guides (Eje Cafetero)",
+            value: "COP 20,000–50,000 per person",
+          },
+          {
+            label: "Parque Nacional guides (Tayrona etc.)",
+            value: "COP 15,000–30,000 for a half-day nature walk",
+          },
+        ],
+      },
+      { type: "h2", heading: "The Propina Voluntaria System" },
+      {
+        type: "p",
+        body: 'At the end of your meal in a Colombian sit-down restaurant, the server or the card terminal will ask: "¿Desea agregar la propina?" (Would you like to add the tip?) — typically 10%. You simply say "sí" (yes) or "no" and the process is handled cleanly. This system is refreshingly straightforward compared to the social pressure of tipping cultures in the US or the UK. Most Colombian diners say yes for good service; both answers are socially acceptable. At street food stalls, empanada stands, and bakeries, no tip is expected.',
+      },
+      { type: "h2", heading: "Taxis & Transport in Colombian Cities" },
+      {
+        type: "p",
+        body: "Taxis in Bogotá use meters; in Medellín, Cartagena, and Cali fares are typically negotiated. No tip is expected on top of the fare — the fare is the fare. Always use the official Tappsi or InDriver app to avoid overcharging. Uber has a complex legal history in Colombia (it was banned and later returned); InDriver and Cabify are reliable alternatives. In-app tipping is available — COP 2,000–5,000 is a kind gesture. Medellín's Metrocable gondolas and Bogotá's TransMilenio: no tipping.",
+      },
+      { type: "h2", heading: "Coffee Region & City Tours" },
+      {
+        type: "p",
+        body: "The Eje Cafetero (coffee axis — Manizales, Pereira, Armenia) is one of Colombia's tourism highlights. Coffee farm guides are passionate, knowledgeable experts who take you through the full seed-to-cup process on working fincas. COP 20,000–50,000 per person at the end of the tour is a warm appreciation. In Cartagena's walled city (Ciudad Amurallada), free walking tour guides — particularly in the Getsemaní neighbourhood — depend on tips for their income. COP 20,000–40,000 per person is appropriate.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Coffee farm guides (Eje Cafetero): COP 20,000–50,000 per person — specialised knowledge",
+          "Cartagena free walking tours: COP 20,000–40,000 per person — tip-based income",
+          "Bogotá free walking tours (La Candelaria): COP 20,000–50,000 per person",
+          "Medellín free tours (El Poblado, Pablo Escobar history): COP 20,000–40,000 per person",
+          "Tayrona National Park nature guides: COP 15,000–30,000 for a guided park walk",
+          "Scuba dive instructors (Cartagena, Rosario Islands): COP 30,000–60,000 or USD $5–10 for a great dive",
+        ],
+      },
+      {
+        type: "tip",
+        body: "Colombia's COP makes it easy to forget the real value — COP 20,000 is approximately USD $5. Budget COP 20,000–50,000 per guide per person as a baseline for any significant guided experience. It feels like a small amount to spend but is meaningful income for local guides.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "What is propina voluntaria in Colombia?",
+            a: 'It is an optional 10% service charge that Colombian restaurants ask you to confirm at the end of the meal. Say "sí" to add it or "no" to decline — there is no social pressure either way.',
+          },
+          {
+            q: "Do you tip taxi drivers in Colombia?",
+            a: "No — fares are metered (Bogotá) or negotiated (other cities). No tip is expected on top of the agreed fare. Using InDriver or Tappsi shows the fare upfront.",
+          },
+          {
+            q: "How do I tip in Colombian restaurants?",
+            a: 'When asked "¿Desea agregar la propina?" (Would you like to add the tip?), say "sí" and 10% is automatically added to the bill or card payment. Simple and transparent.',
+          },
+          {
+            q: "How much do I tip a Colombian coffee tour guide?",
+            a: "COP 20,000–50,000 per person for a quality coffee farm tour in the Eje Cafetero. These guides are specialists who typically work for small family farms with thin margins.",
+          },
+          {
+            q: "Is tipping expected at Colombian hotels?",
+            a: "Hotel porters: COP 5,000–10,000 per bag. Housekeeping: COP 5,000–10,000 per stay. Concierge for a special favour: COP 20,000–30,000. Tips are appreciated but not obligatory.",
+          },
+          {
+            q: "What is the currency in Colombia and do I need cash?",
+            a: "Colombian Peso (COP). Cash is important for tips in Colombia — many guides and smaller venues do not accept cards. ATMs are widely available in cities; carry COP 50,000–100,000 in small notes for daily tipping needs.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'tipping-in-argentina',
-    title: 'Tipping in Argentina: Pesos, Tips & the USD Reality (2026)',
-    description: "Argentine restaurants expect 10% in pesos — but for Patagonia trek guides and multi-day tour crew, USD $5–10 bills are warmly preferred over ARS as a hedge against inflation. Here's the full 2026 guide, including Buenos Aires tango shows and Mendoza wine tour tipping.",
-    publishedAt: '2026-01-17',
+    slug: "tipping-in-argentina",
+    title: "Tipping in Argentina: Pesos, Tips & the USD Reality (2026)",
+    description:
+      "Argentine restaurants expect 10% in pesos — but for Patagonia trek guides and multi-day tour crew, USD $5–10 bills are warmly preferred over ARS as a hedge against inflation. Here's the full 2026 guide, including Buenos Aires tango shows and Mendoza wine tour tipping.",
+    publishedAt: "2026-01-17",
     readingMinutes: 8,
-    category: 'tipping',
-    country: 'Argentina',
-    countrySlug: 'argentina',
+    category: "tipping",
+    country: "Argentina",
+    countrySlug: "argentina",
     content: [
-      { type: 'intro', body: 'Tipping in Argentina is expected at restaurants and appreciated across the entire service sector. The country\'s well-documented economic challenges — persistent inflation, multiple exchange rates, and currency instability — make tips from international visitors genuinely significant. A 10% tip in Argentinian Pesos (ARS) is the acknowledged baseline at sit-down restaurants, but in tourism-heavy contexts such as Patagonia treks, Mendoza wine tours, and Buenos Aires tango shows, USD or EUR bills are warmly welcomed and often preferred by workers who use foreign currency as a savings hedge. This guide covers every scenario you are likely to encounter — from Buenos Aires parrillas to remote Inca trail guides — and explains how to navigate Argentina\'s unique currency reality with confidence and generosity.' },
-      { type: 'h2', heading: 'Tipping in Argentina at a Glance' },
-      { type: 'table', rows: [
-        { label: 'Restaurants (sit-down)', value: '10% in ARS — check for "propina incluida" first' },
-        { label: 'Cafés / Confiterías', value: 'Round up or leave ARS 500–1,000 for table service' },
-        { label: 'Parrillas (steakhouses)', value: '10–15% — consider extra for the asador (grill master)' },
-        { label: 'Taxis / Remis', value: 'Round up to the nearest round number — no percentage expected' },
-        { label: 'Uber', value: 'Optional in-app tip or round up — not required' },
-        { label: 'Hotel Porters', value: 'ARS equivalent of USD $1–2 per bag' },
-        { label: 'Hotel Housekeeping', value: 'ARS equivalent of USD $2–3 per stay, left at checkout' },
-        { label: 'Tour Guides (day tours)', value: 'USD $5–10 per person per day — USD strongly preferred' },
-        { label: 'Tango Show Staff', value: 'ARS or USD — tip performers and table waiters separately' },
-        { label: 'Wine Tour Guides (Mendoza)', value: 'USD $10–15 per person for a full-day winery tour' },
-      ]},
-      { type: 'h2', heading: 'Restaurants in Buenos Aires & Beyond' },
-      { type: 'p', body: 'Buenos Aires has one of Latin America\'s most sophisticated dining cultures — from neighbourhood parrillas serving 600-gram bife de chorizo to Michelin-quality tasting menus in Palermo and San Telmo. At any sit-down restaurant, 10% is the socially understood tip. Some venues add a "cubierto" (cover charge for bread, butter, and place settings) to the bill — this is not a service charge and a separate tip is still expected. Always check for "propina incluida" (service included) before calculating — it is rare but increasingly common at tourist-facing venues in Buenos Aires\'s upscale neighbourhoods. At local confiterías and neighbourhood eateries frequented by residents rather than tourists, rounding up or leaving ARS 500–1,000 for a coffee and pastry is entirely appropriate.' },
-      { type: 'h2', heading: 'The Currency Situation' },
-      { type: 'p', body: 'Argentina\'s inflation rate has been among the world\'s highest for several years running, meaning that ARS-denominated tips are appropriate and acknowledged — but the real value of those pesos can erode rapidly for workers who receive them. If you have USD $1 or $5 bills, offering them as a tip to guides, porters, hotel staff, or tango performers is genuinely appreciated. Workers can use foreign currency as a stable savings vehicle in a way that isn\'t possible with ARS. This is not an affront to Argentine national pride — it reflects an economic reality that Argentinians themselves discuss openly. On organised tours and in Patagonia, USD tips are the unspoken standard. In Buenos Aires restaurants, ARS is perfectly fine.' },
-      { type: 'h2', heading: 'Tango Shows & Nightlife' },
-      { type: 'p', body: 'Buenos Aires is the birthplace of tango, and a milonga or dinner-and-show evening is a highlight of most visits. At dinner tango shows in San Telmo and Puerto Madero, the economics are layered: you pay a cover price for the show, pay for dinner separately, and tips are expected at each stage. Tip your table server 10% on the food and drinks bill. For the performers — especially if a couple approaches your table for a close-up sequence — ARS or USD $5–10 is an appropriate gesture. At a traditional milonga (social dance event rather than tourist show), tipping is not part of the culture — the entrance fee covers the evening.' },
-      { type: 'h2', heading: 'Guides, Wine Tours & Patagonia' },
-      { type: 'ul', items: [
-        'Mendoza winery day tours: USD $10–15 per person for a full day including vineyard access, cellar tours, and tastings — guides are often paid minimum wage and rely on tips',
-        'Buenos Aires walking tours (free-to-join tours): USD $5–10 per person is the standard; for private guides, USD $15–20 for 2–3 hours',
-        'Patagonia trekking guides (Torres del Paine, El Chaltén): USD $10–15 per person per day for multi-day guides — pay in USD if possible',
-        'Iguazú Falls guides: USD $5–10 for a half-day park guide — check whether your tour package includes gratuity',
-        'Horseback riding guides (gaucho estancias): USD $5–10 tip for a half-day; ARS equivalent also welcomed at rural estancias where USD can be harder to spend',
-        'Transfer drivers for airport pickups or long-distance remis: round up ARS or USD $2–3 gesture for good service',
-      ]},
-      { type: 'tip', body: 'At traditional Buenos Aires parrillas, the asador (grill master) is the craft heart of the operation. In addition to the regular service tip for your waiter, a separate gesture for the asador — handed directly or via your server — is a lovely touch at a high-quality parrilla and will be very warmly received. ARS 1,000–2,000 (or USD $1–2) is appropriate.' },
-      { type: 'warning', body: 'Argentina has multiple unofficial exchange rates. If you exchange currency at the official bank rate, your ARS tips will have significantly less local purchasing power than if you exchange at the "blue" parallel rate. This is not something you need to act on — but it explains why service workers genuinely prefer USD or EUR tips even when ARS tips are technically acceptable.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'How much do you tip in Argentina?', a: '10% at sit-down restaurants is the expected norm. For day-tour guides, USD $5–10 per person per day is standard. Tango show servers get 10% on the food bill; performers appreciate USD $5–10 directly.' },
-        { q: 'Can I tip in USD in Argentina?', a: 'Yes — and in tourism contexts (guides, porters, Patagonia trekkers, tango performers), USD tips are often preferred over ARS. Small bills ($1, $5) are the most practical. At local restaurants, tipping in ARS is perfectly fine and expected.' },
-        { q: 'What is a cubierto charge in Argentine restaurants?', a: 'A cover charge for bread, butter, and table settings — it is not a service charge. A separate tip is still expected on top of the cubierto and food bill combined.' },
-        { q: 'Do you tip taxi drivers in Argentina?', a: 'Rounding up to the nearest convenient ARS amount is the norm — no percentage is expected. For longer intercity remis (private car hire) rides or airport transfers, a USD $2–3 gesture for good service is a kind touch.' },
-        { q: 'Is tipping expected at Buenos Aires cafés?', a: 'At traditional confiterías with table service, rounding up or leaving ARS 500–1,000 is appropriate. At quick counter-service coffee shops, tipping is not expected but a small change gesture is always welcomed.' },
-        { q: 'Should I tip at an Airbnb or self-catering accommodation?', a: 'If your host or a cleaner provides a noticeable level of personal service — welcome notes, extra supplies, a city orientation — a small tip of USD $5–10 or ARS equivalent at checkout is a generous and well-received gesture. It is not an obligation.' },
-      ]},
+      {
+        type: "intro",
+        body: "Tipping in Argentina is expected at restaurants and appreciated across the entire service sector. The country's well-documented economic challenges — persistent inflation, multiple exchange rates, and currency instability — make tips from international visitors genuinely significant. A 10% tip in Argentinian Pesos (ARS) is the acknowledged baseline at sit-down restaurants, but in tourism-heavy contexts such as Patagonia treks, Mendoza wine tours, and Buenos Aires tango shows, USD or EUR bills are warmly welcomed and often preferred by workers who use foreign currency as a savings hedge. This guide covers every scenario you are likely to encounter — from Buenos Aires parrillas to remote Inca trail guides — and explains how to navigate Argentina's unique currency reality with confidence and generosity.",
+      },
+      { type: "h2", heading: "Tipping in Argentina at a Glance" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Restaurants (sit-down)",
+            value: '10% in ARS — check for "propina incluida" first',
+          },
+          {
+            label: "Cafés / Confiterías",
+            value: "Round up or leave ARS 500–1,000 for table service",
+          },
+          {
+            label: "Parrillas (steakhouses)",
+            value: "10–15% — consider extra for the asador (grill master)",
+          },
+          {
+            label: "Taxis / Remis",
+            value:
+              "Round up to the nearest round number — no percentage expected",
+          },
+          {
+            label: "Uber",
+            value: "Optional in-app tip or round up — not required",
+          },
+          {
+            label: "Hotel Porters",
+            value: "ARS equivalent of USD $1–2 per bag",
+          },
+          {
+            label: "Hotel Housekeeping",
+            value: "ARS equivalent of USD $2–3 per stay, left at checkout",
+          },
+          {
+            label: "Tour Guides (day tours)",
+            value: "USD $5–10 per person per day — USD strongly preferred",
+          },
+          {
+            label: "Tango Show Staff",
+            value: "ARS or USD — tip performers and table waiters separately",
+          },
+          {
+            label: "Wine Tour Guides (Mendoza)",
+            value: "USD $10–15 per person for a full-day winery tour",
+          },
+        ],
+      },
+      { type: "h2", heading: "Restaurants in Buenos Aires & Beyond" },
+      {
+        type: "p",
+        body: 'Buenos Aires has one of Latin America\'s most sophisticated dining cultures — from neighbourhood parrillas serving 600-gram bife de chorizo to Michelin-quality tasting menus in Palermo and San Telmo. At any sit-down restaurant, 10% is the socially understood tip. Some venues add a "cubierto" (cover charge for bread, butter, and place settings) to the bill — this is not a service charge and a separate tip is still expected. Always check for "propina incluida" (service included) before calculating — it is rare but increasingly common at tourist-facing venues in Buenos Aires\'s upscale neighbourhoods. At local confiterías and neighbourhood eateries frequented by residents rather than tourists, rounding up or leaving ARS 500–1,000 for a coffee and pastry is entirely appropriate.',
+      },
+      { type: "h2", heading: "The Currency Situation" },
+      {
+        type: "p",
+        body: "Argentina's inflation rate has been among the world's highest for several years running, meaning that ARS-denominated tips are appropriate and acknowledged — but the real value of those pesos can erode rapidly for workers who receive them. If you have USD $1 or $5 bills, offering them as a tip to guides, porters, hotel staff, or tango performers is genuinely appreciated. Workers can use foreign currency as a stable savings vehicle in a way that isn't possible with ARS. This is not an affront to Argentine national pride — it reflects an economic reality that Argentinians themselves discuss openly. On organised tours and in Patagonia, USD tips are the unspoken standard. In Buenos Aires restaurants, ARS is perfectly fine.",
+      },
+      { type: "h2", heading: "Tango Shows & Nightlife" },
+      {
+        type: "p",
+        body: "Buenos Aires is the birthplace of tango, and a milonga or dinner-and-show evening is a highlight of most visits. At dinner tango shows in San Telmo and Puerto Madero, the economics are layered: you pay a cover price for the show, pay for dinner separately, and tips are expected at each stage. Tip your table server 10% on the food and drinks bill. For the performers — especially if a couple approaches your table for a close-up sequence — ARS or USD $5–10 is an appropriate gesture. At a traditional milonga (social dance event rather than tourist show), tipping is not part of the culture — the entrance fee covers the evening.",
+      },
+      { type: "h2", heading: "Guides, Wine Tours & Patagonia" },
+      {
+        type: "ul",
+        items: [
+          "Mendoza winery day tours: USD $10–15 per person for a full day including vineyard access, cellar tours, and tastings — guides are often paid minimum wage and rely on tips",
+          "Buenos Aires walking tours (free-to-join tours): USD $5–10 per person is the standard; for private guides, USD $15–20 for 2–3 hours",
+          "Patagonia trekking guides (Torres del Paine, El Chaltén): USD $10–15 per person per day for multi-day guides — pay in USD if possible",
+          "Iguazú Falls guides: USD $5–10 for a half-day park guide — check whether your tour package includes gratuity",
+          "Horseback riding guides (gaucho estancias): USD $5–10 tip for a half-day; ARS equivalent also welcomed at rural estancias where USD can be harder to spend",
+          "Transfer drivers for airport pickups or long-distance remis: round up ARS or USD $2–3 gesture for good service",
+        ],
+      },
+      {
+        type: "tip",
+        body: "At traditional Buenos Aires parrillas, the asador (grill master) is the craft heart of the operation. In addition to the regular service tip for your waiter, a separate gesture for the asador — handed directly or via your server — is a lovely touch at a high-quality parrilla and will be very warmly received. ARS 1,000–2,000 (or USD $1–2) is appropriate.",
+      },
+      {
+        type: "warning",
+        body: 'Argentina has multiple unofficial exchange rates. If you exchange currency at the official bank rate, your ARS tips will have significantly less local purchasing power than if you exchange at the "blue" parallel rate. This is not something you need to act on — but it explains why service workers genuinely prefer USD or EUR tips even when ARS tips are technically acceptable.',
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much do you tip in Argentina?",
+            a: "10% at sit-down restaurants is the expected norm. For day-tour guides, USD $5–10 per person per day is standard. Tango show servers get 10% on the food bill; performers appreciate USD $5–10 directly.",
+          },
+          {
+            q: "Can I tip in USD in Argentina?",
+            a: "Yes — and in tourism contexts (guides, porters, Patagonia trekkers, tango performers), USD tips are often preferred over ARS. Small bills ($1, $5) are the most practical. At local restaurants, tipping in ARS is perfectly fine and expected.",
+          },
+          {
+            q: "What is a cubierto charge in Argentine restaurants?",
+            a: "A cover charge for bread, butter, and table settings — it is not a service charge. A separate tip is still expected on top of the cubierto and food bill combined.",
+          },
+          {
+            q: "Do you tip taxi drivers in Argentina?",
+            a: "Rounding up to the nearest convenient ARS amount is the norm — no percentage is expected. For longer intercity remis (private car hire) rides or airport transfers, a USD $2–3 gesture for good service is a kind touch.",
+          },
+          {
+            q: "Is tipping expected at Buenos Aires cafés?",
+            a: "At traditional confiterías with table service, rounding up or leaving ARS 500–1,000 is appropriate. At quick counter-service coffee shops, tipping is not expected but a small change gesture is always welcomed.",
+          },
+          {
+            q: "Should I tip at an Airbnb or self-catering accommodation?",
+            a: "If your host or a cleaner provides a noticeable level of personal service — welcome notes, extra supplies, a city orientation — a small tip of USD $5–10 or ARS equivalent at checkout is a generous and well-received gesture. It is not an obligation.",
+          },
+        ],
+      },
     ],
   },
 
   // ── AIRPORT TRANSFER GUIDES ──────────────────────────────────────────────
 
   {
-    slug: 'taxi-heathrow-to-london',
-    title: 'Taxi from Heathrow to London: Cost, Time & Tips (2026)',
-    description: "A black cab from Heathrow to central London costs £55–90 metered — Uber or a pre-booked minicab runs £40–75. Touts in the arrivals hall quote £120–200 for the same ride. Here's the full 2026 guide to the official taxi ranks, and when the £11.80 Elizabeth Line wins.",
-    publishedAt: '2026-01-22',
+    slug: "taxi-heathrow-to-london",
+    title: "Taxi from Heathrow to London: Cost, Time & Tips (2026)",
+    description:
+      "A black cab from Heathrow to central London costs £55–90 metered — Uber or a pre-booked minicab runs £40–75. Touts in the arrivals hall quote £120–200 for the same ride. Here's the full 2026 guide to the official taxi ranks, and when the £11.80 Elizabeth Line wins.",
+    publishedAt: "2026-01-22",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'London',
-    citySlug: 'london',
+    category: "taxi",
+    city: "London",
+    citySlug: "london",
     content: [
-      { type: 'intro', body: 'A taxi from Heathrow Airport to central London is one of the most common airport journeys in the world — and one of the most frequently overpriced. The legitimate fare in a licensed black cab runs £55–90 metered, depending on your destination within London, the time of day, and traffic conditions. Pre-booked minicabs and app-based services are typically cheaper at £40–70 with an upfront price. The journey takes 45–90 minutes via the M4, or longer through the Heathrow Tunnel in heavy traffic. This guide covers what you should pay, where to find official taxis at each terminal, and how to avoid the common traps that catch arriving passengers.' },
-      { type: 'h2', heading: 'Heathrow to London: Key Numbers' },
-      { type: 'table', rows: [
-        { label: 'Official black cab (metered)', value: '£55–90 to Zone 1 central London' },
-        { label: 'Night tariff (10pm–6am)', value: '+20–25% on the metered fare' },
-        { label: 'Uber (UberX)', value: '£45–75 depending on surge pricing' },
-        { label: 'Bolt / pre-booked minicab', value: '£40–65 — upfront fixed price' },
-        { label: 'Journey time (no traffic)', value: '45–60 minutes via M4' },
-        { label: 'Journey time (peak hours)', value: '75–90+ minutes' },
-        { label: 'Distance to central London', value: '~23 miles / 37 km from T5' },
-        { label: 'Peak hours', value: '7–9am and 4–7pm weekdays' },
-      ]},
-      { type: 'h2', heading: 'Typical Fares by Destination from Heathrow' },
-      { type: 'table', rows: [
-        { label: 'Heathrow → Paddington / Bayswater', value: '£50–65 black cab; £38–50 pre-booked' },
-        { label: 'Heathrow → Westminster / Victoria', value: '£60–75 black cab; £45–60 pre-booked' },
-        { label: 'Heathrow → Canary Wharf / City', value: '£75–95 black cab; £55–70 pre-booked' },
-        { label: 'Heathrow → Shoreditch / Hackney', value: '£80–100 black cab; £60–75 pre-booked' },
-        { label: 'Heathrow → Kings Cross / Euston', value: '£65–80 black cab; £50–65 pre-booked' },
-        { label: 'Heathrow → Heathrow Hotel', value: '£15–25 black cab; fixed shuttle often free' },
-      ]},
-      { type: 'h2', heading: 'Where to Find Official Taxis at Heathrow' },
-      { type: 'p', body: 'All four Heathrow terminals have official black cab ranks signposted from the arrivals halls. In Terminal 5 (British Airways), the taxi rank is outside the main exit on the ground level — follow the yellow taxi signs. Terminals 2 and 3 share a taxi rank accessed via the central bus station area. Terminal 4 has its own rank directly outside arrivals. London\'s black cabs are fully metered and licensed by Transport for London (TfL). Their drivers have completed "The Knowledge" — a rigorous multi-year examination of London\'s streets — meaning they know the most efficient route to your destination without a GPS.' },
-      { type: 'h2', heading: 'Alternatives to Taxis from Heathrow' },
-      { type: 'ul', items: [
-        'Heathrow Express: 15 minutes non-stop to Paddington — from £25 online, £37 at the station. Best for solo travellers near Paddington',
-        'Elizabeth Line (Crossrail): 40–50 minutes to Bond Street, Liverpool Street, Canary Wharf — £11.80 with Oyster or contactless. Excellent value',
-        'National Express coach: 60–90 minutes to Victoria Coach Station — from £6 pre-booked. Cheapest option',
-        'Pre-booked private transfer (Kiwitaxi, Welcome Pickups): £55–85 fixed price, name-sign in arrivals, no surge risk',
-        'Uber or Bolt: app-based with upfront pricing — typically 20–30% cheaper than a black cab',
-      ]},
-      { type: 'warning', body: 'Touts in the arrivals halls offer "fixed-price taxis to London" — often £120–200 for a journey that costs £60–80 in a black cab. Legitimate black cabs do not approach passengers; they wait in the queue. Walk past any approach and proceed directly to the taxi rank signs.' },
-      { type: 'h2', heading: 'How to Pay for a Heathrow Taxi' },
-      { type: 'p', body: 'All licensed London black cabs are legally required to accept card payments, including contactless. Cash (GBP) is also accepted. Pre-booked minicabs and app services charge your card on file — no cash needed. Tipping is not required in black cabs, though rounding up or a small gratuity for good service is appreciated. Most passengers simply pay the metered amount shown.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'How much is a taxi from Heathrow to central London?', a: 'A licensed black cab costs £55–90 metered to most Zone 1 destinations. Pre-booked minicabs and Uber typically run £40–70 with upfront pricing. The Elizabeth Line is the best-value option at £11.80.' },
-        { q: 'How long does the taxi take from Heathrow to London?', a: '45–60 minutes in normal conditions via the M4. During weekday peak hours (7–9am, 4–7pm), allow 75–90 minutes. Terminal 5 to Paddington runs about 35–40 minutes with no traffic.' },
-        { q: 'Is the Heathrow Express worth it vs taxi?', a: 'For solo travellers going to or near Paddington, yes — 15 minutes for £25 online is far faster than any road journey. For groups of 3–4 with heavy luggage going to a hotel far from Paddington, a pre-booked minicab at £55–70 total is often more convenient.' },
-        { q: 'Which Heathrow terminal do I get the taxi from?', a: 'Each terminal has its own taxi rank: T5 outside the main exit, T2/T3 via the bus station area, T4 outside arrivals. Follow the yellow taxi signs — they are clearly marked in all terminals.' },
-        { q: 'Are Heathrow taxis safe at night?', a: 'Yes. Licensed black cabs are always safe regardless of time. The official taxi rank is the only place to board — never accept an approach from someone inside the terminal at any hour.' },
-        { q: 'Can I book a taxi from Heathrow in advance?', a: 'Yes — and for most travellers, pre-booking a minicab or private transfer is cheaper and more convenient. Apps like Bolt, Uber, and Addison Lee offer upfront fixed prices. Private transfer services (Welcome Pickups, Kiwitaxi) include a meet-and-greet with a name sign in arrivals.' },
-      ]},
+      {
+        type: "intro",
+        body: "A taxi from Heathrow Airport to central London is one of the most common airport journeys in the world — and one of the most frequently overpriced. The legitimate fare in a licensed black cab runs £55–90 metered, depending on your destination within London, the time of day, and traffic conditions. Pre-booked minicabs and app-based services are typically cheaper at £40–70 with an upfront price. The journey takes 45–90 minutes via the M4, or longer through the Heathrow Tunnel in heavy traffic. This guide covers what you should pay, where to find official taxis at each terminal, and how to avoid the common traps that catch arriving passengers.",
+      },
+      { type: "h2", heading: "Heathrow to London: Key Numbers" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Official black cab (metered)",
+            value: "£55–90 to Zone 1 central London",
+          },
+          {
+            label: "Night tariff (10pm–6am)",
+            value: "+20–25% on the metered fare",
+          },
+          { label: "Uber (UberX)", value: "£45–75 depending on surge pricing" },
+          {
+            label: "Bolt / pre-booked minicab",
+            value: "£40–65 — upfront fixed price",
+          },
+          { label: "Journey time (no traffic)", value: "45–60 minutes via M4" },
+          { label: "Journey time (peak hours)", value: "75–90+ minutes" },
+          {
+            label: "Distance to central London",
+            value: "~23 miles / 37 km from T5",
+          },
+          { label: "Peak hours", value: "7–9am and 4–7pm weekdays" },
+        ],
+      },
+      { type: "h2", heading: "Typical Fares by Destination from Heathrow" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Heathrow → Paddington / Bayswater",
+            value: "£50–65 black cab; £38–50 pre-booked",
+          },
+          {
+            label: "Heathrow → Westminster / Victoria",
+            value: "£60–75 black cab; £45–60 pre-booked",
+          },
+          {
+            label: "Heathrow → Canary Wharf / City",
+            value: "£75–95 black cab; £55–70 pre-booked",
+          },
+          {
+            label: "Heathrow → Shoreditch / Hackney",
+            value: "£80–100 black cab; £60–75 pre-booked",
+          },
+          {
+            label: "Heathrow → Kings Cross / Euston",
+            value: "£65–80 black cab; £50–65 pre-booked",
+          },
+          {
+            label: "Heathrow → Heathrow Hotel",
+            value: "£15–25 black cab; fixed shuttle often free",
+          },
+        ],
+      },
+      { type: "h2", heading: "Where to Find Official Taxis at Heathrow" },
+      {
+        type: "p",
+        body: "All four Heathrow terminals have official black cab ranks signposted from the arrivals halls. In Terminal 5 (British Airways), the taxi rank is outside the main exit on the ground level — follow the yellow taxi signs. Terminals 2 and 3 share a taxi rank accessed via the central bus station area. Terminal 4 has its own rank directly outside arrivals. London's black cabs are fully metered and licensed by Transport for London (TfL). Their drivers have completed \"The Knowledge\" — a rigorous multi-year examination of London's streets — meaning they know the most efficient route to your destination without a GPS.",
+      },
+      { type: "h2", heading: "Alternatives to Taxis from Heathrow" },
+      {
+        type: "ul",
+        items: [
+          "Heathrow Express: 15 minutes non-stop to Paddington — from £25 online, £37 at the station. Best for solo travellers near Paddington",
+          "Elizabeth Line (Crossrail): 40–50 minutes to Bond Street, Liverpool Street, Canary Wharf — £11.80 with Oyster or contactless. Excellent value",
+          "National Express coach: 60–90 minutes to Victoria Coach Station — from £6 pre-booked. Cheapest option",
+          "Pre-booked private transfer (Kiwitaxi, Welcome Pickups): £55–85 fixed price, name-sign in arrivals, no surge risk",
+          "Uber or Bolt: app-based with upfront pricing — typically 20–30% cheaper than a black cab",
+        ],
+      },
+      {
+        type: "warning",
+        body: 'Touts in the arrivals halls offer "fixed-price taxis to London" — often £120–200 for a journey that costs £60–80 in a black cab. Legitimate black cabs do not approach passengers; they wait in the queue. Walk past any approach and proceed directly to the taxi rank signs.',
+      },
+      { type: "h2", heading: "How to Pay for a Heathrow Taxi" },
+      {
+        type: "p",
+        body: "All licensed London black cabs are legally required to accept card payments, including contactless. Cash (GBP) is also accepted. Pre-booked minicabs and app services charge your card on file — no cash needed. Tipping is not required in black cabs, though rounding up or a small gratuity for good service is appreciated. Most passengers simply pay the metered amount shown.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Heathrow to central London?",
+            a: "A licensed black cab costs £55–90 metered to most Zone 1 destinations. Pre-booked minicabs and Uber typically run £40–70 with upfront pricing. The Elizabeth Line is the best-value option at £11.80.",
+          },
+          {
+            q: "How long does the taxi take from Heathrow to London?",
+            a: "45–60 minutes in normal conditions via the M4. During weekday peak hours (7–9am, 4–7pm), allow 75–90 minutes. Terminal 5 to Paddington runs about 35–40 minutes with no traffic.",
+          },
+          {
+            q: "Is the Heathrow Express worth it vs taxi?",
+            a: "For solo travellers going to or near Paddington, yes — 15 minutes for £25 online is far faster than any road journey. For groups of 3–4 with heavy luggage going to a hotel far from Paddington, a pre-booked minicab at £55–70 total is often more convenient.",
+          },
+          {
+            q: "Which Heathrow terminal do I get the taxi from?",
+            a: "Each terminal has its own taxi rank: T5 outside the main exit, T2/T3 via the bus station area, T4 outside arrivals. Follow the yellow taxi signs — they are clearly marked in all terminals.",
+          },
+          {
+            q: "Are Heathrow taxis safe at night?",
+            a: "Yes. Licensed black cabs are always safe regardless of time. The official taxi rank is the only place to board — never accept an approach from someone inside the terminal at any hour.",
+          },
+          {
+            q: "Can I book a taxi from Heathrow in advance?",
+            a: "Yes — and for most travellers, pre-booking a minicab or private transfer is cheaper and more convenient. Apps like Bolt, Uber, and Addison Lee offer upfront fixed prices. Private transfer services (Welcome Pickups, Kiwitaxi) include a meet-and-greet with a name sign in arrivals.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'taxi-cdg-to-paris',
-    title: 'Taxi from CDG Airport to Paris: Cost & What to Expect (2026)',
-    description: "CDG to Paris is a fixed €56 to the Right Bank or €65 to the Left Bank — but unlicensed touts inside the terminal quote €120–200 for the same ride. Here's the full 2026 guide to the official taxi queue, which bank your hotel is on, and when the €11.80 RER B wins.",
-    publishedAt: '2026-01-26',
+    slug: "taxi-cdg-to-paris",
+    title: "Taxi from CDG Airport to Paris: Cost & What to Expect (2026)",
+    description:
+      "CDG to Paris is a fixed €56 to the Right Bank or €65 to the Left Bank — but unlicensed touts inside the terminal quote €120–200 for the same ride. Here's the full 2026 guide to the official taxi queue, which bank your hotel is on, and when the €11.80 RER B wins.",
+    publishedAt: "2026-01-26",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'Paris',
-    citySlug: 'paris',
+    category: "taxi",
+    city: "Paris",
+    citySlug: "paris",
     content: [
-      { type: 'intro', body: 'Taxis from Charles de Gaulle Airport (CDG) to central Paris run on official government-set flat-rate fares — introduced specifically to protect arriving passengers from the metered overcharging that used to be common on this route. The fixed fare from CDG to the Right Bank (Rive Droite) is €56; to the Left Bank (Rive Gauche) it is €65. These fares include all luggage and all passengers up to 4. The journey takes 30–60 minutes in normal conditions, though it can stretch to 90 minutes during the Monday morning rush or Friday afternoon peak. Knowing the flat-rate system, where to find the official queue, and how to avoid the persistent unlicensed taxi problem at CDG will save you money and stress on arrival.' },
-      { type: 'h2', heading: 'CDG to Paris: Key Numbers' },
-      { type: 'table', rows: [
-        { label: 'Fixed fare (Right Bank / Rive Droite)', value: '€56 — Châtelet, Le Marais, Louvre, Opéra, République' },
-        { label: 'Fixed fare (Left Bank / Rive Gauche)', value: '€65 — Eiffel Tower, St-Germain, Montparnasse, Latin Quarter' },
-        { label: 'Night supplement (9pm–7am)', value: '+€4 added to the flat fare' },
-        { label: 'Sunday/public holiday supplement', value: '+€4 added to the flat fare' },
-        { label: 'Luggage supplement', value: 'None official — included in the flat rate' },
-        { label: 'Journey time (no traffic)', value: '30–45 minutes via A1 motorway' },
-        { label: 'Journey time (peak)', value: '60–90 minutes' },
-        { label: 'Distance to central Paris', value: '~30 km / 19 miles' },
-      ]},
-      { type: 'h2', heading: 'Which Bank Is My Hotel On?' },
-      { type: 'p', body: 'The flat-rate fare depends on whether your destination is north or south of the Seine. The Right Bank (Rive Droite, €56) covers the 1st–10th arrondissements and most tourist areas: the Louvre, Le Marais (3rd, 4th), Opéra (9th), Pigalle, and Montmartre (18th). The Left Bank (Rive Gauche, €65) covers the 5th–7th arrondissements: the Eiffel Tower area, Saint-Germain-des-Prés, the Latin Quarter, Luxembourg Gardens, and Montparnasse. If you are unsure which side your hotel is on, look it up before landing — it determines your fare from the moment you enter the taxi.' },
-      { type: 'h2', heading: 'Finding the Official Taxi Queue at CDG' },
-      { type: 'p', body: 'CDG has three main terminals: Terminal 1 (circular building), Terminal 2 (the largest, with halls 2A–2G), and Terminal 3 (budget airlines). Each has an official taxi rank signposted with the "Taxi" sign in the arrivals area. The official rank is always outdoors — you will need to follow signs through the arrivals hall and exit the building. Authorised Paris taxis are white with an illuminated "TAXI" roof sign and a registration number displayed on the doors. The driver must acknowledge the flat-rate fare when you state your destination — say "tarif forfaitaire?" (fixed-rate fare?) to confirm before entering.' },
-      { type: 'h2', heading: 'Alternatives to Taxis from CDG' },
-      { type: 'ul', items: [
-        'RER B train: €11.80, 30–35 minutes to Châtelet-Les Halles, Saint-Michel, and other central stations — best value for solo travellers',
-        'Roissybus: €16.60, 60–75 minutes direct to Opéra (9th arr.) — good for hotels near Opéra/Grands Magasins',
-        'Le Bus Direct (Line 2): €18, 60–80 minutes to Étoile/Champs-Élysées and Trocadéro — ideal for 16th/8th arr. hotels',
-        'Uber: typically €45–70 to the Right Bank, but €80–120 during peak surges — upfront pricing avoids meter uncertainty',
-        'Pre-booked private transfer: €65–90 fixed, met in arrivals with name sign — best for families or those arriving at night',
-      ]},
-      { type: 'warning', body: 'Unlicensed taxi touts at CDG are persistent and well-practised at approaching arriving passengers. They may claim to be "official" or show homemade ID badges. Fares from these drivers often run €120–200 for the same journey. The official taxi queue is always signposted and always outdoors — if someone approaches you inside the terminal to offer a ride, they are not legitimate.' },
-      { type: 'h2', heading: 'How to Pay for Your CDG Taxi' },
-      { type: 'p', body: 'Licensed Paris taxis are required to accept card payments (Visa, Mastercard). Cash (euros) is also always accepted. The flat fare means no meter to watch — simply confirm the €56 or €65 fixed price when you get in. Night and Sunday supplements (+€4) are legitimate additions. No tip is required, though rounding up to a round number is common for good service. Do not pay until you have arrived at your destination and retrieved your bags from the boot.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'How much is a taxi from CDG to Paris?', a: '€56 to the Right Bank (north of the Seine) or €65 to the Left Bank (south of the Seine). These are official fixed flat fares that cover all passengers and luggage. At night (9pm–7am) or on Sundays, add €4.' },
-        { q: 'How long does the taxi take from CDG to Paris?', a: '30–45 minutes in normal conditions via the A1 motorway. During weekday peak hours (7–9am and 4–8pm), allow 60–90 minutes.' },
-        { q: 'Should I take the RER or taxi from CDG?', a: 'The RER B at €11.80 is significantly cheaper and takes 30–35 minutes — the best choice for solo travellers with manageable luggage. For groups of 3–4 or those with heavy suitcases going directly to a hotel, the flat-rate taxi is more practical even at the higher price.' },
-        { q: 'What if the driver tries to use the meter instead of the flat rate?', a: 'Do not enter the taxi. All legitimate taxis from CDG are required to use the flat-rate fare for trips to central Paris. If a driver insists on the meter, decline politely and take the next cab in the queue.' },
-        { q: 'Is Uber available from CDG airport?', a: 'Yes — Uber operates from CDG and picks up from designated ride-hailing zones outside the terminals. Fares run €45–70 to the Right Bank in normal conditions, with upfront pricing displayed in the app. During peak times, Uber can surge to €100+, making the official taxi flat rate more attractive.' },
-        { q: 'How do I know if my Paris hotel is on the Right or Left Bank?', a: 'The Right Bank (€56) covers arrondissements 1–4, 8–12, 17–20. The Left Bank (€65) covers 5–7, 13–15. The Eiffel Tower (7th), Montparnasse (14th/15th), and the Latin Quarter (5th) are all Left Bank. The Louvre, Marais, and Champs-Élysées are Right Bank.' },
-      ]},
+      {
+        type: "intro",
+        body: "Taxis from Charles de Gaulle Airport (CDG) to central Paris run on official government-set flat-rate fares — introduced specifically to protect arriving passengers from the metered overcharging that used to be common on this route. The fixed fare from CDG to the Right Bank (Rive Droite) is €56; to the Left Bank (Rive Gauche) it is €65. These fares include all luggage and all passengers up to 4. The journey takes 30–60 minutes in normal conditions, though it can stretch to 90 minutes during the Monday morning rush or Friday afternoon peak. Knowing the flat-rate system, where to find the official queue, and how to avoid the persistent unlicensed taxi problem at CDG will save you money and stress on arrival.",
+      },
+      { type: "h2", heading: "CDG to Paris: Key Numbers" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Fixed fare (Right Bank / Rive Droite)",
+            value: "€56 — Châtelet, Le Marais, Louvre, Opéra, République",
+          },
+          {
+            label: "Fixed fare (Left Bank / Rive Gauche)",
+            value:
+              "€65 — Eiffel Tower, St-Germain, Montparnasse, Latin Quarter",
+          },
+          {
+            label: "Night supplement (9pm–7am)",
+            value: "+€4 added to the flat fare",
+          },
+          {
+            label: "Sunday/public holiday supplement",
+            value: "+€4 added to the flat fare",
+          },
+          {
+            label: "Luggage supplement",
+            value: "None official — included in the flat rate",
+          },
+          {
+            label: "Journey time (no traffic)",
+            value: "30–45 minutes via A1 motorway",
+          },
+          { label: "Journey time (peak)", value: "60–90 minutes" },
+          { label: "Distance to central Paris", value: "~30 km / 19 miles" },
+        ],
+      },
+      { type: "h2", heading: "Which Bank Is My Hotel On?" },
+      {
+        type: "p",
+        body: "The flat-rate fare depends on whether your destination is north or south of the Seine. The Right Bank (Rive Droite, €56) covers the 1st–10th arrondissements and most tourist areas: the Louvre, Le Marais (3rd, 4th), Opéra (9th), Pigalle, and Montmartre (18th). The Left Bank (Rive Gauche, €65) covers the 5th–7th arrondissements: the Eiffel Tower area, Saint-Germain-des-Prés, the Latin Quarter, Luxembourg Gardens, and Montparnasse. If you are unsure which side your hotel is on, look it up before landing — it determines your fare from the moment you enter the taxi.",
+      },
+      { type: "h2", heading: "Finding the Official Taxi Queue at CDG" },
+      {
+        type: "p",
+        body: 'CDG has three main terminals: Terminal 1 (circular building), Terminal 2 (the largest, with halls 2A–2G), and Terminal 3 (budget airlines). Each has an official taxi rank signposted with the "Taxi" sign in the arrivals area. The official rank is always outdoors — you will need to follow signs through the arrivals hall and exit the building. Authorised Paris taxis are white with an illuminated "TAXI" roof sign and a registration number displayed on the doors. The driver must acknowledge the flat-rate fare when you state your destination — say "tarif forfaitaire?" (fixed-rate fare?) to confirm before entering.',
+      },
+      { type: "h2", heading: "Alternatives to Taxis from CDG" },
+      {
+        type: "ul",
+        items: [
+          "RER B train: €11.80, 30–35 minutes to Châtelet-Les Halles, Saint-Michel, and other central stations — best value for solo travellers",
+          "Roissybus: €16.60, 60–75 minutes direct to Opéra (9th arr.) — good for hotels near Opéra/Grands Magasins",
+          "Le Bus Direct (Line 2): €18, 60–80 minutes to Étoile/Champs-Élysées and Trocadéro — ideal for 16th/8th arr. hotels",
+          "Uber: typically €45–70 to the Right Bank, but €80–120 during peak surges — upfront pricing avoids meter uncertainty",
+          "Pre-booked private transfer: €65–90 fixed, met in arrivals with name sign — best for families or those arriving at night",
+        ],
+      },
+      {
+        type: "warning",
+        body: 'Unlicensed taxi touts at CDG are persistent and well-practised at approaching arriving passengers. They may claim to be "official" or show homemade ID badges. Fares from these drivers often run €120–200 for the same journey. The official taxi queue is always signposted and always outdoors — if someone approaches you inside the terminal to offer a ride, they are not legitimate.',
+      },
+      { type: "h2", heading: "How to Pay for Your CDG Taxi" },
+      {
+        type: "p",
+        body: "Licensed Paris taxis are required to accept card payments (Visa, Mastercard). Cash (euros) is also always accepted. The flat fare means no meter to watch — simply confirm the €56 or €65 fixed price when you get in. Night and Sunday supplements (+€4) are legitimate additions. No tip is required, though rounding up to a round number is common for good service. Do not pay until you have arrived at your destination and retrieved your bags from the boot.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from CDG to Paris?",
+            a: "€56 to the Right Bank (north of the Seine) or €65 to the Left Bank (south of the Seine). These are official fixed flat fares that cover all passengers and luggage. At night (9pm–7am) or on Sundays, add €4.",
+          },
+          {
+            q: "How long does the taxi take from CDG to Paris?",
+            a: "30–45 minutes in normal conditions via the A1 motorway. During weekday peak hours (7–9am and 4–8pm), allow 60–90 minutes.",
+          },
+          {
+            q: "Should I take the RER or taxi from CDG?",
+            a: "The RER B at €11.80 is significantly cheaper and takes 30–35 minutes — the best choice for solo travellers with manageable luggage. For groups of 3–4 or those with heavy suitcases going directly to a hotel, the flat-rate taxi is more practical even at the higher price.",
+          },
+          {
+            q: "What if the driver tries to use the meter instead of the flat rate?",
+            a: "Do not enter the taxi. All legitimate taxis from CDG are required to use the flat-rate fare for trips to central Paris. If a driver insists on the meter, decline politely and take the next cab in the queue.",
+          },
+          {
+            q: "Is Uber available from CDG airport?",
+            a: "Yes — Uber operates from CDG and picks up from designated ride-hailing zones outside the terminals. Fares run €45–70 to the Right Bank in normal conditions, with upfront pricing displayed in the app. During peak times, Uber can surge to €100+, making the official taxi flat rate more attractive.",
+          },
+          {
+            q: "How do I know if my Paris hotel is on the Right or Left Bank?",
+            a: "The Right Bank (€56) covers arrondissements 1–4, 8–12, 17–20. The Left Bank (€65) covers 5–7, 13–15. The Eiffel Tower (7th), Montparnasse (14th/15th), and the Latin Quarter (5th) are all Left Bank. The Louvre, Marais, and Champs-Élysées are Right Bank.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'taxi-changi-to-singapore',
-    title: 'Changi Airport Taxi Fare to Singapore City: Cost & Surcharges (2026)',
-    description: "Changi to the city centre costs SGD $28–45 all-in by metered taxi during the day, or SGD $35–55 after midnight — Grab runs $22–45 but can surge above that. Here's the full 2026 guide, and why the SGD $2.50 MRT beats both for solo travellers.",
-    publishedAt: '2026-01-30',
+    slug: "taxi-changi-to-singapore",
+    title:
+      "Changi Airport Taxi Fare to Singapore City: Cost & Surcharges (2026)",
+    description:
+      "Changi to the city centre costs SGD $28–45 all-in by metered taxi during the day, or SGD $35–55 after midnight — Grab runs $22–45 but can surge above that. Here's the full 2026 guide, and why the SGD $2.50 MRT beats both for solo travellers.",
+    publishedAt: "2026-01-30",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'Singapore',
-    citySlug: 'singapore',
+    category: "taxi",
+    city: "Singapore",
+    citySlug: "singapore",
     content: [
-      { type: 'intro', body: 'Taxis from Singapore\'s Changi Airport are among the best-run airport taxi services in Asia — fully metered, air-conditioned, and regulated by the Land Transport Authority (LTA) with clear published surcharge rates. There are no unlicensed taxi touts, no meter manipulation, and no ambiguity about what you will pay. The metered fare to most central destinations runs SGD $20–35, plus legitimate airport and peak-hour surcharges that bring the total to approximately SGD $28–50 depending on timing. Changi also offers one of the world\'s most seamless airport MRT connections, making it genuinely competitive with taxis for many travellers.' },
-      { type: 'h2', heading: 'Changi to Singapore City: Key Numbers' },
-      { type: 'table', rows: [
-        { label: 'Metered fare (central city)', value: 'SGD $20–35 before surcharges' },
-        { label: 'Airport surcharge (6am–midnight)', value: 'SGD $6 — added to all airport taxis' },
-        { label: 'Airport surcharge (midnight–5:59am)', value: 'SGD $8 — higher late-night rate' },
-        { label: 'Peak hour surcharge', value: 'SGD $3 (Mon–Fri 6–9:30am, 6pm–midnight; Sat–Sun 6pm–midnight)' },
-        { label: 'Total fare (daytime, city centre)', value: 'Approximately SGD $28–45 all-in' },
-        { label: 'Total fare (late night, city centre)', value: 'Approximately SGD $35–55 all-in' },
-        { label: 'Journey time', value: '20–30 minutes via ECP/AYE' },
-        { label: 'Grab fare (GrabCar)', value: 'SGD $22–45 upfront depending on car type and demand' },
-      ]},
-      { type: 'h2', heading: 'Typical Fares by Destination from Changi' },
-      { type: 'table', rows: [
-        { label: 'Changi → Marina Bay / CBD', value: 'SGD $30–42 all-in (daytime)' },
-        { label: 'Changi → Orchard Road', value: 'SGD $32–45 all-in (daytime)' },
-        { label: 'Changi → Sentosa Island', value: 'SGD $38–55 all-in + SGD $6 Sentosa entry toll' },
-        { label: 'Changi → Little India / Bugis', value: 'SGD $28–40 all-in (daytime)' },
-        { label: 'Changi → Jurong East (west side)', value: 'SGD $40–60 all-in — longest journey' },
-        { label: 'Changi → Changi hotel (nearby)', value: 'SGD $10–18 all-in — short journey' },
-      ]},
-      { type: 'h2', heading: 'How to Get a Taxi at Changi' },
-      { type: 'p', body: 'Taxis at Changi are found at dedicated taxi stands on Basement 2 (B2) of the arrival halls in all four terminals (T1, T2, T3, T4). The queue system is orderly and moves quickly — even at busy times, waits are rarely more than 10–15 minutes. Singapore taxis are clearly marked with the company logo (ComfortDelGro, Premier, SMRT, Trans-Cab) and have illuminated "TAXI" signs. The airport and peak surcharges are applied automatically by the meter — you do not need to declare them or negotiate them.' },
-      { type: 'h2', heading: 'Grab vs Taxi from Changi' },
-      { type: 'p', body: 'Grab is the dominant ride-hailing app in Singapore and operates from designated ride-hailing pick-up zones at Changi. Both taxis and Grab are good options. Grab\'s advantage is upfront pricing — you see the full fare before booking, with no meter uncertainty. The disadvantage is that Grab pricing surges during peak demand, sometimes exceeding the taxi rate. Standard taxis use the meter, which in Singapore is transparent and well-regulated. For late-night arrivals when Grab surge pricing tends to spike, the official taxi queue is often the more predictable choice.' },
-      { type: 'h2', heading: 'Alternatives to Taxis from Changi' },
-      { type: 'ul', items: [
-        'MRT (Changi Airport station CG2): SGD $2.50–3.20 to city stations — runs from T1, T2, T3; 30–40 minutes to Raffles Place or City Hall',
-        'MRT to T4: Take the free shuttle bus from T4 to T3, then board the MRT — adds 15–20 minutes',
-        'Bus 36: SGD $2.00, slow (60+ minutes) but very cheap — good if your hotel is near Orchard Road',
-        'Pre-booked private transfer: SGD $60–90 for a private car with name-sign meet-and-greet in arrivals',
-      ]},
-      { type: 'tip', body: 'The Changi Airport MRT is one of the best airport train connections in the world — air-conditioned, runs every 7–12 minutes, and costs under SGD $3.20. Unless you have more luggage than you can manage on escalators, or are heading to a hotel not near an MRT station, the train is the smarter and faster choice for most travellers.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'How much is a taxi from Changi Airport to the city?', a: 'Approximately SGD $28–45 all-in for daytime travel to the city centre, including the SGD $6 airport surcharge and metered fare. Late-night fares (midnight–6am) are SGD $35–55 due to the SGD $8 night surcharge.' },
-        { q: 'Is Grab cheaper than taxis from Changi?', a: 'Often similar. In off-peak times, Grab can be slightly cheaper. During peak periods and late-night arrivals, Grab surging can make it more expensive than the regulated taxi meter. Check both the Grab app and the estimated taxi rate before deciding.' },
-        { q: 'How long does the taxi take from Changi to the city?', a: '20–30 minutes to Marina Bay, CBD, or Orchard in normal traffic. During peak hours (7–9am, 5–8pm), allow 35–50 minutes via the ECP or PIE.' },
-        { q: 'Is the Changi Airport MRT better than a taxi?', a: 'For most solo travellers and couples with reasonable luggage, yes — SGD $2.50–3.20 versus SGD $30–45 is hard to argue with, and the 30–35 minute journey to the CBD is very comfortable. For families with multiple suitcases or destinations not well-served by the MRT, a taxi is worth the premium.' },
-        { q: 'Which terminal do I get my taxi from at Changi?', a: 'All terminals have taxi stands at Basement 2 (B2). Terminal 4 is connected to Terminal 2 by a free shuttle bus — take the shuttle to T2/T3, then access the taxi rank there. Follow the green taxi signs from the arrivals hall in any terminal.' },
-        { q: 'Are there taxi scams at Changi Airport?', a: 'No — Singapore\'s airport taxi system is one of the cleanest in the world. Unlicensed touts are essentially unknown at Changi. Metered taxis from the official queue are honest and well-regulated. The surcharges (airport, peak, midnight) are all published by LTA and applied automatically by the meter.' },
-      ]},
+      {
+        type: "intro",
+        body: "Taxis from Singapore's Changi Airport are among the best-run airport taxi services in Asia — fully metered, air-conditioned, and regulated by the Land Transport Authority (LTA) with clear published surcharge rates. There are no unlicensed taxi touts, no meter manipulation, and no ambiguity about what you will pay. The metered fare to most central destinations runs SGD $20–35, plus legitimate airport and peak-hour surcharges that bring the total to approximately SGD $28–50 depending on timing. Changi also offers one of the world's most seamless airport MRT connections, making it genuinely competitive with taxis for many travellers.",
+      },
+      { type: "h2", heading: "Changi to Singapore City: Key Numbers" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Metered fare (central city)",
+            value: "SGD $20–35 before surcharges",
+          },
+          {
+            label: "Airport surcharge (6am–midnight)",
+            value: "SGD $6 — added to all airport taxis",
+          },
+          {
+            label: "Airport surcharge (midnight–5:59am)",
+            value: "SGD $8 — higher late-night rate",
+          },
+          {
+            label: "Peak hour surcharge",
+            value:
+              "SGD $3 (Mon–Fri 6–9:30am, 6pm–midnight; Sat–Sun 6pm–midnight)",
+          },
+          {
+            label: "Total fare (daytime, city centre)",
+            value: "Approximately SGD $28–45 all-in",
+          },
+          {
+            label: "Total fare (late night, city centre)",
+            value: "Approximately SGD $35–55 all-in",
+          },
+          { label: "Journey time", value: "20–30 minutes via ECP/AYE" },
+          {
+            label: "Grab fare (GrabCar)",
+            value: "SGD $22–45 upfront depending on car type and demand",
+          },
+        ],
+      },
+      { type: "h2", heading: "Typical Fares by Destination from Changi" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Changi → Marina Bay / CBD",
+            value: "SGD $30–42 all-in (daytime)",
+          },
+          {
+            label: "Changi → Orchard Road",
+            value: "SGD $32–45 all-in (daytime)",
+          },
+          {
+            label: "Changi → Sentosa Island",
+            value: "SGD $38–55 all-in + SGD $6 Sentosa entry toll",
+          },
+          {
+            label: "Changi → Little India / Bugis",
+            value: "SGD $28–40 all-in (daytime)",
+          },
+          {
+            label: "Changi → Jurong East (west side)",
+            value: "SGD $40–60 all-in — longest journey",
+          },
+          {
+            label: "Changi → Changi hotel (nearby)",
+            value: "SGD $10–18 all-in — short journey",
+          },
+        ],
+      },
+      { type: "h2", heading: "How to Get a Taxi at Changi" },
+      {
+        type: "p",
+        body: 'Taxis at Changi are found at dedicated taxi stands on Basement 2 (B2) of the arrival halls in all four terminals (T1, T2, T3, T4). The queue system is orderly and moves quickly — even at busy times, waits are rarely more than 10–15 minutes. Singapore taxis are clearly marked with the company logo (ComfortDelGro, Premier, SMRT, Trans-Cab) and have illuminated "TAXI" signs. The airport and peak surcharges are applied automatically by the meter — you do not need to declare them or negotiate them.',
+      },
+      { type: "h2", heading: "Grab vs Taxi from Changi" },
+      {
+        type: "p",
+        body: "Grab is the dominant ride-hailing app in Singapore and operates from designated ride-hailing pick-up zones at Changi. Both taxis and Grab are good options. Grab's advantage is upfront pricing — you see the full fare before booking, with no meter uncertainty. The disadvantage is that Grab pricing surges during peak demand, sometimes exceeding the taxi rate. Standard taxis use the meter, which in Singapore is transparent and well-regulated. For late-night arrivals when Grab surge pricing tends to spike, the official taxi queue is often the more predictable choice.",
+      },
+      { type: "h2", heading: "Alternatives to Taxis from Changi" },
+      {
+        type: "ul",
+        items: [
+          "MRT (Changi Airport station CG2): SGD $2.50–3.20 to city stations — runs from T1, T2, T3; 30–40 minutes to Raffles Place or City Hall",
+          "MRT to T4: Take the free shuttle bus from T4 to T3, then board the MRT — adds 15–20 minutes",
+          "Bus 36: SGD $2.00, slow (60+ minutes) but very cheap — good if your hotel is near Orchard Road",
+          "Pre-booked private transfer: SGD $60–90 for a private car with name-sign meet-and-greet in arrivals",
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Changi Airport MRT is one of the best airport train connections in the world — air-conditioned, runs every 7–12 minutes, and costs under SGD $3.20. Unless you have more luggage than you can manage on escalators, or are heading to a hotel not near an MRT station, the train is the smarter and faster choice for most travellers.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Changi Airport to the city?",
+            a: "Approximately SGD $28–45 all-in for daytime travel to the city centre, including the SGD $6 airport surcharge and metered fare. Late-night fares (midnight–6am) are SGD $35–55 due to the SGD $8 night surcharge.",
+          },
+          {
+            q: "Is Grab cheaper than taxis from Changi?",
+            a: "Often similar. In off-peak times, Grab can be slightly cheaper. During peak periods and late-night arrivals, Grab surging can make it more expensive than the regulated taxi meter. Check both the Grab app and the estimated taxi rate before deciding.",
+          },
+          {
+            q: "How long does the taxi take from Changi to the city?",
+            a: "20–30 minutes to Marina Bay, CBD, or Orchard in normal traffic. During peak hours (7–9am, 5–8pm), allow 35–50 minutes via the ECP or PIE.",
+          },
+          {
+            q: "Is the Changi Airport MRT better than a taxi?",
+            a: "For most solo travellers and couples with reasonable luggage, yes — SGD $2.50–3.20 versus SGD $30–45 is hard to argue with, and the 30–35 minute journey to the CBD is very comfortable. For families with multiple suitcases or destinations not well-served by the MRT, a taxi is worth the premium.",
+          },
+          {
+            q: "Which terminal do I get my taxi from at Changi?",
+            a: "All terminals have taxi stands at Basement 2 (B2). Terminal 4 is connected to Terminal 2 by a free shuttle bus — take the shuttle to T2/T3, then access the taxi rank there. Follow the green taxi signs from the arrivals hall in any terminal.",
+          },
+          {
+            q: "Are there taxi scams at Changi Airport?",
+            a: "No — Singapore's airport taxi system is one of the cleanest in the world. Unlicensed touts are essentially unknown at Changi. Metered taxis from the official queue are honest and well-regulated. The surcharges (airport, peak, midnight) are all published by LTA and applied automatically by the meter.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'taxi-suvarnabhumi-to-bangkok',
-    title: 'Taxi from Bangkok Airport (BKK) to City: Cost & Tips (2026)',
-    description: "A metered taxi from Suvarnabhumi to central Bangkok costs THB 300–500 all-in — but touts outside arrivals charge THB 1,000–2,000 for the same ride. Here's the full 2026 guide to the correct ticket-queue process, and when the THB 15–45 Airport Rail Link wins.",
-    publishedAt: '2026-02-03',
+    slug: "taxi-suvarnabhumi-to-bangkok",
+    title: "Taxi from Bangkok Airport (BKK) to City: Cost & Tips (2026)",
+    description:
+      "A metered taxi from Suvarnabhumi to central Bangkok costs THB 300–500 all-in — but touts outside arrivals charge THB 1,000–2,000 for the same ride. Here's the full 2026 guide to the correct ticket-queue process, and when the THB 15–45 Airport Rail Link wins.",
+    publishedAt: "2026-02-03",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'Bangkok',
-    citySlug: 'bangkok',
+    category: "taxi",
+    city: "Bangkok",
+    citySlug: "bangkok",
     content: [
-      { type: 'intro', body: 'Taxis from Suvarnabhumi Airport (BKK) to central Bangkok are among the most affordable airport taxis in Asia — the metered fare runs THB 250–400 for most central destinations, and the total cost including the airport surcharge and expressway tolls rarely exceeds THB 500. But the taxi process at BKK has a specific procedure that catches many first-time visitors, and the area outside arrivals is a known zone for unlicensed touts who charge 3–5× the legitimate rate. Follow the correct steps and you get a great-value, honest ride. Ignore them and you may pay THB 1,500 for a journey that should cost THB 350.' },
-      { type: 'h2', heading: 'BKK to Bangkok City: Key Numbers' },
-      { type: 'table', rows: [
-        { label: 'Metered fare (Sukhumvit / Silom)', value: 'THB 250–400 depending on traffic' },
-        { label: 'Expressway tolls', value: 'THB 25–75 — paid by passenger in cash on top of meter' },
-        { label: 'Airport surcharge', value: 'THB 50 — added automatically to the meter start' },
-        { label: 'Total cost (central Bangkok, daytime)', value: 'Approximately THB 300–500 all-in' },
-        { label: 'Journey time (no traffic)', value: '30–45 minutes via Expressway' },
-        { label: 'Journey time (peak hours)', value: '60–90 minutes' },
-        { label: 'Grab / Bolt fare', value: 'THB 350–600 upfront — no meter negotiation needed' },
-        { label: 'Airport Rail Link (ARL)', value: 'THB 15–45 — 30 minutes to Phaya Thai station' },
-      ]},
-      { type: 'h2', heading: 'Typical Fares by Destination from BKK' },
-      { type: 'table', rows: [
-        { label: 'BKK → Sukhumvit (Nana / Asok)', value: 'THB 280–380 all-in (daytime)' },
-        { label: 'BKK → Silom / Sathorn', value: 'THB 300–420 all-in (daytime)' },
-        { label: 'BKK → Khao San Road / Banglamphu', value: 'THB 350–480 all-in — longer route' },
-        { label: 'BKK → Chatuchak / Mo Chit', value: 'THB 250–350 all-in — shorter trip' },
-        { label: 'BKK → Ekkamai / On Nut', value: 'THB 280–380 all-in (daytime)' },
-        { label: 'BKK → Don Mueang Airport (DMK)', value: 'THB 400–600 all-in — expressway essential' },
-      ]},
-      { type: 'h2', heading: 'The Correct Taxi Process at BKK' },
-      { type: 'p', body: 'This is the most important information on this page: do not accept any taxi offer from someone who approaches you in the arrivals hall. Go through the arrivals gate, turn left or right following signs for "Public Taxi" on Level 1 (ground floor). You will reach a row of automated ticket dispensers — press the button to take a numbered ticket, then wait for your number to be called on the overhead display. A staff member will direct you to your assigned cab. The driver is required by law to use the meter. Before the car moves, confirm: "meter, please" (or simply point to the unstarted meter). If the driver refuses, get out and return to the queue for another cab.' },
-      { type: 'ul', items: [
-        'Take a numbered ticket from the dispenser — do not walk directly to a cab',
-        'Confirm meter is running before the car moves — THB 50 airport surcharge appears on the meter start',
-        'Carry THB 25–75 in small notes for expressway tolls — paid to the toll booth in cash',
-        'Tell the driver your destination before departing — use Google Maps to confirm the route',
-        'Grab and Bolt operate from designated ride-hailing zones at BKK — a good alternative with upfront pricing',
-      ]},
-      { type: 'warning', body: 'The zone immediately outside BKK arrivals is heavily worked by unlicensed taxi touts who approach visitors with offers of "fixed price" rides. Fares of THB 1,000–2,000 for journeys costing THB 350 are common. Walk past all approaches and proceed to the official metered taxi queue on Level 1.' },
-      { type: 'h2', heading: 'Airport Rail Link: The Budget Alternative' },
-      { type: 'p', body: 'The Suvarnabhumi Airport Rail Link (ARL) connects BKK directly to Phaya Thai station in central Bangkok in approximately 30 minutes for THB 15–45 depending on which stop. From Phaya Thai, you can connect to the BTS Skytrain network. This is the fastest and cheapest option for solo travellers with manageable luggage heading to Sukhumvit, Silom, or anywhere well-served by the BTS. The downside: the ARL does not cover all of Bangkok, and with large suitcases, multiple connections become impractical.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'How much is a taxi from Suvarnabhumi to Bangkok city?', a: 'Approximately THB 300–500 all-in: metered fare (THB 250–400) + THB 50 airport surcharge + expressway tolls (THB 25–75). Always insist on the meter.' },
-        { q: 'Should I use Grab or a metered taxi from BKK?', a: 'Both are reliable. Grab gives an upfront price and eliminates meter anxiety; metered taxis can be cheaper in light traffic. For first-time visitors unfamiliar with the process, Grab from the designated ride-hailing zone is often the most stress-free option.' },
-        { q: 'How long does it take to get from Suvarnabhumi to central Bangkok?', a: '30–45 minutes via the expressway in normal conditions. During peak hours (7–9am and 5–8pm weekdays), allow 60–90 minutes — Bangkok traffic is severely congested.' },
-        { q: 'What are expressway tolls and do I have to pay them?', a: 'Yes — expressway tolls in Thailand are paid by the passenger. The driver will use toll booths on the expressway (shortcut to avoid surface traffic); each booth costs THB 25–45. Have small Thai Baht notes ready. The total tolls are typically THB 50–75 for a central Bangkok journey.' },
-        { q: 'Is the Airport Rail Link better than a taxi from BKK?', a: 'For solo travellers with a single bag heading to the Sukhumvit or Silom area, yes — THB 15–45 versus THB 300–500 is a significant saving, and 30 minutes is fast. For groups of 3–4 with large luggage, or destinations away from BTS/MRT lines, taxis are more practical.' },
-        { q: 'Are there taxis available at BKK late at night?', a: 'Yes — the public taxi queue operates 24 hours at BKK. Late-night fares are metered the same as daytime, though traffic is typically much lighter so journey times and costs tend to be at the lower end of the range.' },
-      ]},
+      {
+        type: "intro",
+        body: "Taxis from Suvarnabhumi Airport (BKK) to central Bangkok are among the most affordable airport taxis in Asia — the metered fare runs THB 250–400 for most central destinations, and the total cost including the airport surcharge and expressway tolls rarely exceeds THB 500. But the taxi process at BKK has a specific procedure that catches many first-time visitors, and the area outside arrivals is a known zone for unlicensed touts who charge 3–5× the legitimate rate. Follow the correct steps and you get a great-value, honest ride. Ignore them and you may pay THB 1,500 for a journey that should cost THB 350.",
+      },
+      { type: "h2", heading: "BKK to Bangkok City: Key Numbers" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Metered fare (Sukhumvit / Silom)",
+            value: "THB 250–400 depending on traffic",
+          },
+          {
+            label: "Expressway tolls",
+            value: "THB 25–75 — paid by passenger in cash on top of meter",
+          },
+          {
+            label: "Airport surcharge",
+            value: "THB 50 — added automatically to the meter start",
+          },
+          {
+            label: "Total cost (central Bangkok, daytime)",
+            value: "Approximately THB 300–500 all-in",
+          },
+          {
+            label: "Journey time (no traffic)",
+            value: "30–45 minutes via Expressway",
+          },
+          { label: "Journey time (peak hours)", value: "60–90 minutes" },
+          {
+            label: "Grab / Bolt fare",
+            value: "THB 350–600 upfront — no meter negotiation needed",
+          },
+          {
+            label: "Airport Rail Link (ARL)",
+            value: "THB 15–45 — 30 minutes to Phaya Thai station",
+          },
+        ],
+      },
+      { type: "h2", heading: "Typical Fares by Destination from BKK" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "BKK → Sukhumvit (Nana / Asok)",
+            value: "THB 280–380 all-in (daytime)",
+          },
+          {
+            label: "BKK → Silom / Sathorn",
+            value: "THB 300–420 all-in (daytime)",
+          },
+          {
+            label: "BKK → Khao San Road / Banglamphu",
+            value: "THB 350–480 all-in — longer route",
+          },
+          {
+            label: "BKK → Chatuchak / Mo Chit",
+            value: "THB 250–350 all-in — shorter trip",
+          },
+          {
+            label: "BKK → Ekkamai / On Nut",
+            value: "THB 280–380 all-in (daytime)",
+          },
+          {
+            label: "BKK → Don Mueang Airport (DMK)",
+            value: "THB 400–600 all-in — expressway essential",
+          },
+        ],
+      },
+      { type: "h2", heading: "The Correct Taxi Process at BKK" },
+      {
+        type: "p",
+        body: 'This is the most important information on this page: do not accept any taxi offer from someone who approaches you in the arrivals hall. Go through the arrivals gate, turn left or right following signs for "Public Taxi" on Level 1 (ground floor). You will reach a row of automated ticket dispensers — press the button to take a numbered ticket, then wait for your number to be called on the overhead display. A staff member will direct you to your assigned cab. The driver is required by law to use the meter. Before the car moves, confirm: "meter, please" (or simply point to the unstarted meter). If the driver refuses, get out and return to the queue for another cab.',
+      },
+      {
+        type: "ul",
+        items: [
+          "Take a numbered ticket from the dispenser — do not walk directly to a cab",
+          "Confirm meter is running before the car moves — THB 50 airport surcharge appears on the meter start",
+          "Carry THB 25–75 in small notes for expressway tolls — paid to the toll booth in cash",
+          "Tell the driver your destination before departing — use Google Maps to confirm the route",
+          "Grab and Bolt operate from designated ride-hailing zones at BKK — a good alternative with upfront pricing",
+        ],
+      },
+      {
+        type: "warning",
+        body: 'The zone immediately outside BKK arrivals is heavily worked by unlicensed taxi touts who approach visitors with offers of "fixed price" rides. Fares of THB 1,000–2,000 for journeys costing THB 350 are common. Walk past all approaches and proceed to the official metered taxi queue on Level 1.',
+      },
+      { type: "h2", heading: "Airport Rail Link: The Budget Alternative" },
+      {
+        type: "p",
+        body: "The Suvarnabhumi Airport Rail Link (ARL) connects BKK directly to Phaya Thai station in central Bangkok in approximately 30 minutes for THB 15–45 depending on which stop. From Phaya Thai, you can connect to the BTS Skytrain network. This is the fastest and cheapest option for solo travellers with manageable luggage heading to Sukhumvit, Silom, or anywhere well-served by the BTS. The downside: the ARL does not cover all of Bangkok, and with large suitcases, multiple connections become impractical.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Suvarnabhumi to Bangkok city?",
+            a: "Approximately THB 300–500 all-in: metered fare (THB 250–400) + THB 50 airport surcharge + expressway tolls (THB 25–75). Always insist on the meter.",
+          },
+          {
+            q: "Should I use Grab or a metered taxi from BKK?",
+            a: "Both are reliable. Grab gives an upfront price and eliminates meter anxiety; metered taxis can be cheaper in light traffic. For first-time visitors unfamiliar with the process, Grab from the designated ride-hailing zone is often the most stress-free option.",
+          },
+          {
+            q: "How long does it take to get from Suvarnabhumi to central Bangkok?",
+            a: "30–45 minutes via the expressway in normal conditions. During peak hours (7–9am and 5–8pm weekdays), allow 60–90 minutes — Bangkok traffic is severely congested.",
+          },
+          {
+            q: "What are expressway tolls and do I have to pay them?",
+            a: "Yes — expressway tolls in Thailand are paid by the passenger. The driver will use toll booths on the expressway (shortcut to avoid surface traffic); each booth costs THB 25–45. Have small Thai Baht notes ready. The total tolls are typically THB 50–75 for a central Bangkok journey.",
+          },
+          {
+            q: "Is the Airport Rail Link better than a taxi from BKK?",
+            a: "For solo travellers with a single bag heading to the Sukhumvit or Silom area, yes — THB 15–45 versus THB 300–500 is a significant saving, and 30 minutes is fast. For groups of 3–4 with large luggage, or destinations away from BTS/MRT lines, taxis are more practical.",
+          },
+          {
+            q: "Are there taxis available at BKK late at night?",
+            a: "Yes — the public taxi queue operates 24 hours at BKK. Late-night fares are metered the same as daytime, though traffic is typically much lighter so journey times and costs tend to be at the lower end of the range.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'taxi-incheon-to-seoul',
-    title: 'Taxi from Incheon Airport to Seoul: Cost & Options (2026)',
-    description: "A standard taxi from Incheon to Seoul costs KRW 65,000–100,000 — the AREX Express train covers the same route in 43 minutes for KRW 9,500. Here's the full 2026 guide to choosing between standard, deluxe, and jumbo taxis, and when splitting a cab beats the train.",
-    publishedAt: '2026-02-07',
+    slug: "taxi-incheon-to-seoul",
+    title: "Taxi from Incheon Airport to Seoul: Cost & Options (2026)",
+    description:
+      "A standard taxi from Incheon to Seoul costs KRW 65,000–100,000 — the AREX Express train covers the same route in 43 minutes for KRW 9,500. Here's the full 2026 guide to choosing between standard, deluxe, and jumbo taxis, and when splitting a cab beats the train.",
+    publishedAt: "2026-02-07",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'Seoul',
-    citySlug: 'seoul',
+    category: "taxi",
+    city: "Seoul",
+    citySlug: "seoul",
     content: [
-      { type: 'intro', body: 'Incheon International Airport consistently ranks among the world\'s best airports — and its ground transport system is equally well-organised. Taxis from Incheon to central Seoul are regulated, honest, and available in multiple tiers to suit different budgets and needs. The journey takes 60–90 minutes via the Incheon Bridge and highway, and costs KRW 65,000–100,000 in a standard cab. For groups with heavy luggage or those heading to Gangnam or Hongdae, taxis are genuinely competitive with the train on a per-person basis.' },
-      { type: 'h2', heading: 'Incheon to Seoul: Key Numbers' },
-      { type: 'table', rows: [
-        { label: 'Standard taxi (일반택시)', value: 'KRW 65,000–100,000 metered to central Seoul' },
-        { label: 'Deluxe taxi (모범택시)', value: 'KRW 90,000–130,000 — black, English-friendly, larger' },
-        { label: 'Jumbo taxi (대형택시)', value: 'KRW 100,000–150,000 — up to 6–9 passengers' },
-        { label: 'International taxi (pre-book)', value: 'KRW 75,000–120,000 — multilingual driver' },
-        { label: 'Highway toll', value: 'KRW 7,200–9,000 included in fare or added separately' },
-        { label: 'Journey time', value: '60–90 minutes (longer during peak hours)' },
-        { label: 'AREX Express train', value: 'KRW 9,500 — 43 minutes to Seoul Station' },
-      ]},
-      { type: 'h2', heading: 'Typical Fares by Destination from Incheon' },
-      { type: 'table', rows: [
-        { label: 'Incheon → Seoul Station / Jung-gu', value: 'KRW 65,000–80,000 standard taxi' },
-        { label: 'Incheon → Myeongdong / Insadong', value: 'KRW 68,000–90,000 standard taxi' },
-        { label: 'Incheon → Gangnam / COEX', value: 'KRW 80,000–110,000 standard taxi (longer route)' },
-        { label: 'Incheon → Hongdae / Mapo-gu', value: 'KRW 65,000–85,000 standard taxi' },
-        { label: 'Incheon → Itaewon / Yongsan', value: 'KRW 70,000–90,000 standard taxi' },
-        { label: 'Incheon → Dongdaemun', value: 'KRW 72,000–95,000 standard taxi' },
-      ]},
-      { type: 'h2', heading: 'Choosing Your Taxi Type' },
-      { type: 'p', body: 'Standard taxis (orange or white, marked "일반택시") are the cheapest option and use the meter. Deluxe taxis (black, marked "모범택시" or "DELUXE") are slightly more expensive but offer larger vehicles, cleaner interiors, and drivers who have passed additional certifications — they are more likely to understand basic English. Jumbo taxis (대형택시) accommodate groups of up to 6–9 passengers and charge more but are practical for families. International taxis are pre-booked via the Korea Airports Corporation website and come with English, Chinese, or Japanese-speaking drivers — excellent for first-time Seoul visitors who want a smooth arrival. All taxis operate from the clearly marked taxi ranks at Terminal 1 and Terminal 2.' },
-      { type: 'h2', heading: 'AREX Train vs Taxi from Incheon' },
-      { type: 'ul', items: [
-        'AREX Express: KRW 9,500, 43 minutes non-stop to Seoul Station — best for solo travellers near Myeongdong or Jung-gu',
-        'AREX All-stop: KRW 4,800, 66 minutes with multiple station stops — cheapest option',
-        'Groups of 3+: split taxi fare is KRW 22,000–35,000 per person — competitive with AREX',
-        'Gangnam-bound: taxi is often more practical; AREX to Seoul Station then subway adds 30+ minutes',
-        'Night travel (midnight–6am): AREX has limited service; taxis operate 24 hours',
-      ]},
-      { type: 'tip', body: 'Save your hotel address in Korean script before landing. Most standard taxi drivers do not speak English and Korean GPS navigation requires Korean text. Screenshot the Korean address from your hotel booking confirmation, or ask the hotel to send it via email. Deluxe and International taxis can usually handle English hotel names.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'How much is a taxi from Incheon Airport to Seoul?', a: 'KRW 65,000–100,000 in a standard taxi to most central Seoul destinations; KRW 90,000–130,000 in a deluxe (black) taxi. Gangnam fares run slightly higher at KRW 80,000–110,000.' },
-        { q: 'How long does the taxi take from Incheon to Seoul?', a: '60–90 minutes. Journeys to Gangnam can take 75–100 minutes. During peak hours (8–10am weekdays), allow up to 2 hours.' },
-        { q: 'Is the AREX train better than a taxi from Incheon?', a: 'For solo travellers heading to Seoul Station, Myeongdong, or anywhere well-connected by subway, yes — 43 minutes for KRW 9,500 is exceptional value. For groups of 3+ with luggage, taxis become competitive per person, and for Gangnam destinations, a taxi is more convenient.' },
-        { q: 'What are International taxis at Incheon?', a: 'Pre-bookable taxis with multilingual (English, Chinese, Japanese) drivers, operated through the Korea Airports Corporation. Ideal for first-time visitors who want a confirmed pickup and language support. Book online at the KAC website before arrival.' },
-        { q: 'Do Incheon taxis have card payment?', a: 'Yes — all official taxis at Incheon accept credit and debit cards. Standard, Deluxe, and Jumbo taxis all have card terminals. This is standard across Seoul taxis generally.' },
-        { q: 'Are there taxi scams at Incheon Airport?', a: 'South Korea\'s taxi system is very honest. Incheon is one of the world\'s cleanest airports for taxi scams — unlicensed touts are essentially non-existent. Use the official taxi rank and you will not be overcharged.' },
-      ]},
+      {
+        type: "intro",
+        body: "Incheon International Airport consistently ranks among the world's best airports — and its ground transport system is equally well-organised. Taxis from Incheon to central Seoul are regulated, honest, and available in multiple tiers to suit different budgets and needs. The journey takes 60–90 minutes via the Incheon Bridge and highway, and costs KRW 65,000–100,000 in a standard cab. For groups with heavy luggage or those heading to Gangnam or Hongdae, taxis are genuinely competitive with the train on a per-person basis.",
+      },
+      { type: "h2", heading: "Incheon to Seoul: Key Numbers" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Standard taxi (일반택시)",
+            value: "KRW 65,000–100,000 metered to central Seoul",
+          },
+          {
+            label: "Deluxe taxi (모범택시)",
+            value: "KRW 90,000–130,000 — black, English-friendly, larger",
+          },
+          {
+            label: "Jumbo taxi (대형택시)",
+            value: "KRW 100,000–150,000 — up to 6–9 passengers",
+          },
+          {
+            label: "International taxi (pre-book)",
+            value: "KRW 75,000–120,000 — multilingual driver",
+          },
+          {
+            label: "Highway toll",
+            value: "KRW 7,200–9,000 included in fare or added separately",
+          },
+          {
+            label: "Journey time",
+            value: "60–90 minutes (longer during peak hours)",
+          },
+          {
+            label: "AREX Express train",
+            value: "KRW 9,500 — 43 minutes to Seoul Station",
+          },
+        ],
+      },
+      { type: "h2", heading: "Typical Fares by Destination from Incheon" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Incheon → Seoul Station / Jung-gu",
+            value: "KRW 65,000–80,000 standard taxi",
+          },
+          {
+            label: "Incheon → Myeongdong / Insadong",
+            value: "KRW 68,000–90,000 standard taxi",
+          },
+          {
+            label: "Incheon → Gangnam / COEX",
+            value: "KRW 80,000–110,000 standard taxi (longer route)",
+          },
+          {
+            label: "Incheon → Hongdae / Mapo-gu",
+            value: "KRW 65,000–85,000 standard taxi",
+          },
+          {
+            label: "Incheon → Itaewon / Yongsan",
+            value: "KRW 70,000–90,000 standard taxi",
+          },
+          {
+            label: "Incheon → Dongdaemun",
+            value: "KRW 72,000–95,000 standard taxi",
+          },
+        ],
+      },
+      { type: "h2", heading: "Choosing Your Taxi Type" },
+      {
+        type: "p",
+        body: 'Standard taxis (orange or white, marked "일반택시") are the cheapest option and use the meter. Deluxe taxis (black, marked "모범택시" or "DELUXE") are slightly more expensive but offer larger vehicles, cleaner interiors, and drivers who have passed additional certifications — they are more likely to understand basic English. Jumbo taxis (대형택시) accommodate groups of up to 6–9 passengers and charge more but are practical for families. International taxis are pre-booked via the Korea Airports Corporation website and come with English, Chinese, or Japanese-speaking drivers — excellent for first-time Seoul visitors who want a smooth arrival. All taxis operate from the clearly marked taxi ranks at Terminal 1 and Terminal 2.',
+      },
+      { type: "h2", heading: "AREX Train vs Taxi from Incheon" },
+      {
+        type: "ul",
+        items: [
+          "AREX Express: KRW 9,500, 43 minutes non-stop to Seoul Station — best for solo travellers near Myeongdong or Jung-gu",
+          "AREX All-stop: KRW 4,800, 66 minutes with multiple station stops — cheapest option",
+          "Groups of 3+: split taxi fare is KRW 22,000–35,000 per person — competitive with AREX",
+          "Gangnam-bound: taxi is often more practical; AREX to Seoul Station then subway adds 30+ minutes",
+          "Night travel (midnight–6am): AREX has limited service; taxis operate 24 hours",
+        ],
+      },
+      {
+        type: "tip",
+        body: "Save your hotel address in Korean script before landing. Most standard taxi drivers do not speak English and Korean GPS navigation requires Korean text. Screenshot the Korean address from your hotel booking confirmation, or ask the hotel to send it via email. Deluxe and International taxis can usually handle English hotel names.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Incheon Airport to Seoul?",
+            a: "KRW 65,000–100,000 in a standard taxi to most central Seoul destinations; KRW 90,000–130,000 in a deluxe (black) taxi. Gangnam fares run slightly higher at KRW 80,000–110,000.",
+          },
+          {
+            q: "How long does the taxi take from Incheon to Seoul?",
+            a: "60–90 minutes. Journeys to Gangnam can take 75–100 minutes. During peak hours (8–10am weekdays), allow up to 2 hours.",
+          },
+          {
+            q: "Is the AREX train better than a taxi from Incheon?",
+            a: "For solo travellers heading to Seoul Station, Myeongdong, or anywhere well-connected by subway, yes — 43 minutes for KRW 9,500 is exceptional value. For groups of 3+ with luggage, taxis become competitive per person, and for Gangnam destinations, a taxi is more convenient.",
+          },
+          {
+            q: "What are International taxis at Incheon?",
+            a: "Pre-bookable taxis with multilingual (English, Chinese, Japanese) drivers, operated through the Korea Airports Corporation. Ideal for first-time visitors who want a confirmed pickup and language support. Book online at the KAC website before arrival.",
+          },
+          {
+            q: "Do Incheon taxis have card payment?",
+            a: "Yes — all official taxis at Incheon accept credit and debit cards. Standard, Deluxe, and Jumbo taxis all have card terminals. This is standard across Seoul taxis generally.",
+          },
+          {
+            q: "Are there taxi scams at Incheon Airport?",
+            a: "South Korea's taxi system is very honest. Incheon is one of the world's cleanest airports for taxi scams — unlicensed touts are essentially non-existent. Use the official taxi rank and you will not be overcharged.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'taxi-narita-haneda-to-tokyo',
-    title: 'Taxi from Tokyo Airports to City: Narita & Haneda Costs (2026)',
-    description: "A taxi from Narita to Tokyo costs JPY 20,000–30,000 — the Narita Express does the same trip for JPY 3,070 in under an hour. Haneda is the opposite story: JPY 4,000–8,000 by taxi is genuinely practical. Here's the full 2026 guide to both airports.",
-    publishedAt: '2026-02-10',
+    slug: "taxi-narita-haneda-to-tokyo",
+    title: "Taxi from Tokyo Airports to City: Narita & Haneda Costs (2026)",
+    description:
+      "A taxi from Narita to Tokyo costs JPY 20,000–30,000 — the Narita Express does the same trip for JPY 3,070 in under an hour. Haneda is the opposite story: JPY 4,000–8,000 by taxi is genuinely practical. Here's the full 2026 guide to both airports.",
+    publishedAt: "2026-02-10",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'Tokyo',
-    citySlug: 'tokyo',
+    category: "taxi",
+    city: "Tokyo",
+    citySlug: "tokyo",
     content: [
-      { type: 'intro', body: 'Tokyo is served by two main international airports with completely different taxi economics. Narita (NRT) is 60–80 km from central Tokyo — a taxi there costs JPY 20,000–30,000 and is almost never the right choice. Haneda (HND) is just 15–20 km from the city centre — a taxi costs JPY 4,000–8,000 and is genuinely practical, particularly late at night. If you know which airport you are arriving at and which transport mode suits, you will navigate Tokyo\'s airport connections without overpaying or wasting time.' },
-      { type: 'h2', heading: 'Tokyo Airport Taxi: Key Numbers' },
-      { type: 'table', rows: [
-        { label: 'Narita → central Tokyo (taxi)', value: 'JPY 20,000–30,000 — 60–90 min via highway' },
-        { label: 'Narita → Shinjuku (N\'EX train)', value: 'JPY 3,070 — 59 minutes' },
-        { label: 'Narita → Ueno (Keisei Skyliner)', value: 'JPY 2,570 — 36 minutes' },
-        { label: 'Haneda → central Tokyo (taxi)', value: 'JPY 4,000–8,000 — 30–50 minutes' },
-        { label: 'Haneda → Hamamatsucho (monorail)', value: 'JPY 500 — 13 minutes' },
-        { label: 'Haneda → various (Keikyu train)', value: 'JPY 290–710 — connects to Shinagawa, Shinjuku, Yokohama' },
-        { label: 'Night surcharge (both airports)', value: '+20% on the meter (10pm–5am)' },
-      ]},
-      { type: 'h2', heading: 'Narita Airport: Almost Always Take the Train' },
-      { type: 'p', body: 'At JPY 20,000–30,000 for a taxi to central Tokyo, Narita is one of the most expensive airport taxi journeys in the world. The Narita Express (N\'EX) covers the same distance in under an hour for JPY 3,070 and is comfortable, fast, and reliable. The Keisei Skyliner is even faster to Ueno (36 minutes, JPY 2,570). The only situations where a Narita taxi makes sense: a large group of 4+ splitting the fare, extreme luggage that cannot be managed on trains, or a hotel in a remote location with no practical train connection. For everyone else, the train is the clear choice.' },
-      { type: 'h2', heading: 'Haneda Airport: Taxis Are a Practical Option' },
-      { type: 'p', body: 'Haneda\'s proximity to the city makes taxis genuinely reasonable. JPY 4,000–7,000 to Shibuya, Shinjuku, or Ginza is a fair price for a direct, comfortable ride. After midnight when the monorail and Keikyu trains stop running, taxis are often the most convenient option. Japanese taxis are impeccably maintained — the vehicles are spotless, drivers are professional and precise, and the meter is always used. There are no scams, no unlicensed touts, and no negotiation required.' },
-      { type: 'h2', heading: 'Typical Haneda Fares by Destination' },
-      { type: 'table', rows: [
-        { label: 'Haneda → Shibuya / Shinjuku', value: 'JPY 5,500–7,500 (daytime)' },
-        { label: 'Haneda → Ginza / Nihonbashi', value: 'JPY 4,500–6,500 (daytime)' },
-        { label: 'Haneda → Akihabara / Ueno', value: 'JPY 6,000–8,500 (daytime)' },
-        { label: 'Haneda → Asakusa', value: 'JPY 6,500–9,000 (daytime)' },
-        { label: 'Haneda → Roppongi / Minato-ku', value: 'JPY 4,000–6,000 (daytime)' },
-        { label: 'Haneda → Yokohama', value: 'JPY 5,500–8,000 (daytime)' },
-      ]},
-      { type: 'tip', body: 'Japanese taxi doors open and close automatically — do not touch the passenger door. The driver operates it with a lever from the dashboard. Reaching for the handle is a very common mistake among visitors. Wait for the door to open when the taxi stops, and do not try to close it yourself when exiting.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'How much is a taxi from Narita to Tokyo?', a: 'JPY 20,000–30,000 — among the most expensive airport taxis in the world due to the 60–80 km distance. The Narita Express train (JPY 3,070 to Shinjuku) is almost always the better option.' },
-        { q: 'How much is a taxi from Haneda to Tokyo?', a: 'JPY 4,000–8,000 to most central Tokyo destinations. This is reasonable by international standards and comparable to other major city airports.' },
-        { q: 'Are Japanese taxis reliable and honest?', a: 'Extremely. Japanese taxi drivers are professional, meters are accurate, and overcharging is essentially unheard of. Taxis are clean, air-conditioned, and drivers navigate precisely. No tipping is expected or required.' },
-        { q: 'Does Japan have Uber?', a: 'Uber operates in Japan but in a limited form — licensed taxi drivers fulfil the rides (not private drivers). In Tokyo, it is available but often not cheaper than a regular taxi. DiDi also operates in Tokyo. Both apps are useful for booking with upfront pricing.' },
-        { q: 'What time does the Haneda monorail stop?', a: 'The Tokyo Monorail runs until approximately midnight. After that, taxis are the primary option from Haneda for non-driving destinations. The last Keikyu trains also run until around midnight, with slightly later service on some routes.' },
-        { q: 'Can I share a taxi from Narita with other passengers?', a: 'Yes — "taxi sharing" services are available at Narita for passengers going to similar destinations, which can reduce the per-person cost significantly. Ask at the taxi information counter near the taxi rank in arrivals.' },
-      ]},
+      {
+        type: "intro",
+        body: "Tokyo is served by two main international airports with completely different taxi economics. Narita (NRT) is 60–80 km from central Tokyo — a taxi there costs JPY 20,000–30,000 and is almost never the right choice. Haneda (HND) is just 15–20 km from the city centre — a taxi costs JPY 4,000–8,000 and is genuinely practical, particularly late at night. If you know which airport you are arriving at and which transport mode suits, you will navigate Tokyo's airport connections without overpaying or wasting time.",
+      },
+      { type: "h2", heading: "Tokyo Airport Taxi: Key Numbers" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Narita → central Tokyo (taxi)",
+            value: "JPY 20,000–30,000 — 60–90 min via highway",
+          },
+          {
+            label: "Narita → Shinjuku (N'EX train)",
+            value: "JPY 3,070 — 59 minutes",
+          },
+          {
+            label: "Narita → Ueno (Keisei Skyliner)",
+            value: "JPY 2,570 — 36 minutes",
+          },
+          {
+            label: "Haneda → central Tokyo (taxi)",
+            value: "JPY 4,000–8,000 — 30–50 minutes",
+          },
+          {
+            label: "Haneda → Hamamatsucho (monorail)",
+            value: "JPY 500 — 13 minutes",
+          },
+          {
+            label: "Haneda → various (Keikyu train)",
+            value: "JPY 290–710 — connects to Shinagawa, Shinjuku, Yokohama",
+          },
+          {
+            label: "Night surcharge (both airports)",
+            value: "+20% on the meter (10pm–5am)",
+          },
+        ],
+      },
+      { type: "h2", heading: "Narita Airport: Almost Always Take the Train" },
+      {
+        type: "p",
+        body: "At JPY 20,000–30,000 for a taxi to central Tokyo, Narita is one of the most expensive airport taxi journeys in the world. The Narita Express (N'EX) covers the same distance in under an hour for JPY 3,070 and is comfortable, fast, and reliable. The Keisei Skyliner is even faster to Ueno (36 minutes, JPY 2,570). The only situations where a Narita taxi makes sense: a large group of 4+ splitting the fare, extreme luggage that cannot be managed on trains, or a hotel in a remote location with no practical train connection. For everyone else, the train is the clear choice.",
+      },
+      { type: "h2", heading: "Haneda Airport: Taxis Are a Practical Option" },
+      {
+        type: "p",
+        body: "Haneda's proximity to the city makes taxis genuinely reasonable. JPY 4,000–7,000 to Shibuya, Shinjuku, or Ginza is a fair price for a direct, comfortable ride. After midnight when the monorail and Keikyu trains stop running, taxis are often the most convenient option. Japanese taxis are impeccably maintained — the vehicles are spotless, drivers are professional and precise, and the meter is always used. There are no scams, no unlicensed touts, and no negotiation required.",
+      },
+      { type: "h2", heading: "Typical Haneda Fares by Destination" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Haneda → Shibuya / Shinjuku",
+            value: "JPY 5,500–7,500 (daytime)",
+          },
+          {
+            label: "Haneda → Ginza / Nihonbashi",
+            value: "JPY 4,500–6,500 (daytime)",
+          },
+          {
+            label: "Haneda → Akihabara / Ueno",
+            value: "JPY 6,000–8,500 (daytime)",
+          },
+          { label: "Haneda → Asakusa", value: "JPY 6,500–9,000 (daytime)" },
+          {
+            label: "Haneda → Roppongi / Minato-ku",
+            value: "JPY 4,000–6,000 (daytime)",
+          },
+          { label: "Haneda → Yokohama", value: "JPY 5,500–8,000 (daytime)" },
+        ],
+      },
+      {
+        type: "tip",
+        body: "Japanese taxi doors open and close automatically — do not touch the passenger door. The driver operates it with a lever from the dashboard. Reaching for the handle is a very common mistake among visitors. Wait for the door to open when the taxi stops, and do not try to close it yourself when exiting.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Narita to Tokyo?",
+            a: "JPY 20,000–30,000 — among the most expensive airport taxis in the world due to the 60–80 km distance. The Narita Express train (JPY 3,070 to Shinjuku) is almost always the better option.",
+          },
+          {
+            q: "How much is a taxi from Haneda to Tokyo?",
+            a: "JPY 4,000–8,000 to most central Tokyo destinations. This is reasonable by international standards and comparable to other major city airports.",
+          },
+          {
+            q: "Are Japanese taxis reliable and honest?",
+            a: "Extremely. Japanese taxi drivers are professional, meters are accurate, and overcharging is essentially unheard of. Taxis are clean, air-conditioned, and drivers navigate precisely. No tipping is expected or required.",
+          },
+          {
+            q: "Does Japan have Uber?",
+            a: "Uber operates in Japan but in a limited form — licensed taxi drivers fulfil the rides (not private drivers). In Tokyo, it is available but often not cheaper than a regular taxi. DiDi also operates in Tokyo. Both apps are useful for booking with upfront pricing.",
+          },
+          {
+            q: "What time does the Haneda monorail stop?",
+            a: "The Tokyo Monorail runs until approximately midnight. After that, taxis are the primary option from Haneda for non-driving destinations. The last Keikyu trains also run until around midnight, with slightly later service on some routes.",
+          },
+          {
+            q: "Can I share a taxi from Narita with other passengers?",
+            a: 'Yes — "taxi sharing" services are available at Narita for passengers going to similar destinations, which can reduce the per-person cost significantly. Ask at the taxi information counter near the taxi rank in arrivals.',
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'taxi-fiumicino-to-rome',
-    title: 'Taxi from Fiumicino (FCO) to Rome: Flat Rate & What to Know (2026)',
-    description: "The official Fiumicino to Rome flat rate is €50 for any destination inside the Aurelian Walls — all passengers, all luggage, no surcharges. Illegal touts at arrivals quote €80–150 for the same run. Here's the full 2026 guide to finding the right cab, and when the €14 Leonardo Express wins.",
-    publishedAt: '2026-02-13',
+    slug: "taxi-fiumicino-to-rome",
+    title: "Taxi from Fiumicino (FCO) to Rome: Flat Rate & What to Know (2026)",
+    description:
+      "The official Fiumicino to Rome flat rate is €50 for any destination inside the Aurelian Walls — all passengers, all luggage, no surcharges. Illegal touts at arrivals quote €80–150 for the same run. Here's the full 2026 guide to finding the right cab, and when the €14 Leonardo Express wins.",
+    publishedAt: "2026-02-13",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'Rome',
-    citySlug: 'rome',
+    category: "taxi",
+    city: "Rome",
+    citySlug: "rome",
     content: [
-      { type: 'intro', body: 'Taxis from Rome\'s Fiumicino Airport (FCO) to the city centre operate on an official fixed flat fare of €50 — set by the Rome municipality to protect passengers from overcharging. This fare covers any destination within the Aurelian Walls (the historic centre), and it applies regardless of traffic, time of day, or the number of passengers or bags. The €50 rate is one of the most traveller-friendly airport taxi policies in Europe. No haggling, no surprises, no meter watching — just a fixed price. For destinations outside the Aurelian Walls, the taxi meter applies. The journey takes 30–50 minutes in normal traffic, and up to 75 minutes during morning peak hours.' },
-      { type: 'h2', heading: 'Fiumicino to Rome: Key Numbers' },
-      { type: 'table', rows: [
-        { label: 'Official flat fare (within Aurelian Walls)', value: '€50 — all luggage and passengers included' },
-        { label: 'Outside Aurelian Walls (metered)', value: 'Metered — typically €55–80 to EUR district, Parioli, Ostiense' },
-        { label: 'Night/holiday supplement', value: '+€1.10 added to metered journeys only' },
-        { label: 'Luggage', value: 'No official surcharge — included in the flat rate' },
-        { label: 'Journey time', value: '30–50 minutes (up to 75 minutes in peak traffic)' },
-        { label: 'Maximum passengers', value: '4 passengers in a standard taxi' },
-        { label: 'Leonardo Express (train)', value: '€14 — 32 minutes to Roma Termini' },
-        { label: 'Airport bus (Terravision/SIT)', value: '€6–8 — 55–70 minutes to Termini' },
-      ]},
-      { type: 'h2', heading: 'What Destinations Are Covered by the €50 Flat Rate?' },
-      { type: 'p', body: 'The €50 flat rate applies to all destinations within the Aurelian Walls — Rome\'s ancient city boundary. This covers most of the places tourists want to reach: the Colosseum area, Trastevere, Campo de\' Fiori, Piazza Navona, the Pantheon, Termini station, Prati (near the Vatican), Pigneto, and Testaccio. The key question is whether your hotel falls within the walls. If you\'re not sure, look it up before you land or simply ask the driver to confirm the flat rate applies before you depart.' },
-      { type: 'h2', heading: 'Typical Fares by Route from Fiumicino' },
-      { type: 'table', rows: [
-        { label: 'FCO → Colosseum / Celio', value: '€50 flat (within Aurelian Walls)' },
-        { label: 'FCO → Trastevere', value: '€50 flat (within Aurelian Walls)' },
-        { label: 'FCO → Roma Termini', value: '€50 flat (within Aurelian Walls)' },
-        { label: 'FCO → Vatican / Prati', value: '€50 flat (within Aurelian Walls)' },
-        { label: 'FCO → EUR business district', value: '€50–65 metered (outside Aurelian Walls)' },
-        { label: 'FCO → Parioli / Villa Borghese', value: '€60–75 metered (outside Aurelian Walls)' },
-        { label: 'FCO → Fiumicino town (local)', value: '€15–20 metered (short journey)' },
-      ]},
-      { type: 'h2', heading: 'How to Get an Official Taxi at FCO' },
-      { type: 'p', body: 'Follow signs for "Taxi" in the arrivals area — they\'ll lead you through the terminal to the official taxi rank outside. Official Rome taxis are white with a "TAXI" illuminated roof sign, a municipality registration number on the door panel, and a taximeter on the dashboard. There are official ranks at Terminal 1, Terminal 2, and Terminal 3. You don\'t need to book in advance — the queue moves steadily at almost all hours. When you reach the front of the queue, confirm the flat rate before you get in: say "cinquanta euro, centro storico?" (fifty euros, historic centre?). If the driver agrees and the destination is within the Aurelian Walls, you\'re set. If they quote more, politely decline and take the next cab.' },
-      { type: 'warning', body: 'Illegal taxi touts are common at FCO arrivals. They often wear suits and hold handwritten signs with passenger names, approaching travellers before they reach the official taxi rank. They may claim to be "pre-booked" cars or "airport shuttles" and charge €80–150 for the same journey. Always proceed to the clearly signposted official white taxi queue — never accept a ride from someone who approaches you inside the terminal.' },
-      { type: 'h2', heading: 'Alternatives to the Taxi from Fiumicino' },
-      { type: 'ul', items: [
-        'Leonardo Express: €14, runs every 15 minutes, 32 minutes direct to Roma Termini — best for solo travellers heading to or near Termini',
-        'Terravision / SIT Bus: €6–8, takes 55–70 minutes to Termini — cheapest option but slowest',
-        'FL1 regional train: €8, stops at multiple stations including Ostiense and Trastevere — good if your hotel is near those stations',
-        'Pre-booked transfers: Fixed-price services (Kiwitaxi, Welcome Pickups, iTransfer) — slightly more than the flat taxi rate but trackable and meet-and-greet included',
-        'Car rental: Available at FCO arrivals — not recommended for driving into central Rome due to ZTL restricted zones',
-      ]},
-      { type: 'tip', body: 'Groups of 3–4 people: the €50 flat-rate taxi is almost always the best value, dividing to €12.50 per person — cheaper than the Leonardo Express and door-to-door. Solo travellers: the Leonardo Express at €14 beats the taxi if your hotel is near Termini.' },
-      { type: 'h2', heading: 'How to Pay for Your FCO Taxi' },
-      { type: 'p', body: 'Most official Rome taxis accept both cash (euros) and card, though cash remains preferred by many drivers. Carry at least €50–60 in euros when you arrive, as some drivers may claim their card machine is not working. The €50 flat rate means no need to worry about the meter — just pay the agreed amount at the end. No tip is expected, though rounding up to €55 or handing over €5 for a helpful driver is always appreciated. Do not pay anything until the journey is complete and you\'ve retrieved your luggage from the boot.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'How much is a taxi from Fiumicino to Rome?', a: '€50 flat rate for all destinations within the Aurelian Walls (the historic centre), including luggage and all passengers up to 4. For destinations outside the walls, the meter applies and fares typically run €55–80.' },
-        { q: 'Is the Leonardo Express worth it vs taxi?', a: 'For solo travellers heading to or near Termini station, yes — €14 and 32 minutes is excellent value. For groups of 3–4, or travellers going directly to a hotel in the centre that isn\'t near Termini, the flat-rate taxi wins on convenience and cost per person.' },
-        { q: 'What if my hotel is outside the €50 flat-rate zone?', a: 'The meter applies. Ask the driver for an estimate before you depart. Most central destinations just outside the Aurelian Walls — EUR, Parioli, Ostiense — run €55–75. For the Vatican area (Prati), the flat rate still applies.' },
-        { q: 'How do I avoid scam taxis at Fiumicino?', a: 'Go directly to the official taxi rank signposted in arrivals — never accept a ride from someone who approaches you inside the terminal. Official taxis are white, have an illuminated TAXI sign, and a municipality number on the door. Confirm the €50 flat rate before entering.' },
-        { q: 'How long does the taxi from Fiumicino to Rome centre take?', a: '30–50 minutes in normal conditions. During weekday morning rush hours (7–9am) or Friday afternoon, allow up to 75 minutes. The GRA (ring road) and A90 motorway can be congested — the driver will take the most efficient route.' },
-        { q: 'Can I book a taxi from Fiumicino in advance?', a: 'Yes — pre-booked transfer services like Kiwitaxi, Welcome Pickups, and iTransfer offer fixed-price meet-and-greet options from FCO, typically for €55–75. These are convenient if you want a sign-holder at arrivals and a confirmed price, but the official taxi rank\'s €50 flat rate is usually cheaper for the historic centre.' },
-      ]},
+      {
+        type: "intro",
+        body: "Taxis from Rome's Fiumicino Airport (FCO) to the city centre operate on an official fixed flat fare of €50 — set by the Rome municipality to protect passengers from overcharging. This fare covers any destination within the Aurelian Walls (the historic centre), and it applies regardless of traffic, time of day, or the number of passengers or bags. The €50 rate is one of the most traveller-friendly airport taxi policies in Europe. No haggling, no surprises, no meter watching — just a fixed price. For destinations outside the Aurelian Walls, the taxi meter applies. The journey takes 30–50 minutes in normal traffic, and up to 75 minutes during morning peak hours.",
+      },
+      { type: "h2", heading: "Fiumicino to Rome: Key Numbers" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Official flat fare (within Aurelian Walls)",
+            value: "€50 — all luggage and passengers included",
+          },
+          {
+            label: "Outside Aurelian Walls (metered)",
+            value:
+              "Metered — typically €55–80 to EUR district, Parioli, Ostiense",
+          },
+          {
+            label: "Night/holiday supplement",
+            value: "+€1.10 added to metered journeys only",
+          },
+          {
+            label: "Luggage",
+            value: "No official surcharge — included in the flat rate",
+          },
+          {
+            label: "Journey time",
+            value: "30–50 minutes (up to 75 minutes in peak traffic)",
+          },
+          {
+            label: "Maximum passengers",
+            value: "4 passengers in a standard taxi",
+          },
+          {
+            label: "Leonardo Express (train)",
+            value: "€14 — 32 minutes to Roma Termini",
+          },
+          {
+            label: "Airport bus (Terravision/SIT)",
+            value: "€6–8 — 55–70 minutes to Termini",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "What Destinations Are Covered by the €50 Flat Rate?",
+      },
+      {
+        type: "p",
+        body: "The €50 flat rate applies to all destinations within the Aurelian Walls — Rome's ancient city boundary. This covers most of the places tourists want to reach: the Colosseum area, Trastevere, Campo de' Fiori, Piazza Navona, the Pantheon, Termini station, Prati (near the Vatican), Pigneto, and Testaccio. The key question is whether your hotel falls within the walls. If you're not sure, look it up before you land or simply ask the driver to confirm the flat rate applies before you depart.",
+      },
+      { type: "h2", heading: "Typical Fares by Route from Fiumicino" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "FCO → Colosseum / Celio",
+            value: "€50 flat (within Aurelian Walls)",
+          },
+          {
+            label: "FCO → Trastevere",
+            value: "€50 flat (within Aurelian Walls)",
+          },
+          {
+            label: "FCO → Roma Termini",
+            value: "€50 flat (within Aurelian Walls)",
+          },
+          {
+            label: "FCO → Vatican / Prati",
+            value: "€50 flat (within Aurelian Walls)",
+          },
+          {
+            label: "FCO → EUR business district",
+            value: "€50–65 metered (outside Aurelian Walls)",
+          },
+          {
+            label: "FCO → Parioli / Villa Borghese",
+            value: "€60–75 metered (outside Aurelian Walls)",
+          },
+          {
+            label: "FCO → Fiumicino town (local)",
+            value: "€15–20 metered (short journey)",
+          },
+        ],
+      },
+      { type: "h2", heading: "How to Get an Official Taxi at FCO" },
+      {
+        type: "p",
+        body: 'Follow signs for "Taxi" in the arrivals area — they\'ll lead you through the terminal to the official taxi rank outside. Official Rome taxis are white with a "TAXI" illuminated roof sign, a municipality registration number on the door panel, and a taximeter on the dashboard. There are official ranks at Terminal 1, Terminal 2, and Terminal 3. You don\'t need to book in advance — the queue moves steadily at almost all hours. When you reach the front of the queue, confirm the flat rate before you get in: say "cinquanta euro, centro storico?" (fifty euros, historic centre?). If the driver agrees and the destination is within the Aurelian Walls, you\'re set. If they quote more, politely decline and take the next cab.',
+      },
+      {
+        type: "warning",
+        body: 'Illegal taxi touts are common at FCO arrivals. They often wear suits and hold handwritten signs with passenger names, approaching travellers before they reach the official taxi rank. They may claim to be "pre-booked" cars or "airport shuttles" and charge €80–150 for the same journey. Always proceed to the clearly signposted official white taxi queue — never accept a ride from someone who approaches you inside the terminal.',
+      },
+      { type: "h2", heading: "Alternatives to the Taxi from Fiumicino" },
+      {
+        type: "ul",
+        items: [
+          "Leonardo Express: €14, runs every 15 minutes, 32 minutes direct to Roma Termini — best for solo travellers heading to or near Termini",
+          "Terravision / SIT Bus: €6–8, takes 55–70 minutes to Termini — cheapest option but slowest",
+          "FL1 regional train: €8, stops at multiple stations including Ostiense and Trastevere — good if your hotel is near those stations",
+          "Pre-booked transfers: Fixed-price services (Kiwitaxi, Welcome Pickups, iTransfer) — slightly more than the flat taxi rate but trackable and meet-and-greet included",
+          "Car rental: Available at FCO arrivals — not recommended for driving into central Rome due to ZTL restricted zones",
+        ],
+      },
+      {
+        type: "tip",
+        body: "Groups of 3–4 people: the €50 flat-rate taxi is almost always the best value, dividing to €12.50 per person — cheaper than the Leonardo Express and door-to-door. Solo travellers: the Leonardo Express at €14 beats the taxi if your hotel is near Termini.",
+      },
+      { type: "h2", heading: "How to Pay for Your FCO Taxi" },
+      {
+        type: "p",
+        body: "Most official Rome taxis accept both cash (euros) and card, though cash remains preferred by many drivers. Carry at least €50–60 in euros when you arrive, as some drivers may claim their card machine is not working. The €50 flat rate means no need to worry about the meter — just pay the agreed amount at the end. No tip is expected, though rounding up to €55 or handing over €5 for a helpful driver is always appreciated. Do not pay anything until the journey is complete and you've retrieved your luggage from the boot.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Fiumicino to Rome?",
+            a: "€50 flat rate for all destinations within the Aurelian Walls (the historic centre), including luggage and all passengers up to 4. For destinations outside the walls, the meter applies and fares typically run €55–80.",
+          },
+          {
+            q: "Is the Leonardo Express worth it vs taxi?",
+            a: "For solo travellers heading to or near Termini station, yes — €14 and 32 minutes is excellent value. For groups of 3–4, or travellers going directly to a hotel in the centre that isn't near Termini, the flat-rate taxi wins on convenience and cost per person.",
+          },
+          {
+            q: "What if my hotel is outside the €50 flat-rate zone?",
+            a: "The meter applies. Ask the driver for an estimate before you depart. Most central destinations just outside the Aurelian Walls — EUR, Parioli, Ostiense — run €55–75. For the Vatican area (Prati), the flat rate still applies.",
+          },
+          {
+            q: "How do I avoid scam taxis at Fiumicino?",
+            a: "Go directly to the official taxi rank signposted in arrivals — never accept a ride from someone who approaches you inside the terminal. Official taxis are white, have an illuminated TAXI sign, and a municipality number on the door. Confirm the €50 flat rate before entering.",
+          },
+          {
+            q: "How long does the taxi from Fiumicino to Rome centre take?",
+            a: "30–50 minutes in normal conditions. During weekday morning rush hours (7–9am) or Friday afternoon, allow up to 75 minutes. The GRA (ring road) and A90 motorway can be congested — the driver will take the most efficient route.",
+          },
+          {
+            q: "Can I book a taxi from Fiumicino in advance?",
+            a: "Yes — pre-booked transfer services like Kiwitaxi, Welcome Pickups, and iTransfer offer fixed-price meet-and-greet options from FCO, typically for €55–75. These are convenient if you want a sign-holder at arrivals and a confirmed price, but the official taxi rank's €50 flat rate is usually cheaper for the historic centre.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'taxi-el-prat-to-barcelona',
-    title: 'Taxi from Barcelona Airport (El Prat) to City: Cost & Tips (2026)',
-    description: 'Barcelona airport taxis use the meter — here\'s what to expect, typical fares, and how to avoid the common overcharges.',
-    publishedAt: '2026-02-17',
+    slug: "taxi-el-prat-to-barcelona",
+    title: "Taxi from Barcelona Airport (El Prat) to City: Cost & Tips (2026)",
+    description:
+      "Barcelona airport taxis use the meter — here's what to expect, typical fares, and how to avoid the common overcharges.",
+    publishedAt: "2026-02-17",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'Barcelona',
-    citySlug: 'barcelona',
+    category: "taxi",
+    city: "Barcelona",
+    citySlug: "barcelona",
     content: [
-      { type: 'intro', body: 'Taxis from Barcelona El Prat Airport (BCN) to the city centre are metered, yellow-and-black, and well-regulated by the Barcelona Metropolitan Area authority. The typical fare to central Barcelona — Las Ramblas, the Gothic Quarter, Eixample, or Gràcia — runs €30–45 including the mandatory airport supplement. The journey takes 20–40 minutes. Barcelona taxis are generally honest, but a handful of specific supplements confuse visitors, and a minority of drivers exploit that confusion. Knowing what is legitimate and what is not will make the difference.' },
-      { type: 'h2', heading: 'El Prat to Barcelona: Key Numbers' },
-      { type: 'table', rows: [
-        { label: 'Metered fare (city centre)', value: '€25–38 before supplements' },
-        { label: 'Airport supplement', value: '€4.20 — applied to all airport journeys' },
-        { label: 'Large luggage supplement', value: '€1.10 per piece over 55cm' },
-        { label: 'Night rate (Tariff 2: 9pm–7am)', value: '~20% higher metered rate' },
-        { label: 'Total fare (daytime, city centre)', value: '€30–45 all-in' },
-        { label: 'Total fare (night, city centre)', value: '€38–55 all-in' },
-        { label: 'Journey time', value: '20–40 minutes' },
-        { label: 'Aerobús to Plaça Catalunya', value: '€6.75 — 35 minutes' },
-      ]},
-      { type: 'h2', heading: 'Typical Fares by Destination from El Prat' },
-      { type: 'table', rows: [
-        { label: 'El Prat → Las Ramblas / Gothic Quarter', value: '€30–40 daytime all-in' },
-        { label: 'El Prat → Eixample (Sagrada Família area)', value: '€32–42 daytime all-in' },
-        { label: 'El Prat → Gràcia / Park Güell area', value: '€35–45 daytime all-in' },
-        { label: 'El Prat → Barceloneta / Port Olímpic', value: '€28–38 daytime all-in' },
-        { label: 'El Prat → Gràcia / Sant Gervasi (upper)', value: '€38–50 daytime all-in' },
-        { label: 'El Prat → Cruise Port / Moll de la Fusta', value: '€28–38 daytime all-in' },
-      ]},
-      { type: 'h2', heading: 'Understanding the Supplements' },
-      { type: 'p', body: 'Barcelona\'s taxi supplement system is transparent but easy to misunderstand. The €4.20 airport supplement is mandatory and legitimate — it will appear on the meter display, usually as "S" or "Suplement" at the start of the journey. The luggage supplement (€1.10 per large piece) is also legitimate but only applies to bags over 55cm in any dimension — standard carry-on sized bags should not incur a charge. The night rate (Tariff 2) applies from 9pm to 7am and on weekends/holidays — you will see "T2" on the meter display. These are genuine official supplements. Any other charges not explained by the driver before departure are worth querying.' },
-      { type: 'h2', heading: 'Getting a Taxi at El Prat' },
-      { type: 'p', body: 'Barcelona taxis are yellow and black — distinctive and easy to identify. The official taxi rank at Terminal 1 is outside the arrivals exit (follow signs). Terminal 2 has its own rank directly outside the arrivals hall. Both are well-lit and staffed at busy times. The meter starts at €2.15 (day) or €2.35 (night) — confirm it is running before the car moves. Uber and Cabify also operate at El Prat from designated pick-up zones and offer upfront pricing.' },
-      { type: 'h2', heading: 'Alternatives to Taxis from El Prat' },
-      { type: 'ul', items: [
-        'Aerobús (A1 from T1, A2 from T2): €6.75, 35 minutes direct to Plaça Catalunya — best for solo travellers',
-        'Metro L9 Sud: €5.15 — connects to L1, L3, L5 at various stations; takes longer due to transfers but covers more of the city',
-        'Renfe train (R2 Nord): €4.60, 20 minutes to Sants / Passeig de Gràcia — T2 only, excellent if your hotel is near those stations',
-        'Uber / Cabify: €28–45 with upfront pricing — comparable to taxi, avoids meter uncertainty',
-      ]},
-      { type: 'tip', body: 'For groups of 3 or more, the taxi becomes very competitive with the Aerobús. Three passengers splitting €38 pay €12.70 each — less than the Aerobús and door-to-door. Four passengers make it even better value. Solo travellers: the Aerobús at €6.75 is an excellent deal.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'How much is a taxi from Barcelona airport to the city?', a: '€30–45 all-in for daytime travel to the city centre, including the €4.20 airport supplement and any luggage charges. Night fares (9pm–7am) run €38–55.' },
-        { q: 'How long does the taxi take from El Prat to Barcelona?', a: '20–35 minutes in light traffic. During morning and evening peak hours (8–9:30am, 6–8pm), allow 45–60 minutes.' },
-        { q: 'Are Barcelona taxis reliable?', a: 'Generally yes — most use the meter correctly and the supplement structure is official. The yellow-and-black colour, working meter, and willingness to show the fare on the display are all good signs. Decline any driver who quotes a "fixed price" significantly above the typical range.' },
-        { q: 'Is there a direct train from El Prat to Barcelona?', a: 'Yes — from Terminal 2 only, the Renfe R2 Nord train runs to Sants and Passeig de Gràcia in about 20 minutes for €4.60. Terminal 1 has no direct train; use the free shuttle bus to T2 or take the Aerobús.' },
-        { q: 'What is the Aerobús and is it better than a taxi?', a: 'The Aerobús is a direct coach service from both terminals to Plaça Catalunya, Passeig de Gràcia, and Sants for €6.75. It runs every 5–10 minutes. For solo travellers or couples without heavy luggage, it is the best-value option. Taxis are better for groups or those with large bags.' },
-        { q: 'Is Uber available at Barcelona airport?', a: 'Yes — Uber and Cabify both operate at El Prat from designated ride-hailing pick-up zones. Fares are upfront and typically €28–45 to the city centre, comparable to taxis with slightly less meter uncertainty.' },
-      ]},
+      {
+        type: "intro",
+        body: "Taxis from Barcelona El Prat Airport (BCN) to the city centre are metered, yellow-and-black, and well-regulated by the Barcelona Metropolitan Area authority. The typical fare to central Barcelona — Las Ramblas, the Gothic Quarter, Eixample, or Gràcia — runs €30–45 including the mandatory airport supplement. The journey takes 20–40 minutes. Barcelona taxis are generally honest, but a handful of specific supplements confuse visitors, and a minority of drivers exploit that confusion. Knowing what is legitimate and what is not will make the difference.",
+      },
+      { type: "h2", heading: "El Prat to Barcelona: Key Numbers" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Metered fare (city centre)",
+            value: "€25–38 before supplements",
+          },
+          {
+            label: "Airport supplement",
+            value: "€4.20 — applied to all airport journeys",
+          },
+          {
+            label: "Large luggage supplement",
+            value: "€1.10 per piece over 55cm",
+          },
+          {
+            label: "Night rate (Tariff 2: 9pm–7am)",
+            value: "~20% higher metered rate",
+          },
+          {
+            label: "Total fare (daytime, city centre)",
+            value: "€30–45 all-in",
+          },
+          { label: "Total fare (night, city centre)", value: "€38–55 all-in" },
+          { label: "Journey time", value: "20–40 minutes" },
+          { label: "Aerobús to Plaça Catalunya", value: "€6.75 — 35 minutes" },
+        ],
+      },
+      { type: "h2", heading: "Typical Fares by Destination from El Prat" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "El Prat → Las Ramblas / Gothic Quarter",
+            value: "€30–40 daytime all-in",
+          },
+          {
+            label: "El Prat → Eixample (Sagrada Família area)",
+            value: "€32–42 daytime all-in",
+          },
+          {
+            label: "El Prat → Gràcia / Park Güell area",
+            value: "€35–45 daytime all-in",
+          },
+          {
+            label: "El Prat → Barceloneta / Port Olímpic",
+            value: "€28–38 daytime all-in",
+          },
+          {
+            label: "El Prat → Gràcia / Sant Gervasi (upper)",
+            value: "€38–50 daytime all-in",
+          },
+          {
+            label: "El Prat → Cruise Port / Moll de la Fusta",
+            value: "€28–38 daytime all-in",
+          },
+        ],
+      },
+      { type: "h2", heading: "Understanding the Supplements" },
+      {
+        type: "p",
+        body: 'Barcelona\'s taxi supplement system is transparent but easy to misunderstand. The €4.20 airport supplement is mandatory and legitimate — it will appear on the meter display, usually as "S" or "Suplement" at the start of the journey. The luggage supplement (€1.10 per large piece) is also legitimate but only applies to bags over 55cm in any dimension — standard carry-on sized bags should not incur a charge. The night rate (Tariff 2) applies from 9pm to 7am and on weekends/holidays — you will see "T2" on the meter display. These are genuine official supplements. Any other charges not explained by the driver before departure are worth querying.',
+      },
+      { type: "h2", heading: "Getting a Taxi at El Prat" },
+      {
+        type: "p",
+        body: "Barcelona taxis are yellow and black — distinctive and easy to identify. The official taxi rank at Terminal 1 is outside the arrivals exit (follow signs). Terminal 2 has its own rank directly outside the arrivals hall. Both are well-lit and staffed at busy times. The meter starts at €2.15 (day) or €2.35 (night) — confirm it is running before the car moves. Uber and Cabify also operate at El Prat from designated pick-up zones and offer upfront pricing.",
+      },
+      { type: "h2", heading: "Alternatives to Taxis from El Prat" },
+      {
+        type: "ul",
+        items: [
+          "Aerobús (A1 from T1, A2 from T2): €6.75, 35 minutes direct to Plaça Catalunya — best for solo travellers",
+          "Metro L9 Sud: €5.15 — connects to L1, L3, L5 at various stations; takes longer due to transfers but covers more of the city",
+          "Renfe train (R2 Nord): €4.60, 20 minutes to Sants / Passeig de Gràcia — T2 only, excellent if your hotel is near those stations",
+          "Uber / Cabify: €28–45 with upfront pricing — comparable to taxi, avoids meter uncertainty",
+        ],
+      },
+      {
+        type: "tip",
+        body: "For groups of 3 or more, the taxi becomes very competitive with the Aerobús. Three passengers splitting €38 pay €12.70 each — less than the Aerobús and door-to-door. Four passengers make it even better value. Solo travellers: the Aerobús at €6.75 is an excellent deal.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Barcelona airport to the city?",
+            a: "€30–45 all-in for daytime travel to the city centre, including the €4.20 airport supplement and any luggage charges. Night fares (9pm–7am) run €38–55.",
+          },
+          {
+            q: "How long does the taxi take from El Prat to Barcelona?",
+            a: "20–35 minutes in light traffic. During morning and evening peak hours (8–9:30am, 6–8pm), allow 45–60 minutes.",
+          },
+          {
+            q: "Are Barcelona taxis reliable?",
+            a: 'Generally yes — most use the meter correctly and the supplement structure is official. The yellow-and-black colour, working meter, and willingness to show the fare on the display are all good signs. Decline any driver who quotes a "fixed price" significantly above the typical range.',
+          },
+          {
+            q: "Is there a direct train from El Prat to Barcelona?",
+            a: "Yes — from Terminal 2 only, the Renfe R2 Nord train runs to Sants and Passeig de Gràcia in about 20 minutes for €4.60. Terminal 1 has no direct train; use the free shuttle bus to T2 or take the Aerobús.",
+          },
+          {
+            q: "What is the Aerobús and is it better than a taxi?",
+            a: "The Aerobús is a direct coach service from both terminals to Plaça Catalunya, Passeig de Gràcia, and Sants for €6.75. It runs every 5–10 minutes. For solo travellers or couples without heavy luggage, it is the best-value option. Taxis are better for groups or those with large bags.",
+          },
+          {
+            q: "Is Uber available at Barcelona airport?",
+            a: "Yes — Uber and Cabify both operate at El Prat from designated ride-hailing pick-up zones. Fares are upfront and typically €28–45 to the city centre, comparable to taxis with slightly less meter uncertainty.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'taxi-schiphol-to-amsterdam',
-    title: 'Taxi from Schiphol Airport to Amsterdam: Cost & Guide (2026)',
-    description: "A legitimate taxi from Schiphol to central Amsterdam costs €40–55 — but unofficial drivers outside the official zone charge €80–130 for the same ride. Here's the full 2026 guide to finding the right taxi, and why the €5.30 train under the airport beats both.",
-    publishedAt: '2026-02-21',
+    slug: "taxi-schiphol-to-amsterdam",
+    title: "Taxi from Schiphol Airport to Amsterdam: Cost & Guide (2026)",
+    description:
+      "A legitimate taxi from Schiphol to central Amsterdam costs €40–55 — but unofficial drivers outside the official zone charge €80–130 for the same ride. Here's the full 2026 guide to finding the right taxi, and why the €5.30 train under the airport beats both.",
+    publishedAt: "2026-02-21",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'Amsterdam',
-    citySlug: 'amsterdam',
+    category: "taxi",
+    city: "Amsterdam",
+    citySlug: "amsterdam",
     content: [
-      { type: 'intro', body: 'Taxis from Amsterdam Schiphol Airport to the city centre are metered but not price-regulated — different companies charge different rates, and Schiphol has historically been one of Europe\'s most complained-about airports for taxi overcharging. A legitimate fare from Schiphol to central Amsterdam runs €40–55. Unofficial drivers and touts charge €80–130 for the same journey. The good news: Schiphol has significantly cleaned up the problem with official taxi zones and a code-of-conduct programme, and Uber and Bolt now provide a reliable upfront-pricing alternative. The best option of all is the train, which runs under the airport in 15–20 minutes for €5.30.' },
-      { type: 'h2', heading: 'Schiphol to Amsterdam: Key Numbers' },
-      { type: 'table', rows: [
-        { label: 'Legitimate taxi fare (city centre)', value: '€40–55 metered' },
-        { label: 'Unofficial taxi (overcharge risk)', value: '€80–130 — avoid' },
-        { label: 'Uber / Bolt (upfront pricing)', value: '€35–55 — recommended alternative' },
-        { label: 'Train to Amsterdam Centraal', value: '€5.30 — 15–20 minutes' },
-        { label: 'Journey time (taxi)', value: '25–40 minutes in normal traffic' },
-        { label: 'Distance to Centraal', value: '~18 km' },
-        { label: 'Night surcharge', value: 'Varies by company — ask before getting in' },
-      ]},
-      { type: 'h2', heading: 'Typical Taxi Fares by Destination' },
-      { type: 'table', rows: [
-        { label: 'Schiphol → Amsterdam Centraal / Centre', value: '€40–55 legitimate taxi' },
-        { label: 'Schiphol → De Pijp / Oud-Zuid', value: '€35–50 legitimate taxi' },
-        { label: 'Schiphol → Jordaan / Leidseplein', value: '€42–58 legitimate taxi' },
-        { label: 'Schiphol → Amsterdam Noord', value: '€50–65 legitimate taxi' },
-        { label: 'Schiphol → Amstelveen (nearby)', value: '€20–30 legitimate taxi — short journey' },
-      ]},
-      { type: 'h2', heading: 'How to Get a Legitimate Taxi at Schiphol' },
-      { type: 'p', body: 'Schiphol\'s official taxi zone is located outside the main arrivals hall (follow signs for "Taxi"). Only taxis in this designated zone have agreed to Schiphol\'s code of conduct, which requires reasonable metered rates and prohibition of touting. Do not accept any ride offered by someone who approaches you inside the terminal — this is always a warning sign. The Schiphol Taxi app allows you to book an official taxi before you arrive. Uber and Bolt have designated pick-up zones at Schiphol and offer completely upfront pricing — for many visitors these are the most convenient and predictable option.' },
-      { type: 'warning', body: 'Schiphol\'s overcharging problem is real and ongoing. Unofficial drivers have been documented charging €100–130 for journeys that cost €45 in the official zone. If a driver approaches you inside the terminal, decline. If a taxi outside quotes a fixed price above €60 for the city centre, walk to the next cab or open Uber.' },
-      { type: 'h2', heading: 'The Train: Almost Always the Best Option' },
-      { type: 'p', body: 'Schiphol station sits directly beneath the airport terminal — accessible via escalators from the arrivals hall, no outdoor walking required. Intercity Direct and Sprinter trains to Amsterdam Centraal run every 10–15 minutes, take 15–20 minutes, and cost €5.30 with an OV-chipkaart or a single-use ticket. From Centraal, Amsterdam\'s tram and metro network covers the rest of the city cheaply. The only reasons to choose a taxi over the train: significant luggage, a hotel not accessible from Centraal without another connection, or travelling as a group of 3–4 where the taxi cost per head approaches the train fare.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'How much is a taxi from Schiphol to Amsterdam?', a: '€40–55 for a legitimate metered taxi from the official zone. Unofficial drivers and touts may quote €80–130 for the same journey — always use the official zone or Uber/Bolt.' },
-        { q: 'Is the train better than a taxi from Schiphol?', a: 'For most travellers, yes. 15–20 minutes to Amsterdam Centraal for €5.30 is exceptional value. Taxis make sense for groups of 3–4, those with heavy luggage, or destinations not well-served by trains and trams.' },
-        { q: 'Is Uber available at Schiphol?', a: 'Yes — Uber and Bolt both operate from designated pick-up zones at Schiphol. Upfront pricing makes them a reliable alternative to metered taxis, eliminating the risk of being overcharged.' },
-        { q: 'How do I avoid taxi scams at Schiphol?', a: 'Never accept a ride from anyone who approaches you inside the terminal. Use the official taxi zone outside arrivals, book via the Schiphol Taxi app, or use Uber/Bolt. If a driver quotes above €60 for the city centre, decline and try the next cab.' },
-        { q: 'How long does the taxi take from Schiphol to Amsterdam?', a: '25–40 minutes in normal conditions. During morning peak hours (8–9:30am) and afternoon rush (5–7pm), allow up to 60 minutes due to motorway traffic around Amsterdam.' },
-        { q: 'Can I pay by card in Schiphol taxis?', a: 'Most legitimate Schiphol taxis accept card payments. Confirm before getting in. Uber and Bolt charge your card on file automatically. Having some cash (euros) as backup is sensible.' },
-      ]},
+      {
+        type: "intro",
+        body: "Taxis from Amsterdam Schiphol Airport to the city centre are metered but not price-regulated — different companies charge different rates, and Schiphol has historically been one of Europe's most complained-about airports for taxi overcharging. A legitimate fare from Schiphol to central Amsterdam runs €40–55. Unofficial drivers and touts charge €80–130 for the same journey. The good news: Schiphol has significantly cleaned up the problem with official taxi zones and a code-of-conduct programme, and Uber and Bolt now provide a reliable upfront-pricing alternative. The best option of all is the train, which runs under the airport in 15–20 minutes for €5.30.",
+      },
+      { type: "h2", heading: "Schiphol to Amsterdam: Key Numbers" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Legitimate taxi fare (city centre)",
+            value: "€40–55 metered",
+          },
+          {
+            label: "Unofficial taxi (overcharge risk)",
+            value: "€80–130 — avoid",
+          },
+          {
+            label: "Uber / Bolt (upfront pricing)",
+            value: "€35–55 — recommended alternative",
+          },
+          {
+            label: "Train to Amsterdam Centraal",
+            value: "€5.30 — 15–20 minutes",
+          },
+          {
+            label: "Journey time (taxi)",
+            value: "25–40 minutes in normal traffic",
+          },
+          { label: "Distance to Centraal", value: "~18 km" },
+          {
+            label: "Night surcharge",
+            value: "Varies by company — ask before getting in",
+          },
+        ],
+      },
+      { type: "h2", heading: "Typical Taxi Fares by Destination" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Schiphol → Amsterdam Centraal / Centre",
+            value: "€40–55 legitimate taxi",
+          },
+          {
+            label: "Schiphol → De Pijp / Oud-Zuid",
+            value: "€35–50 legitimate taxi",
+          },
+          {
+            label: "Schiphol → Jordaan / Leidseplein",
+            value: "€42–58 legitimate taxi",
+          },
+          {
+            label: "Schiphol → Amsterdam Noord",
+            value: "€50–65 legitimate taxi",
+          },
+          {
+            label: "Schiphol → Amstelveen (nearby)",
+            value: "€20–30 legitimate taxi — short journey",
+          },
+        ],
+      },
+      { type: "h2", heading: "How to Get a Legitimate Taxi at Schiphol" },
+      {
+        type: "p",
+        body: "Schiphol's official taxi zone is located outside the main arrivals hall (follow signs for \"Taxi\"). Only taxis in this designated zone have agreed to Schiphol's code of conduct, which requires reasonable metered rates and prohibition of touting. Do not accept any ride offered by someone who approaches you inside the terminal — this is always a warning sign. The Schiphol Taxi app allows you to book an official taxi before you arrive. Uber and Bolt have designated pick-up zones at Schiphol and offer completely upfront pricing — for many visitors these are the most convenient and predictable option.",
+      },
+      {
+        type: "warning",
+        body: "Schiphol's overcharging problem is real and ongoing. Unofficial drivers have been documented charging €100–130 for journeys that cost €45 in the official zone. If a driver approaches you inside the terminal, decline. If a taxi outside quotes a fixed price above €60 for the city centre, walk to the next cab or open Uber.",
+      },
+      { type: "h2", heading: "The Train: Almost Always the Best Option" },
+      {
+        type: "p",
+        body: "Schiphol station sits directly beneath the airport terminal — accessible via escalators from the arrivals hall, no outdoor walking required. Intercity Direct and Sprinter trains to Amsterdam Centraal run every 10–15 minutes, take 15–20 minutes, and cost €5.30 with an OV-chipkaart or a single-use ticket. From Centraal, Amsterdam's tram and metro network covers the rest of the city cheaply. The only reasons to choose a taxi over the train: significant luggage, a hotel not accessible from Centraal without another connection, or travelling as a group of 3–4 where the taxi cost per head approaches the train fare.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Schiphol to Amsterdam?",
+            a: "€40–55 for a legitimate metered taxi from the official zone. Unofficial drivers and touts may quote €80–130 for the same journey — always use the official zone or Uber/Bolt.",
+          },
+          {
+            q: "Is the train better than a taxi from Schiphol?",
+            a: "For most travellers, yes. 15–20 minutes to Amsterdam Centraal for €5.30 is exceptional value. Taxis make sense for groups of 3–4, those with heavy luggage, or destinations not well-served by trains and trams.",
+          },
+          {
+            q: "Is Uber available at Schiphol?",
+            a: "Yes — Uber and Bolt both operate from designated pick-up zones at Schiphol. Upfront pricing makes them a reliable alternative to metered taxis, eliminating the risk of being overcharged.",
+          },
+          {
+            q: "How do I avoid taxi scams at Schiphol?",
+            a: "Never accept a ride from anyone who approaches you inside the terminal. Use the official taxi zone outside arrivals, book via the Schiphol Taxi app, or use Uber/Bolt. If a driver quotes above €60 for the city centre, decline and try the next cab.",
+          },
+          {
+            q: "How long does the taxi take from Schiphol to Amsterdam?",
+            a: "25–40 minutes in normal conditions. During morning peak hours (8–9:30am) and afternoon rush (5–7pm), allow up to 60 minutes due to motorway traffic around Amsterdam.",
+          },
+          {
+            q: "Can I pay by card in Schiphol taxis?",
+            a: "Most legitimate Schiphol taxis accept card payments. Confirm before getting in. Uber and Bolt charge your card on file automatically. Having some cash (euros) as backup is sensible.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'taxi-sydney-airport-to-city',
-    title: 'Taxi from Sydney Airport to the CBD: Cost & Guide (2026)',
-    description: "Sydney Airport to the CBD costs AUD $45–65 by taxi — the Airport Link train is faster at 13 minutes but its $16.48 station surcharge makes it worse value than a taxi for any group of two or more. Here's the full 2026 fare breakdown.",
-    publishedAt: '2026-02-24',
+    slug: "taxi-sydney-airport-to-city",
+    title: "Taxi from Sydney Airport to the CBD: Cost & Guide (2026)",
+    description:
+      "Sydney Airport to the CBD costs AUD $45–65 by taxi — the Airport Link train is faster at 13 minutes but its $16.48 station surcharge makes it worse value than a taxi for any group of two or more. Here's the full 2026 fare breakdown.",
+    publishedAt: "2026-02-24",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'Sydney',
-    citySlug: 'sydney',
+    category: "taxi",
+    city: "Sydney",
+    citySlug: "sydney",
     content: [
-      { type: 'intro', body: 'Taxis from Sydney Kingsford Smith Airport (SYD) to the CBD are metered, reliable, and regulated by the NSW Government. The typical fare to central Sydney runs AUD $45–65 including the airport pick-up levy and the M5 East tunnel toll. Journey time is 20–40 minutes depending on traffic. Sydney taxis are honest — the meter is always used, overcharging is genuinely rare, and drivers are licensed and regulated. The key decision at Sydney Airport is whether to take a taxi or the Airport Link train, which is fast but carries a surprisingly expensive station access fee.' },
-      { type: 'h2', heading: 'Sydney Airport to CBD: Key Numbers' },
-      { type: 'table', rows: [
-        { label: 'Metered fare (CBD / Circular Quay)', value: 'AUD $45–65 all-in' },
-        { label: 'Airport pick-up levy', value: 'AUD $4.30 — built into the metered start charge' },
-        { label: 'M5 East tunnel toll', value: 'AUD $3.50–6 — paid by passenger, charged to meter' },
-        { label: 'Night surcharge (10pm–6am)', value: '20% on the metered fare' },
-        { label: 'Uber (UberX)', value: 'AUD $40–70 depending on surge pricing' },
-        { label: 'Airport Link train', value: 'AUD $22.24 to City Circle stations — 13 minutes' },
-        { label: 'Journey time (taxi)', value: '20–40 minutes' },
-        { label: 'Distance to CBD', value: 'Approximately 10 km' },
-      ]},
-      { type: 'h2', heading: 'Typical Fares by Destination from Sydney Airport' },
-      { type: 'table', rows: [
-        { label: 'SYD → CBD / Town Hall / Circular Quay', value: 'AUD $48–65 all-in (daytime)' },
-        { label: 'SYD → Darling Harbour / Pyrmont', value: 'AUD $50–68 all-in (daytime)' },
-        { label: 'SYD → Surry Hills / Darlinghurst', value: 'AUD $40–55 all-in (daytime, no tunnel)' },
-        { label: 'SYD → Bondi Beach', value: 'AUD $45–60 all-in (daytime)' },
-        { label: 'SYD → North Sydney / Crows Nest', value: 'AUD $60–80 all-in — bridge toll applies' },
-        { label: 'SYD → Manly (via bridge)', value: 'AUD $70–90 all-in — long journey' },
-      ]},
-      { type: 'h2', heading: 'Finding Taxis at Sydney Airport' },
-      { type: 'p', body: 'Taxi ranks are located on the ground level outside both the International Terminal (T1) and the Domestic terminals (T2 and T3). Follow the green taxi signs from the arrivals hall. All Sydney taxis are metered (no fixed fares) and must display their licence number on the door. When you enter the taxi, the driver will start the meter — the initial amount includes the AUD $4.30 airport pick-up levy. The M5 East tunnel is the fastest route to the CBD and taxis use it by default; the toll is passed to the passenger and added to the meter. If you want to avoid the toll, you can ask the driver to take surface roads, though this is slower.' },
-      { type: 'h2', heading: 'Airport Link Train vs Taxi' },
-      { type: 'ul', items: [
-        'Airport Link: AUD $22.24 to City Circle (13 minutes) — fast, but Sydney has the highest airport train surcharge in Australia (AUD $16.48 on top of Opal fare)',
-        'For groups of 2+, the taxi per-person cost approaches or beats the train once you include the surcharge',
-        'Bondi, Manly, Northern Beaches: taxi or Uber is the only practical option — no direct train',
-        'Taxi with Opal card (tram/bus) can be cheaper than full taxi for destinations near City Circle stations',
-        'Uber: AUD $40–70 with upfront pricing from designated ride-share zones at T1 and T2/T3',
-      ]},
-      { type: 'tip', body: 'The Sydney Airport train surcharge (AUD $16.48) makes the train far more expensive than it appears. At AUD $22+ per person, a group of two pays AUD $44+ on the train versus AUD $50–65 total in a taxi. For any group of 2 or more, the taxi is often better value — and goes door-to-door.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'How much is a taxi from Sydney Airport to the CBD?', a: 'AUD $45–65 all-in, including the AUD $4.30 airport levy and M5 East tunnel toll. Night fares (10pm–6am) are approximately 20% higher.' },
-        { q: 'Is Uber available at Sydney Airport?', a: 'Yes — from designated ride-share pick-up zones at T1 (International) and T2/T3 (Domestic). Fares are upfront and typically AUD $40–70 depending on demand and destination.' },
-        { q: 'Is the Airport Link train worth it from Sydney Airport?', a: 'It depends on your group size. Solo travellers: AUD $22.24 is expensive for a 13-minute ride but saves time. Groups of 2+: taxi is often similar or cheaper per person and goes door-to-door.' },
-        { q: 'How do I get to Bondi Beach from Sydney Airport?', a: 'Taxi or Uber is the most practical option (AUD $45–60). The Airport Link train to Bondi Junction connects to the 380 bus to Bondi Beach, but with luggage this is inconvenient. Expect AUD $50–60 total for a direct taxi.' },
-        { q: 'What is the M5 East toll and do I have to pay it?', a: 'The M5 East is a tunnel connecting the airport to the CBD — the fastest route. The toll varies (AUD $3.50–6) and is paid by the passenger, added to the meter. You can ask the driver to avoid it via surface roads, but this adds 10–20 minutes.' },
-        { q: 'Are Sydney taxis safe and honest?', a: 'Yes — Sydney taxis are well-regulated, metered, and overcharging is rare. Drivers are licensed and must display their ID. The standard experience is straightforward and professional.' },
-      ]},
+      {
+        type: "intro",
+        body: "Taxis from Sydney Kingsford Smith Airport (SYD) to the CBD are metered, reliable, and regulated by the NSW Government. The typical fare to central Sydney runs AUD $45–65 including the airport pick-up levy and the M5 East tunnel toll. Journey time is 20–40 minutes depending on traffic. Sydney taxis are honest — the meter is always used, overcharging is genuinely rare, and drivers are licensed and regulated. The key decision at Sydney Airport is whether to take a taxi or the Airport Link train, which is fast but carries a surprisingly expensive station access fee.",
+      },
+      { type: "h2", heading: "Sydney Airport to CBD: Key Numbers" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Metered fare (CBD / Circular Quay)",
+            value: "AUD $45–65 all-in",
+          },
+          {
+            label: "Airport pick-up levy",
+            value: "AUD $4.30 — built into the metered start charge",
+          },
+          {
+            label: "M5 East tunnel toll",
+            value: "AUD $3.50–6 — paid by passenger, charged to meter",
+          },
+          {
+            label: "Night surcharge (10pm–6am)",
+            value: "20% on the metered fare",
+          },
+          {
+            label: "Uber (UberX)",
+            value: "AUD $40–70 depending on surge pricing",
+          },
+          {
+            label: "Airport Link train",
+            value: "AUD $22.24 to City Circle stations — 13 minutes",
+          },
+          { label: "Journey time (taxi)", value: "20–40 minutes" },
+          { label: "Distance to CBD", value: "Approximately 10 km" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Typical Fares by Destination from Sydney Airport",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "SYD → CBD / Town Hall / Circular Quay",
+            value: "AUD $48–65 all-in (daytime)",
+          },
+          {
+            label: "SYD → Darling Harbour / Pyrmont",
+            value: "AUD $50–68 all-in (daytime)",
+          },
+          {
+            label: "SYD → Surry Hills / Darlinghurst",
+            value: "AUD $40–55 all-in (daytime, no tunnel)",
+          },
+          { label: "SYD → Bondi Beach", value: "AUD $45–60 all-in (daytime)" },
+          {
+            label: "SYD → North Sydney / Crows Nest",
+            value: "AUD $60–80 all-in — bridge toll applies",
+          },
+          {
+            label: "SYD → Manly (via bridge)",
+            value: "AUD $70–90 all-in — long journey",
+          },
+        ],
+      },
+      { type: "h2", heading: "Finding Taxis at Sydney Airport" },
+      {
+        type: "p",
+        body: "Taxi ranks are located on the ground level outside both the International Terminal (T1) and the Domestic terminals (T2 and T3). Follow the green taxi signs from the arrivals hall. All Sydney taxis are metered (no fixed fares) and must display their licence number on the door. When you enter the taxi, the driver will start the meter — the initial amount includes the AUD $4.30 airport pick-up levy. The M5 East tunnel is the fastest route to the CBD and taxis use it by default; the toll is passed to the passenger and added to the meter. If you want to avoid the toll, you can ask the driver to take surface roads, though this is slower.",
+      },
+      { type: "h2", heading: "Airport Link Train vs Taxi" },
+      {
+        type: "ul",
+        items: [
+          "Airport Link: AUD $22.24 to City Circle (13 minutes) — fast, but Sydney has the highest airport train surcharge in Australia (AUD $16.48 on top of Opal fare)",
+          "For groups of 2+, the taxi per-person cost approaches or beats the train once you include the surcharge",
+          "Bondi, Manly, Northern Beaches: taxi or Uber is the only practical option — no direct train",
+          "Taxi with Opal card (tram/bus) can be cheaper than full taxi for destinations near City Circle stations",
+          "Uber: AUD $40–70 with upfront pricing from designated ride-share zones at T1 and T2/T3",
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Sydney Airport train surcharge (AUD $16.48) makes the train far more expensive than it appears. At AUD $22+ per person, a group of two pays AUD $44+ on the train versus AUD $50–65 total in a taxi. For any group of 2 or more, the taxi is often better value — and goes door-to-door.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Sydney Airport to the CBD?",
+            a: "AUD $45–65 all-in, including the AUD $4.30 airport levy and M5 East tunnel toll. Night fares (10pm–6am) are approximately 20% higher.",
+          },
+          {
+            q: "Is Uber available at Sydney Airport?",
+            a: "Yes — from designated ride-share pick-up zones at T1 (International) and T2/T3 (Domestic). Fares are upfront and typically AUD $40–70 depending on demand and destination.",
+          },
+          {
+            q: "Is the Airport Link train worth it from Sydney Airport?",
+            a: "It depends on your group size. Solo travellers: AUD $22.24 is expensive for a 13-minute ride but saves time. Groups of 2+: taxi is often similar or cheaper per person and goes door-to-door.",
+          },
+          {
+            q: "How do I get to Bondi Beach from Sydney Airport?",
+            a: "Taxi or Uber is the most practical option (AUD $45–60). The Airport Link train to Bondi Junction connects to the 380 bus to Bondi Beach, but with luggage this is inconvenient. Expect AUD $50–60 total for a direct taxi.",
+          },
+          {
+            q: "What is the M5 East toll and do I have to pay it?",
+            a: "The M5 East is a tunnel connecting the airport to the CBD — the fastest route. The toll varies (AUD $3.50–6) and is paid by the passenger, added to the meter. You can ask the driver to avoid it via surface roads, but this adds 10–20 minutes.",
+          },
+          {
+            q: "Are Sydney taxis safe and honest?",
+            a: "Yes — Sydney taxis are well-regulated, metered, and overcharging is rare. Drivers are licensed and must display their ID. The standard experience is straightforward and professional.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'taxi-melbourne-airport-to-city',
-    title: 'Taxi from Melbourne Airport to CBD: Cost & Guide (2026)',
-    description: "Melbourne Airport to the CBD costs AUD $55–80 by taxi — and unlike Sydney or Brisbane, Melbourne still has no airport rail link, so the $22.50 SkyBus is the only mass-transit alternative. Here's the full 2026 guide to fares, tolls, and which option wins for your group size.",
-    publishedAt: '2026-02-27',
+    slug: "taxi-melbourne-airport-to-city",
+    title: "Taxi from Melbourne Airport to CBD: Cost & Guide (2026)",
+    description:
+      "Melbourne Airport to the CBD costs AUD $55–80 by taxi — and unlike Sydney or Brisbane, Melbourne still has no airport rail link, so the $22.50 SkyBus is the only mass-transit alternative. Here's the full 2026 guide to fares, tolls, and which option wins for your group size.",
+    publishedAt: "2026-02-27",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'Melbourne',
-    citySlug: 'melbourne',
+    category: "taxi",
+    city: "Melbourne",
+    citySlug: "melbourne",
     content: [
-      { type: 'intro', body: 'Taxis from Melbourne Airport (Tullamarine/MEL) to the CBD are metered, regulated, and reliable. The typical fare runs AUD $55–80 for the approximately 23 km journey, taking 25–50 minutes depending on the time of day and traffic on CityLink. Melbourne taxis are honest — the meter must run by law, overcharging is uncommon, and drivers are licensed and regulated by Commercial Passenger Vehicles Victoria (CPVV). Uber also operates prominently from Melbourne Airport and is often a straightforward alternative. Uniquely among Australian cities, Melbourne has no airport rail link — so taxis, Uber, and the SkyBus coach are the primary options.' },
-      { type: 'h2', heading: 'Melbourne Airport to CBD: Key Numbers' },
-      { type: 'table', rows: [
-        { label: 'Metered taxi fare (CBD)', value: 'AUD $55–80 including airport levy' },
-        { label: 'Airport taxi levy', value: 'AUD $4.40 — applied to all airport pick-ups' },
-        { label: 'CityLink toll (standard route)', value: 'AUD $5–8 — may be added to fare' },
-        { label: 'Night surcharge (11pm–5am)', value: '20% on the metered fare' },
-        { label: 'Uber (UberX)', value: 'AUD $50–80 depending on demand, upfront price' },
-        { label: 'SkyBus to Southern Cross Station', value: 'AUD $22.50 — 30–60 minutes' },
-        { label: 'Journey time (taxi)', value: '25–50 minutes' },
-        { label: 'Distance to CBD', value: 'Approximately 23 km via CityLink' },
-      ]},
-      { type: 'h2', heading: 'Typical Fares by Destination from Melbourne Airport' },
-      { type: 'table', rows: [
-        { label: 'MEL → CBD / Flinders Street Station', value: 'AUD $58–78 all-in (daytime)' },
-        { label: 'MEL → Docklands / Crown Casino', value: 'AUD $60–80 all-in (daytime)' },
-        { label: 'MEL → Fitzroy / Collingwood', value: 'AUD $65–85 all-in (daytime)' },
-        { label: 'MEL → St Kilda', value: 'AUD $65–85 all-in (daytime)' },
-        { label: 'MEL → South Yarra / Prahran', value: 'AUD $62–82 all-in (daytime)' },
-        { label: 'MEL → Southbank', value: 'AUD $58–75 all-in (daytime)' },
-      ]},
-      { type: 'h2', heading: 'Getting a Taxi or Uber at Melbourne Airport' },
-      { type: 'p', body: 'Taxi ranks are located outside the arrivals area at both the International Terminal (T2) and the Domestic terminals (T1, T3, T4). Follow green taxi signs from the arrivals hall. The AUD $4.40 airport levy appears as an additional charge on the meter — it is legitimate and government-mandated. CityLink tolls may be added to the fare depending on the route taken; most drivers use CityLink as it is faster. Uber has a designated pick-up zone at the airport — follow the Uber app directions for zone location, which varies by terminal. Uber and DiDi both display upfront pricing before you confirm the booking.' },
-      { type: 'h2', heading: 'SkyBus vs Taxi: Which Is Better?' },
-      { type: 'ul', items: [
-        'SkyBus: AUD $22.50, 30–60 minutes to Southern Cross Station — best for solo travellers heading to the CBD or nearby',
-        'SkyBus runs 24/7 including late nights and early mornings — reliable for any flight time',
-        'Taxi/Uber: AUD $55–80, 25–50 minutes — better for groups of 2+, door-to-door convenience, and accommodation away from Southern Cross',
-        'No airport rail link in Melbourne as of 2026 — SkyBus is the only mass transit option',
-        'SkyBus also stops at some CBD hotels (check website for hotel shuttle service)',
-      ]},
-      { type: 'tip', body: 'Melbourne\'s CityLink toll road is the fastest route between the airport and CBD. Most taxis and Uber drivers use it by default. The toll (AUD $5–8) may appear as an addition to the taxi fare. If you want to avoid the toll and are happy with a slower route, tell the driver before departure.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'How much is a taxi from Melbourne Airport to the CBD?', a: 'AUD $55–80 all-in, including the AUD $4.40 airport levy. CityLink tolls may add AUD $5–8. Night fares (11pm–5am) are approximately 20% higher.' },
-        { q: 'Is SkyBus better than a taxi from Melbourne Airport?', a: 'For solo travellers heading to the CBD or near Southern Cross Station, yes — AUD $22.50 is much cheaper. For groups of 2–3, taxis become competitive per person and are more convenient with luggage. For destinations far from Southern Cross, taxis or Uber are the practical choice.' },
-        { q: 'Is there a train from Melbourne Airport?', a: 'No — Melbourne does not have an airport rail link as of 2026. SkyBus and taxis/Uber are the main options. The Melbourne Airport Rail project has been discussed for decades; check current news for any updates.' },
-        { q: 'Is Uber available at Melbourne Airport?', a: 'Yes — Uber and DiDi both operate from Melbourne Airport with designated pick-up zones near each terminal. Upfront pricing is available in the app before you confirm.' },
-        { q: 'How long does it take from Melbourne Airport to the CBD?', a: '25–50 minutes via CityLink. During peak hours (7–9:30am and 4:30–7pm on weekdays), allow up to 60 minutes. Late-night and early-morning journeys are typically 25–30 minutes.' },
-        { q: 'Do Melbourne taxis accept card payment?', a: 'Yes — all Melbourne taxis are required to accept card payment. Uber and DiDi charge your card on file automatically. Cash is also accepted in taxis.' },
-      ]},
+      {
+        type: "intro",
+        body: "Taxis from Melbourne Airport (Tullamarine/MEL) to the CBD are metered, regulated, and reliable. The typical fare runs AUD $55–80 for the approximately 23 km journey, taking 25–50 minutes depending on the time of day and traffic on CityLink. Melbourne taxis are honest — the meter must run by law, overcharging is uncommon, and drivers are licensed and regulated by Commercial Passenger Vehicles Victoria (CPVV). Uber also operates prominently from Melbourne Airport and is often a straightforward alternative. Uniquely among Australian cities, Melbourne has no airport rail link — so taxis, Uber, and the SkyBus coach are the primary options.",
+      },
+      { type: "h2", heading: "Melbourne Airport to CBD: Key Numbers" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Metered taxi fare (CBD)",
+            value: "AUD $55–80 including airport levy",
+          },
+          {
+            label: "Airport taxi levy",
+            value: "AUD $4.40 — applied to all airport pick-ups",
+          },
+          {
+            label: "CityLink toll (standard route)",
+            value: "AUD $5–8 — may be added to fare",
+          },
+          {
+            label: "Night surcharge (11pm–5am)",
+            value: "20% on the metered fare",
+          },
+          {
+            label: "Uber (UberX)",
+            value: "AUD $50–80 depending on demand, upfront price",
+          },
+          {
+            label: "SkyBus to Southern Cross Station",
+            value: "AUD $22.50 — 30–60 minutes",
+          },
+          { label: "Journey time (taxi)", value: "25–50 minutes" },
+          {
+            label: "Distance to CBD",
+            value: "Approximately 23 km via CityLink",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Typical Fares by Destination from Melbourne Airport",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "MEL → CBD / Flinders Street Station",
+            value: "AUD $58–78 all-in (daytime)",
+          },
+          {
+            label: "MEL → Docklands / Crown Casino",
+            value: "AUD $60–80 all-in (daytime)",
+          },
+          {
+            label: "MEL → Fitzroy / Collingwood",
+            value: "AUD $65–85 all-in (daytime)",
+          },
+          { label: "MEL → St Kilda", value: "AUD $65–85 all-in (daytime)" },
+          {
+            label: "MEL → South Yarra / Prahran",
+            value: "AUD $62–82 all-in (daytime)",
+          },
+          { label: "MEL → Southbank", value: "AUD $58–75 all-in (daytime)" },
+        ],
+      },
+      { type: "h2", heading: "Getting a Taxi or Uber at Melbourne Airport" },
+      {
+        type: "p",
+        body: "Taxi ranks are located outside the arrivals area at both the International Terminal (T2) and the Domestic terminals (T1, T3, T4). Follow green taxi signs from the arrivals hall. The AUD $4.40 airport levy appears as an additional charge on the meter — it is legitimate and government-mandated. CityLink tolls may be added to the fare depending on the route taken; most drivers use CityLink as it is faster. Uber has a designated pick-up zone at the airport — follow the Uber app directions for zone location, which varies by terminal. Uber and DiDi both display upfront pricing before you confirm the booking.",
+      },
+      { type: "h2", heading: "SkyBus vs Taxi: Which Is Better?" },
+      {
+        type: "ul",
+        items: [
+          "SkyBus: AUD $22.50, 30–60 minutes to Southern Cross Station — best for solo travellers heading to the CBD or nearby",
+          "SkyBus runs 24/7 including late nights and early mornings — reliable for any flight time",
+          "Taxi/Uber: AUD $55–80, 25–50 minutes — better for groups of 2+, door-to-door convenience, and accommodation away from Southern Cross",
+          "No airport rail link in Melbourne as of 2026 — SkyBus is the only mass transit option",
+          "SkyBus also stops at some CBD hotels (check website for hotel shuttle service)",
+        ],
+      },
+      {
+        type: "tip",
+        body: "Melbourne's CityLink toll road is the fastest route between the airport and CBD. Most taxis and Uber drivers use it by default. The toll (AUD $5–8) may appear as an addition to the taxi fare. If you want to avoid the toll and are happy with a slower route, tell the driver before departure.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Melbourne Airport to the CBD?",
+            a: "AUD $55–80 all-in, including the AUD $4.40 airport levy. CityLink tolls may add AUD $5–8. Night fares (11pm–5am) are approximately 20% higher.",
+          },
+          {
+            q: "Is SkyBus better than a taxi from Melbourne Airport?",
+            a: "For solo travellers heading to the CBD or near Southern Cross Station, yes — AUD $22.50 is much cheaper. For groups of 2–3, taxis become competitive per person and are more convenient with luggage. For destinations far from Southern Cross, taxis or Uber are the practical choice.",
+          },
+          {
+            q: "Is there a train from Melbourne Airport?",
+            a: "No — Melbourne does not have an airport rail link as of 2026. SkyBus and taxis/Uber are the main options. The Melbourne Airport Rail project has been discussed for decades; check current news for any updates.",
+          },
+          {
+            q: "Is Uber available at Melbourne Airport?",
+            a: "Yes — Uber and DiDi both operate from Melbourne Airport with designated pick-up zones near each terminal. Upfront pricing is available in the app before you confirm.",
+          },
+          {
+            q: "How long does it take from Melbourne Airport to the CBD?",
+            a: "25–50 minutes via CityLink. During peak hours (7–9:30am and 4:30–7pm on weekdays), allow up to 60 minutes. Late-night and early-morning journeys are typically 25–30 minutes.",
+          },
+          {
+            q: "Do Melbourne taxis accept card payment?",
+            a: "Yes — all Melbourne taxis are required to accept card payment. Uber and DiDi charge your card on file automatically. Cash is also accepted in taxis.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'taxi-mumbai-airport-to-city',
-    title: 'Taxi from Mumbai Airport to City: Cost & What to Know (2026)',
-    description: 'Mumbai airport (BOM) to South Mumbai costs ₹600–900 by prepaid taxi; to Bandra or Juhu ₹300–500. Here\'s which taxi type to take, how to book safely, and why Ola beats the prepaid booth for most routes.',
-    publishedAt: '2026-03-11',
+    slug: "taxi-mumbai-airport-to-city",
+    title: "Taxi from Mumbai Airport to City: Cost & What to Know (2026)",
+    description:
+      "Mumbai airport (BOM) to South Mumbai costs ₹600–900 by prepaid taxi; to Bandra or Juhu ₹300–500. Here's which taxi type to take, how to book safely, and why Ola beats the prepaid booth for most routes.",
+    publishedAt: "2026-03-11",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'Mumbai',
-    citySlug: 'mumbai',
+    category: "taxi",
+    city: "Mumbai",
+    citySlug: "mumbai",
     content: [
-      { type: 'intro', body: 'Getting from Chhatrapati Shivaji Maharaj International Airport (BOM) to central Mumbai involves navigating one of the world\'s most complex urban road networks. Fares are reasonable by international standards — INR 500–1,200 to most destinations — but journey times vary dramatically depending on traffic. Mumbai\'s road congestion is among the worst of any major city: the same journey that takes 25 minutes at midnight can take 90 minutes during morning peak hour. The prepaid taxi counter at arrivals is the recommended starting point for new visitors, removing any need for negotiation. Ola and Uber also operate reliably from the airport for those who prefer upfront app pricing.' },
-      { type: 'h2', heading: 'Mumbai Airport to City: Key Numbers' },
-      { type: 'table', rows: [
-        { label: 'Prepaid AC taxi (standard zones)', value: 'INR 600–1,000 — fixed price, no negotiation' },
-        { label: 'Non-AC prepaid taxi', value: 'INR 400–700 — not recommended in Mumbai heat' },
-        { label: 'Ola / Uber (UberX / Mini)', value: 'INR 400–900 depending on demand and destination' },
-        { label: 'Ola / Uber (Sedan / Prime)', value: 'INR 600–1,200 for more comfortable ride' },
-        { label: 'Journey time (Bandra / BKC)', value: '20–45 minutes' },
-        { label: 'Journey time (South Mumbai / Colaba)', value: '45–90 minutes (up to 2 hours peak)' },
-        { label: 'Journey time (Andheri / Juhu)', value: '15–30 minutes — nearest major areas' },
-        { label: 'Auto-rickshaw', value: 'Not permitted from the airport terminal area' },
-      ]},
-      { type: 'h2', heading: 'Typical Fares by Destination from Mumbai Airport' },
-      { type: 'table', rows: [
-        { label: 'BOM → Andheri / Juhu (nearby)', value: 'INR 400–600 prepaid AC' },
-        { label: 'BOM → Bandra / BKC', value: 'INR 600–800 prepaid AC' },
-        { label: 'BOM → Worli / Lower Parel', value: 'INR 750–1,000 prepaid AC' },
-        { label: 'BOM → Colaba / South Mumbai', value: 'INR 900–1,200 prepaid AC' },
-        { label: 'BOM → Navi Mumbai', value: 'INR 800–1,100 prepaid AC' },
-        { label: 'BOM → Thane', value: 'INR 700–950 prepaid AC' },
-      ]},
-      { type: 'h2', heading: 'Prepaid Taxis: The Recommended Option for New Visitors' },
-      { type: 'p', body: 'Mumbai Airport operates prepaid taxi counters inside the arrivals hall at both Terminal 1 (domestic) and Terminal 2 (international). Pay the fixed zone-based fare at the counter, receive a printed receipt, and hand it to the assigned driver waiting outside. No negotiation, no meter disputes, no overcharging. The system covers AC and non-AC taxis — always choose AC in Mumbai\'s heat and humidity. Pre-paid fares are set by the Maharashtra government and are publicly listed at the counter. If you are quoted a different amount outside the terminal, return to the prepaid counter.' },
-      { type: 'h2', heading: 'Ola & Uber from Mumbai Airport' },
-      { type: 'p', body: 'Ola and Uber both operate at Mumbai Airport from designated ride-share pick-up zones. After collecting baggage, follow signage to the ride-share zone (separate from the prepaid taxi area). Fares are displayed upfront in the app before you confirm. During off-peak hours, app fares are often competitive with or cheaper than the prepaid counter. During peak hours (8–10am, 6–9pm weekdays), surge pricing can make Uber significantly more expensive — the prepaid counter is often better value at those times. Confirm your driver\'s name and vehicle plate in the app before getting in.' },
-      { type: 'warning', body: 'Mumbai traffic is genuinely extreme. A 20 km journey to South Mumbai can take 90–120 minutes during peak hours. Always budget more time than you think you need, especially if you have a flight to catch. The Eastern Freeway and the Bandra-Worli Sea Link can significantly reduce journey times to some destinations — ask your driver if they plan to use these.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'How much is a taxi from Mumbai Airport to the city?', a: 'INR 500–1,200 depending on destination and taxi type. Bandra/BKC runs INR 600–800; South Mumbai/Colaba is INR 900–1,200. The prepaid AC taxi counter in arrivals gives a fixed zone price with no negotiation.' },
-        { q: 'Is Uber safe at Mumbai Airport?', a: 'Yes — Uber and Ola are widely used and reliable. Use the designated ride-share pick-up zones inside the airport. Confirm the driver\'s name and car plate in the app before boarding.' },
-        { q: 'How long does it take to get from Mumbai Airport to South Mumbai?', a: '45–90 minutes in normal conditions. During peak hours (8–10am and 6–9pm), journeys to South Mumbai can take 90–120 minutes. The Bandra-Worli Sea Link helps for some routes.' },
-        { q: 'What is the difference between prepaid and metered taxis at Mumbai Airport?', a: 'Prepaid taxis have a fixed zone-based fare set by the government — you pay at the counter inside the terminal before boarding. Metered taxis use a running meter, which is accurate but requires you to verify the meter starts from zero. For new visitors, prepaid is strongly recommended.' },
-        { q: 'Can I use an auto-rickshaw from Mumbai Airport?', a: 'No — auto-rickshaws are not permitted to operate from the airport terminal area. They are available outside the airport boundary but impractical with luggage for the full journey to the city. Use the prepaid taxi counter or Ola/Uber.' },
-        { q: 'Is there a train from Mumbai Airport to the city?', a: 'The nearest suburban train station is Andheri (Western Line) or Vile Parle (Western Line), about 2–3 km from the terminal. Auto-rickshaws connect the airport to these stations. This is feasible for light luggage and budget travellers, but impractical with large bags.' },
-      ]},
+      {
+        type: "intro",
+        body: "Getting from Chhatrapati Shivaji Maharaj International Airport (BOM) to central Mumbai involves navigating one of the world's most complex urban road networks. Fares are reasonable by international standards — INR 500–1,200 to most destinations — but journey times vary dramatically depending on traffic. Mumbai's road congestion is among the worst of any major city: the same journey that takes 25 minutes at midnight can take 90 minutes during morning peak hour. The prepaid taxi counter at arrivals is the recommended starting point for new visitors, removing any need for negotiation. Ola and Uber also operate reliably from the airport for those who prefer upfront app pricing.",
+      },
+      { type: "h2", heading: "Mumbai Airport to City: Key Numbers" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Prepaid AC taxi (standard zones)",
+            value: "INR 600–1,000 — fixed price, no negotiation",
+          },
+          {
+            label: "Non-AC prepaid taxi",
+            value: "INR 400–700 — not recommended in Mumbai heat",
+          },
+          {
+            label: "Ola / Uber (UberX / Mini)",
+            value: "INR 400–900 depending on demand and destination",
+          },
+          {
+            label: "Ola / Uber (Sedan / Prime)",
+            value: "INR 600–1,200 for more comfortable ride",
+          },
+          { label: "Journey time (Bandra / BKC)", value: "20–45 minutes" },
+          {
+            label: "Journey time (South Mumbai / Colaba)",
+            value: "45–90 minutes (up to 2 hours peak)",
+          },
+          {
+            label: "Journey time (Andheri / Juhu)",
+            value: "15–30 minutes — nearest major areas",
+          },
+          {
+            label: "Auto-rickshaw",
+            value: "Not permitted from the airport terminal area",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Typical Fares by Destination from Mumbai Airport",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "BOM → Andheri / Juhu (nearby)",
+            value: "INR 400–600 prepaid AC",
+          },
+          { label: "BOM → Bandra / BKC", value: "INR 600–800 prepaid AC" },
+          {
+            label: "BOM → Worli / Lower Parel",
+            value: "INR 750–1,000 prepaid AC",
+          },
+          {
+            label: "BOM → Colaba / South Mumbai",
+            value: "INR 900–1,200 prepaid AC",
+          },
+          { label: "BOM → Navi Mumbai", value: "INR 800–1,100 prepaid AC" },
+          { label: "BOM → Thane", value: "INR 700–950 prepaid AC" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Prepaid Taxis: The Recommended Option for New Visitors",
+      },
+      {
+        type: "p",
+        body: "Mumbai Airport operates prepaid taxi counters inside the arrivals hall at both Terminal 1 (domestic) and Terminal 2 (international). Pay the fixed zone-based fare at the counter, receive a printed receipt, and hand it to the assigned driver waiting outside. No negotiation, no meter disputes, no overcharging. The system covers AC and non-AC taxis — always choose AC in Mumbai's heat and humidity. Pre-paid fares are set by the Maharashtra government and are publicly listed at the counter. If you are quoted a different amount outside the terminal, return to the prepaid counter.",
+      },
+      { type: "h2", heading: "Ola & Uber from Mumbai Airport" },
+      {
+        type: "p",
+        body: "Ola and Uber both operate at Mumbai Airport from designated ride-share pick-up zones. After collecting baggage, follow signage to the ride-share zone (separate from the prepaid taxi area). Fares are displayed upfront in the app before you confirm. During off-peak hours, app fares are often competitive with or cheaper than the prepaid counter. During peak hours (8–10am, 6–9pm weekdays), surge pricing can make Uber significantly more expensive — the prepaid counter is often better value at those times. Confirm your driver's name and vehicle plate in the app before getting in.",
+      },
+      {
+        type: "warning",
+        body: "Mumbai traffic is genuinely extreme. A 20 km journey to South Mumbai can take 90–120 minutes during peak hours. Always budget more time than you think you need, especially if you have a flight to catch. The Eastern Freeway and the Bandra-Worli Sea Link can significantly reduce journey times to some destinations — ask your driver if they plan to use these.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Mumbai Airport to the city?",
+            a: "INR 500–1,200 depending on destination and taxi type. Bandra/BKC runs INR 600–800; South Mumbai/Colaba is INR 900–1,200. The prepaid AC taxi counter in arrivals gives a fixed zone price with no negotiation.",
+          },
+          {
+            q: "Is Uber safe at Mumbai Airport?",
+            a: "Yes — Uber and Ola are widely used and reliable. Use the designated ride-share pick-up zones inside the airport. Confirm the driver's name and car plate in the app before boarding.",
+          },
+          {
+            q: "How long does it take to get from Mumbai Airport to South Mumbai?",
+            a: "45–90 minutes in normal conditions. During peak hours (8–10am and 6–9pm), journeys to South Mumbai can take 90–120 minutes. The Bandra-Worli Sea Link helps for some routes.",
+          },
+          {
+            q: "What is the difference between prepaid and metered taxis at Mumbai Airport?",
+            a: "Prepaid taxis have a fixed zone-based fare set by the government — you pay at the counter inside the terminal before boarding. Metered taxis use a running meter, which is accurate but requires you to verify the meter starts from zero. For new visitors, prepaid is strongly recommended.",
+          },
+          {
+            q: "Can I use an auto-rickshaw from Mumbai Airport?",
+            a: "No — auto-rickshaws are not permitted to operate from the airport terminal area. They are available outside the airport boundary but impractical with luggage for the full journey to the city. Use the prepaid taxi counter or Ola/Uber.",
+          },
+          {
+            q: "Is there a train from Mumbai Airport to the city?",
+            a: "The nearest suburban train station is Andheri (Western Line) or Vile Parle (Western Line), about 2–3 km from the terminal. Auto-rickshaws connect the airport to these stations. This is feasible for light luggage and budget travellers, but impractical with large bags.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'taxi-hamad-to-doha',
-    title: 'Taxi from Hamad Airport to Doha: Cost & Tips (2026)',
-    description: "A Karwa taxi from Hamad Airport to West Bay costs QAR 30–50 — but the Doha Metro Red Line covers the same route in 25 minutes for just QAR 2–3. Here's the full 2026 guide to Karwa fares, Uber, and why the metro is one of the best-value airport links in the Gulf.",
-    publishedAt: '2026-03-15',
+    slug: "taxi-hamad-to-doha",
+    title: "Taxi from Hamad Airport to Doha: Cost & Tips (2026)",
+    description:
+      "A Karwa taxi from Hamad Airport to West Bay costs QAR 30–50 — but the Doha Metro Red Line covers the same route in 25 minutes for just QAR 2–3. Here's the full 2026 guide to Karwa fares, Uber, and why the metro is one of the best-value airport links in the Gulf.",
+    publishedAt: "2026-03-15",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'Doha',
-    citySlug: 'doha',
+    category: "taxi",
+    city: "Doha",
+    citySlug: "doha",
     content: [
-      { type: 'intro', body: 'Hamad International Airport (DOH) is one of the world\'s most celebrated airports — regularly ranked among the top three globally — and the taxi system matches its reputation. Clean, air-conditioned Karwa taxis operate on a metered basis with transparent fares. Taxis to central Doha (West Bay CBD) run QAR 30–50; to the upscale Pearl-Qatar or Katara Cultural Village, QAR 40–65. The Doha Metro\'s Red Line also connects directly from the airport to the city for just QAR 2–3, making it one of the best-value airport rail options in the Gulf region.' },
-      { type: 'h2', heading: 'Hamad Airport to Doha: Key Numbers' },
-      { type: 'table', rows: [
-        { label: 'Karwa taxi (West Bay / CBD)', value: 'QAR 30–50 — approximately 20–30 minutes' },
-        { label: 'Karwa taxi (The Pearl / Katara)', value: 'QAR 40–65 — approximately 25–40 minutes' },
-        { label: 'Karwa taxi (Souq Waqif / old city)', value: 'QAR 35–55' },
-        { label: 'Late night surcharge (10pm–6am)', value: 'QAR 10 flat addition to the fare' },
-        { label: 'Uber (Qatar)', value: 'QAR 35–70 with upfront pricing' },
-        { label: 'Doha Metro (Red Line)', value: 'QAR 2–3 — 25 minutes to Al Mana station' },
-        { label: 'Journey time (West Bay)', value: '20–30 minutes in normal traffic' },
-        { label: 'Distance to West Bay CBD', value: 'Approximately 15 km' },
-      ]},
-      { type: 'h2', heading: 'Typical Fares by Destination from Hamad Airport' },
-      { type: 'table', rows: [
-        { label: 'DOH → West Bay / City Centre', value: 'QAR 30–50 (daytime)' },
-        { label: 'DOH → Souq Waqif / Old Doha', value: 'QAR 35–55 (daytime)' },
-        { label: 'DOH → The Pearl-Qatar', value: 'QAR 45–65 (daytime)' },
-        { label: 'DOH → Katara Cultural Village', value: 'QAR 40–60 (daytime)' },
-        { label: 'DOH → Education City / Al Rayyan', value: 'QAR 50–75 (daytime)' },
-        { label: 'DOH → Lusail City', value: 'QAR 55–80 (daytime — new development, further north)' },
-      ]},
-      { type: 'h2', heading: 'Karwa Taxis: The Official Service' },
-      { type: 'p', body: 'Karwa is the state-operated taxi company in Qatar, and all official taxis at Hamad Airport are Karwa vehicles. They are cream and maroon coloured, fully air-conditioned, and use a metered fare system. The taxi rank is clearly signposted outside the arrivals hall — no hunting required. Karwa taxis can also be pre-booked via the Karwa app, which is useful for very early morning or late-night arrivals when you want a confirmed vehicle. All Karwa taxis accept cash and card. The late-night surcharge (QAR 10, applied 10pm–6am) is flat-rate and straightforward.' },
-      { type: 'h2', heading: 'Uber & Alternatives from Hamad Airport' },
-      { type: 'p', body: 'Uber operates in Qatar and is available from Hamad Airport from designated ride-hailing pick-up zones outside arrivals. Fares are displayed upfront and typically QAR 35–70 to central Doha. Uber can sometimes be slightly cheaper than Karwa during off-peak hours, but Karwa is consistently reliable. The Doha Metro Red Line — accessed from the airport\'s Ground Transportation Centre — is an outstanding option for light travellers: QAR 2–3 to Al Mana (Al Corniche) station takes about 25 minutes and avoids any traffic.' },
-      { type: 'h2', heading: 'Practical Notes for Visiting Qatar' },
-      { type: 'ul', items: [
-        'Qatar Riyal (QAR) is pegged to USD at QAR 3.64 = USD $1 — easy to convert',
-        'Cash and card both accepted in all Karwa taxis and Uber',
-        'Tipping is not expected — rounding up a few Riyals is a courteous gesture but not required',
-        'Women travelling solo: Karwa and Uber are completely safe and widely used by women in Qatar',
-        'Dress modestly in the taxi and at your destination — Qatar has a conservative public dress code',
-        'During major events (World Cup legacy, Qatar National Day, etc.) taxi demand spikes — pre-book via the Karwa app',
-      ]},
-      { type: 'tip', body: 'The Doha Metro is one of the most underused airport transport options in the region. At QAR 2–3 for a 25-minute journey to central Doha, it beats the taxi on price and rivals it on speed during peak traffic. The station is inside the airport terminal — air-conditioned, signposted, and easy to navigate.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'How much is a taxi from Hamad Airport to Doha city?', a: 'QAR 30–50 to West Bay (CBD) during the day. The Pearl and Katara run QAR 40–65. A flat QAR 10 night surcharge applies from 10pm–6am on top of the metered fare.' },
-        { q: 'Is there public transport from Hamad Airport to Doha?', a: 'Yes — the Doha Metro Red Line runs directly from the airport to central Doha (Al Mana station) in about 25 minutes for QAR 2–3. It is excellent value and very comfortable.' },
-        { q: 'Is Uber available at Hamad Airport?', a: 'Yes — Uber operates in Qatar and picks up from designated zones outside arrivals. Fares are upfront and comparable to Karwa.' },
-        { q: 'How do I get from Hamad Airport to The Pearl-Qatar?', a: 'Karwa taxi runs QAR 45–65 (25–40 minutes). Uber is typically QAR 40–60. There is no direct metro connection to The Pearl — take the Metro to Legtaifiya station (Red Line) and then a short taxi or walk.' },
-        { q: 'Are there taxis available 24 hours at Hamad Airport?', a: 'Yes — Karwa taxis operate 24 hours at Hamad Airport. The late-night surcharge (QAR 10) applies from 10pm–6am. The Karwa app allows pre-booking for guaranteed availability at any hour.' },
-        { q: 'How long does the taxi take from Hamad Airport to West Bay?', a: '20–30 minutes in normal conditions. Doha traffic is generally lighter than other major cities, but peak hours (7–9am, 4–7pm weekdays) can add 10–20 minutes.' },
-      ]},
+      {
+        type: "intro",
+        body: "Hamad International Airport (DOH) is one of the world's most celebrated airports — regularly ranked among the top three globally — and the taxi system matches its reputation. Clean, air-conditioned Karwa taxis operate on a metered basis with transparent fares. Taxis to central Doha (West Bay CBD) run QAR 30–50; to the upscale Pearl-Qatar or Katara Cultural Village, QAR 40–65. The Doha Metro's Red Line also connects directly from the airport to the city for just QAR 2–3, making it one of the best-value airport rail options in the Gulf region.",
+      },
+      { type: "h2", heading: "Hamad Airport to Doha: Key Numbers" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Karwa taxi (West Bay / CBD)",
+            value: "QAR 30–50 — approximately 20–30 minutes",
+          },
+          {
+            label: "Karwa taxi (The Pearl / Katara)",
+            value: "QAR 40–65 — approximately 25–40 minutes",
+          },
+          { label: "Karwa taxi (Souq Waqif / old city)", value: "QAR 35–55" },
+          {
+            label: "Late night surcharge (10pm–6am)",
+            value: "QAR 10 flat addition to the fare",
+          },
+          { label: "Uber (Qatar)", value: "QAR 35–70 with upfront pricing" },
+          {
+            label: "Doha Metro (Red Line)",
+            value: "QAR 2–3 — 25 minutes to Al Mana station",
+          },
+          {
+            label: "Journey time (West Bay)",
+            value: "20–30 minutes in normal traffic",
+          },
+          { label: "Distance to West Bay CBD", value: "Approximately 15 km" },
+        ],
+      },
+      {
+        type: "h2",
+        heading: "Typical Fares by Destination from Hamad Airport",
+      },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "DOH → West Bay / City Centre",
+            value: "QAR 30–50 (daytime)",
+          },
+          {
+            label: "DOH → Souq Waqif / Old Doha",
+            value: "QAR 35–55 (daytime)",
+          },
+          { label: "DOH → The Pearl-Qatar", value: "QAR 45–65 (daytime)" },
+          {
+            label: "DOH → Katara Cultural Village",
+            value: "QAR 40–60 (daytime)",
+          },
+          {
+            label: "DOH → Education City / Al Rayyan",
+            value: "QAR 50–75 (daytime)",
+          },
+          {
+            label: "DOH → Lusail City",
+            value: "QAR 55–80 (daytime — new development, further north)",
+          },
+        ],
+      },
+      { type: "h2", heading: "Karwa Taxis: The Official Service" },
+      {
+        type: "p",
+        body: "Karwa is the state-operated taxi company in Qatar, and all official taxis at Hamad Airport are Karwa vehicles. They are cream and maroon coloured, fully air-conditioned, and use a metered fare system. The taxi rank is clearly signposted outside the arrivals hall — no hunting required. Karwa taxis can also be pre-booked via the Karwa app, which is useful for very early morning or late-night arrivals when you want a confirmed vehicle. All Karwa taxis accept cash and card. The late-night surcharge (QAR 10, applied 10pm–6am) is flat-rate and straightforward.",
+      },
+      { type: "h2", heading: "Uber & Alternatives from Hamad Airport" },
+      {
+        type: "p",
+        body: "Uber operates in Qatar and is available from Hamad Airport from designated ride-hailing pick-up zones outside arrivals. Fares are displayed upfront and typically QAR 35–70 to central Doha. Uber can sometimes be slightly cheaper than Karwa during off-peak hours, but Karwa is consistently reliable. The Doha Metro Red Line — accessed from the airport's Ground Transportation Centre — is an outstanding option for light travellers: QAR 2–3 to Al Mana (Al Corniche) station takes about 25 minutes and avoids any traffic.",
+      },
+      { type: "h2", heading: "Practical Notes for Visiting Qatar" },
+      {
+        type: "ul",
+        items: [
+          "Qatar Riyal (QAR) is pegged to USD at QAR 3.64 = USD $1 — easy to convert",
+          "Cash and card both accepted in all Karwa taxis and Uber",
+          "Tipping is not expected — rounding up a few Riyals is a courteous gesture but not required",
+          "Women travelling solo: Karwa and Uber are completely safe and widely used by women in Qatar",
+          "Dress modestly in the taxi and at your destination — Qatar has a conservative public dress code",
+          "During major events (World Cup legacy, Qatar National Day, etc.) taxi demand spikes — pre-book via the Karwa app",
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Doha Metro is one of the most underused airport transport options in the region. At QAR 2–3 for a 25-minute journey to central Doha, it beats the taxi on price and rivals it on speed during peak traffic. The station is inside the airport terminal — air-conditioned, signposted, and easy to navigate.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Hamad Airport to Doha city?",
+            a: "QAR 30–50 to West Bay (CBD) during the day. The Pearl and Katara run QAR 40–65. A flat QAR 10 night surcharge applies from 10pm–6am on top of the metered fare.",
+          },
+          {
+            q: "Is there public transport from Hamad Airport to Doha?",
+            a: "Yes — the Doha Metro Red Line runs directly from the airport to central Doha (Al Mana station) in about 25 minutes for QAR 2–3. It is excellent value and very comfortable.",
+          },
+          {
+            q: "Is Uber available at Hamad Airport?",
+            a: "Yes — Uber operates in Qatar and picks up from designated zones outside arrivals. Fares are upfront and comparable to Karwa.",
+          },
+          {
+            q: "How do I get from Hamad Airport to The Pearl-Qatar?",
+            a: "Karwa taxi runs QAR 45–65 (25–40 minutes). Uber is typically QAR 40–60. There is no direct metro connection to The Pearl — take the Metro to Legtaifiya station (Red Line) and then a short taxi or walk.",
+          },
+          {
+            q: "Are there taxis available 24 hours at Hamad Airport?",
+            a: "Yes — Karwa taxis operate 24 hours at Hamad Airport. The late-night surcharge (QAR 10) applies from 10pm–6am. The Karwa app allows pre-booking for guaranteed availability at any hour.",
+          },
+          {
+            q: "How long does the taxi take from Hamad Airport to West Bay?",
+            a: "20–30 minutes in normal conditions. Doha traffic is generally lighter than other major cities, but peak hours (7–9am, 4–7pm weekdays) can add 10–20 minutes.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'taxi-ben-gurion-to-tel-aviv',
-    title: 'Taxi from Ben Gurion Airport to Tel Aviv: Cost & Guide (2026)',
-    description: "A taxi from Ben Gurion to Tel Aviv costs ILS 120–180 — the train covers the same 20km in 15 minutes for ILS 16.50, except it doesn't run on Shabbat. Here's the full 2026 guide, including the sherut shared-taxi option (ILS 35–50 per person) for Friday and Saturday arrivals.",
-    publishedAt: '2026-03-18',
+    slug: "taxi-ben-gurion-to-tel-aviv",
+    title: "Taxi from Ben Gurion Airport to Tel Aviv: Cost & Guide (2026)",
+    description:
+      "A taxi from Ben Gurion to Tel Aviv costs ILS 120–180 — the train covers the same 20km in 15 minutes for ILS 16.50, except it doesn't run on Shabbat. Here's the full 2026 guide, including the sherut shared-taxi option (ILS 35–50 per person) for Friday and Saturday arrivals.",
+    publishedAt: "2026-03-18",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'Tel Aviv',
-    citySlug: 'tel-aviv',
+    category: "taxi",
+    city: "Tel Aviv",
+    citySlug: "tel-aviv",
     content: [
-      { type: 'intro', body: 'Ben Gurion International Airport (TLV) sits approximately 20 km from central Tel Aviv. Taxis are metered, regulated by Israel\'s Ministry of Transport, and reliable — overcharging and scams are essentially unknown. The typical fare to Tel Aviv runs ILS 120–180 during daytime, rising 25% at night and on Shabbat. Israel also offers two unique transport options not found at most airports: the sherut (shared taxi minibus) at a fixed low per-person fare, and one of the best airport rail connections in the Middle East — a 15-minute direct train for ILS 16.50. The one major planning consideration: Shabbat (Friday sundown to Saturday night) stops trains entirely and affects bus services, making taxis and sheruts the only practical options.' },
-      { type: 'h2', heading: 'Ben Gurion to Tel Aviv: Key Numbers' },
-      { type: 'table', rows: [
-        { label: 'Metered taxi (central Tel Aviv, daytime)', value: 'ILS 120–180 — 25–40 minutes' },
-        { label: 'Metered taxi (night / Shabbat surcharge)', value: 'ILS 150–220 — 25% surcharge applies' },
-        { label: 'Sherut (shared taxi, per person)', value: 'ILS 35–50 — drops at fixed Tel Aviv stops' },
-        { label: 'Train (Israel Railways)', value: 'ILS 16.50 — 15 minutes to Tel Aviv HaShalom' },
-        { label: 'Journey time (taxi)', value: '25–40 minutes' },
-        { label: 'Journey time (Jerusalem taxi)', value: 'ILS 300–400 — 45–60 minutes' },
-        { label: 'Distance to central Tel Aviv', value: '~20 km via Highway 1' },
-      ]},
-      { type: 'h2', heading: 'Typical Taxi Fares by Destination' },
-      { type: 'table', rows: [
-        { label: 'Ben Gurion → Tel Aviv Centre (Dizengoff / Rothschild)', value: 'ILS 130–175 (daytime)' },
-        { label: 'Ben Gurion → Tel Aviv North (Ramat Aviv)', value: 'ILS 140–185 (daytime)' },
-        { label: 'Ben Gurion → Jaffa / Old Jaffa', value: 'ILS 130–170 (daytime)' },
-        { label: 'Ben Gurion → Tel Aviv South Beach (Florentin)', value: 'ILS 125–165 (daytime)' },
-        { label: 'Ben Gurion → Jerusalem City Centre', value: 'ILS 300–400 — fixed-rate zone' },
-        { label: 'Ben Gurion → Haifa', value: 'ILS 350–500 (long distance, metered)' },
-      ]},
-      { type: 'h2', heading: 'Getting a Metered Taxi at Ben Gurion' },
-      { type: 'p', body: 'The taxi rank is outside the arrivals hall — follow signs marked "Taxi" through the terminal. All licensed Israeli taxis are required to run the meter (taximeter); confirm it starts from ILS 0 before moving. The night surcharge (25%) applies from 21:00 to 05:30 and on the Jewish Sabbath (Shabbat: Friday sundown to Saturday night). You will see the meter marked with a "2" for the night tariff. This surcharge is fully legal and official. Ask for a receipt at the end — Israeli taxis must provide one on request. Tipping is not obligatory; rounding up ILS 10–20 is a common courtesy for good service.' },
-      { type: 'h2', heading: 'The Sherut: Israel\'s Unique Shared Taxi' },
-      { type: 'p', body: 'The sherut (שֵׁרוּת) is a shared minibus taxi that runs a fixed route from Ben Gurion to Tel Aviv for a flat per-person fare of ILS 35–50. Sherut counters are located in the arrivals hall — look for the signs or ask airport staff. The minibus fills up with other passengers before departing and drops everyone at set stops along the main Tel Aviv route. It is significantly cheaper than a private taxi for solo travellers, though slower due to multiple stops. Sheruts operate on Shabbat when trains do not, making them particularly valuable for Friday evening and Saturday arrivals.' },
-      { type: 'h2', heading: 'The Train: Fastest Option (When It Runs)' },
-      { type: 'p', body: 'Israel Railways runs a direct service from Ben Gurion Airport (accessed from the terminal\'s underground station) to Tel Aviv in approximately 15 minutes. The fare is ILS 16.50 and trains run every 20–30 minutes during the week. Stations served include Tel Aviv HaShalom (near the Azrieli towers, good for north Tel Aviv hotels) and Tel Aviv Savidor Central (good for bus connections). Critical note: Israeli railways do not operate on Shabbat — from Friday afternoon until Saturday night, there are no trains from Ben Gurion.' },
-      { type: 'tip', body: 'Shabbat planning is essential. If you arrive on a Friday evening or Saturday, the train is not running. Taxi demand spikes and the Shabbat surcharge (25%) applies. Book a taxi in advance via the Gett or Yango apps, or use the sherut service from inside arrivals. Expect to wait longer in the taxi queue on Shabbat evenings.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'How much is a taxi from Ben Gurion Airport to Tel Aviv?', a: 'ILS 120–180 metered during daytime. A 25% night/Shabbat surcharge applies from 21:00–05:30 and during Shabbat, bringing fares to ILS 150–220.' },
-        { q: 'What is a sherut taxi from Ben Gurion?', a: 'A shared minibus taxi with fixed per-person pricing (ILS 35–50) that runs a set route to Tel Aviv with multiple drop-off stops. Much cheaper than a private taxi for solo travellers. Available on Shabbat when trains do not run. Look for the sherut counter inside arrivals.' },
-        { q: 'Is there a train from Ben Gurion to Tel Aviv?', a: 'Yes — 15 minutes, ILS 16.50 to Tel Aviv HaShalom or Savidor Central. Trains run frequently on weekdays. They do not run on Shabbat (Friday afternoon to Saturday night).' },
-        { q: 'How does Shabbat affect transport from Ben Gurion?', a: 'Trains stop entirely from Friday afternoon until Saturday night. Bus services are minimal or absent. Taxis and sheruts continue to operate with a 25% Shabbat surcharge. Plan ahead and consider booking a taxi in advance via app (Gett or Yango) for Friday evening arrivals.' },
-        { q: 'How much is a taxi from Ben Gurion to Jerusalem?', a: 'ILS 300–400 — taxis to Jerusalem are metered but the long distance makes them expensive. A sherut to Jerusalem runs ILS 60–80 per person. The train from Ben Gurion → Tel Aviv → Jerusalem takes about 1.5 hours with a change.' },
-        { q: 'Are there taxi apps available at Ben Gurion Airport?', a: 'Yes — Gett and Yango (formerly Yandex Taxi) both operate in Israel and can be used to book a taxi from Ben Gurion with upfront pricing. This is particularly useful for Shabbat arrivals when queues are longer.' },
-      ]},
+      {
+        type: "intro",
+        body: "Ben Gurion International Airport (TLV) sits approximately 20 km from central Tel Aviv. Taxis are metered, regulated by Israel's Ministry of Transport, and reliable — overcharging and scams are essentially unknown. The typical fare to Tel Aviv runs ILS 120–180 during daytime, rising 25% at night and on Shabbat. Israel also offers two unique transport options not found at most airports: the sherut (shared taxi minibus) at a fixed low per-person fare, and one of the best airport rail connections in the Middle East — a 15-minute direct train for ILS 16.50. The one major planning consideration: Shabbat (Friday sundown to Saturday night) stops trains entirely and affects bus services, making taxis and sheruts the only practical options.",
+      },
+      { type: "h2", heading: "Ben Gurion to Tel Aviv: Key Numbers" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Metered taxi (central Tel Aviv, daytime)",
+            value: "ILS 120–180 — 25–40 minutes",
+          },
+          {
+            label: "Metered taxi (night / Shabbat surcharge)",
+            value: "ILS 150–220 — 25% surcharge applies",
+          },
+          {
+            label: "Sherut (shared taxi, per person)",
+            value: "ILS 35–50 — drops at fixed Tel Aviv stops",
+          },
+          {
+            label: "Train (Israel Railways)",
+            value: "ILS 16.50 — 15 minutes to Tel Aviv HaShalom",
+          },
+          { label: "Journey time (taxi)", value: "25–40 minutes" },
+          {
+            label: "Journey time (Jerusalem taxi)",
+            value: "ILS 300–400 — 45–60 minutes",
+          },
+          {
+            label: "Distance to central Tel Aviv",
+            value: "~20 km via Highway 1",
+          },
+        ],
+      },
+      { type: "h2", heading: "Typical Taxi Fares by Destination" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Ben Gurion → Tel Aviv Centre (Dizengoff / Rothschild)",
+            value: "ILS 130–175 (daytime)",
+          },
+          {
+            label: "Ben Gurion → Tel Aviv North (Ramat Aviv)",
+            value: "ILS 140–185 (daytime)",
+          },
+          {
+            label: "Ben Gurion → Jaffa / Old Jaffa",
+            value: "ILS 130–170 (daytime)",
+          },
+          {
+            label: "Ben Gurion → Tel Aviv South Beach (Florentin)",
+            value: "ILS 125–165 (daytime)",
+          },
+          {
+            label: "Ben Gurion → Jerusalem City Centre",
+            value: "ILS 300–400 — fixed-rate zone",
+          },
+          {
+            label: "Ben Gurion → Haifa",
+            value: "ILS 350–500 (long distance, metered)",
+          },
+        ],
+      },
+      { type: "h2", heading: "Getting a Metered Taxi at Ben Gurion" },
+      {
+        type: "p",
+        body: 'The taxi rank is outside the arrivals hall — follow signs marked "Taxi" through the terminal. All licensed Israeli taxis are required to run the meter (taximeter); confirm it starts from ILS 0 before moving. The night surcharge (25%) applies from 21:00 to 05:30 and on the Jewish Sabbath (Shabbat: Friday sundown to Saturday night). You will see the meter marked with a "2" for the night tariff. This surcharge is fully legal and official. Ask for a receipt at the end — Israeli taxis must provide one on request. Tipping is not obligatory; rounding up ILS 10–20 is a common courtesy for good service.',
+      },
+      { type: "h2", heading: "The Sherut: Israel's Unique Shared Taxi" },
+      {
+        type: "p",
+        body: "The sherut (שֵׁרוּת) is a shared minibus taxi that runs a fixed route from Ben Gurion to Tel Aviv for a flat per-person fare of ILS 35–50. Sherut counters are located in the arrivals hall — look for the signs or ask airport staff. The minibus fills up with other passengers before departing and drops everyone at set stops along the main Tel Aviv route. It is significantly cheaper than a private taxi for solo travellers, though slower due to multiple stops. Sheruts operate on Shabbat when trains do not, making them particularly valuable for Friday evening and Saturday arrivals.",
+      },
+      { type: "h2", heading: "The Train: Fastest Option (When It Runs)" },
+      {
+        type: "p",
+        body: "Israel Railways runs a direct service from Ben Gurion Airport (accessed from the terminal's underground station) to Tel Aviv in approximately 15 minutes. The fare is ILS 16.50 and trains run every 20–30 minutes during the week. Stations served include Tel Aviv HaShalom (near the Azrieli towers, good for north Tel Aviv hotels) and Tel Aviv Savidor Central (good for bus connections). Critical note: Israeli railways do not operate on Shabbat — from Friday afternoon until Saturday night, there are no trains from Ben Gurion.",
+      },
+      {
+        type: "tip",
+        body: "Shabbat planning is essential. If you arrive on a Friday evening or Saturday, the train is not running. Taxi demand spikes and the Shabbat surcharge (25%) applies. Book a taxi in advance via the Gett or Yango apps, or use the sherut service from inside arrivals. Expect to wait longer in the taxi queue on Shabbat evenings.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Ben Gurion Airport to Tel Aviv?",
+            a: "ILS 120–180 metered during daytime. A 25% night/Shabbat surcharge applies from 21:00–05:30 and during Shabbat, bringing fares to ILS 150–220.",
+          },
+          {
+            q: "What is a sherut taxi from Ben Gurion?",
+            a: "A shared minibus taxi with fixed per-person pricing (ILS 35–50) that runs a set route to Tel Aviv with multiple drop-off stops. Much cheaper than a private taxi for solo travellers. Available on Shabbat when trains do not run. Look for the sherut counter inside arrivals.",
+          },
+          {
+            q: "Is there a train from Ben Gurion to Tel Aviv?",
+            a: "Yes — 15 minutes, ILS 16.50 to Tel Aviv HaShalom or Savidor Central. Trains run frequently on weekdays. They do not run on Shabbat (Friday afternoon to Saturday night).",
+          },
+          {
+            q: "How does Shabbat affect transport from Ben Gurion?",
+            a: "Trains stop entirely from Friday afternoon until Saturday night. Bus services are minimal or absent. Taxis and sheruts continue to operate with a 25% Shabbat surcharge. Plan ahead and consider booking a taxi in advance via app (Gett or Yango) for Friday evening arrivals.",
+          },
+          {
+            q: "How much is a taxi from Ben Gurion to Jerusalem?",
+            a: "ILS 300–400 — taxis to Jerusalem are metered but the long distance makes them expensive. A sherut to Jerusalem runs ILS 60–80 per person. The train from Ben Gurion → Tel Aviv → Jerusalem takes about 1.5 hours with a change.",
+          },
+          {
+            q: "Are there taxi apps available at Ben Gurion Airport?",
+            a: "Yes — Gett and Yango (formerly Yandex Taxi) both operate in Israel and can be used to book a taxi from Ben Gurion with upfront pricing. This is particularly useful for Shabbat arrivals when queues are longer.",
+          },
+        ],
+      },
     ],
   },
 
   // ── TAXI SCAM CITY GUIDES ────────────────────────────────────────────────
 
   {
-    slug: 'taxi-scams-in-bali',
-    title: 'Taxi Scams in Bali: What to Watch For in 2026',
-    description: 'Bali has a well-documented taxi scam problem. Here\'s exactly what happens, who does it, and how to avoid every trap.',
-    publishedAt: '2025-09-08',
+    slug: "taxi-scams-in-bali",
+    title: "Taxi Scams in Bali: What to Watch For in 2026",
+    description:
+      "Bali has a well-documented taxi scam problem. Here's exactly what happens, who does it, and how to avoid every trap.",
+    publishedAt: "2025-09-08",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'Bali',
-    citySlug: 'bali',
+    category: "taxi",
+    city: "Bali",
+    citySlug: "bali",
     content: [
-      { type: 'intro', body: 'Bali is one of the most visited islands in the world — and taxi scams are among the most common complaints from first-time visitors. The good news: Bali\'s scam landscape has dramatically improved since the rise of Grab and Gojek. Most visitors now use apps and avoid the problem entirely. But if you are hailing cabs outside tourist hotspots, renting transport from informal providers, or relying on hotel taxis, knowing the specific scams will save you money and frustration. This guide covers every common situation you will encounter — from Ngurah Rai airport to Ubud rice fields.' },
-      { type: 'h2', heading: 'Bali Taxi Fare Benchmarks (2026)' },
-      { type: 'table', rows: [
-        { label: 'Airport (DPS) → Kuta / Legian', value: 'IDR 100,000–150,000 (official counter) / IDR 60,000–80,000 (Grab)' },
-        { label: 'Airport → Seminyak', value: 'IDR 130,000–180,000 (counter) / IDR 80,000–110,000 (Grab)' },
-        { label: 'Airport → Ubud', value: 'IDR 300,000–450,000 (fixed rate) / IDR 200,000–280,000 (Grab)' },
-        { label: 'Airport → Canggu', value: 'IDR 200,000–280,000 (counter) / IDR 120,000–160,000 (Grab)' },
-        { label: 'Kuta ↔ Seminyak (short hop)', value: 'IDR 50,000–80,000 metered Blue Bird' },
-        { label: 'Seminyak → Ubud', value: 'IDR 200,000–300,000 (Blue Bird or negotiated)' },
-        { label: 'Day charter (6–8 hours)', value: 'IDR 400,000–700,000 — negotiate before departure' },
-      ]},
-      { type: 'h2', heading: 'The Most Common Taxi Scams in Bali' },
-      { type: 'ul', items: [
-        'No meter / "broken meter": Driver claims the meter is broken and offers a fixed price 3–5× the fair rate. Solution: only use metered Blue Bird taxis or Grab/Gojek.',
-        'Unofficial "taxis" at Ngurah Rai Airport: Touts outside arrivals will approach with unmarked cars. Always use the official taxi counter inside the terminal.',
-        'Driver takes longer route: Deliberate detours, especially in Kuta, Legian, and Seminyak. Use Google Maps to follow the route in real time.',
-        '"My friend\'s shop" detour: Driver suggests a stop at a souvenir shop or silver workshop where he earns commission. Politely decline — you will be pressured to buy.',
-        'Hotel taxi price inflation: Some hotel front desks quote taxi fares 2–3× the street rate. Ask for Gojek instead, or walk to the main road.',
-        'Fake Grab / Gojek: Driver shows you a phone with the app but is not actually on the platform. Always verify the driver name and plate number match what the app shows.',
-      ]},
-      { type: 'h2', heading: 'How to Get a Fair Fare in Bali' },
-      { type: 'p', body: 'Gojek and Grab are both available in Bali and cover most tourist areas including Kuta, Seminyak, Canggu, Sanur, and Ubud. Fares are upfront, drivers are rated, and overcharging is rare. For airport arrivals, use the official taxi counter inside the terminal — not the touts outside. Blue Bird Group taxis are the most reputable metered taxi company in Bali; look for the distinctive blue colour and always confirm the meter is running before the car moves. For day trips and excursions, negotiate the full round-trip price in advance and agree on the wait time included.' },
-      { type: 'h2', heading: 'Chartering a Driver for Day Trips' },
-      { type: 'p', body: 'For temple visits, rice terrace hikes, and day trips from Seminyak to Ubud or Uluwatu, chartering a driver is a popular and cost-effective option. A 6–8 hour charter (including waiting time at sites) typically costs IDR 400,000–700,000. Always agree on: total price for the day, which sites are included, whether petrol and parking are included, and start/end time. Reputable guesthouses can arrange trusted drivers at fair rates — ask your accommodation rather than taking unsolicited offers.' },
-      { type: 'warning', body: 'Grab and Gojek drivers are sometimes blocked from entering resort compounds and popular tourist areas by local taxi cartels. If your driver asks you to walk 50m to the main road for pick-up, this is why — it is not a scam on the driver\'s part. Budget resorts in Kuta are particularly affected.' },
-      { type: 'tip', body: 'Download both Grab and Gojek before arriving in Bali. Availability and pricing can differ between apps depending on the area and time of day. Having both gives you the best fare comparison and pick-up time.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'Is Grab or Gojek available in Bali?', a: 'Yes — both apps work well in Bali\'s tourist areas (Kuta, Seminyak, Ubud, Canggu, Nusa Dua). Coverage can be limited in very remote areas like the north coast and highlands.' },
-        { q: 'Are Bali taxis safe?', a: 'Blue Bird metered taxis are safe and reliable. Avoid unmarked taxis, especially at the airport and in busy tourist areas like Kuta and Seminyak.' },
-        { q: 'What is a fair taxi fare in Bali?', a: 'Kuta to Seminyak: ~IDR 50,000–80,000. Airport to Ubud: IDR 250,000–350,000. Use Grab to benchmark any fare you are quoted before getting into an unmarked cab.' },
-        { q: 'How do I avoid scams at Bali airport?', a: 'Go straight to the official taxi counter inside the terminal (before the exit doors). Ignore all touts who approach you. Alternatively, exit the terminal and use Grab or Gojek from the designated app pick-up area.' },
-        { q: 'What is a Blue Bird taxi in Bali?', a: 'Blue Bird Group is Bali\'s most reputable taxi company, identifiable by their distinctive blue colour. They always use meters, have trained drivers, and are significantly more reliable than unlicensed cabs.' },
-        { q: 'Can I negotiate taxi fares in Bali?', a: 'For metered Blue Bird taxis: no negotiation needed (or appropriate). For charter vehicles and day trips: always negotiate upfront in IDR and confirm all inclusions. For unmarked taxis: negotiate firmly, knowing Grab fares are your benchmark.' },
-      ]},
+      {
+        type: "intro",
+        body: "Bali is one of the most visited islands in the world — and taxi scams are among the most common complaints from first-time visitors. The good news: Bali's scam landscape has dramatically improved since the rise of Grab and Gojek. Most visitors now use apps and avoid the problem entirely. But if you are hailing cabs outside tourist hotspots, renting transport from informal providers, or relying on hotel taxis, knowing the specific scams will save you money and frustration. This guide covers every common situation you will encounter — from Ngurah Rai airport to Ubud rice fields.",
+      },
+      { type: "h2", heading: "Bali Taxi Fare Benchmarks (2026)" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Airport (DPS) → Kuta / Legian",
+            value:
+              "IDR 100,000–150,000 (official counter) / IDR 60,000–80,000 (Grab)",
+          },
+          {
+            label: "Airport → Seminyak",
+            value: "IDR 130,000–180,000 (counter) / IDR 80,000–110,000 (Grab)",
+          },
+          {
+            label: "Airport → Ubud",
+            value:
+              "IDR 300,000–450,000 (fixed rate) / IDR 200,000–280,000 (Grab)",
+          },
+          {
+            label: "Airport → Canggu",
+            value: "IDR 200,000–280,000 (counter) / IDR 120,000–160,000 (Grab)",
+          },
+          {
+            label: "Kuta ↔ Seminyak (short hop)",
+            value: "IDR 50,000–80,000 metered Blue Bird",
+          },
+          {
+            label: "Seminyak → Ubud",
+            value: "IDR 200,000–300,000 (Blue Bird or negotiated)",
+          },
+          {
+            label: "Day charter (6–8 hours)",
+            value: "IDR 400,000–700,000 — negotiate before departure",
+          },
+        ],
+      },
+      { type: "h2", heading: "The Most Common Taxi Scams in Bali" },
+      {
+        type: "ul",
+        items: [
+          'No meter / "broken meter": Driver claims the meter is broken and offers a fixed price 3–5× the fair rate. Solution: only use metered Blue Bird taxis or Grab/Gojek.',
+          'Unofficial "taxis" at Ngurah Rai Airport: Touts outside arrivals will approach with unmarked cars. Always use the official taxi counter inside the terminal.',
+          "Driver takes longer route: Deliberate detours, especially in Kuta, Legian, and Seminyak. Use Google Maps to follow the route in real time.",
+          '"My friend\'s shop" detour: Driver suggests a stop at a souvenir shop or silver workshop where he earns commission. Politely decline — you will be pressured to buy.',
+          "Hotel taxi price inflation: Some hotel front desks quote taxi fares 2–3× the street rate. Ask for Gojek instead, or walk to the main road.",
+          "Fake Grab / Gojek: Driver shows you a phone with the app but is not actually on the platform. Always verify the driver name and plate number match what the app shows.",
+        ],
+      },
+      { type: "h2", heading: "How to Get a Fair Fare in Bali" },
+      {
+        type: "p",
+        body: "Gojek and Grab are both available in Bali and cover most tourist areas including Kuta, Seminyak, Canggu, Sanur, and Ubud. Fares are upfront, drivers are rated, and overcharging is rare. For airport arrivals, use the official taxi counter inside the terminal — not the touts outside. Blue Bird Group taxis are the most reputable metered taxi company in Bali; look for the distinctive blue colour and always confirm the meter is running before the car moves. For day trips and excursions, negotiate the full round-trip price in advance and agree on the wait time included.",
+      },
+      { type: "h2", heading: "Chartering a Driver for Day Trips" },
+      {
+        type: "p",
+        body: "For temple visits, rice terrace hikes, and day trips from Seminyak to Ubud or Uluwatu, chartering a driver is a popular and cost-effective option. A 6–8 hour charter (including waiting time at sites) typically costs IDR 400,000–700,000. Always agree on: total price for the day, which sites are included, whether petrol and parking are included, and start/end time. Reputable guesthouses can arrange trusted drivers at fair rates — ask your accommodation rather than taking unsolicited offers.",
+      },
+      {
+        type: "warning",
+        body: "Grab and Gojek drivers are sometimes blocked from entering resort compounds and popular tourist areas by local taxi cartels. If your driver asks you to walk 50m to the main road for pick-up, this is why — it is not a scam on the driver's part. Budget resorts in Kuta are particularly affected.",
+      },
+      {
+        type: "tip",
+        body: "Download both Grab and Gojek before arriving in Bali. Availability and pricing can differ between apps depending on the area and time of day. Having both gives you the best fare comparison and pick-up time.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "Is Grab or Gojek available in Bali?",
+            a: "Yes — both apps work well in Bali's tourist areas (Kuta, Seminyak, Ubud, Canggu, Nusa Dua). Coverage can be limited in very remote areas like the north coast and highlands.",
+          },
+          {
+            q: "Are Bali taxis safe?",
+            a: "Blue Bird metered taxis are safe and reliable. Avoid unmarked taxis, especially at the airport and in busy tourist areas like Kuta and Seminyak.",
+          },
+          {
+            q: "What is a fair taxi fare in Bali?",
+            a: "Kuta to Seminyak: ~IDR 50,000–80,000. Airport to Ubud: IDR 250,000–350,000. Use Grab to benchmark any fare you are quoted before getting into an unmarked cab.",
+          },
+          {
+            q: "How do I avoid scams at Bali airport?",
+            a: "Go straight to the official taxi counter inside the terminal (before the exit doors). Ignore all touts who approach you. Alternatively, exit the terminal and use Grab or Gojek from the designated app pick-up area.",
+          },
+          {
+            q: "What is a Blue Bird taxi in Bali?",
+            a: "Blue Bird Group is Bali's most reputable taxi company, identifiable by their distinctive blue colour. They always use meters, have trained drivers, and are significantly more reliable than unlicensed cabs.",
+          },
+          {
+            q: "Can I negotiate taxi fares in Bali?",
+            a: "For metered Blue Bird taxis: no negotiation needed (or appropriate). For charter vehicles and day trips: always negotiate upfront in IDR and confirm all inclusions. For unmarked taxis: negotiate firmly, knowing Grab fares are your benchmark.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'taxi-scams-in-cairo',
-    title: 'Taxi Scams in Cairo: How to Avoid Getting Overcharged (2026)',
-    description: 'Cairo taxis have a complex reputation. Here\'s which scams are real, how to negotiate correctly, and when to use Uber instead.',
-    publishedAt: '2025-09-17',
+    slug: "taxi-scams-in-cairo",
+    title: "Taxi Scams in Cairo: How to Avoid Getting Overcharged (2026)",
+    description:
+      "Cairo taxis have a complex reputation. Here's which scams are real, how to negotiate correctly, and when to use Uber instead.",
+    publishedAt: "2025-09-17",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'Cairo',
-    citySlug: 'cairo',
+    category: "taxi",
+    city: "Cairo",
+    citySlug: "cairo",
     content: [
-      { type: 'intro', body: 'Cairo\'s taxi culture can be bewildering for first-time visitors. Traditional black-and-white taxis often do not use meters and fares are typically negotiated. This creates significant room for overcharging tourists. Newer white CNG taxis and app-based services (Uber, Careem) have made the situation much easier — but if you venture into traditional cab territory, knowing the rules is essential. Egypt\'s currency has also depreciated rapidly, meaning fare benchmarks in EGP shift frequently — always use the Uber app as your real-time baseline.' },
-      { type: 'h2', heading: 'Cairo Taxi Fare Benchmarks (2026)' },
-      { type: 'table', rows: [
-        { label: 'Cairo International Airport → Downtown', value: 'EGP 250–400 (Uber) / EGP 400–600 (negotiated taxi)' },
-        { label: 'Airport → Zamalek', value: 'EGP 300–450 (Uber) / EGP 500–700 (negotiated)' },
-        { label: 'Airport → Giza / Pyramids area', value: 'EGP 350–550 (Uber)' },
-        { label: 'Downtown → Coptic Cairo / Old Cairo', value: 'EGP 80–150 (Uber)' },
-        { label: 'Downtown → Khan el-Khalili', value: 'EGP 60–120 (Uber)' },
-        { label: 'Giza Pyramids → Downtown', value: 'EGP 200–350 (Uber)' },
-        { label: 'Short city hop (2–4 km)', value: 'EGP 50–120 (Uber) / EGP 100–200 (negotiated)' },
-      ]},
-      { type: 'h2', heading: 'Common Cairo Taxi Scams' },
-      { type: 'ul', items: [
-        'Not using the meter in metered taxis: Newer white taxis are metered but drivers often refuse to use it for tourists. Insist on the meter or use Uber.',
-        'Fake "meters" or no meter at all: Old black-and-white taxis are negotiated — there is no meter. Agree the fare before getting in.',
-        'Airport overcharging: Drivers at Cairo International quote inflated rates to new arrivals. The legitimate Uber fare to central Cairo is EGP 250–400; taxi tout quotes of EGP 800–1,200 are common.',
-        'Midnight price inflation: Some drivers double their rates after dark. Agree the fare explicitly before getting in at night.',
-        '"I don\'t have change": Driver claims he can\'t make change to keep more than the agreed fare. Carry exact change or small EGP notes.',
-        'Pyramid area touts: Around the pyramids and Khan el-Khalili, unofficial drivers offer "tours" at hugely inflated rates. Set rates via Uber before agreeing to anything.',
-      ]},
-      { type: 'h2', heading: 'Getting Around Cairo Safely' },
-      { type: 'p', body: 'Uber and Careem (owned by Uber) both operate extensively in Cairo and are the strongly recommended options for tourists. Fares are upfront in Egyptian Pounds, no negotiation is needed, and the driver\'s details are recorded. For the airport, both apps have dedicated pick-up zones. If you do take a traditional taxi, agree the fare in full (in EGP) before entering the vehicle — saying the destination and a fair price ("Tahrir Square, EGP 150?") — and only pay the agreed amount on arrival. Cairo\'s metro is also an excellent option for longer journeys between key areas.' },
-      { type: 'h2', heading: 'Negotiating with Traditional Cairo Taxis' },
-      { type: 'p', body: 'If you must use a traditional negotiated taxi, the formula is: know the Uber price first, offer 80% of it, and settle at the Uber price or just below. State the destination clearly in Arabic if possible (showing it on a map works well). Have exact change ready — handing over a large note invites the "no change" problem. If the driver agrees a fare and then tries to renegotiate on arrival, simply offer the agreed amount and be prepared to walk away.' },
-      { type: 'warning', body: 'At Cairo Airport\'s arrivals, unofficial taxi touts will approach you aggressively claiming to be official. Ignore them completely and either use the Uber app or proceed to the official taxi queue outside. The official queue has a price board — check it before agreeing to any fare.' },
-      { type: 'tip', body: 'Download Uber before arriving in Egypt — it works reliably at Cairo International and throughout the city. Careem is equally good and sometimes offers lower fares. Have both apps on your phone for comparison.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'How much should a taxi cost in Cairo?', a: 'Airport to central Cairo: EGP 250–400 via Uber. City centre journeys: EGP 60–150 depending on distance. Use Uber as your real-time baseline — fares shift as the Egyptian Pound fluctuates.' },
-        { q: 'Is Uber safe in Cairo?', a: 'Yes — Uber and Careem are widely used in Cairo and considered the safest and most transparent option for tourists. Driver details are recorded and trips are tracked.' },
-        { q: 'Should I negotiate taxi fares in Cairo?', a: 'For traditional (black-and-white) taxis: yes, negotiate before you get in. For newer white CNG taxis: insist on the meter. For Uber/Careem: the app sets the fare automatically.' },
-        { q: 'What is the difference between Cairo\'s black-and-white and white taxis?', a: 'Old black-and-white taxis have no meter — fares are negotiated. Newer white CNG taxis are metered by law, though drivers sometimes refuse. Both are increasingly replaced by Uber/Careem for tourist journeys.' },
-        { q: 'Are there taxis at Cairo International Airport I can trust?', a: 'The official taxi queue outside arrivals has regulated prices displayed. Alternatively, use Uber from the designated pick-up area inside the terminal. Avoid all touts who approach you in the arrivals hall.' },
-        { q: 'Is it safe to take a taxi alone at night in Cairo?', a: 'Uber and Careem are the safe options for night-time travel. Traditional street-hailed taxis carry more risk after dark — if you must use one, agree the fare explicitly and share your trip details with someone.' },
-      ]},
+      {
+        type: "intro",
+        body: "Cairo's taxi culture can be bewildering for first-time visitors. Traditional black-and-white taxis often do not use meters and fares are typically negotiated. This creates significant room for overcharging tourists. Newer white CNG taxis and app-based services (Uber, Careem) have made the situation much easier — but if you venture into traditional cab territory, knowing the rules is essential. Egypt's currency has also depreciated rapidly, meaning fare benchmarks in EGP shift frequently — always use the Uber app as your real-time baseline.",
+      },
+      { type: "h2", heading: "Cairo Taxi Fare Benchmarks (2026)" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Cairo International Airport → Downtown",
+            value: "EGP 250–400 (Uber) / EGP 400–600 (negotiated taxi)",
+          },
+          {
+            label: "Airport → Zamalek",
+            value: "EGP 300–450 (Uber) / EGP 500–700 (negotiated)",
+          },
+          {
+            label: "Airport → Giza / Pyramids area",
+            value: "EGP 350–550 (Uber)",
+          },
+          {
+            label: "Downtown → Coptic Cairo / Old Cairo",
+            value: "EGP 80–150 (Uber)",
+          },
+          { label: "Downtown → Khan el-Khalili", value: "EGP 60–120 (Uber)" },
+          { label: "Giza Pyramids → Downtown", value: "EGP 200–350 (Uber)" },
+          {
+            label: "Short city hop (2–4 km)",
+            value: "EGP 50–120 (Uber) / EGP 100–200 (negotiated)",
+          },
+        ],
+      },
+      { type: "h2", heading: "Common Cairo Taxi Scams" },
+      {
+        type: "ul",
+        items: [
+          "Not using the meter in metered taxis: Newer white taxis are metered but drivers often refuse to use it for tourists. Insist on the meter or use Uber.",
+          'Fake "meters" or no meter at all: Old black-and-white taxis are negotiated — there is no meter. Agree the fare before getting in.',
+          "Airport overcharging: Drivers at Cairo International quote inflated rates to new arrivals. The legitimate Uber fare to central Cairo is EGP 250–400; taxi tout quotes of EGP 800–1,200 are common.",
+          "Midnight price inflation: Some drivers double their rates after dark. Agree the fare explicitly before getting in at night.",
+          "\"I don't have change\": Driver claims he can't make change to keep more than the agreed fare. Carry exact change or small EGP notes.",
+          'Pyramid area touts: Around the pyramids and Khan el-Khalili, unofficial drivers offer "tours" at hugely inflated rates. Set rates via Uber before agreeing to anything.',
+        ],
+      },
+      { type: "h2", heading: "Getting Around Cairo Safely" },
+      {
+        type: "p",
+        body: "Uber and Careem (owned by Uber) both operate extensively in Cairo and are the strongly recommended options for tourists. Fares are upfront in Egyptian Pounds, no negotiation is needed, and the driver's details are recorded. For the airport, both apps have dedicated pick-up zones. If you do take a traditional taxi, agree the fare in full (in EGP) before entering the vehicle — saying the destination and a fair price (\"Tahrir Square, EGP 150?\") — and only pay the agreed amount on arrival. Cairo's metro is also an excellent option for longer journeys between key areas.",
+      },
+      { type: "h2", heading: "Negotiating with Traditional Cairo Taxis" },
+      {
+        type: "p",
+        body: 'If you must use a traditional negotiated taxi, the formula is: know the Uber price first, offer 80% of it, and settle at the Uber price or just below. State the destination clearly in Arabic if possible (showing it on a map works well). Have exact change ready — handing over a large note invites the "no change" problem. If the driver agrees a fare and then tries to renegotiate on arrival, simply offer the agreed amount and be prepared to walk away.',
+      },
+      {
+        type: "warning",
+        body: "At Cairo Airport's arrivals, unofficial taxi touts will approach you aggressively claiming to be official. Ignore them completely and either use the Uber app or proceed to the official taxi queue outside. The official queue has a price board — check it before agreeing to any fare.",
+      },
+      {
+        type: "tip",
+        body: "Download Uber before arriving in Egypt — it works reliably at Cairo International and throughout the city. Careem is equally good and sometimes offers lower fares. Have both apps on your phone for comparison.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much should a taxi cost in Cairo?",
+            a: "Airport to central Cairo: EGP 250–400 via Uber. City centre journeys: EGP 60–150 depending on distance. Use Uber as your real-time baseline — fares shift as the Egyptian Pound fluctuates.",
+          },
+          {
+            q: "Is Uber safe in Cairo?",
+            a: "Yes — Uber and Careem are widely used in Cairo and considered the safest and most transparent option for tourists. Driver details are recorded and trips are tracked.",
+          },
+          {
+            q: "Should I negotiate taxi fares in Cairo?",
+            a: "For traditional (black-and-white) taxis: yes, negotiate before you get in. For newer white CNG taxis: insist on the meter. For Uber/Careem: the app sets the fare automatically.",
+          },
+          {
+            q: "What is the difference between Cairo's black-and-white and white taxis?",
+            a: "Old black-and-white taxis have no meter — fares are negotiated. Newer white CNG taxis are metered by law, though drivers sometimes refuse. Both are increasingly replaced by Uber/Careem for tourist journeys.",
+          },
+          {
+            q: "Are there taxis at Cairo International Airport I can trust?",
+            a: "The official taxi queue outside arrivals has regulated prices displayed. Alternatively, use Uber from the designated pick-up area inside the terminal. Avoid all touts who approach you in the arrivals hall.",
+          },
+          {
+            q: "Is it safe to take a taxi alone at night in Cairo?",
+            a: "Uber and Careem are the safe options for night-time travel. Traditional street-hailed taxis carry more risk after dark — if you must use one, agree the fare explicitly and share your trip details with someone.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'taxi-scams-in-marrakech',
-    title: 'Taxi Scams in Marrakech: Stay Sharp in the Medina (2026)',
-    description: 'Marrakech\'s petit taxis are cheap — but the scam potential is real. Here\'s what visitors consistently face and how to handle it.',
-    publishedAt: '2025-09-25',
+    slug: "taxi-scams-in-marrakech",
+    title: "Taxi Scams in Marrakech: Stay Sharp in the Medina (2026)",
+    description:
+      "Marrakech's petit taxis are cheap — but the scam potential is real. Here's what visitors consistently face and how to handle it.",
+    publishedAt: "2025-09-25",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'Marrakech',
-    citySlug: 'marrakech',
+    category: "taxi",
+    city: "Marrakech",
+    citySlug: "marrakech",
     content: [
-      { type: 'intro', body: 'Marrakech\'s iconic red petit taxis are a great way to get around — cheap, plentiful, and part of the city\'s character. But they come with a well-documented set of scams targeting tourists. The most common: refusing to use the meter, then charging whatever they like at the destination. This guide covers every Marrakech taxi trap visitors face — from airport touts to medina drop-offs — and the exact fares you should be paying in 2026. Know the rules, know the fares, and you will navigate Marrakech\'s taxi scene with confidence.' },
-      { type: 'h2', heading: 'Marrakech Taxi Fare Benchmarks (2026)' },
-      { type: 'table', rows: [
-        { label: 'Marrakech Airport → Medina / Djemaa el-Fna', value: 'MAD 70–100 (negotiated) — no meter used' },
-        { label: 'Marrakech Airport → Gueliz (New City)', value: 'MAD 50–80 (negotiated)' },
-        { label: 'Djemaa el-Fna → Gueliz', value: 'MAD 10–20 (metered)' },
-        { label: 'Djemaa el-Fna → Majorelle Garden', value: 'MAD 15–25 (metered)' },
-        { label: 'Medina → Palmeraie', value: 'MAD 40–60 (metered or negotiated)' },
-        { label: 'Night surcharge (after 8pm)', value: '+50% on metered fare — legitimate' },
-        { label: 'Meter start rate', value: 'MAD 2.50 — increments per km thereafter' },
-      ]},
-      { type: 'h2', heading: 'Common Marrakech Taxi Scams' },
-      { type: 'ul', items: [
-        'No meter: Drivers claim the meter is broken or simply don\'t start it. By law, petit taxis must use the meter within the city. Insist or find another cab.',
-        'Agreed price then renegotiation: You agree MAD 30 before departing; the driver claims he said MAD 130 on arrival. State the fare loudly and clearly before moving.',
-        'Fake guide drop-off: Driver "helpfully" stops near the medina and introduces his guide friend who offers to take you the rest of the way — for a large fee.',
-        'Wrong destination: Driver takes you to a riad guesthouse or shop that pays commission, claiming it is your destination. Show your hotel on a map before departure.',
-        'Night rate without notification: A 50% night surcharge is legitimate after 8pm, but some drivers apply it during the day without telling you.',
-        'Grand taxi overcharging: Shared grand taxis between cities have fixed per-seat rates — touts charge tourists the full vehicle rate. Ask locals what the per-person rate is.',
-      ]},
-      { type: 'h2', heading: 'Fair Fares in Marrakech' },
-      { type: 'p', body: 'Within the medina and central Marrakech, almost all petit taxi journeys should cost MAD 10–30 on the meter. Airport to city centre: MAD 70–100 (no meter — this is a fixed zone negotiation; bargain before getting in). The meter starting rate is MAD 2.50, with increments adding up quickly for longer journeys. Before entering a taxi, either confirm the meter will be used or agree an explicit price in Dirhams. InDriver and Careem operate in Marrakech and provide a transparent app-based alternative with upfront pricing.' },
-      { type: 'h2', heading: 'Petit Taxi vs Grand Taxi — What\'s the Difference?' },
-      { type: 'p', body: 'Petit taxis (the red cars) operate within Marrakech city limits only, take up to 3 passengers, and are metered. Grand taxis (larger Mercedes or Peugeot estate cars) run shared routes between cities and between Marrakech and its outskirts — they operate on fixed per-seat rates, not meters. If you want a grand taxi to yourself (private hire), you pay the full vehicle price. Understand which type you are entering before negotiating.' },
-      { type: 'tip', body: 'Petit taxis in Marrakech can legally take up to 3 passengers. If a driver picks up additional passengers along your route, that is normal — each pays their own fare. Grand taxis (larger shared vehicles) operate fixed routes between cities and are a different category entirely.' },
-      { type: 'warning', body: 'At the medina entrances — particularly near Djemaa el-Fna — young men will approach offering to "take you to your riad" or claiming your destination is far and you need a guide. These are not taxi drivers; they earn commissions from shops and guesthouses. Decline firmly and walk on.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'How much should a taxi cost in Marrakech?', a: 'City centre journeys: MAD 10–30 on the meter. Airport to medina: MAD 70–100 (negotiated fixed price). Always confirm before getting in.' },
-        { q: 'Do Marrakech taxis use meters?', a: 'Petit taxis are required to use meters within the city, but many refuse for tourists. Insist on the meter or agree a firm price beforehand. Meters start at MAD 2.50.' },
-        { q: 'Is Uber available in Marrakech?', a: 'Uber is not available in Morocco. Careem (Uber-owned) and InDriver both operate in Marrakech and are the best app-based alternatives with upfront pricing.' },
-        { q: 'What is the night surcharge on Marrakech taxis?', a: 'After 8pm, a 50% surcharge on the metered fare is legitimate and legal. If a driver charges this during the day, it is a scam — check the tariff number on the meter.' },
-        { q: 'How do I get from Marrakech airport to the medina?', a: 'Negotiate a fixed fare of MAD 70–100 with an official petit taxi outside arrivals, or use Careem/InDriver from the app. A taxi to Djemaa el-Fna should never cost more than MAD 120, even for late arrivals.' },
-        { q: 'Can I share a petit taxi in Marrakech?', a: 'Yes — drivers may pick up other passengers along the route. This is normal practice and does not affect your fare. Each passenger pays separately for their own route segment.' },
-      ]},
+      {
+        type: "intro",
+        body: "Marrakech's iconic red petit taxis are a great way to get around — cheap, plentiful, and part of the city's character. But they come with a well-documented set of scams targeting tourists. The most common: refusing to use the meter, then charging whatever they like at the destination. This guide covers every Marrakech taxi trap visitors face — from airport touts to medina drop-offs — and the exact fares you should be paying in 2026. Know the rules, know the fares, and you will navigate Marrakech's taxi scene with confidence.",
+      },
+      { type: "h2", heading: "Marrakech Taxi Fare Benchmarks (2026)" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Marrakech Airport → Medina / Djemaa el-Fna",
+            value: "MAD 70–100 (negotiated) — no meter used",
+          },
+          {
+            label: "Marrakech Airport → Gueliz (New City)",
+            value: "MAD 50–80 (negotiated)",
+          },
+          { label: "Djemaa el-Fna → Gueliz", value: "MAD 10–20 (metered)" },
+          {
+            label: "Djemaa el-Fna → Majorelle Garden",
+            value: "MAD 15–25 (metered)",
+          },
+          {
+            label: "Medina → Palmeraie",
+            value: "MAD 40–60 (metered or negotiated)",
+          },
+          {
+            label: "Night surcharge (after 8pm)",
+            value: "+50% on metered fare — legitimate",
+          },
+          {
+            label: "Meter start rate",
+            value: "MAD 2.50 — increments per km thereafter",
+          },
+        ],
+      },
+      { type: "h2", heading: "Common Marrakech Taxi Scams" },
+      {
+        type: "ul",
+        items: [
+          "No meter: Drivers claim the meter is broken or simply don't start it. By law, petit taxis must use the meter within the city. Insist or find another cab.",
+          "Agreed price then renegotiation: You agree MAD 30 before departing; the driver claims he said MAD 130 on arrival. State the fare loudly and clearly before moving.",
+          'Fake guide drop-off: Driver "helpfully" stops near the medina and introduces his guide friend who offers to take you the rest of the way — for a large fee.',
+          "Wrong destination: Driver takes you to a riad guesthouse or shop that pays commission, claiming it is your destination. Show your hotel on a map before departure.",
+          "Night rate without notification: A 50% night surcharge is legitimate after 8pm, but some drivers apply it during the day without telling you.",
+          "Grand taxi overcharging: Shared grand taxis between cities have fixed per-seat rates — touts charge tourists the full vehicle rate. Ask locals what the per-person rate is.",
+        ],
+      },
+      { type: "h2", heading: "Fair Fares in Marrakech" },
+      {
+        type: "p",
+        body: "Within the medina and central Marrakech, almost all petit taxi journeys should cost MAD 10–30 on the meter. Airport to city centre: MAD 70–100 (no meter — this is a fixed zone negotiation; bargain before getting in). The meter starting rate is MAD 2.50, with increments adding up quickly for longer journeys. Before entering a taxi, either confirm the meter will be used or agree an explicit price in Dirhams. InDriver and Careem operate in Marrakech and provide a transparent app-based alternative with upfront pricing.",
+      },
+      {
+        type: "h2",
+        heading: "Petit Taxi vs Grand Taxi — What's the Difference?",
+      },
+      {
+        type: "p",
+        body: "Petit taxis (the red cars) operate within Marrakech city limits only, take up to 3 passengers, and are metered. Grand taxis (larger Mercedes or Peugeot estate cars) run shared routes between cities and between Marrakech and its outskirts — they operate on fixed per-seat rates, not meters. If you want a grand taxi to yourself (private hire), you pay the full vehicle price. Understand which type you are entering before negotiating.",
+      },
+      {
+        type: "tip",
+        body: "Petit taxis in Marrakech can legally take up to 3 passengers. If a driver picks up additional passengers along your route, that is normal — each pays their own fare. Grand taxis (larger shared vehicles) operate fixed routes between cities and are a different category entirely.",
+      },
+      {
+        type: "warning",
+        body: 'At the medina entrances — particularly near Djemaa el-Fna — young men will approach offering to "take you to your riad" or claiming your destination is far and you need a guide. These are not taxi drivers; they earn commissions from shops and guesthouses. Decline firmly and walk on.',
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much should a taxi cost in Marrakech?",
+            a: "City centre journeys: MAD 10–30 on the meter. Airport to medina: MAD 70–100 (negotiated fixed price). Always confirm before getting in.",
+          },
+          {
+            q: "Do Marrakech taxis use meters?",
+            a: "Petit taxis are required to use meters within the city, but many refuse for tourists. Insist on the meter or agree a firm price beforehand. Meters start at MAD 2.50.",
+          },
+          {
+            q: "Is Uber available in Marrakech?",
+            a: "Uber is not available in Morocco. Careem (Uber-owned) and InDriver both operate in Marrakech and are the best app-based alternatives with upfront pricing.",
+          },
+          {
+            q: "What is the night surcharge on Marrakech taxis?",
+            a: "After 8pm, a 50% surcharge on the metered fare is legitimate and legal. If a driver charges this during the day, it is a scam — check the tariff number on the meter.",
+          },
+          {
+            q: "How do I get from Marrakech airport to the medina?",
+            a: "Negotiate a fixed fare of MAD 70–100 with an official petit taxi outside arrivals, or use Careem/InDriver from the app. A taxi to Djemaa el-Fna should never cost more than MAD 120, even for late arrivals.",
+          },
+          {
+            q: "Can I share a petit taxi in Marrakech?",
+            a: "Yes — drivers may pick up other passengers along the route. This is normal practice and does not affect your fare. Each passenger pays separately for their own route segment.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'taxi-scams-in-istanbul',
-    title: 'Taxi Scams in Istanbul: How to Avoid Getting Ripped Off (2026)',
-    description: 'Istanbul taxis have a notorious overcharging problem. Here\'s the specific tricks used and how to guarantee a fair fare.',
-    publishedAt: '2025-10-05',
+    slug: "taxi-scams-in-istanbul",
+    title: "Taxi Scams in Istanbul: How to Avoid Getting Ripped Off (2026)",
+    description:
+      "Istanbul taxis have a notorious overcharging problem. Here's the specific tricks used and how to guarantee a fair fare.",
+    publishedAt: "2025-10-05",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'Istanbul',
-    citySlug: 'istanbul',
+    category: "taxi",
+    city: "Istanbul",
+    citySlug: "istanbul",
     content: [
-      { type: 'intro', body: 'Istanbul is a magnificent city — and its yellow taxis are a legitimate and convenient way to get around. They are also a frequent source of tourist complaints. Istanbul taxi scams are well-documented, specific, and avoidable. The most common tricks involve rigged meters, banknote switching, and deliberate overlong routes. This guide covers the exact amounts you should pay in 2026 (noting that Turkish lira inflation means figures can shift), the specific scam mechanics, and the best alternatives for every journey type.' },
-      { type: 'h2', heading: 'Istanbul Taxi Fare Benchmarks (2026)' },
-      { type: 'table', rows: [
-        { label: 'Meter start (drop) rate', value: 'TRY 73 (day) / TRY 109 (night — after 12am)' },
-        { label: 'Sultanahmet ↔ Taksim', value: 'TRY 150–300 (10–15 min, day rate)' },
-        { label: 'Taksim → Beyoğlu / Galata', value: 'TRY 100–180 (short hop)' },
-        { label: 'Airport (IST) → Sultanahmet', value: 'TRY 800–1,400 depending on traffic' },
-        { label: 'Airport (SAW) → Kadıköy', value: 'TRY 600–900' },
-        { label: 'Bosphorus ferry terminals → city hotels', value: 'TRY 120–250' },
-        { label: 'Night rate uplift (after midnight)', value: '+50% — legitimate if the tariff switch is correct' },
-      ]},
-      { type: 'h2', heading: 'Istanbul\'s Most Common Taxi Scams' },
-      { type: 'ul', items: [
-        'Rigged meter (fast meter): Some meters are modified to tick faster than regulated. The fare seems to climb unusually quickly. Use Uber or BiTaksi to benchmark first.',
-        'Banknote switching: You hand over a TRY 200 (or 500) note; the driver palms it and shows a TRY 20, claiming you underpaid. Only use app-based payment or exact cash where possible.',
-        'Long route: Deliberate detours across bridges or through traffic — adds significant time and fare. Follow Google Maps for your route before departure.',
-        'Night tariff during the day: Istanbul has two tariffs — day (gündüz) and night (gece). Night tariff is ~50% higher. Some drivers run the night tariff at 10am. Check the "T1" or "T2" indicator on the meter.',
-        'No change: Driver has no change for your large note. Always carry exact change or smaller TRY notes.',
-        'Airport redirect: At Istanbul Airport (IST), unofficial drivers near the arrivals hall offer "taxi service" — these are not registered taxis and fares can be enormous. Use the official taxi rank only.',
-      ]},
-      { type: 'h2', heading: 'How to Get a Fair Taxi in Istanbul' },
-      { type: 'p', body: 'BiTaksi is the dominant Turkish taxi-hailing app and offers upfront pricing with metered backup — it is the most reliable way to take a traditional taxi in Istanbul with price transparency. Uber also operates in Istanbul, often using licensed taxi drivers on the platform. For airport transfers, both Havataş bus and the Istanbul Airport Metro (opened 2023) are excellent and far cheaper than taxis. If you must hail a cab, use the BiTaksi app or flag one near a major hotel where drivers are more accountable.' },
-      { type: 'h2', heading: 'Istanbul Transport Alternatives' },
-      { type: 'ul', items: [
-        'Istanbul Card (İstanbul Kart): Rechargeable card works on metro, tram, bus, funicular, and ferries — covers most tourist routes cheaply',
-        'Metro + tram: M1 line connects IST airport to city. T1 tram runs along the Golden Horn to Sultanahmet and Kabataş',
-        'Bosphorus ferries: Cheap, scenic, and practical for crossing between European and Asian sides',
-        'BiTaksi app: Book licensed yellow taxis with upfront pricing — far safer than hailing',
-        'Uber: Uses licensed local taxi drivers; pricing is transparent and tracked',
-      ]},
-      { type: 'warning', body: 'The banknote switch is Istanbul\'s most brazen scam. When paying, clearly announce the denomination: "İki yüz lira" (two hundred lira). Watch the driver\'s hands carefully. If he disputes what you gave him, do not escalate — take a photo of the taxi ID displayed on the dashboard and contact the tourism police (+90 212 527 4503) if needed.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'How much should a taxi cost in Istanbul?', a: 'Short city journeys: TRY 150–400. Airport (IST) to Sultanahmet: TRY 800–1,400 depending on traffic. Use BiTaksi or Uber to verify before you get in. Note: Turkish lira inflation means these figures can shift — always check apps for current rates.' },
-        { q: 'Is Uber available in Istanbul?', a: 'Yes — Uber operates in Istanbul and uses licensed local taxi drivers. It provides upfront pricing and is among the safest options for tourists.' },
-        { q: 'What is BiTaksi?', a: 'A Turkish taxi app that lets you hail licensed Istanbul taxis with upfront pricing, driver details, and route tracking. Available in the App Store and Google Play. Highly recommended over street hailing.' },
-        { q: 'What does T1 and T2 mean on Istanbul taxi meters?', a: 'T1 is the day tariff, active from 6am to midnight. T2 is the night tariff (~50% higher), valid midnight to 6am. If the meter shows T2 at noon, ask the driver to switch — or use BiTaksi instead.' },
-        { q: 'How do I avoid being scammed at Istanbul Airport?', a: 'Use the official yellow taxi rank outside arrivals — never accept offers from unofficial drivers inside the terminal. Alternatively, use the BiTaksi or Uber app from the terminal exit, or take the Airport Metro (opened 2023) which goes directly to the city centre.' },
-        { q: 'Is the Istanbul airport metro a good alternative to taxis?', a: 'Yes — the M11 metro line connects Istanbul Airport (IST) to Gayrettepe in about 35 minutes, where you can connect to the rest of the network. Cost is far less than a taxi and avoids all scam risk.' },
-      ]},
+      {
+        type: "intro",
+        body: "Istanbul is a magnificent city — and its yellow taxis are a legitimate and convenient way to get around. They are also a frequent source of tourist complaints. Istanbul taxi scams are well-documented, specific, and avoidable. The most common tricks involve rigged meters, banknote switching, and deliberate overlong routes. This guide covers the exact amounts you should pay in 2026 (noting that Turkish lira inflation means figures can shift), the specific scam mechanics, and the best alternatives for every journey type.",
+      },
+      { type: "h2", heading: "Istanbul Taxi Fare Benchmarks (2026)" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Meter start (drop) rate",
+            value: "TRY 73 (day) / TRY 109 (night — after 12am)",
+          },
+          {
+            label: "Sultanahmet ↔ Taksim",
+            value: "TRY 150–300 (10–15 min, day rate)",
+          },
+          {
+            label: "Taksim → Beyoğlu / Galata",
+            value: "TRY 100–180 (short hop)",
+          },
+          {
+            label: "Airport (IST) → Sultanahmet",
+            value: "TRY 800–1,400 depending on traffic",
+          },
+          { label: "Airport (SAW) → Kadıköy", value: "TRY 600–900" },
+          {
+            label: "Bosphorus ferry terminals → city hotels",
+            value: "TRY 120–250",
+          },
+          {
+            label: "Night rate uplift (after midnight)",
+            value: "+50% — legitimate if the tariff switch is correct",
+          },
+        ],
+      },
+      { type: "h2", heading: "Istanbul's Most Common Taxi Scams" },
+      {
+        type: "ul",
+        items: [
+          "Rigged meter (fast meter): Some meters are modified to tick faster than regulated. The fare seems to climb unusually quickly. Use Uber or BiTaksi to benchmark first.",
+          "Banknote switching: You hand over a TRY 200 (or 500) note; the driver palms it and shows a TRY 20, claiming you underpaid. Only use app-based payment or exact cash where possible.",
+          "Long route: Deliberate detours across bridges or through traffic — adds significant time and fare. Follow Google Maps for your route before departure.",
+          'Night tariff during the day: Istanbul has two tariffs — day (gündüz) and night (gece). Night tariff is ~50% higher. Some drivers run the night tariff at 10am. Check the "T1" or "T2" indicator on the meter.',
+          "No change: Driver has no change for your large note. Always carry exact change or smaller TRY notes.",
+          'Airport redirect: At Istanbul Airport (IST), unofficial drivers near the arrivals hall offer "taxi service" — these are not registered taxis and fares can be enormous. Use the official taxi rank only.',
+        ],
+      },
+      { type: "h2", heading: "How to Get a Fair Taxi in Istanbul" },
+      {
+        type: "p",
+        body: "BiTaksi is the dominant Turkish taxi-hailing app and offers upfront pricing with metered backup — it is the most reliable way to take a traditional taxi in Istanbul with price transparency. Uber also operates in Istanbul, often using licensed taxi drivers on the platform. For airport transfers, both Havataş bus and the Istanbul Airport Metro (opened 2023) are excellent and far cheaper than taxis. If you must hail a cab, use the BiTaksi app or flag one near a major hotel where drivers are more accountable.",
+      },
+      { type: "h2", heading: "Istanbul Transport Alternatives" },
+      {
+        type: "ul",
+        items: [
+          "Istanbul Card (İstanbul Kart): Rechargeable card works on metro, tram, bus, funicular, and ferries — covers most tourist routes cheaply",
+          "Metro + tram: M1 line connects IST airport to city. T1 tram runs along the Golden Horn to Sultanahmet and Kabataş",
+          "Bosphorus ferries: Cheap, scenic, and practical for crossing between European and Asian sides",
+          "BiTaksi app: Book licensed yellow taxis with upfront pricing — far safer than hailing",
+          "Uber: Uses licensed local taxi drivers; pricing is transparent and tracked",
+        ],
+      },
+      {
+        type: "warning",
+        body: "The banknote switch is Istanbul's most brazen scam. When paying, clearly announce the denomination: \"İki yüz lira\" (two hundred lira). Watch the driver's hands carefully. If he disputes what you gave him, do not escalate — take a photo of the taxi ID displayed on the dashboard and contact the tourism police (+90 212 527 4503) if needed.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much should a taxi cost in Istanbul?",
+            a: "Short city journeys: TRY 150–400. Airport (IST) to Sultanahmet: TRY 800–1,400 depending on traffic. Use BiTaksi or Uber to verify before you get in. Note: Turkish lira inflation means these figures can shift — always check apps for current rates.",
+          },
+          {
+            q: "Is Uber available in Istanbul?",
+            a: "Yes — Uber operates in Istanbul and uses licensed local taxi drivers. It provides upfront pricing and is among the safest options for tourists.",
+          },
+          {
+            q: "What is BiTaksi?",
+            a: "A Turkish taxi app that lets you hail licensed Istanbul taxis with upfront pricing, driver details, and route tracking. Available in the App Store and Google Play. Highly recommended over street hailing.",
+          },
+          {
+            q: "What does T1 and T2 mean on Istanbul taxi meters?",
+            a: "T1 is the day tariff, active from 6am to midnight. T2 is the night tariff (~50% higher), valid midnight to 6am. If the meter shows T2 at noon, ask the driver to switch — or use BiTaksi instead.",
+          },
+          {
+            q: "How do I avoid being scammed at Istanbul Airport?",
+            a: "Use the official yellow taxi rank outside arrivals — never accept offers from unofficial drivers inside the terminal. Alternatively, use the BiTaksi or Uber app from the terminal exit, or take the Airport Metro (opened 2023) which goes directly to the city centre.",
+          },
+          {
+            q: "Is the Istanbul airport metro a good alternative to taxis?",
+            a: "Yes — the M11 metro line connects Istanbul Airport (IST) to Gayrettepe in about 35 minutes, where you can connect to the rest of the network. Cost is far less than a taxi and avoids all scam risk.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'taxi-scams-in-mexico-city',
-    title: 'Taxi Scams in Mexico City: Stay Safe in CDMX (2026)',
-    description: 'Street taxis in Mexico City carry genuine safety risks. Here\'s what to use instead and how to travel safely in CDMX.',
-    publishedAt: '2025-10-12',
+    slug: "taxi-scams-in-mexico-city",
+    title: "Taxi Scams in Mexico City: Stay Safe in CDMX (2026)",
+    description:
+      "Street taxis in Mexico City carry genuine safety risks. Here's what to use instead and how to travel safely in CDMX.",
+    publishedAt: "2025-10-12",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'Mexico City',
-    citySlug: 'mexico-city',
+    category: "taxi",
+    city: "Mexico City",
+    citySlug: "mexico-city",
     content: [
-      { type: 'intro', body: 'Mexico City\'s taxi situation is unlike most cities in this guide — the risk is not just overcharging, but genuine safety. Street-hailed taxis (libre taxis) in CDMX have been used in express kidnapping and robbery. This is well-documented by both the Mexican government and international travel advisories. The solution is simple and widely adopted: use Uber, DiDi, or Cabify exclusively. These apps have dramatically improved safety for residents and visitors alike. This guide explains the specific risks, which apps to use, approximate fares, and how to navigate CDMX transport confidently.' },
-      { type: 'h2', heading: 'CDMX Taxi & Rideshare Fare Benchmarks (2026)' },
-      { type: 'table', rows: [
-        { label: 'Airport (AICM T1) → Polanco', value: 'MXN 250–380 (Uber)' },
-        { label: 'Airport (AICM) → Roma / Condesa', value: 'MXN 200–320 (Uber)' },
-        { label: 'Airport (AICM) → Centro Histórico', value: 'MXN 180–280 (Uber)' },
-        { label: 'NAICM (Felipe Ángeles) → Centre', value: 'MXN 700–1,100 (Uber) — new airport is further' },
-        { label: 'Short city hop (2–4 km)', value: 'MXN 80–160 (Uber)' },
-        { label: 'Roma ↔ Coyoacán', value: 'MXN 120–220 (Uber)' },
-        { label: 'Metro fare (entire system)', value: 'MXN 5 per journey — exceptional value' },
-      ]},
-      { type: 'h2', heading: 'The Safety Reality of Mexico City Taxis' },
-      { type: 'p', body: 'Express kidnappings using unofficial or cloned taxis peaked in CDMX in the 2010s and remain a documented risk. The method: a victim hails what appears to be a normal taxi; the driver locks the doors and drives to ATMs, forcing cash withdrawals. Modern app-based taxis have largely displaced this risk because the driver is identified, tracked, and accountable. For visitors, the rule is absolute: never hail a taxi on the street in Mexico City. Always use an app. This is also what Mexican residents in well-informed circles do.' },
-      { type: 'h2', heading: 'What to Use Instead' },
-      { type: 'ul', items: [
-        'Uber: Most widely used and reliable app in CDMX — high driver accountability; all journeys tracked',
-        'DiDi: A strong Uber alternative with competitive pricing and wide driver network',
-        'Cabify: Popular app with similar safety features; slightly fewer drivers but competitive fares',
-        'CDMX Radio Taxis: Phone-booked taxis from reputable companies — safer than street hailing but less convenient than apps',
-        'Metro: Mexico City\'s metro system (12 lines) is extensive, cheap (MXN 5), and safe during daylight hours',
-        'Sitio taxis: Official taxi stands (sitios) at specific hotel ranks and metro stations are safer than street-hailed cabs',
-        'Metrobús: Bus rapid transit on major arteries — cheap and extensive coverage',
-      ]},
-      { type: 'h2', heading: 'Getting to and from CDMX Airports' },
-      { type: 'p', body: 'Mexico City has two airports: AICM (Benito Juárez, the older terminal) is central; NAICM (Felipe Ángeles) is 50km north. For AICM, Uber and DiDi pick up in designated app zones — this is strongly recommended. For NAICM, Uber operates and the journey to the city centre costs around MXN 700–1,100 depending on destination and traffic. The official AICM taxi service (Taxi Autorizado) run by the airport is also legitimate and pre-paid at booths inside arrivals — avoid any driver who approaches you unsolicited.' },
-      { type: 'warning', body: 'If your hotel calls a taxi for you, ask which company they use and confirm it is a known sitio (official taxi stand) company. Some hotels use legitimate services; others just wave down the nearest street cab. Never accept an unsolicited taxi offer from anyone in the street or at the airport arrivals hall — not even someone in a uniform or carrying a sign with your name.' },
-      { type: 'tip', body: 'Download Uber, DiDi, and Cabify before arriving in Mexico City. Have a local SIM or international data plan ready — you need connectivity to use apps. Major airports and many hotels offer free WiFi if you need to book before your SIM activates.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'Is it safe to take a taxi in Mexico City?', a: 'Street-hailed libre taxis carry genuine safety risks and should be avoided entirely. Uber, DiDi, and Cabify are safe, widely used, and recommended by both locals and international travel advisories.' },
-        { q: 'Is Uber safe in Mexico City?', a: 'Yes — Uber is considered one of the safest transport options in CDMX. Driver details are recorded and all trips are tracked. Most CDMX residents who travel frequently use Uber or DiDi as standard.' },
-        { q: 'How much does an Uber cost in Mexico City?', a: 'Short city trips: MXN 80–160. Airport (AICM) to Polanco/Condesa/Roma: MXN 200–380 depending on traffic and destination.' },
-        { q: 'What are sitio taxis in Mexico City?', a: 'Sitio taxis are official taxis based at designated taxi stands (sitios) at hotels, metro stations, and transport hubs. They are pre-registered and significantly safer than street-hailed cabs. Ask your hotel concierge for the nearest sitio.' },
-        { q: 'Is the CDMX metro safe for tourists?', a: 'Yes, during daylight hours (roughly 6am–9pm). The metro covers 12 lines and costs just MXN 5 per journey — excellent for getting to major neighbourhoods and attractions. Avoid late-night metro travel and rush hour if possible.' },
-        { q: 'What should I do if I accidentally get into an unsafe taxi?', a: 'Stay calm. Do not show valuables or react aggressively. If possible, call someone and state your location aloud (this signals to the driver you are being tracked). If the driver is unresponsive, try to open the door at a traffic stop. Report to Mexico City\'s Policía Turística (tourist police) immediately afterward.' },
-      ]},
+      {
+        type: "intro",
+        body: "Mexico City's taxi situation is unlike most cities in this guide — the risk is not just overcharging, but genuine safety. Street-hailed taxis (libre taxis) in CDMX have been used in express kidnapping and robbery. This is well-documented by both the Mexican government and international travel advisories. The solution is simple and widely adopted: use Uber, DiDi, or Cabify exclusively. These apps have dramatically improved safety for residents and visitors alike. This guide explains the specific risks, which apps to use, approximate fares, and how to navigate CDMX transport confidently.",
+      },
+      { type: "h2", heading: "CDMX Taxi & Rideshare Fare Benchmarks (2026)" },
+      {
+        type: "table",
+        rows: [
+          { label: "Airport (AICM T1) → Polanco", value: "MXN 250–380 (Uber)" },
+          {
+            label: "Airport (AICM) → Roma / Condesa",
+            value: "MXN 200–320 (Uber)",
+          },
+          {
+            label: "Airport (AICM) → Centro Histórico",
+            value: "MXN 180–280 (Uber)",
+          },
+          {
+            label: "NAICM (Felipe Ángeles) → Centre",
+            value: "MXN 700–1,100 (Uber) — new airport is further",
+          },
+          { label: "Short city hop (2–4 km)", value: "MXN 80–160 (Uber)" },
+          { label: "Roma ↔ Coyoacán", value: "MXN 120–220 (Uber)" },
+          {
+            label: "Metro fare (entire system)",
+            value: "MXN 5 per journey — exceptional value",
+          },
+        ],
+      },
+      { type: "h2", heading: "The Safety Reality of Mexico City Taxis" },
+      {
+        type: "p",
+        body: "Express kidnappings using unofficial or cloned taxis peaked in CDMX in the 2010s and remain a documented risk. The method: a victim hails what appears to be a normal taxi; the driver locks the doors and drives to ATMs, forcing cash withdrawals. Modern app-based taxis have largely displaced this risk because the driver is identified, tracked, and accountable. For visitors, the rule is absolute: never hail a taxi on the street in Mexico City. Always use an app. This is also what Mexican residents in well-informed circles do.",
+      },
+      { type: "h2", heading: "What to Use Instead" },
+      {
+        type: "ul",
+        items: [
+          "Uber: Most widely used and reliable app in CDMX — high driver accountability; all journeys tracked",
+          "DiDi: A strong Uber alternative with competitive pricing and wide driver network",
+          "Cabify: Popular app with similar safety features; slightly fewer drivers but competitive fares",
+          "CDMX Radio Taxis: Phone-booked taxis from reputable companies — safer than street hailing but less convenient than apps",
+          "Metro: Mexico City's metro system (12 lines) is extensive, cheap (MXN 5), and safe during daylight hours",
+          "Sitio taxis: Official taxi stands (sitios) at specific hotel ranks and metro stations are safer than street-hailed cabs",
+          "Metrobús: Bus rapid transit on major arteries — cheap and extensive coverage",
+        ],
+      },
+      { type: "h2", heading: "Getting to and from CDMX Airports" },
+      {
+        type: "p",
+        body: "Mexico City has two airports: AICM (Benito Juárez, the older terminal) is central; NAICM (Felipe Ángeles) is 50km north. For AICM, Uber and DiDi pick up in designated app zones — this is strongly recommended. For NAICM, Uber operates and the journey to the city centre costs around MXN 700–1,100 depending on destination and traffic. The official AICM taxi service (Taxi Autorizado) run by the airport is also legitimate and pre-paid at booths inside arrivals — avoid any driver who approaches you unsolicited.",
+      },
+      {
+        type: "warning",
+        body: "If your hotel calls a taxi for you, ask which company they use and confirm it is a known sitio (official taxi stand) company. Some hotels use legitimate services; others just wave down the nearest street cab. Never accept an unsolicited taxi offer from anyone in the street or at the airport arrivals hall — not even someone in a uniform or carrying a sign with your name.",
+      },
+      {
+        type: "tip",
+        body: "Download Uber, DiDi, and Cabify before arriving in Mexico City. Have a local SIM or international data plan ready — you need connectivity to use apps. Major airports and many hotels offer free WiFi if you need to book before your SIM activates.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "Is it safe to take a taxi in Mexico City?",
+            a: "Street-hailed libre taxis carry genuine safety risks and should be avoided entirely. Uber, DiDi, and Cabify are safe, widely used, and recommended by both locals and international travel advisories.",
+          },
+          {
+            q: "Is Uber safe in Mexico City?",
+            a: "Yes — Uber is considered one of the safest transport options in CDMX. Driver details are recorded and all trips are tracked. Most CDMX residents who travel frequently use Uber or DiDi as standard.",
+          },
+          {
+            q: "How much does an Uber cost in Mexico City?",
+            a: "Short city trips: MXN 80–160. Airport (AICM) to Polanco/Condesa/Roma: MXN 200–380 depending on traffic and destination.",
+          },
+          {
+            q: "What are sitio taxis in Mexico City?",
+            a: "Sitio taxis are official taxis based at designated taxi stands (sitios) at hotels, metro stations, and transport hubs. They are pre-registered and significantly safer than street-hailed cabs. Ask your hotel concierge for the nearest sitio.",
+          },
+          {
+            q: "Is the CDMX metro safe for tourists?",
+            a: "Yes, during daylight hours (roughly 6am–9pm). The metro covers 12 lines and costs just MXN 5 per journey — excellent for getting to major neighbourhoods and attractions. Avoid late-night metro travel and rush hour if possible.",
+          },
+          {
+            q: "What should I do if I accidentally get into an unsafe taxi?",
+            a: "Stay calm. Do not show valuables or react aggressively. If possible, call someone and state your location aloud (this signals to the driver you are being tracked). If the driver is unresponsive, try to open the door at a traffic stop. Report to Mexico City's Policía Turística (tourist police) immediately afterward.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'taxi-scams-in-nairobi',
-    title: 'Taxi Scams in Nairobi: What Visitors Need to Know (2026)',
-    description: 'Nairobi\'s taxi market is unregulated and overcharging is common. Here\'s how to get a safe, fair ride every time.',
-    publishedAt: '2025-10-19',
+    slug: "taxi-scams-in-nairobi",
+    title: "Taxi Scams in Nairobi: What Visitors Need to Know (2026)",
+    description:
+      "Nairobi's taxi market is unregulated and overcharging is common. Here's how to get a safe, fair ride every time.",
+    publishedAt: "2025-10-19",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'Nairobi',
-    citySlug: 'nairobi',
+    category: "taxi",
+    city: "Nairobi",
+    citySlug: "nairobi",
     content: [
-      { type: 'intro', body: 'Nairobi\'s taxi market is largely unregulated — fares are negotiated, meters are rare, and overcharging tourists is common. At the same time, Nairobi has embraced ride-hailing apps faster than most African cities, with Bolt, Uber, and Little Cab all operating extensively. For visitors, the answer is clear: use apps where possible and negotiate with knowledge when apps are not available. This guide gives you the exact fare benchmarks, the scams to watch for, and practical alternatives for getting around Nairobi safely.' },
-      { type: 'h2', heading: 'Nairobi Taxi Fare Benchmarks (2026)' },
-      { type: 'table', rows: [
-        { label: 'JKIA Airport → Nairobi CBD', value: 'KES 1,000–1,500 (Bolt) / KES 2,000–3,500 (negotiated)' },
-        { label: 'JKIA Airport → Westlands', value: 'KES 1,200–1,800 (Bolt)' },
-        { label: 'JKIA Airport → Karen', value: 'KES 1,800–2,500 (Bolt)' },
-        { label: 'CBD → Westlands', value: 'KES 400–700 (Bolt)' },
-        { label: 'CBD → Kilimani / Lavington', value: 'KES 500–800 (Bolt)' },
-        { label: 'CBD → Ngong Road / Karen', value: 'KES 1,000–1,800 (Bolt)' },
-        { label: 'Short city hop (2–4 km)', value: 'KES 200–500 (Bolt)' },
-      ]},
-      { type: 'h2', heading: 'Common Nairobi Taxi Scams' },
-      { type: 'ul', items: [
-        'Significant overcharging at JKIA Airport: Touts outside arrivals quote KES 3,000–6,000 for journeys that cost KES 1,000–1,800 via Bolt.',
-        'No meter / negotiated fares: Almost all Nairobi taxis are negotiated. Without knowledge of fair rates, tourists pay 2–5× more.',
-        'Routing through "safe" areas: Driver claims certain routes are unsafe to justify a longer, more expensive journey.',
-        'Unofficial hotel taxis: Hotel-arranged taxis at premium prices — confirm the rate before the hotel books one, or book your own via Bolt.',
-        'Currency confusion: Driver quotes in USD but calculates at a disadvantageous rate. Always agree fares in KES.',
-        'Safari area overcharging: Around Nairobi National Park and upmarket hotels in Karen, unofficial drivers quote tourist prices 3–4× higher than apps.',
-      ]},
-      { type: 'h2', heading: 'Fair Fares and How to Get Them' },
-      { type: 'p', body: 'JKIA Airport to CBD: KES 1,000–1,500 via Bolt (negotiated taxis quote KES 2,000–3,500). CBD to Westlands: KES 400–700. CBD to Karen: KES 1,000–1,800. Open the Bolt app as your first move when any driver quotes a price — the app fare estimate is your real-time benchmark. Little Cab (Safaricom\'s ride-hailing app) is also popular and integrates with M-Pesa mobile money. Bolt is typically the cheapest and has the widest driver network in Nairobi.' },
-      { type: 'h2', heading: 'Negotiating If You Must Take a Street Taxi' },
-      { type: 'p', body: 'If no app is available (rare in Nairobi\'s major areas), the negotiation formula is: check the Bolt estimate first, then offer 70–80% of that to a street taxi driver as your opening position. Quote your destination clearly and state your price before getting in. If they refuse, walk away — another driver will usually accept a fair rate. Always agree the fare in KES, not USD. Confirm the total includes any waiting time if you need the driver to stop en route.' },
-      { type: 'tip', body: 'Download Bolt before arriving in Nairobi — it works reliably at JKIA and throughout the city. Payment can be made by M-Pesa (Kenya\'s ubiquitous mobile money), card, or cash. Bolt drivers are tracked, rated, and significantly less likely to overcharge.' },
-      { type: 'warning', body: 'At JKIA\'s arrivals hall, ignore all touts who approach offering "official taxi" services. Exit through the main doors and either use the Bolt/Uber app from outside or head to the regulated taxi rank with displayed price boards. Never hand your luggage to anyone who has not been confirmed as your driver through an app.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'How much is a taxi from JKIA to Nairobi city centre?', a: 'KES 1,000–1,500 via Bolt or Uber. Negotiated traditional taxis at the airport quote KES 2,000–4,000 or more — use the Bolt app as your benchmark and refuse inflated quotes.' },
-        { q: 'Is Uber available in Nairobi?', a: 'Yes, but Bolt is more widely used and typically cheaper. Both are reliable at JKIA and across Nairobi\'s major areas.' },
-        { q: 'Are Nairobi taxis safe?', a: 'App-based taxis (Bolt, Uber, Little Cab) are considered safe for tourists. Street-hailed taxis from unknown drivers carry more risk — always use apps where possible.' },
-        { q: 'What is Little Cab in Nairobi?', a: 'Little Cab is Safaricom\'s ride-hailing app — Kenya\'s answer to Uber. It integrates seamlessly with M-Pesa (Kenya\'s mobile money) and is widely used. A solid alternative or complement to Bolt.' },
-        { q: 'Can I pay by M-Pesa for taxis in Nairobi?', a: 'Yes — Bolt and Little Cab both support M-Pesa payment. Even if you don\'t have a local SIM, cash is accepted. M-Pesa is Kenya\'s dominant payment method and widely accepted.' },
-        { q: 'Is it safe to take a taxi in Nairobi at night?', a: 'Bolt and Uber are the safe night-time options — driver details are recorded and routes tracked. Avoid all street-hailed taxis at night. Stick to well-lit areas and major roads when walking to your pick-up point.' },
-      ]},
+      {
+        type: "intro",
+        body: "Nairobi's taxi market is largely unregulated — fares are negotiated, meters are rare, and overcharging tourists is common. At the same time, Nairobi has embraced ride-hailing apps faster than most African cities, with Bolt, Uber, and Little Cab all operating extensively. For visitors, the answer is clear: use apps where possible and negotiate with knowledge when apps are not available. This guide gives you the exact fare benchmarks, the scams to watch for, and practical alternatives for getting around Nairobi safely.",
+      },
+      { type: "h2", heading: "Nairobi Taxi Fare Benchmarks (2026)" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "JKIA Airport → Nairobi CBD",
+            value: "KES 1,000–1,500 (Bolt) / KES 2,000–3,500 (negotiated)",
+          },
+          {
+            label: "JKIA Airport → Westlands",
+            value: "KES 1,200–1,800 (Bolt)",
+          },
+          { label: "JKIA Airport → Karen", value: "KES 1,800–2,500 (Bolt)" },
+          { label: "CBD → Westlands", value: "KES 400–700 (Bolt)" },
+          { label: "CBD → Kilimani / Lavington", value: "KES 500–800 (Bolt)" },
+          {
+            label: "CBD → Ngong Road / Karen",
+            value: "KES 1,000–1,800 (Bolt)",
+          },
+          { label: "Short city hop (2–4 km)", value: "KES 200–500 (Bolt)" },
+        ],
+      },
+      { type: "h2", heading: "Common Nairobi Taxi Scams" },
+      {
+        type: "ul",
+        items: [
+          "Significant overcharging at JKIA Airport: Touts outside arrivals quote KES 3,000–6,000 for journeys that cost KES 1,000–1,800 via Bolt.",
+          "No meter / negotiated fares: Almost all Nairobi taxis are negotiated. Without knowledge of fair rates, tourists pay 2–5× more.",
+          'Routing through "safe" areas: Driver claims certain routes are unsafe to justify a longer, more expensive journey.',
+          "Unofficial hotel taxis: Hotel-arranged taxis at premium prices — confirm the rate before the hotel books one, or book your own via Bolt.",
+          "Currency confusion: Driver quotes in USD but calculates at a disadvantageous rate. Always agree fares in KES.",
+          "Safari area overcharging: Around Nairobi National Park and upmarket hotels in Karen, unofficial drivers quote tourist prices 3–4× higher than apps.",
+        ],
+      },
+      { type: "h2", heading: "Fair Fares and How to Get Them" },
+      {
+        type: "p",
+        body: "JKIA Airport to CBD: KES 1,000–1,500 via Bolt (negotiated taxis quote KES 2,000–3,500). CBD to Westlands: KES 400–700. CBD to Karen: KES 1,000–1,800. Open the Bolt app as your first move when any driver quotes a price — the app fare estimate is your real-time benchmark. Little Cab (Safaricom's ride-hailing app) is also popular and integrates with M-Pesa mobile money. Bolt is typically the cheapest and has the widest driver network in Nairobi.",
+      },
+      { type: "h2", heading: "Negotiating If You Must Take a Street Taxi" },
+      {
+        type: "p",
+        body: "If no app is available (rare in Nairobi's major areas), the negotiation formula is: check the Bolt estimate first, then offer 70–80% of that to a street taxi driver as your opening position. Quote your destination clearly and state your price before getting in. If they refuse, walk away — another driver will usually accept a fair rate. Always agree the fare in KES, not USD. Confirm the total includes any waiting time if you need the driver to stop en route.",
+      },
+      {
+        type: "tip",
+        body: "Download Bolt before arriving in Nairobi — it works reliably at JKIA and throughout the city. Payment can be made by M-Pesa (Kenya's ubiquitous mobile money), card, or cash. Bolt drivers are tracked, rated, and significantly less likely to overcharge.",
+      },
+      {
+        type: "warning",
+        body: 'At JKIA\'s arrivals hall, ignore all touts who approach offering "official taxi" services. Exit through the main doors and either use the Bolt/Uber app from outside or head to the regulated taxi rank with displayed price boards. Never hand your luggage to anyone who has not been confirmed as your driver through an app.',
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from JKIA to Nairobi city centre?",
+            a: "KES 1,000–1,500 via Bolt or Uber. Negotiated traditional taxis at the airport quote KES 2,000–4,000 or more — use the Bolt app as your benchmark and refuse inflated quotes.",
+          },
+          {
+            q: "Is Uber available in Nairobi?",
+            a: "Yes, but Bolt is more widely used and typically cheaper. Both are reliable at JKIA and across Nairobi's major areas.",
+          },
+          {
+            q: "Are Nairobi taxis safe?",
+            a: "App-based taxis (Bolt, Uber, Little Cab) are considered safe for tourists. Street-hailed taxis from unknown drivers carry more risk — always use apps where possible.",
+          },
+          {
+            q: "What is Little Cab in Nairobi?",
+            a: "Little Cab is Safaricom's ride-hailing app — Kenya's answer to Uber. It integrates seamlessly with M-Pesa (Kenya's mobile money) and is widely used. A solid alternative or complement to Bolt.",
+          },
+          {
+            q: "Can I pay by M-Pesa for taxis in Nairobi?",
+            a: "Yes — Bolt and Little Cab both support M-Pesa payment. Even if you don't have a local SIM, cash is accepted. M-Pesa is Kenya's dominant payment method and widely accepted.",
+          },
+          {
+            q: "Is it safe to take a taxi in Nairobi at night?",
+            a: "Bolt and Uber are the safe night-time options — driver details are recorded and routes tracked. Avoid all street-hailed taxis at night. Stick to well-lit areas and major roads when walking to your pick-up point.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'taxi-scams-in-jakarta',
-    title: 'Taxi Scams in Jakarta: Avoid the Common Traps (2026)',
-    description: 'Jakarta\'s taxi scene has improved with Grab and Gojek, but street taxis still have known scams. Here\'s the full picture.',
-    publishedAt: '2025-10-26',
+    slug: "taxi-scams-in-jakarta",
+    title: "Taxi Scams in Jakarta: Avoid the Common Traps (2026)",
+    description:
+      "Jakarta's taxi scene has improved with Grab and Gojek, but street taxis still have known scams. Here's the full picture.",
+    publishedAt: "2025-10-26",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'Jakarta',
-    citySlug: 'jakarta',
+    category: "taxi",
+    city: "Jakarta",
+    citySlug: "jakarta",
     content: [
-      { type: 'intro', body: 'Jakarta is a city of 33 million people and corresponding taxi complexity. Grab and Gojek (Indonesia\'s homegrown super-app) have transformed transport in the Indonesian capital, but traditional taxis remain common and the scam landscape is real. Blue Bird Group taxis are the gold standard of reliability; other companies have more variable reputations. This guide covers the specific Jakarta taxi scams, the fare benchmarks you need, and how to use the city\'s transport options safely — from Soekarno-Hatta Airport to your hotel and beyond.' },
-      { type: 'h2', heading: 'Jakarta Taxi Fare Benchmarks (2026)' },
-      { type: 'table', rows: [
-        { label: 'Soekarno-Hatta Airport (CGK) → Sudirman / SCBD', value: 'IDR 150,000–250,000 (Grab/Gojek)' },
-        { label: 'Airport → Kemang', value: 'IDR 180,000–280,000 (Grab/Gojek)' },
-        { label: 'Airport → Senayan / Blok M', value: 'IDR 160,000–240,000 (Grab/Gojek)' },
-        { label: 'Sudirman ↔ Kota (Old Town)', value: 'IDR 60,000–120,000 (Grab/Gojek)' },
-        { label: 'Short city hop (3–5 km)', value: 'IDR 30,000–80,000 (Grab/Gojek)' },
-        { label: 'Toll road surcharge', value: 'IDR 15,000–50,000 per toll — passenger pays' },
-        { label: 'Blue Bird meter start', value: 'IDR 9,500 flag fall + IDR 5,500/km' },
-      ]},
-      { type: 'h2', heading: 'Common Jakarta Taxi Scams' },
-      { type: 'ul', items: [
-        'Meter "malfunction": Driver claims meter is broken and offers a fixed price. Blue Bird always uses the meter — if it\'s not running, get out and find another cab.',
-        'Not Blue Bird but looks like it: Clone taxis mimicking Blue Bird\'s blue colour scheme. Check for the official Blue Bird logo and the taxi ID card displayed inside.',
-        'Airport express taxi overcharging: Some "premium" taxi companies at Soekarno-Hatta quote IDR 300,000–600,000 for journeys that cost IDR 150,000–250,000 via Grab.',
-        'No change: Driver has no change for your large note — carry IDR 50,000 and 100,000 notes.',
-        'Unannounced toll road charge: Driver takes a toll road without asking, then adds IDR 30,000–50,000 on top of the agreed fare. Ask before joining tolls.',
-        'Long route due to "traffic": Jakarta\'s traffic is genuinely terrible — but some drivers deliberately take longer routes. Follow Google Maps in real time.',
-      ]},
-      { type: 'h2', heading: 'Getting Around Jakarta Safely' },
-      { type: 'p', body: 'Grab and Gojek are both excellent in Jakarta — upfront pricing, driver tracking, and GoPay/OVO cashless payment options. For traditional taxis, Blue Bird is the undisputed most reliable company in Indonesia. Their app (MyBlueBird) lets you book a Blue Bird taxi with upfront pricing. From Soekarno-Hatta Airport, use Grab, Gojek, or the official Blue Bird counter in the arrivals hall — not the touts outside. Jakarta\'s MRT (opened 2019) and LRT are also good options for north-south city travel.' },
-      { type: 'h2', heading: 'Jakarta Transport Alternatives' },
-      { type: 'ul', items: [
-        'Gojek: Indonesia\'s super-app — GoRide (motorbike), GoCar (car), GoFood — fastest for short hops in heavy traffic',
-        'Grab: GrabCar and GrabBike — equivalent to Gojek; have both apps and compare prices',
-        'MyBlueBird app: Book the official Blue Bird taxi with upfront pricing — most reliable traditional taxi option',
-        'MRT Jakarta: North-south line from Lebak Bulus to Bundaran HI — clean, cheap, air-conditioned',
-        'TransJakarta BRT: Bus rapid transit across 14 corridors — cheap and extensive, slower in traffic',
-        'Airport Rail Link (Kereta Bandara): Express train from Soekarno-Hatta to Sudirman/Manggarai — fastest and cheapest airport option',
-      ]},
-      { type: 'warning', body: 'Jakarta\'s infamous traffic means toll roads are sometimes the most time-efficient route. Ask the driver before joining a toll road: "Pakai tol?" (Using the toll?). Tolls are paid by the passenger — have IDR coins or small notes ready, or check if the taxi has an e-toll card. Grab and Gojek fares usually include estimated tolls in the upfront price.' },
-      { type: 'tip', body: 'The Kereta Bandara (airport rail link) runs from Soekarno-Hatta Airport directly to Sudirman and Manggarai stations in central Jakarta. It costs IDR 51,000–70,000, takes 50–60 minutes, and avoids all taxi stress. Highly recommended if you are travelling light.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'Are Grab and Gojek available in Jakarta?', a: 'Yes — both are widely available and the recommended transport options. Fares are upfront and drivers are tracked. Have both apps installed as coverage can vary by area.' },
-        { q: 'What is the best taxi company in Jakarta?', a: 'Blue Bird Group is the most reputable traditional taxi company in Indonesia. Use their MyBlueBird app or look for the distinctive blue cars with the official Blue Bird logo and ID card inside.' },
-        { q: 'How much is a taxi from Soekarno-Hatta Airport to central Jakarta?', a: 'IDR 150,000–250,000 via Grab or Gojek. The airport rail link (Kereta Bandara) costs IDR 51,000–70,000 and is faster during peak hours.' },
-        { q: 'What is a clone taxi in Jakarta?', a: 'Clone taxis mimic Blue Bird\'s distinctive blue colour and styling but are not affiliated with the company. Check for the official Blue Bird logo, the licence plate numbers matching the displayed ID, and ask the driver to confirm they are Blue Bird before getting in.' },
-        { q: 'Do I have to pay toll fees separately in Jakarta taxis?', a: 'For traditional metered taxis: yes, toll fees are added on top of the meter fare. For Grab and Gojek: toll costs are usually included in the upfront price, but confirm before departure on longer routes.' },
-        { q: 'Is the Jakarta MRT useful for tourists?', a: 'Yes — the MRT runs from the south of the city (Lebak Bulus) to Bundaran HI in the city centre, passing through Blok M and Senayan. Clean, cheap, and air-conditioned. Tickets cost IDR 3,000–14,000 per journey.' },
-      ]},
+      {
+        type: "intro",
+        body: "Jakarta is a city of 33 million people and corresponding taxi complexity. Grab and Gojek (Indonesia's homegrown super-app) have transformed transport in the Indonesian capital, but traditional taxis remain common and the scam landscape is real. Blue Bird Group taxis are the gold standard of reliability; other companies have more variable reputations. This guide covers the specific Jakarta taxi scams, the fare benchmarks you need, and how to use the city's transport options safely — from Soekarno-Hatta Airport to your hotel and beyond.",
+      },
+      { type: "h2", heading: "Jakarta Taxi Fare Benchmarks (2026)" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Soekarno-Hatta Airport (CGK) → Sudirman / SCBD",
+            value: "IDR 150,000–250,000 (Grab/Gojek)",
+          },
+          {
+            label: "Airport → Kemang",
+            value: "IDR 180,000–280,000 (Grab/Gojek)",
+          },
+          {
+            label: "Airport → Senayan / Blok M",
+            value: "IDR 160,000–240,000 (Grab/Gojek)",
+          },
+          {
+            label: "Sudirman ↔ Kota (Old Town)",
+            value: "IDR 60,000–120,000 (Grab/Gojek)",
+          },
+          {
+            label: "Short city hop (3–5 km)",
+            value: "IDR 30,000–80,000 (Grab/Gojek)",
+          },
+          {
+            label: "Toll road surcharge",
+            value: "IDR 15,000–50,000 per toll — passenger pays",
+          },
+          {
+            label: "Blue Bird meter start",
+            value: "IDR 9,500 flag fall + IDR 5,500/km",
+          },
+        ],
+      },
+      { type: "h2", heading: "Common Jakarta Taxi Scams" },
+      {
+        type: "ul",
+        items: [
+          'Meter "malfunction": Driver claims meter is broken and offers a fixed price. Blue Bird always uses the meter — if it\'s not running, get out and find another cab.',
+          "Not Blue Bird but looks like it: Clone taxis mimicking Blue Bird's blue colour scheme. Check for the official Blue Bird logo and the taxi ID card displayed inside.",
+          'Airport express taxi overcharging: Some "premium" taxi companies at Soekarno-Hatta quote IDR 300,000–600,000 for journeys that cost IDR 150,000–250,000 via Grab.',
+          "No change: Driver has no change for your large note — carry IDR 50,000 and 100,000 notes.",
+          "Unannounced toll road charge: Driver takes a toll road without asking, then adds IDR 30,000–50,000 on top of the agreed fare. Ask before joining tolls.",
+          'Long route due to "traffic": Jakarta\'s traffic is genuinely terrible — but some drivers deliberately take longer routes. Follow Google Maps in real time.',
+        ],
+      },
+      { type: "h2", heading: "Getting Around Jakarta Safely" },
+      {
+        type: "p",
+        body: "Grab and Gojek are both excellent in Jakarta — upfront pricing, driver tracking, and GoPay/OVO cashless payment options. For traditional taxis, Blue Bird is the undisputed most reliable company in Indonesia. Their app (MyBlueBird) lets you book a Blue Bird taxi with upfront pricing. From Soekarno-Hatta Airport, use Grab, Gojek, or the official Blue Bird counter in the arrivals hall — not the touts outside. Jakarta's MRT (opened 2019) and LRT are also good options for north-south city travel.",
+      },
+      { type: "h2", heading: "Jakarta Transport Alternatives" },
+      {
+        type: "ul",
+        items: [
+          "Gojek: Indonesia's super-app — GoRide (motorbike), GoCar (car), GoFood — fastest for short hops in heavy traffic",
+          "Grab: GrabCar and GrabBike — equivalent to Gojek; have both apps and compare prices",
+          "MyBlueBird app: Book the official Blue Bird taxi with upfront pricing — most reliable traditional taxi option",
+          "MRT Jakarta: North-south line from Lebak Bulus to Bundaran HI — clean, cheap, air-conditioned",
+          "TransJakarta BRT: Bus rapid transit across 14 corridors — cheap and extensive, slower in traffic",
+          "Airport Rail Link (Kereta Bandara): Express train from Soekarno-Hatta to Sudirman/Manggarai — fastest and cheapest airport option",
+        ],
+      },
+      {
+        type: "warning",
+        body: 'Jakarta\'s infamous traffic means toll roads are sometimes the most time-efficient route. Ask the driver before joining a toll road: "Pakai tol?" (Using the toll?). Tolls are paid by the passenger — have IDR coins or small notes ready, or check if the taxi has an e-toll card. Grab and Gojek fares usually include estimated tolls in the upfront price.',
+      },
+      {
+        type: "tip",
+        body: "The Kereta Bandara (airport rail link) runs from Soekarno-Hatta Airport directly to Sudirman and Manggarai stations in central Jakarta. It costs IDR 51,000–70,000, takes 50–60 minutes, and avoids all taxi stress. Highly recommended if you are travelling light.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "Are Grab and Gojek available in Jakarta?",
+            a: "Yes — both are widely available and the recommended transport options. Fares are upfront and drivers are tracked. Have both apps installed as coverage can vary by area.",
+          },
+          {
+            q: "What is the best taxi company in Jakarta?",
+            a: "Blue Bird Group is the most reputable traditional taxi company in Indonesia. Use their MyBlueBird app or look for the distinctive blue cars with the official Blue Bird logo and ID card inside.",
+          },
+          {
+            q: "How much is a taxi from Soekarno-Hatta Airport to central Jakarta?",
+            a: "IDR 150,000–250,000 via Grab or Gojek. The airport rail link (Kereta Bandara) costs IDR 51,000–70,000 and is faster during peak hours.",
+          },
+          {
+            q: "What is a clone taxi in Jakarta?",
+            a: "Clone taxis mimic Blue Bird's distinctive blue colour and styling but are not affiliated with the company. Check for the official Blue Bird logo, the licence plate numbers matching the displayed ID, and ask the driver to confirm they are Blue Bird before getting in.",
+          },
+          {
+            q: "Do I have to pay toll fees separately in Jakarta taxis?",
+            a: "For traditional metered taxis: yes, toll fees are added on top of the meter fare. For Grab and Gojek: toll costs are usually included in the upfront price, but confirm before departure on longer routes.",
+          },
+          {
+            q: "Is the Jakarta MRT useful for tourists?",
+            a: "Yes — the MRT runs from the south of the city (Lebak Bulus) to Bundaran HI in the city centre, passing through Blok M and Senayan. Clean, cheap, and air-conditioned. Tickets cost IDR 3,000–14,000 per journey.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'taxi-scams-in-manila',
-    title: 'Taxi Scams in Manila: How to Get a Fair Ride (2026)',
-    description: 'Manila taxis have a reputation for scams — but Grab has changed everything. Here\'s what to know for 2026.',
-    publishedAt: '2025-11-02',
+    slug: "taxi-scams-in-manila",
+    title: "Taxi Scams in Manila: How to Get a Fair Ride (2026)",
+    description:
+      "Manila taxis have a reputation for scams — but Grab has changed everything. Here's what to know for 2026.",
+    publishedAt: "2025-11-02",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'Manila',
-    citySlug: 'manila',
+    category: "taxi",
+    city: "Manila",
+    citySlug: "manila",
     content: [
-      { type: 'intro', body: 'Manila\'s metered taxis have long had a troubled reputation — meter tampering, refusal to take certain routes, overcharging, and more. Grab has largely resolved this for most visitors: the app is excellent in Metro Manila, fares are upfront, and the experience is consistent. For anyone who does use traditional taxis, knowing the specific scams is essential. This guide covers NAIA airport procedures, official fare rates, and all the Manila-specific tricks you need to be aware of before you arrive.' },
-      { type: 'h2', heading: 'Manila Taxi Fare Benchmarks (2026)' },
-      { type: 'table', rows: [
-        { label: 'Taxi meter start (flag-down)', value: 'PHP 40 — increments PHP 13.50/km' },
-        { label: 'NAIA Terminal 3 → Makati CBD', value: 'PHP 150–250 (metered) / PHP 180–320 (Grab)' },
-        { label: 'NAIA → BGC (Bonifacio Global City)', value: 'PHP 180–300 (metered) / PHP 200–360 (Grab)' },
-        { label: 'NAIA → Pasay / Malate', value: 'PHP 80–150 (metered)' },
-        { label: 'Makati ↔ BGC', value: 'PHP 80–180 (metered or Grab)' },
-        { label: 'Intramuros → Makati', value: 'PHP 150–250 (Grab)' },
-        { label: 'EDSA rush hour surcharge (Grab)', value: 'Surge pricing applies — check app before confirming' },
-      ]},
-      { type: 'h2', heading: 'Common Manila Taxi Scams' },
-      { type: 'ul', items: [
-        'Tampered meter (sobrante meter): Meter ticks faster than the official rate. Very common — the official rate starts at PHP 40 and increments at PHP 13.50/km.',
-        'Route refusal / "no go" areas: Driver refuses to go to certain areas (Makati, BGC, airport) without a premium. This is illegal — they are required to accept any destination.',
-        'Fixed price instead of meter: Driver quotes a "fixed" price much higher than the meter would show. Always insist on the meter for city journeys.',
-        'NAIA "fixers": Unofficial people at NAIA offer to help you get a taxi faster — for a fee. Use the official queue only.',
-        'Short change: Driver gives back incorrect change. Count it carefully before leaving the vehicle.',
-        'Door-to-door scam near major hotels: Driver offers a "better deal" bypassing Grab to avoid the app commission. Always use the app for fare transparency and safety.',
-      ]},
-      { type: 'h2', heading: 'Why Grab is the Answer in Manila' },
-      { type: 'p', body: 'Grab is the dominant solution to Manila\'s taxi problem. Fares are shown upfront before you confirm the booking, drivers are rated, and routes are tracked. Grab operates GrabCar, GrabBike (motorcycle), and GrabFood across Metro Manila. For NAIA airport arrivals, Grab has designated pick-up zones at all terminals and is overwhelmingly the recommended option. The only limitation: during peak EDSA rush hour, Grab surge pricing can make traditional metered taxis (using the actual meter) competitive. In that case, insist on the meter from the first second.' },
-      { type: 'h2', heading: 'Getting to and from NAIA Airport' },
-      { type: 'p', body: 'NAIA has four terminals (T1, T2, T3, T4) — each with slightly different layouts. For Grab, each terminal has a designated pick-up zone, signposted in the arrivals area. For traditional taxis, use the official metered taxi queue only — not any driver who approaches you inside the terminal. The airport also has an official "coupon taxi" system (fixed-price coupons by zone purchased inside arrivals) — these are legitimate and convenient if Grab is unavailable.' },
-      { type: 'tip', body: 'If you do take a traditional Manila taxi, photograph the taxi ID number (displayed on the dashboard) before departure. This provides accountability and can be reported if you are scammed. The LTFRB hotline for taxi complaints is 1-800-1-58372.' },
-      { type: 'warning', body: 'Manila\'s EDSA highway (the main artery through Metro Manila) is notorious for traffic jams that can turn a 10km journey into a 90-minute ordeal during rush hours (7–10am and 5–9pm). Build this into your travel planning and consider the LRT/MRT rail lines as faster alternatives for north-south routes.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'Is Grab available at Manila NAIA Airport?', a: 'Yes — from designated Grab zones at all NAIA terminals (T1, T2, T3, T4). Follow the signs inside arrivals. Far more reliable than traditional airport taxis.' },
-        { q: 'How much should a metered taxi cost in Manila?', a: 'The meter starts at PHP 40 and increments at PHP 13.50/km. NAIA T3 to Makati CBD should cost PHP 150–250 on a legitimate meter. A sobrante (tampered) meter will show much higher figures.' },
-        { q: 'What do I do if a Manila taxi scams me?', a: 'Note the taxi ID number displayed on the dashboard, photograph it, and report to LTFRB via their hotline (1-800-1-58372) or website. Keeping any receipt helps. For serious incidents, contact the Philippine National Police tourist helpline.' },
-        { q: 'What is a "sobrante meter" in Manila?', a: 'A sobrante or manipulated meter ticks faster than the official rate regulated by LTFRB. It looks like a normal meter but charges more per km than the regulated PHP 13.50. If the fare climbs much faster than expected, photograph the meter and note the taxi ID.' },
-        { q: 'Are there alternatives to taxis in Manila?', a: 'Yes — the LRT (Line 1 and Line 2) and MRT (Line 3) cover major corridors and avoid EDSA traffic. Jeepneys and UV Express vans are cheap local options. For longer distances, Grab is the most comfortable and transparent choice.' },
-        { q: 'What is the NAIA coupon taxi system?', a: 'NAIA\'s coupon taxi system lets you pre-pay a fixed fare by zone at a booth inside the arrivals area before getting into a taxi. It is a legitimate, regulated system — a good option when Grab is unavailable or you do not have mobile data.' },
-      ]},
+      {
+        type: "intro",
+        body: "Manila's metered taxis have long had a troubled reputation — meter tampering, refusal to take certain routes, overcharging, and more. Grab has largely resolved this for most visitors: the app is excellent in Metro Manila, fares are upfront, and the experience is consistent. For anyone who does use traditional taxis, knowing the specific scams is essential. This guide covers NAIA airport procedures, official fare rates, and all the Manila-specific tricks you need to be aware of before you arrive.",
+      },
+      { type: "h2", heading: "Manila Taxi Fare Benchmarks (2026)" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Taxi meter start (flag-down)",
+            value: "PHP 40 — increments PHP 13.50/km",
+          },
+          {
+            label: "NAIA Terminal 3 → Makati CBD",
+            value: "PHP 150–250 (metered) / PHP 180–320 (Grab)",
+          },
+          {
+            label: "NAIA → BGC (Bonifacio Global City)",
+            value: "PHP 180–300 (metered) / PHP 200–360 (Grab)",
+          },
+          { label: "NAIA → Pasay / Malate", value: "PHP 80–150 (metered)" },
+          { label: "Makati ↔ BGC", value: "PHP 80–180 (metered or Grab)" },
+          { label: "Intramuros → Makati", value: "PHP 150–250 (Grab)" },
+          {
+            label: "EDSA rush hour surcharge (Grab)",
+            value: "Surge pricing applies — check app before confirming",
+          },
+        ],
+      },
+      { type: "h2", heading: "Common Manila Taxi Scams" },
+      {
+        type: "ul",
+        items: [
+          "Tampered meter (sobrante meter): Meter ticks faster than the official rate. Very common — the official rate starts at PHP 40 and increments at PHP 13.50/km.",
+          'Route refusal / "no go" areas: Driver refuses to go to certain areas (Makati, BGC, airport) without a premium. This is illegal — they are required to accept any destination.',
+          'Fixed price instead of meter: Driver quotes a "fixed" price much higher than the meter would show. Always insist on the meter for city journeys.',
+          'NAIA "fixers": Unofficial people at NAIA offer to help you get a taxi faster — for a fee. Use the official queue only.',
+          "Short change: Driver gives back incorrect change. Count it carefully before leaving the vehicle.",
+          'Door-to-door scam near major hotels: Driver offers a "better deal" bypassing Grab to avoid the app commission. Always use the app for fare transparency and safety.',
+        ],
+      },
+      { type: "h2", heading: "Why Grab is the Answer in Manila" },
+      {
+        type: "p",
+        body: "Grab is the dominant solution to Manila's taxi problem. Fares are shown upfront before you confirm the booking, drivers are rated, and routes are tracked. Grab operates GrabCar, GrabBike (motorcycle), and GrabFood across Metro Manila. For NAIA airport arrivals, Grab has designated pick-up zones at all terminals and is overwhelmingly the recommended option. The only limitation: during peak EDSA rush hour, Grab surge pricing can make traditional metered taxis (using the actual meter) competitive. In that case, insist on the meter from the first second.",
+      },
+      { type: "h2", heading: "Getting to and from NAIA Airport" },
+      {
+        type: "p",
+        body: 'NAIA has four terminals (T1, T2, T3, T4) — each with slightly different layouts. For Grab, each terminal has a designated pick-up zone, signposted in the arrivals area. For traditional taxis, use the official metered taxi queue only — not any driver who approaches you inside the terminal. The airport also has an official "coupon taxi" system (fixed-price coupons by zone purchased inside arrivals) — these are legitimate and convenient if Grab is unavailable.',
+      },
+      {
+        type: "tip",
+        body: "If you do take a traditional Manila taxi, photograph the taxi ID number (displayed on the dashboard) before departure. This provides accountability and can be reported if you are scammed. The LTFRB hotline for taxi complaints is 1-800-1-58372.",
+      },
+      {
+        type: "warning",
+        body: "Manila's EDSA highway (the main artery through Metro Manila) is notorious for traffic jams that can turn a 10km journey into a 90-minute ordeal during rush hours (7–10am and 5–9pm). Build this into your travel planning and consider the LRT/MRT rail lines as faster alternatives for north-south routes.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "Is Grab available at Manila NAIA Airport?",
+            a: "Yes — from designated Grab zones at all NAIA terminals (T1, T2, T3, T4). Follow the signs inside arrivals. Far more reliable than traditional airport taxis.",
+          },
+          {
+            q: "How much should a metered taxi cost in Manila?",
+            a: "The meter starts at PHP 40 and increments at PHP 13.50/km. NAIA T3 to Makati CBD should cost PHP 150–250 on a legitimate meter. A sobrante (tampered) meter will show much higher figures.",
+          },
+          {
+            q: "What do I do if a Manila taxi scams me?",
+            a: "Note the taxi ID number displayed on the dashboard, photograph it, and report to LTFRB via their hotline (1-800-1-58372) or website. Keeping any receipt helps. For serious incidents, contact the Philippine National Police tourist helpline.",
+          },
+          {
+            q: 'What is a "sobrante meter" in Manila?',
+            a: "A sobrante or manipulated meter ticks faster than the official rate regulated by LTFRB. It looks like a normal meter but charges more per km than the regulated PHP 13.50. If the fare climbs much faster than expected, photograph the meter and note the taxi ID.",
+          },
+          {
+            q: "Are there alternatives to taxis in Manila?",
+            a: "Yes — the LRT (Line 1 and Line 2) and MRT (Line 3) cover major corridors and avoid EDSA traffic. Jeepneys and UV Express vans are cheap local options. For longer distances, Grab is the most comfortable and transparent choice.",
+          },
+          {
+            q: "What is the NAIA coupon taxi system?",
+            a: "NAIA's coupon taxi system lets you pre-pay a fixed fare by zone at a booth inside the arrivals area before getting into a taxi. It is a legitimate, regulated system — a good option when Grab is unavailable or you do not have mobile data.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'taxi-scams-in-phnom-penh',
-    title: 'Taxi Scams in Phnom Penh: Tuk-tuks, Apps & What to Watch (2026)',
-    description: 'Phnom Penh\'s transport is dominated by tuk-tuks and apps. Here\'s how to navigate fares, avoid overcharging, and stay safe.',
-    publishedAt: '2025-11-09',
+    slug: "taxi-scams-in-phnom-penh",
+    title: "Taxi Scams in Phnom Penh: Tuk-tuks, Apps & What to Watch (2026)",
+    description:
+      "Phnom Penh's transport is dominated by tuk-tuks and apps. Here's how to navigate fares, avoid overcharging, and stay safe.",
+    publishedAt: "2025-11-09",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'Phnom Penh',
-    citySlug: 'phnom-penh',
+    category: "taxi",
+    city: "Phnom Penh",
+    citySlug: "phnom-penh",
     content: [
-      { type: 'intro', body: 'Phnom Penh\'s transport mix — tuk-tuks, moto-taxis, PassApp, and Grab — is more varied than most Southeast Asian capitals. Traditional taxis are less common; tuk-tuks and ride-hailing apps dominate. Overcharging tourists is the primary issue rather than organised scams. The app-based revolution (particularly PassApp, Cambodia\'s local ride-hailing platform) has given visitors transparent pricing for the first time. This guide covers what you should actually pay for every journey type — from the airport to the Killing Fields — and the situations where overcharging is most common.' },
-      { type: 'h2', heading: 'Phnom Penh Transport Fare Benchmarks (2026)' },
-      { type: 'table', rows: [
-        { label: 'Airport (PNH) → riverside / BKK1 area', value: 'USD $7–10 (PassApp/Grab) / USD $12–18 (negotiated taxi)' },
-        { label: 'Short tuk-tuk hop (centre, <3 km)', value: 'USD $2–4 (PassApp) / USD $4–8 (tourist quote)' },
-        { label: 'Riverside → Russian Market', value: 'USD $3–5 (PassApp tuk-tuk)' },
-        { label: 'Riverside → Killing Fields (Choeung Ek)', value: 'USD $6–9 one-way (PassApp)' },
-        { label: 'Half-day tuk-tuk charter', value: 'USD $15–25 (negotiated) — agree all sites upfront' },
-        { label: 'Full-day tuk-tuk charter', value: 'USD $25–45 — includes waiting time at sites' },
-        { label: 'Night-time premium (informal)', value: '+50% common — negotiate down to +20–30%' },
-      ]},
-      { type: 'h2', heading: 'Common Overcharging Situations in Phnom Penh' },
-      { type: 'ul', items: [
-        'Tuk-tuk flat rate inflation: Drivers outside tourist sites quote USD $5–10 for journeys that cost USD $2–4 via app. Always check PassApp first.',
-        'Airport arrivals: Phnom Penh International taxis quote USD $15–25 to central hotels; legitimate app fares are USD $7–12.',
-        'Night-time premium: Many drivers charge 1.5–2× after dark. Some premium is reasonable; double is excessive — counter-offer firmly.',
-        '"Tour guide" tuk-tuk: Driver offers a day tour at a low headline rate, then charges entrance fees and commission at every stop.',
-        'Currency confusion: Most transport is quoted in USD. KHR (Riel) is also used — know that USD $1 ≈ KHR 4,100 as of 2026.',
-        'Motorbike taxi overcharging: Moto-taxis (without apps) quote tourist rates freely — always agree fare before mounting.',
-      ]},
-      { type: 'h2', heading: 'Getting Around Phnom Penh Fairly' },
-      { type: 'p', body: 'PassApp is Cambodia\'s dominant ride-hailing app and works excellently in Phnom Penh — covering both tuk-tuks and cars with upfront pricing in USD. Grab also operates and is another reliable option. For airport arrivals at Phnom Penh International, both apps have designated pick-up zones. A typical central Phnom Penh tuk-tuk journey should cost USD $2–4 via app; more for outlying areas. For day trips to the Killing Fields (Choeung Ek), Silver Pagoda, and S-21 museum, negotiate a half-day rate of USD $15–25 with a trusted driver.' },
-      { type: 'h2', heading: 'Chartering a Tuk-tuk for the Day' },
-      { type: 'p', body: 'A chartered tuk-tuk driver for the day is one of the most popular ways to see Phnom Penh\'s main sites. The key is to agree all terms upfront: which sites, what time you start, how many hours are included, and the total price. USD $25–40 for a full day covering the Killing Fields, S-21, Royal Palace, and the riverside is reasonable. The driver waits at each site while you tour inside. Entrance fees are always extra — a legitimate driver will tell you this upfront, not spring it on you mid-trip.' },
-      { type: 'tip', body: 'Phnom Penh tuk-tuk drivers outside major tourist sites (Royal Palace, National Museum, riverside) are friendly but often charge tourist premiums. Walking one block away and booking via PassApp typically gets you the same journey for 30–50% less. Use the app as your benchmark before negotiating with any street driver.' },
-      { type: 'warning', body: 'Be aware of the "free ride" offer: some tuk-tuk drivers offer you a free or very cheap first ride, intending to take you to a shop or gem dealer where they earn commission. Once you\'re inside the shop you\'ll feel significant pressure to buy. Simply say no if offered any "special deal" that involves visiting a shop.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'How much should a tuk-tuk cost in Phnom Penh?', a: 'Short city journeys: USD $2–4 via PassApp. Tourist-area tuk-tuks quote USD $5–10 for the same rides. Always check the app fare before negotiating.' },
-        { q: 'Is Grab available in Phnom Penh?', a: 'Yes — both Grab and PassApp (the local Cambodian alternative) operate well in Phnom Penh. PassApp is often slightly cheaper and has more tuk-tuk coverage.' },
-        { q: 'What currency should I use for tuk-tuks in Phnom Penh?', a: 'USD is the default for tourist transport. KHR (Riel) is also accepted — as of 2026, USD $1 ≈ KHR 4,100. Cambodia operates a dual-currency economy; either works.' },
-        { q: 'How much should I pay for a day trip to the Killing Fields?', a: 'A tuk-tuk to Choeung Ek (Killing Fields) and back from the city centre costs USD $6–9 each way via PassApp, or USD $12–20 for a chartered return with waiting time. Entrance to the Killing Fields is USD $6 per person, paid separately.' },
-        { q: 'Are there taxis (cars) in Phnom Penh?', a: 'Traditional metered taxis are rare. Grab and PassApp both offer car options (similar to Uber) for a more air-conditioned alternative to tuk-tuks — useful in heavy rain or for airport journeys.' },
-        { q: 'Is it safe to use moto-taxis (motorbike taxis) in Phnom Penh?', a: 'Moto-taxis are cheap and common for solo travellers. Agree the price before getting on. Helmets are not always provided — you can bring your own or buy a cheap helmet at markets. They are less safe than tuk-tuks or cars but widely used by locals.' },
-      ]},
+      {
+        type: "intro",
+        body: "Phnom Penh's transport mix — tuk-tuks, moto-taxis, PassApp, and Grab — is more varied than most Southeast Asian capitals. Traditional taxis are less common; tuk-tuks and ride-hailing apps dominate. Overcharging tourists is the primary issue rather than organised scams. The app-based revolution (particularly PassApp, Cambodia's local ride-hailing platform) has given visitors transparent pricing for the first time. This guide covers what you should actually pay for every journey type — from the airport to the Killing Fields — and the situations where overcharging is most common.",
+      },
+      { type: "h2", heading: "Phnom Penh Transport Fare Benchmarks (2026)" },
+      {
+        type: "table",
+        rows: [
+          {
+            label: "Airport (PNH) → riverside / BKK1 area",
+            value: "USD $7–10 (PassApp/Grab) / USD $12–18 (negotiated taxi)",
+          },
+          {
+            label: "Short tuk-tuk hop (centre, <3 km)",
+            value: "USD $2–4 (PassApp) / USD $4–8 (tourist quote)",
+          },
+          {
+            label: "Riverside → Russian Market",
+            value: "USD $3–5 (PassApp tuk-tuk)",
+          },
+          {
+            label: "Riverside → Killing Fields (Choeung Ek)",
+            value: "USD $6–9 one-way (PassApp)",
+          },
+          {
+            label: "Half-day tuk-tuk charter",
+            value: "USD $15–25 (negotiated) — agree all sites upfront",
+          },
+          {
+            label: "Full-day tuk-tuk charter",
+            value: "USD $25–45 — includes waiting time at sites",
+          },
+          {
+            label: "Night-time premium (informal)",
+            value: "+50% common — negotiate down to +20–30%",
+          },
+        ],
+      },
+      { type: "h2", heading: "Common Overcharging Situations in Phnom Penh" },
+      {
+        type: "ul",
+        items: [
+          "Tuk-tuk flat rate inflation: Drivers outside tourist sites quote USD $5–10 for journeys that cost USD $2–4 via app. Always check PassApp first.",
+          "Airport arrivals: Phnom Penh International taxis quote USD $15–25 to central hotels; legitimate app fares are USD $7–12.",
+          "Night-time premium: Many drivers charge 1.5–2× after dark. Some premium is reasonable; double is excessive — counter-offer firmly.",
+          '"Tour guide" tuk-tuk: Driver offers a day tour at a low headline rate, then charges entrance fees and commission at every stop.',
+          "Currency confusion: Most transport is quoted in USD. KHR (Riel) is also used — know that USD $1 ≈ KHR 4,100 as of 2026.",
+          "Motorbike taxi overcharging: Moto-taxis (without apps) quote tourist rates freely — always agree fare before mounting.",
+        ],
+      },
+      { type: "h2", heading: "Getting Around Phnom Penh Fairly" },
+      {
+        type: "p",
+        body: "PassApp is Cambodia's dominant ride-hailing app and works excellently in Phnom Penh — covering both tuk-tuks and cars with upfront pricing in USD. Grab also operates and is another reliable option. For airport arrivals at Phnom Penh International, both apps have designated pick-up zones. A typical central Phnom Penh tuk-tuk journey should cost USD $2–4 via app; more for outlying areas. For day trips to the Killing Fields (Choeung Ek), Silver Pagoda, and S-21 museum, negotiate a half-day rate of USD $15–25 with a trusted driver.",
+      },
+      { type: "h2", heading: "Chartering a Tuk-tuk for the Day" },
+      {
+        type: "p",
+        body: "A chartered tuk-tuk driver for the day is one of the most popular ways to see Phnom Penh's main sites. The key is to agree all terms upfront: which sites, what time you start, how many hours are included, and the total price. USD $25–40 for a full day covering the Killing Fields, S-21, Royal Palace, and the riverside is reasonable. The driver waits at each site while you tour inside. Entrance fees are always extra — a legitimate driver will tell you this upfront, not spring it on you mid-trip.",
+      },
+      {
+        type: "tip",
+        body: "Phnom Penh tuk-tuk drivers outside major tourist sites (Royal Palace, National Museum, riverside) are friendly but often charge tourist premiums. Walking one block away and booking via PassApp typically gets you the same journey for 30–50% less. Use the app as your benchmark before negotiating with any street driver.",
+      },
+      {
+        type: "warning",
+        body: 'Be aware of the "free ride" offer: some tuk-tuk drivers offer you a free or very cheap first ride, intending to take you to a shop or gem dealer where they earn commission. Once you\'re inside the shop you\'ll feel significant pressure to buy. Simply say no if offered any "special deal" that involves visiting a shop.',
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much should a tuk-tuk cost in Phnom Penh?",
+            a: "Short city journeys: USD $2–4 via PassApp. Tourist-area tuk-tuks quote USD $5–10 for the same rides. Always check the app fare before negotiating.",
+          },
+          {
+            q: "Is Grab available in Phnom Penh?",
+            a: "Yes — both Grab and PassApp (the local Cambodian alternative) operate well in Phnom Penh. PassApp is often slightly cheaper and has more tuk-tuk coverage.",
+          },
+          {
+            q: "What currency should I use for tuk-tuks in Phnom Penh?",
+            a: "USD is the default for tourist transport. KHR (Riel) is also accepted — as of 2026, USD $1 ≈ KHR 4,100. Cambodia operates a dual-currency economy; either works.",
+          },
+          {
+            q: "How much should I pay for a day trip to the Killing Fields?",
+            a: "A tuk-tuk to Choeung Ek (Killing Fields) and back from the city centre costs USD $6–9 each way via PassApp, or USD $12–20 for a chartered return with waiting time. Entrance to the Killing Fields is USD $6 per person, paid separately.",
+          },
+          {
+            q: "Are there taxis (cars) in Phnom Penh?",
+            a: "Traditional metered taxis are rare. Grab and PassApp both offer car options (similar to Uber) for a more air-conditioned alternative to tuk-tuks — useful in heavy rain or for airport journeys.",
+          },
+          {
+            q: "Is it safe to use moto-taxis (motorbike taxis) in Phnom Penh?",
+            a: "Moto-taxis are cheap and common for solo travellers. Agree the price before getting on. Helmets are not always provided — you can bring your own or buy a cheap helmet at markets. They are less safe than tuk-tuks or cars but widely used by locals.",
+          },
+        ],
+      },
     ],
   },
   {
-    slug: 'taxi-scams-in-rome',
-    title: 'Taxi Scams in Rome: How to Pay the Right Fare (2026)',
-    description: 'Rome taxis have specific legitimate surcharges — and specific scams that exploit them. Here\'s how to tell the difference.',
-    publishedAt: '2026-03-20',
+    slug: "taxi-scams-in-rome",
+    title: "Taxi Scams in Rome: How to Pay the Right Fare (2026)",
+    description:
+      "Rome taxis have specific legitimate surcharges — and specific scams that exploit them. Here's how to tell the difference.",
+    publishedAt: "2026-03-20",
     readingMinutes: 8,
-    category: 'taxi',
-    city: 'Rome',
-    citySlug: 'rome',
+    category: "taxi",
+    city: "Rome",
+    citySlug: "rome",
     content: [
-      { type: 'intro', body: 'Rome\'s official white taxis are licensed, metered, and generally honest. The problem is that Rome\'s legitimate taxi surcharge system — airport flat rates, luggage fees, night rates, Sunday supplements — is complex enough that dishonest drivers can plausibly pretend a scam is a legitimate charge. Knowing exactly what you should and should not pay is your best protection. This guide breaks down every surcharge, identifies every common scam, and gives you the tools to get a fair taxi fare every time.' },
-      { type: 'h2', heading: 'Rome Taxi Official Surcharges (2026)' },
-      { type: 'table', rows: [
-        { label: 'Starting fare — city, day (7am–10pm)', value: '€3.00' },
-        { label: 'Starting fare — night (10pm–7am)', value: '€6.50' },
-        { label: 'Starting fare — Sunday & public holidays', value: '€4.50' },
-        { label: 'Per km rate (Tariff 1 — city, day)', value: '€1.10/km' },
-        { label: 'Per km rate (Tariff 2 — night)', value: '€1.30/km' },
-        { label: 'Fiumicino Airport (FCO) → Aurelian Walls', value: '€50 flat rate — mandatory, all luggage included' },
-        { label: 'Ciampino Airport (CIA) → Aurelian Walls', value: '€31 flat rate — mandatory' },
-        { label: 'Luggage surcharge', value: '€1.00 per bag — often waived; legitimate if charged' },
-        { label: 'Phone booking surcharge', value: '€3.50 — only if you called/booked by phone' },
-      ]},
-      { type: 'h2', heading: 'Common Rome Taxi Scams' },
-      { type: 'ul', items: [
-        'Metering from the depot: Some drivers start the meter when they leave their base, not when they collect you. The meter must start at the official rate when you get in — not before.',
-        'Invented surcharges: "City entrance fee," "environmental charge," "tourist tax" — none of these are legitimate. The only valid surcharges are listed above.',
-        'Unofficial taxis near major sights: Near the Colosseum, Trevi Fountain, and Vatican, unofficial drivers in private cars offer "taxis" at extortionate rates. Only use official white cabs with a TAXI roof sign and licence number.',
-        'Wrong tariff: Day rate applies 7am–10pm (Tariff 1). Night rate after 10pm (Tariff 2). Airport tariff (Tariff 3) for FCO/CIA flat rates. Some drivers run Tariff 2 at midday. Check the tariff number on the meter display.',
-        'Refusing the Fiumicino flat rate: Drivers sometimes try to meter the FCO airport journey (which costs more in traffic) instead of applying the official €50 flat rate. The flat rate is mandatory — insist on it.',
-        'Wrong destination drop-off: Driver "doesn\'t know" your hotel and drops you at a partner hotel or agency. Show your destination on a map and confirm it is understood before moving.',
-      ]},
-      { type: 'h2', heading: 'How to Get a Legitimate Rome Taxi' },
-      { type: 'p', body: 'Official Rome taxis are white, have the TAXI sign on the roof, a licence number visible on the door, and are accessed from designated taxi ranks — not street hails (which are technically illegal in Rome). ItTaxi is Rome\'s official taxi booking app — it connects you with licensed cabs with upfront pricing and eliminates almost all scam risk. FREE NOW and Uber also operate in Rome using licensed taxi drivers. At the taxi rank, confirm the flat rate if going to/from FCO or CIA airports, or confirm the meter is on Tariff 1 if it is daytime.' },
-      { type: 'h2', heading: 'Rome Transport Alternatives' },
-      { type: 'ul', items: [
-        'ItTaxi app: Rome\'s official licensed taxi app — upfront pricing, driver ID shown, safest option',
-        'FREE NOW: Works in Rome using licensed taxis — good alternative to ItTaxi',
-        'Uber: Available in Rome but legally restricted — uses licensed taxi drivers on the platform',
-        'Leonardo Express: Direct Trenitalia train from Fiumicino (FCO) to Roma Termini — 32 minutes, €14, no scam risk',
-        'Cotral bus: From Ciampino (CIA) to Roma Termini — €5, 45 minutes',
-        'Rome Metro: Lines A and B cover key tourist areas — Colosseum (Colosseo), Vatican area (Ottaviano), Trevi/Spanish Steps (Barberini)',
-      ]},
-      { type: 'tip', body: 'The Leonardo Express train from Fiumicino Airport to Roma Termini is the single best way to arrive in Rome. It costs €14, takes 32 minutes, runs every 15 minutes, and eliminates all taxi risk. Book via the Trenitalia app before you land.' },
-      { type: 'h2', heading: 'Frequently Asked Questions' },
-      { type: 'faq', faqs: [
-        { q: 'How much is a taxi from Fiumicino to Rome city centre?', a: '€50 flat rate to any destination within the Aurelian Walls. This is a fixed official fare — insist on it and refuse any metered alternative for this route.' },
-        { q: 'Are there legitimate night surcharges on Rome taxis?', a: 'Yes — the starting fee is €6.50 (vs €3.00 daytime) after 10pm, and the per-km rate is €1.30 (vs €1.10). These are legitimate. Invented charges like "city entrance fees" are not.' },
-        { q: 'What is the ItTaxi app?', a: 'ItTaxi is Rome\'s official licensed taxi booking app. It connects passengers with official white taxis, shows the driver\'s ID and route, and provides upfront pricing. Available on iOS and Android — strongly recommended over street hailing.' },
-        { q: 'Is Uber legal in Rome?', a: 'Uber operates in Rome but is legally required to use licensed taxi drivers rather than private individuals (unlike in other countries). It is safe and legitimate, though the fleet is smaller than in other cities.' },
-        { q: 'How do I check if I\'m being charged the right tariff?', a: 'Look at the display on the taxi meter — Tariff 1 (T1) is the day rate (7am–10pm), Tariff 2 (T2) is the night rate, and Tariff 3 (T3) is for airport flat rates. If T2 shows during the day, politely point it out — honest drivers will correct it immediately.' },
-        { q: 'What is the cheapest way from Fiumicino Airport to Rome?', a: 'The Leonardo Express train (€14, 32 minutes to Roma Termini) is the best combination of price, speed, and reliability. Regional trains on the FL1 line are even cheaper (€9) but take longer. Both options are completely scam-free.' },
-      ]},
+      {
+        type: "intro",
+        body: "Rome's official white taxis are licensed, metered, and generally honest. The problem is that Rome's legitimate taxi surcharge system — airport flat rates, luggage fees, night rates, Sunday supplements — is complex enough that dishonest drivers can plausibly pretend a scam is a legitimate charge. Knowing exactly what you should and should not pay is your best protection. This guide breaks down every surcharge, identifies every common scam, and gives you the tools to get a fair taxi fare every time.",
+      },
+      { type: "h2", heading: "Rome Taxi Official Surcharges (2026)" },
+      {
+        type: "table",
+        rows: [
+          { label: "Starting fare — city, day (7am–10pm)", value: "€3.00" },
+          { label: "Starting fare — night (10pm–7am)", value: "€6.50" },
+          { label: "Starting fare — Sunday & public holidays", value: "€4.50" },
+          { label: "Per km rate (Tariff 1 — city, day)", value: "€1.10/km" },
+          { label: "Per km rate (Tariff 2 — night)", value: "€1.30/km" },
+          {
+            label: "Fiumicino Airport (FCO) → Aurelian Walls",
+            value: "€50 flat rate — mandatory, all luggage included",
+          },
+          {
+            label: "Ciampino Airport (CIA) → Aurelian Walls",
+            value: "€31 flat rate — mandatory",
+          },
+          {
+            label: "Luggage surcharge",
+            value: "€1.00 per bag — often waived; legitimate if charged",
+          },
+          {
+            label: "Phone booking surcharge",
+            value: "€3.50 — only if you called/booked by phone",
+          },
+        ],
+      },
+      { type: "h2", heading: "Common Rome Taxi Scams" },
+      {
+        type: "ul",
+        items: [
+          "Metering from the depot: Some drivers start the meter when they leave their base, not when they collect you. The meter must start at the official rate when you get in — not before.",
+          'Invented surcharges: "City entrance fee," "environmental charge," "tourist tax" — none of these are legitimate. The only valid surcharges are listed above.',
+          'Unofficial taxis near major sights: Near the Colosseum, Trevi Fountain, and Vatican, unofficial drivers in private cars offer "taxis" at extortionate rates. Only use official white cabs with a TAXI roof sign and licence number.',
+          "Wrong tariff: Day rate applies 7am–10pm (Tariff 1). Night rate after 10pm (Tariff 2). Airport tariff (Tariff 3) for FCO/CIA flat rates. Some drivers run Tariff 2 at midday. Check the tariff number on the meter display.",
+          "Refusing the Fiumicino flat rate: Drivers sometimes try to meter the FCO airport journey (which costs more in traffic) instead of applying the official €50 flat rate. The flat rate is mandatory — insist on it.",
+          'Wrong destination drop-off: Driver "doesn\'t know" your hotel and drops you at a partner hotel or agency. Show your destination on a map and confirm it is understood before moving.',
+        ],
+      },
+      { type: "h2", heading: "How to Get a Legitimate Rome Taxi" },
+      {
+        type: "p",
+        body: "Official Rome taxis are white, have the TAXI sign on the roof, a licence number visible on the door, and are accessed from designated taxi ranks — not street hails (which are technically illegal in Rome). ItTaxi is Rome's official taxi booking app — it connects you with licensed cabs with upfront pricing and eliminates almost all scam risk. FREE NOW and Uber also operate in Rome using licensed taxi drivers. At the taxi rank, confirm the flat rate if going to/from FCO or CIA airports, or confirm the meter is on Tariff 1 if it is daytime.",
+      },
+      { type: "h2", heading: "Rome Transport Alternatives" },
+      {
+        type: "ul",
+        items: [
+          "ItTaxi app: Rome's official licensed taxi app — upfront pricing, driver ID shown, safest option",
+          "FREE NOW: Works in Rome using licensed taxis — good alternative to ItTaxi",
+          "Uber: Available in Rome but legally restricted — uses licensed taxi drivers on the platform",
+          "Leonardo Express: Direct Trenitalia train from Fiumicino (FCO) to Roma Termini — 32 minutes, €14, no scam risk",
+          "Cotral bus: From Ciampino (CIA) to Roma Termini — €5, 45 minutes",
+          "Rome Metro: Lines A and B cover key tourist areas — Colosseum (Colosseo), Vatican area (Ottaviano), Trevi/Spanish Steps (Barberini)",
+        ],
+      },
+      {
+        type: "tip",
+        body: "The Leonardo Express train from Fiumicino Airport to Roma Termini is the single best way to arrive in Rome. It costs €14, takes 32 minutes, runs every 15 minutes, and eliminates all taxi risk. Book via the Trenitalia app before you land.",
+      },
+      { type: "h2", heading: "Frequently Asked Questions" },
+      {
+        type: "faq",
+        faqs: [
+          {
+            q: "How much is a taxi from Fiumicino to Rome city centre?",
+            a: "€50 flat rate to any destination within the Aurelian Walls. This is a fixed official fare — insist on it and refuse any metered alternative for this route.",
+          },
+          {
+            q: "Are there legitimate night surcharges on Rome taxis?",
+            a: 'Yes — the starting fee is €6.50 (vs €3.00 daytime) after 10pm, and the per-km rate is €1.30 (vs €1.10). These are legitimate. Invented charges like "city entrance fees" are not.',
+          },
+          {
+            q: "What is the ItTaxi app?",
+            a: "ItTaxi is Rome's official licensed taxi booking app. It connects passengers with official white taxis, shows the driver's ID and route, and provides upfront pricing. Available on iOS and Android — strongly recommended over street hailing.",
+          },
+          {
+            q: "Is Uber legal in Rome?",
+            a: "Uber operates in Rome but is legally required to use licensed taxi drivers rather than private individuals (unlike in other countries). It is safe and legitimate, though the fleet is smaller than in other cities.",
+          },
+          {
+            q: "How do I check if I'm being charged the right tariff?",
+            a: "Look at the display on the taxi meter — Tariff 1 (T1) is the day rate (7am–10pm), Tariff 2 (T2) is the night rate, and Tariff 3 (T3) is for airport flat rates. If T2 shows during the day, politely point it out — honest drivers will correct it immediately.",
+          },
+          {
+            q: "What is the cheapest way from Fiumicino Airport to Rome?",
+            a: "The Leonardo Express train (€14, 32 minutes to Roma Termini) is the best combination of price, speed, and reliability. Regional trains on the FL1 line are even cheaper (€9) but take longer. Both options are completely scam-free.",
+          },
+        ],
+      },
     ],
   },
-]
-
+];
