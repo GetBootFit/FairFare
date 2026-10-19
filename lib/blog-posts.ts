@@ -4601,7 +4601,7 @@ export const BLOG_POSTS: BlogPost[] = [
   // ── Athens ────────────────────────────────────────────────────────────────
   {
     slug: "how-much-does-a-taxi-cost-in-athens",
-    title: "How Much Does a Taxi Cost in Athens? (2026 Guide)",
+    title: "Athens Taxi Fares: €38–42 Airport to Syntagma (2026 Guide)",
     description:
       "Athens Airport to Syntagma Square costs €38–42 by taxi (day fixed rate). Here's the 2026 fare breakdown — night tariffs, Piraeus routes, and when Welcome Pickups beats a street cab.",
     publishedAt: "2026-09-16",

@@ -1528,7 +1528,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "tipping-in-vietnam",
-    title: "Tipping in Vietnam: How Much & Who to Tip (2026)",
+    title: "Tipping in Vietnam: VND 30,000–70,000 at Restaurants (2026)",
     description:
       "Local phở and bánh mì stalls expect no tip — but tourist restaurants in Hanoi's Old Quarter and Hội An expect VND 30,000–70,000 per person, and Ha Long Bay cruise guides earn USD $5–10 per person for 2-night trips. Here's the full 2026 guide.",
     publishedAt: "2026-12-18",
@@ -2755,7 +2755,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "taxi-incheon-to-seoul",
-    title: "Taxi from Incheon Airport to Seoul: Cost & Options (2026)",
+    title: "Incheon Airport Taxi: KRW 65,000–100,000 to Seoul (2026)",
     description:
       "A standard taxi from Incheon to Seoul costs KRW 65,000–100,000 — the AREX Express train covers the same route in 43 minutes for KRW 9,500. Here's the full 2026 guide to choosing between standard, deluxe, and jumbo taxis, and when splitting a cab beats the train.",
     publishedAt: "2026-02-07",

@@ -4,7 +4,7 @@ export const BATCH7_BLOG_POSTS: BlogPost[] = [
   // ── Tipping in Germany ──────────────────────────────────────────────────────
   {
     slug: "tipping-in-germany",
-    title: "Tipping in Germany: How Much to Tip in 2026",
+    title: "Tipping in Germany: Never Leave Money on the Table (2026)",
     description:
       "Tipping in Germany is expected but at lower rates than the US — 5–10% at restaurants, round up in taxis. The key rule: tell the waiter the total you want to pay, don't leave money on the table.",
     publishedAt: "2026-08-03",
