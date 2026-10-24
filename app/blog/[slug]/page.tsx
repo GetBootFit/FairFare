@@ -1,74 +1,135 @@
-import React from 'react'
-import { notFound } from 'next/navigation'
-import type { Metadata } from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
-import { ChevronRight, ArrowRight, Plane, ExternalLink } from 'lucide-react'
-import { getBlogPost, getAllBlogSlugs, getRelatedPosts, getWordCount, type BlogSection, type BlogPost } from '@/lib/blog-posts'
-import { TRANSLATED_SLUGS } from '@/lib/blog-translation'
-import { LOCALES } from '@/lib/i18n'
+import React from "react";
+import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { ChevronRight, ArrowRight, Plane, ExternalLink } from "lucide-react";
+import {
+  getBlogPost,
+  getAllBlogSlugs,
+  getRelatedPosts,
+  getWordCount,
+  type BlogSection,
+  type BlogPost,
+} from "@/lib/blog-posts";
+import { TRANSLATED_SLUGS } from "@/lib/blog-translation";
+import { blogBreadcrumbJsonLd } from "@/lib/seo-helpers";
+import { LOCALES } from "@/lib/i18n";
 
-const NON_EN_LOCALES_SLUG = LOCALES.filter((l) => l.code !== 'en').map((l) => l.code)
-function toBcp47Slug(locale: string): string { return locale === 'tw' ? 'zh-TW' : locale }
-import { BlogCtaWidget } from '@/components/BlogCtaWidget'
-import { BlogAffiliateCard } from '@/components/BlogAffiliateCard'
-import { RelatedPosts } from '@/components/RelatedPosts'
-import { getPartnersForZone } from '@/lib/affiliates'
-import { getAirportForCity } from '@/lib/airport-data'
-import type { AffiliateCategory } from '@/data/affiliate-config'
-import { AmazonProductWidget } from '@/components/AmazonProductWidget'
-import { EmailCapture } from '@/components/EmailCapture'
-import { ScrollDepthTracker } from '@/components/ScrollDepthTracker'
-import { kvGet } from '@/lib/kv'
+const NON_EN_LOCALES_SLUG = LOCALES.filter((l) => l.code !== "en").map(
+  (l) => l.code,
+);
+function toBcp47Slug(locale: string): string {
+  return locale === "tw" ? "zh-TW" : locale;
+}
+import { BlogCtaWidget } from "@/components/BlogCtaWidget";
+import { BlogAffiliateCard } from "@/components/BlogAffiliateCard";
+import { RelatedPosts } from "@/components/RelatedPosts";
+import { getPartnersForZone } from "@/lib/affiliates";
+import { getAirportForCity } from "@/lib/airport-data";
+import type { AffiliateCategory } from "@/data/affiliate-config";
+import { AmazonProductWidget } from "@/components/AmazonProductWidget";
+import { EmailCapture } from "@/components/EmailCapture";
+import { ScrollDepthTracker } from "@/components/ScrollDepthTracker";
+import { kvGet } from "@/lib/kv";
 
 /** Resolve a post from static TS files first, then KV (for auto-generated posts). */
 async function resolvePost(slug: string): Promise<BlogPost | undefined> {
-  return getBlogPost(slug) ?? (await kvGet<BlogPost>(`blog:published:${slug}`)) ?? undefined
+  return (
+    getBlogPost(slug) ??
+    (await kvGet<BlogPost>(`blog:published:${slug}`)) ??
+    undefined
+  );
 }
 
 // City SVG sticker map — 13 illustrated cities
 const CITY_IMAGES: Record<string, string> = {
-  amsterdam:  '/images/cities/Amsterdam.svg',
-  bangkok:    '/images/cities/Bangkok.svg',
-  barcelona:  '/images/cities/Barcelona.svg',
-  dubai:      '/images/cities/Dubai.svg',
-  istanbul:   '/images/cities/Istanbul.svg',
-  london:     '/images/cities/London.svg',
-  melbourne:  '/images/cities/Melbourne.svg',
-  'new-york': '/images/cities/NewYork.svg',
-  paris:      '/images/cities/Paris.svg',
-  rome:       '/images/cities/Rome.svg',
-  singapore:  '/images/cities/Singapore.svg',
-  sydney:     '/images/cities/Sydney.svg',
-  tokyo:      '/images/cities/Tokyo.svg',
-}
+  amsterdam: "/images/cities/Amsterdam.svg",
+  bangkok: "/images/cities/Bangkok.svg",
+  barcelona: "/images/cities/Barcelona.svg",
+  dubai: "/images/cities/Dubai.svg",
+  istanbul: "/images/cities/Istanbul.svg",
+  london: "/images/cities/London.svg",
+  melbourne: "/images/cities/Melbourne.svg",
+  "new-york": "/images/cities/NewYork.svg",
+  paris: "/images/cities/Paris.svg",
+  rome: "/images/cities/Rome.svg",
+  singapore: "/images/cities/Singapore.svg",
+  sydney: "/images/cities/Sydney.svg",
+  tokyo: "/images/cities/Tokyo.svg",
+};
 
 // Country slug → ISO 3166-1 alpha-2 for flag images
 const COUNTRY_FLAGS: Record<string, string> = {
-  argentina:        'ar', australia:      'au', austria:        'at',
-  brazil:           'br', cambodia:       'kh', canada:         'ca',
-  chile:            'cl', china:          'cn', colombia:       'co',
-  croatia:          'hr', cuba:           'cu', 'czech-republic':'cz',
-  denmark:          'dk', egypt:          'eg', france:         'fr',
-  germany:          'de', greece:         'gr', hungary:        'hu',
-  india:            'in', indonesia:      'id', ireland:        'ie',
-  israel:           'il', italy:          'it', japan:          'jp',
-  kenya:            'ke', malaysia:       'my', mexico:         'mx',
-  morocco:          'ma', netherlands:    'nl', 'new-zealand':  'nz',
-  norway:           'no', peru:           'pe', philippines:    'ph',
-  poland:           'pl', portugal:       'pt', qatar:          'qa',
-  singapore:        'sg', 'south-africa': 'za', 'south-korea':  'kr',
-  spain:            'es', 'sri-lanka':    'lk', sweden:         'se',
-  switzerland:      'ch', thailand:       'th', turkey:         'tr',
-  uae:              'ae', 'united-kingdom':'gb', usa:            'us',
-  vietnam:          'vn',
-}
+  argentina: "ar",
+  australia: "au",
+  austria: "at",
+  brazil: "br",
+  cambodia: "kh",
+  canada: "ca",
+  chile: "cl",
+  china: "cn",
+  colombia: "co",
+  croatia: "hr",
+  cuba: "cu",
+  "czech-republic": "cz",
+  denmark: "dk",
+  egypt: "eg",
+  france: "fr",
+  germany: "de",
+  greece: "gr",
+  hungary: "hu",
+  india: "in",
+  indonesia: "id",
+  ireland: "ie",
+  israel: "il",
+  italy: "it",
+  japan: "jp",
+  kenya: "ke",
+  malaysia: "my",
+  mexico: "mx",
+  morocco: "ma",
+  netherlands: "nl",
+  "new-zealand": "nz",
+  norway: "no",
+  peru: "pe",
+  philippines: "ph",
+  poland: "pl",
+  portugal: "pt",
+  qatar: "qa",
+  singapore: "sg",
+  "south-africa": "za",
+  "south-korea": "kr",
+  spain: "es",
+  "sri-lanka": "lk",
+  sweden: "se",
+  switzerland: "ch",
+  thailand: "th",
+  turkey: "tr",
+  uae: "ae",
+  "united-kingdom": "gb",
+  usa: "us",
+  vietnam: "vn",
+};
 
 /** Format a date string deterministically (no ICU dependency = no hydration mismatch). */
-const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December']
+const MONTHS = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
 function formatDate(iso: string): string {
-  const d = new Date(iso)
-  return `${d.getUTCDate()} ${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()}`
+  const d = new Date(iso);
+  return `${d.getUTCDate()} ${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
 }
 
 // ── Static generation + ISR ───────────────────────────────────────────────────
@@ -78,30 +139,34 @@ function formatDate(iso: string): string {
 // and cached indefinitely — no periodic Fluid CPU or ISR write cost.
 
 export function generateStaticParams() {
-  return getAllBlogSlugs().map((slug) => ({ slug }))
+  return getAllBlogSlugs().map((slug) => ({ slug }));
 }
 
 // ── Metadata ──────────────────────────────────────────────────────────────────
 
-export async function generateMetadata(
-  { params }: { params: Promise<{ slug: string }> }
-): Promise<Metadata> {
-  const { slug } = await params
-  const post = await resolvePost(slug)
-  if (!post) return { title: 'Article Not Found' }
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await resolvePost(slug);
+  if (!post) return { title: "Article Not Found" };
 
-  const APP_URL_META = (process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com').replace(/\/$/, '')
+  const APP_URL_META = (
+    process.env.NEXT_PUBLIC_APP_URL ?? "https://www.hootling.com"
+  ).replace(/\/$/, "");
   const localeLanguages: Record<string, string> = {
     en: `${APP_URL_META}/blog/${slug}`,
-    'x-default': `${APP_URL_META}/blog/${slug}`,
-  }
+    "x-default": `${APP_URL_META}/blog/${slug}`,
+  };
   // Only emit locale hreflang for slugs that have been translated.
   // Emitting hreflang for untranslated slugs causes Google to follow locale URLs
   // that redirect back to English — triggering "Page with redirect" in GSC.
   if (TRANSLATED_SLUGS.has(slug)) {
     NON_EN_LOCALES_SLUG.forEach((l) => {
-      localeLanguages[toBcp47Slug(l)] = `${APP_URL_META}/${l}/blog/${slug}`
-    })
+      localeLanguages[toBcp47Slug(l)] = `${APP_URL_META}/${l}/blog/${slug}`;
+    });
   }
 
   return {
@@ -115,7 +180,7 @@ export async function generateMetadata(
       title: post.title,
       description: post.description,
       url: `${APP_URL_META}/blog/${slug}`,
-      type: 'article',
+      type: "article",
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt ?? post.publishedAt,
       images: post.citySlug
@@ -130,49 +195,60 @@ export async function generateMetadata(
         : undefined,
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title: post.title,
       description: post.description,
       images: post.citySlug
-        ? [`${APP_URL_META}/api/og/city?city=${encodeURIComponent(post.citySlug)}`]
+        ? [
+            `${APP_URL_META}/api/og/city?city=${encodeURIComponent(post.citySlug)}`,
+          ]
         : undefined,
     },
-  }
+  };
 }
 
 // ── Section renderer ──────────────────────────────────────────────────────────
 
 function RenderSection({ section }: { section: BlogSection }) {
   switch (section.type) {
-    case 'intro':
+    case "intro":
       // .post-intro is referenced by SpeakableSpecification — voice/AI reads this first
       return (
-        <p className="post-intro text-zinc-300 leading-relaxed text-sm">{section.body}</p>
-      )
-    case 'h2':
+        <p className="post-intro text-zinc-300 leading-relaxed text-sm">
+          {section.body}
+        </p>
+      );
+    case "h2":
       return (
-        <h2 className="text-base font-bold text-white pt-2">{section.heading}</h2>
-      )
-    case 'h3':
+        <h2 className="text-base font-bold text-white pt-2">
+          {section.heading}
+        </h2>
+      );
+    case "h3":
       return (
-        <h3 className="text-sm font-semibold text-zinc-200 pt-1">{section.heading}</h3>
-      )
-    case 'p':
+        <h3 className="text-sm font-semibold text-zinc-200 pt-1">
+          {section.heading}
+        </h3>
+      );
+    case "p":
       return (
         <p className="text-zinc-400 leading-relaxed text-sm">{section.body}</p>
-      )
-    case 'ul':
+      );
+    case "ul":
       return (
         <ul className="space-y-2">
           {section.items?.map((item, i) => (
-            <li key={i} className="flex items-start gap-2 text-sm text-zinc-400">
+            <li
+              key={i}
+              className="flex items-start gap-2 text-sm text-zinc-400"
+            >
               <span className="text-purple-400 mt-0.5 shrink-0">•</span>
               {item}
             </li>
           ))}
         </ul>
-      )
-    case 'table':
+      );
+    case "table":
       return (
         <div className="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden">
           {section.rows?.map((row, i) => (
@@ -181,175 +257,208 @@ function RenderSection({ section }: { section: BlogSection }) {
               className="flex items-center justify-between px-4 py-2.5 border-b border-zinc-800 last:border-0"
             >
               <span className="text-sm text-zinc-400">{row.label}</span>
-              <span className="text-sm font-semibold text-white ml-4 text-right">{row.value}</span>
+              <span className="text-sm font-semibold text-white ml-4 text-right">
+                {row.value}
+              </span>
             </div>
           ))}
         </div>
-      )
-    case 'tip':
+      );
+    case "tip":
       return (
         <div className="flex gap-3 bg-teal-900/20 border border-teal-800/40 rounded-xl p-3.5">
           <span className="text-teal-400 shrink-0 mt-0.5">💡</span>
-          <p className="text-sm text-teal-200 leading-relaxed">{section.body}</p>
+          <p className="text-sm text-teal-200 leading-relaxed">
+            {section.body}
+          </p>
         </div>
-      )
-    case 'warning':
+      );
+    case "warning":
       return (
         <div className="flex gap-3 bg-red-900/20 border border-red-800/40 rounded-xl p-3.5">
           <span className="text-red-400 shrink-0 mt-0.5">⚠️</span>
           <p className="text-sm text-red-200 leading-relaxed">{section.body}</p>
         </div>
-      )
-    case 'faq':
+      );
+    case "faq":
       return (
         <div className="space-y-3">
           {section.faqs?.map((faq, i) => (
-            <div key={i} className="bg-zinc-900 border border-zinc-800 rounded-xl p-4 space-y-1.5">
+            <div
+              key={i}
+              className="bg-zinc-900 border border-zinc-800 rounded-xl p-4 space-y-1.5"
+            >
               <p className="text-sm font-semibold text-white">{faq.q}</p>
               {/* .post-faq-answer referenced by SpeakableSpecification for voice/AI readout */}
-              <p className="post-faq-answer text-sm text-zinc-400 leading-relaxed">{faq.a}</p>
+              <p className="post-faq-answer text-sm text-zinc-400 leading-relaxed">
+                {faq.a}
+              </p>
             </div>
           ))}
         </div>
-      )
+      );
     default:
-      return null
+      return null;
   }
 }
 
 // ── Page ──────────────────────────────────────────────────────────────────────
 
-export default async function BlogArticlePage(
-  { params }: { params: Promise<{ slug: string }> }
-) {
-  const { slug } = await params
-  const post = await resolvePost(slug)
-  if (!post) notFound()
+export default async function BlogArticlePage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const post = await resolvePost(slug);
+  if (!post) notFound();
 
-  const APP_URL = (process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.hootling.com').replace(/\/$/, '')
-  const canonicalUrl = `${APP_URL}/blog/${slug}`
+  const APP_URL = (
+    process.env.NEXT_PUBLIC_APP_URL ?? "https://www.hootling.com"
+  ).replace(/\/$/, "");
+  const canonicalUrl = `${APP_URL}/blog/${slug}`;
   const ogImageUrl = post.citySlug
     ? `${APP_URL}/api/og/city?city=${encodeURIComponent(post.citySlug)}`
-    : undefined
+    : undefined;
 
   // BlogPosting is a schema.org subtype of Article — more precise for blog content.
   // wordCount aids Google's quality assessment. image is required for rich results.
   const jsonLd: object[] = [
+    blogBreadcrumbJsonLd(slug, post.city ?? "Article"),
     {
-      '@context': 'https://schema.org',
-      '@type': 'BlogPosting',
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
       headline: post.title,
       description: post.description,
       datePublished: post.publishedAt,
       dateModified: post.updatedAt ?? post.publishedAt,
       wordCount: getWordCount(post),
-      inLanguage: 'en',
+      inLanguage: "en",
       author: {
-        '@type': 'Organization',
-        name: 'Hootling',
+        "@type": "Organization",
+        name: "Hootling",
         url: APP_URL,
-        logo: { '@type': 'ImageObject', url: `${APP_URL}/images/brand/hootling-logo-icon.png` },
+        logo: {
+          "@type": "ImageObject",
+          url: `${APP_URL}/images/brand/hootling-logo-icon.png`,
+        },
       },
       publisher: {
-        '@type': 'Organization',
-        name: 'Hootling',
+        "@type": "Organization",
+        name: "Hootling",
         url: APP_URL,
-        logo: { '@type': 'ImageObject', url: `${APP_URL}/images/brand/hootling-logo-icon.png` },
+        logo: {
+          "@type": "ImageObject",
+          url: `${APP_URL}/images/brand/hootling-logo-icon.png`,
+        },
       },
       url: canonicalUrl,
-      mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
-      ...(ogImageUrl ? {
-        image: { '@type': 'ImageObject', url: ogImageUrl, width: 1200, height: 630 },
-      } : {}),
+      mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
+      ...(ogImageUrl
+        ? {
+            image: {
+              "@type": "ImageObject",
+              url: ogImageUrl,
+              width: 1200,
+              height: 630,
+            },
+          }
+        : {}),
       // SpeakableSpecification — tells AI assistants and voice search engines which
       // parts of the page to read aloud. CSS selectors map to elements in the JSX below.
       // Google uses this for Google Assistant "Daily Briefing" and AI Overviews.
       speakable: {
-        '@type': 'SpeakableSpecification',
-        cssSelector: ['.post-headline', '.post-intro', '.post-faq-answer'],
+        "@type": "SpeakableSpecification",
+        cssSelector: [".post-headline", ".post-intro", ".post-faq-answer"],
       },
     },
-  ]
+  ];
 
   // Add HowTo schema for instructional articles (those with h2 headings + body content)
   // Treats each h2 + following p/ul as a HowTo step
-  const h2Sections = post.content.filter((s) => s.type === 'h2' && s.heading)
+  const h2Sections = post.content.filter((s) => s.type === "h2" && s.heading);
   if (h2Sections.length >= 2) {
     const steps = h2Sections.map((s, i) => {
       // Find next paragraph or list after this h2
-      const h2Idx = post.content.indexOf(s)
-      const nextContent = post.content.slice(h2Idx + 1).find(
-        (c) => c.type === 'p' || c.type === 'ul'
-      )
-      const text = nextContent?.body ?? nextContent?.items?.join(' ') ?? s.heading ?? ''
+      const h2Idx = post.content.indexOf(s);
+      const nextContent = post.content
+        .slice(h2Idx + 1)
+        .find((c) => c.type === "p" || c.type === "ul");
+      const text =
+        nextContent?.body ?? nextContent?.items?.join(" ") ?? s.heading ?? "";
       return {
-        '@type': 'HowToStep',
+        "@type": "HowToStep",
         position: i + 1,
         name: s.heading,
         text,
-      }
-    })
+      };
+    });
     jsonLd.push({
-      '@context': 'https://schema.org',
-      '@type': 'HowTo',
+      "@context": "https://schema.org",
+      "@type": "HowTo",
       name: post.title,
       description: post.description,
       step: steps,
-    })
+    });
   }
 
   // Add FAQPage schema if any FAQ sections exist
-  const faqSections = post.content.filter((s) => s.type === 'faq' && s.faqs?.length)
+  const faqSections = post.content.filter(
+    (s) => s.type === "faq" && s.faqs?.length,
+  );
   if (faqSections.length > 0) {
-    const allFaqs = faqSections.flatMap((s) => s.faqs ?? [])
+    const allFaqs = faqSections.flatMap((s) => s.faqs ?? []);
     jsonLd.push({
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
       mainEntity: allFaqs.map((f) => ({
-        '@type': 'Question',
+        "@type": "Question",
         name: f.q,
-        acceptedAnswer: { '@type': 'Answer', text: f.a },
+        acceptedAnswer: { "@type": "Answer", text: f.a },
       })),
-    })
+    });
   }
 
   // Split content into pre-FAQ and FAQ sections for layout
-  const mainContent = post.content.filter((s) => s.type !== 'faq')
-  const faqContent = post.content.filter((s) => s.type === 'faq')
+  const mainContent = post.content.filter((s) => s.type !== "faq");
+  const faqContent = post.content.filter((s) => s.type === "faq");
 
   const blogCategories: AffiliateCategory[] =
-    post.category === 'tipping' ? ['tours'] :
-    post.category === 'travel' ? ['transfer', 'hotel'] :
-    ['transfer']
+    post.category === "tipping"
+      ? ["tours"]
+      : post.category === "travel"
+        ? ["transfer", "hotel"]
+        : ["transfer"];
 
-  let affiliatePartners = await getPartnersForZone('blog', {
+  let affiliatePartners = await getPartnersForZone("blog", {
     categories: blogCategories,
     maxItems: 3,
-  })
+  });
 
   // Tipping posts: GetYourGuide / Viator are not yet live — fall back to transfer
   // partners so tipping posts still show affiliate options. Remove this block once
   // a tours partner is enabled.
-  let affiliateBlogCategory: 'taxi' | 'tipping' | 'travel' =
-    post.category === 'travel' ? 'travel' :
-    post.category === 'tipping' ? 'tipping' :
-    'taxi'
+  let affiliateBlogCategory: "taxi" | "tipping" | "travel" =
+    post.category === "travel"
+      ? "travel"
+      : post.category === "tipping"
+        ? "tipping"
+        : "taxi";
 
-  if (post.category === 'tipping' && affiliatePartners.length === 0) {
-    affiliatePartners = await getPartnersForZone('blog', {
-      categories: ['transfer'],
+  if (post.category === "tipping" && affiliatePartners.length === 0) {
+    affiliatePartners = await getPartnersForZone("blog", {
+      categories: ["transfer"],
       maxItems: 3,
-    })
-    affiliateBlogCategory = 'taxi'
+    });
+    affiliateBlogCategory = "taxi";
   }
 
   // Airport CTA — only for taxi-category posts about cities with an airport page
-  const airportData = post.category === 'taxi' && post.city
-    ? getAirportForCity(post.city)
-    : null
+  const airportData =
+    post.category === "taxi" && post.city ? getAirportForCity(post.city) : null;
 
   // Related posts — 3 by relevance score (city > country > category)
-  const relatedPosts = getRelatedPosts(post, 3)
+  const relatedPosts = getRelatedPosts(post, 3);
 
   return (
     <>
@@ -364,12 +473,21 @@ export default async function BlogArticlePage(
 
       <div className="space-y-5 pb-8">
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-1.5 text-xs text-zinc-500 flex-wrap" aria-label="Breadcrumb">
-          <Link href="/" className="hover:text-zinc-300 transition-colors">Home</Link>
+        <nav
+          className="flex items-center gap-1.5 text-xs text-zinc-500 flex-wrap"
+          aria-label="Breadcrumb"
+        >
+          <Link href="/" className="hover:text-zinc-300 transition-colors">
+            Home
+          </Link>
           <ChevronRight size={12} />
-          <Link href="/blog" className="hover:text-zinc-300 transition-colors">Blog</Link>
+          <Link href="/blog" className="hover:text-zinc-300 transition-colors">
+            Blog
+          </Link>
           <ChevronRight size={12} />
-          <span className="text-zinc-400 truncate max-w-[180px]">{post.city ?? 'Article'}</span>
+          <span className="text-zinc-400 truncate max-w-[180px]">
+            {post.city ?? "Article"}
+          </span>
         </nav>
 
         {/* Header */}
@@ -380,30 +498,48 @@ export default async function BlogArticlePage(
             <span aria-hidden="true">·</span>
             <span>{post.readingMinutes} min read</span>
           </div>
-          <h1 className="post-headline text-xl font-bold text-white leading-snug">{post.title}</h1>
+          <h1 className="post-headline text-xl font-bold text-white leading-snug">
+            {post.title}
+          </h1>
           <p className="text-zinc-400 text-sm">{post.description}</p>
         </div>
 
         {/* Post hero image — city sticker or country flag */}
         {(() => {
-          const cityImg = post.citySlug ? CITY_IMAGES[post.citySlug] : undefined
-          const flagCode = post.countrySlug ? COUNTRY_FLAGS[post.countrySlug] : undefined
-          const flagImg = flagCode ? `/images/flags/${flagCode}.svg` : undefined
-          const src = cityImg ?? flagImg
-          if (!src) return null
-          const isCitySticker = !!cityImg
+          const cityImg = post.citySlug
+            ? CITY_IMAGES[post.citySlug]
+            : undefined;
+          const flagCode = post.countrySlug
+            ? COUNTRY_FLAGS[post.countrySlug]
+            : undefined;
+          const flagImg = flagCode
+            ? `/images/flags/${flagCode}.svg`
+            : undefined;
+          const src = cityImg ?? flagImg;
+          if (!src) return null;
+          const isCitySticker = !!cityImg;
           return (
-            <div className={`flex ${isCitySticker ? 'justify-center' : 'justify-start'} py-2`}>
+            <div
+              className={`flex ${isCitySticker ? "justify-center" : "justify-start"} py-2`}
+            >
               <Image
                 src={src}
-                alt={isCitySticker ? `${post.city} city illustration` : `${post.country} flag`}
+                alt={
+                  isCitySticker
+                    ? `${post.city} city illustration`
+                    : `${post.country} flag`
+                }
                 width={isCitySticker ? 120 : 64}
                 height={isCitySticker ? 120 : 48}
                 unoptimized
-                className={isCitySticker ? 'opacity-90 drop-shadow-lg' : 'rounded shadow-sm'}
+                className={
+                  isCitySticker
+                    ? "opacity-90 drop-shadow-lg"
+                    : "rounded shadow-sm"
+                }
               />
             </div>
-          )
+          );
         })()}
 
         {/* Related links */}
@@ -435,26 +571,35 @@ export default async function BlogArticlePage(
               <RenderSection section={section} />
 
               {/* After intro: full BlogCtaWidget */}
-              {i === 0 && section.type === 'intro' && (post.citySlug || post.countrySlug) && (
-                <>
-                  <BlogCtaWidget
-                    city={post.city}
-                    citySlug={post.citySlug}
-                    country={post.country}
-                    countrySlug={post.countrySlug}
-                    flagCode={post.countrySlug ? COUNTRY_FLAGS[post.countrySlug] : undefined}
-                    category={post.category as 'taxi' | 'tipping' | 'travel'}
-                  />
-                  {post.citySlug && (
-                    <p className="text-center text-[11px] text-zinc-600 -mt-1">
-                      Not sure what you get?{' '}
-                      <Link href="/example" className="text-purple-400 hover:text-purple-300 underline underline-offset-2 transition-colors">
-                        See a full sample result →
-                      </Link>
-                    </p>
-                  )}
-                </>
-              )}
+              {i === 0 &&
+                section.type === "intro" &&
+                (post.citySlug || post.countrySlug) && (
+                  <>
+                    <BlogCtaWidget
+                      city={post.city}
+                      citySlug={post.citySlug}
+                      country={post.country}
+                      countrySlug={post.countrySlug}
+                      flagCode={
+                        post.countrySlug
+                          ? COUNTRY_FLAGS[post.countrySlug]
+                          : undefined
+                      }
+                      category={post.category as "taxi" | "tipping" | "travel"}
+                    />
+                    {post.citySlug && (
+                      <p className="text-center text-[11px] text-zinc-600 -mt-1">
+                        Not sure what you get?{" "}
+                        <Link
+                          href="/example"
+                          className="text-purple-400 hover:text-purple-300 underline underline-offset-2 transition-colors"
+                        >
+                          See a full sample result →
+                        </Link>
+                      </p>
+                    )}
+                  </>
+                )}
 
               {/* Mid-article: inject a second widget after the 4th section (index 3) */}
               {i === 3 && (post.citySlug || post.countrySlug) && (
@@ -463,8 +608,12 @@ export default async function BlogArticlePage(
                   citySlug={post.citySlug}
                   country={post.country}
                   countrySlug={post.countrySlug}
-                  flagCode={post.countrySlug ? COUNTRY_FLAGS[post.countrySlug] : undefined}
-                  category={post.category as 'taxi' | 'tipping' | 'travel'}
+                  flagCode={
+                    post.countrySlug
+                      ? COUNTRY_FLAGS[post.countrySlug]
+                      : undefined
+                  }
+                  category={post.category as "taxi" | "tipping" | "travel"}
                 />
               )}
             </React.Fragment>
@@ -474,7 +623,9 @@ export default async function BlogArticlePage(
         {/* FAQ sections */}
         {faqContent.length > 0 && (
           <div className="space-y-4 pt-2">
-            <h2 className="text-base font-bold text-white">Frequently Asked Questions</h2>
+            <h2 className="text-base font-bold text-white">
+              Frequently Asked Questions
+            </h2>
             {faqContent.map((section, i) => (
               <RenderSection key={i} section={section} />
             ))}
@@ -488,18 +639,21 @@ export default async function BlogArticlePage(
           country={post.country}
         />
 
-        <AmazonProductWidget category={post.category as 'taxi' | 'tipping' | 'travel'} />
+        <AmazonProductWidget
+          category={post.category as "taxi" | "tipping" | "travel"}
+        />
 
         {/* CTA — category-specific */}
-        {post.category === 'taxi' && (
+        {post.category === "taxi" && (
           <div className="bg-gradient-to-br from-purple-900/30 to-zinc-900 border border-purple-800/30 rounded-2xl p-5 text-center space-y-3">
             <p className="text-white font-semibold">
               That&apos;s the general range — what&apos;s YOUR route?
             </p>
             <p className="text-zinc-500 text-sm">
-              Fares shift by exact pickup point, time of day, and traffic. Get a personalised estimate
-              for your specific journey{post.city ? ` in ${post.city}` : ''}, plus scam warnings and
-              the phrase to say to your driver.
+              Fares shift by exact pickup point, time of day, and traffic. Get a
+              personalised estimate for your specific journey
+              {post.city ? ` in ${post.city}` : ""}, plus scam warnings and the
+              phrase to say to your driver.
             </p>
             <Link
               href="/taxi"
@@ -508,40 +662,52 @@ export default async function BlogArticlePage(
               Check My Exact Fare <ArrowRight size={15} />
             </Link>
             <p className="text-zinc-600 text-xs">
-              First time?{' '}
-              <Link href="/example" className="text-purple-400 hover:text-purple-300 underline underline-offset-2 transition-colors">
+              First time?{" "}
+              <Link
+                href="/example"
+                className="text-purple-400 hover:text-purple-300 underline underline-offset-2 transition-colors"
+              >
                 See a full sample result →
               </Link>
             </p>
           </div>
         )}
 
-        {post.category === 'tipping' && (
+        {post.category === "tipping" && (
           <div className="bg-gradient-to-br from-teal-900/30 to-zinc-900 border border-teal-800/30 rounded-2xl p-5 text-center space-y-3">
             <p className="text-white font-semibold">
               Know exactly what to tip before you reach for your wallet
             </p>
             <p className="text-zinc-500 text-sm">
-              Get the full tipping breakdown for{post.country ? ` ${post.country}` : ' your destination'} —
-              restaurants, taxis, hotels, spas, and tour guides — in under 10 seconds.
+              Get the full tipping breakdown for
+              {post.country ? ` ${post.country}` : " your destination"} —
+              restaurants, taxis, hotels, spas, and tour guides — in under 10
+              seconds.
             </p>
             <Link
-              href={post.countrySlug ? `/tipping/${post.countrySlug}` : '/tipping'}
+              href={
+                post.countrySlug ? `/tipping/${post.countrySlug}` : "/tipping"
+              }
               className="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold px-6 py-3 rounded-xl transition-colors text-sm"
             >
-              Get {post.country ?? 'My'} Tipping Guide <ArrowRight size={15} />
+              Get {post.country ?? "My"} Tipping Guide <ArrowRight size={15} />
             </Link>
           </div>
         )}
 
-        {post.category === 'travel' && (
+        {post.category === "travel" && (
           <div className="bg-gradient-to-br from-purple-900/30 to-zinc-900 border border-purple-800/30 rounded-2xl p-5 text-center space-y-3">
             <p className="text-white font-semibold">
               Go prepared — know the fair price before you land
             </p>
             <p className="text-zinc-500 text-sm">
-              Check real taxi fares and local tipping customs for{post.city ? ` ${post.city}` : post.country ? ` ${post.country}` : ' your destination'} —
-              so you never overpay on your first ride or leave an awkward tip.
+              Check real taxi fares and local tipping customs for
+              {post.city
+                ? ` ${post.city}`
+                : post.country
+                  ? ` ${post.country}`
+                  : " your destination"}{" "}
+              — so you never overpay on your first ride or leave an awkward tip.
             </p>
             <div className="flex items-center justify-center gap-3 flex-wrap">
               <Link
@@ -573,8 +739,9 @@ export default async function BlogArticlePage(
                 Flying into {airportData.city}?
               </p>
               <p className="text-xs text-zinc-400 mt-0.5 leading-relaxed">
-                See the full {airportData.code} airport taxi fare table — route-by-route estimates,
-                scam warnings, and cheaper alternatives.
+                See the full {airportData.code} airport taxi fare table —
+                route-by-route estimates, scam warnings, and cheaper
+                alternatives.
               </p>
               <Link
                 href={`/taxi/airport/${airportData.code}`}
@@ -602,7 +769,11 @@ export default async function BlogArticlePage(
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 text-xs text-zinc-400 hover:text-zinc-200 transition-colors"
                   >
-                    <ExternalLink size={11} className="shrink-0 text-zinc-600" aria-hidden="true" />
+                    <ExternalLink
+                      size={11}
+                      className="shrink-0 text-zinc-600"
+                      aria-hidden="true"
+                    />
                     {ref.label}
                   </a>
                 </li>
@@ -613,7 +784,7 @@ export default async function BlogArticlePage(
 
         {/* Email capture — soft, after primary CTA */}
         <EmailCapture
-          feature={post.category === 'tipping' ? 'tipping' : 'taxi'}
+          feature={post.category === "tipping" ? "tipping" : "taxi"}
           variant="post"
         />
 
@@ -624,8 +795,14 @@ export default async function BlogArticlePage(
       {/* Invisible scroll depth tracker — fires analytics events at 25/50/75/100% */}
       <ScrollDepthTracker
         slug={post.slug}
-        feature={post.category === 'tipping' ? 'tipping' : post.category === 'travel' ? 'travel' : 'taxi'}
+        feature={
+          post.category === "tipping"
+            ? "tipping"
+            : post.category === "travel"
+              ? "travel"
+              : "taxi"
+        }
       />
     </>
-  )
+  );
 }
