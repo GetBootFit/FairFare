@@ -7,7 +7,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
     title: "Best Time to Visit Bangkok: Weather, Crowds & Costs (2026)",
     description:
       "The best time to visit Bangkok is November to February — cool, dry, and comfortable at 25–32°C. Here's the full seasonal breakdown.",
-    publishedAt: "2025-01-03",
+    publishedAt: "2026-01-03",
     readingMinutes: 5,
     category: "travel",
     city: "Bangkok",
@@ -76,7 +76,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
     title: "Bangkok Daily Budget: How Much Does Bangkok Cost Per Day? (2026)",
     description:
       "Bangkok costs $25–35/day on a budget, $70–120 mid-range, and $250+ for luxury. Here's exactly where your money goes.",
-    publishedAt: "2025-01-06",
+    publishedAt: "2026-01-06",
     readingMinutes: 5,
     category: "travel",
     city: "Bangkok",
@@ -142,7 +142,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
     title: "Uber vs Taxi in Bangkok: Grab, Bolt & Metered Cabs Compared (2026)",
     description:
       "Uber exited Thailand in 2018 — Grab is now the default, and a Suvarnabhumi Airport run to Sukhumvit costs ฿280–380 by Grab vs ฿250–350 + ฿75 tolls by metered taxi. Here's the full 2026 comparison, plus the meter-refusal scam every tourist should know.",
-    publishedAt: "2025-01-09",
+    publishedAt: "2026-01-09",
     readingMinutes: 4,
     category: "taxi",
     city: "Bangkok",
@@ -221,7 +221,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
       "Best Time to Visit Tokyo: Cherry Blossoms, Autumn Leaves & Beyond (2026)",
     description:
       "The best times to visit Tokyo are late March to April (cherry blossom season) and October to November (autumn foliage). Both periods offer perfect weather and spectacular scenery.",
-    publishedAt: "2025-01-12",
+    publishedAt: "2026-01-12",
     readingMinutes: 5,
     category: "travel",
     city: "Tokyo",
@@ -300,7 +300,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
     title: "Tokyo Daily Budget: How Much Does Tokyo Cost Per Day? (2026)",
     description:
       "Tokyo costs ¥8,000–12,000 ($53–80) per day on a budget, ¥20,000–35,000 mid-range, and ¥80,000+ for luxury. It's more affordable than most visitors expect.",
-    publishedAt: "2025-01-15",
+    publishedAt: "2026-01-15",
     readingMinutes: 5,
     category: "travel",
     city: "Tokyo",
@@ -367,7 +367,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
       "Getting Around Tokyo: Metro, JR Lines, Taxis & IC Cards Explained (2026)",
     description:
       "Tokyo's train network is the world's most complex — but also its most reliable. This guide cuts through the confusion so you can navigate like a local.",
-    publishedAt: "2025-01-18",
+    publishedAt: "2026-01-18",
     readingMinutes: 5,
     category: "travel",
     city: "Tokyo",
@@ -445,7 +445,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
     title: "Is Bangkok Safe? Honest Safety Guide for Tourists (2026)",
     description:
       "Bangkok is generally safe for tourists — violent crime against visitors is rare. The real risks are scams, traffic, and street food hygiene. Here's what to watch for.",
-    publishedAt: "2025-01-21",
+    publishedAt: "2026-01-21",
     readingMinutes: 5,
     category: "travel",
     city: "Bangkok",
@@ -529,7 +529,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
     title: "How Much Does a Taxi Cost in Osaka? (2026 Fare Guide)",
     description:
       "Osaka taxis start at ¥680 and cost approximately ¥80 every 266 metres. Most city trips cost ¥900–2,500, but trains are almost always the better choice.",
-    publishedAt: "2025-01-24",
+    publishedAt: "2026-01-24",
     readingMinutes: 4,
     category: "taxi",
     city: "Osaka",
@@ -607,7 +607,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
     title: "Best Time to Visit Bali: Dry Season, Crowds & Surf Windows (2026)",
     description:
       "The best time to visit Bali is April to October — the dry season brings sunny days, calmer seas, and cooler evenings. July and August are peak tourist months.",
-    publishedAt: "2025-01-27",
+    publishedAt: "2026-01-27",
     readingMinutes: 5,
     category: "travel",
     city: "Bali",
@@ -682,7 +682,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
     title: "Bali Daily Budget: How Much Does Bali Cost Per Day? (2026)",
     description:
       "Bali costs $25–40/day on a budget, $70–120 mid-range, and $200+ for a luxury villa experience. Here's how to spend wisely.",
-    publishedAt: "2025-01-30",
+    publishedAt: "2026-01-30",
     readingMinutes: 5,
     category: "travel",
     city: "Bali",
@@ -749,7 +749,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
     title: "Best Time to Visit Paris: Seasons, Crowds & What to Expect (2026)",
     description:
       "The best time to visit Paris is April to June or September to October — mild weather, manageable crowds, and the city at its most photogenic.",
-    publishedAt: "2025-02-02",
+    publishedAt: "2026-02-02",
     readingMinutes: 5,
     category: "travel",
     city: "Paris",
@@ -824,7 +824,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
     title: "Paris Daily Budget: How Much Does Paris Cost Per Day? (2026)",
     description:
       "Paris costs €80–120/day on a tight budget, €180–280 mid-range, and €500+ for luxury. Here's exactly where your euros go.",
-    publishedAt: "2025-02-05",
+    publishedAt: "2026-02-05",
     readingMinutes: 5,
     category: "travel",
     city: "Paris",
@@ -891,7 +891,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
       "Getting Around London: Tube, Bus, Elizabeth Line & Taxi Guide (2026)",
     description:
       "London's public transport is extensive and contactless-card-friendly. The Elizabeth Line has transformed cross-city travel. Here's everything you need to navigate London efficiently.",
-    publishedAt: "2025-02-08",
+    publishedAt: "2026-02-08",
     readingMinutes: 5,
     category: "travel",
     city: "London",
@@ -973,7 +973,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
       "Uber vs Black Cab in London: Price, Speed & When to Use Each (2026)",
     description:
       "A Heathrow black cab to central London costs £55–85 — Uber typically does it for £45–65, and a 5km city trip is £12–18 vs £18–28 by cab. Here's the full 2026 comparison, plus when New Year's Eve surge makes Uber 3–4× pricier than the meter.",
-    publishedAt: "2025-02-11",
+    publishedAt: "2026-02-11",
     readingMinutes: 4,
     category: "taxi",
     city: "London",
@@ -1055,7 +1055,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
     title: "Is Cairo Safe for Tourists? Honest Guide to Visiting in 2026",
     description:
       "Cairo is generally safe for tourists visiting the main attractions. Petty crime, aggressive touts, and traffic are the main risks. Here's what you need to know.",
-    publishedAt: "2025-02-14",
+    publishedAt: "2026-02-14",
     readingMinutes: 5,
     category: "travel",
     city: "Cairo",
@@ -1138,7 +1138,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
     title: "How Much Does a Taxi Cost in Budapest? (2026 Fare Guide)",
     description:
       "Budapest taxis start at HUF 1,100 and charge HUF 450/km. A city centre trip costs HUF 1,500–3,000. Always book via app — never hail from the street.",
-    publishedAt: "2025-02-17",
+    publishedAt: "2026-02-17",
     readingMinutes: 4,
     category: "taxi",
     city: "Budapest",
@@ -1209,7 +1209,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
     title: "Best Time to Visit Barcelona: Sun, Festivals & Fewer Crowds (2026)",
     description:
       "The best time to visit Barcelona is May to June or September to October — warm, sunny, and less crowded than the July–August peak. Here's the full seasonal guide.",
-    publishedAt: "2025-02-20",
+    publishedAt: "2026-02-20",
     readingMinutes: 5,
     category: "travel",
     city: "Barcelona",
@@ -1285,7 +1285,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
       "Barcelona Daily Budget: How Much Does Barcelona Cost Per Day? (2026)",
     description:
       "Barcelona costs €70–100/day on a budget, €160–240 mid-range, and €400+ for luxury. Here's exactly what things cost in 2026.",
-    publishedAt: "2025-02-23",
+    publishedAt: "2026-02-23",
     readingMinutes: 5,
     category: "travel",
     city: "Barcelona",
@@ -1351,7 +1351,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
     title: "Grab vs Taxi in Singapore: Every Surcharge Explained (2026)",
     description:
       "Uber left Singapore in 2018. Your real choice is Grab (fixed upfront price) vs ComfortDelGro metered taxi (no surge, but up to +50% midnight surcharge). Plus: when the MRT at SGD $1.20–2.50 beats both.",
-    publishedAt: "2025-02-26",
+    publishedAt: "2026-02-26",
     updatedAt: "2026-09-02",
     readingMinutes: 7,
     category: "taxi",
@@ -1556,7 +1556,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
     title: "Getting Around Bangkok: BTS, MRT, Boat, Grab & Taxi Guide (2026)",
     description:
       "Bangkok has a growing rail network, scenic river boats, and the best app-based taxis in Southeast Asia. Here's how to navigate the city efficiently.",
-    publishedAt: "2025-03-01",
+    publishedAt: "2026-03-01",
     readingMinutes: 5,
     category: "travel",
     city: "Bangkok",
@@ -1639,7 +1639,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
     title: "Hotel Tipping Guide: Who to Tip, How Much & When (2026)",
     description:
       "Hotel tipping rules differ by country — from $1/bag in the US to nothing expected in Japan. Here's a complete guide to hotel gratuities worldwide.",
-    publishedAt: "2025-03-04",
+    publishedAt: "2026-03-04",
     readingMinutes: 5,
     category: "tipping",
     content: [
@@ -1730,7 +1730,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
       "Best Time to Visit Dubai: Desert Weather & the Tourist Sweet Spot (2026)",
     description:
       "The best time to visit Dubai is November to March — mild at 20–28°C, with zero chance of rain and all outdoor attractions fully enjoyable.",
-    publishedAt: "2025-03-07",
+    publishedAt: "2026-03-07",
     readingMinutes: 5,
     category: "travel",
     city: "Dubai",
@@ -1800,7 +1800,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
     title: "How Much Does a Taxi Cost in Zurich? (2026 Fare Guide)",
     description:
       "Zurich is one of Europe's most expensive taxi cities — flag fall CHF 6.50, then CHF 3.80–4.50/km. Airport to city centre costs CHF 55–75.",
-    publishedAt: "2025-03-10",
+    publishedAt: "2026-03-10",
     readingMinutes: 4,
     category: "taxi",
     city: "Zurich",
@@ -1870,7 +1870,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
     title: "Is Istanbul Safe for Tourists? Complete Safety Guide (2026)",
     description:
       "Istanbul is generally safe for tourists in 2026. Petty crime, taxi scams, and rare political unrest are the main risks — here's what to know.",
-    publishedAt: "2025-03-13",
+    publishedAt: "2026-03-13",
     readingMinutes: 5,
     category: "travel",
     city: "Istanbul",
@@ -1955,7 +1955,7 @@ export const BATCH3_BLOG_POSTS: BlogPost[] = [
     title: "Dubai Daily Budget: How Much Does Dubai Cost Per Day? (2026)",
     description:
       "Dubai costs $80–120/day on a budget, $200–350 mid-range, and $600+ for luxury. Here's a realistic breakdown of what things cost.",
-    publishedAt: "2025-03-16",
+    publishedAt: "2026-03-16",
     readingMinutes: 5,
     category: "travel",
     city: "Dubai",

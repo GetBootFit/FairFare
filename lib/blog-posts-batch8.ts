@@ -354,7 +354,7 @@ export const BATCH8_BLOG_POSTS: BlogPost[] = [
     category: "taxi",
     city: "Bali",
     country: "Indonesia",
-    citySlug: "bali",
+    citySlug: "denpasar",
     countrySlug: "indonesia",
     content: [
       {

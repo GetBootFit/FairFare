@@ -519,38 +519,8 @@ export const BATCH4_BLOG_POSTS: BlogPost[] = [
         body: "If you have a Malaysian SIM or roaming data on arrival, open the Grab app immediately after landing and book your ride while walking to the baggage carousel. By the time you collect your bags, the driver is often already waiting. This saves the queue time at the taxi counter and is typically RM 15–30 cheaper.",
       },
       {
-        type: "h2",
-        heading: "Driving to KLIA & Parking Costs: Is It Cheaper Than a Taxi?",
-      },
-      {
-        type: "p",
-        body: "If you're self-driving to KLIA rather than being dropped off, the question is whether parking for the duration of your trip beats the cost of a taxi or Grab both ways. KLIA has several parking tiers, and rates have shifted in 2026 — Malaysia Airports raised the Long-Term Car Park's daily cap from RM 27 to RM 32 in May 2026, and a viral RM 384 bill for a 12-day stay (≈RM 32/day) shows the new rate in practice. Always confirm current tariffs on the Malaysia Airports site before you travel, as short-term rates in particular have changed more than once this year.",
-      },
-      {
-        type: "table",
-        rows: [
-          {
-            label: "Long-Term Car Park (LTCP)",
-            value: "RM 2.50/hour, capped at RM 32/day",
-          },
-          {
-            label: "klia2 short-term (1st–2nd day)",
-            value: "Up to RM 52/day — hourly from RM 2–5",
-          },
-          {
-            label: "gateway@klia2 (1st–4th day)",
-            value: "Up to RM 55/day, RM 10/day from day 7 (incl. 6% tax)",
-          },
-          { label: "Preferred (closest) parking", value: "Up to RM 150/day" },
-          {
-            label: "Round-trip taxi/Grab (no parking)",
-            value: "RM 80–140 total (both legs, budget to premier)",
-          },
-        ],
-      },
-      {
-        type: "warning",
-        body: "For a typical 3–5 day trip, Long-Term Car Park parking alone (RM 32/day = RM 96–160) already costs about the same as a round-trip taxi or Grab — and that's before counting fuel, tolls, and the inconvenience of leaving a car at the airport for a week. Parking only wins financially on very short trips (1–2 days) or if you're dropping off and picking up passengers rather than leaving a car unattended for the full trip.",
+        type: "tip",
+        body: "Thinking about driving yourself and parking instead of taking a taxi? The full parking-rate breakdown and a trip-length break-even analysis (parking vs Grab vs taxi) is covered in our dedicated guide: Is driving and parking at KLIA cheaper than Grab or a taxi?",
       },
       { type: "h2", heading: "Frequently Asked Questions" },
       {
@@ -570,7 +540,7 @@ export const BATCH4_BLOG_POSTS: BlogPost[] = [
           },
           {
             q: "Is it cheaper to drive and park at KLIA than take a taxi?",
-            a: "Usually not for trips longer than 2–3 days. Long-Term Car Park parking is capped at RM 32/day (RM 2.50/hour) as of May 2026 — a 5-day trip costs around RM 160 in parking alone, versus RM 80–140 for a round-trip taxi or Grab with no parking hassle. Parking only makes sense for very short trips or airport drop-offs/pickups where you're not leaving the car unattended.",
+            a: "It depends on your trip length and which parking zone you use — for short trips (1–3 days) driving is often competitive, but Grab or taxi usually wins for a week or longer. See our full KLIA parking vs Grab vs taxi break-even guide for the exact numbers by trip length and departure point.",
           },
           {
             q: "Is KLIA or KLIA2 my terminal?",
@@ -837,7 +807,7 @@ export const BATCH4_BLOG_POSTS: BlogPost[] = [
     readingMinutes: 8,
     category: "taxi",
     city: "Bali",
-    citySlug: "bali",
+    citySlug: "denpasar",
     content: [
       {
         type: "intro",

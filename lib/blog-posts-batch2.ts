@@ -1774,7 +1774,6 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
     readingMinutes: 8,
     category: "tipping",
     country: "Sri Lanka",
-    countrySlug: "sri-lanka",
     content: [
       {
         type: "intro",
@@ -4060,7 +4059,7 @@ export const BATCH2_BLOG_POSTS: BlogPost[] = [
     readingMinutes: 8,
     category: "taxi",
     city: "Bali",
-    citySlug: "bali",
+    citySlug: "denpasar",
     content: [
       {
         type: "intro",

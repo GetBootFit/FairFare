@@ -7886,7 +7886,6 @@ export const BLOG_POSTS: BlogPost[] = [
     city: "Doha",
     country: "Qatar",
     citySlug: "doha",
-    countrySlug: "qatar",
     content: [
       {
         type: "intro",
@@ -9044,7 +9043,6 @@ export const BLOG_POSTS: BlogPost[] = [
     city: "Nairobi",
     country: "Kenya",
     citySlug: "nairobi",
-    countrySlug: "kenya",
     content: [
       {
         type: "intro",
@@ -9136,7 +9134,6 @@ export const BLOG_POSTS: BlogPost[] = [
     city: "Reykjavik",
     country: "Iceland",
     citySlug: "reykjavik",
-    countrySlug: "iceland",
     content: [
       {
         type: "intro",
@@ -9702,7 +9699,6 @@ export const BLOG_POSTS: BlogPost[] = [
     city: "Phnom Penh",
     country: "Cambodia",
     citySlug: "phnom-penh",
-    countrySlug: "cambodia",
     content: [
       {
         type: "intro",
@@ -10600,7 +10596,6 @@ export const BLOG_POSTS: BlogPost[] = [
     city: "Belgrade",
     country: "Serbia",
     citySlug: "belgrade",
-    countrySlug: "serbia",
     content: [
       {
         type: "intro",
@@ -10682,7 +10677,6 @@ export const BLOG_POSTS: BlogPost[] = [
     city: "Tallinn",
     country: "Estonia",
     citySlug: "tallinn",
-    countrySlug: "estonia",
     content: [
       {
         type: "intro",
@@ -10757,7 +10751,6 @@ export const BLOG_POSTS: BlogPost[] = [
     city: "Riga",
     country: "Latvia",
     citySlug: "riga",
-    countrySlug: "latvia",
     content: [
       {
         type: "intro",
@@ -10828,7 +10821,6 @@ export const BLOG_POSTS: BlogPost[] = [
     city: "Vilnius",
     country: "Lithuania",
     citySlug: "vilnius",
-    countrySlug: "lithuania",
     content: [
       {
         type: "intro",
@@ -10899,7 +10891,6 @@ export const BLOG_POSTS: BlogPost[] = [
     city: "Tbilisi",
     country: "Georgia",
     citySlug: "tbilisi",
-    countrySlug: "georgia",
     content: [
       {
         type: "intro",
@@ -12062,7 +12053,6 @@ export const BLOG_POSTS: BlogPost[] = [
     city: "Muscat",
     country: "Oman",
     citySlug: "muscat",
-    countrySlug: "oman",
     content: [
       {
         type: "intro",
@@ -12223,7 +12213,6 @@ export const BLOG_POSTS: BlogPost[] = [
     city: "Colombo",
     country: "Sri Lanka",
     citySlug: "colombo",
-    countrySlug: "sri-lanka",
     content: [
       {
         type: "intro",
@@ -12987,7 +12976,6 @@ export const BLOG_POSTS: BlogPost[] = [
     city: "Siem Reap",
     country: "Cambodia",
     citySlug: "siem-reap",
-    countrySlug: "cambodia",
     content: [
       {
         type: "intro",
@@ -13729,7 +13717,6 @@ export const BLOG_POSTS: BlogPost[] = [
     city: "Kigali",
     country: "Rwanda",
     citySlug: "kigali",
-    countrySlug: "rwanda",
     content: [
       {
         type: "intro",
@@ -13816,7 +13803,6 @@ export const BLOG_POSTS: BlogPost[] = [
     city: "Lagos",
     country: "Nigeria",
     citySlug: "lagos",
-    countrySlug: "nigeria",
     content: [
       {
         type: "intro",
@@ -14253,7 +14239,6 @@ export const BLOG_POSTS: BlogPost[] = [
     city: "Quito",
     country: "Ecuador",
     citySlug: "quito",
-    countrySlug: "ecuador",
     content: [
       {
         type: "intro",
@@ -14509,7 +14494,6 @@ export const BLOG_POSTS: BlogPost[] = [
     city: "Algiers",
     country: "Algeria",
     citySlug: "algiers",
-    countrySlug: "algeria",
     content: [
       {
         type: "intro",
@@ -14599,7 +14583,6 @@ export const BLOG_POSTS: BlogPost[] = [
     city: "Addis Ababa",
     country: "Ethiopia",
     citySlug: "addis-ababa",
-    countrySlug: "ethiopia",
     content: [
       {
         type: "intro",
@@ -15260,7 +15243,6 @@ export const BLOG_POSTS: BlogPost[] = [
     city: "Punta Cana",
     country: "Dominican Republic",
     citySlug: "punta-cana",
-    countrySlug: "dominican-republic",
     content: [
       {
         type: "intro",
@@ -15339,7 +15321,6 @@ export const BLOG_POSTS: BlogPost[] = [
     city: "Santo Domingo",
     country: "Dominican Republic",
     citySlug: "santo-domingo",
-    countrySlug: "dominican-republic",
     content: [
       {
         type: "intro",
@@ -15421,7 +15402,6 @@ export const BLOG_POSTS: BlogPost[] = [
     city: "Havana",
     country: "Cuba",
     citySlug: "havana",
-    countrySlug: "cuba",
     content: [
       {
         type: "intro",
@@ -15674,7 +15654,6 @@ export const BLOG_POSTS: BlogPost[] = [
     city: "Minsk",
     country: "Belarus",
     citySlug: "minsk",
-    countrySlug: "belarus",
     content: [
       {
         type: "intro",
@@ -15756,7 +15735,6 @@ export const BLOG_POSTS: BlogPost[] = [
     city: "Varna",
     country: "Bulgaria",
     citySlug: "varna",
-    countrySlug: "bulgaria",
     content: [
       {
         type: "intro",
@@ -15838,7 +15816,6 @@ export const BLOG_POSTS: BlogPost[] = [
     city: "Burgas",
     country: "Bulgaria",
     citySlug: "burgas",
-    countrySlug: "bulgaria",
     content: [
       {
         type: "intro",
@@ -16177,7 +16154,6 @@ export const BLOG_POSTS: BlogPost[] = [
     city: "Port Vila",
     country: "Vanuatu",
     citySlug: "port-vila",
-    countrySlug: "vanuatu",
     content: [
       {
         type: "intro",
