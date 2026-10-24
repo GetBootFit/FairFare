@@ -17,12 +17,16 @@ const taxiRates = taxiRatesData as Record<string, CityRate>;
  * "São Paulo", "Cancún", "Bogotá" all resolve correctly.
  */
 function normaliseKey(input: string): string {
-  return input
-    .toLowerCase()
-    .normalize("NFD") // decompose accented chars
-    .replace(/[\u0300-\u036f]/g, "") // strip combining diacritics
-    .replace(/\s+/g, "_")
-    .replace(/[^a-z0-9_]/g, "");
+  return (
+    input
+      .toLowerCase()
+      .normalize("NFD") // decompose accented chars
+      .replace(/[\u0300-\u036f]/g, "") // strip combining diacritics
+      .replace(/[\s-]+/g, "_") // hyphens must become underscores, not be stripped --
+      // "Roissy-en-France" -> "roissy_en_france" (matches ALIASES), not
+      // "roissyenfrance" (word boundaries destroyed, never matches anything)
+      .replace(/[^a-z0-9_]/g, "")
+  );
 }
 
 /**
