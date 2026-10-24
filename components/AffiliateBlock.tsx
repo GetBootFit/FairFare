@@ -16,24 +16,24 @@
  *   maxItems   — max partners to show
  */
 
-'use client'
+"use client";
 
-import { ExternalLink } from 'lucide-react'
-import { track } from '@vercel/analytics'
-import { useLanguage } from '@/context/LanguageContext'
-import type { AffiliatePartner, AffiliateZone } from '@/data/affiliate-config'
-import type { TranslationKey } from '@/lib/i18n'
+import { ExternalLink } from "lucide-react";
+import { track } from "@vercel/analytics";
+import { useLanguage } from "@/context/LanguageContext";
+import type { AffiliatePartner, AffiliateZone } from "@/data/affiliate-config";
+import type { TranslationKey } from "@/lib/i18n";
 
-const PURPLE_FILTER = 'hue-rotate(98deg) saturate(110%)'
+const PURPLE_FILTER = "hue-rotate(98deg) saturate(110%)";
 
 function PartnerIcon({
   name,
   size = 26,
   tint,
 }: {
-  name: string
-  size?: number
-  tint: 'teal' | 'purple'
+  name: string;
+  size?: number;
+  tint: "teal" | "purple";
 }) {
   return (
     <img
@@ -41,26 +41,26 @@ function PartnerIcon({
       alt=""
       width={size}
       height={size}
-      style={tint === 'purple' ? { filter: PURPLE_FILTER } : undefined}
+      style={tint === "purple" ? { filter: PURPLE_FILTER } : undefined}
       aria-hidden="true"
     />
-  )
+  );
 }
 
 interface AffiliateBlockProps {
   /** Pre-resolved partner list from server — avoids client-side KV calls */
-  partners: AffiliatePartner[]
-  zone: AffiliateZone
-  city?: string
-  country?: string
-  isoCountry?: string
-  tint: 'teal' | 'purple'
+  partners: AffiliatePartner[];
+  zone: AffiliateZone;
+  city?: string;
+  country?: string;
+  isoCountry?: string;
+  tint: "teal" | "purple";
   /** i18n key for the section heading */
-  headingKey?: TranslationKey
+  headingKey?: TranslationKey;
   /** Override heading destination interpolation */
-  headingDestination?: string
+  headingDestination?: string;
   /** Optional microcopy shown below the heading (e.g. AI transferNote) */
-  subtitle?: string
+  subtitle?: string;
 }
 
 export function AffiliateBlock({
@@ -70,22 +70,22 @@ export function AffiliateBlock({
   country,
   isoCountry,
   tint,
-  headingKey = 'affiliate_plan_trip',
+  headingKey = "affiliate_plan_trip",
   headingDestination,
   subtitle,
 }: AffiliateBlockProps) {
-  const { t } = useLanguage()
+  const { t } = useLanguage();
 
-  if (partners.length === 0) return null
+  if (partners.length === 0) return null;
 
-  const destination = headingDestination ?? city ?? country ?? ''
+  const destination = headingDestination ?? city ?? country ?? "";
 
   function buildHref(partner: AffiliatePartner): string {
-    const params = new URLSearchParams({ id: partner.id, zone })
-    if (city) params.set('city', city)
-    if (country) params.set('country', country)
-    if (isoCountry) params.set('iso', isoCountry)
-    return `/api/affiliate/redirect?${params.toString()}`
+    const params = new URLSearchParams({ id: partner.id, zone });
+    if (city) params.set("city", city);
+    if (country) params.set("country", country);
+    if (isoCountry) params.set("iso", isoCountry);
+    return `/api/affiliate/redirect?${params.toString()}`;
   }
 
   return (
@@ -95,26 +95,27 @@ export function AffiliateBlock({
           {t(headingKey, { destination })}
         </p>
         {subtitle && (
-          <p className="text-xs text-zinc-400 leading-relaxed mt-1">{subtitle}</p>
+          <p className="text-xs text-zinc-400 leading-relaxed mt-1">
+            {subtitle}
+          </p>
         )}
       </div>
       <div className="divide-y divide-zinc-800">
-        {partners.map(partner => (
-          <a
+        {partners.map((partner) => (
+          <button
             key={partner.id}
-            href={buildHref(partner)}
-            target="_blank"
-            rel="nofollow noopener noreferrer sponsored"
+            type="button"
             aria-label={`${partner.name} — ${t(partner.labelKey as TranslationKey)} (opens in new tab)`}
-            className="flex items-center gap-3 px-4 py-3 hover:bg-zinc-800 transition-colors group"
-            onClick={() =>
-              track('affiliate_clicked', {
+            className="w-full flex items-center gap-3 px-4 py-3 hover:bg-zinc-800 transition-colors group text-left"
+            onClick={() => {
+              track("affiliate_clicked", {
                 partner: partner.id,
                 partnerName: partner.name,
                 zone,
-                city: city ?? country ?? '',
-              })
-            }
+                city: city ?? country ?? "",
+              });
+              window.open(buildHref(partner), "_blank", "noopener,noreferrer");
+            }}
           >
             <div className="w-7 flex items-center justify-center shrink-0">
               <PartnerIcon name={partner.icon} size={26} tint={tint} />
@@ -123,13 +124,17 @@ export function AffiliateBlock({
               <p className="text-sm text-zinc-200 group-hover:text-white transition-colors">
                 {partner.name}
               </p>
-              <p className="text-xs text-zinc-500">{t(partner.labelKey as TranslationKey)}</p>
+              <p className="text-xs text-zinc-500">
+                {t(partner.labelKey as TranslationKey)}
+              </p>
             </div>
             <ExternalLink size={13} className="text-zinc-600 shrink-0" />
-          </a>
+          </button>
         ))}
       </div>
-      <p className="text-[10px] text-zinc-500 px-4 pb-3 pt-1">{t('affiliate_disclaimer')}</p>
+      <p className="text-[10px] text-zinc-500 px-4 pb-3 pt-1">
+        {t("affiliate_disclaimer")}
+      </p>
     </div>
-  )
+  );
 }
