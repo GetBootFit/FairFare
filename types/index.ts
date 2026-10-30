@@ -1,126 +1,136 @@
 // ─── Taxi ─────────────────────────────────────────────────────────────────────
 
 export interface TaxiPreviewResult {
-  pickup: string
-  destination: string
-  distance: { km: number; mi: number }
-  duration: { text: string; minutes: number }
-  city: string
-  country: string
-  citySupported: boolean
+  pickup: string;
+  destination: string;
+  distance: { km: number; mi: number };
+  duration: { text: string; minutes: number };
+  city: string;
+  country: string;
+  citySupported: boolean;
   /**
    * General city context shown free in the preview — currency + local taxi note.
-   * Deliberately no route-specific numbers: those are paid-only (TaxiFullResult.fareRange).
    */
   cityContext?: {
-    currency: string
-    currencySymbol: string
+    currency: string;
+    currencySymbol: string;
     /** One-sentence local taxi tip, e.g. "Insist on meter. Airport toll paid by passenger." */
-    note: string
-  }
+    note: string;
+  };
+  /**
+   * Wide, rounded route-specific fare estimate shown free (±35%, rounded to
+   * clean numbers). The precise ±15% range (TaxiFullResult.fareRange) stays
+   * paid-only. See calculateRoughFareRange in lib/taxi-rates.ts.
+   */
+  roughFareRange?: {
+    min: number;
+    max: number;
+    currency: string;
+    currencySymbol: string;
+  };
 }
 
 export interface TransportOption {
-  mode: 'bus' | 'train' | 'metro' | 'tram' | 'ferry'
-  duration: string
-  durationMinutes: number
-  lines: string[]
+  mode: "bus" | "train" | "metro" | "tram" | "ferry";
+  duration: string;
+  durationMinutes: number;
+  lines: string[];
 }
 
 export interface TaxiFullResult extends TaxiPreviewResult {
   fareRange: {
-    min: number
-    max: number
-    currency: string
-    currencySymbol: string
-    note?: string
-  }
-  transitOptions: TransportOption[]
-  scamWarnings: string[]
+    min: number;
+    max: number;
+    currency: string;
+    currencySymbol: string;
+    note?: string;
+  };
+  transitOptions: TransportOption[];
+  scamWarnings: string[];
   tipping: {
-    isExpected: boolean
-    recommendation: string
-  }
+    isExpected: boolean;
+    recommendation: string;
+  };
   driverPhrases: Array<{
-    context: string
-    localLanguage: string
-    transliteration: string | null
-    english: string
-  }>
+    context: string;
+    localLanguage: string;
+    transliteration: string | null;
+    english: string;
+  }>;
   /** Dark-styled Google Static Maps URL showing the driving route. Optional — omitted when polyline is unavailable. */
-  routeMapUrl?: string
+  routeMapUrl?: string;
   /** Turn-by-turn driving directions from the Directions API. */
-  routeSteps?: RouteStep[]
+  routeSteps?: RouteStep[];
   /**
    * One sentence about pre-booked transfers when contextually relevant
    * (airport routes, cities with high meter-dispute rates). Omitted when not meaningful.
    */
-  transferNote?: string
+  transferNote?: string;
   /** True when Claude was unavailable and scam warnings / phrases are generic fallback data. */
-  aiUnavailable?: true
+  aiUnavailable?: true;
 }
 
 export interface RouteStep {
-  instruction: string   // Plain text (HTML tags stripped from html_instructions)
-  distance: string      // e.g. "1.2 km"
-  maneuver: string      // e.g. "turn-left", "straight", "roundabout-right", ""
+  instruction: string; // Plain text (HTML tags stripped from html_instructions)
+  distance: string; // e.g. "1.2 km"
+  maneuver: string; // e.g. "turn-left", "straight", "roundabout-right", ""
 }
 
 // ─── Tipping ──────────────────────────────────────────────────────────────────
 
 export type TippingScenario =
-  | 'restaurant'
-  | 'taxi'
-  | 'hotel_porter'
-  | 'bar'
-  | 'tour_guide'
-  | 'delivery'
-  | 'spa_massage'
-  | 'room_service'
-  | 'hair_beauty'
-  | 'airport_porter'
+  | "restaurant"
+  | "taxi"
+  | "hotel_porter"
+  | "bar"
+  | "tour_guide"
+  | "delivery"
+  | "spa_massage"
+  | "room_service"
+  | "hair_beauty"
+  | "airport_porter";
 
-export type TippingRating = 'expected' | 'appreciated' | 'optional' | 'avoid'
+export type TippingRating = "expected" | "appreciated" | "optional" | "avoid";
 
 export interface ScenarioTip {
-  isExpected: boolean
-  rating: TippingRating
-  percentageMin: number | null
-  percentageMax: number | null
-  typicalAmount: string | null
-  notes: string
+  isExpected: boolean;
+  rating: TippingRating;
+  percentageMin: number | null;
+  percentageMax: number | null;
+  typicalAmount: string | null;
+  notes: string;
 }
 
 export interface TippingResult {
-  country: string
+  country: string;
   /** Present when the user requested a city-specific guide (e.g. "Bangkok"). */
-  city?: string
-  currency: string
-  currencySymbol: string
-  scenarios: Record<TippingScenario, ScenarioTip>
+  city?: string;
+  currency: string;
+  currencySymbol: string;
+  scenarios: Record<TippingScenario, ScenarioTip>;
   servicePhrases?: Array<{
-    context: string
-    localLanguage: string
-    transliteration: string | null
-    english: string
-  }>
+    context: string;
+    localLanguage: string;
+    transliteration: string | null;
+    english: string;
+  }>;
 }
 
 // ─── API ──────────────────────────────────────────────────────────────────────
 
 export interface ApiError {
-  error: string
+  error: string;
 }
 
 export interface TaxiPreviewInput {
-  pickup: string
-  destination: string
-  pickupPlaceId?: string
-  destPlaceId?: string
+  pickup: string;
+  destination: string;
+  pickupPlaceId?: string;
+  destPlaceId?: string;
 }
 
 export interface TippingInput {
-  country: string
+  country: string;
   /** Optional city for city-specific tipping guide. */
-  city?: string
+  city?: string;
 }

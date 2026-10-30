@@ -419,3 +419,46 @@ export function calculateFareRange(
     note: rateData.note,
   };
 }
+
+/** Round down to a "nice" step scaled to the value's magnitude (e.g. 61.75 -> 60, 97500 -> 95000) */
+function roundDownToNiceStep(value: number): number {
+  if (value <= 0) return 0;
+  const magnitude = Math.pow(10, Math.floor(Math.log10(value)));
+  const step = magnitude / 2;
+  return Math.floor(value / step) * step;
+}
+
+/** Round up to a "nice" step scaled to the value's magnitude (e.g. 128.25 -> 150, 202500 -> 250000) */
+function roundUpToNiceStep(value: number): number {
+  if (value <= 0) return 0;
+  const magnitude = Math.pow(10, Math.floor(Math.log10(value)));
+  const step = magnitude / 2;
+  return Math.ceil(value / step) * step;
+}
+
+/**
+ * Free-tier fare estimate — deliberately wider than calculateFareRange's ±15%
+ * (±35% here) and rounded to clean numbers, so it reads as a directional
+ * estimate rather than a substitute for the precise paid range. Gives the
+ * free preview a real answer to "is this roughly fair" while keeping the
+ * narrow, precise number worth paying for.
+ */
+export function calculateRoughFareRange(
+  rateData: CityRate,
+  distanceKm: number,
+): {
+  min: number;
+  max: number;
+  currency: string;
+  currencySymbol: string;
+} {
+  const calculated = rateData.baseRate + rateData.ratePerKm * distanceKm;
+  const baseFare = Math.max(rateData.minimumFare, calculated);
+
+  return {
+    min: roundDownToNiceStep(baseFare * 0.65),
+    max: roundUpToNiceStep(baseFare * 1.35),
+    currency: rateData.currency,
+    currencySymbol: rateData.currencySymbol,
+  };
+}

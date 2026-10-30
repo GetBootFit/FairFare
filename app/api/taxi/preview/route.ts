@@ -1,6 +1,6 @@
 ﻿import { NextRequest } from "next/server";
 import { getRouteInfo } from "@/lib/google-maps";
-import { findCityRate } from "@/lib/taxi-rates";
+import { findCityRate, calculateRoughFareRange } from "@/lib/taxi-rates";
 import { isRateLimited, getClientIp } from "@/lib/rate-limit";
 import { kvIncrement } from "@/lib/kv";
 import type { TaxiPreviewResult } from "@/types";
@@ -60,14 +60,19 @@ export async function POST(req: NextRequest) {
       console.warn(`[CITY_MISS:preview] ${route.city}, ${route.country}`);
     }
 
-    // General city context for free preview — currency + local taxi note only.
-    // No route-specific fare numbers: those belong exclusively in the paid TaxiFullResult.
+    // General city context for free preview — currency + local taxi note.
     const cityContext = rateData?.note
       ? {
           currency: rateData.currency,
           currencySymbol: rateData.currencySymbol,
           note: rateData.note,
         }
+      : undefined;
+
+    // Wide, rounded fare estimate shown free — gives a real answer to "is this
+    // roughly fair" while the precise ±15% range stays paid-only.
+    const roughFareRange = rateData
+      ? calculateRoughFareRange(rateData, route.distanceKm)
       : undefined;
 
     const result: TaxiPreviewResult = {
@@ -79,6 +84,7 @@ export async function POST(req: NextRequest) {
       country: route.country,
       citySupported,
       cityContext,
+      roughFareRange,
     };
 
     return Response.json(result);
