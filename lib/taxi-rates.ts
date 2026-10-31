@@ -90,7 +90,9 @@ const ALIASES: Record<string, string> = {
   // Bangkok — Suvarnabhumi is in Samut Prakan Province; Don Mueang is its own district
   // Khet (district) names Google sometimes returns instead of "Bangkok"
   samut_prakan: "bangkok",
+  chang_wat_samut_prakan: "bangkok", // Google prefixes the province with "Chang Wat "
   bang_phli: "bangkok",
+  amphoe_bang_phli: "bangkok", // Google prefixes the district with "Amphoe " (e.g. Suvarnabhumi Airport's geocoded address)
   racha_thewa: "bangkok",
   don_mueang: "bangkok",
   khet_bang_rak: "bangkok", // Bang Rak district (city_miss hit)
@@ -104,7 +106,14 @@ const ALIASES: Record<string, string> = {
   khet_lat_krabang: "bangkok", // Suvarnabhumi area
 
   // Pattaya — Tambon Nong Prue and Bang Lamung district contain Pattaya/Jomtien
-  tambon_nong_prue: "pattaya",
+  // NOTE: "tambon_nong_prue" is deliberately NOT aliased to Pattaya here.
+  // Thai subdistrict names aren't unique nationally -- there's a second,
+  // unrelated "Tambon Nong Prue" in Amphoe Bang Phli, Samut Prakan, which is
+  // where Suvarnabhumi Airport (BKK) actually sits. Aliasing the bare name
+  // made every Suvarnabhumi route resolve to Pattaya's fare data instead of
+  // Bangkok's. "nong_prue" (no "tambon_" prefix) below still covers the real
+  // Pattaya-area city_miss hits; amphoe_bang_lamung/bang_lamung (Chonburi
+  // province, Pattaya's real district) are the safe fallback for Pattaya.
   nong_prue: "pattaya",
   amphoe_bang_lamung: "pattaya",
   bang_lamung: "pattaya",
