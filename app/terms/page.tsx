@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { getUSDPrices } from "@/lib/currency";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
@@ -15,6 +16,8 @@ const EFFECTIVE = "28 March 2026";
 const CONTACT = "legal@hootling.com";
 
 export default function TermsPage() {
+  const { single, pass } = getUSDPrices();
+  const paywallOn = process.env.NEXT_PUBLIC_PAYWALL_ENABLED !== "false";
   return (
     <div className="space-y-6 pb-4">
       <div className="flex items-center gap-3">
@@ -55,51 +58,59 @@ export default function TermsPage() {
       </Section>
 
       <Section title="2. Payments and Refunds">
-        <p>
-          As of June 2026, Hootling is free to use — no payment is required to
-          access taxi fare estimates or tipping guides. The pricing structure
-          below applies if and when premium paid features are reintroduced.
-        </p>
-        <p className="mt-2">
-          When paid features are active, access is provided via a one-time
-          payment processed securely by Stripe. We offer the following pricing
-          options:
-        </p>
-        <ul className="mt-2 space-y-1.5 list-disc list-inside text-zinc-400">
-          <li>
-            <strong className="text-zinc-300">Single Query</strong> — from{" "}
-            <strong className="text-white">$2.99 USD</strong> (price varies by
-            currency). Grants a single-use access token valid for 8 hours for
-            one taxi fare check or one tipping guide.
-          </li>
-          <li>
-            <strong className="text-zinc-300">Trip Pass</strong> — from{" "}
-            <strong className="text-white">$7.99 USD</strong>. Grants unlimited
-            checks for a single country for 14 days from first use.
-          </li>
-        </ul>
-        <p className="mt-2">
-          Prices displayed in your local currency are converted from USD at the
-          time of purchase and may vary slightly due to exchange rates. All
-          payments are in the currency shown at checkout. We do not store your
-          payment card details — all payment handling is performed by Stripe,
-          Inc.
-        </p>
-        <p className="mt-2">
-          Due to the instant digital nature of the Service,{" "}
-          <strong className="text-white">all sales are final</strong>. Refunds
-          are not provided once a query result has been delivered. If you
-          experience a technical failure that prevents result delivery, contact
-          us at{" "}
-          <a href={`mailto:${CONTACT}`} className="text-purple-400 underline">
-            {CONTACT}
-          </a>{" "}
-          and we will review your case within 5 business days.
-        </p>
-        <p className="mt-2">
-          By proceeding to payment, you confirm that you have read and agree to
-          these Terms of Service.
-        </p>
+        {paywallOn ? (
+          <>
+            <p>
+              Access is provided via a one-time payment processed securely by
+              Stripe. We offer the following pricing options:
+            </p>
+            <ul className="mt-2 space-y-1.5 list-disc list-inside text-zinc-400">
+              <li>
+                <strong className="text-zinc-300">Single Query</strong> — from{" "}
+                <strong className="text-white">{single}</strong> (price varies
+                by currency). Grants a single-use access token valid for 8 hours
+                for one taxi fare check or one tipping guide.
+              </li>
+              <li>
+                <strong className="text-zinc-300">Trip Pass</strong> — from{" "}
+                <strong className="text-white">{pass}</strong>. Grants unlimited
+                checks for a single country for 14 days from first use.
+              </li>
+            </ul>
+            <p className="mt-2">
+              Prices displayed in your local currency are converted from USD at
+              the time of purchase and may vary slightly due to exchange rates.
+              All payments are in the currency shown at checkout. We do not
+              store your payment card details — all payment handling is
+              performed by Stripe, Inc.
+            </p>
+            <p className="mt-2">
+              Due to the instant digital nature of the Service,{" "}
+              <strong className="text-white">all sales are final</strong>.
+              Refunds are not provided once a query result has been delivered.
+              If you experience a technical failure that prevents result
+              delivery, contact us at{" "}
+              <a
+                href={`mailto:${CONTACT}`}
+                className="text-purple-400 underline"
+              >
+                {CONTACT}
+              </a>{" "}
+              and we will review your case within 5 business days.
+            </p>
+            <p className="mt-2">
+              By proceeding to payment, you confirm that you have read and agree
+              to these Terms of Service.
+            </p>
+          </>
+        ) : (
+          <p>
+            Hootling is currently free to use — no payment is required to access
+            taxi fare estimates or tipping guides. We reserve the right to
+            introduce paid features in the future; this section will be updated
+            with full pricing and refund terms if that happens.
+          </p>
+        )}
       </Section>
 
       <Section title="3. Accuracy Disclaimer">

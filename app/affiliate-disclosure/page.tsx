@@ -131,10 +131,11 @@ export default function AffiliateDisclosurePage() {
         <p>Affiliate links on Hootling are:</p>
         <ul className="mt-2 space-y-1.5 list-disc list-inside">
           <li>
-            Routed through our own tracking endpoint (
-            <code className="text-zinc-500">/api/affiliate/redirect</code>),
+            For Travelpayouts partners, routed through our own tracking endpoint
+            (<code className="text-zinc-500">/api/affiliate/redirect</code>),
             which records the click and then redirects you to the partner&apos;s
-            website
+            website. Amazon Associates links go directly to Amazon and are not
+            routed through this endpoint.
           </li>
           <li>
             Marked with{" "}
