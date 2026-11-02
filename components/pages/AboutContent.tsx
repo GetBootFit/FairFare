@@ -17,7 +17,8 @@ import { getUSDPrices } from "@/lib/currency";
 type AboutStrings = Record<string, string>;
 
 function getEnglishContent(): AboutStrings {
-  const { single } = getUSDPrices();
+  const { single, pass } = getUSDPrices();
+  const paywallOn = process.env.NEXT_PUBLIC_PAYWALL_ENABLED !== "false";
   return {
     header_subtitle:
       "Hootling gives travellers the confidence to jump in any taxi, anywhere in the world — without getting ripped off or undertipping.",
@@ -26,8 +27,9 @@ function getEnglishContent(): AboutStrings {
       "Arriving in a new city after a long flight is stressful enough. Negotiating with a taxi driver when you don't know the local fare, don't speak the language, and can't tell a fair price from a tourist trap is worse. Travellers get ripped off every day in cities all over the world — overcharged fares, rigged meters, unofficial \"taxis\" with no accountability.",
     why_para2:
       'Hootling was built to fix that. The name combines the wisdom of the owl with the English diminutive "-ling" — a baby owl, curious and wide-eyed, exploring the world for the first time, just like every traveller in a new city. Our mascot is Hootling: a baby owl with golden yellow feathers, a teal backpack, and big curious teal eyes. He\'s been everywhere — and he always knows the fair price.',
-    why_para3:
-      "Hootling solves the taxi problem in under five seconds, free. Real meter rate data sourced from local taxi authorities. City-specific scam alerts tailored to your destination. 160+ cities, 50+ countries. No account, no subscription. Built by travellers, for travellers.",
+    why_para3: paywallOn
+      ? "Hootling solves the taxi problem in seconds. Real meter rate data sourced from local taxi authorities. City-specific scam alerts tailored to your destination. 160+ cities, 50+ countries. No account, no subscription — pay only for the result you need. Built by travellers, for travellers."
+      : "Hootling solves the taxi problem in under five seconds, free. Real meter rate data sourced from local taxi authorities. City-specific scam alerts tailored to your destination. 160+ cities, 50+ countries. No account, no subscription. Built by travellers, for travellers.",
     what_heading: "What it does",
     feature_taxi_title: "Taxi Fare Check",
     feature_taxi_desc:
@@ -42,9 +44,10 @@ function getEnglishContent(): AboutStrings {
     step2_title: "See the free preview",
     step2_desc:
       "Route distance and travel time load instantly — confirm you've entered the right locations.",
-    step3_title: "Get your result — free",
-    step3_desc:
-      "No payment required. Get the fare range, scam alerts, driver phrases, and full tipping guidance instantly.",
+    step3_title: paywallOn ? "Unlock your result" : "Get your result — free",
+    step3_desc: paywallOn
+      ? `Pay ${single} for a single result, or ${pass} for a 14-day Trip Pass covering unlimited checks in one country. Then see the fare range, scam alerts, driver phrases, and full tipping guidance instantly.`
+      : "No payment required. Get the fare range, scam alerts, driver phrases, and full tipping guidance instantly.",
     step4_title: "Travel with confidence",
     step4_desc:
       "Get the fare range, scam alerts, a local phrase for your driver, and full tipping guidance — all in one clear view.",
@@ -52,8 +55,9 @@ function getEnglishContent(): AboutStrings {
     google_detail: "Route distance, duration, and address autocomplete",
     claude_detail:
       "Destination-specific scam alerts, tipping intelligence, and local driver phrases",
-    stripe_detail:
-      "Secure payment infrastructure — used if premium features are introduced",
+    stripe_detail: paywallOn
+      ? "Secure payment infrastructure for single-query and Trip Pass purchases"
+      : "Secure payment infrastructure — used if premium features are introduced",
     privacy_heading: "Our privacy promise",
     privacy_1: "No user accounts or personal profiles",
     privacy_2: "No payment card details stored by us",
@@ -73,6 +77,10 @@ export function AboutContent() {
 
   useEffect(() => {
     if (locale === "en") {
+      // Re-derive English strings on every locale switch back to 'en' (not
+      // just on mount) -- getEnglishContent() reads live price/paywall state,
+      // so this also keeps the page in sync if that ever changes client-side.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setS(getEnglishContent());
       return;
     }
