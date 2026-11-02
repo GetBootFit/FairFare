@@ -200,7 +200,15 @@ const ALIASES: Record<string, string> = {
   brampton: "toronto",
 
   // Vancouver — YVR is in Richmond
-  richmond: "vancouver",
+  // NOTE: "richmond" is deliberately NOT aliased here. Richmond is also a
+  // London borough (Richmond upon Thames) -- confirmed via live geocoding
+  // that Google returns bare "Richmond" as the locality for real London
+  // addresses there too, which would have silently resolved London routes
+  // to Vancouver rates. "metro_vancouver" (the next candidate Google returns
+  // for YVR) is specific to Vancouver and carries no such collision; London's
+  // own fallback candidate ("Greater London") already resolves correctly via
+  // substring matching on "london" with no alias needed.
+  metro_vancouver: "vancouver",
   sea_island: "vancouver",
 
   // Moscow — Sheremetyevo in Khimki; Domodedovo south of city
@@ -235,7 +243,15 @@ const ALIASES: Record<string, string> = {
   san_mateo: "san_francisco",
   millbrae: "san_francisco",
   burlingame: "san_francisco",
-  brisbane: "san_francisco", // Brisbane, CA (not Australia)
+  // NOTE: "brisbane" is deliberately NOT aliased here. The old comment said
+  // "Brisbane, CA (not Australia)" -- but Brisbane, Australia is a real city
+  // of 2.5M+ people and Google returns the same bare "Brisbane" locality for
+  // it, which would have silently shown San Francisco rates for an Australian
+  // route. Confirmed via live geocoding that Brisbane, CA's next candidate
+  // ("San Mateo County") already resolves correctly on its own via the
+  // existing san_mateo alias + trailing-token stripping -- no replacement
+  // alias needed here. Brisbane, Australia now honestly reports unsupported
+  // instead of silently wrong.
 
   // Seattle — SeaTac city is a separate municipality
   seatac: "seattle",
