@@ -60,8 +60,20 @@ function buildJsonLd() {
       a: "No accounts or personal profiles. No GPS tracking. Only the city and country name are sent to our AI provider for scam warnings and tipping advice.",
     },
     {
+      q: "Is my payment data stored?",
+      a: "No. Payment is processed entirely by Stripe. Hootling never sees, handles, or stores card numbers, CVC, or banking details.",
+    },
+    {
       q: "Does Hootling track my location?",
       a: "No GPS used. Addresses typed manually.",
+    },
+    {
+      q: "What data is sent to Anthropic?",
+      a: 'Only the city and country name of your pickup location (e.g. "Bangkok, Thailand") is sent to the Claude API to generate scam warnings, tipping notes, and driver phrases.',
+    },
+    {
+      q: "Is Hootling affiliated with any taxi company?",
+      a: "No. Hootling is an independent travel reference tool with no affiliation with any taxi company, driver, dispatch service, or transportation authority.",
     },
     {
       q: "What languages is the app available in?",
