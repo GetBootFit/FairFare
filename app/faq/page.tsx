@@ -14,16 +14,20 @@ export const metadata: Metadata = {
 
 // JSON-LD schema stays server-side for SEO — uses English source strings
 function buildJsonLd() {
-  const { single, pass, bundle } = getUSDPrices();
-  const p = { single, pass, bundle };
+  const { single, pass } = getUSDPrices();
+  const paywallOn = process.env.NEXT_PUBLIC_PAYWALL_ENABLED !== "false";
   const faqs = [
     {
       q: "Is Hootling free to use?",
-      a: "Yes — Hootling is currently free. No payment, account, or sign-up required.",
+      a: paywallOn
+        ? `Each result costs ${single} as a single query, or ${pass} for a 14-day Trip Pass covering one country. No subscription, no account required — pay only when you need an answer.`
+        : "Yes — Hootling is currently free. No payment, account, or sign-up required.",
     },
     {
       q: "How does Hootling make money?",
-      a: "Hootling earns small commissions from optional affiliate links — partner services like airport transfers, hotels, and eSIMs shown after your result. Clicking is entirely optional.",
+      a: paywallOn
+        ? "Hootling earns revenue from single-query and Trip Pass purchases, plus small optional commissions from affiliate partner links (airport transfers, hotels, eSIMs) shown after your result. Clicking affiliate links is always optional."
+        : "Hootling earns small commissions from optional affiliate links — partner services like airport transfers, hotels, and eSIMs shown after your result. Clicking is entirely optional.",
     },
     {
       q: "How accurate are the fare estimates?",
@@ -43,7 +47,9 @@ function buildJsonLd() {
     },
     {
       q: "Is there a limit to how many searches I can do?",
-      a: "No — searches are unlimited and free.",
+      a: paywallOn
+        ? "No subscription and no artificial limit — buy a single query or a Trip Pass whenever you need one. A Trip Pass covers unlimited checks for one country for 14 days."
+        : "No — searches are unlimited and free.",
     },
     {
       q: "Do I need to create an account?",

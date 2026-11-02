@@ -16,24 +16,31 @@ interface FaqItem {
 }
 
 function getEnglishContent(): FaqStrings {
-  const { single, pass, bundle } = getUSDPrices();
+  const { single, pass } = getUSDPrices();
+  const paywallOn = process.env.NEXT_PUBLIC_PAYWALL_ENABLED !== "false";
   return {
     heading: "Frequently Asked Questions",
     subheading: "Everything you need to know about Hootling",
     q1: "Is Hootling free to use?",
-    a1: "Yes — Hootling is currently free. No payment, account, or sign-up required. Enter your route or destination and get your result instantly.",
+    a1: paywallOn
+      ? `Each result costs ${single} as a single query, or ${pass} for a 14-day Trip Pass covering one country. No subscription, no account required — pay only when you need an answer.`
+      : "Yes — Hootling is currently free. No payment, account, or sign-up required. Enter your route or destination and get your result instantly.",
     q2: "How does Hootling make money?",
-    a2: "Hootling earns small commissions from optional affiliate links — partner services like airport transfers, hotels, and eSIMs shown after your result. Clicking is entirely optional; your fare estimate, tipping guide, and all travel information are free regardless.",
+    a2: paywallOn
+      ? "Hootling earns revenue directly from single-query and Trip Pass purchases, plus small optional commissions from affiliate partner links (airport transfers, hotels, eSIMs) shown after your result. Clicking affiliate links is always optional."
+      : "Hootling earns small commissions from optional affiliate links — partner services like airport transfers, hotels, and eSIMs shown after your result. Clicking is entirely optional; your fare estimate, tipping guide, and all travel information are free regardless.",
     q3: "How accurate are the fare estimates?",
     a3: "Fare ranges are calculated from a curated dataset of local taxi rates combined with real route distances from Google Maps. A ±15% range is applied to account for traffic, surcharges, and driver discretion. Always confirm the fare with your driver before the journey — Hootling is a reference tool, not a metered guarantee.",
     q4: "Which cities are covered for taxi fares?",
-    a4: "Hootling covers 120+ cities across every continent, including major tourist destinations in Asia, Europe, the Americas, Africa, and the Middle East. If your city is not in our dataset, the result will include a note to verify the fare directly with your driver.",
+    a4: "Hootling covers 160+ cities across every continent, including major tourist destinations in Asia, Europe, the Americas, Africa, and the Middle East. If your city is not in our dataset, the result will include a note to verify the fare directly with your driver.",
     q5: "Which countries are covered for tipping?",
     a5: "Tipping guides are available for 50+ countries including all major travel destinations. The guide covers six scenarios: restaurants, taxis, hotel porters, bars, tour guides, and delivery.",
     q6: "What are the scam warnings based on?",
     a6: "Scam warnings are researched and tailored to each city — covering well-known issues like meter tampering, unofficial taxis, and fixed-price scams. They reflect patterns specific to your destination and are updated every 90 days. They are a starting point for awareness, not a guarantee of current conditions.",
     q7: "Is there a limit to how many searches I can do?",
-    a7: "No — searches are unlimited and free. Run as many taxi fare checks and tipping guides as you need, for any destination.",
+    a7: paywallOn
+      ? "No subscription and no artificial limit — buy a single query or a Trip Pass whenever you need one. A Trip Pass covers unlimited taxi fare checks and tipping guides for one country for 14 days."
+      : "No — searches are unlimited and free. Run as many taxi fare checks and tipping guides as you need, for any destination.",
     q8: "Do I need to create an account?",
     a8: "No. Hootling has no accounts, no sign-up, and no login. Your query result and access token are stored temporarily in your browser only.",
     q9: "Is my data private?",
@@ -94,6 +101,10 @@ export function FaqContent() {
 
   useEffect(() => {
     if (locale === "en") {
+      // Re-derive English strings on every locale switch back to 'en' (not
+      // just on mount) -- getEnglishContent() reads live price/paywall state,
+      // so this also keeps the FAQ in sync if that ever changes client-side.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setS(getEnglishContent());
       return;
     }
