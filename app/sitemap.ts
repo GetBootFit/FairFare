@@ -255,7 +255,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // be indexed.
 
   // Locale blog article pages — only slugs with confirmed translations in KV.
-  // Untranslated locale URLs redirect to English canonical (see app/[locale]/blog/[slug]/page.tsx).
+  // Untranslated locale slugs return a 404, not a redirect (see
+  // app/[locale]/blog/[slug]/page.tsx -- notFound() is used deliberately so
+  // Google dequeues the URL, rather than a redirect that keeps it crawling).
   // Add slugs to TRANSLATED_SLUGS in lib/blog-translation.ts as more are warmed up.
   const translatedSlugs = blogSlugs.filter((slug) =>
     TRANSLATED_SLUGS.has(slug),
