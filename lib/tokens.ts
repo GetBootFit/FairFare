@@ -1,22 +1,22 @@
-import { SignJWT, jwtVerify } from 'jose'
+import { SignJWT, jwtVerify } from "jose";
 
 function secret(): Uint8Array {
-  const s = process.env.ENTITLEMENT_SECRET
-  if (!s) throw new Error('ENTITLEMENT_SECRET is not set')
-  return new TextEncoder().encode(s)
+  const s = process.env.ENTITLEMENT_SECRET;
+  if (!s) throw new Error("ENTITLEMENT_SECRET is not set");
+  return new TextEncoder().encode(s);
 }
 
 // ─── Token payload types ───────────────────────────────────────────────────────
 
 export interface TokenPayload {
-  sessionId: string
-  /** 'single' = one taxi OR tipping query (30 min).
+  sessionId: string;
+  /** 'single' = one taxi OR tipping query (8 h — see createToken's comment below).
    *  'country_pass' = all features for one country (14 days — Trip Pass).
    *  'bundle' = one query from a 20-pack, device-stored (90 days).
    *  Undefined = legacy single-query token (backward compat). */
-  tokenType?: 'single' | 'country_pass' | 'bundle'
-  feature?: 'taxi' | 'tipping'  // present for single tokens
-  country?: string               // present for country_pass tokens (normalised lowercase)
+  tokenType?: "single" | "country_pass" | "bundle";
+  feature?: "taxi" | "tipping"; // present for single tokens
+  country?: string; // present for country_pass tokens (normalised lowercase)
 }
 
 // ─── Server-side: sign / verify ───────────────────────────────────────────────
@@ -31,131 +31,141 @@ export interface TokenPayload {
  * does not meaningfully increase the attack surface.
  */
 export async function createToken(payload: {
-  sessionId: string
-  feature: 'taxi' | 'tipping'
+  sessionId: string;
+  feature: "taxi" | "tipping";
 }): Promise<string> {
-  return new SignJWT({ ...payload, tokenType: 'single' } as Record<string, unknown>)
-    .setProtectedHeader({ alg: 'HS256' })
+  return new SignJWT({ ...payload, tokenType: "single" } as Record<
+    string,
+    unknown
+  >)
+    .setProtectedHeader({ alg: "HS256" })
     .setIssuedAt()
-    .setExpirationTime('8h')
-    .sign(secret())
+    .setExpirationTime("8h")
+    .sign(secret());
 }
 
 /** Issue a bundle JWT valid for 90 days (one query from a purchased 20-pack). */
 export async function createBundleToken(sessionId: string): Promise<string> {
-  return new SignJWT({ tokenType: 'bundle', sessionId } as Record<string, unknown>)
-    .setProtectedHeader({ alg: 'HS256' })
+  return new SignJWT({ tokenType: "bundle", sessionId } as Record<
+    string,
+    unknown
+  >)
+    .setProtectedHeader({ alg: "HS256" })
     .setIssuedAt()
-    .setExpirationTime('90d')
-    .sign(secret())
+    .setExpirationTime("90d")
+    .sign(secret());
 }
 
 /** Issue a country pass JWT valid for 24 hours. country should be normalised lowercase. */
 export async function createCountryPassToken(
   sessionId: string,
-  country: string
+  country: string,
 ): Promise<string> {
-  return new SignJWT({ tokenType: 'country_pass', sessionId, country } as Record<string, unknown>)
-    .setProtectedHeader({ alg: 'HS256' })
+  return new SignJWT({
+    tokenType: "country_pass",
+    sessionId,
+    country,
+  } as Record<string, unknown>)
+    .setProtectedHeader({ alg: "HS256" })
     .setIssuedAt()
-    .setExpirationTime('14d')
-    .sign(secret())
+    .setExpirationTime("14d")
+    .sign(secret());
 }
 
 /** Verify a JWT and return its payload. Throws on invalid/expired. */
 export async function verifyToken(token: string): Promise<TokenPayload> {
-  const { payload } = await jwtVerify(token, secret())
-  return payload as unknown as TokenPayload
+  const { payload } = await jwtVerify(token, secret());
+  return payload as unknown as TokenPayload;
 }
 
 // ─── Client-side helpers: single-query token ─────────────────────────────────
 
-const KEY = 'ff_token'
+const KEY = "ff_token";
 
 export function storeToken(token: string): void {
-  if (typeof window === 'undefined') return
-  localStorage.setItem(KEY, token)
+  if (typeof window === "undefined") return;
+  localStorage.setItem(KEY, token);
 }
 
 export function getStoredToken(): string | null {
-  if (typeof window === 'undefined') return null
-  return localStorage.getItem(KEY)
+  if (typeof window === "undefined") return null;
+  return localStorage.getItem(KEY);
 }
 
 export function clearStoredToken(): void {
-  if (typeof window === 'undefined') return
-  localStorage.removeItem(KEY)
+  if (typeof window === "undefined") return;
+  localStorage.removeItem(KEY);
 }
 
 // ─── Client-side helpers: country pass token ──────────────────────────────────
 
 function passKey(country: string): string {
-  return `ff_pass_${country.toLowerCase().trim().replace(/\s+/g, '_')}`
+  return `ff_pass_${country.toLowerCase().trim().replace(/\s+/g, "_")}`;
 }
 
 export function storeCountryPass(country: string, token: string): void {
-  if (typeof window === 'undefined') return
-  localStorage.setItem(passKey(country), token)
+  if (typeof window === "undefined") return;
+  localStorage.setItem(passKey(country), token);
 }
 
 export function getCountryPassToken(country: string): string | null {
-  if (typeof window === 'undefined') return null
-  return localStorage.getItem(passKey(country))
+  if (typeof window === "undefined") return null;
+  return localStorage.getItem(passKey(country));
 }
 
 export function clearCountryPass(country: string): void {
-  if (typeof window === 'undefined') return
-  localStorage.removeItem(passKey(country))
+  if (typeof window === "undefined") return;
+  localStorage.removeItem(passKey(country));
 }
 
 export function isCountryPassValid(country: string): boolean {
-  const token = getCountryPassToken(country)
-  if (!token) return false
-  return !isTokenExpired(token)
+  const token = getCountryPassToken(country);
+  if (!token) return false;
+  return !isTokenExpired(token);
 }
 
 // ─── Client-side helpers: 20-query bundle queue ───────────────────────────────
 
-const BUNDLE_KEY = 'ff_bundle_queue'
+const BUNDLE_KEY = "ff_bundle_queue";
 
 /** Append freshly-issued bundle tokens to the device queue. */
 export function storeBundleTokens(tokens: string[]): void {
-  if (typeof window === 'undefined') return
-  const existing = getBundleTokens()
-  localStorage.setItem(BUNDLE_KEY, JSON.stringify([...existing, ...tokens]))
+  if (typeof window === "undefined") return;
+  const existing = getBundleTokens();
+  localStorage.setItem(BUNDLE_KEY, JSON.stringify([...existing, ...tokens]));
 }
 
 /** Return the full queue (may include expired tokens). */
 function getBundleTokens(): string[] {
-  if (typeof window === 'undefined') return []
+  if (typeof window === "undefined") return [];
   try {
-    return JSON.parse(localStorage.getItem(BUNDLE_KEY) ?? '[]') as string[]
+    return JSON.parse(localStorage.getItem(BUNDLE_KEY) ?? "[]") as string[];
   } catch {
-    return []
+    return [];
   }
 }
 
 /** Number of valid (non-expired) tokens remaining in the bundle queue. */
 export function getBundleCount(): number {
-  return getBundleTokens().filter((t) => !isTokenExpired(t)).length
+  return getBundleTokens().filter((t) => !isTokenExpired(t)).length;
 }
 
 /** Remove and return the first valid bundle token, or null if queue is empty/exhausted. */
 export function popBundleToken(): string | null {
-  if (typeof window === 'undefined') return null
-  const all = getBundleTokens()
+  if (typeof window === "undefined") return null;
+  const all = getBundleTokens();
   // Find first non-expired token
-  const idx = all.findIndex((t) => !isTokenExpired(t))
+  const idx = all.findIndex((t) => !isTokenExpired(t));
   if (idx === -1) {
     // All expired — clear the queue
-    localStorage.removeItem(BUNDLE_KEY)
-    return null
+    localStorage.removeItem(BUNDLE_KEY);
+    return null;
   }
-  const token = all[idx]
+  const token = all[idx];
   // Remove it from the array and persist
-  all.splice(idx, 1)
-  localStorage.setItem(BUNDLE_KEY, JSON.stringify(all))
-  return token
+  all.splice(idx, 1);
+  localStorage.setItem(BUNDLE_KEY, JSON.stringify(all));
+  return token;
 }
 
 // ─── Shared: decode expiry (no signature check — client only) ─────────────────
@@ -174,10 +184,10 @@ export function popBundleToken(): string | null {
  */
 export function isTokenExpired(token: string): boolean {
   try {
-    const [, b64] = token.split('.')
-    const payload = JSON.parse(atob(b64))
-    return (payload.exp ?? 0) * 1000 < Date.now()
+    const [, b64] = token.split(".");
+    const payload = JSON.parse(atob(b64));
+    return (payload.exp ?? 0) * 1000 < Date.now();
   } catch {
-    return true
+    return true;
   }
 }

@@ -1,8 +1,8 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import { useState, useEffect } from 'react'
-import { Check, Zap, Globe, ArrowRight, ChevronDown } from 'lucide-react'
+import Link from "next/link";
+import { useState, useEffect } from "react";
+import { Check, Zap, Globe, ArrowRight, ChevronDown } from "lucide-react";
 import {
   CURRENCIES,
   PRICES,
@@ -10,46 +10,57 @@ import {
   getStoredCurrency,
   storeManualCurrency,
   type CurrencyCode,
-} from '@/lib/currency'
+} from "@/lib/currency";
 
 export default function PricingPage() {
-  const [currency, setCurrency] = useState<CurrencyCode>('USD')
-  const [mounted, setMounted] = useState(false)
-  const [showPicker, setShowPicker] = useState(false)
+  const [currency, setCurrency] = useState<CurrencyCode>("USD");
+  const [mounted, setMounted] = useState(false);
+  const [showPicker, setShowPicker] = useState(false);
 
   useEffect(() => {
-    setCurrency(getStoredCurrency())
-    setMounted(true)
+    // Deliberately read localStorage only after mount (not a lazy useState
+    // initializer) to avoid a hydration mismatch -- the server always renders
+    // the 'USD' default, since localStorage doesn't exist server-side. Same
+    // pattern used in PaymentModal.tsx and elsewhere in this codebase.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setCurrency(getStoredCurrency());
+    setMounted(true);
     const onStorage = (e: StorageEvent) => {
-      if (e.key === 'ff_currency') setCurrency(getStoredCurrency())
-    }
-    window.addEventListener('storage', onStorage)
-    return () => window.removeEventListener('storage', onStorage)
-  }, [])
+      if (e.key === "ff_currency") setCurrency(getStoredCurrency());
+    };
+    window.addEventListener("storage", onStorage);
+    return () => window.removeEventListener("storage", onStorage);
+  }, []);
 
-  const prices = PRICES[currency]
-  const fmt = (n: number) => (mounted ? formatPrice(currency, n) : '—')
+  const prices = PRICES[currency];
+  const fmt = (n: number) => (mounted ? formatPrice(currency, n) : "—");
 
-  const singlePrice = fmt(prices.single)
-  const passPrice   = fmt(prices.pass)
+  const singlePrice = fmt(prices.single);
+  const passPrice = fmt(prices.pass);
 
   const handleCurrency = (c: CurrencyCode) => {
-    setCurrency(c)
-    storeManualCurrency(c)
-    setShowPicker(false)
-  }
+    setCurrency(c);
+    storeManualCurrency(c);
+    setShowPicker(false);
+  };
 
   return (
     <div className="space-y-6 pb-8">
       {/* Header */}
       <div className="space-y-2 text-center pt-2">
         <nav className="flex items-center justify-center gap-1.5 text-xs text-zinc-500">
-          <Link href="/" className="hover:text-zinc-300 transition-colors">Home</Link>
+          <Link href="/" className="hover:text-zinc-300 transition-colors">
+            Home
+          </Link>
           <span>›</span>
           <span className="text-zinc-300">Pricing</span>
         </nav>
-        <h1 className="text-2xl font-bold text-white">Simple, honest pricing</h1>
-        <p className="text-sm text-zinc-400">Pay only when you need it. No subscription, no account.</p>
+        <h1 className="text-2xl font-bold text-white">
+          Simple, honest pricing
+        </h1>
+        <p className="text-sm text-zinc-400">
+          Pay only when you need it. No subscription, no account.
+        </p>
 
         {/* Currency selector */}
         <div className="flex items-center justify-center gap-1.5 pt-1">
@@ -69,8 +80,8 @@ export default function PricingPage() {
                     onClick={() => handleCurrency(c.code)}
                     className={`w-full text-left px-3 py-2 text-xs rounded-lg transition-colors ${
                       c.code === currency
-                        ? 'bg-purple-900/40 text-purple-300'
-                        : 'text-zinc-300 hover:bg-zinc-700'
+                        ? "bg-purple-900/40 text-purple-300"
+                        : "text-zinc-300 hover:bg-zinc-700"
                     }`}
                   >
                     {c.label}
@@ -84,7 +95,6 @@ export default function PricingPage() {
 
       {/* Pricing cards */}
       <div className="space-y-3">
-
         {/* Single */}
         <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5 space-y-4">
           <div className="flex items-start justify-between gap-3">
@@ -94,7 +104,9 @@ export default function PricingPage() {
               </div>
               <div>
                 <p className="font-semibold text-white">Single Query</p>
-                <p className="text-xs text-zinc-500">One taxi OR one tipping check</p>
+                <p className="text-xs text-zinc-500">
+                  One taxi OR one tipping check
+                </p>
               </div>
             </div>
             <div className="text-right shrink-0">
@@ -104,13 +116,16 @@ export default function PricingPage() {
           </div>
           <ul className="space-y-1.5">
             {[
-              'Fare estimate with ±15% range',
-              'City-specific scam alerts for your route',
-              'Local driver phrases',
-              'Valid for 30 minutes',
-              'Works for taxi or tipping',
+              "Fare estimate with ±15% range",
+              "City-specific scam alerts for your route",
+              "Local driver phrases",
+              "Valid for 8 hours",
+              "Works for taxi or tipping",
             ].map((f) => (
-              <li key={f} className="flex items-center gap-2 text-xs text-zinc-400">
+              <li
+                key={f}
+                className="flex items-center gap-2 text-xs text-zinc-400"
+              >
                 <Check size={11} className="text-zinc-500 shrink-0" />
                 {f}
               </li>
@@ -138,7 +153,9 @@ export default function PricingPage() {
               </div>
               <div>
                 <p className="font-semibold text-white">Trip Pass</p>
-                <p className="text-xs text-purple-300/70">Unlimited checks · one country · 14 days</p>
+                <p className="text-xs text-purple-300/70">
+                  Unlimited checks · one country · 14 days
+                </p>
               </div>
             </div>
             <div className="text-right shrink-0">
@@ -148,13 +165,16 @@ export default function PricingPage() {
           </div>
           <ul className="space-y-1.5">
             {[
-              'Unlimited taxi + tipping checks',
-              'One country for up to 14 days',
-              'All scam warnings + driver phrases',
-              'Perfect for any trip up to 2 weeks',
-              'Works across both taxi and tipping',
+              "Unlimited taxi + tipping checks",
+              "One country for up to 14 days",
+              "All scam warnings + driver phrases",
+              "Perfect for any trip up to 2 weeks",
+              "Works across both taxi and tipping",
             ].map((f) => (
-              <li key={f} className="flex items-center gap-2 text-xs text-zinc-400">
+              <li
+                key={f}
+                className="flex items-center gap-2 text-xs text-zinc-400"
+              >
                 <Check size={11} className="text-purple-500 shrink-0" />
                 {f}
               </li>
@@ -172,11 +192,14 @@ export default function PricingPage() {
       {/* Trust signals */}
       <div className="grid grid-cols-3 gap-2 text-center">
         {[
-          { label: 'No account', sub: 'ever required' },
-          { label: 'Stripe', sub: 'secured payment' },
-          { label: 'Apple & Google Pay', sub: 'accepted' },
+          { label: "No account", sub: "ever required" },
+          { label: "Stripe", sub: "secured payment" },
+          { label: "Apple & Google Pay", sub: "accepted" },
         ].map(({ label, sub }) => (
-          <div key={label} className="bg-zinc-900 border border-zinc-800 rounded-xl p-2.5">
+          <div
+            key={label}
+            className="bg-zinc-900 border border-zinc-800 rounded-xl p-2.5"
+          >
             <p className="text-xs font-semibold text-white">{label}</p>
             <p className="text-[10px] text-zinc-500 mt-0.5">{sub}</p>
           </div>
@@ -186,10 +209,13 @@ export default function PricingPage() {
       {/* Guarantee */}
       <div className="text-center space-y-1">
         <p className="text-xs text-zinc-400">
-          Not happy with your result? Email{' '}
-          <a href="mailto:hello@hootling.com" className="text-purple-400 hover:text-purple-300 transition-colors">
+          Not happy with your result? Email{" "}
+          <a
+            href="mailto:hello@hootling.com"
+            className="text-purple-400 hover:text-purple-300 transition-colors"
+          >
             hello@hootling.com
-          </a>{' '}
+          </a>{" "}
           and we&apos;ll sort it out.
         </p>
       </div>
@@ -199,23 +225,26 @@ export default function PricingPage() {
         <h2 className="text-sm font-semibold text-white">Common questions</h2>
         {[
           {
-            q: 'Do queries expire?',
-            a: 'Single queries are valid for 8 hours — long enough to check before boarding and use the result. Trip Pass is valid for 14 days from first use, covering any trip up to 2 weeks.',
+            q: "Do queries expire?",
+            a: "Single queries are valid for 8 hours — long enough to check before boarding and use the result. Trip Pass is valid for 14 days from first use, covering any trip up to 2 weeks.",
           },
           {
-            q: 'What if my city isn\'t listed?',
-            a: 'We cover 160+ cities. For unlisted destinations, you\'ll still get scam alerts and local driver phrases — with a note to verify the fare directly with your driver.',
+            q: "What if my city isn't listed?",
+            a: "We cover 160+ cities. For unlisted destinations, you'll still get scam alerts and local driver phrases — with a note to verify the fare directly with your driver.",
           },
           {
-            q: 'Does the Trip Pass work for both taxi and tipping?',
-            a: 'Yes — a Trip Pass for Thailand covers unlimited taxi fare checks and unlimited tipping guides for the full 14 days. Both features, one pass.',
+            q: "Does the Trip Pass work for both taxi and tipping?",
+            a: "Yes — a Trip Pass for Thailand covers unlimited taxi fare checks and unlimited tipping guides for the full 14 days. Both features, one pass.",
           },
           {
-            q: 'Do I need to create an account?',
-            a: 'Never. Your entitlement is stored securely in your browser. No sign-up, no email required.',
+            q: "Do I need to create an account?",
+            a: "Never. Your entitlement is stored securely in your browser. No sign-up, no email required.",
           },
         ].map(({ q, a }) => (
-          <div key={q} className="bg-zinc-900 border border-zinc-800 rounded-xl p-4 space-y-1.5">
+          <div
+            key={q}
+            className="bg-zinc-900 border border-zinc-800 rounded-xl p-4 space-y-1.5"
+          >
             <p className="text-sm font-semibold text-white">{q}</p>
             <p className="text-xs text-zinc-400 leading-relaxed">{a}</p>
           </div>
@@ -224,10 +253,16 @@ export default function PricingPage() {
 
       {/* Footer links */}
       <div className="flex items-center justify-center gap-4 text-xs text-zinc-600">
-        <Link href="/faq" className="hover:text-zinc-400 transition-colors">Full FAQ</Link>
-        <Link href="/taxi" className="hover:text-zinc-400 transition-colors">Taxi Fare Check</Link>
-        <Link href="/tipping" className="hover:text-zinc-400 transition-colors">Tipping Guide</Link>
+        <Link href="/faq" className="hover:text-zinc-400 transition-colors">
+          Full FAQ
+        </Link>
+        <Link href="/taxi" className="hover:text-zinc-400 transition-colors">
+          Taxi Fare Check
+        </Link>
+        <Link href="/tipping" className="hover:text-zinc-400 transition-colors">
+          Tipping Guide
+        </Link>
       </div>
     </div>
-  )
+  );
 }
